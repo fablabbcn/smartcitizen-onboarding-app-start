@@ -1,0 +1,24 @@
+@import url(https://fonts.googleapis.com/css?family=Rubik:400,300,500);
+body {
+  font: 100% Rubik, sans-serif;
+  width: 100%; }
+  body h1, body h2, body h3, body h4 {
+    text-align: center; }
+  body h1 {
+    font-weight: 400;
+    font-size: 72px;
+    color: #414042; }
+  body h4 {
+    font-weight: 400;
+    font-size: 41px;
+    color: #BDC3C7; }
+  body button {
+    font-weight: 500;
+    font-size: 40px;
+    color: white;
+    text-transform: capitalize; }
+  body .currentState {
+    font-weight: 500;
+    font-size: 14px;
+    color: white;
+    text-transform: capitalize; }

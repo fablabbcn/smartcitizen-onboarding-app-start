@@ -1,0 +1,142 @@
+{
+  "pages": [
+    {
+      "index": 0,
+      "template": "landing",
+      "h1": "You've made it to the Making Sense pilot",
+      "h4": "Let’s get you set up with a Smart Citizen kit, and sensing in no time",
+      "currentState": "Welcome",
+      "segueButton": "Woop!"
+    },{
+      "index": 1,
+      "template": "collaborators",
+      "companyLogo": "MK_logo.png",
+      "h1": "Making Sense is a project to help people make sense of their environment.",
+      "h4": "We want to help you deploy sensors to help understand sound pollution. By making sense of the issue, we might be able to address it.",
+      "currentState": "What is Making Sense",
+      "segueButton": "SOUNDS GOOD!"
+    },{
+      "index": 2,
+      "template": "collaborators",
+      "companyLogo": "SCK_logo.png",
+      "h1": "Smart Citizen is a movement for civic participation in a modern world",
+      "h4": "Smart Citizen creates open tools for citizens to be better informed about the world around them.",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "CONTINUE"
+    },{
+      "index": 3,
+      "template": "staticKit",
+      "kitImage": "SCK_image.png",
+      "h4": "This sensor is a Smart Citizen kit for environmental sensing. It measures sound, air quality, humidity, and lots of other things",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "LET’S SET UP MY SENSOR"
+    },{
+      "index": 4,
+      "template": "",
+      "currentState": "WHAT’S IN THE BOX",
+      "h1": "First of all, let’s make sure we have everything we need.",
+      "h4": "We need a few things to set up the sensor. Let’s see if you’ve recieved them",
+      "segueButton": "LETS DO IT"
+    },{
+
+
+
+
+
+      "index": 5,
+      "template": "",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "CONTINUE"
+    },{
+      "index": 6,
+      "template": "",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "CONTINUE"
+    },{
+      "index": 7,
+      "template": "",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "CONTINUE"
+    },{
+      "index": 8,
+      "template": "",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "CONTINUE"
+    },{
+      "index": 9,
+      "template": "",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "CONTINUE"
+    },{
+      "index": 10,
+      "template": "",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "CONTINUE"
+    },{
+      "index": 11,
+      "template": "",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "CONTINUE"
+    },{
+      "index": 12,
+      "template": "",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "CONTINUE"
+    },{
+      "index": 13,
+      "template": "",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "CONTINUE"
+    },{
+      "index": 14,
+      "template": "",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "CONTINUE"
+    },{
+      "index": 15,
+      "template": "",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "CONTINUE"
+    },{
+      "index": 16,
+      "template": "",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "CONTINUE"
+    },{
+      "index": 17,
+      "template": "",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "CONTINUE"
+    },{
+      "index": 18,
+      "template": "",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "CONTINUE"
+    },{
+      "index": 19,
+      "template": "",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "CONTINUE"
+    },{
+      "index": 20,
+      "template": "",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "CONTINUE"
+    },{
+      "index": 21,
+      "template": "",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "CONTINUE"
+    },{
+      "index": 22,
+      "template": "",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "CONTINUE"
+    },{
+      "index": 23,
+      "template": "",
+      "currentState": "What is Smart Citizen",
+      "segueButton": "CONTINUE"
+    }
+  ]
+}
