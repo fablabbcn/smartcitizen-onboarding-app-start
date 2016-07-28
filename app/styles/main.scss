@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Rubik:400,300,500);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
 $font:    Rubik, sans-serif;
+
 
 @import "colors";
 
@@ -27,7 +29,41 @@ body {
     text-transform: capitalize;
   }
 
+  .container{
 
+    .selectionRow{
+      padding: 25px;
+      .selection{
+        height: 400px;
+        padding: 10px;
+        .sectionContent{
+          background-color: $mkOpaqueGrey;
+          border-radius: 25px;
+          border: 0 solid;
+          height: 100%;
+
+          .selectionIcon{
+            height:60%;
+          }
+
+        }
+
+      }
+    }
+
+    .segueButton{
+      text-transform: uppercase;
+      background: $mkBlack;
+      border-radius: 40px;
+      border: 0 solid;
+      color: white;
+
+      height: 80px;
+      width: auto;
+      padding: 5px 35px 5px 15px;
+    }
+
+  }
   .currentState{
     font-weight: 500;
     font-size: 14px;
