@@ -1,13 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Rubik:400,300,500);
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css);
 $font:    Rubik, sans-serif;
-
 
 @import "colors";
 
+html, body { height: 100%; width: 100%; margin: 0; }
 body {
   font: 100% $font;
-  width: 100%;
+
   h1, h2, h3, h4 {
     text-align: center;
   }
@@ -15,6 +14,11 @@ body {
   h1{
     font-weight: 400;
     font-size: 72px;
+    color: $mkBlack;
+  }
+  h2{
+    font-weight: 400;
+    font-size: 41px;
     color: $mkBlack;
   }
   h4{
@@ -29,45 +33,76 @@ body {
     text-transform: capitalize;
   }
 
+
+
   .container{
 
-    .selectionRow{
-      padding: 25px;
-      .selection{
-        height: 400px;
-        padding: 10px;
-        .sectionContent{
-          background-color: $mkOpaqueGrey;
-          border-radius: 25px;
-          border: 0 solid;
-          height: 100%;
+    #progress{
+      min-height: 150px;
+      background-color: $mkOrange;
 
-          .selectionIcon{
-            height:60%;
-          }
-
-        }
-
+      .currentState{
+        font-weight: 500;
+        font-size: 14px;
+        color: white;
+        text-transform: capitalize;
       }
     }
 
+    #wizardView {
+      min-height: 70%;
+      height: 70%;
+      .selectionRow {
+        padding: 25px;
+        .selection {
+          height: 400px;
+          padding: 10px;
+          .sectionContent {
+            background-color: $mkOpaqueGrey;
+            border-radius: 25px;
+            border: 0 solid;
+            height: 100%;
+            .selectionIcon {
+              height: 60%;
+              font-size: 132px;
+            }
+          }
+        }
+      }
+
+      .kitImage {
+        width: 100%;
+      }
+
+      .contextButton{
+        height: 60px;
+        width: auto;
+        margin: 15px auto;
+        padding: 5px;
+
+        text-transform: uppercase;
+        background: none;
+        border-radius: 40px;
+        border: 5px solid $mkGrey;
+        color: $mkGrey;
+        font-size: 24px;
+      }
+
+    }
+
     .segueButton{
+      height: 80px;
+      width: auto;
+      padding: 5px 35px 5px 15px;
+      margin: 15px auto;
+
       text-transform: uppercase;
       background: $mkBlack;
       border-radius: 40px;
       border: 0 solid;
       color: white;
-
-      height: 80px;
-      width: auto;
-      padding: 5px 35px 5px 15px;
     }
 
   }
-  .currentState{
-    font-weight: 500;
-    font-size: 14px;
-    color: white;
-    text-transform: capitalize;
-  }
+
 }

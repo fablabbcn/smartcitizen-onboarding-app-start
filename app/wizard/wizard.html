@@ -1,19 +1,22 @@
 <!--<canvas></canvas>-->
 
-<div class="progress">
-    <div class="progressDot complete"></div>
-    <div class="progressDot incomplete"></div>
-    <div class="progressDot current"></div>
-    <div class="progressDot intermittent complete"></div>
-    <div class="progressDot intermittent incomplete"></div>
+<div id="progress" class="row">
 
 
-    <div class="progressLine complete"></div>
-    <div class="progressLine incomplete"></div>
-    <div class="progressLine intermittent complete"></div>
-    <div class="progressLine intermittent incomplete"></div>
 
-    <div class="currentState"></div>
+    <!--<div class="progressDot complete"></div>-->
+    <!--<div class="progressDot incomplete"></div>-->
+    <!--<div class="progressDot current"></div>-->
+    <!--<div class="progressDot intermittent complete"></div>-->
+    <!--<div class="progressDot intermittent incomplete"></div>-->
+
+
+    <!--<div class="progressLine complete"></div>-->
+    <!--<div class="progressLine incomplete"></div>-->
+    <!--<div class="progressLine intermittent complete"></div>-->
+    <!--<div class="progressLine intermittent incomplete"></div>-->
+
+    <!--<div class="currentState"></div>-->
 </div>
 
 <div id="wizardView" ui-view></div>
@@ -21,6 +24,5 @@
 <div class="segueWrapper ">
     <button class="segueButton center-block" ng-click="seque()">{{ segueButton }}</button>
 </div>
-
 
 <!--<a ui-sref-active="active" ui-sref=".profile"><span>1</span> Profile</a>-->
