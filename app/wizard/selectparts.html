@@ -1,39 +1,38 @@
 <h2>{{h2}}</h2>
 
-<div class="selectionRow row">
-    <div class="selection inactive col-xs-12 col-sm-6 col-md-3">
+<div class="selectionRow" layout="row" layout-padding layout-margin >
+    <button class="selection" flex="25">
         <div class="sectionContent">
-            <div class="selectionIcon text-center">
+            <div class="selectionIcon">
                 <i class="material-icons">desktop_mac</i></div>
-            <div class="selectionText text-center">Sensor</div>
+            <h5 class="selectionText">Sensor</h5>
         </div>
-    </div>
-    <div class="selection inactive col-xs-12 col-sm-6 col-md-3">
+    </button>
+    <button class="selection" flex="25">
         <div class="sectionContent">
-            <div class="selectionIcon text-center">
+            <div class="selectionIcon">
                 <i class="material-icons">desktop_mac</i></div>
-            <div class="selectionText text-center">Battery</div>
+            <h5 class="selectionText">Battery</h5>
         </div>
-    </div>
-    <div class="selection inactive col-xs-12 col-sm-6 col-md-3">
+    </button>
+    <button class="selection" flex="25">
         <div class="sectionContent">
-            <div class="selectionIcon text-center">
+            <div class="selectionIcon">
                 <i class="material-icons">desktop_mac</i></div>
-            <div class="selectionText text-center">Cable</div>
+            <h5 class="selectionText">Cable</h5>
         </div>
-    </div>
-    <div class="selection inactive col-xs-12 col-sm-6 col-md-3">
+    </button>
+    <button class="selection" flex="25">
         <div class="sectionContent">
-            <div class="selectionIcon text-center">
+            <div class="selectionIcon">
                 <i class="material-icons">desktop_mac</i></div>
-            <div class="selectionText text-center">Addon-on #1</div>
+            <h5 class="selectionText">Addon-on #1</h5>
         </div>
-    </div>
+    </button>
 </div>
 
-    <div class="contextWrapper text-center">
-        <button class="contextButton center-block" ng-click="context">{{ contextButton }}</button>
+    <div class="contextWrapper"layout="center">
+        <button class="contextButton" ng-click="context">{{ contextButton }}</button>
     </div>
-
 
 

@@ -1,9 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Rubik:400,300,500);
 $font:    Rubik, sans-serif;
+$divRadius: 25px;
 
 @import "colors";
+@import "progress";
+@import "tooltip";
 
-html, body { height: 100%; width: 100%; margin: 0; }
+
+html, body { height: 100%; width: 100%; margin: 0; padding: 0; }
 body {
   font: 100% $font;
 
@@ -21,10 +25,15 @@ body {
     font-size: 41px;
     color: $mkBlack;
   }
-  h4{
+  h4, p{
     font-weight: 400;
     font-size: 41px;
     color: $mkGrey;
+  }
+  h5{
+    font-weight: 400;
+    font-size: 24px;
+    color: $mkBlack;
   }
   button{
     font-weight: 500;
@@ -50,22 +59,48 @@ body {
     }
 
     #wizardView {
-      min-height: 70%;
-      height: 70%;
+      max-width: 960px;
+
+      .companyLogo{
+        margin: 15px;
+        max-height: 250px;
+      }
+
+      .buildImage{
+        min-width: 320px;
+        max-width: 500px;
+      }
+
       .selectionRow {
-        padding: 25px;
         .selection {
           height: 400px;
-          padding: 10px;
+          background-color: $mkOpaqueGrey;
+          border-radius: $divRadius;
+          border: 0 solid;
           .sectionContent {
-            background-color: $mkOpaqueGrey;
-            border-radius: 25px;
-            border: 0 solid;
-            height: 100%;
             .selectionIcon {
               height: 60%;
               font-size: 132px;
             }
+            .selectionText{
+
+            }
+          }
+          &:hover, &:active {
+            background-color: $mkGrey;
+          }
+        }
+      }
+
+
+      form{
+        .inputContainer{
+
+          input {
+            height: 80px;
+            border: 3px solid $mkOpaqueGrey;
+            padding: 30px;
+            font-size: 41px;
           }
         }
       }
@@ -87,15 +122,13 @@ body {
         color: $mkGrey;
         font-size: 24px;
       }
-
     }
 
     .segueButton{
       height: 80px;
       width: auto;
-      padding: 5px 35px 5px 15px;
+      padding: 5px 15px;
       margin: 15px auto;
-
       text-transform: uppercase;
       background: $mkBlack;
       border-radius: 40px;

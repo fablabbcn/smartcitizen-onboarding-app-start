@@ -27,5 +27,5 @@ gulp.task('devCSS', function () {
        .pipe(gulp.dest('app/styles'));
 });
 gulp.task('buildStyles', function(){
-   runSequence('sass', 'devCSS');
+   runSequence('sass');
 });

@@ -1,8 +1,19 @@
 <!--<canvas></canvas>-->
 
-<div id="progress" class="row">
+<div id="progress" layout="row" layout-align="center center">
 
 
+    <div class="dotstyle dotstyle-dotstroke">
+        <h2>Tooltip</h2>
+        <ul>
+            <li class="current"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
 
     <!--<div class="progressDot complete"></div>-->
     <!--<div class="progressDot incomplete"></div>-->
@@ -21,8 +32,8 @@
 
 <div id="wizardView" ui-view></div>
 
-<div class="segueWrapper ">
-    <button class="segueButton center-block" ng-click="seque()">{{ segueButton }}</button>
+<div class="segueWrapper" layout="center">
+    <button class="segueButton" ng-click="seque()">{{ segueButton }} <i class="material-icons">play_arrow</i><br></button>
 </div>
 
 <!--<a ui-sref-active="active" ui-sref=".profile"><span>1</span> Profile</a>-->

@@ -3,8 +3,9 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
     'ui.router',
-    'ngAnimate',
-])
+    'ngMaterial',
+    'ngMessages',
+    'ngAnimate'])
     .config(function($stateProvider, $urlRouterProvider) {
 
         $stateProvider
@@ -39,9 +40,17 @@ angular.module('myApp', [
             url: '/selectparts',
             templateUrl: 'wizard/selectparts.html'
         })
-        .state('wizard.kitbuilt', {
-            url: '/kitbuilt',
-            templateUrl: 'wizard/kitbuilt.html'
+        .state('wizard.kitbuild1', {
+            url: '/kitbuild1',
+            templateUrl: 'wizard/kitbuild1.html'
+        })
+        .state('wizard.kitbuild2', {
+            url: '/kitbuild2',
+            templateUrl: 'wizard/kitbuild2.html'
+        })
+        .state('wizard.kitbuild3', {
+            url: '/kitbuild3',
+            templateUrl: 'wizard/kitbuild3.html'
         })
         .state('wizard.pair1', {
             url: '/pair1',
@@ -50,6 +59,9 @@ angular.module('myApp', [
         .state('wizard.pair2', {
             url: '/pair2',
             templateUrl: 'wizard/pair2.html'
+        }).state('wizard.sensorName', {
+            url: '/sensorName',
+            templateUrl: 'wizard/sensorName.html'
         });
 
         $urlRouterProvider.otherwise('/wizard/landing');
@@ -64,7 +76,7 @@ angular.module('myApp', [
             alert('awesome!');
         };
     })
-    .controller('wizardCtrl', function($scope, $location){
+    .controller('wizardCtrl', function($scope, $location, $sce){
         /** Constants **/
         var pageContent = [
             {
@@ -93,7 +105,7 @@ angular.module('myApp', [
             {
                 "index": 3,
                 "template": "collaborators",
-                "companyLogo": "MS_BWPOS_G_LRG.png",
+                "companyLogo": "smart_citizen.png",
                 "h1": "Smart Citizen is a movement for civic participation in a modern world",
                 "h4": "Smart Citizen creates open tools for citizens to be better informed about the world around them.",
                 "currentState": "What is Smart Citizen",
@@ -123,24 +135,63 @@ angular.module('myApp', [
             },
             {
                 "index": 7,
-                "template": "kitbuilt",
+                "template": "kitbuild1",
                 "currentState": "Put it together",
                 "h2": "Let's put this all together",
-                "h4": "Connect the sensor board to the hardware board.",
+                "text": "Connect the [] to the [].",
+                "tooltip": [
+                    {
+                        "trigger": "sensor board",
+                        "title": "Sensor Board",
+                        "body": "Bacon ipsum dolor amet bresaola chicken drumstick swine. Turducken chuck pastrami.",
+                        "bodyImage": "",
+                        "linkText": "Need help"
+                    },{
+                        "trigger": "hardware board",
+                        "title": "Hardware board",
+                        "body": "Bacon ipsum dolor amet bresaola chicken drumstick swine. Turducken chuck pastrami.",
+                        "bodyImage": "",
+                        "linkText": "Need help"
+                    }
+                ],
                 "segueButton": "Done"
             },{
                 "index": 8,
-                "template": "kitbuilt",
+                "template": "kitbuild2",
                 "currentState": "Give it juice",
                 "h2": "Let's give it some juice",
-                "h4": "Connect the battery to the hardware board.",
+                "text": "Connect [] to the [].",
+                "tooltip": [
+                    {
+                        "trigger": "battery cable",
+                        "title": "Battery Cable",
+                        "body": "Bacon ipsum dolor amet bresaola chicken drumstick swine. Turducken chuck pastrami.",
+                        "bodyImage": "",
+                        "linkText": "Need help"
+                    },{
+                        "trigger": "hardware board",
+                        "title": "Hardware board",
+                        "body": "Bacon ipsum dolor amet bresaola chicken drumstick swine. Turducken chuck pastrami.",
+                        "bodyImage": "",
+                        "linkText": "Need help"
+                    }
+                ],
                 "segueButton": "Done"
             },{
                 "index": 9,
-                "template": "kitbuilt",
+                "template": "kitbuild3",
                 "currentState": "Press Button",
                 "h2": "Turn the sensor on",
-                "h4": "Push the button on the hardware sensor, once.",
+                "text": "Push the button on the [], once.",
+                "tooltip": [
+                    {
+                        "trigger": "hardware board",
+                        "title": "Hardware board",
+                        "body": "Bacon ipsum dolor amet bresaola chicken drumstick swine. Turducken chuck pastrami.",
+                        "bodyImage": "",
+                        "linkText": "Need help"
+                    }
+                ],
                 "segueButton": "It's alive"
             },{
                 "index": 10,
@@ -171,10 +222,18 @@ angular.module('myApp', [
                 "h4": "Now just go to your wi-fi menu and connect back to your wi-fi network to continue the setup.",
                 "currentState": "pair the sensor",
                 "segueButton": "its alive"
+            },{
+                "index": 14,
+                "template": "sensorName",
+                "h1": "Lets give your sensor a name",
+                "h4": "This is so we can refer to it later",
+                "currentState": "your sensor",
+                "contextButton": "generate a random name",
+                "segueButton": "done"
             }];
 
         //change the end of this line to start on different pages
-        var index = typeof index !== 'undefined' ? index : 0;
+        var index = typeof index !== 'undefined' ? index : 9;
 
         function bindContent(index){
             var content = pageContent[index];
@@ -182,6 +241,28 @@ angular.module('myApp', [
             $scope.h2 = content.h2;
             $scope.h3 = content.h3;
             $scope.h4 = content.h4;
+
+
+            if (typeof content.tooltip !== 'undefined') {
+                console.log(content.tooltip);
+                var plain = content.text.split('[]');
+                var text = "<p>";
+                for (var i = 0; i < content.tooltip.length; i++) {
+                    text += plain[i];
+                    text += "<span class='tooltip tooltip-effect-1'>" +
+                        "<span class='tooltip-item'>" + content.tooltip[i].trigger + "</span>" +
+                        "<span class='tooltip-content clearfix'><img src='images/"+ content.tooltip[i].bodyImage+"'>"+
+                        "<span class='tooltip-text'><strong>"+ content.tooltip[i].title +": </strong>" +
+                        content.tooltip[i].body + " <a href='#'>"+ content.tooltip[i].linkText +"</a></span></span></span>"
+                }
+                text += plain[content.tooltip.length] + "<p>";
+                console.log(text);
+                $scope.buildInstructions = $sce.trustAsHtml(text);
+            }
+
+
+            $scope.buildInstructions = content.buildInstructions;
+
 
             $scope.currentState = content.currentState;
             $scope.segueButton = content.segueButton;
@@ -199,6 +280,7 @@ angular.module('myApp', [
         };
         bindContent(index);
         console.log('controllerLoaded');
+
 
 
         /** Functions below **/
