@@ -15,6 +15,8 @@
     "bootstrap-sass": "bootstrap-sass-official#^3.3.7",
     "font-awesome": "fontawesome#^4.6.3",
     "angular-material": "^1.0.9",
-    "angular-messages": "^1.5.8"
+    "angular-messages": "^1.5.8",
+    "ngGeolocation": "^0.0.8",
+    "angular-google-maps": "^2.3.3"
   }
 }

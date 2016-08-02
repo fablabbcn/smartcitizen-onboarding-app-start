@@ -5,7 +5,8 @@ angular.module('myApp', [
     'ui.router',
     'ngMaterial',
     'ngMessages',
-    'ngAnimate'])
+    'ngAnimate',
+    'ngGeolocation'])
     .config(function($stateProvider, $urlRouterProvider) {
 
         $stateProvider
@@ -233,7 +234,7 @@ angular.module('myApp', [
             }];
 
         //change the end of this line to start on different pages
-        var index = typeof index !== 'undefined' ? index : 9;
+        var index = typeof index !== 'undefined' ? index : 1;
 
         function bindContent(index){
             var content = pageContent[index];
