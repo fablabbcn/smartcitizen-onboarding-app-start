@@ -1,2 +1,34 @@
 <h1>{{h1}}</h1>
-//dropdown
+<div class="wrapper-dropdown">
+    <span>SELECT YOUR WI-FI NETWORK <i class="material-icons">play_arrow</i></span>
+
+    <!--<ul class="dropdown">-->
+        <!--<li ng-repeat="network in networks">-->
+            <!--{{ network }}-->
+            <!--<i ng-if="network.secure == true" class="material-icons">lock</i>-->
+            <!--<i class="material-icons">wifi</i>-->
+        <!--</li>-->
+    <!--</ul>-->
+</div>
+
+
+<select id="cd-dropdown" class="cd-select">
+    <option value="-1" selected>Select a browser</option>
+    <option value="1" class="icon-chrome">Chrome</option>
+    <option value="2" class="icon-safari">Safari</option>
+    <option value="3" class="icon-IE">Internet Explorer</option>
+    <option value="4" class="icon-firefox">Firefox</option>
+    <option value="5" class="icon-opera">Opera</option>
+</select>
+
+<script type="text/javascript">
+
+//    $( function() {
+//        $( '#cd-dropdown' ).dropdown( {
+//            gutter : 5,
+//            stack : false,
+//            slidingIn : 100
+//        } );
+//    });
+
+</script>

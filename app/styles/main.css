@@ -622,6 +622,18 @@
 .tooltip-text a {
   font-weight: bold; }
 
+.wrapper-dropdown {
+  text-align: center;
+  height: 80px;
+  cursor: pointer; }
+  .wrapper-dropdown span {
+    border: 3px solid rgba(189, 195, 199, 0.3);
+    padding: 30px;
+    font-size: 41px; }
+
+.angular-google-map-container {
+  height: 400px; }
+
 html, body {
   height: 100%;
   width: 100%;
@@ -630,7 +642,7 @@ html, body {
 
 body {
   font: 100% Rubik, sans-serif; }
-  body h1, body h2, body h3, body h4 {
+  body h1, body h2, body h3, body h4, body h6 {
     text-align: center; }
   body h1 {
     font-weight: 400;
@@ -648,6 +660,10 @@ body {
     font-weight: 400;
     font-size: 24px;
     color: #414042; }
+  body h6 {
+    font-weight: 400;
+    font-size: 28px;
+    color: #BDC3C7; }
   body button {
     font-weight: 500;
     font-size: 40px;

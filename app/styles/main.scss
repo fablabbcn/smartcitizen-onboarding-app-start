@@ -5,13 +5,16 @@ $divRadius: 25px;
 @import "colors";
 @import "progress";
 @import "tooltip";
+@import "dropdown";
+
+.angular-google-map-container { height: 400px; }
 
 
 html, body { height: 100%; width: 100%; margin: 0; padding: 0; }
 body {
   font: 100% $font;
 
-  h1, h2, h3, h4 {
+  h1, h2, h3, h4, h6 {
     text-align: center;
   }
 
@@ -34,6 +37,11 @@ body {
     font-weight: 400;
     font-size: 24px;
     color: $mkBlack;
+  }
+  h6{
+    font-weight: 400;
+    font-size: 28px;
+    color: $mkGrey;
   }
   button{
     font-weight: 500;

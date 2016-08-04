@@ -6,7 +6,8 @@ angular.module('myApp', [
     'ngMaterial',
     'ngMessages',
     'ngAnimate',
-    'ngGeolocation'])
+    'ngGeolocation',
+    'uiGmapgoogle-maps'])
     .config(function($stateProvider, $urlRouterProvider) {
 
         $stateProvider
@@ -63,9 +64,28 @@ angular.module('myApp', [
         }).state('wizard.sensorName', {
             url: '/sensorName',
             templateUrl: 'wizard/sensorName.html'
+        })
+        .state('wizard.location1', {
+            url: '/location1',
+            templateUrl: 'wizard/location1.html',
+            controller: 'locationController'
+        })
+        .state('wizard.location2', {
+            url: '/location2',
+            templateUrl: 'wizard/location2.html',
+        }).state('wizard.location3', {
+            url: '/location3',
+            templateUrl: 'wizard/location3.html',
         });
 
         $urlRouterProvider.otherwise('/wizard/landing');
+    })
+    .config(function(uiGmapGoogleMapApiProvider) {
+        uiGmapGoogleMapApiProvider.configure({
+            key: 'AIzaSyDgSvUrtmsNLkoaK1mYlyU3eVbByMlE4w4',
+            v: '3.20',
+            libraries: 'weather,geometry,visualization'
+        });
     })
     .controller('formController', function($scope) {
 
@@ -231,10 +251,32 @@ angular.module('myApp', [
                 "currentState": "your sensor",
                 "contextButton": "generate a random name",
                 "segueButton": "done"
+            },{
+                "index": 15,
+                "template": "location1",
+                "h1": "Well need to know your location to add it to the global Smart Citizen map",
+                "h4": "Press ‘Allow’ on the pop up to automatically let us know where to pin the sensor",
+                "h6":"You can click 'Block' on the popup and set your location manually on the next step",
+                "currentState": "location",
+                "segueButton": "done"
+            },{
+                "index": 16,
+                "template": "location2",
+                "h1": "Select which best fits your sensor's home",
+                "h4": "This will help us better understand the data you are sensing",
+                "currentState": "location",
+                "segueButton": "done"
+            },{
+                "index": 17,
+                "template": "location3",
+                "h1": "Awesome now lets pinpoint your kit's location",
+                "h4": "Drag and drop the pin to your sensors current location",
+                "currentState": "location",
+                "segueButton": "done"
             }];
 
         //change the end of this line to start on different pages
-        var index = typeof index !== 'undefined' ? index : 1;
+        var index = typeof index !== 'undefined' ? index : 15;
 
         function bindContent(index){
             var content = pageContent[index];
@@ -242,6 +284,7 @@ angular.module('myApp', [
             $scope.h2 = content.h2;
             $scope.h3 = content.h3;
             $scope.h4 = content.h4;
+            $scope.h6 = content.h6;
 
 
             if (typeof content.tooltip !== 'undefined') {
@@ -276,12 +319,28 @@ angular.module('myApp', [
             //sanity and comparative check
             $scope.index = index;
             $scope.template = content.template;
-            console.log('binded');
 
+            $scope.pos;
+            console.log($scope.pos);
+
+            if (typeof $scope.pos !== 'undefined') {
+                $scope.map = {
+                    center: {latitude: $scope.pos.coords.latitude, longitude: $scope.pos.coords.longitude},
+                    zoom: 16,
+
+                    markersEvents: {
+                        dragend: function (mapModel, eventName, marker, orignalEventArgs) {
+                            console.log(marker.coords);
+                            //console.log(originalEventArgs[0].latLng);
+                        }
+                    }
+                };
+                $scope.markerLocation = { latitude: $scope.pos.coords.latitude, longitude: $scope.pos.coords.longitude };
+            }
         };
+
         bindContent(index);
         console.log('controllerLoaded');
-
 
 
         /** Functions below **/
@@ -298,5 +357,24 @@ angular.module('myApp', [
         };
 
 
+    })
+    .controller('locationController', function($scope, uiGmapGoogleMapApi, $geolocation){
 
+        $geolocation.getCurrentPosition({
+            timeout: 10000
+        }).then(function(position) {
+            if (typeof position.error !== 'undefined') {
+                console.log(position.error); // ERROR HAPPENED
+            } else {
+                $scope.pos = position;
+                //console.log($scope.$parent.index);
+                //console.log($scope.pos);
+
+                $scope.$parent.pos = $scope.pos;
+                //console.log($scope.$parent.pos);
+            }
+        });
+        uiGmapGoogleMapApi.then(function(maps) {
+            console.log('maps loaded');
+        });
     });

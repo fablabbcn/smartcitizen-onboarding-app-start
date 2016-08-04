@@ -17,6 +17,8 @@
     "angular-material": "^1.0.9",
     "angular-messages": "^1.5.8",
     "ngGeolocation": "^0.0.8",
-    "angular-google-maps": "^2.3.3"
+    "angular-google-maps": "^2.3.3",
+    "ngmap": "^1.17.3",
+    "angularjs-geolocation": "^0.1.1"
   }
 }
