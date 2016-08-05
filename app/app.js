@@ -97,7 +97,7 @@ angular.module('myApp', [
             alert('awesome!');
         };
     })
-    .controller('wizardCtrl', function($scope, $location, $sce){
+    .controller('wizardCtrl', function($scope, $location, $sce, $window){
         /** Constants **/
         var pageContent = [
             {
@@ -276,10 +276,13 @@ angular.module('myApp', [
             }];
 
         //change the end of this line to start on different pages
-        var index = typeof index !== 'undefined' ? index : 15;
+        var index = typeof index !== 'undefined' ? index : 0;
 
         function bindContent(index){
             var content = pageContent[index];
+
+            $scope.progressVal = ((index + 1) / pageContent.length) * 100;
+
             $scope.h1 = content.h1;
             $scope.h2 = content.h2;
             $scope.h3 = content.h3;
@@ -353,6 +356,7 @@ angular.module('myApp', [
                 $location.path('/wizard/' + nextTemplate);
                 //alert('/wizard/' + nextTemplate);
             }
+            $window.scrollTo(0, 0);
             bindContent(index);
         };
 

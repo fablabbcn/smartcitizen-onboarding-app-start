@@ -1,38 +1,12 @@
 <!--<canvas></canvas>-->
 
-<div id="progress" layout="row" layout-align="center center">
-
-
-    <div class="dotstyle dotstyle-dotstroke">
-        <h2>Tooltip</h2>
-        <ul>
-            <li class="current"><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </div>
-
-    <!--<div class="progressDot complete"></div>-->
-    <!--<div class="progressDot incomplete"></div>-->
-    <!--<div class="progressDot current"></div>-->
-    <!--<div class="progressDot intermittent complete"></div>-->
-    <!--<div class="progressDot intermittent incomplete"></div>-->
-
-
-    <!--<div class="progressLine complete"></div>-->
-    <!--<div class="progressLine incomplete"></div>-->
-    <!--<div class="progressLine intermittent complete"></div>-->
-    <!--<div class="progressLine intermittent incomplete"></div>-->
-
-    <!--<div class="currentState"></div>-->
+<div id="progress" layout="row" layout-align="center center" flex="none">
+    <md-progress-linear md-diameter="100" md-mode="determinate" bar-height="50px" value="{{progressVal}}"></md-progress-linear>
 </div>
 
-<div id="wizardView" ui-view></div>
+<div id="wizardView" layout="column" layout-align="center none" ui-view flex="grow"></div>
 
-<div class="segueWrapper" layout="center">
+<div class="segueWrapper" layout="row" layout-align="center center" flex="none">
     <button class="segueButton" ng-click="seque()">{{ segueButton }} <i class="material-icons">play_arrow</i><br></button>
 </div>
 
