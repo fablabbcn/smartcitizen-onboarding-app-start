@@ -10,8 +10,7 @@ $segueWrapperHeight: 160px;
 @import "colors";
 @import "progress";
 @import "tooltip";
-@import "dropdown";
-
+@import "form";
 
 html, body { margin: 0; padding: 0; }
 canvas {vertical-align: top; z-index: 0}
@@ -82,12 +81,22 @@ body {
           background-color: $mkOpaqueGrey;
           border-radius: $divRadius;
           border: 0 solid;
-          .checkHolder{
-            .check {
-              height: 30px;
-            }
-          }
+
           .sectionContent {
+            .checkHolder {
+              .check {
+                height: 30px;
+                padding-right: 33px;
+
+                -webkit-transform-origin: 50% 100%;
+                transform-origin: 50% 100%;
+                -webkit-transform: scale3d(0.7, 0.3, 1);
+                transform: scale3d(0.7, 0.3, 1);
+                -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+                transition: opacity 0.2s, transform 0.2s;
+                visibility: hidden;
+              }
+            }
             .selectionIcon {
               height: 60%;
               font-size: 132px;
@@ -96,21 +105,15 @@ body {
 
             }
           }
-          &:hover, &:active {
+          &:hover, &:active, &.active {
             background-color: $mkGrey;
-          }
-        }
-      }
-
-      form {
-        .inputContainer {
-
-          input {
-            height: 80px;
-            border: 3px solid $mkOpaqueGrey;
-            padding: 30px;
-            font-size: 41px;
-            color: $mkWhite;
+            .checkHolder{
+              .check{
+                visibility: visible;
+                -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+                transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+              }
+            }
           }
         }
       }

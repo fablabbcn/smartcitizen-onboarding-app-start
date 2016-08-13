@@ -1,0 +1,43 @@
+ .inputContainer {
+
+    md-input-container {
+      height: 80px;
+
+      .selectMenu{
+        height: 80px !important;
+
+        .md-select-value {
+          border: 3px solid $mkOpaqueGrey;
+          padding: 35px;
+          span {
+            color: $mkWhite;
+            font-size: 48px;
+          }
+        }
+      }
+
+    }
+
+   .md-block{
+     border: 3px solid $mkOpaqueGrey;
+   }
+
+    input {
+      height: 80px;
+      border: none;
+      font-size: 41px;
+      color: $mkWhite;
+    }
+  }
+
+
+.selection{
+  background-color: $mkNavy;
+  .md-text.ng-binding {
+    font-size: 42px;
+    color: $mkGrey;
+  }
+}
+md-content {
+  background-color: $mkNavy;
+}

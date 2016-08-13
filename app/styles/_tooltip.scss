@@ -42,7 +42,7 @@
   text-align: left;
   font-size: 0.765em;
   line-height: 1.4;
-  background: $mkNavy;
+  background: $mkOrange;
   opacity: 0;
   cursor: default;
   pointer-events: none;
@@ -119,7 +119,7 @@
     position: absolute;
     pointer-events: none;
     border-color: transparent;
-    border-top-color: #2a3035;
+    border-top-color: $mkOrange;
     border-width: 10px;
     margin-left: -10px;
   }

@@ -45,7 +45,7 @@
   text-align: left;
   font-size: 0.765em;
   line-height: 1.4;
-  background: #39424C;
+  background: #FBA200;
   opacity: 0;
   cursor: default;
   pointer-events: none; }
@@ -111,7 +111,7 @@
   position: absolute;
   pointer-events: none;
   border-color: transparent;
-  border-top-color: #2a3035;
+  border-top-color: #FBA200;
   border-width: 10px;
   margin-left: -10px; }
 
@@ -136,14 +136,34 @@
 .tooltip-text a {
   font-weight: bold; }
 
-.wrapper-dropdown {
-  text-align: center;
+.inputContainer md-input-container {
+  height: 80px; }
+  .inputContainer md-input-container .selectMenu {
+    height: 80px !important; }
+    .inputContainer md-input-container .selectMenu .md-select-value {
+      border: 3px solid rgba(189, 195, 199, 0.3);
+      padding: 35px; }
+      .inputContainer md-input-container .selectMenu .md-select-value span {
+        color: #ffffff;
+        font-size: 48px; }
+
+.inputContainer .md-block {
+  border: 3px solid rgba(189, 195, 199, 0.3); }
+
+.inputContainer input {
   height: 80px;
-  cursor: pointer; }
-  .wrapper-dropdown span {
-    border: 3px solid rgba(189, 195, 199, 0.3);
-    padding: 30px;
-    font-size: 41px; }
+  border: none;
+  font-size: 41px;
+  color: #ffffff; }
+
+.selection {
+  background-color: #39424C; }
+  .selection .md-text.ng-binding {
+    font-size: 42px;
+    color: #BDC3C7; }
+
+md-content {
+  background-color: #39424C; }
 
 html, body {
   margin: 0;
@@ -200,19 +220,25 @@ body {
       background-color: rgba(189, 195, 199, 0.3);
       border-radius: 25px;
       border: 0 solid; }
-      body #container #wizardView .selectionRow .selection .checkHolder .check {
-        height: 30px; }
+      body #container #wizardView .selectionRow .selection .sectionContent .checkHolder .check {
+        height: 30px;
+        padding-right: 33px;
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%;
+        -webkit-transform: scale3d(0.7, 0.3, 1);
+        transform: scale3d(0.7, 0.3, 1);
+        -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+        transition: opacity 0.2s, transform 0.2s;
+        visibility: hidden; }
       body #container #wizardView .selectionRow .selection .sectionContent .selectionIcon {
         height: 60%;
         font-size: 132px; }
-      body #container #wizardView .selectionRow .selection:hover, body #container #wizardView .selectionRow .selection:active {
+      body #container #wizardView .selectionRow .selection:hover, body #container #wizardView .selectionRow .selection:active, body #container #wizardView .selectionRow .selection.active {
         background-color: #BDC3C7; }
-    body #container #wizardView form .inputContainer input {
-      height: 80px;
-      border: 3px solid rgba(189, 195, 199, 0.3);
-      padding: 30px;
-      font-size: 41px;
-      color: #ffffff; }
+        body #container #wizardView .selectionRow .selection:hover .checkHolder .check, body #container #wizardView .selectionRow .selection:active .checkHolder .check, body #container #wizardView .selectionRow .selection.active .checkHolder .check {
+          visibility: visible;
+          -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+          transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0); }
     body #container #wizardView .angular-google-map-container {
       height: 400px; }
     body #container #wizardView .kitImage {

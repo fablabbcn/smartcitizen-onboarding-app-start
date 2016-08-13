@@ -2,22 +2,31 @@
 <h4>{{h4}}</h4>
 
 <div class="selectionRow" layout="row" layout-padding layout-margin>
-    <button class="selection" flex="33">
+    <button class="selection" flex="33" ng-click="selectDevice(0)" ng-class="selectionButtons[0]">
         <div class="sectionContent">
+            <div class="checkHolder" layout="row" layout-align="end start">
+                <img class="check" ng-src="images/check.png" layout="center">
+            </div>
             <div class="selectionIcon">
                 <i class="material-icons">desktop_mac</i></div>
             <h5 class="selectionText">Desktop</h5>
         </div>
     </button>
-    <button class="selection" flex="33">
+    <button class="selection" flex="33" ng-click="selectDevice(1)" ng-class="selectionButtons[1]">
         <div class="sectionContent">
+            <div class="checkHolder" layout="row" layout-align="end start">
+                <img class="check" ng-src="images/check.png" layout="center">
+            </div>
             <div class="selectionIcon">
                 <i class="material-icons">laptop</i></div>
             <h5 class="selectionText">Laptop</h5>
         </div>
     </button>
-    <button class="selection" flex="33">
+    <button class="selection" flex="33" ng-click="selectDevice(2)" ng-class="selectionButtons[2]">
         <div class="sectionContent">
+            <div class="checkHolder" layout="row" layout-align="end start">
+                <img class="check" ng-src="images/check.png" layout="center">
+            </div>
             <div class="selectionIcon">
                 <i class="material-icons">smartphone</i></div>
             <h5 class="selectionText">Mobile</h5>
