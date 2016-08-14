@@ -2,16 +2,24 @@
 <h4>{{h4}}</h4>
 
 <div class="selectionRow" layout="row" layout-padding layout-margin>
-    <button class="selection" flex="33" ng-click="selectDevice(0)" ng-class="selectionButtons[0]">
-        <div class="sectionContent">
+    <button class="selection morphBox" flex="33" ng-click="selectDevice(0); morph(0)" ng-class="[selectionButtons[0], morphControl[0]]">
+        <div class="sectionContent morphOriginal">
             <div class="checkHolder" layout="row" layout-align="end start">
-                <img class="check" ng-src="images/check.png" layout="center">
+                <img class="check" ng-src="images/wrong.png" layout="center">
             </div>
             <div class="selectionIcon">
                 <i class="material-icons">desktop_mac</i></div>
             <h5 class="selectionText">Desktop</h5>
+
         </div>
+        <!--<div class="morphContent">-->
+            <!--<div>-->
+                <!--<span>Close</span>-->
+                <!--<p> ASA </p>-->
+            <!--</div>-->
+        <!--</div>-->
     </button>
+
     <button class="selection" flex="33" ng-click="selectDevice(1)" ng-class="selectionButtons[1]">
         <div class="sectionContent">
             <div class="checkHolder" layout="row" layout-align="end start">
@@ -22,6 +30,7 @@
             <h5 class="selectionText">Laptop</h5>
         </div>
     </button>
+
     <button class="selection" flex="33" ng-click="selectDevice(2)" ng-class="selectionButtons[2]">
         <div class="sectionContent">
             <div class="checkHolder" layout="row" layout-align="end start">
@@ -33,3 +42,18 @@
         </div>
     </button>
 </div>
+
+
+<!--<div class="morph-button morph-button-modal morph-button-modal-1 morph-button-fixed">-->
+    <!--<button type="button">Terms &amp; Conditions</button>-->
+    <!--<div class="morph-content">-->
+        <!--<div>-->
+            <!--<div class="content-style-text">-->
+                <!--<span class="icon icon-close">Close the dialog</span>-->
+                <!--<h2>Terms &amp; Conditions</h2>-->
+                <!--<p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut juccama green bean celtuce collard greens avocado quandong <strong>fennel gumbo</strong> black-eyed pea. Grape silver beet watercress potato tigernut corn groundnut. Chickweed okra pea winter purslane coriander yarrow sweet pepper radish garlic brussels sprout groundnut summer purslane earthnut pea <strong>tomato spring onion</strong> azuki bean gourd.</p>-->
+                <!--<p><input id="terms" type="checkbox" /><label for="terms">I accept the terms &amp; conditions.</label></p>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>&lt;!&ndash; morph-button &ndash;&gt;-->

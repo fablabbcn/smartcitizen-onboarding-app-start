@@ -11,6 +11,7 @@ $segueWrapperHeight: 160px;
 @import "progress";
 @import "tooltip";
 @import "form";
+@import "modal";
 
 html, body { margin: 0; padding: 0; }
 canvas {vertical-align: top; z-index: 0}
@@ -148,8 +149,15 @@ body {
         text-transform: uppercase;
         background: none;
         border-radius: 40px;
-        border: 5px solid $mkGreen;
         color: white;
+
+        &.ready{
+          border: 5px solid $mkGreen;
+        }
+        &.blocked{
+          border: 5px solid $mkWhite;
+        }
+
       }
     }
   }

@@ -165,6 +165,20 @@
 md-content {
   background-color: #39424C; }
 
+.morphBox {
+  position: relative; }
+  .morphBox.closed {
+    -webkit-transition: opacity 0.1s 0.5s;
+    transition: opacity 0.1s 0.5s; }
+    .morphBox.closed .morphContent {
+      visibility: hidden; }
+  .morphBox.open {
+    -webkit-transition: opacity 0.1s;
+    transition: opacity 0.1s;
+    opacity: 1; }
+    .morphBox.open .morphContent {
+      visibility: visible; }
+
 html, body {
   margin: 0;
   padding: 0; }
@@ -263,5 +277,8 @@ body {
         text-transform: uppercase;
         background: none;
         border-radius: 40px;
-        border: 5px solid #61CD72;
         color: white; }
+        body #container .segueWrapper .segueButton.ready {
+          border: 5px solid #61CD72; }
+        body #container .segueWrapper .segueButton.blocked {
+          border: 5px solid #ffffff; }

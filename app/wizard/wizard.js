@@ -16,7 +16,8 @@ angular.module('myApp').controller('wizardCtrl', function($scope, $location, $sc
             "h1": "What device are you using to set up the sensor?",
             "h4": "We need to know this to optimise the setup",
             "currentState": "Welcome",
-            "segueButton": "Continue!"
+            "segueButton": "Continue!",
+            "warning":"You need to be on a wireless connection to proceed"
         },{
             "index": 2,
             "template": "collaborators",
@@ -210,6 +211,7 @@ angular.module('myApp').controller('wizardCtrl', function($scope, $location, $sc
             $scope.buildInstructions = $sce.trustAsHtml(text);
         }
 
+        $scope.segueControl ='ready';
 
         $scope.buildInstructions = content.buildInstructions;
 
@@ -235,6 +237,8 @@ angular.module('myApp').controller('wizardCtrl', function($scope, $location, $sc
             "insane (42-inch)"
         ];
 
+        $scope.warning = content.warning;
+
         if (typeof $scope.pos !== 'undefined') {
             $scope.map = {
                 center: {latitude: $scope.pos.coords.latitude, longitude: $scope.pos.coords.longitude},
@@ -252,27 +256,23 @@ angular.module('myApp').controller('wizardCtrl', function($scope, $location, $sc
     };
 
     bindContent(index);
-    console.log('controllerLoaded');
-
 
     /** Functions below **/
     $scope.seque = function() {
-        index++;
-        //compare templates
-        var nextTemplate = pageContent[index].template;
-        if (nextTemplate !== $scope.template) {
-            //if new is made update template
-            $location.path('/wizard/' + nextTemplate);
-            //alert('/wizard/' + nextTemplate);
+        if ($scope.segueControl == 'ready') {
+            index++;
+            //compare templates
+            var nextTemplate = pageContent[index].template;
+            if (nextTemplate !== $scope.template) {
+                //if new is made update template
+                $location.path('/wizard/' + nextTemplate);
+                //alert('/wizard/' + nextTemplate);
+            }
+            $window.scrollTo(0, 0);
+            bindContent(index);
+        } else {
+            alert('blocked');
         }
-        $window.scrollTo(0, 0);
-        bindContent(index);
     };
-
-    $scope.selectDevice = function(val){
-        $scope.selectionButtons = ['','',''];
-        $scope.selectionButtons[val] = 'active';
-    };
-
 
 });

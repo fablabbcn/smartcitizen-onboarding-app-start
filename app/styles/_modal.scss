@@ -1,0 +1,106 @@
+.morphBox {
+  position: relative;
+
+  &.closed {
+    -webkit-transition: opacity 0.1s 0.5s;
+    transition: opacity 0.1s 0.5s;
+    .morphContent {
+      visibility: hidden;
+    }
+  }
+  &.open {
+    -webkit-transition: opacity 0.1s;
+    transition: opacity 0.1s;
+    opacity: 1;
+    .morphContent {
+      visibility: visible;
+    }
+  }
+
+}
+
+//
+//
+//.morphBox {
+//  position: relative;
+//  display: block;
+//  margin: 0 auto;
+//
+//  &.open {
+//    &:before {
+//      opacity: 1;
+//      pointer-events: auto;
+//    }
+//    .morphOriginal {
+//      position: relative;
+//      opacity: 0;
+//      -webkit-transition: opacity 0.1s;
+//      transition: opacity 0.1s;
+//    }
+//    .morphContent{
+//      opacity: 1;
+//
+//      top: 50% !important;
+//      left: 50% !important;
+//      margin: -210px 0 0 -300px;
+//      width: 600px;
+//      height: 420px;
+//      -webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+//      transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+//
+//      & > div {
+//        visibility: visible;
+//        height: auto;
+//        opacity: 1;
+//        -webkit-transition: opacity 0.3s 0.5s;
+//        transition: opacity 0.3s 0.5s;
+//      }
+//    }
+//  }
+//
+//  &.closed {
+//    position: relative;
+//
+//    &:before {
+//      position: fixed;
+//      top: 0;
+//      left: 0;
+//      z-index: 800;
+//      width: 100%;
+//      height: 100%;
+//      background: rgba(0,0,0,0.5);
+//      content: '';
+//      opacity: 0;
+//      -webkit-transition: opacity 0.5s;
+//      transition: opacity 0.5s;
+//      pointer-events: none;
+//    }
+//
+//    .morphOriginal{
+//      z-index: 1000;
+//      width: 100%;
+//      height: 100%;
+//      -webkit-transition: opacity 0.1s 0.5s;
+//      transition: opacity 0.1s 0.5s;
+//    }
+//    .morphContent{
+//      position: fixed;
+//      z-index: 900;
+//      opacity: 0;
+//      -webkit-transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+//      transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+//
+//      & > div {
+//        visibility: hidden;
+//        height: 0;
+//        opacity: 0;
+//        -webkit-transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
+//        transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
+//      }
+//
+//    }
+//  }
+//
+//
+//
+//}

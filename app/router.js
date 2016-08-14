@@ -14,13 +14,22 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
             url: '/landing',            //<< find way to remove these
             templateUrl: 'wizard/landing.html'
         })
-        .state('wizard.collaborators', {
-            url: '/collaborators',
-            templateUrl: 'wizard/collaborators.html'
-        })
         .state('wizard.currentdevice', {
             url: '/currentdevice',
-            templateUrl: 'wizard/currentdevice.html'
+            templateUrl: 'wizard/currentDevice.html',
+            controller: 'stateCtlr'
+        })
+        .state('wizard.collaborators', {
+            url: '/collaborators',
+            templateUrl: 'wizard/collaborators.html',
+            //resolve: {
+            //    simpleObj:  function() {
+            //        return {value: 'simple!'};
+            //    }
+            //} https://medium.com/opinionated-angularjs/advanced-routing-and-resolves-a2fcbf874a1c#.3t94xes5q
+            // https://github.com/angular-ui/ui-router/wiki
+            // www.ng-newsletter.com/posts/angular-ui-router.html
+            // https://scotch.io/tutorials/angularjs-multi-step-form-using-ui-router
         })
         .state('wizard.basic2', {
             url: '/basic2',
@@ -32,7 +41,8 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
         })
         .state('wizard.selectparts', {
             url: '/selectparts',
-            templateUrl: 'wizard/selectparts.html'
+            templateUrl: 'wizard/selectparts.html',
+            controller: 'stateCtlr'
         })
         .state('wizard.kitbuild1', {
             url: '/kitbuild1',

@@ -7,7 +7,7 @@
 <div id="wizardView" layout="column" layout-align="center none" ui-view flex="grow"></div>
 
 <div class="segueWrapper" layout="row" layout-align="center center" flex="none">
-    <button class="segueButton" ng-click="seque()">{{ segueButton }} <i class="material-icons">play_arrow</i><br></button>
+    <button class="segueButton" ng-click="seque()" ng-class="segueControl">{{ segueButton }} <i class="material-icons">play_arrow</i><br></button>
 </div>
 
 <!--<a ui-sref-active="active" ui-sref=".profile"><span>1</span> Profile</a>-->

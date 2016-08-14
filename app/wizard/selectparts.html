@@ -1,7 +1,7 @@
 <h2>{{h2}}</h2>
 
 <div class="selectionRow" layout="row" layout-padding layout-margin >
-    <button class="selection" flex="25">
+    <button class="selection" flex="25" ng-click="selectPart(0)" ng-class="selectionButtons[0]">
         <div class="sectionContent">
             <div class="checkHolder" layout="row" layout-align="end start">
                 <img class="check" ng-src="images/check.png" layout="center">
@@ -11,7 +11,8 @@
             <h5 class="selectionText">Sensor</h5>
         </div>
     </button>
-    <button class="selection" flex="25">
+
+    <button class="selection" flex="25" ng-click="selectPart(1)" ng-class="selectionButtons[1]">
         <div class="sectionContent">
             <div class="checkHolder" layout="row" layout-align="end start">
                 <img class="check" ng-src="images/check.png" layout="center">
@@ -21,7 +22,8 @@
             <h5 class="selectionText">Battery</h5>
         </div>
     </button>
-    <button class="selection" flex="25">
+
+    <button class="selection" flex="25" ng-click="selectPart(2)" ng-class="selectionButtons[2]">
         <div class="sectionContent">
             <div class="checkHolder" layout="row" layout-align="end start">
                 <img class="check" ng-src="images/check.png" layout="center">
@@ -31,7 +33,8 @@
             <h5 class="selectionText">Cable</h5>
         </div>
     </button>
-    <button class="selection" flex="25">
+
+    <button class="selection" flex="25" ng-click="selectPart(3)" ng-class="selectionButtons[3]">
         <div class="sectionContent">
             <div class="checkHolder" layout="row" layout-align="end start">
                 <img class="check" ng-src="images/check.png" layout="center">
