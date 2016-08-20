@@ -21,6 +21,12 @@ angular.module('myApp').controller('stateCtlr', function($scope){
         $scope.selectionButtons[val] = 'active';
         prepSegue();
     };
+    $scope.selectLocation = function(val){
+        setUpSelection();
+        $scope.selectionButtons[val] = 'active';
+        prepSegue();
+    };
+
 
     $scope.selectPart = function(val){
         if ($scope.partButtons[val] == true) {

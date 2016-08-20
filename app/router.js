@@ -75,7 +75,8 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
         })
         .state('wizard.location2', {
             url: '/location2',
-            templateUrl: 'wizard/location2.html'
+            templateUrl: 'wizard/location2.html',
+            controller: 'stateCtlr'
         })
         .state('wizard.location3', {
             url: '/location3',
