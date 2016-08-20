@@ -4,11 +4,11 @@
 <form name="naming">
     <div class="inputContainer" layout="column" layout-align="center center">
         <md-input-container class="md-block">
-            <input required type="text" name="kitName" value="{{kitName}}">
+            <input autofocus ng-model="input" ng-change="listener()" required type="text" name="kitName">
         </md-input-container>
     </div>
 </form>
 
 <div class="contextWrapper" layout="center">
-    <button class="contextButton" ng-click="context"> <i class="material-icons">refresh</i> {{ contextButton }}</button>
+    <button class="contextButton" ng-click="generateName()"> <i class="material-icons">refresh</i> {{ contextButton }}</button>
 </div>

@@ -65,7 +65,8 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'wizard/pair2.html'
         }).state('wizard.sensorName', {
             url: '/sensorName',
-            templateUrl: 'wizard/sensorName.html'
+            templateUrl: 'wizard/sensorName.html',
+            controller: 'nameCtlr'
         })
         .state('wizard.location1', {
             url: '/location1',

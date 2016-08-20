@@ -180,7 +180,7 @@ angular.module('myApp').controller('wizardCtrl', function($scope, $location, $sc
         }];
 
     //change the end of this line to start on different pages
-    var index = typeof index !== 'undefined' ? index : 0;
+    var index = typeof index !== 'undefined' ? index : 14;
 
     function bindContent(index){
         var content = pageContent[index];
@@ -219,7 +219,6 @@ angular.module('myApp').controller('wizardCtrl', function($scope, $location, $sc
         $scope.segueButton = content.segueButton;
         $scope.contextButton = content.contextButton;
 
-
         $scope.companyLogo = "images/" + content.companyLogo;
         $scope.image = "images/" + content.image;
 
@@ -230,11 +229,10 @@ angular.module('myApp').controller('wizardCtrl', function($scope, $location, $sc
         $scope.pos;
         console.log($scope.pos);
 
-        $scope.sizes = [
-            "small (12-inch)",
-            "medium (14-inch)",
-            "large (16-inch)",
-            "insane (42-inch)"
+        $scope.networks = [
+            "Your Secured Network",
+            "Other Secured network",
+            "Other Unsecured Network"
         ];
 
         $scope.warning = content.warning;
@@ -254,6 +252,12 @@ angular.module('myApp').controller('wizardCtrl', function($scope, $location, $sc
             $scope.markerLocation = { latitude: $scope.pos.coords.latitude, longitude: $scope.pos.coords.longitude };
         }
     };
+
+    /** Submitted User Data **/
+    $scope.submittedData = {};
+    $scope.submittedData.kitName = '';
+
+
 
     bindContent(index);
 

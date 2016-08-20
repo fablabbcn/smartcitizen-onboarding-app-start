@@ -35,7 +35,7 @@ angular.module('myApp').controller('stateCtlr', function($scope){
         } else {
             blockSegue();
         }
-    };;
+    };
 
 
 
