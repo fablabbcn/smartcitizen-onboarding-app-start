@@ -80,7 +80,8 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
         })
         .state('wizard.location3', {
             url: '/location3',
-            templateUrl: 'wizard/location3.html'
+            templateUrl: 'wizard/location3.html',
+            controller: 'locationController'
     });
 
     $urlRouterProvider.otherwise('/wizard/landing');

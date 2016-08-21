@@ -7,7 +7,8 @@ angular.module('myApp', [
     'ngMessages',
     'ngAnimate',
     'ngGeolocation',
-    'uiGmapgoogle-maps'])
+    'uiGmapgoogle-maps',
+    'google.places'])
     .config(function(uiGmapGoogleMapApiProvider) {
         uiGmapGoogleMapApiProvider.configure({
             key: 'AIzaSyDgSvUrtmsNLkoaK1mYlyU3eVbByMlE4w4',

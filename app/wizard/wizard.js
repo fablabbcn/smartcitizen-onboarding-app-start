@@ -180,7 +180,7 @@ angular.module('myApp').controller('wizardCtrl', function($scope, $location, $sc
         }];
 
     //change the end of this line to start on different pages
-    var index = typeof index !== 'undefined' ? index : 14;
+    var index = typeof index !== 'undefined' ? index : 15;
 
     function bindContent(index){
         var content = pageContent[index];
@@ -236,21 +236,6 @@ angular.module('myApp').controller('wizardCtrl', function($scope, $location, $sc
         ];
 
         $scope.warning = content.warning;
-
-        if (typeof $scope.pos !== 'undefined') {
-            $scope.map = {
-                center: {latitude: $scope.pos.coords.latitude, longitude: $scope.pos.coords.longitude},
-                zoom: 18,
-
-                markersEvents: {
-                    dragend: function (mapModel, eventName, marker, orignalEventArgs) {
-                        console.log(marker.coords);
-                        //console.log(originalEventArgs[0].latLng);
-                    }
-                }
-            };
-            $scope.markerLocation = { latitude: $scope.pos.coords.latitude, longitude: $scope.pos.coords.longitude };
-        }
     };
 
     /** Submitted User Data **/

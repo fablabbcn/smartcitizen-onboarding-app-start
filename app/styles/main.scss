@@ -119,6 +119,16 @@ body {
         }
       }
 
+      .autoCompleteInput{
+        max-width: 700px;
+        min-width: 360px;
+        margin : 0 auto;
+        position: relative;
+        z-index: 1000;
+        top:40px;
+        border: 1px white;
+        border-radius: 5px;
+      }
       .angular-google-map-container { height: 400px; }
 
       .kitImage {

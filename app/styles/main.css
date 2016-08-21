@@ -253,6 +253,15 @@ body {
           visibility: visible;
           -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
           transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0); }
+    body #container #wizardView .autoCompleteInput {
+      max-width: 700px;
+      min-width: 360px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1000;
+      top: 40px;
+      border: 1px white;
+      border-radius: 5px; }
     body #container #wizardView .angular-google-map-container {
       height: 400px; }
     body #container #wizardView .kitImage {

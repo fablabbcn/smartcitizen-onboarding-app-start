@@ -1,6 +1,9 @@
 <h1>{{h1}}</h1>
 <h4>{{h4}}</h4>
 
+
+<input ng-if="!$parent.markerLocation.latitude" type="text" class="autoCompleteInput" g-places-autocomplete ng-change="autoCompleteListener()" ng-model="autocomplete" placeholder="Enter Your Location"/>
+
 <ui-gmap-google-map center='map.center' zoom='map.zoom'>
     <ui-gmap-marker
             idKey='1'
