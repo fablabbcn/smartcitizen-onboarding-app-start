@@ -180,7 +180,7 @@ angular.module('myApp').controller('wizardCtrl', function($scope, $location, $sc
         }];
 
     //change the end of this line to start on different pages
-    var index = typeof index !== 'undefined' ? index : 15;
+    var index = typeof index !== 'undefined' ? index : 0;
 
     function bindContent(index){
         var content = pageContent[index];
