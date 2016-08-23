@@ -219,8 +219,8 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         $scope.segueButton = content.segueButton;
         $scope.contextButton = content.contextButton;
 
-        $scope.companyLogo = "images/" + content.companyLogo;
-        $scope.image = "images/" + content.image;
+        $scope.companyLogo = "app/images/" + content.companyLogo;
+        $scope.image = "app/images/" + content.image;
 
         //sanity and comparative check
         $scope.index = index;
