@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp').controller('wizardCtrl', function($scope, $location, $sce, $window){
+angular.module('app').controller('wizardCtrl', function($scope, $location, $sce, $window){
     /** Constants **/
     var pageContent = [
         {

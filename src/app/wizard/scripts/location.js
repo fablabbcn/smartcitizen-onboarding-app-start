@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp').controller('locationController', function($scope, uiGmapGoogleMapApi, $geolocation){
+angular.module('app').controller('locationController', function($scope, uiGmapGoogleMapApi, $geolocation){
 
 
     function setMapData(center, val, zoom){

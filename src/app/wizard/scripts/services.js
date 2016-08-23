@@ -1,5 +1,5 @@
 'use strict';
 
-angular.module('myApp').factory('segueSegue', function() {
+angular.module('app').factory('segueSegue', function() {
 
 });

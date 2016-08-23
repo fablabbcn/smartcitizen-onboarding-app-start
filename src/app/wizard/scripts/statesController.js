@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp').controller('stateCtlr', function($scope){
+angular.module('app').controller('stateCtlr', function($scope){
 
     function setUpSelection(){
         blockSegue();

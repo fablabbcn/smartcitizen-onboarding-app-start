@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp').controller('nameCtlr', function($scope) {
+angular.module('app').controller('nameCtlr', function($scope) {
     var nounWordList = [];
     var adjectiveWordList = [];
 
