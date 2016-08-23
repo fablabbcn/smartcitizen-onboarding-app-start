@@ -36,7 +36,8 @@ angular.module('myApp').controller('stateCtlr', function($scope){
             $scope.partButtons[val] = true;
             $scope.selectionButtons[val] = 'active';
         }
-        if ( $scope.partButtons.every( b => b === true) ) {
+        if ( $scope.partButtons.every( function check(val){
+                return val === true; })) {
             prepSegue();
         } else {
             blockSegue();

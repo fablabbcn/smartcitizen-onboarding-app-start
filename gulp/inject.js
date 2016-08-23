@@ -10,15 +10,13 @@ var $ = require('gulp-load-plugins')();
 var wiredep = require('wiredep').stream;
 
 module.exports = function(options) {
-    gulp.task('inject', ['scripts', 'styles'], function () {
+    gulp.task('inject', ['scripts', 'styles'], function () { // -- L
         var injectStyles = gulp.src([
             options.tmp + '/serve/app/**/*.css',
             '!' + options.tmp + '/serve/app/vendor.css'
         ], { read: false });
 
-        var injectScripts = gulp.src([
-                options.src + '/app/**/*.js'
-            ])
+        var injectScripts = gulp.src([options.src + '/app/**/*.js', options.src + '/app/wizard/scripts/*.js'])
             .pipe($.angularFilesort()).on('error', options.errorHandler('AngularFilesort'));
 
         var injectOptions = {
@@ -35,28 +33,28 @@ module.exports = function(options) {
 
     });
 
-    gulp.task('inject:scktool', ['inject'], function() {
-        return gulp.src([
-                options.src + '/app/components/kit/setupModule/scktool-app.js',
-                options.src + '/app/components/kit/setupModule/scktool-connector.js'
-            ])
-            .pipe(gulp.dest(options.tmp + '/serve/scripts/'));
-    });
-
-    gulp.task('inject:dev', function() {
-
-        var injectModule = gulp.src([
-            options.src + '/app/components/kit/setupModule/scktool-app.js',
-            options.src + '/app/components/kit/setupModule/scktool-connector.js',
-        ]);
-
-        var injectOptions = {
-            ignorePath: [options.src, options.tmp + '/serve'],
-            addRootSlash: false
-        };
-
-        return gulp.src(options.src + '/*.html')
-            .pipe($.inject(injectModule, injectOptions));
-
-    });
+    //gulp.task('inject:scktool', ['inject'], function() {
+    //    return gulp.src([
+    //            options.src + '/app/components/kit/setupModule/scktool-app.js',
+    //            options.src + '/app/components/kit/setupModule/scktool-connector.js'
+    //        ])
+    //        .pipe(gulp.dest(options.tmp + '/serve/scripts/'));
+    //});
+    //
+    //gulp.task('inject:dev', function() {
+    //
+    //    var injectModule = gulp.src([
+    //        options.src + '/app/components/kit/setupModule/scktool-app.js',
+    //        options.src + '/app/components/kit/setupModule/scktool-connector.js',
+    //    ]);
+    //
+    //    var injectOptions = {
+    //        ignorePath: [options.src, options.tmp + '/serve'],
+    //        addRootSlash: false
+    //    };
+    //
+    //    return gulp.src(options.src + '/*.html')
+    //        .pipe($.inject(injectModule, injectOptions));
+    //
+    //});
 };

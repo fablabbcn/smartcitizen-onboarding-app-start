@@ -7,21 +7,21 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
     // route to show our basic form (/form)
         .state('wizard', {
             url: '/wizard',
-            templateUrl: 'wizard/wizard.html',
+            templateUrl: '../wizard.html',
             controller: 'wizardCtrl'
         })
         .state('wizard.landing', {
             url: '/landing',            //<< find way to remove these
-            templateUrl: 'wizard/landing.html'
+            templateUrl: '../landing.html'
         })
         .state('wizard.currentdevice', {
             url: '/currentdevice',
-            templateUrl: 'wizard/currentDevice.html',
+            templateUrl: '../currentdevice.html',
             controller: 'stateCtlr'
         })
         .state('wizard.collaborators', {
             url: '/collaborators',
-            templateUrl: 'wizard/collaborators.html',
+            templateUrl: '../collaborators.html',
             //resolve: {
             //    simpleObj:  function() {
             //        return {value: 'simple!'};
@@ -33,54 +33,54 @@ angular.module('myApp').config(function($stateProvider, $urlRouterProvider) {
         })
         .state('wizard.basic2', {
             url: '/basic2',
-            templateUrl: 'wizard/basic2.html'
+            templateUrl: '../basic2.html'
         })
         .state('wizard.basic', {
             url: '/basic',
-            templateUrl: 'wizard/basic.html'
+            templateUrl: '../basic.html'
         })
         .state('wizard.selectparts', {
             url: '/selectparts',
-            templateUrl: 'wizard/selectparts.html',
+            templateUrl: '../selectparts.html',
             controller: 'stateCtlr'
         })
         .state('wizard.kitbuild1', {
             url: '/kitbuild1',
-            templateUrl: 'wizard/kitbuild1.html'
+            templateUrl: '../kitbuild1.html'
         })
         .state('wizard.kitbuild2', {
             url: '/kitbuild2',
-            templateUrl: 'wizard/kitbuild2.html'
+            templateUrl: '../kitbuild2.html'
         })
         .state('wizard.kitbuild3', {
             url: '/kitbuild3',
-            templateUrl: 'wizard/kitbuild3.html'
+            templateUrl: '../kitbuild3.html'
         })
         .state('wizard.pair1', {
             url: '/pair1',
-            templateUrl: 'wizard/pair1.html'
+            templateUrl: '../pair1.html'
         })
         .state('wizard.pair2', {
             url: '/pair2',
-            templateUrl: 'wizard/pair2.html'
+            templateUrl: '../pair2.html'
         }).state('wizard.sensorName', {
             url: '/sensorName',
-            templateUrl: 'wizard/sensorName.html',
+            templateUrl: '../sensorName.html',
             controller: 'nameCtlr'
         })
         .state('wizard.location1', {
             url: '/location1',
-            templateUrl: 'wizard/location1.html',
+            templateUrl: '../location1.html',
             controller: 'locationController'
         })
         .state('wizard.location2', {
             url: '/location2',
-            templateUrl: 'wizard/location2.html',
+            templateUrl: '../location2.html',
             controller: 'stateCtlr'
         })
         .state('wizard.location3', {
             url: '/location3',
-            templateUrl: 'wizard/location3.html',
+            templateUrl: '../location3.html',
             controller: 'locationController'
     });
 
