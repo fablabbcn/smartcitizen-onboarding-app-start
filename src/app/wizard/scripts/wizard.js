@@ -227,7 +227,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         $scope.template = content.template;
 
         $scope.pos;
-        console.log($scope.pos);
+        //console.log($scope.pos);
 
         $scope.networks = [
             "Your Secured Network",

@@ -44,7 +44,7 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider,$locati
             templateUrl: 'app/wizard/selectparts.html',
             controller: 'stateCtlr'
         })
-        .state('wizard.kitbuild1', {
+        .state('wizard.kitbuild1', { // TODO - fix this output
             url: '/kitbuild1',
             templateUrl: 'app/wizard/kitbuild1.html'
         })
