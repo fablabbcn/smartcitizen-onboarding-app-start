@@ -26,17 +26,20 @@ body {
 
   h1{
     font-weight: 400;
-    font-size: 72px;
+    font-size: 72px; //fallback
+    font-size: 5vmax;
     color: $mkWhite;
   }
   h2{
     font-weight: 400;
-    font-size: 41px;
+    font-size: 41px; //fallback
+    font-size: 3.5vmax;
     color: $mkWhite;
   }
   h4, p{
     font-weight: 400;
-    font-size: 41px;
+    font-size: 41px; //fallback
+    font-size: 2.5vmax;
     color: $mkGrey;
   }
   h5{
@@ -51,7 +54,8 @@ body {
   }
   button{
     font-weight: 500;
-    font-size: 40px;
+    //font-size: 40px; //fallback
+    font-size: 2.5vmax;
     color: white;
     text-transform: capitalize;
     &:focus {
@@ -146,7 +150,7 @@ body {
         border-radius: 40px;
         border: 5px solid $mkGrey;
         color: $mkGrey;
-        font-size: 24px;
+        font-size: 20px;
       }
     }
 

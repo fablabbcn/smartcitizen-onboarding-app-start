@@ -25,7 +25,8 @@
     input {
       height: 80px;
       border: none;
-      font-size: 41px;
+      font-size: 41px; //fallback
+      font-size: 3.5vmax;
       color: $mkWhite;
     }
   }
@@ -39,5 +40,5 @@
   }
 }
 md-content {
-  background-color: $mkNavy;
+  background-color: $mkNavy !important;
 }
