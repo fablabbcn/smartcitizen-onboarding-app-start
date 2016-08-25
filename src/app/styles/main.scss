@@ -6,7 +6,6 @@ $divRadius: 25px;
 $progressHeight: 15px;
 $segueWrapperHeight: 160px;
 
-
 @import "colors";
 @import "progress";
 @import "tooltip";
@@ -65,7 +64,7 @@ body {
 
 
   #container {
-    background-color: $mkNavy;
+    //background-color: $mkNavy;
     z-index: 1;
 
     #wizardView {
