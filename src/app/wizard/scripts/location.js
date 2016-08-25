@@ -1,6 +1,12 @@
 'use strict';
 
-angular.module('app').controller('locationController', function($scope, uiGmapGoogleMapApi, $geolocation){
+angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
+    uiGmapGoogleMapApiProvider.configure({
+        key: 'AIzaSyDgSvUrtmsNLkoaK1mYlyU3eVbByMlE4w4',
+        v: '3.20',
+        libraries: 'weather,geometry,visualization'
+    });
+}).controller('locationController', function($scope, uiGmapGoogleMapApi, $geolocation){
 
 
     function setMapData(center, val, zoom){

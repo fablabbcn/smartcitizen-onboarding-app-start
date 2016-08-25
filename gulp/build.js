@@ -22,7 +22,7 @@ module.exports = function(options) {
             }))
             .pipe($.angularTemplatecache('templateCacheHtml.js', {
                 module: 'app',
-                root: 'app'
+                root: 'app/wizard'
             }))
             .pipe(gulp.dest(options.tmp + '/partials/'));
     });
