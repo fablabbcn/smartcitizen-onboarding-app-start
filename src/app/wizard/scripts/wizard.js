@@ -6,7 +6,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         {
             "index": 0,
             "template": "landing",
-            "h1": "You've made it to the Making Sense pilot",
+            "h1": "You've made it to the Making Sense pilot!",
             "h4": "Let’s get you set up with a Smart Citizen kit, and sensing in no time",
             "currentState": "Welcome",
             "segueButton": "Woop!"

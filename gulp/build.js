@@ -78,7 +78,8 @@ module.exports = function(options) {
     gulp.task('other', function () {
         return gulp.src([
                 options.src + '/**/*',
-                '!' + options.src + '/**/*.{html,css,js,scss}'
+                '!' + options.src + '/**/*.{html,css,js,scss}',
+                options.src + 'app/styles/fonts/*.{eot,svg,ttf,woff,woff2}'
             ])
             .pipe(gulp.dest(options.dist + '/'));
     });
@@ -89,5 +90,5 @@ module.exports = function(options) {
     });
 
 
-    gulp.task('build', ['html', 'other']);
+    gulp.task('build', ['html', 'fonts', 'other']);
 };

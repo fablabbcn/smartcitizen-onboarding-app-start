@@ -1,5 +1,5 @@
 var particles = [];
-var limit = 11;
+var limit = 20;
 var imgs = [];
 
 var gif;
@@ -38,7 +38,7 @@ function setup() {
 }
 
 function draw() {
-  background('#39424C');
+  background('#212B32');
   
   for (var i = 0; i < limit; i++){
     particles[i].separate(particles)

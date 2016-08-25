@@ -1,6 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Rubik:400,300,500);
+@import url(https://fonts.googleapis.com/css?family=Rubik:400,300,500,900);
 $font:    Rubik, sans-serif;
-$divRadius: 25px;
+$divRadius: 15px;
 
 
 $progressHeight: 15px;
@@ -11,23 +11,26 @@ $segueWrapperHeight: 160px;
 @import "tooltip";
 @import "form";
 @import "modal";
+@import "ss-standard";
 
 html, body { margin: 0; padding: 0; }
 canvas {vertical-align: top; z-index: 0}
 body {
   height:auto; overflow:auto;
   font: 100% $font;
-  //background-color: $mkNavy;
+  background-color: $mkNavy;
 
   h1, h2, h3, h4, h6, p {
     text-align: center;
   }
 
   h1{
-    font-weight: 400;
+    font-weight: 900;
     font-size: 72px; //fallback
     font-size: 5vmax;
-    color: $mkWhite;
+    color: $mkBlue;
+    line-height: 70px;
+    text-transform: uppercase;
   }
   h2{
     font-weight: 400;
@@ -68,6 +71,8 @@ body {
     z-index: 1;
 
     #wizardView {
+      margin: 0 auto;
+      max-width: 1150px;
 
       .companyLogo {
         margin: 15px;
@@ -82,9 +87,9 @@ body {
       .selectionRow {
         .selection {
           height: 400px;
-          background-color: $mkOpaqueGrey;
+          background: none;
           border-radius: $divRadius;
-          border: 0 solid;
+          border: 5px solid $mkNavy2;
 
           .sectionContent {
             .checkHolder {
@@ -110,7 +115,7 @@ body {
             }
           }
           &:hover, &:active, &.active {
-            background-color: $mkGrey;
+            background-color: $mkNavy2;
             .checkHolder{
               .check{
                 visibility: visible;

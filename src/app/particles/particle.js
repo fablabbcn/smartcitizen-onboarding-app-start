@@ -46,7 +46,6 @@ function Particle(x,y, imgLoc){
   }
   
   this.display = function(){
-    var theta = this.vel.heading() + radians(90);
     this.theta += (this.vel.x * this.vel.mag()) / 20;
     var r = 4;
     push();
@@ -61,7 +60,7 @@ function Particle(x,y, imgLoc){
       this.img.pause();
     }
     if (this.img.loaded()){
-      image(this.img, this.size/-2, this.size/-2, this.size, this.size);
+      image(this.img, this.size/-1, this.size/-1, this.size, this.size);
     }
     pop();
   }
