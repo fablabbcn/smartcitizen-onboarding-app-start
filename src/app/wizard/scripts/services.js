@@ -203,12 +203,10 @@ angular.module('app').service('SegueService', function() {
     };
 
     this.nextPage = function(val){
-        console.log('currently on ' + val);
         return pageContent[val + 1].url;
     };
 
     function payloadGenerate(content){
-        console.log(content);
         var payload = content;
         payload.progressVal = ((content.index + 1) / pageContent.length) * 100;
         payload.companyLogo = "app/images/" + content.companyLogo;

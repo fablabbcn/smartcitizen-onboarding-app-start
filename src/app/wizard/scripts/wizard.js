@@ -258,7 +258,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         if ($scope.segueControl == 'ready') {
             //compare templates
             var nextTemplate = SegueService.nextPage($scope.payload.index);
-            console.log(nextTemplate);
+            //console.log(nextTemplate);
             if (nextTemplate !== $scope.payload.location) {
                 //if new is made update template
                 $location.path('/wizard/' + nextTemplate);
