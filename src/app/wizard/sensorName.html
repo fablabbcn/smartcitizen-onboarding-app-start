@@ -1,5 +1,5 @@
-<h1>{{h1}}</h1>
-<h4>{{h4}}</h4>
+<h1>{{payload.h1}}</h1>
+<h4>{{payload.h4}}</h4>
 
 <form name="naming">
     <div class="inputContainer" layout="column" layout-align="center center">
@@ -10,5 +10,5 @@
 </form>
 
 <div class="contextWrapper" layout="center">
-    <button class="contextButton" ng-click="generateName()"> <i class="material-icons">refresh</i> {{ contextButton }}</button>
+    <button class="contextButton" ng-click="generateName()"> <i class="material-icons">refresh</i> {{ payload.contextButton }}</button>
 </div>

@@ -6,7 +6,8 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
         v: '3.20',
         libraries: 'weather,geometry,visualization'
     });
-}).controller('locationController', function($scope, uiGmapGoogleMapApi, $geolocation){
+}).controller('locationController', function($scope, uiGmapGoogleMapApi, $geolocation, scopePayload){
+    $scope.$parent.payload = scopePayload;
 
 
     function setMapData(center, val, zoom){

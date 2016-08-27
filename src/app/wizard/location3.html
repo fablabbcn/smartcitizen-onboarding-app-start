@@ -1,5 +1,5 @@
-<h1>{{h1}}</h1>
-<h4>{{h4}}</h4>
+<h1>{{payload.h1}}</h1>
+<h4>{{payload.h4}}</h4>
 
 
 <input ng-if="!$parent.markerLocation.latitude" type="text" class="autoCompleteInput" g-places-autocomplete ng-change="autoCompleteListener()" ng-model="autocomplete" placeholder="Enter Your Location"/>

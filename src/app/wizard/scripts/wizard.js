@@ -1,11 +1,12 @@
 'use strict';
 
-angular.module('app').controller('wizardCtrl', function($scope, $location, $sce, $window){
+angular.module('app').controller('wizardCtrl', function($scope, $location, $sce, $window, SegueService){
     /** Constants **/
     var pageContent = [
         {
             "index": 0,
             "template": "landing",
+            "location": "landing",
             "h1": "You've made it to the Making Sense pilot!",
             "h4": "Let’s get you set up with a Smart Citizen kit, and sensing in no time",
             "currentState": "Welcome",
@@ -13,6 +14,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         },{
             "index": 1,
             "template": "currentdevice",
+            "location": "currentdevice",
             "h1": "What device are you using to set up the sensor?",
             "h4": "We need to know this to optimise the setup",
             "currentState": "Welcome",
@@ -183,6 +185,11 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
     var index = typeof index !== 'undefined' ? index : 0;
 
     function bindContent(index){
+
+        console.log($location.path());
+        var loc = $location.path();
+        console.log(loc.split('/wizard/')[1]);
+
         var content = pageContent[index];
 
         $scope.progressVal = ((index + 1) / pageContent.length) * 100;
@@ -249,16 +256,16 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
     /** Functions below **/
     $scope.seque = function() {
         if ($scope.segueControl == 'ready') {
-            index++;
             //compare templates
-            var nextTemplate = pageContent[index].template;
-            if (nextTemplate !== $scope.template) {
+            var nextTemplate = SegueService.nextPage($scope.payload.index);
+            console.log(nextTemplate);
+            if (nextTemplate !== $scope.payload.location) {
                 //if new is made update template
                 $location.path('/wizard/' + nextTemplate);
                 //alert('/wizard/' + nextTemplate);
             }
             $window.scrollTo(0, 0);
-            bindContent(index);
+            //bindContent(index);
         } else {
             alert('blocked');
         }

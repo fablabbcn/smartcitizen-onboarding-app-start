@@ -1,4 +1,4 @@
-<h2>{{h2}}</h2>
+<h2>{{payload.h2}}</h2>
 
 <div class="selectionRow" layout="row" layout-padding layout-margin layout-wrap>
     <button class="selection" flex flex-sm="45" flex-xs="100" ng-click="selectPart(0)" ng-class="selectionButtons[0]">
@@ -47,7 +47,7 @@
 </div>
 
     <div class="contextWrapper"layout="center">
-        <button class="contextButton" ng-click="context">{{ contextButton }}</button>
+        <button class="contextButton" ng-click="context">{{ payload.contextButton }}</button>
     </div>
 
 

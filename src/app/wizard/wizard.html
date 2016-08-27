@@ -1,13 +1,13 @@
 <!--<canvas></canvas>-->
 
 <div id="progress" layout="row" layout-align="center center" flex="none">
-    <md-progress-linear md-diameter="100" md-mode="determinate" bar-height="50px" value="{{progressVal}}"></md-progress-linear>
+    <md-progress-linear md-diameter="100" md-mode="determinate" bar-height="50px" value="{{payload.progressVal}}"></md-progress-linear>
 </div>
 
 <div id="wizardView" layout="column" layout-align="center none" ui-view flex="grow"></div>
 
 <div class="segueWrapper" layout="row" layout-align="center center" flex="none">
-    <button class="segueButton" ng-click="seque()" ng-class="segueControl">{{ segueButton }} <i class="material-icons">play_arrow</i><br></button>
+    <button class="segueButton" ng-click="seque()" ng-class="segueControl">{{ payload.segueButton }} <i class="material-icons">play_arrow</i><br></button>
 </div>
 
 <!--<span class=".ss-icon .ss-key">&#x1F511;</span>-->

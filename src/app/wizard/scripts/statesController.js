@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('app').controller('stateCtlr', function($scope){
+angular.module('app').controller('stateCtlr', function($scope, scopePayload){
+    $scope.$parent.payload = scopePayload;
+
 
     function setUpSelection(){
         blockSegue();
