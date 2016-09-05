@@ -271,4 +271,22 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         }
     };
 
+    $scope.back = function() {
+        if ($scope.payload.backBlock != 'blocked') {
+            //compare templates
+            var nextTemplate = SegueService.previousPage($scope.payload.index);
+            //console.log(nextTemplate);
+            if (nextTemplate !== $scope.payload.location) {
+                //if new is made update template
+                $location.path('/wizard/' + nextTemplate);
+                //alert('/wizard/' + nextTemplate);
+            }
+            $window.scrollTo(0, 0);
+            //bindContent(index);
+        }
+        //else {
+        //    alert('blocked');
+        //}
+    };
+
 });

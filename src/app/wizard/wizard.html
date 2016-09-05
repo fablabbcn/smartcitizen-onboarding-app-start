@@ -6,8 +6,16 @@
 
 <div id="wizardView" layout="column" layout-align="center none" ui-view flex="grow"></div>
 
-<div class="segueWrapper" layout="row" layout-align="center center" flex="none">
-    <button class="segueButton" ng-click="seque()" ng-class="segueControl">{{ payload.segueButton }} <i class="material-icons">play_arrow</i><br></button>
+<div class="bottomNav" layout="row" layout-align="space-around center" flex="none">
+    <div >
+        <button class="backButton" ng-click="back()" ng-class="payload.backBlock"><i class="material-icons back">play_arrow</i> Back<br></button>
+    </div>
+    <div  class="segueWrapper" layout="row" layout-align="space-between center" flex="none">
+        <button class="segueButton" ng-click="seque()" ng-class="segueControl">{{ payload.segueButton }} <i class="material-icons">play_arrow</i><br></button>
+    </div>
+    <div>
+        <button style="visibility: hidden" class="segueButton" ng-click="back()" ng-class="segueControl"><i class="material-icons back">play_arrow</i> Back<br></button>
+    </div>
 </div>
 
 <!--<span class=".ss-icon .ss-key">&#x1F511;</span>-->

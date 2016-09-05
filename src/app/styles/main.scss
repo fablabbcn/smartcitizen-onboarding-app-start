@@ -158,8 +158,11 @@ body {
       }
     }
 
-    .segueWrapper {
+    .bottomNav {
       height: $segueWrapperHeight;
+      //div {
+      //  width: 200px;
+      //}
       .segueButton {
         height: $segueWrapperHeight / 2;
         width: auto;
@@ -168,6 +171,7 @@ body {
         background: none;
         border-radius: 40px;
         color: white;
+        background: $mkNavy;
 
         &.ready{
           border: 5px solid $mkGreen;
@@ -175,7 +179,24 @@ body {
         &.blocked{
           border: 5px solid $mkWhite;
         }
+      }
 
+      .backButton{
+        height: $segueWrapperHeight / 2;
+        width: auto;
+        padding: 5px 15px;
+        text-transform: uppercase;
+        background: $mkNavy2;
+        border-radius: 40px;
+        color: white;
+        border: 0px none $mkNavy2;
+
+        .back {
+          transform: scale(-1, 1);
+        }
+        &.blocked{
+          color: $mkNavy;
+        }
       }
     }
   }

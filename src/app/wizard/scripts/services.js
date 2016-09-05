@@ -25,7 +25,7 @@ angular.module('app').service('SegueService', function() {
             "index": 2,
             "template": "collaborators",
             "url":"us",
-            "companyLogo": "20160301 MAKING SENSE LOGOS-07.png",
+            "companyLogo": "app/images/20160301 MAKING SENSE LOGOS-07.png",
             "h1": "Making Sense is a project to help people make sense of their environment.",
             "h4": "We want to help you deploy sensors to help understand sound pollution. By making sense of the issue, we might be able to address it.",
             "currentState": "What is Making Sense",
@@ -35,7 +35,7 @@ angular.module('app').service('SegueService', function() {
             "index": 3,
             "template": "collaborators",
             "url":"smart_citizen",
-            "companyLogo": "smart_citizen.png",
+            "companyLogo": "app/images/smart_citizen.png",
             "h1": "Smart Citizen is a movement for civic participation in a modern world",
             "h4": "Smart Citizen creates open tools for citizens to be better informed about the world around them.",
             "currentState": "What is Smart Citizen",
@@ -44,7 +44,7 @@ angular.module('app').service('SegueService', function() {
             "index": 4,
             "template": "basic2",
             "url":"smart_citizen_brief",
-            "image": "sck_iso-1295.jpg",
+            "image": "app/images/sck_iso-1295.jpg",
             "h4": "This sensor is a Smart Citizen kit for environmental sensing. It measures sound, air quality, humidity, and lots of other things",
             "currentState": "What is Smart Citizen",
             "segueButton": "LET’S SET UP MY SENSOR"
@@ -133,7 +133,7 @@ angular.module('app').service('SegueService', function() {
             "index": 10,
             "template": "basic2",
             "url":"wifi_prep",
-            "image": "sck_iso-1295.jpg",
+            "image": "app/images/sck_iso-1295.jpg",
             "h1": "To set up the sensor let's find it on the WiFi menu",
             "h4": "Click the 'Smart Citizen Kit' from the dropdown",
             "currentState": "pair the sensor",
@@ -157,7 +157,7 @@ angular.module('app').service('SegueService', function() {
             "index": 13,
             "template": "basic2",
             "url": 'wifi_success',
-            "image": "sck_iso-1295.jpg",
+            "image": "app/images/sck_iso-1295.jpg",
             "h1": "Success! We've got the sensor online",
             "h4": "Now just go to your wi-fi menu and connect back to your wi-fi network to continue the setup.",
             "currentState": "pair the sensor",
@@ -203,18 +203,29 @@ angular.module('app').service('SegueService', function() {
     };
 
     this.nextPage = function(val){
-        return pageContent[val + 1].url;
+        return pageContent[(val + 1)].url;
+    };
+    this.previousPage = function(val){
+        return pageContent[(val - 1)].url;
     };
 
     function payloadGenerate(content){
+        console.log(content.index);
         var payload = content;
         payload.progressVal = ((content.index + 1) / pageContent.length) * 100;
-        payload.companyLogo = "app/images/" + content.companyLogo;
-        payload.image = "app/images/" + content.image;
+
+        payload.companyLogo = content.companyLogo;
+        payload.image = content.image;
 
 
+        if (content.index >= 1) {
+            payload.backBlock = '';
+        } else {
+            payload.backBlock = 'blocked';
+        }
         return payload;
     }
 }).controller('baseController', function($scope, scopePayload){
     $scope.$parent.payload = scopePayload;
+    $scope.$parent.segueControl ='ready';
 });
