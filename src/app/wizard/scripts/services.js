@@ -210,7 +210,6 @@ angular.module('app').service('SegueService', function() {
     };
 
     function payloadGenerate(content){
-        console.log(content.index);
         var payload = content;
         payload.progressVal = ((content.index + 1) / pageContent.length) * 100;
 
