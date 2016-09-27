@@ -1,7 +1,8 @@
 'use strict';
 
-angular.module('app').controller('nameCtlr', function($scope, scopePayload){
+angular.module('app').controller('nameCtlr', function($scope, scopePayload, AnimationService){
     $scope.$parent.payload = scopePayload;
+    AnimationService.animate(scopePayload.index);
 
     var nounWordList = [];
     var adjectiveWordList = [];

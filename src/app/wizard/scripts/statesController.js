@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('app').controller('stateCtlr', function($scope, scopePayload){
+angular.module('app').controller('stateCtlr', function($scope, scopePayload, AnimationService){
     $scope.$parent.payload = scopePayload;
-
+    AnimationService.animate(scopePayload.index);
 
     function setUpSelection(){
         blockSegue();

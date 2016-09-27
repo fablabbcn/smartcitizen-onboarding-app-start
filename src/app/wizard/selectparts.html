@@ -1,6 +1,9 @@
-<h2>{{payload.h2}}</h2>
+<div class="animate" ng-class="animationRows[3][0]">
+    <h2>{{payload.h2}}</h2>
+</div>
 
-<div class="selectionRow" layout="row" layout-padding layout-margin layout-wrap>
+<div class="selectionRow animate" layout="row" layout-padding layout-margin layout-wrap
+     ng-class="animationRows[3][1]">
     <button class="selection" flex flex-sm="45" flex-xs="100" ng-click="selectPart(0)" ng-class="selectionButtons[0]">
         <div class="sectionContent">
             <div class="checkHolder" layout="row" layout-align="end start">
@@ -23,7 +26,8 @@
         </div>
     </button>
 
-    <button class="selection" flex flex-sm="45" flex-xs="45" flex-xs="100" ng-click="selectPart(2)" ng-class="selectionButtons[2]">
+    <button class="selection" flex flex-sm="45" flex-xs="45" flex-xs="100" ng-click="selectPart(2)"
+            ng-class="selectionButtons[2]">
         <div class="sectionContent">
             <div class="checkHolder" layout="row" layout-align="end start">
                 <img class="check" ng-src="app/images/check.png" layout="center">
@@ -34,7 +38,8 @@
         </div>
     </button>
 
-    <button class="selection" flex flex-sm="45" flex-xs="45" flex-xs="100" ng-click="selectPart(3)" ng-class="selectionButtons[3]">
+    <button class="selection" flex flex-sm="45" flex-xs="45" flex-xs="100" ng-click="selectPart(3)"
+            ng-class="selectionButtons[3]">
         <div class="sectionContent">
             <div class="checkHolder" layout="row" layout-align="end start">
                 <img class="check" ng-src="app/images/check.png" layout="center">
@@ -46,8 +51,6 @@
     </button>
 </div>
 
-    <div class="contextWrapper"layout="center">
-        <button class="contextButton" ng-click="context">{{ payload.contextButton }}</button>
-    </div>
-
-
+<div class="contextWrapper animate" layout="center" ng-class="animationRows[3][2]">
+    <button class="contextButton" ng-click="context">{{ payload.contextButton }}</button>
+</div>

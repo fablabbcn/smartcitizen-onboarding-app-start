@@ -1,12 +1,18 @@
-<div class="kitBuildHolder" layout="row" layout-align="center center">
+<div class="kitBuildHolder animate" layout="column" layout-align="center center" ng-class="animationRows[3][0]">>
     <img ng-src="app/images/boardPower.png" class="buildImage">
 </div>
-<h2>{{payload.h2}}</h2>
-<div class="buildInstructions">
+<div class="animate" ng-class="animationRows[3][1]">
+    <h2>{{payload.h2}}</h2>
+</div>
+<div class="buildInstructions animate" ng-class="animationRows[3][2]">
 
     <!--TAKEN FROM OUTPUT -->
 
-    <p>Push the button on the <span class='tooltip tooltip-effect-1'><span class='tooltip-item'>hardware board</span><span class='tooltip-content clearfix'><img src='images/'><span class='tooltip-text'><strong>Hardware board: </strong>Bacon ipsum dolor amet bresaola chicken drumstick swine. Turducken chuck pastrami. <a href='#'>Need help</a></span></span></span>, once.<p>
+    <p>Push the button on the <span class='tooltip tooltip-effect-1'><span
+            class='tooltip-item'>hardware board</span><span class='tooltip-content clearfix'><img src='images/'><span
+            class='tooltip-text'><strong>Hardware board: </strong>Bacon ipsum dolor amet bresaola chicken drumstick swine. Turducken chuck pastrami. <a
+            href='#'>Need help</a></span></span></span>, once.
+    <p>
 
 
 </div>

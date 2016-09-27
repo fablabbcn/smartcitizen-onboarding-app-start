@@ -1,14 +1,20 @@
+<div class="animate" ng-class="animationRows[4][0]">
 <h1>{{payload.h1}}</h1>
+    </div>
+<div class="animate" ng-class="animationRows[4][1]">
 <h4>{{payload.h4}}</h4>
+</div>
 
-<form name="naming">
-    <div class="inputContainer" layout="column" layout-align="center center">
+<form name="naming" class="animate" ng-class="animationRows[4][2]">
+
+<div class="inputContainer" layout="column" layout-align="center center">
         <md-input-container class="md-block">
             <input autofocus ng-model="input" ng-change="listener()" required type="text" name="kitName">
         </md-input-container>
     </div>
 </form>
 
-<div class="contextWrapper" layout="center">
-    <button class="contextButton" ng-click="generateName()"> <i class="material-icons">refresh</i> {{ payload.contextButton }}</button>
+<div class="contextWrapper animate" layout="center" ng-class="animationRows[4][1]">
+
+<button class="contextButton" ng-click="generateName()"> <i class="material-icons">refresh</i> {{ payload.contextButton }}</button>
 </div>

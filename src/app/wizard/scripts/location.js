@@ -1,14 +1,16 @@
 'use strict';
 
+// #TODO - fixfoc on new anchor to map center when too fast
+
 angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
     uiGmapGoogleMapApiProvider.configure({
         key: 'AIzaSyDgSvUrtmsNLkoaK1mYlyU3eVbByMlE4w4',
         v: '3.20',
         libraries: 'weather,geometry,visualization'
     });
-}).controller('locationController', function($scope, uiGmapGoogleMapApi, $geolocation, scopePayload){
+}).controller('locationController', function($scope, uiGmapGoogleMapApi, $geolocation, scopePayload, AnimationService){
     $scope.$parent.payload = scopePayload;
-
+    AnimationService.animate(scopePayload.index);
 
     function setMapData(center, val, zoom){
         $scope.$parent.map = {

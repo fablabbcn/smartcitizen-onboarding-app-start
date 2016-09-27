@@ -12,6 +12,7 @@ $segueWrapperHeight: 160px;
 @import "form";
 @import "modal";
 @import "ss-standard";
+@import "animations";
 
 html, body { margin: 0; padding: 0; }
 canvas {vertical-align: top; z-index: 0}
@@ -73,6 +74,12 @@ body {
     #wizardView {
       margin: 0 auto;
       max-width: 1150px;
+
+      &.ng-enter {
+        -webkit-animation:slideInRight 0.5s both ease;
+        -moz-animation:slideInRight 0.5s both ease;
+        animation:slideInRight 0.5s both ease;
+      }
 
       .companyLogo {
         margin: 15px;

@@ -1,8 +1,6 @@
 'use strict';
 
 angular.module('app').service('SegueService', function() {
-    console.log('serviceRunning');
-
     var pageContent = [
         {
             "index": 0,
@@ -224,7 +222,65 @@ angular.module('app').service('SegueService', function() {
         }
         return payload;
     }
-}).controller('baseController', function($scope, scopePayload){
+
+    this.templateRowCounter = function(index){
+
+        var tuples;
+        switch (pageContent[index].template) { //constants for getting rows in templates
+            case "landing":
+                tuples= 3;
+                break;
+            case "currentdevice":
+                tuples=3;
+                break;
+            case "collaborators":
+                tuples=3;
+                break;
+            case "basic2":
+                tuples=3;
+                break;
+            case "basic":
+                tuples=2;
+                break;
+            case "selectparts":
+                tuples=3;
+                break;
+            case "kitbuild1":
+                tuples=3;
+                break;
+            case "kitbuild2":
+                tuples=3;
+                break;
+            case "kitbuild3":
+                tuples=3;
+                break;
+            case "pair1":
+                tuples=2;
+                break;
+            case "pair2":
+                tuples=3;
+                break;
+            case "sensorName":
+                tuples=4;
+                break;
+            case "location1":
+                tuples=3;
+                break;
+            case "location2":
+                tuples=3;
+                break;
+            case "location3":
+                tuples=3;
+                break;
+            default:
+                tuples = 0;
+        }
+        return tuples; //change to array syntax
+    }
+
+
+}).controller('baseController', function($scope, scopePayload, AnimationService){
     $scope.$parent.payload = scopePayload;
+    AnimationService.animate(scopePayload.index);
     $scope.$parent.segueControl ='ready';
 });
