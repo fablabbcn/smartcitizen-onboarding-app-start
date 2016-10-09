@@ -52,7 +52,7 @@ angular.module('app').service('SegueService', function() {
             "template": "basic",
             "url":"whats_in_the_box",
             "currentState": "WHAT’S IN THE BOX",
-            "h1": "First of all, let’s make sure we have everything we need.",
+            "h1": "Let’s make sure we have everything we need.",
             "h4": "We need a few things to set up the sensor. Let’s see if you’ve recieved them",
             "segueButton": "LETS DO IT"
         },{
@@ -135,7 +135,7 @@ angular.module('app').service('SegueService', function() {
             "h1": "To set up the sensor let's find it on the WiFi menu",
             "h4": "Click the 'Smart Citizen Kit' from the dropdown",
             "currentState": "pair the sensor",
-            "segueButton": "its alive"
+            "segueButton": "it's alive"
         },{
             "index": 11,
             "template": "pair1",
@@ -159,7 +159,7 @@ angular.module('app').service('SegueService', function() {
             "h1": "Success! We've got the sensor online",
             "h4": "Now just go to your wi-fi menu and connect back to your wi-fi network to continue the setup.",
             "currentState": "pair the sensor",
-            "segueButton": "its alive"
+            "segueButton": "it's alive"
         },{
             "index": 14,
             "template": "sensorName",
@@ -190,7 +190,7 @@ angular.module('app').service('SegueService', function() {
             "index": 17,
             "template": "location3",
             url: 'location3',
-            "h1": "Awesome now lets pinpoint your kit's location",
+            "h1": "Awesome, now lets pinpoint your kit's location",
             "h4": "Drag and drop the pin to your sensors current location",
             "currentState": "location",
             "segueButton": "done"

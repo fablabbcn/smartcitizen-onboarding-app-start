@@ -40,11 +40,11 @@ function setup() {
 function draw() {
   background('#212B32');
   
-  for (var i = 0; i < limit; i++){
-    particles[i].separate(particles)
-    particles[i].update();
-    particles[i].display();
-  }
+  //for (var i = 0; i < limit; i++){
+  //  particles[i].separate(particles);
+  //  particles[i].update();
+  //  particles[i].display();
+  //}
  
   
 }
