@@ -194,7 +194,7 @@
   animation: appearPlace $time;
   -webkit-animation-fill-mode:forwards;
   -moz-animation-fill-mode:forwards;
-  animation-fill-mode:forwards;
+  animation-fill-mode:forwards !important; // serve:dist warrants this for some reason
   -webkit-animation-delay: $delay;
   animation-delay: $delay;
 }
