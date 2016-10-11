@@ -14,7 +14,7 @@ angular.module('app').service('SegueService', function() {
             "index": 1,
             "template": "currentdevice",
             "url": "device",
-            "h1": "What device are you using to set up the sensor?",
+            "h2": "What device are you using to set up the sensor?",
             "h4": "We need to know this to optimise the setup",
             "currentState": "Welcome",
             "segueButton": "Continue!",
@@ -24,7 +24,7 @@ angular.module('app').service('SegueService', function() {
             "template": "collaborators",
             "url":"us",
             "companyLogo": "app/images/20160301 MAKING SENSE LOGOS-07.png",
-            "h1": "Making Sense is a project to help people make sense of their environment.",
+            "h2": "Making Sense is a project to help people make sense of their environment.",
             "h4": "We want to help you deploy sensors to help understand sound pollution. By making sense of the issue, we might be able to address it.",
             "currentState": "What is Making Sense",
             "segueButton": "SOUNDS GOOD!"
@@ -34,7 +34,7 @@ angular.module('app').service('SegueService', function() {
             "template": "collaborators",
             "url":"smart_citizen",
             "companyLogo": "app/images/smart_citizen.png",
-            "h1": "Smart Citizen is a movement for civic participation in a modern world",
+            "h2": "Smart Citizen is a movement for civic participation in a modern world",
             "h4": "Smart Citizen creates open tools for citizens to be better informed about the world around them.",
             "currentState": "What is Smart Citizen",
             "segueButton": "CONTINUE"
@@ -129,10 +129,10 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "It's alive"
         },{
             "index": 10,
-            "template": "basic2",
+            "template": "basic3",
             "url":"wifi_prep",
             "image": "app/images/sck_iso-1295.jpg",
-            "h1": "To set up the sensor let's find it on the WiFi menu",
+            "h2": "To set up the sensor let's find it on the WiFi menu",
             "h4": "Click the 'Smart Citizen Kit' from the dropdown",
             "currentState": "pair the sensor",
             "segueButton": "it's alive"
@@ -140,14 +140,14 @@ angular.module('app').service('SegueService', function() {
             "index": 11,
             "template": "pair1",
             "url":"pair_1",
-            "h1": "Find your WiFi network from the list below",
+            "h2": "Find your WiFi network from the list below",
             "currentState": "pair the sensor",
             "segueButton": "Done"
         },{
             "index": 12,
             "template": "pair2",
             "url":"pair_2",
-            "h1": "Almost there. What is the Password for the network?",
+            "h2": "Almost there. What is the Password for the network?",
             "h4": "We need this to set up your device’s connection to the internet",
             "currentState": "pair the sensor",
             "segueButton": "Check Password"
@@ -173,7 +173,7 @@ angular.module('app').service('SegueService', function() {
             "index": 15,
             "template": "location1",
             url: 'location1',
-            "h1": "Well need to know your location to add it to the global Smart Citizen map",
+            "h2": "Next, how about a location so we can add it to the global map?",
             "h4": "Press ‘Allow’ on the pop up to automatically let us know where to pin the sensor",
             "h6":"You can click 'Block' on the popup and set your location manually on the next step",
             "currentState": "location",
@@ -182,7 +182,7 @@ angular.module('app').service('SegueService', function() {
             "index": 16,
             "template": "location2",
             url: 'location2',
-            "h1": "Select which best fits your sensor's home",
+            "h2": "Select which best fits your sensor's home",
             "h4": "This will help us better understand the data you are sensing",
             "currentState": "location",
             "segueButton": "done"
@@ -194,7 +194,18 @@ angular.module('app').service('SegueService', function() {
             "h4": "Drag and drop the pin to your sensors current location",
             "currentState": "location",
             "segueButton": "done"
-        }];
+        },
+        {
+            "index": 17,
+            "template": "location3",
+            url: 'location3',
+            "h1": "Awesome, now lets pinpoint your kit's location",
+            "h4": "Drag and drop the pin to your sensors current location",
+            "currentState": "location",
+            "segueButton": "done"
+        }
+
+    ];
 
     this.prep = function(val){
         return payloadGenerate(pageContent[val]);

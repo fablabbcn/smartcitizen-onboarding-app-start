@@ -89,6 +89,7 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
             //compare templates
             AnimationService.leaving(false);
             $timeout(function () {
+                $scope.segueControl ='ready';
                 $location.path('/wizard/' + SegueService.previousPage($scope.payload.index));
                 $window.scrollTo(0, 0);
             }, 500); // see animations max duration time

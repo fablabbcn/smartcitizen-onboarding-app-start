@@ -79,7 +79,7 @@ module.exports = function(options) {
         return gulp.src([
                 options.src + '/**/*',
                 '!' + options.src + '/**/*.{html,css,js,scss}',
-                options.src + 'app/styles/fonts/*.{eot,svg,ttf,woff,woff2}'
+                options.src + '/**/*.{eot,svg,ttf,woff,woff2}'
             ])
             .pipe(gulp.dest(options.dist + '/'));
     });

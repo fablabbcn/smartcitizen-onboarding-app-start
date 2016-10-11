@@ -18,7 +18,7 @@ html, body { margin: 0; padding: 0; }
 canvas {vertical-align: top; z-index: 0}
 body {
   height:auto; overflow:auto;
-  font: 100% $font;
+  font: 100% $font !important;
   background-color: $mkNavy;
 
   h1, h2, h3, h4, h6, p {
@@ -46,8 +46,9 @@ body {
     color: $mkGrey;
   }
   h5{
+    font: 100% $font;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 28px;
     color: $mkWhite;
   }
   h6{
@@ -57,8 +58,7 @@ body {
   }
   button{
     font-weight: 500;
-    //font-size: 40px; //fallback
-    font-size: 2.5vmax;
+    font-size: 2.3vmax;
     color: white;
     text-transform: capitalize;
     &:focus {
@@ -114,11 +114,31 @@ body {
               }
             }
             .selectionIcon {
-              height: 60%;
-              font-size: 132px;
+              padding: 30px 0;
+              position: relative;
+              -webkit-transition: top 0.2s;
+              -moz-transition: top 0.2s;
+              -ms-transition: top 0.2s;
+              -o-transition: top 0.2s;
+              transition: top 0.2s;
+              top: 0;
+              tspan {
+                fill: $mkNavy2;
+              }
+              .shadow{
+                height: 0;
+                overflow: visible;
+                position: relative;
+                -webkit-transition: top 0.2s;
+                -moz-transition: top 0.2s;
+                -ms-transition: top 0.2s;
+                -o-transition: top 0.2s;
+                transition: top 0.2s;
+                top: -100px;
+              }
             }
             .selectionText {
-
+              color: $mkNavy2;
             }
           }
           &:hover, &:active, &.active {
@@ -129,6 +149,19 @@ body {
                 -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
                 transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
               }
+            }
+            .selectionIcon {
+              position:relative;
+              top: -10px;
+              tspan {
+                fill: $mkWhite;
+              }
+              .shadow{
+                top:-90px;
+              }
+            }
+            .selectionText {
+              color: $mkWhite;
             }
           }
         }
@@ -196,7 +229,7 @@ body {
         background: $mkNavy2;
         border-radius: 40px;
         color: white;
-        border: 0px none $mkNavy2;
+        border: 0 none $mkNavy2;
 
         .back {
           transform: scale(-1, 1);

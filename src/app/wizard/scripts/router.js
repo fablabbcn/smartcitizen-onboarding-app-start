@@ -77,7 +77,7 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider,$locati
         })
         .state('wizard.wifiprep', {
             url: '/wifi_prep',
-            templateUrl: 'app/wizard/basic2.html',
+            templateUrl: 'app/wizard/basic3.html',
             controller: 'baseController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(10); }}
         })
