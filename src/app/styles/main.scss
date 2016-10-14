@@ -221,7 +221,11 @@ body {
         border-radius: 40px;
         color: white;
         background: $mkNavy;
-
+        svg{
+          position:relative;
+          top: 6px;
+          left: 3px;
+        }
         &.ready{
           border: 5px solid $mkGreen;
         }
@@ -234,16 +238,22 @@ body {
         height: $segueWrapperHeight / 2;
         width: $segueWrapperHeight / 2;
         text-transform: uppercase;
-        background: $mkNavy2;
+        background: none;
         border-radius: 40px;
-        color: white;
-        border: 0 none $mkNavy2;
-
-        .back {
-          transform: scale(-1, 1);
+        color: $mkNavy2;
+        border: 5px solid $mkNavy2;
+        svg{
+          position:relative;
+          top: 2px;
+          left: 3px;
+        }
+        tspan {
+          fill: $mkWhite;
         }
         &.blocked{
-          color: $mkNavy;
+          tspan {
+            fill: $mkNavy2;
+          }
         }
       }
     }

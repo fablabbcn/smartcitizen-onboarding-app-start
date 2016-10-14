@@ -8,10 +8,22 @@
 
 <div class="bottomNav animate" layout="row" layout-align="space-around center" flex="none" ng-class="animationRows[0][0]">
     <div >
-        <button class="backButton" ng-click="back()" ng-class="payload.backBlock"><i class="material-icons back">play_arrow</i><br></button>
+        <button class="backButton" ng-click="back()" ng-class="payload.backBlock">
+            <svg width="36px" height="49px" viewBox="8 10 36 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs></defs>
+                <text id="directleft" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="22" font-weight="normal">
+                    <tspan x="8" y="48">directleft</tspan>
+                </text>
+            </svg>
+        </button>
     </div>
     <div  class="segueWrapper" layout="row" layout-align="space-between center" flex="none">
-        <button class="segueButton" ng-click="seque()" ng-class="segueControl">{{ payload.segueButton }} <i class="material-icons">play_arrow</i><br></button>
+        <button class="segueButton" ng-click="seque()" ng-class="segueControl">{{ payload.segueButton }}  <svg width="36px" height="40px" viewBox="8 10 36 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs></defs>
+            <text id="directleft" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="28" font-weight="normal">
+                <tspan x="8" y="48" fill="#ffffff">directright</tspan>
+            </text>
+        </svg></button>
     </div>
     <div >
         <button style="visibility: hidden" class="backButton" ng-click="back()" ng-class="payload.backBlock"><i class="material-icons back">play_arrow</i><br></button>
