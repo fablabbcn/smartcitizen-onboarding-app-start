@@ -8,12 +8,12 @@
 
 <div class="bottomNav animate" layout="row" layout-align="space-around center" flex="none" ng-class="animationRows[0][0]">
     <div >
-        <button class="backButton" ng-click="back()" ng-class="payload.backBlock"><i class="material-icons back">play_arrow</i> Back<br></button>
+        <button class="backButton" ng-click="back()" ng-class="payload.backBlock"><i class="material-icons back">play_arrow</i><br></button>
     </div>
     <div  class="segueWrapper" layout="row" layout-align="space-between center" flex="none">
         <button class="segueButton" ng-click="seque()" ng-class="segueControl">{{ payload.segueButton }} <i class="material-icons">play_arrow</i><br></button>
     </div>
-    <div>
-        <button style="visibility: hidden" class="segueButton" ng-click="back()" ng-class="segueControl"><i class="material-icons back">play_arrow</i> Back<br></button>
+    <div >
+        <button style="visibility: hidden" class="backButton" ng-click="back()" ng-class="payload.backBlock"><i class="material-icons back">play_arrow</i><br></button>
     </div>
 </div>

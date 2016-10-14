@@ -5,7 +5,8 @@
     <h4>{{payload.h4}}</h4>
 </div>
 
-<div class="selectionRow animate" layout="row" layout-padding layout-margin layout-xs="column" ng-class="animationRows[3][2]">
+<div class="selectionRow animate" layout-gt-sm="row" layout-padding layout-margin layout="column" ng-class="animationRows[3][2]">
+
     <button class="selection morphBox" flex="33" flex-xs="100" ng-click="selectDevice(0)" ng-class="selectionButtons[0]">
         <div class="sectionContent">
             <div class="checkHolder" layout="row" layout-align="end start">
@@ -28,10 +29,19 @@
                     </svg>
                 </div>
             </div>
-            <h5 class="selectionText">Desktop</h5>
-
+            <div>
+                <h5 class="selectionText">Desktop</h5>
+            </div>
         </div>
     </button>
+
+
+
+
+
+
+
+
 
     <button class="selection" flex="33" flex-xs="100" ng-click="selectDevice(1)" ng-class="selectionButtons[1]">
         <div class="sectionContent">

@@ -1,8 +1,11 @@
 'use strict';
 
 angular.module('app').service('SegueService', function() {
+
     var pageContent = [
         {
+
+        /** -- INTRO -- **/
             "index": 0,
             "template": "landing",
             "url": "landing",
@@ -47,8 +50,10 @@ angular.module('app').service('SegueService', function() {
             "currentState": "What is Smart Citizen",
             "segueButton": "LET’S SET UP MY SENSOR"
         },
+
+    /** -- WHATS IN THE BOX -- **/
         {
-            "index": 5,
+            "index": 10,
             "template": "basic",
             "url":"whats_in_the_box",
             "currentState": "WHAT’S IN THE BOX",
@@ -56,7 +61,7 @@ angular.module('app').service('SegueService', function() {
             "h4": "We need a few things to set up the sensor. Let’s see if you’ve recieved them",
             "segueButton": "LETS DO IT"
         },{
-            "index": 6,
+            "index": 11,
             "template": "selectparts",
             "url":"kit_parts",
             "currentState": "WHAT’S IN THE BOX",
@@ -65,7 +70,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "Done"
         },
         {
-            "index": 7,
+            "index": 12,
             "template": "kitbuild1",
             "url":"kitbuild_1",
             "currentState": "Put it together",
@@ -88,7 +93,7 @@ angular.module('app').service('SegueService', function() {
             ],
             "segueButton": "Done"
         },{
-            "index": 8,
+            "index": 13,
             "template": "kitbuild2",
             "url":"kitbuild_2",
             "currentState": "Give it juice",
@@ -111,7 +116,7 @@ angular.module('app').service('SegueService', function() {
             ],
             "segueButton": "Done"
         },{
-            "index": 9,
+            "index": 14,
             "template": "kitbuild3",
             "url":"kitbuild_3",
             "currentState": "Press Button",
@@ -127,41 +132,12 @@ angular.module('app').service('SegueService', function() {
                 }
             ],
             "segueButton": "It's alive"
-        },{
-            "index": 10,
-            "template": "basic3",
-            "url":"wifi_prep",
-            "image": "app/images/sck_iso-1295.jpg",
-            "h2": "To set up the sensor let's find it on the WiFi menu",
-            "h4": "Click the 'Smart Citizen Kit' from the dropdown",
-            "currentState": "pair the sensor",
-            "segueButton": "it's alive"
-        },{
-            "index": 11,
-            "template": "pair1",
-            "url":"pair_1",
-            "h2": "Find your WiFi network from the list below",
-            "currentState": "pair the sensor",
-            "segueButton": "Done"
-        },{
-            "index": 12,
-            "template": "pair2",
-            "url":"pair_2",
-            "h2": "Almost there. What is the Password for the network?",
-            "h4": "We need this to set up your device’s connection to the internet",
-            "currentState": "pair the sensor",
-            "segueButton": "Check Password"
-        },{
-            "index": 13,
-            "template": "basic2",
-            "url": 'wifi_success',
-            "image": "app/images/sck_iso-1295.jpg",
-            "h1": "Success! We've got the sensor online",
-            "h4": "Now just go to your wi-fi menu and connect back to your wi-fi network to continue the setup.",
-            "currentState": "pair the sensor",
-            "segueButton": "it's alive"
-        },{
-            "index": 14,
+        },
+
+
+    /** -- NAMING -- **/
+        {
+            "index": 40,
             "template": "sensorName",
             url: 'sensorName',
             "h1": "Lets give your sensor a name",
@@ -169,8 +145,12 @@ angular.module('app').service('SegueService', function() {
             "currentState": "your sensor",
             "contextButton": "generate a random name",
             "segueButton": "done"
-        },{
-            "index": 15,
+        },
+
+
+    /** -- LOCATION -- **/
+        {
+            "index": 50,
             "template": "location1",
             url: 'location1',
             "h2": "Next, how about a location so we can add it to the global map?",
@@ -179,7 +159,7 @@ angular.module('app').service('SegueService', function() {
             "currentState": "location",
             "segueButton": "done"
         },{
-            "index": 16,
+            "index": 51,
             "template": "location2",
             url: 'location2',
             "h2": "Select which best fits your sensor's home",
@@ -187,7 +167,7 @@ angular.module('app').service('SegueService', function() {
             "currentState": "location",
             "segueButton": "done"
         },{
-            "index": 17,
+            "index": 52,
             "template": "location3",
             url: 'location3',
             "h1": "Awesome, now lets pinpoint your kit's location",
@@ -195,27 +175,150 @@ angular.module('app').service('SegueService', function() {
             "currentState": "location",
             "segueButton": "done"
         },
+
+
+    /** -- LIGHT HANDSHAKE -- **/
         {
-            "index": 17,
-            "template": "location3",
-            url: 'location3',
-            "h1": "Awesome, now lets pinpoint your kit's location",
-            "h4": "Drag and drop the pin to your sensors current location",
-            "currentState": "location",
-            "segueButton": "done"
+            "index": 20,
+            "template": "basic3",
+            "url":"handshake_prep",
+            "image": "app/images/sck_iso-1295.jpg",
+            "h2": "To set up the sensor let's find it on the WiFi menu",
+            "h4": "Click the 'Smart Citizen Kit' from the dropdown",
+            "currentState": "pair the sensor",
+            "segueButton": "it's alive"
+        },{
+            "index": 21,
+            "template": "handshake",
+            url: 'handshake',
+            "h2": "Please provide your WIFI information below",
+            "h4a": "Enter the name of your WIFI network",
+            "h4b":"And now, the password",
+            "segueButton": "Connect to WIFI"
+        },
+
+
+    /** -- WIFI HANDSHAKE -- **/
+        {
+            "index": 30,
+            "template": "pair1",
+            "url":"pair_1",
+            "h2": "Find your WiFi network from the list below",
+            "currentState": "pair the sensor",
+            "segueButton": "Done"
+        },{
+            "index": 31,
+            "template": "pair2",
+            "url":"pair_2",
+            "h2": "Almost there. What is the Password for the network?",
+            "h4": "We need this to set up your device’s connection to the internet",
+            "currentState": "pair the sensor",
+            "segueButton": "Check Password"
+        },{
+            "index": 32,
+            "template": "basic2",
+            "url": 'wifi_success',
+            "image": "app/images/sck_iso-1295.jpg",
+            "h1": "Success! We've got the sensor online",
+            "h4": "Now just go to your wi-fi menu and connect back to your wi-fi network to continue the setup.",
+            "currentState": "pair the sensor",
+            "segueButton": "it's alive"
+        },
+
+
+    /** -- ACCOUNT HERE -- **/
+        {
+            "index": 90,
+            "template": "account1",
+            url: 'email',
+            "h1": "Last step! time to save everything",
+            "h4": "How about an email so we can become friends?",
+            "segueButton": "next"
+        },
+        {
+            "index": 91,
+            "template": "login",
+            url: 'login',
+            "h2a": "Awesome, welcome back",
+            "h2b":"enter your password below to finish!",
+            "h4": "This will push all of your new sensor's data to your account",
+            "segueButton": "add my new kit!"
+        },
+        {
+            "index": 95,
+            "template": "make1",
+            url: 'username',
+            "h2": "And now a username so the community can identify you",
+            "h4": "This will be publicly linked to your sensors data",
+            "segueButton": "Yay Friends"
+        },
+        {
+            "index": 96,
+            "template": "make2",
+            url: 'password',
+            "h2": "Now, filly a password to secure everything",
+            "h4a": "the password has to be at least 8 characters long",
+            "h4b":"And one more time to make sure there are no mistakes",
+            "segueButton": "All done!"
         }
 
     ];
 
+    function getPageContent(val){
+        for(var i = 0; i < pageContent.length; i++)
+        {
+            if(pageContent[i].index == val)
+            {
+                return(pageContent[i]);
+            }
+        }
+    }
+    function getURLContent(url){
+        for(var i = 0; i < pageContent.length; i++)
+        {
+            if(pageContent[i].url == url)
+            {
+                return(pageContent[i]);
+            }
+        }
+    }
+
     this.prep = function(val){
-        return payloadGenerate(pageContent[val]);
+        return payloadGenerate(getPageContent(val))
     };
 
     this.nextPage = function(val){
-        return pageContent[(val + 1)].url;
+        if (val == 4) {
+            return('whats_in_the_box');
+        } else if (val == 14) {
+            return ('handshake_prep');
+        } else if (val == 21) {
+            return ('sensorName');
+        } else if (val == 40) {
+            return ('location1');
+        } else if (val == 52) {
+            return ('email');
+        }
+        else {
+            return getPageContent(val + 1).url;
+        }
     };
     this.previousPage = function(val){
-        return pageContent[(val - 1)].url;
+        if (val == 10) {
+            return('smart_citizen_brief')
+        } else if (val == 20){
+            return('kitbuild_3')
+        } else if (val == 40) {
+            return ('handshake');
+        } else if (val == 50) {
+            return('sensorName');
+        } else if (val == 90){
+            return('location3');
+        }
+        else
+        {
+            return getPageContent(val - 1).url;
+        }
     };
 
     function payloadGenerate(content){
@@ -237,54 +340,20 @@ angular.module('app').service('SegueService', function() {
     this.templateRowCounter = function(index){
 
         var tuples;
-        switch (pageContent[index].template) { //constants for getting rows in templates
-            case "landing":
-                tuples= 3;
-                break;
-            case "currentdevice":
-                tuples=3;
-                break;
-            case "collaborators":
-                tuples=3;
-                break;
-            case "basic2":
-                tuples=3;
-                break;
+        switch (getPageContent(index).template) { //constants for getting rows in templates
             case "basic":
-                tuples=2;
-                break;
-            case "selectparts":
-                tuples=3;
-                break;
-            case "kitbuild1":
-                tuples=3;
-                break;
-            case "kitbuild2":
-                tuples=3;
-                break;
-            case "kitbuild3":
-                tuples=3;
-                break;
             case "pair1":
                 tuples=2;
-                break;
-            case "pair2":
-                tuples=3;
                 break;
             case "sensorName":
                 tuples=4;
                 break;
-            case "location1":
-                tuples=3;
-                break;
-            case "location2":
-                tuples=3;
-                break;
-            case "location3":
-                tuples=3;
+            case "make2":
+            case "handshake":
+                tuples=5;
                 break;
             default:
-                tuples = 0;
+                tuples = 3;
         }
         return tuples; //change to array syntax
     }

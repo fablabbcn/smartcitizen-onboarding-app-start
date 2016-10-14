@@ -5,7 +5,7 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider,$locati
 
     $stateProvider
 
-    // route to show our basic form (/form)
+    /** -- INTRO -- **/
         .state('wizard', {
             url: '/wizard',
             templateUrl: 'app/wizard/wizard.html',
@@ -45,42 +45,42 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider,$locati
             controller: 'baseController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(4); }}
         })
+
+
+        /** -- WHATS IN THE BOX -- **/
         .state('wizard.basic', {
             url: '/whats_in_the_box',
             templateUrl: 'app/wizard/basic.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(5); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(10); }}
         })
         .state('wizard.selectparts', {
             url: '/kit_parts',
             templateUrl: 'app/wizard/selectparts.html',
             controller: 'stateCtlr',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(6); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(11); }}
         })
         .state('wizard.kitbuild1', { // TODO - fix this output
             url: '/kitbuild_1',
             templateUrl: 'app/wizard/kitbuild1.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(7); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(12); }}
         })
         .state('wizard.kitbuild2', {
             url: '/kitbuild_2',
             templateUrl: 'app/wizard/kitbuild2.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(8); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(13); }}
         })
         .state('wizard.kitbuild3', {
             url: '/kitbuild_3',
             templateUrl: 'app/wizard/kitbuild3.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(9); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(14); }}
         })
-        .state('wizard.wifiprep', {
-            url: '/wifi_prep',
-            templateUrl: 'app/wizard/basic3.html',
-            controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(10); }}
-        })
+
+
+
         .state('wizard.pair1', {
             url: '/pair_1',
             templateUrl: 'app/wizard/pair1.html',
@@ -99,29 +99,77 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider,$locati
             controller: 'baseController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(13); }}
         })
+
+    /** -- NAME -- **/
         .state('wizard.sensorName', {
             url: '/sensorName',
             templateUrl: 'app/wizard/sensorName.html',
             controller: 'nameCtlr',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(14); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(40); }}
         })
+
+
+    /** -- LOCATION -- **/
         .state('wizard.location1', {
             url: '/location1',
             templateUrl: 'app/wizard/location1.html',
             controller: 'locationController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(15); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(50); }}
         })
         .state('wizard.location2', {
             url: '/location2',
             templateUrl: 'app/wizard/location2.html',
             controller: 'stateCtlr',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(16); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(51); }}
         })
         .state('wizard.location3', {
             url: '/location3',
             templateUrl: 'app/wizard/location3.html',
             controller: 'locationController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(17); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(52); }}
+        })
+
+
+        /** -- HANDSHAKE -- **/
+        .state('wizard.wifiprep', {
+            url: '/handshake_prep',
+            templateUrl: 'app/wizard/basic3.html',
+            controller: 'baseController',
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(20); }}
+        })
+        .state('wizard.handshake', {
+            url: '/handshake',
+            templateUrl: 'app/wizard/handshake.html',
+            controller: 'handshakeController',
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(21); }}
+        })
+
+
+
+        /** --  ACCOUNT -- **/
+        .state('wizard.account1', {
+            url: '/email',
+            templateUrl: 'app/wizard/account1.html',
+            controller: 'accountController',
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(90); }}
+        })
+        .state('wizard.login', {
+            url: '/login',
+            templateUrl: 'app/wizard/login.html',
+            controller: 'accountController',
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(91); }}
+        })
+        .state('wizard.account2', {
+            url: '/username',
+            templateUrl: 'app/wizard/make_account1.html',
+            controller: 'accountController',
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(95); }}
+        })
+        .state('wizard.account3', {
+            url: '/password',
+            templateUrl: 'app/wizard/make_account2.html',
+            controller: 'accountController',
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(96); }}
         });
 
     /* Default state */

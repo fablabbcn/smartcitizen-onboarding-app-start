@@ -1,11 +1,11 @@
 <div class="animate" ng-class="animationRows[3][0]">
-<h2>{{payload.h2}}</h2>
-    </div>
+    <h2>{{payload.h2a}} //USERNAME// {{payload.h2b}}</h2>
+</div>
 <div class="animate" ng-class="animationRows[3][1]">
-<h4>{{payload.h4}}</h4>
-    </div>
+    <h4>{{payload.h4}}</h4>
+</div>
 
-<form name="handShakeCredentials" class="animate" ng-class="animationRows[3][2]">
+<form name="password" class="animate" ng-class="animationRows[3][2]">
     <div class="inputContainer password" layout="row" layout-align="center center">
         <div>
 
@@ -17,8 +17,10 @@
             </svg>
         </div>
         <md-input-container class="md-block">
-            <input required type="password" name="wifiCredentials">
+            <input autofocus ng-model="input" ng-change="loginListener()" type="password" name="accountPassword">
         </md-input-container>
     </div>
     <div class="inputSpacer"></div>
 </form>
+
+<!-- #TODO - Maybe have a loader here! when login happens-->

@@ -18,17 +18,32 @@
 
     }
 
+   svg {
+     position: relative;
+     left: 60px;
+     top: 10px;
+   }
+
+   .inputSpacer{
+     width: 48px;
+     height: 70px;
+   }
+
    .md-block{
      border: 3px solid $mkOpaqueGrey;
    }
-
     input {
       height: 80px;
       border: none;
-      font-size: 41px; //fallback
-      font-size: 3.5vmax;
+      font-size: 3vmax;
       color: $mkWhite;
     }
+
+   &.password{
+     input{
+       padding-left: 80px;
+     }
+   }
   }
 
 

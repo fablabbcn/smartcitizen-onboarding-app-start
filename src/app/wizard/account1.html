@@ -1,0 +1,14 @@
+<div class="animate" ng-class="animationRows[3][0]">
+    <h1>{{payload.h1}}</h1>
+</div>
+<div class="animate" ng-class="animationRows[3][1]">
+    <h4>{{payload.h4}}</h4>
+</div>
+
+<form name="emailing" class="animate" ng-class="animationRows[3][2]">
+    <div class="inputContainer" layout="column" layout-align="center center">
+        <md-input-container class="md-block">
+            <input autofocus ng-model="input" ng-change="accountListener()" required type="text" name="emailString">
+        </md-input-container>
+    </div>
+</form>

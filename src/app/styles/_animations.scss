@@ -454,4 +454,91 @@
     }
   }
 
+
+  &.ar5-0{
+    &.cont {
+      @include appearUp(0, 5);
+    }
+    &.back{
+      @include appearDown(0,5);
+    }
+    &.leaving{
+      @include fadeUp(0,5);
+    }
+    &.reversing{
+      @include fadeDown(0,5);
+    }
+  }
+  &.ar5-1{
+    &.cont {
+      @include appearUp(1, 5);
+    }
+    &.back{
+      @include appearDown(1,5);
+    }
+    &.leaving{
+      @include fadeUp(1,5);
+    }
+    &.reversing{
+      @include fadeDown(1,5);
+    }
+  }
+  &.ar5-2{
+    &.cont {
+      @include appearUp(2, 5);
+    }
+    &.back{
+      @include appearDown(2,5);
+    }
+    &.leaving{
+      @include fadeUp(2,5);
+    }
+    &.reversing{
+      @include fadeDown(2,5);
+    }
+  }
+  &.ar5-3{
+    &.cont {
+      @include appearUp(3, 5);
+    }
+    &.back{
+      @include appearDown(3,5);
+    }
+    &.leaving{
+      @include fadeUp(5,4);
+    }
+    &.reversing{
+      @include fadeDown(5,4);
+    }
+  }
+  &.ar5-4{
+    &.cont {
+      @include appearUp(4, 5);
+    }
+    &.back{
+      @include appearDown(4,5);
+    }
+    &.leaving{
+      @include fadeUp(4,5);
+    }
+    &.reversing{
+      @include fadeDown(4,5);
+    }
+  }
+  &.ar5-5{
+    &.cont {
+      @include appearUp(5,5);
+    }
+    &.back{
+      @include appearDown(5,5);
+    }
+    &.leaving{
+      @include fadeUp(5,5);
+    }
+    &.reversing{
+      @include fadeDown(5,5);
+    }
+  }
+
+
 }

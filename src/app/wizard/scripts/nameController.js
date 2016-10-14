@@ -102,5 +102,4 @@ angular.module('app').controller('nameCtlr', function($scope, scopePayload, Anim
 
     blockSegue();
 
-
 });

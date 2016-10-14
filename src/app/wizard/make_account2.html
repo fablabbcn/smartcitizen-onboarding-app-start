@@ -1,0 +1,47 @@
+<div class="animate" ng-class="animationRows[5][0]">
+    <h2>{{payload.h2}}</h2>
+</div>
+
+<div class="animate" ng-class="animationRows[5][2]">
+    <h4>{{payload.h4a}}</h4>
+</div>
+
+<form name="handShakeCredentials" class="animate" ng-class="animationRows[5][1]">
+    <div class="inputContainer password" layout="row" layout-align="center center">
+        <div>
+
+            <svg width="48px" height="66px" viewBox="9 6 48 66" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs></defs>
+                <text id="key" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="48" font-weight="normal">
+                    <tspan x="9" y="57" fill="#FB7E00">key</tspan>
+                </text>
+            </svg>
+        </div>
+        <md-input-container class="md-block">
+            <input autofocus ng-model="p1" ng-change="passwordListener()" type="password" name="confirmPassword1">
+        </md-input-container>
+        <div class="inputSpacer"></div>
+    </div>
+</form>
+
+<div class="animate" ng-class="animationRows[5][3]">
+    <h4>{{payload.h4b}}</h4>
+</div>
+
+<form name="handShakeCredentials" class="animate" ng-class="animationRows[5][4]">
+    <div class="inputContainer password" layout="row" layout-align="center center">
+        <div>
+
+            <svg width="48px" height="66px" viewBox="9 6 48 66" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs></defs>
+                <text id="key" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="48" font-weight="normal">
+                    <tspan x="9" y="57" fill="#FB7E00">key</tspan>
+                </text>
+            </svg>
+        </div>
+        <md-input-container class="md-block">
+            <input autofocus ng-model="p2" ng-change="passwordListener()" type="password" name="confirmPassword2">
+        </md-input-container>
+        <div class="inputSpacer"></div>
+    </div>
+</form>
