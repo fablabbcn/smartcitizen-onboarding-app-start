@@ -1,0 +1,247 @@
+@keyframes segueError {
+  0%{
+    border: 5px solid $mkWhite;
+    color: $mkWhite;
+    background-color: $mkNavy;
+  }
+  1% {
+    border: 5px solid $mkRed;
+  }
+  50% {
+    background-color: $mkRed;
+    color: rgba(0, 0, 0, 0);
+  }
+  51%{
+    color: $mkRed;
+  }
+  100% {
+    animation-timing-function: ease-in;
+    color: white;
+    background-color: $mkRed;
+    border: 5px solid $mkRed;
+  }
+}
+
+
+//@keyframes segueErrorReverse {
+//
+//  1% {
+//    animation-timing-function: ease-out;
+//    background-color: $mkRed;
+//    border: 5px solid $mkRed;
+//  }
+//  50% {
+//    color: $mkRed;
+//  }
+//  51%{
+//    background-color: $mkNavy;
+//    color: rgba(0, 0, 0, 0);
+//  }
+//  100% {
+//    border: 5px solid $mkNavy2;
+//    color: white;
+//  }
+//}
+
+
+@keyframes updateContent {
+  0% {
+    opacity: 1;
+    width: auto;
+  }
+  50% {
+    opacity: 0;
+    width: 0;
+  }
+  100% {
+    animation-timing-function: ease-in;
+    opacity: 1;
+    width: auto;
+  }
+}
+@keyframes hideError {
+  0% {
+    opacity:1;
+    width: auto;
+  }
+  90% {
+    opacity:0;
+    width: 0;
+  }
+  100% {
+    animation-timing-function: ease-in;
+    opacity:0;
+    width: 0;
+  }
+}
+@keyframes showError {
+  0% {
+    opacity:0;
+    width: 0;
+  }
+  50% {
+    width: 0;
+  }
+  100% {
+    animation-timing-function: ease-in;
+    opacity:1;
+    width: auto;
+  }
+}
+
+@keyframes showButtons {
+  50% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    animation-timing-function: ease-in;
+    width: $segueWrapperHeight * .75;
+    opacity: 1;
+  }
+}
+
+.bottomNav {
+  height: $segueWrapperHeight;
+  .segueWrapper {
+    .segueButton {
+      height: $segueWrapperHeight / 2;
+      width: auto;
+      padding: 5px 15px;
+      border-radius: 40px;
+      color: white;
+      background: $mkNavy;
+
+      #segueContent{
+       overflow: hidden;
+      }
+      #nextSVG {
+        position: relative;
+        top: 6px;
+        left: 3px;
+        display: inline;
+      }
+      #closeSVG{
+        position: relative;
+        top: 8px;
+        left: 3px;
+        //display: none; << HACKY display doesnt animate well.. so opacity and width are used in place
+        width: 0;
+      }
+      &.ready {
+        border: 5px solid $mkGreen;
+      }
+      &.blocked {
+        border: 5px solid $mkWhite;
+      }
+      &.error {
+        -webkit-animation-name: segueError;
+        -webkit-animation-duration: $errorTimer;
+        animation-name: segueError;
+        animation-duration: $errorTimer;
+        animation-fill-mode: forwards;
+        border: 5px solid $mkRed;
+
+        #segueContent{
+          -webkit-animation-name: updateContent;
+          -webkit-animation-duration: $errorTimer;
+          animation-name: updateContent;
+          animation-duration: $errorTimer;
+          animation-fill-mode: forwards;
+        }
+        #nextSVG {
+          -webkit-animation-name: hideError;
+          -webkit-animation-duration: $errorTimer;
+          animation-name: hideError;
+          animation-duration: $errorTimer;
+          animation-fill-mode: forwards;
+        }
+        #closeSVG {
+          -webkit-animation-name: showError;
+          -webkit-animation-duration: $errorTimer;
+          animation-name: showError;
+          animation-duration: $errorTimer;
+          animation-fill-mode: forwards;
+        }
+      }
+    }
+    .errorButton{
+      height: $segueWrapperHeight / 2;
+      width: 0;
+      text-transform: uppercase;
+      background: $mkNavy;
+      border-radius: 40px;
+      color: $mkWhite;
+      border: 5px solid $mkNavy2;
+      opacity: 0;
+      &.show{
+        -webkit-animation-name: showButtons;
+        -webkit-animation-duration: $errorTimer;
+        animation-name: showButtons;
+        animation-duration: $errorTimer;
+        animation-fill-mode: forwards;
+      }
+    }
+    .yesButton{
+
+    }
+    .noButton{
+
+    }
+    .buttonClearfix{
+      opacity: 0;
+      width: 0;
+    }
+  }
+
+  .backButton {
+    height: $segueWrapperHeight / 2;
+    width: $segueWrapperHeight / 2;
+    text-transform: uppercase;
+    background: none;
+    border-radius: 40px;
+    color: $mkNavy2;
+    border: 5px solid $mkNavy2;
+    svg {
+      position: relative;
+      top: 2px;
+      left: 3px;
+    }
+    tspan {
+      fill: $mkWhite;
+    }
+    &.blocked {
+      tspan {
+        fill: $mkNavy2;
+      }
+    }
+    &.hide {
+      visibility: hidden;
+    }
+  }
+  .forwardButton {
+    height: $segueWrapperHeight / 2;
+    width: $segueWrapperHeight / 2;
+    text-transform: uppercase;
+    background: none;
+    border-radius: 40px;
+    color: $mkNavy2;
+    border: 5px solid $mkNavy2;
+    svg {
+      position: relative;
+      top: 2px;
+      left: 8px;
+    }
+    tspan {
+      fill: $mkWhite;
+    }
+    &.blocked {
+      tspan {
+        fill: $mkNavy2;
+      }
+    }
+    &.hide {
+      visibility: hidden;
+    }
+  }
+}

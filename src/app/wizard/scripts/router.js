@@ -19,31 +19,23 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider,$locati
                 scopePayload: function(SegueService){ return SegueService.prep(0); }
             }
         })
-        .state('wizard.currentdevice', {
-            url: '/device',
-            templateUrl: 'app/wizard/currentdevice.html',
-            controller: 'stateCtlr',
-            resolve: {
-                scopePayload: function(SegueService){ return SegueService.prep(1); }
-            }
-        })
         .state('wizard.collaborators1', {
             url: '/us',
             templateUrl: 'app/wizard/collaborators.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(2); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(1); }}
         })
         .state('wizard.collaborators2', {
             url: '/smart_citizen',
             templateUrl: 'app/wizard/collaborators.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(3); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(2); }}
         })
         .state('wizard.basic2', {
             url: '/smart_citizen_brief',
             templateUrl: 'app/wizard/basic2.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(4); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(3); }}
         })
 
 

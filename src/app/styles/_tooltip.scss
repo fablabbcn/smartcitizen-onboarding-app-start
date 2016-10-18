@@ -9,7 +9,18 @@
 .tooltip-item {
   cursor: pointer;
   display: inline-block;
-  border-bottom: 3px $mkGrey solid;
+
+  background-color: $mkNavy2;
+  padding: 15px 15px 15px 35px;
+  border-radius: 40px;
+  color: $mkWhite;
+
+  svg{
+    position: absolute;
+    top: 7px;
+    left: 12px;
+  }
+
   &::after {
     content: '';
     position: absolute;
@@ -42,7 +53,7 @@
   text-align: left;
   font-size: 0.765em;
   line-height: 1.4;
-  background: $mkOrange;
+  background: $mkNavy2;
   opacity: 0;
   cursor: default;
   pointer-events: none;
@@ -119,7 +130,7 @@
     position: absolute;
     pointer-events: none;
     border-color: transparent;
-    border-top-color: $mkOrange;
+    border-top-color: $mkNavy2;
     border-width: 10px;
     margin-left: -10px;
   }
@@ -129,17 +140,19 @@
     display: block;
     float: left;
     margin-right: 1em;
+    background-color: $mkGreen;
+    border-radius: $divRadius 0 0 $divRadius;
   }
 }
 
 /* Tooltip content*/
 
 .tooltip-text {
-  font-size: 18px;
-  line-height: 1.35;
+  font-size: 34px;
+  line-height: 170px;
   display: block;
-  padding: 1.31em 1.21em 1.21em 0;
   color: #fff;
+  text-align: center;
 }
 
 .tooltip-effect-5 .tooltip-text {

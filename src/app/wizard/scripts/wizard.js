@@ -39,6 +39,7 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
 
         $scope.segueControl = 'ready';
 
+
         $scope.buildInstructions = content.buildInstructions;
 
         $scope.currentState = content.currentState;
@@ -80,7 +81,7 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
                 $window.scrollTo(0, 0);
             }, 500); // see animations max duration time
         } else {
-            alert('blocked');
+            handleError();
         }
     };
 
@@ -99,4 +100,23 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
         //    alert('blocked');
         //}
     };
+
+
+
+    function handleError(){
+        $scope.segueControl = 'error';
+        $scope.errorButton = 'show';
+        $rootScope.$broadcast('blockedSegue');
+        $timeout(function(){
+            $scope.payload.segueButton = $scope.payload.segueButtonError;
+        }, 250); //half of animation time defined in _navigation.scss
+    }
+
+    $scope.$on('removeError', function(){
+       removeError();
+    });
+
+    function removeError(){
+        $scope.errorButton = '';
+    }
 });

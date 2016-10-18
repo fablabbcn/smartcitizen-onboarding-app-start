@@ -11,19 +11,10 @@ angular.module('app').service('SegueService', function() {
             "url": "landing",
             "h1": "You've made it to the Making Sense pilot!",
             "h4": "Let’s get you set up with a Smart Citizen kit, and sensing in no time",
-            "currentState": "Welcome",
-            "segueButton": "Woop!"
+            "currentState": "WELCOME",
+            "segueButton": "LET'S DO THIS"
         },{
             "index": 1,
-            "template": "currentdevice",
-            "url": "device",
-            "h2": "What device are you using to set up the sensor?",
-            "h4": "We need to know this to optimise the setup",
-            "currentState": "Welcome",
-            "segueButton": "Continue!",
-            "warning":"You need to be on a wireless connection to proceed"
-        },{
-            "index": 2,
             "template": "collaborators",
             "url":"us",
             "companyLogo": "app/images/20160301 MAKING SENSE LOGOS-07.png",
@@ -33,7 +24,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "SOUNDS GOOD!"
         },
         {
-            "index": 3,
+            "index": 2,
             "template": "collaborators",
             "url":"smart_citizen",
             "companyLogo": "app/images/smart_citizen.png",
@@ -42,7 +33,7 @@ angular.module('app').service('SegueService', function() {
             "currentState": "What is Smart Citizen",
             "segueButton": "CONTINUE"
         },{
-            "index": 4,
+            "index": 3,
             "template": "basic2",
             "url":"smart_citizen_brief",
             "image": "app/images/sck_iso-1295.jpg",
@@ -57,25 +48,27 @@ angular.module('app').service('SegueService', function() {
             "template": "basic",
             "url":"whats_in_the_box",
             "currentState": "WHAT’S IN THE BOX",
-            "h1": "Let’s make sure we have everything we need.",
-            "h4": "We need a few things to set up the sensor. Let’s see if you’ve recieved them",
-            "segueButton": "LETS DO IT"
+            "h1": "LET'S SET UP THE SENSOR",
+            "h4": "There's a few pieces we need to set up the kit, let's check we have them all",
+            "segueButton": "I'M READY"
         },{
             "index": 11,
             "template": "selectparts",
             "url":"kit_parts",
             "currentState": "WHAT’S IN THE BOX",
             "h2": "Click on all the things you have received",
+            "h4": "We need to know this to make the set up work smoothly",
             "contextButton": "where is my enclosure?",
-            "segueButton": "Done"
+            "segueButton": "CONTINUE",
+            "segueButtonError": "Are you missing parts?"
         },
         {
             "index": 12,
             "template": "kitbuild1",
             "url":"kitbuild_1",
             "currentState": "Put it together",
-            "h2": "Let's put this all together",
-            "text": "Connect the [] to the [].",
+            "h2": "First, we connect the sensors",
+            "text": "Connect the pins on the [] to the [].",
             "tooltip": [
                 {
                     "trigger": "sensor board",
@@ -91,13 +84,13 @@ angular.module('app').service('SegueService', function() {
                     "linkText": "Need help"
                 }
             ],
-            "segueButton": "Done"
+            "segueButton": "DONE"
         },{
             "index": 13,
             "template": "kitbuild2",
             "url":"kitbuild_2",
             "currentState": "Give it juice",
-            "h2": "Let's give it some juice",
+            "h2": "Let's give it some power",
             "text": "Connect [] to the [].",
             "tooltip": [
                 {
@@ -114,14 +107,14 @@ angular.module('app').service('SegueService', function() {
                     "linkText": "Need help"
                 }
             ],
-            "segueButton": "Done"
+            "segueButton": "DONE"
         },{
             "index": 14,
             "template": "kitbuild3",
             "url":"kitbuild_3",
             "currentState": "Press Button",
             "h2": "Turn the sensor on",
-            "text": "Push the button on the [], once.",
+            "text": "Push the button on the sensor, once.",
             "tooltip": [
                 {
                     "trigger": "hardware board",
@@ -131,7 +124,7 @@ angular.module('app').service('SegueService', function() {
                     "linkText": "Need help"
                 }
             ],
-            "segueButton": "It's alive"
+            "segueButton": "IT'S ALIVE"
         },
 
 
@@ -144,7 +137,7 @@ angular.module('app').service('SegueService', function() {
             "h4": "This is so we can refer to it later",
             "currentState": "your sensor",
             "contextButton": "generate a random name",
-            "segueButton": "done"
+            "segueButton": "DONE"
         },
 
 
@@ -157,7 +150,7 @@ angular.module('app').service('SegueService', function() {
             "h4": "Press ‘Allow’ on the pop up to automatically let us know where to pin the sensor",
             "h6":"You can click 'Block' on the popup and set your location manually on the next step",
             "currentState": "location",
-            "segueButton": "done"
+            "segueButton": "DONE"
         },{
             "index": 51,
             "template": "location2",
@@ -165,7 +158,7 @@ angular.module('app').service('SegueService', function() {
             "h2": "Select which best fits your sensor's home",
             "h4": "This will help us better understand the data you are sensing",
             "currentState": "location",
-            "segueButton": "done"
+            "segueButton": "DONE"
         },{
             "index": 52,
             "template": "location3",
@@ -173,7 +166,7 @@ angular.module('app').service('SegueService', function() {
             "h1": "Awesome, now lets pinpoint your kit's location",
             "h4": "Drag and drop the pin to your sensors current location",
             "currentState": "location",
-            "segueButton": "done"
+            "segueButton": "DONE"
         },
 
 
@@ -186,7 +179,7 @@ angular.module('app').service('SegueService', function() {
             "h2": "To set up the sensor let's find it on the WiFi menu",
             "h4": "Click the 'Smart Citizen Kit' from the dropdown",
             "currentState": "pair the sensor",
-            "segueButton": "it's alive"
+            "segueButton": "IT'S ALIVEe"
         },{
             "index": 21,
             "template": "handshake",
@@ -194,7 +187,7 @@ angular.module('app').service('SegueService', function() {
             "h2": "Please provide your WIFI information below",
             "h4a": "Enter the name of your WIFI network",
             "h4b":"And now, the password",
-            "segueButton": "Connect to WIFI"
+            "segueButton": "CONNECT TO WIFI"
         },
 
 
@@ -205,7 +198,7 @@ angular.module('app').service('SegueService', function() {
             "url":"pair_1",
             "h2": "Find your WiFi network from the list below",
             "currentState": "pair the sensor",
-            "segueButton": "Done"
+            "segueButton": "DONE"
         },{
             "index": 31,
             "template": "pair2",
@@ -213,7 +206,7 @@ angular.module('app').service('SegueService', function() {
             "h2": "Almost there. What is the Password for the network?",
             "h4": "We need this to set up your device’s connection to the internet",
             "currentState": "pair the sensor",
-            "segueButton": "Check Password"
+            "segueButton": "CHECK PASSWORD"
         },{
             "index": 32,
             "template": "basic2",
@@ -222,7 +215,7 @@ angular.module('app').service('SegueService', function() {
             "h1": "Success! We've got the sensor online",
             "h4": "Now just go to your wi-fi menu and connect back to your wi-fi network to continue the setup.",
             "currentState": "pair the sensor",
-            "segueButton": "it's alive"
+            "segueButton": "ITS ALIVE"
         },
 
 
@@ -233,7 +226,7 @@ angular.module('app').service('SegueService', function() {
             url: 'email',
             "h1": "Last step! time to save everything",
             "h4": "How about an email so we can become friends?",
-            "segueButton": "next"
+            "segueButton": "NEXT"
         },
         {
             "index": 91,
@@ -242,7 +235,7 @@ angular.module('app').service('SegueService', function() {
             "h2a": "Awesome, welcome back",
             "h2b":"enter your password below to finish!",
             "h4": "This will push all of your new sensor's data to your account",
-            "segueButton": "add my new kit!"
+            "segueButton": "ADD MY NEW KIT"
         },
         {
             "index": 95,
@@ -250,7 +243,7 @@ angular.module('app').service('SegueService', function() {
             url: 'username',
             "h2": "And now a username so the community can identify you",
             "h4": "This will be publicly linked to your sensors data",
-            "segueButton": "Yay Friends"
+            "segueButton": "YAY FRIENDS"
         },
         {
             "index": 96,
@@ -259,7 +252,7 @@ angular.module('app').service('SegueService', function() {
             "h2": "Now, filly a password to secure everything",
             "h4a": "the password has to be at least 8 characters long",
             "h4b":"And one more time to make sure there are no mistakes",
-            "segueButton": "All done!"
+            "segueButton": "ALL DONE!"
         }
 
     ];
@@ -288,7 +281,7 @@ angular.module('app').service('SegueService', function() {
     };
 
     this.nextPage = function(val){
-        if (val == 4) {
+        if (val == 3) {
             return('whats_in_the_box');
         } else if (val == 14) {
             return ('handshake_prep');
@@ -332,8 +325,14 @@ angular.module('app').service('SegueService', function() {
         if (content.index >= 1) {
             payload.backBlock = '';
         } else {
-            payload.backBlock = 'blocked';
+            payload.backBlock = 'hide';
         }
+        if (content.index >= 1) {
+            payload.forwardBlock = 'blocked';
+        } else {
+            payload.forwardBlock = 'hide';
+        }
+
         return payload;
     }
 
@@ -356,8 +355,7 @@ angular.module('app').service('SegueService', function() {
                 tuples = 3;
         }
         return tuples; //change to array syntax
-    }
-
+    };
 
 }).controller('baseController', function($scope, scopePayload, AnimationService){
     $scope.$parent.payload = scopePayload;

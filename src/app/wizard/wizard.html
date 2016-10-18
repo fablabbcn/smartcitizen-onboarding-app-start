@@ -11,21 +11,43 @@
         <button class="backButton" ng-click="back()" ng-class="payload.backBlock">
             <svg width="36px" height="49px" viewBox="8 10 36 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <defs></defs>
-                <text id="directleft" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="22" font-weight="normal">
+                <text id="directleft" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="25" font-weight="normal">
                     <tspan x="8" y="48">directleft</tspan>
                 </text>
             </svg>
         </button>
     </div>
-    <div  class="segueWrapper" layout="row" layout-align="space-between center" flex="none">
-        <button class="segueButton" ng-click="seque()" ng-class="segueControl">{{ payload.segueButton }}  <svg width="36px" height="40px" viewBox="8 10 36 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <defs></defs>
-            <text id="directleft" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="28" font-weight="normal">
-                <tspan x="8" y="48" fill="#ffffff">directright</tspan>
-            </text>
-        </svg></button>
+    <div  class="segueWrapper" layout="row" layout-align="space-between center" layout-margin flex="none">
+        <button class="buttonClearfix">X</button>
+        <button class="buttonClearfix">X</button>
+        <button class="segueButton" ng-click="seque()" ng-class="segueControl">
+            <svg id='closeSVG' width="36px" height="40px" viewBox="8 10 36 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs></defs>
+                <text id="close" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="30" font-weight="normal">
+                    <tspan x="8" y="48" fill="#ffffff">close</tspan>
+                </text>
+            </svg>
+
+            <span id="segueContent">{{ payload.segueButton }}</span>
+            <svg id='nextSVG' width="36px" height="40px" viewBox="8 10 36 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs></defs>
+                <text id="directleft" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="28" font-weight="normal">
+                    <tspan x="8" y="48" fill="#ffffff">directright</tspan>
+                </text>
+            </svg>
+        </button>
+        <button class="yesButton errorButton" ng-click="seque()" ng-class="errorButton">YES</button>
+        <button class="noButton errorButton" ng-click="seque()"ng-class="errorButton">NO</button>
     </div>
     <div >
-        <button style="visibility: hidden" class="backButton" ng-click="back()" ng-class="payload.backBlock"><i class="material-icons back">play_arrow</i><br></button>
+        <button class="forwardButton" ng-click="forward()" ng-class="payload.forwardBlock">
+            <svg width="36px" height="49px" viewBox="8 10 36 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs></defs>
+                <text id="directright" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="22" font-weight="normal">
+                    <tspan x="8" y="48">directright</tspan>
+                </text>
+            </svg>
+        </button>
     </div>
+
 </div>

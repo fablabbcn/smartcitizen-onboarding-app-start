@@ -1,11 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Rubik:400,300,500,900);
+
+/** -- CONSTANTS -- **/
 $font:    Rubik, sans-serif;
 $divRadius: 15px;
+
+$errorTimer: .5s;
 
 
 $progressHeight: 15px;
 $segueWrapperHeight: 160px;
 
+/** -- IMPORTS -- **/
 @import "colors";
 @import "progress";
 @import "tooltip";
@@ -13,6 +18,7 @@ $segueWrapperHeight: 160px;
 @import "modal";
 @import "ss-standard";
 @import "animations";
+@import "navigation";
 
 html, body { margin: 0; padding: 0; }
 canvas {vertical-align: top; z-index: 0}
@@ -27,22 +33,19 @@ body {
 
   h1{
     font-weight: 900;
-    font-size: 72px; //fallback
-    font-size: 5vmax;
+    font-size: 72px;
     color: $mkBlue;
     line-height: 70px;
     text-transform: uppercase;
   }
   h2{
     font-weight: 400;
-    font-size: 41px; //fallback
-    font-size: 3.5vmax;
+    font-size: 45px; //fallback
     color: $mkWhite;
   }
   h4, p{
     font-weight: 400;
-    font-size: 41px; //fallback
-    font-size: 2.5vmax;
+    font-size: 28px;
     color: $mkGrey;
   }
   h5{
@@ -58,11 +61,19 @@ body {
   }
   button{
     font-weight: 500;
-    font-size: 2.3vmax;
+    font-size: 36px;
     color: white;
     text-transform: capitalize;
     &:focus {
       outline: none;
+    }
+  }
+
+  /** -- ANIMATIONS -- **/
+  @keyframes selectionError {
+    100% {
+      color: $mkRed;
+      border-color: $mkRed;
     }
   }
 
@@ -94,7 +105,7 @@ body {
       .selectionRow {
         .selection {
           height: 400px;
-          background: none;
+          background: $mkNavy;
           border-radius: $divRadius;
           border: 5px solid $mkNavy2;
 
@@ -113,7 +124,7 @@ body {
                 visibility: hidden;
               }
             }
-            .selectionIcon {
+            .selectionIcon, .selectionImage {
               padding: 30px 0;
               position: relative;
               -webkit-transition: top 0.2s;
@@ -137,13 +148,21 @@ body {
                 top: -100px;
               }
             }
+            .selectionImage{
+              padding: 0;
+              img{
+                max-height: 80%;
+                max-width: 80%;
+                overflow: hidden;
+              }
+            }
             .selectionText {
               color: $mkNavy2;
             }
           }
           &:hover, &:active, &.active {
             background-color: $mkNavy2;
-            .selectionIcon {
+            .selectionIcon, .selectionImage {
               position:relative;
               top: -10px;
               tspan {
@@ -165,12 +184,27 @@ body {
                 transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
               }
             }
-            .selectionIcon{
+            .selectionIcon, .selectionImage{
               position:relative;
               top: 0;
               .shadow{
                 top:-100px;
               }
+            }
+          }
+          &.error{
+            -webkit-animation-name: selectionError;
+            -webkit-animation-duration: $errorTimer;
+            animation-name: selectionError;
+            animation-duration: $errorTimer;
+            animation-fill-mode: forwards;
+
+            .sectionContent h5{
+              -webkit-animation-name: selectionError;
+              -webkit-animation-duration: $errorTimer;
+              animation-name: selectionError;
+              animation-duration: $errorTimer;
+              animation-fill-mode: forwards;
             }
           }
         }
@@ -204,57 +238,6 @@ body {
         border: 5px solid $mkNavy2;
         color: $mkGrey;
         font-size: 20px;
-      }
-    }
-
-    .bottomNav {
-      height: $segueWrapperHeight;
-      //div {
-      //  width: 200px;
-      //}
-      .segueButton {
-        height: $segueWrapperHeight / 2;
-        width: auto;
-        padding: 5px 15px;
-        text-transform: uppercase;
-        background: none;
-        border-radius: 40px;
-        color: white;
-        background: $mkNavy;
-        svg{
-          position:relative;
-          top: 6px;
-          left: 3px;
-        }
-        &.ready{
-          border: 5px solid $mkGreen;
-        }
-        &.blocked{
-          border: 5px solid $mkWhite;
-        }
-      }
-
-      .backButton{
-        height: $segueWrapperHeight / 2;
-        width: $segueWrapperHeight / 2;
-        text-transform: uppercase;
-        background: none;
-        border-radius: 40px;
-        color: $mkNavy2;
-        border: 5px solid $mkNavy2;
-        svg{
-          position:relative;
-          top: 2px;
-          left: 3px;
-        }
-        tspan {
-          fill: $mkWhite;
-        }
-        &.blocked{
-          tspan {
-            fill: $mkNavy2;
-          }
-        }
       }
     }
   }

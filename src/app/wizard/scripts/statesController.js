@@ -1,12 +1,11 @@
 'use strict';
 
-angular.module('app').controller('stateCtlr', function($scope, scopePayload, AnimationService){
+angular.module('app').controller('stateCtlr', function($scope, $rootScope, scopePayload, AnimationService){
     $scope.$parent.payload = scopePayload;
     AnimationService.animate(scopePayload.index);
 
     function setUpSelection(){
         blockSegue();
-
         $scope.morphControl =['closed'];
         $scope.selectionButtons = ['','','',''];
         $scope.partButtons = [false,false,false,false];
@@ -31,6 +30,7 @@ angular.module('app').controller('stateCtlr', function($scope, scopePayload, Ani
 
 
     $scope.selectPart = function(val){
+        resetter();
         if ($scope.partButtons[val] == true) {
             $scope.partButtons[val] = false;
             $scope.selectionButtons[val] = '';
@@ -46,6 +46,12 @@ angular.module('app').controller('stateCtlr', function($scope, scopePayload, Ani
         }
     };
 
+    function resetter(){
+        $scope.payload.segueButton = 'CONTINUE';
+        if ($scope.errorState == true){
+            $rootScope.$broadcast('removeError');
+        }
+    }
 
 
     $scope.morph = function(val){
@@ -59,5 +65,14 @@ angular.module('app').controller('stateCtlr', function($scope, scopePayload, Ani
     };
 
     setUpSelection();
+
+    $scope.$on('blockedSegue', function(){
+        for (var i = 0; i < 4; i++){
+            if ($scope.selectionButtons[i] == '')
+                $scope.selectionButtons[i] = 'error';
+        }
+        $scope.errorState = true;
+        console.log('sett');
+    });
 
 });
