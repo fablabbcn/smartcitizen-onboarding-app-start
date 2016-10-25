@@ -67,7 +67,9 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
 
     /** Submitted User Data **/
     $scope.submittedData = {};
-    $scope.submittedData.kitName = '';
+    $scope.submittedData.kitName = ' ';
+    $scope.submittedData.wifi_ssid =' ';
+    $scope.submittedData.wifi_password =' ';
 
     $scope.modalClass='hidden';
 
@@ -106,6 +108,14 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
 
 
     function handleError(){
+        if ($scope.payload.template == 'wifi_enter'){
+            $scope.segueControl = 'error';
+            $timeout(function(){
+                $scope.payload.segueButton = $scope.payload.segueButtonError;
+            }, 250);
+            return;
+        }
+
         $scope.segueControl = 'error';
         $scope.errorButton = 'show';
         $rootScope.$broadcast('blockedSegue');

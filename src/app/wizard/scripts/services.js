@@ -144,19 +144,18 @@ angular.module('app').service('SegueService', function() {
         {
             "index": 20,
             "template": "wifi_enter",
-            "url":"handshake_prep",
-            "image": "app/images/sck_iso-1295.jpg",
-            "h2": "To set up the sensor let's find it on the WiFi menu",
-            "h4": "Click the 'Smart Citizen Kit' from the dropdown",
-            "segueButton": "IT'S ALIVEe"
+            "url":"wifi_enter",
+            "h2": "What network are you talking to",
+            "h4": "We have to type it in manually...",
+            "segueButtonError":"CHECK FIELDS",
+            "segueButton": "I'M READY"
         },{
             "index": 21,
             "template": "handshake",
             url: 'handshake',
-            "h2": "Please provide your WIFI information below",
-            "h4a": "Enter the name of your WIFI network",
-            "h4b":"And now, the password",
-            "segueButton": "CONNECT TO WIFI"
+            "h2": "Now let's do some magic...",
+            "h4": "Hold up your kit and press it on the screen over the box below and press 'connect'. Make sure the blue side of the kit is facing you",
+            "segueButton": "CONNECT"
         },
 
 
@@ -250,7 +249,7 @@ angular.module('app').service('SegueService', function() {
         if (val == 4) {
             return('whats_in_the_box');
         } else if (val == 16) {
-            return ('handshake_prep');
+            return ('wifi_enter');
         } else if (val == 21) {
             return ('sensorName');
         } else if (val == 40) {
@@ -314,7 +313,7 @@ angular.module('app').service('SegueService', function() {
                 tuples=4;
                 break;
             case "make2":
-            case "handshake":
+            case "wifi_enter":
                 tuples=5;
                 break;
             default:

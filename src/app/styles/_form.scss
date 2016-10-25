@@ -1,59 +1,103 @@
- .inputContainer {
+.inputDiv {
 
-    md-input-container {
+  margin: 35px 0 ;
+
+  .inputTitle, .inputError {
+    color: $msGrey;
+  }
+
+  .inputContainer {
+    height: 80px;
+    padding: 0 20px;
+    border: none;
+
+    border-radius: 4px;
+    background-color: #344049;
+
+    &.focus {
+      background-color: #576671;
+    }
+
+    .ss_input{
+      margin: 0 25px;
+    }
+
+    .md-box{
       height: 80px;
-
-      .selectMenu{
-        height: 80px !important;
-
-        .md-select-value {
-          border: 3px solid $msOpaqueGrey;
-          padding: 35px;
-          span {
-            color: $msWhite;
-            font-size: 48px;
-          }
+      md-input-container{
+        height: 80px;
+        margin: 0;
+        border: none;
+        .md-placeholder{
+          color: $msGrey;
+        }
+        input {
+          padding: 0;
+          height: 80px;
+          border: none;
+          color: $msWhite;
+          font: $font !important;
+          font-size: 42px;
         }
       }
-
     }
 
-   svg {
-     position: relative;
-     left: 60px;
-     top: 10px;
-   }
 
-   .inputSpacer{
-     width: 48px;
-     height: 70px;
-   }
-
-   .md-block{
-     border: 3px solid $msOpaqueGrey;
-   }
-    input {
-      height: 80px;
-      border: none;
-      font-size: 3vmax;
-      color: $msWhite;
-    }
-
-   &.password{
-     input{
-       padding-left: 80px;
-     }
-   }
   }
 
 
-.selection{
+  // LOL HIDEOUS VVVVV
+  md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused label, md-input-container:not(.md-input-invalid).md-input-focused label, md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused md-icon, md-input-container:not(.md-input-invalid).md-input-focused md-icon {
+    color: $msGrey;
+}
+  md-input-container.md-default-theme.md-input-invalid label, md-input-container.md-input-invalid label, md-input-container.md-default-theme.md-input-invalid .md-input-message-animation, md-input-container.md-input-invalid .md-input-message-animation, md-input-container.md-default-theme.md-input-invalid .md-char-counter, md-input-container.md-input-invalid .md-char-counter {
+    color: $msRed;
+  }
+  md-input-container.md-default-theme label, md-input-container label, md-input-container.md-default-theme .md-placeholder, md-input-container .md-placeholder{
+    color: $msGrey;
+  }
+  md-input-container.md-default-theme:not(.md-input-invalid).md-input-has-value label, md-input-container:not(.md-input-invalid).md-input-has-value label {
+    color: $msGrey;
+  }
+
+  //.md-block{
+  //  border: 3px solid $msOpaqueGrey;
+  //}
+  // input {
+  //   height: 80px;
+  //   border: none;
+  //   font-size: 3vmax;
+  //   color: $msWhite;
+  // }
+
+  &.password {
+    input {
+      padding-left: 80px;
+    }
+  }
+}
+
+.selection {
   background-color: $msNavy;
   .md-text.ng-binding {
     font-size: 42px;
     color: $msGrey;
+
+    //.selectMenu{
+    //  height: 80px !important;
+    //
+    //  .md-select-value {
+    //    border: 3px solid $msOpaqueGrey;
+    //    padding: 35px;
+    //    span {
+    //      color: $msWhite;
+    //      font-size: 48px;
+    //    }
+    //  }
+    //}
   }
 }
+
 md-content {
   background-color: $msNavy !important;
 }

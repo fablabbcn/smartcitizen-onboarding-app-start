@@ -145,7 +145,7 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider,$locati
         .state('wizard.wifi_enter', {
             url: '/wifi_enter',
             templateUrl: 'app/wizard/wifi_enter.html',
-            controller: 'baseController',
+            controller: 'handshakeController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(20); }}
         })
         .state('wizard.handshake', {
