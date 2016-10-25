@@ -19,23 +19,29 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider,$locati
                 scopePayload: function(SegueService){ return SegueService.prep(0); }
             }
         })
-        .state('wizard.collaborators1', {
-            url: '/us',
+        .state('wizard.making_sense', {
+            url: '/making_sense',
             templateUrl: 'app/wizard/collaborators.html',
             controller: 'baseController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(1); }}
         })
-        .state('wizard.collaborators2', {
+        .state('wizard.smart_citizen', {
             url: '/smart_citizen',
             templateUrl: 'app/wizard/collaborators.html',
-            controller: 'baseController',
+            controller: 'smartCitizenController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(2); }}
         })
-        .state('wizard.basic2', {
+        .state('wizard.smart_citizen2', {
             url: '/smart_citizen_brief',
             templateUrl: 'app/wizard/basic2.html',
-            controller: 'baseController',
+            controller: 'smartCitizenController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(3); }}
+        })
+        .state('wizard.basic2', {
+            url: '/smart_citizen_brief2',
+            templateUrl: 'app/wizard/basic2.html',
+            controller: 'smartCitizenController',
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(4); }}
         })
 
 
@@ -52,45 +58,58 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider,$locati
             controller: 'stateCtlr',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(11); }}
         })
+        .state('wizard.confirm_parts', {
+            url: '/confirm_parts',
+            templateUrl: 'app/wizard/confirm.html',
+            controller: 'baseController',
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(12); }}
+        })
         .state('wizard.kitbuild1', { // TODO - fix this output
             url: '/kitbuild_1',
             templateUrl: 'app/wizard/kitbuild1.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(12); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(13); }}
         })
         .state('wizard.kitbuild2', {
             url: '/kitbuild_2',
             templateUrl: 'app/wizard/kitbuild2.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(13); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(14); }}
         })
         .state('wizard.kitbuild3', {
             url: '/kitbuild_3',
             templateUrl: 'app/wizard/kitbuild3.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(14); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(15); }}
+        })
+        .state('wizard.confirm_build', {
+            url: '/confirm_build',
+            templateUrl: 'app/wizard/confirm.html',
+            controller: 'baseController',
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(16); }}
         })
 
 
-
+    /** -- WIFI HANDSHAKE-- **/
         .state('wizard.pair1', {
             url: '/pair_1',
             templateUrl: 'app/wizard/pair1.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(11); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(30); }}
         })
         .state('wizard.pair2', {
             url: '/pair_2',
             templateUrl: 'app/wizard/pair2.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(12); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(31); }}
         })
         .state('wizard.wifisuccess', {
             url: '/wifi_success',
             templateUrl: 'app/wizard/basic2.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(13); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(32); }}
         })
+
 
     /** -- NAME -- **/
         .state('wizard.sensorName', {
@@ -123,9 +142,9 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider,$locati
 
 
         /** -- HANDSHAKE -- **/
-        .state('wizard.wifiprep', {
-            url: '/handshake_prep',
-            templateUrl: 'app/wizard/basic3.html',
+        .state('wizard.wifi_enter', {
+            url: '/wifi_enter',
+            templateUrl: 'app/wizard/wifi_enter.html',
             controller: 'baseController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(20); }}
         })

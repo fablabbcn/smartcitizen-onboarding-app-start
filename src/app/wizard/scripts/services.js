@@ -11,16 +11,14 @@ angular.module('app').service('SegueService', function() {
             "url": "landing",
             "h1": "You've made it to the Making Sense pilot!",
             "h4": "Let’s get you set up with a Smart Citizen kit, and sensing in no time",
-            "currentState": "WELCOME",
             "segueButton": "LET'S DO THIS"
         },{
             "index": 1,
             "template": "collaborators",
-            "url":"us",
+            "url":"making_sense",
             "companyLogo": "app/images/20160301 MAKING SENSE LOGOS-07.png",
             "h2": "Making Sense is a project to help people make sense of their environment.",
             "h4": "We want to help you deploy sensors to help understand sound pollution. By making sense of the issue, we might be able to address it.",
-            "currentState": "What is Making Sense",
             "segueButton": "SOUNDS GOOD!"
         },
         {
@@ -30,16 +28,23 @@ angular.module('app').service('SegueService', function() {
             "companyLogo": "app/images/smart_citizen.png",
             "h2": "Smart Citizen is a movement for civic participation in a modern world",
             "h4": "Smart Citizen creates open tools for citizens to be better informed about the world around them.",
-            "currentState": "What is Smart Citizen",
             "segueButton": "CONTINUE"
         },{
             "index": 3,
             "template": "basic2",
             "url":"smart_citizen_brief",
-            "image": "app/images/sck_iso-1295.jpg",
+            "image": "app/images/sck_glow.png",
+            "h2": "The Smart Citizen Kit",
             "h4": "This sensor is a Smart Citizen kit for environmental sensing. It measures sound, air quality, humidity, and lots of other things",
-            "currentState": "What is Smart Citizen",
-            "segueButton": "LET’S SET UP MY SENSOR"
+            "segueButton": "CONTINUE"
+        },{
+            "index": 4,
+            "template": "basic2",
+            "url":"smart_citizen_brief2",
+            "image": "app/images/SCK_macbook.png",
+            "h2":"smartcitizen.me",
+            "h4": "The sensor sends all the measurements to the Smart Citizen website. It's open and free for all to see, question and play with...",
+            "segueButton": "LET'S DO THIS"
         },
 
     /** -- WHATS IN THE BOX -- **/
@@ -47,7 +52,6 @@ angular.module('app').service('SegueService', function() {
             "index": 10,
             "template": "basic",
             "url":"whats_in_the_box",
-            "currentState": "WHAT’S IN THE BOX",
             "h1": "LET'S SET UP THE SENSOR",
             "h4": "There's a few pieces we need to set up the kit, let's check we have them all",
             "segueButton": "I'M READY"
@@ -55,76 +59,46 @@ angular.module('app').service('SegueService', function() {
             "index": 11,
             "template": "selectparts",
             "url":"kit_parts",
-            "currentState": "WHAT’S IN THE BOX",
             "h2": "Click on all the things you have received",
             "h4": "We need to know this to make the set up work smoothly",
             "contextButton": "where is my enclosure?",
             "segueButton": "CONTINUE",
             "segueButtonError": "Are you missing parts?"
-        },
-        {
+        },{
             "index": 12,
-            "template": "kitbuild1",
-            "url":"kitbuild_1",
-            "currentState": "Put it together",
-            "h2": "First, we connect the sensors",
-            "text": "Connect the pins on the [] to the [].",
-            "tooltip": [
-                {
-                    "trigger": "sensor board",
-                    "title": "Sensor Board",
-                    "body": "Bacon ipsum dolor amet bresaola chicken drumstick swine. Turducken chuck pastrami.",
-                    "bodyImage": "",
-                    "linkText": "Need help"
-                },{
-                    "trigger": "hardware board",
-                    "title": "Hardware board",
-                    "body": "Bacon ipsum dolor amet bresaola chicken drumstick swine. Turducken chuck pastrami.",
-                    "bodyImage": "",
-                    "linkText": "Need help"
-                }
-            ],
-            "segueButton": "DONE"
+            "template": "comfirm",
+            "url":"confirm_parts",
+            "h1": "WELL DONE",
+            "h4": "Now let's put it all together",
+            "segueButton": "CONTINUE"
         },{
             "index": 13,
-            "template": "kitbuild2",
-            "url":"kitbuild_2",
-            "currentState": "Give it juice",
-            "h2": "Let's give it some power",
-            "text": "Connect [] to the [].",
-            "tooltip": [
-                {
-                    "trigger": "battery cable",
-                    "title": "Battery Cable",
-                    "body": "Bacon ipsum dolor amet bresaola chicken drumstick swine. Turducken chuck pastrami.",
-                    "bodyImage": "",
-                    "linkText": "Need help"
-                },{
-                    "trigger": "hardware board",
-                    "title": "Hardware board",
-                    "body": "Bacon ipsum dolor amet bresaola chicken drumstick swine. Turducken chuck pastrami.",
-                    "bodyImage": "",
-                    "linkText": "Need help"
-                }
-            ],
+            "template": "kitbuild1",
+            "url":"kitbuild_1",
+            "h2": "First, we connect the sensors",
+            "text": "Connect the pins on the [] to the [].",
             "segueButton": "DONE"
         },{
             "index": 14,
+            "template": "kitbuild2",
+            "url":"kitbuild_2",
+            "h2": "Let's give it some power",
+            "text": "Connect [] to the [].",
+            "segueButton": "DONE"
+        },{
+            "index": 15,
             "template": "kitbuild3",
             "url":"kitbuild_3",
-            "currentState": "Press Button",
             "h2": "Turn the sensor on",
             "text": "Push the button on the sensor, once.",
-            "tooltip": [
-                {
-                    "trigger": "hardware board",
-                    "title": "Hardware board",
-                    "body": "Bacon ipsum dolor amet bresaola chicken drumstick swine. Turducken chuck pastrami.",
-                    "bodyImage": "",
-                    "linkText": "Need help"
-                }
-            ],
             "segueButton": "IT'S ALIVE"
+        },{
+            "index": 16,
+            "template": "comfirm",
+            "url":"confirm_build",
+            "h1": "WELL DONE",
+            "h4": "Time to connect to the internet",
+            "segueButton": "CONTINUE"
         },
 
 
@@ -135,7 +109,6 @@ angular.module('app').service('SegueService', function() {
             url: 'sensorName',
             "h1": "Lets give your sensor a name",
             "h4": "This is so we can refer to it later",
-            "currentState": "your sensor",
             "contextButton": "generate a random name",
             "segueButton": "DONE"
         },
@@ -149,7 +122,6 @@ angular.module('app').service('SegueService', function() {
             "h2": "Next, how about a location so we can add it to the global map?",
             "h4": "Press ‘Allow’ on the pop up to automatically let us know where to pin the sensor",
             "h6":"You can click 'Block' on the popup and set your location manually on the next step",
-            "currentState": "location",
             "segueButton": "DONE"
         },{
             "index": 51,
@@ -157,7 +129,6 @@ angular.module('app').service('SegueService', function() {
             url: 'location2',
             "h2": "Select which best fits your sensor's home",
             "h4": "This will help us better understand the data you are sensing",
-            "currentState": "location",
             "segueButton": "DONE"
         },{
             "index": 52,
@@ -165,7 +136,6 @@ angular.module('app').service('SegueService', function() {
             url: 'location3',
             "h1": "Awesome, now lets pinpoint your kit's location",
             "h4": "Drag and drop the pin to your sensors current location",
-            "currentState": "location",
             "segueButton": "DONE"
         },
 
@@ -173,12 +143,11 @@ angular.module('app').service('SegueService', function() {
     /** -- LIGHT HANDSHAKE -- **/
         {
             "index": 20,
-            "template": "basic3",
+            "template": "wifi_enter",
             "url":"handshake_prep",
             "image": "app/images/sck_iso-1295.jpg",
             "h2": "To set up the sensor let's find it on the WiFi menu",
             "h4": "Click the 'Smart Citizen Kit' from the dropdown",
-            "currentState": "pair the sensor",
             "segueButton": "IT'S ALIVEe"
         },{
             "index": 21,
@@ -197,7 +166,6 @@ angular.module('app').service('SegueService', function() {
             "template": "pair1",
             "url":"pair_1",
             "h2": "Find your WiFi network from the list below",
-            "currentState": "pair the sensor",
             "segueButton": "DONE"
         },{
             "index": 31,
@@ -205,7 +173,6 @@ angular.module('app').service('SegueService', function() {
             "url":"pair_2",
             "h2": "Almost there. What is the Password for the network?",
             "h4": "We need this to set up your device’s connection to the internet",
-            "currentState": "pair the sensor",
             "segueButton": "CHECK PASSWORD"
         },{
             "index": 32,
@@ -214,7 +181,6 @@ angular.module('app').service('SegueService', function() {
             "image": "app/images/sck_iso-1295.jpg",
             "h1": "Success! We've got the sensor online",
             "h4": "Now just go to your wi-fi menu and connect back to your wi-fi network to continue the setup.",
-            "currentState": "pair the sensor",
             "segueButton": "ITS ALIVE"
         },
 
@@ -281,9 +247,9 @@ angular.module('app').service('SegueService', function() {
     };
 
     this.nextPage = function(val){
-        if (val == 3) {
+        if (val == 4) {
             return('whats_in_the_box');
-        } else if (val == 14) {
+        } else if (val == 16) {
             return ('handshake_prep');
         } else if (val == 21) {
             return ('sensorName');
@@ -298,9 +264,9 @@ angular.module('app').service('SegueService', function() {
     };
     this.previousPage = function(val){
         if (val == 10) {
-            return('smart_citizen_brief')
+            return('smart_citizen_brief2')
         } else if (val == 20){
-            return('kitbuild_3')
+            return('confirm_build')
         } else if (val == 40) {
             return ('handshake');
         } else if (val == 50) {
@@ -361,4 +327,10 @@ angular.module('app').service('SegueService', function() {
     $scope.$parent.payload = scopePayload;
     AnimationService.animate(scopePayload.index);
     $scope.$parent.segueControl ='ready';
+    $scope.$parent.smartCitizenToggle = '';
+}).controller('smartCitizenController', function($scope, scopePayload, AnimationService){
+    $scope.$parent.payload = scopePayload;
+    AnimationService.animate(scopePayload.index);
+    $scope.$parent.segueControl ='ready';
+    $scope.$parent.smartCitizenToggle = 'smartCitizen';
 });

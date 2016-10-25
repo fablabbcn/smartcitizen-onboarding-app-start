@@ -10,10 +10,10 @@
   cursor: pointer;
   display: inline-block;
 
-  background-color: $mkNavy2;
+  background-color: $msNavy2;
   padding: 15px 15px 15px 35px;
   border-radius: 40px;
-  color: $mkWhite;
+  color: $msWhite;
 
   svg{
     position: absolute;
@@ -31,6 +31,9 @@
     pointer-events: none;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
+  }
+  &:hover {
+    background-color: $msGreen;
   }
 }
 
@@ -53,7 +56,7 @@
   text-align: left;
   font-size: 0.765em;
   line-height: 1.4;
-  background: $mkNavy2;
+  background: $msNavy2;
   opacity: 0;
   cursor: default;
   pointer-events: none;
@@ -130,7 +133,7 @@
     position: absolute;
     pointer-events: none;
     border-color: transparent;
-    border-top-color: $mkNavy2;
+    border-top-color: $msNavy2;
     border-width: 10px;
     margin-left: -10px;
   }
@@ -140,7 +143,7 @@
     display: block;
     float: left;
     margin-right: 1em;
-    background-color: $mkGreen;
+    background-color: $msGreen;
     border-radius: $divRadius 0 0 $divRadius;
   }
 }

@@ -19,13 +19,15 @@ $segueWrapperHeight: 160px;
 @import "ss-standard";
 @import "animations";
 @import "navigation";
+@import "kits";
+@import "smart_citizen";
 
 html, body { margin: 0; padding: 0; }
 canvas {vertical-align: top; z-index: 0}
 body {
   height:auto; overflow:auto;
   font: 100% $font !important;
-  background-color: $mkNavy;
+  background-color: $msNavy;
 
   h1, h2, h3, h4, h6, p {
     text-align: center;
@@ -34,34 +36,34 @@ body {
   h1{
     font-weight: 900;
     font-size: 72px;
-    color: $mkBlue;
+    color: $msBlue;
     line-height: 70px;
     text-transform: uppercase;
   }
   h2{
     font-weight: 400;
     font-size: 45px; //fallback
-    color: $mkWhite;
+    color: $msWhite;
   }
   h4, p{
     font-weight: 400;
     font-size: 28px;
-    color: $mkGrey;
+    color: $msGrey;
   }
   h5{
     font: 100% $font;
     font-weight: 400;
     font-size: 28px;
-    color: $mkWhite;
+    color: $msWhite;
   }
   h6{
     font-weight: 400;
     font-size: 28px;
-    color: $mkGrey;
+    color: $msGrey;
   }
   button{
     font-weight: 500;
-    font-size: 36px;
+    font-size: 38px;
     color: white;
     text-transform: capitalize;
     &:focus {
@@ -72,14 +74,14 @@ body {
   /** -- ANIMATIONS -- **/
   @keyframes selectionError {
     100% {
-      color: $mkRed;
-      border-color: $mkRed;
+      color: $msRed;
+      border-color: $msRed;
     }
   }
 
 
   #container {
-    //background-color: $mkNavy;
+    //background-color: $msNavy;
     z-index: 1;
 
     #wizardView {
@@ -97,19 +99,29 @@ body {
         max-height: 250px;
       }
 
-      .buildImage {
-        min-width: 320px;
-        max-width: 500px;
-      }
-
       .selectionRow {
         .selection {
           height: 400px;
-          background: $mkNavy;
+          background: $msNavy;
           border-radius: $divRadius;
-          border: 5px solid $mkNavy2;
+          border: 5px solid $msNavy2;
 
           .sectionContent {
+            .contentIcons{
+              height: 30px;
+              .info{
+                height: 30px;
+              }
+            }
+
+            .infoHolder{
+              outline: none;
+              padding: 14px;
+              position: relative;
+              top: -14px;
+              right: 14px;
+            }
+
             .checkHolder {
               .check {
                 height: 30px;
@@ -134,7 +146,7 @@ body {
               transition: top 0.2s;
               top: 0;
               tspan {
-                fill: $mkNavy2;
+                fill: $msNavy2;
               }
               .shadow{
                 height: 0;
@@ -157,23 +169,23 @@ body {
               }
             }
             .selectionText {
-              color: $mkNavy2;
+              color: $msNavy2;
             }
           }
           &:hover, &:active, &.active {
-            background-color: $mkNavy2;
+            background-color: $msNavy2;
             .selectionIcon, .selectionImage {
               position:relative;
               top: -10px;
               tspan {
-                fill: $mkWhite;
+                fill: $msWhite;
               }
               .shadow{
                 top:-90px;
               }
             }
             .selectionText {
-              color: $mkWhite;
+              color: $msWhite;
             }
           }
           &.active{
@@ -233,10 +245,10 @@ body {
         padding: 5px;
 
         text-transform: uppercase;
-        background: $mkNavy2;
+        background: $msNavy2;
         border-radius: 40px;
-        border: 5px solid $mkNavy2;
-        color: $mkGrey;
+        border: 5px solid $msNavy2;
+        color: $msGrey;
         font-size: 20px;
       }
     }

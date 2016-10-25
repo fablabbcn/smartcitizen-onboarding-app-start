@@ -1,0 +1,25 @@
+$SCKblue: #2C7DB4;
+$SCKblack: #222B32;
+
+#container.smartCitizen{
+  background-color: white;
+
+  h2{
+    color: $SCKblack;
+  }
+  .segueButton {
+    border-color: $SCKblue;
+    background-color: white;
+    color: $SCKblue;
+    tspan {
+      fill: $SCKblue;
+    }
+  }
+  .backButton, .forwardButton {
+    opacity: .12;
+    tspan {
+      fill: $SCKblue;
+    }
+  }
+
+}

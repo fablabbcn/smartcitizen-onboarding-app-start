@@ -36,8 +36,8 @@
                 </text>
             </svg>
         </button>
-        <button class="yesButton errorButton" ng-click="seque()" ng-class="errorButton">YES</button>
-        <button class="noButton errorButton" ng-click="seque()"ng-class="errorButton">NO</button>
+        <button class="yesButton errorButton" ng-click="yes()" ng-class="errorButton">YES</button>
+        <button class="noButton errorButton" ng-click="no()"ng-class="errorButton">NO</button>
     </div>
     <div >
         <button class="forwardButton" ng-click="forward()" ng-class="payload.forwardBlock">
@@ -50,4 +50,22 @@
         </button>
     </div>
 
+</div>
+
+<div id="modal" ng-class="modalClass" layout="column" layout-align="center center" flex="grow" ng-click="modalClick()">
+    <div id="modalContent" layout="column" layout-align="center center" layout-padding layout-margin>
+        <div id="modalBox" ng-class="modalBox" layout="row">
+            <div>
+                <h2>{{modalContent.title}}</h2>
+                <h5>{{modalContent.body}}</h5>
+            </div>
+            <div id="partImage" flex="none">
+                <img ng-src="{{modalContent.image}}">
+            </div>
+
+        </div>
+        <div id="modalLink">
+            <button id="modalButton" ng-click="modalButtonClick()" ng-class="modalButton">{{modalContent.button}}</button>
+        </div>
+    </div>
 </div>

@@ -69,6 +69,8 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
     $scope.submittedData = {};
     $scope.submittedData.kitName = '';
 
+    $scope.modalClass='hidden';
+
 
     /** Functions below **/
     $scope.seque = function () {
@@ -119,4 +121,38 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
     function removeError(){
         $scope.errorButton = '';
     }
+
+    $scope.no = function(){
+        $rootScope.$broadcast('no');
+    };
+
+    $scope.yes = function(){
+        $scope.modalBox = 'red';
+        var data = {title: "Uh oh", body:"It seems like you are missing parts of the kit. If that’s so, let’s notify the team and they’ll get back to you as soon as possible", image:"app/images/alert.svg", button:"Notify the team!"};
+        $scope.modalContent = data;
+        $rootScope.$broadcast('modal');
+    };
+
+    /** -- MODAL-- **/
+
+    $scope.modalClick = function(){
+        //alert('modalPress');
+        $scope.modalClass='out';
+        $timeout(function(){
+            $scope.modalClass='hidden';
+        }, 500);
+    };
+    $scope.modalButtonClick = function(){
+        if ( $scope.modalBox == 'red' ) //error state
+        {
+            $window.open('mailto:someone@example.com?Subject=Hello%20again', '_blank');
+        }
+    };
+    $scope.$on('modal', function(){
+        $scope.modalClass='showing';
+    });
+
+
+
+
 });

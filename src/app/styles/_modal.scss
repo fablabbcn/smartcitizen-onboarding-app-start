@@ -1,106 +1,109 @@
-.morphBox {
-  position: relative;
-
-  &.closed {
-    -webkit-transition: opacity 0.1s 0.5s;
-    transition: opacity 0.1s 0.5s;
-    .morphContent {
-      visibility: hidden;
-    }
+@keyframes modal-in {
+  0%{
+    opacity: 0;
   }
-  &.open {
-    -webkit-transition: opacity 0.1s;
-    transition: opacity 0.1s;
+  100% {
     opacity: 1;
-    .morphContent {
-      visibility: visible;
-    }
   }
-
+}
+@keyframes modal-out {
+  0%{
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-//
-//
-//.morphBox {
-//  position: relative;
-//  display: block;
-//  margin: 0 auto;
-//
-//  &.open {
-//    &:before {
-//      opacity: 1;
-//      pointer-events: auto;
-//    }
-//    .morphOriginal {
-//      position: relative;
-//      opacity: 0;
-//      -webkit-transition: opacity 0.1s;
-//      transition: opacity 0.1s;
-//    }
-//    .morphContent{
-//      opacity: 1;
-//
-//      top: 50% !important;
-//      left: 50% !important;
-//      margin: -210px 0 0 -300px;
-//      width: 600px;
-//      height: 420px;
-//      -webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
-//      transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
-//
-//      & > div {
-//        visibility: visible;
-//        height: auto;
-//        opacity: 1;
-//        -webkit-transition: opacity 0.3s 0.5s;
-//        transition: opacity 0.3s 0.5s;
-//      }
-//    }
-//  }
-//
-//  &.closed {
-//    position: relative;
-//
-//    &:before {
-//      position: fixed;
-//      top: 0;
-//      left: 0;
-//      z-index: 800;
-//      width: 100%;
-//      height: 100%;
-//      background: rgba(0,0,0,0.5);
-//      content: '';
-//      opacity: 0;
-//      -webkit-transition: opacity 0.5s;
-//      transition: opacity 0.5s;
-//      pointer-events: none;
-//    }
-//
-//    .morphOriginal{
-//      z-index: 1000;
-//      width: 100%;
-//      height: 100%;
-//      -webkit-transition: opacity 0.1s 0.5s;
-//      transition: opacity 0.1s 0.5s;
-//    }
-//    .morphContent{
-//      position: fixed;
-//      z-index: 900;
-//      opacity: 0;
-//      -webkit-transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
-//      transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
-//
-//      & > div {
-//        visibility: hidden;
-//        height: 0;
-//        opacity: 0;
-//        -webkit-transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
-//        transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
-//      }
-//
-//    }
-//  }
-//
-//
-//
-//}
+#modal{
+
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(34, 43, 50, .78);
+
+  width: 100%;
+  height: 100%;
+
+  &.hidden {
+    display: none;
+    opacity: 0;
+  }
+  &.out{
+    -webkit-animation-name: modal-out;
+    -webkit-animation-duration: $errorTimer;
+    animation-name: modal-out;
+    animation-duration: $errorTimer;
+    animation-fill-mode: forwards;
+  }
+  &.showing {
+    //opacity: 1;
+    display: flex;
+
+    -webkit-animation-name: modal-in;
+    -webkit-animation-duration: $errorTimer;
+    animation-name: modal-in;
+    animation-duration: $errorTimer;
+    animation-fill-mode: forwards;
+  }
+
+  &.showing, &.out{
+    #modalContent {
+      z-index: 3;
+      #modalBox{
+        border-radius: $divRadius;
+        width: 1000px;
+        min-height: 200px;
+        padding: 40px 40px 40px 80px;
+        overflow: visible;
+
+        h5 {
+          font-size: 25px;
+          padding-right: 50px;
+        }
+        &.red{
+          background-color: $msRed;
+          #partImage{
+            width: 200px;
+            height: 200px;
+            img{
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+        &.green{
+          background-color: $msGreen;
+
+          #partImage{
+            width: 200px;
+            height: 200px;
+            //overflow: hidden;
+            img{
+              width: 200%;
+              position: relative;
+              top: -100px;
+              right: 125px;
+            }
+          }
+        }
+
+      }
+      #modalLink {
+        #modalButton {
+          font: 100% $font !important;
+          width: auto;
+          margin: 15px auto;
+          padding: 15px 20px;
+          font-size: 26px !important;
+
+          background: $msWhite;
+          border-radius: 40px;
+          border: 5px solid $msWhite;
+          color: $msNavy2;
+        }
+      }
+    }
+  }
+}

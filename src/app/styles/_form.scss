@@ -7,10 +7,10 @@
         height: 80px !important;
 
         .md-select-value {
-          border: 3px solid $mkOpaqueGrey;
+          border: 3px solid $msOpaqueGrey;
           padding: 35px;
           span {
-            color: $mkWhite;
+            color: $msWhite;
             font-size: 48px;
           }
         }
@@ -30,13 +30,13 @@
    }
 
    .md-block{
-     border: 3px solid $mkOpaqueGrey;
+     border: 3px solid $msOpaqueGrey;
    }
     input {
       height: 80px;
       border: none;
       font-size: 3vmax;
-      color: $mkWhite;
+      color: $msWhite;
     }
 
    &.password{
@@ -48,12 +48,12 @@
 
 
 .selection{
-  background-color: $mkNavy;
+  background-color: $msNavy;
   .md-text.ng-binding {
     font-size: 42px;
-    color: $mkGrey;
+    color: $msGrey;
   }
 }
 md-content {
-  background-color: $mkNavy !important;
+  background-color: $msNavy !important;
 }

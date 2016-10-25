@@ -1,0 +1,18 @@
+.kitBuildHolder {
+  //width: 800px;
+  .buildImage {
+    min-width: 320px;
+    max-width: 700px;
+  }
+}
+.kitImage{
+  height: 400px;
+  overflow: visible;
+  img{
+    height: 200%;
+    position: relative;
+    bottom: 50%;
+    width: auto;
+    margin: 0 auto;
+  }
+}

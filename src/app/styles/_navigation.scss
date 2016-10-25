@@ -1,24 +1,24 @@
 @keyframes segueError {
   0%{
-    border: 5px solid $mkWhite;
-    color: $mkWhite;
-    background-color: $mkNavy;
+    border: 5px solid $msWhite;
+    color: $msWhite;
+    background-color: $msNavy;
   }
   1% {
-    border: 5px solid $mkRed;
+    border: 5px solid $msRed;
   }
   50% {
-    background-color: $mkRed;
+    background-color: $msRed;
     color: rgba(0, 0, 0, 0);
   }
   51%{
-    color: $mkRed;
+    color: $msRed;
   }
   100% {
     animation-timing-function: ease-in;
     color: white;
-    background-color: $mkRed;
-    border: 5px solid $mkRed;
+    background-color: $msRed;
+    border: 5px solid $msRed;
   }
 }
 
@@ -27,18 +27,18 @@
 //
 //  1% {
 //    animation-timing-function: ease-out;
-//    background-color: $mkRed;
-//    border: 5px solid $mkRed;
+//    background-color: $msRed;
+//    border: 5px solid $msRed;
 //  }
 //  50% {
-//    color: $mkRed;
+//    color: $msRed;
 //  }
 //  51%{
-//    background-color: $mkNavy;
+//    background-color: $msNavy;
 //    color: rgba(0, 0, 0, 0);
 //  }
 //  100% {
-//    border: 5px solid $mkNavy2;
+//    border: 5px solid $msNavy2;
 //    color: white;
 //  }
 //}
@@ -110,7 +110,7 @@
       padding: 5px 15px;
       border-radius: 40px;
       color: white;
-      background: $mkNavy;
+      background: $msNavy;
 
       #segueContent{
        overflow: hidden;
@@ -129,10 +129,10 @@
         width: 0;
       }
       &.ready {
-        border: 5px solid $mkGreen;
+        border: 5px solid $msGreen;
       }
       &.blocked {
-        border: 5px solid $mkWhite;
+        border: 5px solid $msWhite;
       }
       &.error {
         -webkit-animation-name: segueError;
@@ -140,7 +140,7 @@
         animation-name: segueError;
         animation-duration: $errorTimer;
         animation-fill-mode: forwards;
-        border: 5px solid $mkRed;
+        border: 5px solid $msRed;
 
         #segueContent{
           -webkit-animation-name: updateContent;
@@ -169,10 +169,10 @@
       height: $segueWrapperHeight / 2;
       width: 0;
       text-transform: uppercase;
-      background: $mkNavy;
+      background: $msNavy;
       border-radius: 40px;
-      color: $mkWhite;
-      border: 5px solid $mkNavy2;
+      color: $msWhite;
+      border: 5px solid $msNavy2;
       opacity: 0;
       &.show{
         -webkit-animation-name: showButtons;
@@ -200,19 +200,19 @@
     text-transform: uppercase;
     background: none;
     border-radius: 40px;
-    color: $mkNavy2;
-    border: 5px solid $mkNavy2;
+    color: $msNavy2;
+    border: 5px solid $msNavy2;
     svg {
       position: relative;
-      top: 2px;
+      top: 5px;
       left: 3px;
     }
     tspan {
-      fill: $mkWhite;
+      fill: $msWhite;
     }
     &.blocked {
       tspan {
-        fill: $mkNavy2;
+        fill: $msNavy2;
       }
     }
     &.hide {
@@ -225,19 +225,19 @@
     text-transform: uppercase;
     background: none;
     border-radius: 40px;
-    color: $mkNavy2;
-    border: 5px solid $mkNavy2;
+    color: $msNavy2;
+    border: 5px solid $msNavy2;
     svg {
       position: relative;
       top: 2px;
       left: 8px;
     }
     tspan {
-      fill: $mkWhite;
+      fill: $msWhite;
     }
     &.blocked {
       tspan {
-        fill: $mkNavy2;
+        fill: $msNavy2;
       }
     }
     &.hide {
