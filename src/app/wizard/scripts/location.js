@@ -1,7 +1,5 @@
 'use strict';
 
-// #TODO - fixfoc on new anchor to map center when too fast
-
 angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
     uiGmapGoogleMapApiProvider.configure({
         key: 'AIzaSyDgSvUrtmsNLkoaK1mYlyU3eVbByMlE4w4',
@@ -9,8 +7,48 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
         libraries: 'weather,geometry,visualization'
     });
 }).controller('locationController', function($scope, uiGmapGoogleMapApi, $geolocation, scopePayload, AnimationService){
+
+    $scope.locationTags = [
+        'inside',
+        'outside',
+        'park',
+        'beach',
+        'school',
+        'street',
+        'woods',
+        'residential',
+        'commercial',
+        'plaza',
+        'rural',
+        'busy',
+        'calm',
+        'terrace',
+        'balcony',
+        'window',
+        'garden',
+        'bicycle'
+    ];
+
+    $scope.tagStates = ['','','','','','','','','','','','','','','','','',''];
+
+
+
+
     $scope.$parent.payload = scopePayload;
+    $scope.$parent.segueControl ='ready';
     AnimationService.animate(scopePayload.index);
+
+    $scope.tagToggle = function(itr){
+        var index = $scope.locationTags.indexOf(itr);
+        console.log(index);
+        if ($scope.tagStates[index] == 'active')
+        {
+            $scope.tagStates[index] = '';
+        } else {
+            $scope.tagStates[index] = 'active';
+        }
+    };
+
 
     function setMapData(center, val, zoom){
         $scope.$parent.map = {
@@ -42,8 +80,10 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
         var zoom = 18;
         if (typeof newValue == 'undefined') {
             console.log('did not capture local');
+
+            //SET Center to IAAC in BCN with zoom
             center = {latitude: 41.396867,longitude: 2.194351};
-            zoom = 14;
+            zoom = 13;
             val = {}
         } else {
             console.log('captured');

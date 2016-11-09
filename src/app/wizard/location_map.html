@@ -1,0 +1,43 @@
+<div class="animate" ng-class="animationRows[3][0]">
+    <h2>{{payload.h2}}</h2>
+</div>
+<div class="animate" ng-class="animationRows[3][1]">
+    <h4>{{payload.h4}}</h4>
+</div>
+
+<div class="animate" ng-class="animationRows[3][2]">
+
+    <form name="location">
+        <div class="inputDiv locationInput" layout="column" layout-align="center">
+            <div class='inputContainer' layout="row" layout-align="start center">
+                <div class="ss_input">
+                    <svg width="26px" height="40px" viewBox="33 27 24 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <text id="location" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="28" font-weight="normal" line-spacing="38">
+                            <tspan x="33" y="57" fill="#717E83">location</tspan>
+                        </text>
+                    </svg>
+                </div>
+                <div flex="grow" class="md-box">
+                    <md-input-container class="md-block">
+                        <label>Enter Location</label>
+                        <input type="text" class="autoCompleteInput" g-places-autocomplete ng-change="autoCompleteListener()"
+                               ng-model="autocomplete">
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+        <ui-gmap-marker
+                idKey='1'
+                coords='markerLocation'
+                click=''
+                options='{ draggable: true }'
+                events='map.markersEvents'
+                control=''
+        >
+        </ui-gmap-marker>
+    </ui-gmap-google-map>
+</div>

@@ -105,38 +105,53 @@ angular.module('app').service('SegueService', function() {
     /** -- NAMING -- **/
         {
             "index": 40,
+            "template": "basic",
+            "url":"sensorName_prep",
+            "h1": "LET'S GIVE YOUR SENSOR AN IDENTITY",
+            "h4": "This will help us know where this data is coming from...",
+            "segueButtonError":"CHECK NAME",
+            "segueButton": "CONTINUE"
+        },{
+            "index": 41,
             "template": "sensorName",
             url: 'sensorName',
             "h1": "Lets give your sensor a name",
             "h4": "This is so we can refer to it later",
-            "contextButton": "generate a random name",
-            "segueButton": "DONE"
+            "contextButton": "Chose a random name",
+            "segueButtonError":"CHECK NAME",
+            "segueButton": "ALL DONE"
         },
 
 
     /** -- LOCATION -- **/
         {
             "index": 50,
-            "template": "location1",
-            url: 'location1',
-            "h2": "Next, how about a location so we can add it to the global map?",
-            "h4": "Press ‘Allow’ on the pop up to automatically let us know where to pin the sensor",
-            "h6":"You can click 'Block' on the popup and set your location manually on the next step",
+            "template": "location_prep",
+            url: 'location_prep',
+            "h2": "Where will you install the sensor?",
+            "h4": "PBy pressing 'allow' on the pop up we can determine the current location of the sensor. You can manually adjust this later to anywhere you want to place the sensor.",
             "segueButton": "DONE"
         },{
             "index": 51,
-            "template": "location2",
-            url: 'location2',
-            "h2": "Select which best fits your sensor's home",
-            "h4": "This will help us better understand the data you are sensing",
+            "template": "location_map",
+            url: 'location_map',
+            "h2": "If you want to adjust it or pin it elsewhere, you can do that here",
+            "h4": "Remember wherever your device goes, it will need wi-fi. Otherwise you'll have to go get it every now and again and connect it to your computer to sync the data",
             "segueButton": "DONE"
         },{
             "index": 52,
-            "template": "location3",
-            url: 'location3',
-            "h1": "Awesome, now lets pinpoint your kit's location",
-            "h4": "Drag and drop the pin to your sensors current location",
-            "segueButton": "DONE"
+            "template": "location_tags",
+            url: 'location_tags',
+            "h2": "Select which best fits your sensor's home",
+            "h4": "This will help us better understand the data you are sensing",
+            "segueButton": "All SET"
+        },{
+            "index": 53,
+            "template": "comfirm",
+            "url":"confirm_location",
+            "h1": "Almost There",
+            "h4": "Finally, let's save all this work we've done.",
+            "segueButton": "CONTINUE"
         },
 
 
@@ -156,6 +171,13 @@ angular.module('app').service('SegueService', function() {
             "h2": "Now let's do some magic...",
             "h4": "Hold up your kit and press it on the screen over the box below and press 'connect'. Make sure the blue side of the kit is facing you",
             "segueButton": "CONNECT"
+        },{
+            "index": 22,
+            "template": "comfirm",
+            "url":"confirm_handshake",
+            "h1": "WELL DONE",
+            "h4": "You've connected your kit to the internet",
+            "segueButton": "CONTINUE"
         },
 
 
@@ -189,28 +211,26 @@ angular.module('app').service('SegueService', function() {
             "index": 90,
             "template": "account1",
             url: 'email',
-            "h1": "Last step! time to save everything",
-            "h4": "How about an email so we can become friends?",
-            "segueButton": "NEXT"
-        },
-        {
+            "h2": "We can save the sensor with your email address",
+            "h4": "If you already have an account, we'll add it to that. If not, we'll quickly make a new one",
+            "segueButtonError":"CHECK EMAIL",
+            "segueButton": "CONTINUE"
+        },{
             "index": 91,
             "template": "login",
             url: 'login',
             "h2a": "Awesome, welcome back",
             "h2b":"enter your password below to finish!",
             "h4": "This will push all of your new sensor's data to your account",
-            "segueButton": "ADD MY NEW KIT"
-        },
-        {
+            "segueButton": "CONTINUE"
+        },{
             "index": 95,
             "template": "make1",
             url: 'username',
             "h2": "And now a username so the community can identify you",
             "h4": "This will be publicly linked to your sensors data",
             "segueButton": "YAY FRIENDS"
-        },
-        {
+        },{
             "index": 96,
             "template": "make2",
             url: 'password',
@@ -218,6 +238,14 @@ angular.module('app').service('SegueService', function() {
             "h4a": "the password has to be at least 8 characters long",
             "h4b":"And one more time to make sure there are no mistakes",
             "segueButton": "ALL DONE!"
+        },{
+            "index": 100,
+            "template": "final",
+            url: 'final',
+            "h1":"ITS ALIVE!",
+            "h2": "You have successfully installed and connected the Smart Citizen kit to the internet, and then added the kit to the global community of sensors",
+            "h4": "Visit SmartCitizen.me to see your sensor in action capturing data. Don't forget to read the manual for assembly instructions and good tips on placing your sensor in the wild",
+            "segueButton": "VISIT SMARTCITIZEN.ME"
         }
 
     ];
@@ -250,12 +278,14 @@ angular.module('app').service('SegueService', function() {
             return('whats_in_the_box');
         } else if (val == 16) {
             return ('wifi_enter');
-        } else if (val == 21) {
-            return ('sensorName');
-        } else if (val == 40) {
-            return ('location1');
-        } else if (val == 52) {
+        } else if (val == 22) {
+            return ('sensorName_prep');
+        } else if (val == 41) {
+            return ('location_prep');
+        } else if (val == 53) {
             return ('email');
+        } else if(val == 91){
+            return ('final');
         }
         else {
             return getPageContent(val + 1).url;
@@ -267,11 +297,9 @@ angular.module('app').service('SegueService', function() {
         } else if (val == 20){
             return('confirm_build')
         } else if (val == 40) {
-            return ('handshake');
+            return ('confirm_handshake');
         } else if (val == 50) {
-            return('sensorName');
-        } else if (val == 90){
-            return('location3');
+            return ('sensorName');
         }
         else
         {
@@ -310,6 +338,7 @@ angular.module('app').service('SegueService', function() {
                 tuples=2;
                 break;
             case "sensorName":
+            case "final":
                 tuples=4;
                 break;
             case "make2":

@@ -21,6 +21,8 @@ $segueWrapperHeight: 160px;
 @import "navigation";
 @import "kits";
 @import "smart_citizen";
+@import "tags";
+@import "handshake";
 
 html, body { margin: 0; padding: 0; }
 canvas {vertical-align: top; z-index: 0}
@@ -222,17 +224,24 @@ body {
         }
       }
 
-      .autoCompleteInput{
-        max-width: 700px;
-        min-width: 360px;
-        margin : 0 auto;
-        position: relative;
-        z-index: 1000;
-        top:40px;
-        border: 1px white;
-        border-radius: 5px;
+      .locationInput {
+        max-width: 600px;
+        margin: 0 auto;
+        md-input-container {
+          margin-left:20px;
+        }
+        .ss_location{
+          svg{
+            position:relative;
+          }
+        }
       }
-      .angular-google-map-container { height: 400px; }
+
+
+
+      .angular-google-map-container {
+        height: 400px;
+      }
 
       .kitImage {
         width: 100%;
@@ -242,7 +251,7 @@ body {
         height: 60px;
         width: auto;
         margin: 15px auto;
-        padding: 5px;
+        padding: 5px 5px 5px 15px;
 
         text-transform: uppercase;
         background: $msNavy2;
@@ -250,6 +259,11 @@ body {
         border: 5px solid $msNavy2;
         color: $msGrey;
         font-size: 20px;
+        svg{
+          margin: 0 10px;
+          position: relative;
+          top: 7px;
+        }
       }
     }
   }

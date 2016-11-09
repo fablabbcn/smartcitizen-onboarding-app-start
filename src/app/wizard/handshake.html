@@ -7,7 +7,7 @@
 </div>
 
 <div class="animate" ng-class="animationRows[3][2]" layout="column" layout-align="center center" flex="grow">
-    <div>
+    <div id="handShakeSpace" flex="grow">
         <svg width="373px" height="373px" viewBox="534 336 373 373" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
         <desc>Created with Sketch.</desc>
@@ -20,4 +20,20 @@
         </g>
     </svg>
     </div>
+    <!--remove the following dependency from the JS-->
+    <form style="display: none">
+        Acces Point SSID:
+        <input id="SSID" type="text" style="margin: 7px" value="your SSIDname">
+        <br>
+        Password:
+        <input id="PASS" type="text" style="margin: 7px" value="yourWIFIpass">
+        <br>
+        ID Token:
+        <input id="TOKEN" type="text" style="margin: 7px" value="yourToken">
+        <br>
+        <input id="start" type="button" value="Start" style="height:28px; width:120px; margin: 12px" onclick="load();" />
+
+    </form></div>
+    <div id="output"></div>
 </div>
+

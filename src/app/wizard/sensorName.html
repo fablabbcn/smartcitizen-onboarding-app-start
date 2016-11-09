@@ -1,23 +1,40 @@
 <div class="animate" ng-class="animationRows[4][0]">
-<h1>{{payload.h1}}</h1>
-    </div>
+    <h1>{{payload.h1}}</h1>
+</div>
 <div class="animate" ng-class="animationRows[4][1]">
-<h4>{{payload.h4}}</h4>
+    <h4>{{payload.h4}}</h4>
 </div>
 
-<form name="naming" class="animate" ng-class="animationRows[4][2]">
+<form name="sensor_name" class="animate" ng-class="animationRows[4][2]">
+    <div class="inputDiv" layout="column" layout-align="center">
+        <div class='inputContainer' layout="row" layout-align="start center">
+            <div class="ss_wifi">
 
-<div class="inputContainer" layout="column" layout-align="center center">
-        <md-input-container class="md-block">
-            <input autofocus ng-model="input" ng-change="listener()" required type="text" name="kitName">
-        </md-input-container>
+                <svg class="ss_input" width="28px" height="42px" viewBox="33 18 30 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <text id="user" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="30" font-weight="normal" line-spacing="38">
+                        <tspan x="33" y="53" fill="#717E83">user</tspan>
+                    </text>
+                </svg>            </div>
+            <div flex="grow" class="md-box">
+                <md-input-container class="md-block">
+                    <label>Type name here</label>
+                    <input autofocus ng-model="name" ng-change="listener()" required type="text" name="ssid">
+                    <div ng-messages="sensor_name.name.$error">
+                        <div ng-message="required">You must enter a name for your sensor.</div>
+                    </div>
+                </md-input-container>
+            </div>
+        </div>
     </div>
 </form>
 
 <div class="contextWrapper animate" layout="center" ng-class="animationRows[4][3]">
 
-<button class="contextButton" ng-click="generateName()"> <i class="material-icons">refresh</i> {{ payload.contextButton }}</button>
+    <button class="contextButton" ng-click="generateName()">
+        <svg width="23px" height="25px" viewBox="15 13 23 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <text id="refresh" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="18" font-weight="normal">
+                <tspan x="17.5" y="32" fill="#FFFFFF">refresh</tspan>
+            </text>
+        </svg> {{ payload.contextButton }}
+    </button>
 </div>
-
-<!-- # TODO -- line height on input field with full retina screen
--->

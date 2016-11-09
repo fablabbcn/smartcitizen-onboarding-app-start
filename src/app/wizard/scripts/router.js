@@ -112,33 +112,46 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider,$locati
 
 
     /** -- NAME -- **/
+        .state('wizard.sensorName_prep', {
+            url: '/sensorName_prep',
+            templateUrl: 'app/wizard/basic.html',
+            controller: 'baseController',
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(40); }}
+        })
         .state('wizard.sensorName', {
             url: '/sensorName',
             templateUrl: 'app/wizard/sensorName.html',
             controller: 'nameCtlr',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(40); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(41); }}
         })
 
 
     /** -- LOCATION -- **/
-        .state('wizard.location1', {
-            url: '/location1',
-            templateUrl: 'app/wizard/location1.html',
+        .state('wizard.location_prep', {
+            url: '/location_prep',
+            templateUrl: 'app/wizard/location_prep.html',
             controller: 'locationController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(50); }}
         })
-        .state('wizard.location2', {
-            url: '/location2',
-            templateUrl: 'app/wizard/location2.html',
-            controller: 'stateCtlr',
+        .state('wizard.location_map', {
+            url: '/location_map',
+            templateUrl: 'app/wizard/location_map.html',
+            controller: 'locationController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(51); }}
         })
-        .state('wizard.location3', {
-            url: '/location3',
-            templateUrl: 'app/wizard/location3.html',
+        .state('wizard.location_tags', {
+            url: '/location_tags',
+            templateUrl: 'app/wizard/location_tags.html',
             controller: 'locationController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(52); }}
         })
+        .state('wizard.confirm_location', {
+            url: '/confirm_location',
+            templateUrl: 'app/wizard/confirm.html',
+            controller: 'locationController',
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(53); }}
+        })
+
 
 
         /** -- HANDSHAKE -- **/
@@ -153,6 +166,12 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider,$locati
             templateUrl: 'app/wizard/handshake.html',
             controller: 'handshakeController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(21); }}
+        })
+        .state('wizard.confirm_handshake', {
+            url: '/confirm_handshake',
+            templateUrl: 'app/wizard/confirm.html',
+            controller: 'handshakeController',
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(22); }}
         })
 
 
@@ -181,6 +200,12 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider,$locati
             templateUrl: 'app/wizard/make_account2.html',
             controller: 'accountController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(96); }}
+        })
+        .state('wizard.final', {
+            url: '/final',
+            templateUrl: 'app/wizard/final.html',
+            controller: 'baseController',
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(100); }}
         });
 
     /* Default state */

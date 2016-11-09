@@ -1,0 +1,25 @@
+.tag {
+  font: 100% $font !important;
+  padding: 10px 15px;
+  color: $msWhite;
+  height: 60px;
+  line-height: 60px;
+
+  background-color: $msNavy2;
+  text-transform: lowercase;
+  border: none;
+  border-radius: 30px;
+
+  font-size: 24px !important;
+
+
+  svg{
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
+  }
+
+  &.active, &:hover {
+    background-color: $msBlue;
+  }
+}

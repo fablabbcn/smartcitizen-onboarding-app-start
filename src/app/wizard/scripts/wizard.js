@@ -73,10 +73,15 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
 
     $scope.modalClass='hidden';
 
+    $scope.handShakeState = false;
+
 
     /** Functions below **/
     $scope.seque = function () {
-        if ($scope.segueControl == 'ready') {
+        if (($scope.payload.template == 'handshake') && ($scope.handShakeState == false)){
+            $rootScope.$broadcast('handshake');
+        }
+        else if ($scope.segueControl == 'ready') {
             //compare templates
 
             AnimationService.leaving(true);
@@ -84,7 +89,8 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
                 $location.path('/wizard/' + SegueService.nextPage($scope.payload.index));
                 $window.scrollTo(0, 0);
             }, 500); // see animations max duration time
-        } else {
+        }
+        else {
             handleError();
         }
     };
@@ -98,17 +104,18 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
                 $location.path('/wizard/' + SegueService.previousPage($scope.payload.index));
                 $window.scrollTo(0, 0);
             }, 500); // see animations max duration time
-
         }
-        //else {
-        //    alert('blocked');
-        //}
     };
 
 
 
     function handleError(){
-        if ($scope.payload.template == 'wifi_enter'){
+        if (
+            ($scope.payload.template == 'wifi_enter') ||
+            ($scope.payload.template == 'sensorName') ||
+            ($scope.payload.template == 'account1') ||
+            ($scope.payload.template == 'login')
+        ){
             $scope.segueControl = 'error';
             $timeout(function(){
                 $scope.payload.segueButton = $scope.payload.segueButtonError;

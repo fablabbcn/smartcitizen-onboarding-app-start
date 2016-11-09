@@ -33,30 +33,26 @@
         <div  class='inputContainer' layout="row" layout-align="start center">
             <div class="ss_input">
                 <svg width="38px" height="36" viewBox="33 27 24 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
-                    <desc>Created with Sketch.</desc>
-                    <defs></defs>
-                    <text id="lock" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="24" font-weight="normal" line-spacing="38">
-                        <tspan x="33" y="53" fill="#717E83">lock</tspan>
+                    <text id="lock" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="30" font-weight="normal" line-spacing="38">
+                        <tspan x="20" y="60" fill="#717E83">lock</tspan>
                     </text>
                 </svg>
             </div>
             <div flex="grow" class="md-box">
                 <md-input-container class="md-block">
                     <label>Password</label>
-                    <input  ng-model="pass" ng-change="passwordListener()" type="password" name="pass" >
+                    <input  ng-model="pass" ng-change="passwordListener()" type="{{showPasswordToggle}}" name="pass" >
                     <div ng-messages="wifi_ssid.pass.$error">
                     </div>
                 </md-input-container>
             </div>
+            <div class="ss_input" ng-mouseenter="showPassword()" ng-mouseleave="showPassword()">
+                <svg width="36px" height="38px" viewBox="438 32 36 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <text id="eye" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="36" font-weight="normal" line-spacing="38">
+                        <tspan x="438" y="70" fill="#717E83">eye</tspan>
+                    </text>
+                </svg>
+            </div>
         </div>
     </div>
 </form>
-
-<!--<form name="handShakeCredentials" class="animate" ng-class="animationRows[5][1]">-->
-    <!--<div class="inputContainer" layout="column" layout-align="center center">-->
-        <!--<md-input-container class="md-block">-->
-            <!--<input autofocus ng-model="input" ng-change="listener()" required type="text" name="kitName">-->
-        <!--</md-input-container>-->
-    <!--</div>-->
-<!--</form>-->

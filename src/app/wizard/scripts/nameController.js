@@ -80,7 +80,7 @@ angular.module('app').controller('nameCtlr', function($scope, scopePayload, Anim
             toTitleCase(nounWordList[getRandomIndex(nounWordList)]) + ' ' +
             toTitleCase(nounWordList[getRandomIndex(nounWordList)]);
         $scope.$parent.submittedData.kitName = name;
-        $scope.input = name;
+        $scope.name = name;
         prepSegue();
     };
 
@@ -94,6 +94,7 @@ angular.module('app').controller('nameCtlr', function($scope, scopePayload, Anim
 
 
     function prepSegue(){
+        $scope.payload.segueButton = 'All DONE';
         $scope.$parent.segueControl ='ready';
     }
     function blockSegue(){

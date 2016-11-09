@@ -1,6 +1,6 @@
 .inputDiv {
 
-  margin: 35px 0 ;
+  margin: 50px 0 ;
 
   .inputTitle, .inputError {
     color: $msGrey;
@@ -20,6 +20,9 @@
 
     .ss_input{
       margin: 0 25px;
+      .lock{
+        //margin: 15px;
+      }
     }
 
     .md-box{
@@ -100,4 +103,9 @@
 
 md-content {
   background-color: $msNavy !important;
+}
+
+form{
+  max-width:700px;
+  margin: 0 auto;
 }
