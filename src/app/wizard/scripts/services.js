@@ -222,6 +222,8 @@ angular.module('app').service('SegueService', function() {
             "h2a": "Awesome, welcome back",
             "h2b":"enter your password below to finish!",
             "h4": "This will push all of your new sensor's data to your account",
+            "segueButtonError":"CHECK PASSWORD",
+
             "segueButton": "CONTINUE"
         },{
             "index": 95,
@@ -309,6 +311,8 @@ angular.module('app').service('SegueService', function() {
 
     function payloadGenerate(content){
         var payload = content;
+
+        // #TODO - fix this
         payload.progressVal = ((content.index + 1) / pageContent.length) * 100;
 
         payload.companyLogo = content.companyLogo;

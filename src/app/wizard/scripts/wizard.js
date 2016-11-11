@@ -78,10 +78,10 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
 
     /** Functions below **/
     $scope.seque = function () {
-        if (($scope.payload.template == 'handshake') && ($scope.handShakeState == false)){
-            $rootScope.$broadcast('handshake');
-        }
-        else if ($scope.segueControl == 'ready') {
+        //if (($scope.payload.template == 'handshake') && ($scope.handShakeState == false)){
+        //    $rootScope.$broadcast('handshake');
+        //} else
+        if ($scope.segueControl == 'ready') {
             //compare templates
 
             AnimationService.leaving(true);
