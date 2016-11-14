@@ -11,8 +11,11 @@ npm install
 ```
 
 ```
-npm start
+bower install
 ```
 
-Now browse to the app at `http://localhost:8000/index.html`.
+```
+gulp serve
+```
 
+Now browse to the app at `http://localhost:8080/`.
