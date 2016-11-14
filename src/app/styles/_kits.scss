@@ -3,16 +3,39 @@
   .buildImage {
     min-width: 320px;
     max-width: 700px;
+    @media screen and (max-width: 750px) {
+      width: 100%;
+    }
   }
 }
 .kitImage{
-  height: 400px;
   overflow: visible;
-  img{
-    height: 200%;
-    position: relative;
-    bottom: 50%;
-    width: auto;
-    margin: 0 auto;
+  @media screen and (min-width: 830px) {
+    height: 400px;
+    img{
+      height: 200%;
+      position: relative;
+      bottom: 50%;
+      width: auto;
+      margin: 0 auto;
+    }
+  }
+  @media screen and (max-width: 830px) {
+    height: 300px;
+    img{
+      height: 200%;
+      position: relative;
+      bottom: 50%;
+      width: auto;
+      margin: 0 auto;
+    }
+  }
+  @media screen and (max-width: 580px) {
+    width: 100%;
+    img{
+      position: static;
+      height: 100%;
+      margin: 0 auto;
+    }
   }
 }

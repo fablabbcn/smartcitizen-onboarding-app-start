@@ -55,12 +55,19 @@
         border-radius: $divRadius;
         width: 1000px;
         min-height: 200px;
-        padding: 40px 40px 40px 80px;
+        @media screen and (min-width: $break-sm) {
+          padding: 40px 40px 40px 100px;
+        }
+        @media screen and (max-width: $break-sm) {
+          padding: 20px;
+        }
         overflow: visible;
 
         h5 {
           font-size: 25px;
-          padding-right: 50px;
+          @media screen and (min-width: $break-sm) {
+            padding-right: 50px;
+          }
         }
         &.red{
           background-color: $msRed;
@@ -71,20 +78,35 @@
               width: 100%;
               height: 100%;
             }
+            @media screen and (max-width: $break-sm) {
+                margin:auto;
+            }
           }
         }
         &.green{
           background-color: $msGreen;
 
-          #partImage{
-            width: 200px;
-            height: 200px;
-            //overflow: hidden;
-            img{
-              width: 200%;
-              position: relative;
-              top: -100px;
-              right: 125px;
+          #partImage {
+            @media screen and (min-width: $break-sm) {
+              width: 200px;
+              height: 200px;
+              img {
+                width: 200%;
+                position: relative;
+                top: -100px;
+                right: 125px;
+              }
+            }
+            @media screen and (max-width: $break-sm) {
+              img {
+                display:block;
+                margin:auto;
+              }
+            }
+            @media screen and (max-width: 420px) {
+              img {
+                width: 100%;
+              }
             }
           }
         }

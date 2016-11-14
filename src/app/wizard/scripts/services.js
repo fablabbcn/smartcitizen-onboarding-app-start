@@ -9,7 +9,7 @@ angular.module('app').service('SegueService', function() {
             "index": 0,
             "template": "landing",
             "url": "landing",
-            "h1": "You've made it to the Making Sense pilot!",
+            "h1": "Welcome to the Making Sense pilot!",
             "h4": "Let’s get you set up with a Smart Citizen kit, and sensing in no time",
             "segueButton": "LET'S DO THIS"
         },{

@@ -96,7 +96,7 @@
   }
   100% {
     animation-timing-function: ease-in;
-    width: $segueWrapperHeight * .75;
+    width: $segueWrapperHeight * .5;
     opacity: 1;
   }
 }
@@ -105,28 +105,31 @@
   height: $segueWrapperHeight;
   .segueWrapper {
     .segueButton {
-      height: $segueWrapperHeight / 2;
+      height: $segueWrapperHeight / 2.5;
       width: auto;
       padding: 5px 15px;
       border-radius: 40px;
       color: white;
       background: $msNavy;
 
-      #segueContent{
-       overflow: hidden;
+      #segueContent {
+        overflow: hidden;
         font: 100% Rubik, sans-serif;
+        position: relative;
+        top: -10px;
+
       }
       #nextSVG {
         position: relative;
-        top: 6px;
+        top: 2px;
         left: 3px;
         display: inline;
       }
       #closeSVG{
         position: relative;
-        top: 8px;
+        top: 4px;
         left: 3px;
-        //display: none; << HACKY display doesnt animate well.. so opacity and width are used in place
+        //display: none;// << HACKY display doesnt animate well.. so opacity and width are used in place
         width: 0;
       }
       &.ready {
@@ -167,7 +170,7 @@
       }
     }
     .errorButton{
-      height: $segueWrapperHeight / 2;
+      height: $segueWrapperHeight / 2.5;
       width: 0;
       text-transform: uppercase;
       background: $msNavy;
@@ -196,8 +199,8 @@
   }
 
   .backButton {
-    height: $segueWrapperHeight / 2;
-    width: $segueWrapperHeight / 2;
+    height: $segueWrapperHeight / 2.5;
+    width: $segueWrapperHeight / 2.5;
     text-transform: uppercase;
     background: none;
     border-radius: 40px;
@@ -205,7 +208,6 @@
     border: 5px solid $msNavy2;
     svg {
       position: relative;
-      top: 5px;
       left: 3px;
     }
     tspan {
@@ -221,8 +223,8 @@
     }
   }
   .forwardButton {
-    height: $segueWrapperHeight / 2;
-    width: $segueWrapperHeight / 2;
+    height: $segueWrapperHeight / 2.5;
+    width: $segueWrapperHeight / 2.5;
     text-transform: uppercase;
     background: none;
     border-radius: 40px;

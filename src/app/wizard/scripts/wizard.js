@@ -98,6 +98,8 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
     $scope.back = function () {
         if ($scope.payload.backBlock != 'blocked') {
             //compare templates
+            $rootScope.$broadcast('no');
+
             AnimationService.leaving(false);
             $timeout(function () {
                 $scope.segueControl ='ready';

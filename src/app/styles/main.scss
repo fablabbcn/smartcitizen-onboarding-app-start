@@ -10,6 +10,8 @@ $errorTimer: .5s;
 $progressHeight: 15px;
 $segueWrapperHeight: 160px;
 
+$break-sm: 960px;
+
 /** -- IMPORTS -- **/
 @import "colors";
 @import "progress";
@@ -23,6 +25,7 @@ $segueWrapperHeight: 160px;
 @import "smart_citizen";
 @import "tags";
 @import "handshake";
+@import "media_queries";
 
 html, body { margin: 0; padding: 0; }
 canvas {vertical-align: top; z-index: 0}
@@ -30,6 +33,8 @@ body {
   height:auto; overflow:auto;
   font: 100% $font !important;
   background-color: $msNavy;
+  display: flex;
+  min-height: 100vh;
 
   h1, h2, h3, h4, h6, p {
     text-align: center;
@@ -65,7 +70,7 @@ body {
   }
   button{
     font-weight: 500;
-    font-size: 38px;
+    font-size: 24px;
     color: white;
     text-transform: capitalize;
     &:focus {
@@ -85,9 +90,13 @@ body {
   #container {
     //background-color: $msNavy;
     z-index: 1;
+    flex:1;
+    flex-shrink: 0;
+    //height: 100vh;
 
     #wizardView {
       margin: 0 auto;
+      padding: 15px;
       max-width: 1150px;
 
       &.ng-enter {

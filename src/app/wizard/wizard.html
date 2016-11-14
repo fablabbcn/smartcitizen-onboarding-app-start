@@ -39,7 +39,7 @@
         <button class="yesButton errorButton" ng-click="yes()" ng-class="errorButton">YES</button>
         <button class="noButton errorButton" ng-click="no()"ng-class="errorButton">NO</button>
     </div>
-    <div >
+    <div hide-xs>
         <button class="forwardButton" ng-click="forward()" ng-class="payload.forwardBlock" style="visibility: hidden;">
             <svg width="36px" height="49px" viewBox="8 10 36 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <defs></defs>
@@ -54,12 +54,12 @@
 
 <div id="modal" ng-class="modalClass" layout="column" layout-align="center center" flex="grow" ng-click="modalClick()">
     <div id="modalContent" layout="column" layout-align="center center" layout-padding layout-margin>
-        <div id="modalBox" ng-class="modalBox" layout="row">
+        <div id="modalBox" ng-class="modalBox" layout-gt-sm="row" layout-align-sm="center center">
             <div>
                 <h2>{{modalContent.title}}</h2>
                 <h5>{{modalContent.body}}</h5>
             </div>
-            <div id="partImage" flex="none">
+            <div id="partImage" flex="none" flex-sm-auto>
                 <img ng-src="{{modalContent.image}}">
             </div>
 
