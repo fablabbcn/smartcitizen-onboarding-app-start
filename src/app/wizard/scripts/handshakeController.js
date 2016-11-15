@@ -52,7 +52,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     var payload = "";
     var index = 0;
     var myInterval;
-    lightElement = document.getElementById('handShakeSpace');
+    var lightElement = document.getElementById('handShakeSpace');
 
     function getColor(value, levelNum) {
         var previous = (value * (255.0/(levelNum - 1)));
