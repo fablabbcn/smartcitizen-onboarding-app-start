@@ -148,7 +148,7 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider,$locati
         .state('wizard.confirm_location', {
             url: '/confirm_location',
             templateUrl: 'app/wizard/confirm.html',
-            controller: 'locationController',
+            controller: 'baseController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(53); }}
         })
 

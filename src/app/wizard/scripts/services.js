@@ -229,9 +229,11 @@ angular.module('app').service('SegueService', function() {
             "index": 95,
             "template": "make1",
             url: 'username',
-            "h2": "And now a username so the community can identify you",
-            "h4": "This will be publicly linked to your sensors data",
-            "segueButton": "YAY FRIENDS"
+            "h2": "Nice, so you're new to Smart Citizen?",
+            "h4": "Add a username to your profile, so users knows who owns the sensor.",
+            "contextButton": "Chose random name",
+            "segueButtonError":"CHECK USERNAME",
+            "segueButton": "CONTINUE"
         },{
             "index": 96,
             "template": "make2",
@@ -239,6 +241,7 @@ angular.module('app').service('SegueService', function() {
             "h2": "Now, filly a password to secure everything",
             "h4a": "the password has to be at least 8 characters long",
             "h4b":"And one more time to make sure there are no mistakes",
+            "segueButtonError":"PASSWORDS MUST MATCH",
             "segueButton": "ALL DONE!"
         },{
             "index": 100,
@@ -275,7 +278,7 @@ angular.module('app').service('SegueService', function() {
         return payloadGenerate(getPageContent(val))
     };
 
-    this.nextPage = function(val){
+    this.nextPage = function(val, accountPresent){
         if (val == 4) {
             return('whats_in_the_box');
         } else if (val == 16) {
@@ -286,14 +289,22 @@ angular.module('app').service('SegueService', function() {
             return ('location_prep');
         } else if (val == 53) {
             return ('email');
-        } else if(val == 91){
+        } else if (val == 90) {
+            if (accountPresent) {
+                return('login');
+            } else {
+                return('username');
+            }
+        } else if(val == 91) {
+            return ('final');
+        } else if (val == 96) {
             return ('final');
         }
         else {
             return getPageContent(val + 1).url;
         }
     };
-    this.previousPage = function(val){
+    this.previousPage = function(val,accountPresent){
         if (val == 10) {
             return('smart_citizen_brief2')
         } else if (val == 20){
@@ -302,6 +313,16 @@ angular.module('app').service('SegueService', function() {
             return ('confirm_handshake');
         } else if (val == 50) {
             return ('sensorName');
+        } else if (val == 90) {
+            return('confirm_location');
+        } else if (val==95) {
+            return ('email');
+        } else if (val == 100){
+            if (accountPresent) {
+                return('login');
+            } else {
+                return('password');
+            }
         }
         else
         {
@@ -319,7 +340,7 @@ angular.module('app').service('SegueService', function() {
         payload.image = content.image;
 
 
-        if (content.index >= 1) {
+        if ( (content.index >= 1) && (content.index < 100) ) {
             payload.backBlock = '';
         } else {
             payload.backBlock = 'hide';
@@ -343,9 +364,10 @@ angular.module('app').service('SegueService', function() {
                 break;
             case "sensorName":
             case "final":
+            case "make1":
+            case "make2":
                 tuples=4;
                 break;
-            case "make2":
             case "wifi_enter":
                 tuples=5;
                 break;
@@ -360,9 +382,4 @@ angular.module('app').service('SegueService', function() {
     AnimationService.animate(scopePayload.index);
     $scope.$parent.segueControl ='ready';
     $scope.$parent.smartCitizenToggle = '';
-}).controller('smartCitizenController', function($scope, scopePayload, AnimationService){
-    $scope.$parent.payload = scopePayload;
-    AnimationService.animate(scopePayload.index);
-    $scope.$parent.segueControl ='ready';
-    $scope.$parent.smartCitizenToggle = 'smartCitizen';
 });

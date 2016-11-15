@@ -1,15 +1,40 @@
-<div class="animate" ng-class="animationRows[3][0]">
+<div class="animate" ng-class="animationRows[4][0]">
     <h2>{{payload.h2}}</h2>
 </div>
-<div class="animate" ng-class="animationRows[3][1]">
+<div class="animate" ng-class="animationRows[4][1]">
     <h4>{{payload.h4}}</h4>
 </div>
 
-<form name="naming" class="animate" ng-class="animationRows[3][2]">
-
-    <div class="inputContainer" layout="column" layout-align="center center">
-        <md-input-container class="md-block">
-            <input autofocus ng-model="input" ng-change="usernameListener()" required type="text" name="userName">
-        </md-input-container>
+<form name="username_form" class="animate" ng-class="animationRows[4][2]">
+    <div class="inputDiv" layout="column" layout-align="center">
+        <div class='inputContainer' layout="row" layout-align="start center">
+            <div class="ss_input">
+                <svg width="38px" height="76px" viewBox="33 27 24 76" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <text id="user" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="32" font-weight="normal" line-spacing="38">
+                        <tspan x="31" y="78" fill="#717E83">user</tspan>
+                    </text>
+                </svg>
+            </div>
+            <div flex="grow" class="md-box">
+                <md-input-container class="md-block">
+                    <label>Type name here</label>
+                    <input autofocus ng-model="given_username" ng-change="usernameListener()" required type="text" name="given_username">
+                    <div ng-messages="email_form.given_username.$error">
+                        <div ng-message="required">You must enter a name</div>
+                    </div>
+                </md-input-container>
+            </div>
+        </div>
     </div>
 </form>
+
+<div class="contextWrapper animate" layout="center" ng-class="animationRows[4][3]">
+
+    <button class="contextButton" ng-click="generateName()">
+        <svg width="23px" height="25px" viewBox="15 13 23 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <text id="refresh" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="18" font-weight="normal">
+                <tspan x="17.5" y="32" fill="#FFFFFF">refresh</tspan>
+            </text>
+        </svg> {{ payload.contextButton }}
+    </button>
+</div>

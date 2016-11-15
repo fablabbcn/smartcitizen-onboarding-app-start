@@ -32,8 +32,6 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
     $scope.tagStates = ['','','','','','','','','','','','','','','','','',''];
 
 
-
-
     $scope.$parent.payload = scopePayload;
     $scope.$parent.segueControl ='ready';
     AnimationService.animate(scopePayload.index);
