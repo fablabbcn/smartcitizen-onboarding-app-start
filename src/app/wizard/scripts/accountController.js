@@ -35,8 +35,7 @@ angular.module('app').controller('accountController', function($scope, scopePayl
     };
 
     $scope.loginListener = function(){
-        /** TODO - update this **/
-        if( (typeof $scope.input !== 'undefined') && ($scope.input.length >= 5) ) {
+        if( (typeof $scope.pass !== 'undefined') && ($scope.pass.length >= 5) ) {
             prepSegue();
             $scope.$parent.userPassword = $scope.input;
         } else {

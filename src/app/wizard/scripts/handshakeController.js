@@ -5,6 +5,8 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     $scope.$parent.payload = scopePayload;
     AnimationService.animate(scopePayload.index);
 
+    $scope.handshakeLabel = 'Place Kit Here';
+
     $scope.$parent.segueControl = 'blocked';
     //$scope.$parent.segueControl = 'ready';
 
@@ -156,6 +158,9 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
         outDigit(4);
     }
     function load() {
+        $scope.handshakeLabel = ' ';
+        lightElement.style.setProperty('background-color', 'rgb(0, 0, 0)');
+
         queue = [];
         payload = "";
         checksum = 0;
@@ -163,10 +168,13 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
         INIT();
         STX();
 
+        console.log($scope.submittedData.wifi_ssid);
+        console.log($scope.submittedData.wifi_password);
+
         sendWord("auth\n");
         sendWord($scope.submittedData.wifi_ssid + "\n"); //We should validate text input here
         sendWord($scope.submittedData.wifi_password + "\n");
-        sendWord(document.getElementById("TOKEN").value + "\n");
+        sendWord("e82d8e" + "\n");
 
         ETX();
         sendChecksum();

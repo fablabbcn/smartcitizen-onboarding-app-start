@@ -85,7 +85,7 @@ angular.module('app').controller('nameCtlr', function($scope, scopePayload, Anim
     };
 
     $scope.listener = function(){
-      if( (typeof $scope.input !== 'undefined') && ($scope.input.length >= 1) ){
+      if( (typeof $scope.name !== 'undefined') && ($scope.input.length >= 1) ){
           prepSegue();
       } else {
           blockSegue();

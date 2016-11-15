@@ -23,9 +23,17 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
 
     /** Base Navigation  **/
     $scope.seque = function () {
-        //if (($scope.payload.template == 'handshake') && ($scope.handShakeState == false)){
-        //    $rootScope.$broadcast('handshake');
-        //} else
+        if (($scope.payload.template == 'handshake') && ($scope.handShakeState == false)){
+            $rootScope.$broadcast('handshake');
+            $timeout(function () {
+                $location.path('/wizard/' + SegueService.nextPage($scope.payload.index, $scope.pre_made));
+                $window.scrollTo(0, 0);
+                console.log($scope.submittedData);
+            }, 10000);
+        } else if ($scope.payload.template == 'final'){
+            $window.open('https://smartcitizen.me/kits/', '_blank');
+        }
+        else
         if ($scope.segueControl == 'ready') {
             //compare templates
 

@@ -101,6 +101,56 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "CONTINUE"
         },
 
+    /** -- LIGHT HANDSHAKE -- **/
+        {
+            "index": 20,
+            "template": "wifi_enter",
+            "url":"wifi_enter",
+            "h2": "What network are you talking to",
+            "h4": "We have to type it in manually...",
+            "segueButtonError":"CHECK FIELDS",
+            "segueButton": "I'M READY"
+        },{
+            "index": 21,
+            "template": "handshake",
+            url: 'handshake',
+            "h2": "Now let's do some magic...",
+            "h4": "Hold up your kit and press it on the screen over the box below and press 'connect'. Make sure the blue side of the kit is facing you",
+            "segueButton": "CONNECT"
+        },{
+            "index": 22,
+            "template": "comfirm",
+            "url":"confirm_handshake",
+            "h1": "WELL DONE",
+            "h4": "You've connected your kit to the internet",
+            "segueButton": "CONTINUE"
+        },
+
+
+    /** -- WIFI HANDSHAKE -- **/
+        {
+            "index": 30,
+            "template": "pair1",
+            "url":"pair_1",
+            "h2": "Find your WiFi network from the list below",
+            "segueButton": "DONE"
+        },{
+            "index": 31,
+            "template": "pair2",
+            "url":"pair_2",
+            "h2": "Almost there. What is the Password for the network?",
+            "h4": "We need this to set up your device’s connection to the internet",
+            "segueButton": "CHECK PASSWORD"
+        },{
+            "index": 32,
+            "template": "basic2",
+            "url": 'wifi_success',
+            "image": "app/images/sck_iso-1295.jpg",
+            "h1": "Success! We've got the sensor online",
+            "h4": "Now just go to your wi-fi menu and connect back to your wi-fi network to continue the setup.",
+            "segueButton": "ITS ALIVE"
+        },
+
 
     /** -- NAMING -- **/
         {
@@ -152,57 +202,6 @@ angular.module('app').service('SegueService', function() {
             "h1": "Almost There",
             "h4": "Finally, let's save all this work we've done.",
             "segueButton": "CONTINUE"
-        },
-
-
-    /** -- LIGHT HANDSHAKE -- **/
-        {
-            "index": 20,
-            "template": "wifi_enter",
-            "url":"wifi_enter",
-            "h2": "What network are you talking to",
-            "h4": "We have to type it in manually...",
-            "segueButtonError":"CHECK FIELDS",
-            "segueButton": "I'M READY"
-        },{
-            "index": 21,
-            "template": "handshake",
-            url: 'handshake',
-            "h2": "Now let's do some magic...",
-            "h4": "Hold up your kit and press it on the screen over the box below and press 'connect'. Make sure the blue side of the kit is facing you",
-            "segueButton": "CONNECT"
-        },{
-            "index": 22,
-            "template": "comfirm",
-            "url":"confirm_handshake",
-            "h1": "WELL DONE",
-            "h4": "You've connected your kit to the internet",
-            "segueButton": "CONTINUE"
-        },
-
-
-    /** -- WIFI HANDSHAKE -- **/
-        {
-            "index": 30,
-            "template": "pair1",
-            "url":"pair_1",
-            "h2": "Find your WiFi network from the list below",
-            "segueButton": "DONE"
-        },{
-            "index": 31,
-            "template": "pair2",
-            "url":"pair_2",
-            "h2": "Almost there. What is the Password for the network?",
-            "h4": "We need this to set up your device’s connection to the internet",
-            "segueButton": "CHECK PASSWORD"
-        },{
-            "index": 32,
-            "template": "basic2",
-            "url": 'wifi_success',
-            "image": "app/images/sck_iso-1295.jpg",
-            "h1": "Success! We've got the sensor online",
-            "h4": "Now just go to your wi-fi menu and connect back to your wi-fi network to continue the setup.",
-            "segueButton": "ITS ALIVE"
         },
 
 
@@ -335,6 +334,12 @@ angular.module('app').service('SegueService', function() {
 
         // #TODO - fix this
         payload.progressVal = ((content.index + 1) / pageContent.length) * 100;
+
+
+        var index = pageContent.findIndex(function(item, i){
+            return item.index === payload.index;
+        });
+        payload.progressVal = index / pageContent.length;
 
         payload.companyLogo = content.companyLogo;
         payload.image = content.image;
