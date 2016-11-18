@@ -55,7 +55,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     var index = 0;
     var myInterval;
     var lightElement = document.getElementById('handShakeSpace');
-
+    var c = 0;
     function getColor(value, levelNum) {
         var previous = (value * (255.0/(levelNum - 1)));
         var final = 255.0 * Math.pow((previous / 255.0), (1.0 / gamma));
@@ -64,13 +64,13 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     // Fills div with the requested color value
     function paint(colorValue) {
         lightElement.style.setProperty('background-color', getColor(colorValue, levelNum));
-        if (index > 18){
-            if ((index - 18) % 3 == 0) {
-                var div = document.getElementById('output');
-                div.innerHTML = div.innerHTML.concat(payload.slice(0,1));
-                payload = payload.slice(1, payload.length);
-            }
-        }
+        // if (index > 18){
+        //     if ((index - 18) % 3 == 0) {
+        //         var div = document.getElementById('output');
+        //         div.innerHTML = div.innerHTML.concat(payload.slice(0,1));
+        //         payload = payload.slice(1, payload.length);
+        //     }
+        // }
     };
     function outDigit(digit) {
         digit = parseInt(digit);
@@ -97,7 +97,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
             outDigit(char[i]);
         }
     }
-    function sendWord(word) {
+    function setWord(word) {
         payload = payload.concat(word);
         for (var i = 0; i < word.length; i++) {
             sendChar(word[i]);
@@ -113,21 +113,21 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
         }
         console.log("checksum: " + toSend);
     }
-    function start(){
-        if (document.getElementById("start").value == "Start") {
-            document.getElementById("start").value = "Stop";
-            document.getElementById('output').innerHTML = "";
-            console.log(queue);
+    function start(t){
+        if (t) {
+            // document.getElementById("start").value = "Stop";
+            // document.getElementById('output').innerHTML = "";
+            // console.log(queue);
             myInterval = window.setInterval(function() {
                 paint(queue[index]);
                 index = index + 1;
                 if (index >= queue.length) {
                     window.clearInterval(myInterval);
-                    start();
+                    start(false);
                 }
             }, period );
         } else {
-            document.getElementById("start").value = "Start";
+            // document.getElementById("start").value = "Start";
             window.clearInterval(myInterval);
             paint(MIN);
         }
@@ -171,15 +171,30 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
         console.log($scope.submittedData.wifi_ssid);
         console.log($scope.submittedData.wifi_password);
 
-        sendWord("auth\n");
-        sendWord($scope.submittedData.wifi_ssid + "\n"); //We should validate text input here
-        sendWord($scope.submittedData.wifi_password + "\n");
-        sendWord("e82d8e" + "\n");
+        setWord("auth\n");
+        setWord("12345" + "\n"); //We should validate text input here
+        setWord("qwerty" + "\n");
+        setWord("e82d8e" + "\n");
+
+
+
 
         ETX();
         sendChecksum();
         EOT();
-        start();
+
+        // I'm not sure...
+        console.log(queue.length);
+        console.log(c);
+        console.log(queue);
+        debugger;
+        c = 0;
+        // I'm not sure...
+
+        start(true);
+
+
+
     };
 
     $scope.$on('handshake', function(){
