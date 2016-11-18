@@ -10,6 +10,8 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
     $scope.submittedData.userEmail = ' ';
     $scope.submittedData.userName = ' ';
 
+    //$scope.location ..
+
     /** Operational Data **/
     $scope.onboarding_session = ' ';
     $scope.device_token = ' ';
@@ -31,7 +33,7 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
                 console.log($scope.submittedData);
             }, 10000);
         } else if ($scope.payload.template == 'final'){
-            $window.open('https://smartcitizen.me/kits/', '_blank');
+            $window.open('https://smartcitizen.me/kits/3770', '_blank');
         }
         else
         if ($scope.segueControl == 'ready') {

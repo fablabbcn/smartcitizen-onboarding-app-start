@@ -339,6 +339,7 @@ angular.module('app').service('SegueService', function() {
         var index = pageContent.findIndex(function(item, i){
             return item.index === payload.index;
         });
+        console.log(index);
         payload.progressVal = index / pageContent.length;
 
         payload.companyLogo = content.companyLogo;

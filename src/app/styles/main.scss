@@ -32,7 +32,7 @@ canvas {vertical-align: top; z-index: 0}
 body {
   height:auto; overflow:auto;
   font: 100% $font !important;
-  background-color: $msNavy;
+  background-color: $msNavy !important;
   display: flex;
   min-height: 100vh;
 
@@ -46,22 +46,35 @@ body {
     color: $msBlue;
     line-height: 70px;
     text-transform: uppercase;
+    @media screen and (max-width: 450px) {
+      font-size: 52px;
+      line-height: 50px;
+    }
   }
   h2{
     font-weight: 400;
     font-size: 45px; //fallback
     color: $msWhite;
+    @media screen and (max-width: 450px) {
+      font-size: 38px;
+    }
   }
   h4, p{
     font-weight: 400;
     font-size: 28px;
     color: $msGrey;
+    @media screen and (max-width: 450px) {
+      font-size: 20px;
+    }
   }
   h5{
     font: 100% $font;
     font-weight: 400;
     font-size: 28px;
     color: $msWhite;
+    @media screen and (max-width: 450px) {
+      font-size: 20px;
+    }
   }
   h6{
     font-weight: 400;
@@ -93,11 +106,13 @@ body {
     flex:1;
     flex-shrink: 0;
     //height: 100vh;
+    //overflow: hidden;
 
     #wizardView {
       margin: 0 auto;
       padding: 0 25px;
       max-width: 1150px;
+      overflow: hidden;
 
       &.ng-enter {
         -webkit-animation:slideInRight 0.5s both ease;
@@ -174,7 +189,7 @@ body {
             .selectionImage{
               padding: 0;
               img{
-                max-height: 80%;
+                max-height: 250px;
                 max-width: 80%;
                 overflow: hidden;
               }
@@ -272,6 +287,15 @@ body {
           margin: 0 10px;
           position: relative;
           top: 7px;
+        }
+
+        @media screen and (max-width: 450px) {
+          font-size: 14px;
+          padding-top: 0;
+          line-height: 30px;
+          svg{
+            top: 10px;
+          }
         }
       }
     }

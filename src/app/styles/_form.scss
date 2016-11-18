@@ -13,6 +13,16 @@
 
     border-radius: 4px;
     background-color: #344049;
+    @media screen and (max-width: 450px) {
+      padding: 0;
+    }
+
+    label {
+      font: 100% Rubik, sans-serif !important;
+      @media screen and (max-width: 450px) {
+        font-size: 12px !important;
+      }
+    }
 
     &.focus {
       background-color: #576671;
@@ -41,6 +51,9 @@
           color: $msWhite;
           font: $font !important;
           font-size: 42px;
+          @media screen and (max-width: 450px) {
+            font-size: 28px;
+          }
         }
       }
     }

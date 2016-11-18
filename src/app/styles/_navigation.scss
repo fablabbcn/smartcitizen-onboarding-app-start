@@ -221,6 +221,9 @@
     &.hide {
       visibility: hidden;
     }
+    &:hover{
+      background-color: $msNavy2;
+    }
   }
   .forwardButton {
     height: $segueWrapperHeight / 2.5;
