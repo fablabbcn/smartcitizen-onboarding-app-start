@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce, $window, $timeout, SegueService, $rootScope, AnimationService) {
+angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce, $window, $timeout, SegueService, $rootScope, AnimationService, session) {
 
     /** Submitted User Data **/
     $scope.submittedData = {};
@@ -13,32 +13,23 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
     //$scope.location ..
 
     /** Operational Data **/
-    $scope.onboarding_session = ' ';
-    $scope.device_token = ' ';
+    $scope.onboarding_session = session.onboarding_session;
+    $scope.device_token = session.device_token;
     $scope.pre_made = false;
-
 
     $scope.modalClass='hidden';
 
     $scope.handShakeState = false;
 
+    // console.log(onboardingSession);
 
     /** Base Navigation  **/
     $scope.seque = function () {
         if (($scope.payload.template == 'handshake') && ($scope.handShakeState == false)){
             $rootScope.$broadcast('handshake');
-            $timeout(function () {
-                $location.path('/wizard/' + SegueService.nextPage($scope.payload.index, $scope.pre_made));
-                $window.scrollTo(0, 0);
-                console.log($scope.submittedData);
-            }, 10000);
         } else if ($scope.payload.template == 'final'){
             $window.open('https://smartcitizen.me/kits/3770', '_blank');
-        }
-        else
-        if ($scope.segueControl == 'ready') {
-            //compare templates
-
+        } else if ($scope.segueControl == 'ready') {
             AnimationService.leaving(true);
             $timeout(function () {
                 $location.path('/wizard/' + SegueService.nextPage($scope.payload.index, $scope.pre_made));
@@ -54,7 +45,7 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
     $scope.back = function () {
         if ($scope.payload.backBlock != 'blocked') {
             //compare templates
-            $rootScope.$broadcast('no');
+            $rootScope.$broadcast('no'); //?
 
             AnimationService.leaving(false);
             $timeout(function () {

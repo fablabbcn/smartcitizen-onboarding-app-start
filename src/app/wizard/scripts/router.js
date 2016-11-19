@@ -1,7 +1,6 @@
 'use strict';
 
-angular.module('app').config(function($stateProvider, $urlRouterProvider,$locationProvider) {
-
+angular.module('app').config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
     $stateProvider
 
@@ -9,7 +8,17 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider,$locati
         .state('wizard', {
             url: '/wizard',
             templateUrl: 'app/wizard/wizard.html',
-            controller: 'wizardCtrl'
+            controller: 'wizardCtrl',
+            abstract: true,
+            resolve: {
+                session: function(device, $state){ 
+                    return device.getSession().then(function(res){
+                        return res.data;
+                    }, function(){
+                        $state.go('unavailable');
+                    });
+                }
+            }
         })
         .state('wizard.landing', {
             url: '/landing',            //<< find way to remove these
@@ -206,8 +215,13 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider,$locati
             templateUrl: 'app/wizard/final.html',
             controller: 'baseController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(100); }}
+        })
+        .state('unavailable', {
+            url: '/unavailable',
+            templateUrl: 'app/wizard/unavailable.html',
+            controller: 'baseController',
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(0); }}
         });
-
     /* Default state */
     $urlRouterProvider.otherwise('/wizard/landing');
 
