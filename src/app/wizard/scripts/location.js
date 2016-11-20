@@ -141,5 +141,4 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
     }
 
 });
-
 //# TODO - when no location given use region from IP to center map

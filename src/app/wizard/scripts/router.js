@@ -11,9 +11,9 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider, $locat
             controller: 'wizardCtrl',
             abstract: true,
             resolve: {
-                session: function(device, $state){ 
-                    return device.getSession().then(function(session){
-                        device.setSession(session);
+                session: function(platform, $state){ 
+                    return platform.getSession().then(function(session){
+                        platform.setSession(session);
                         return session;
                     }, function(){
                         $state.go('unavailable');
@@ -149,17 +149,19 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider, $locat
             controller: 'locationController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(51); }}
         })
+        /*        
         .state('wizard.location_tags', {
             url: '/location_tags',
             templateUrl: 'app/wizard/location_tags.html',
             controller: 'locationController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(52); }}
         })
+        */
         .state('wizard.confirm_location', {
             url: '/confirm_location',
             templateUrl: 'app/wizard/confirm.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(53); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(52); }}
         })
 
 
@@ -214,7 +216,7 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider, $locat
         .state('wizard.final', {
             url: '/final',
             templateUrl: 'app/wizard/final.html',
-            controller: 'baseController',
+            controller: 'finalController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(100); }}
         })
         .state('unavailable', {

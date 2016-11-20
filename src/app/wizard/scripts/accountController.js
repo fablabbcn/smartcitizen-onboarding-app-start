@@ -13,6 +13,8 @@ angular.module('app').controller('accountController', function($scope, scopePayl
 
     $scope.given_username = ( $scope.$parent.submittedData.userName == ' '? '' : $scope.$parent.submittedData.userName);
 
+    /********** Watchers **********/
+
     $scope.accountListener = function(){
         $scope.payload.segueButton = 'CONTINUE';
         if( validateEmail($scope.given_email) ) {
@@ -29,7 +31,8 @@ angular.module('app').controller('accountController', function($scope, scopePayl
         $scope.payload.segueButton = 'CONTINUE';
         if ( (typeof $scope.pass1 !== "undefined") && ($scope.pass1.length > 0) && ($scope.pass1 == $scope.pass2) ) {
             prepSegue();
-            $scope.$parent.userEmail =$scope.given_email;
+            $scope.$parent.userEmail = $scope.given_email;
+            $scope.pass1 = $scope.pass2; 
         } else {
             blockSegue();
         }
@@ -37,8 +40,18 @@ angular.module('app').controller('accountController', function($scope, scopePayl
 
     $scope.loginListener = function(){
         if( (typeof $scope.pass !== 'undefined') && ($scope.pass.length >= 5) ) {
-            prepSegue();
-            $scope.$parent.userPassword = $scope.input;
+            platform.login({username: $scope.$parent.submittedData.userName, password: $scope.pass}).then(function(data){
+                //$scope.$parent.submittedData.token = data.access_token; We don't use it
+                platform.setAuth(data);
+                platform.bakeDevice().then(function (data) {
+                    $scope.$parent.submittedData.deviceData.id = data.id;
+                    console.log(data);
+                    prepSegue();
+                });    
+            }, function (data) {
+                console.log(data);
+                blockSegue();
+            })
         } else {
             blockSegue();
         }
@@ -62,6 +75,28 @@ angular.module('app').controller('accountController', function($scope, scopePayl
         $scope.$parent.userName = $scope.input;
     };
 
+    $scope.showPassword = function(){
+        if ($scope.showPasswordToggle == 'password') {
+            $scope.showPasswordToggle = 'text';
+        }
+        else {
+            $scope.showPasswordToggle = 'password';
+        }
+    };
+
+    /********** Functions **********/
+
+    function checkEmailPresence(emailString) {
+        platform.checkEmail(emailString).then(function(data){
+            console.log(data);
+            $scope.$parent.submittedData.userName = data.username;
+            $scope.$parent.pre_made = true;
+        }, function (data) {
+            console.log(data);
+            $scope.$parent.submittedData.userName = ' ';
+        })
+    }
+
     function prepSegue(){
         $scope.$parent.segueControl ='ready';
     }
@@ -79,43 +114,12 @@ angular.module('app').controller('accountController', function($scope, scopePayl
         }
     }
 
-    checkSegue();
-
     function validateEmail(email) {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
     }
 
-    $scope.showPassword = function(){
-        if ($scope.showPasswordToggle == 'password') {
-            $scope.showPasswordToggle = 'text';
-        }
-        else {
-            $scope.showPasswordToggle = 'password';
-        }
-    };
+    checkSegue();
 
-    function checkEmailPresence(emailString) {
-        var data = {
-            email: emailString
-        };
-        console.log(data);
-        var config = {
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        };
-        $http.post("https://api.smartcitizen.me/v0/onboarding/user", data, config)
-            .success(function (data, status, headers, config) {
-                //$scope.PostDataResponse = data;
-                console.log({emailFuzz: 'success' });
-                $scope.$parent.submittedData.userName = data.username;
-                $scope.$parent.pre_made = true;
-            })
-            .error(function (data, status, headers, config) {
-                console.log({emailFuzz: 'fail' });
-                $scope.$parent.submittedData.userName = ' ';
-            });
-    }
+  
 });

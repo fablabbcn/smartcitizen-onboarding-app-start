@@ -188,15 +188,19 @@ angular.module('app').service('SegueService', function() {
             "h2": "If you want to adjust it or pin it elsewhere, you can do that here",
             "h4": "Remember wherever your device goes, it will need wi-fi. Otherwise you'll have to go get it every now and again and connect it to your computer to sync the data",
             "segueButton": "DONE"
-        },{
+        },
+        /*  We currently skip tags    
+        {
             "index": 52,
             "template": "location_tags",
             url: 'location_tags',
             "h2": "Select which best fits your sensor's home",
             "h4": "This will help us better understand the data you are sensing",
             "segueButton": "All SET"
-        },{
-            "index": 53,
+        },
+        */
+        {
+            "index": 52,
             "template": "comfirm",
             "url":"confirm_location",
             "h1": "Almost There",
@@ -286,7 +290,7 @@ angular.module('app').service('SegueService', function() {
             return ('sensorName_prep');
         } else if (val == 41) {
             return ('location_prep');
-        } else if (val == 53) {
+        } else if (val == 52) { // Before 53. We currently skip tags     
             return ('email');
         } else if (val == 90) {
             if (accountPresent) {

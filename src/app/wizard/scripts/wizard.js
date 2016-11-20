@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce, $window, $timeout, SegueService, $rootScope, AnimationService, session, device) {
+angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce, $window, $timeout, SegueService, $rootScope, AnimationService, session, platform, Restangular) {
 
     /** Submitted User Data **/
     $scope.submittedData = {};
@@ -13,7 +13,8 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
     $scope.submittedData.deviceData = {
         description: 'Making Sense Pilot #1',
         exposure: 'outdoor',
-        kit_id: 11
+        kit_id: 11,
+        user_tags: ["MakingSense", "Barcelona"] //We currently use defualt tags
     }
 
     //$scope.location ..
@@ -22,7 +23,7 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
     $scope.onboarding_session = session.onboarding_session;
     $scope.device_token = session.device_token;
 
-    $scope.pre_made = false;
+    $scope.pre_made = false; // Check this
 
     $scope.modalClass='hidden';
 
@@ -32,15 +33,15 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
 
     /** Base Navigation  **/
     $scope.seque = function () {
-        console.log($scope.payload.template);
+        console.log($scope.payload);
         if (($scope.payload.template == 'handshake') && ($scope.handShakeState == false)){
             $rootScope.$broadcast('handshake');
         } else if ($scope.payload.template == 'final'){
-            $window.open('https://smartcitizen.me/kits/3770', '_blank');
+            $window.open('https://smartcitizen.me/kits/' +  $scope.submittedData.deviceData.id, '_blank');
         } else if ($scope.segueControl == 'ready') {
             console.log($scope.payload.template);
             if ($scope.payload.template == 'sensorName' || $scope.payload.template == 'location_map' || $scope.payload.template == 'location_tags') {
-                device.update($scope.submittedData.deviceData).then(sequeTransition, $scope.serverFailed);
+                platform.updateDevice($scope.submittedData.deviceData).then(sequeTransition);
             } else {
                 sequeTransition();
             }
@@ -123,7 +124,7 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
 
     $scope.serverFailed = function(){
         $scope.modalBox = 'red';
-        var data = {title: "Uh oh", body:"It seems we can't talk to the platform. Please, check your internet connection!", button: "Retry", action: "retry"};
+        var data = {title: "Uh oh", body:"It seems we can't talk to the Smart Citizen platform. Please, check your internet connection!", button: "Retry", action: "retry"};
         $scope.modalContent = data;
         $rootScope.$broadcast('modal');
     };
@@ -144,7 +145,15 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
         $scope.modalClass='showing';
     });
 
-
-
+    Restangular.setErrorInterceptor(function(response, deferred, responseHandler) {
+        if([422, 403, 404].indexOf(response.status) > -1) { 
+            console.warn(response);
+            return false; // We don't catch errors 422 and 403 since we use them on user login
+        } else {
+            console.error(response);
+            $scope.serverFailed(); // We trigger a modal
+            return true;
+        }
+    });
 
 });
