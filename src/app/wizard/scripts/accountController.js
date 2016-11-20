@@ -1,7 +1,8 @@
+'use strict';
 /**
  * Created by Lucian on 10/12/16.
  */
-angular.module('app').controller('accountController', function($scope, scopePayload, $http, AnimationService){
+angular.module('app').controller('accountController', function($scope, scopePayload, AnimationService, platform){
     $scope.$parent.payload = scopePayload;
     AnimationService.animate(scopePayload.index);
     $scope.$parent.segueControl ='ready';

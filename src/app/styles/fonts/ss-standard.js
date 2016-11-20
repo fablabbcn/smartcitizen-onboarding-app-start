@@ -1,3 +1,5 @@
+/* jshint ignore:start */
+
 /*
 * Symbolset
 * www.symbolset.com
@@ -82,3 +84,4 @@ if (/(MSIE [7-9]\.|Opera.*Version\/(10\.[5-9]|(11|12)\.)|Chrome\/([1-9]|10)\.|Ve
   }
 
 };
+/* jshint ignore:end */

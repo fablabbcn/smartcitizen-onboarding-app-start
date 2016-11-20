@@ -1,8 +1,7 @@
+'use strict';
 /**
  * Created by Lucian on 9/7/16.
  */
-'usr strict';
-
 angular.module('app').factory('AnimationService', function($rootScope, SegueService){
 
 
