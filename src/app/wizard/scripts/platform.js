@@ -38,6 +38,10 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
         return Restangular.all('sessions').post(loginData);
     }
 
+    function createUser(signupData) {
+        return Restangular.all('users').post(signupData);
+    }
+
     return {
         setSession: setSession,
         setAuth: setAuth,
@@ -45,7 +49,8 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
         updateDevice: updateDevice,
         bakeDevice: bakeDevice,
         checkEmail: checkEmail,
-        login: login
+        login: login,
+        createUser: createUser
     };
 
 });

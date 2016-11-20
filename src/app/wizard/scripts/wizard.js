@@ -7,8 +7,8 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
     // $scope.submittedData.kitName = ' ';
     $scope.submittedData.wifi_ssid =' ';
     $scope.submittedData.wifi_password =' ';
-    $scope.submittedData.userEmail = ' ';
-    $scope.submittedData.userName = ' ';
+
+    $scope.submittedData.user = {};
 
     $scope.submittedData.deviceData = {
         description: 'Making Sense Pilot #1',
@@ -148,11 +148,11 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
     Restangular.setErrorInterceptor(function(response, deferred, responseHandler) {
         if([422, 403, 404].indexOf(response.status) > -1) { 
             console.warn(response);
-            return false; // We don't catch errors 422 and 403 since we use them on user login
+            return true; // We don't catch errors 422 and 403 since we use them on user login
         } else {
             console.error(response);
             $scope.serverFailed(); // We trigger a modal
-            return true;
+            return false;
         }
     });
 
