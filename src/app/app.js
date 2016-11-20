@@ -8,11 +8,14 @@ angular.module('app', [
     'ngAnimate',
     'ngGeolocation',
     'uiGmapgoogle-maps',
-    'google.places'])
+    'google.places',
+    'restangular'])
     .controller('formController', function($scope) {
 
         // we will store all of our form data in this object
         $scope.formData = {};
+
+        console.log($scope.formData);
 
         // function to process the form
         $scope.processForm = function () {

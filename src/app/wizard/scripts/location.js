@@ -6,7 +6,7 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
         v: '3.20',
         libraries: 'weather,geometry,visualization'
     });
-}).controller('locationController', function($scope, uiGmapGoogleMapApi, $geolocation, scopePayload, AnimationService){
+}).controller('locationController', function($scope, uiGmapIsReady, $geolocation, scopePayload, AnimationService) {
 
     $scope.locationTags = [
         'inside',
@@ -29,39 +29,43 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
         'bicycle'
     ];
 
-    $scope.tagStates = ['','','','','','','','','','','','','','','','','',''];
-
+    $scope.tagStates = Array.apply(null, Array($scope.locationTags.length)).map(String.prototype.valueOf,'');
 
     $scope.$parent.payload = scopePayload;
-    $scope.$parent.segueControl ='ready';
-    AnimationService.animate(scopePayload.index);
+    // $scope.$parent.segueControl = 'ready';
 
-    $scope.tagToggle = function(itr){
-        var index = $scope.locationTags.indexOf(itr);
-        console.log(index);
-        if ($scope.tagStates[index] == 'active')
-        {
-            $scope.tagStates[index] = '';
-        } else {
-            $scope.tagStates[index] = 'active';
+    if(!$scope.$parent.submittedData.deviceData.user_tags) $scope.$parent.submittedData.deviceData.user_tags = []
+
+    // Default loc in IAAC
+
+    var loc = {
+        zoom: 10,
+        center: {
+            latitude: 41.396867,
+            longitude: 2.194351
         }
     };
 
+    /********** Init Functions **********/
 
-    function setMapData(center, val, zoom){
-        $scope.$parent.map = {
-            center: {latitude: center.latitude, longitude: center.longitude},
-            zoom: zoom,
-            markersEvents: {
-                dragend: function (mapModel, eventName, marker, orignalEventArgs) {
-                    console.log(marker.coords);
-                    //console.log(originalEventArgs[0].latLng);
-                }
-            }
-        };
-        $scope.$parent.markerLocation = {};
-        if (typeof center.latitude !== 'undefined'){
-            $scope.$parent.markerLocation = {latitude: val.latitude, longitude: val.longitude};
+    AnimationService.animate(scopePayload.index);
+    
+    uiGmapIsReady.promise(1).then(function() { // Double check issue when browser back
+        setMapData(loc.center, {}, loc.zoom) 
+    });
+
+    blockSegue();
+
+    /********** Watchers **********/
+
+    $scope.tagToggle = function(itr) {
+        var index = $scope.locationTags.indexOf(itr);
+        if ($scope.tagStates[index] == 'active') {
+            $scope.tagStates[index] = '';
+            $scope.$parent.submittedData.deviceData.user_tags.splice($scope.$parent.submittedData.deviceData.user_tags.indexOf(itr), 1);
+        } else {
+            $scope.$parent.submittedData.deviceData.user_tags.push($scope.locationTags[index]);
+            $scope.tagStates[index] = 'active';
         }
     }
 
@@ -70,37 +74,72 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
         maximumAge: 25,
         enableHighAccuracy: true
     });
+
     $scope.$parent.pos = $geolocation.position;
 
-    $scope.$parent.$watch('pos.coords', function (newValue, oldValue) {
-        var val = newValue;
-        var center = val;
-        var zoom = 18;
-        if (typeof newValue == 'undefined') {
-            console.log('did not capture local');
-
-            //SET Center to IAAC in BCN with zoom
-            center = {latitude: 41.396867,longitude: 2.194351};
-            zoom = 13;
-            val = {}
+    $scope.$parent.$watch('pos.coords', function(center) {
+        if (typeof center == 'undefined') {
+            console.log('Unable to capture users location');
+            setMapData(loc.center, {}, loc.zoom);
         } else {
-            console.log('captured');
+            setMapData(center, center, 18);
         }
-        setMapData(center,val, zoom);
-    });
-
-    uiGmapGoogleMapApi.then(function(maps) {
-        //console.log('maps loaded');
     });
 
     $scope.autoCompleteListener = function() {
-        if( (typeof $scope.autocomplete !== 'undefined') && (typeof $scope.autocomplete.geometry !== 'undefined') ){
-            //console.log('auto complete object present');
-            //console.log($scope.autocomplete);
-            var val = {latitude: $scope.autocomplete.geometry.location.lat(),longitude: $scope.autocomplete.geometry.location.lng()};
-            setMapData(val, val, 17);
+        if ((typeof $scope.autocomplete !== 'undefined') && (typeof $scope.autocomplete.geometry !== 'undefined')) {
+            var marker = {
+                latitude: $scope.autocomplete.geometry.location.lat(),
+                longitude: $scope.autocomplete.geometry.location.lng()
+            };
+            setMapData(marker, marker, 17);
         }
     };
+
+    /********** Functions **********/
+
+    function setMapData(center, marker, zoom) {
+        $scope.$parent.map = {
+            center: {
+                latitude: center.latitude,
+                longitude: center.longitude
+            },
+            zoom: zoom,
+            marker: {
+                events: {
+                    dragend: function(mapModel, eventName, marker, orignalEventArgs) {
+                        console.log(marker.coords);
+                        setMapData(marker.coords, marker.coords, $scope.$parent.map.zoom);
+                    }
+                },
+                location: {
+                    latitude: marker.latitude,
+                    longitude: marker.longitude
+                }
+            }
+        };
+        setSensorPosition($scope.$parent.map.marker.location);
+    }
+
+    function setSensorPosition(position) {
+        if (typeof position.latitude !== 'undefined') {
+            $scope.$parent.submittedData.deviceData.latitude = position.latitude;
+            $scope.$parent.submittedData.deviceData.longitude = position.longitude;
+            prepSegue();
+        } else {
+            blockSegue();
+        }
+    }
+
+    function prepSegue(){
+        $scope.payload.segueButton = 'NEXT';
+        $scope.$parent.segueControl ='ready';
+    }
+
+    function blockSegue(){
+        $scope.$parent.segueControl ='blocked';
+    }
+
 });
 
 //# TODO - when no location given use region from IP to center map

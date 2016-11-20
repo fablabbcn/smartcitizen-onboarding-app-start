@@ -1,24 +1,26 @@
 'usr strict';
 
-angular.module('app').factory('device', function($rootScope, SegueService, $http){
-
-    var url = "https://api.smartcitizen.me/v0/onboarding/device"
-
-    var config = {
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        }
-    };
+angular.module('app').factory('device', function($rootScope, SegueService, Restangular) {
 
     function getSession() {
-        var data = $.param({
+        return Restangular.all('onboarding/device').post({});
+    }
+
+    function setSession(session) {
+        Restangular.setDefaultHeaders({
+            OnboardingSession: session.onboarding_session
         });
-        return $http.post(url , data, config);
+    }
+
+    function update(data) {
+        if (data.user_tags) data.user_tags = data.user_tags.toString(); // Convert Array to String. Restangular fails?
+        return Restangular.one('onboarding/device').patch(data);
     }
 
     return {
-      getSession: getSession
+        setSession: setSession,
+        getSession: getSession,
+        update: update,
     };
 
 });

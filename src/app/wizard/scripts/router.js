@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+angular.module('app').config(function($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
 
     $stateProvider
 
@@ -12,8 +12,9 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider, $locat
             abstract: true,
             resolve: {
                 session: function(device, $state){ 
-                    return device.getSession().then(function(res){
-                        return res.data;
+                    return device.getSession().then(function(session){
+                        device.setSession(session);
+                        return session;
                     }, function(){
                         $state.go('unavailable');
                     });
@@ -222,8 +223,11 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider, $locat
             controller: 'baseController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(0); }}
         });
+    
     /* Default state */
     $urlRouterProvider.otherwise('/wizard/landing');
+    
+    RestangularProvider.setBaseUrl('https://api.smartcitizen.me/v0');
 
     $locationProvider.html5Mode({ // <<breaks
         enabled: true,

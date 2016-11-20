@@ -79,13 +79,14 @@ angular.module('app').controller('nameCtlr', function($scope, scopePayload, Anim
         var name = toTitleCase(adjectiveWordList[getRandomIndex(adjectiveWordList)]) + ' ' +
             toTitleCase(nounWordList[getRandomIndex(nounWordList)]) + ' ' +
             toTitleCase(nounWordList[getRandomIndex(nounWordList)]);
-        $scope.$parent.submittedData.kitName = name;
+        $scope.$parent.submittedData.deviceData.name = name;
         $scope.name = name;
         prepSegue();
     };
 
     $scope.listener = function(){
-      if( (typeof $scope.name !== 'undefined') && ($scope.input.length >= 1) ){
+      if(typeof $scope.name !== 'undefined' && $scope.name.length > 3){ // Name must be longer than 2 characters maybe
+          $scope.$parent.submittedData.deviceData.name = $scope.name;
           prepSegue();
       } else {
           blockSegue();
@@ -94,7 +95,7 @@ angular.module('app').controller('nameCtlr', function($scope, scopePayload, Anim
 
 
     function prepSegue(){
-        $scope.payload.segueButton = 'All DONE';
+        $scope.payload.segueButton = 'DONE';
         $scope.$parent.segueControl ='ready';
     }
     function blockSegue(){

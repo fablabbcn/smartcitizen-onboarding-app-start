@@ -1,41 +1,49 @@
 'use strict';
 
-angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce, $window, $timeout, SegueService, $rootScope, AnimationService, session) {
+angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce, $window, $timeout, SegueService, $rootScope, AnimationService, session, device) {
 
     /** Submitted User Data **/
     $scope.submittedData = {};
-    $scope.submittedData.kitName = ' ';
+    // $scope.submittedData.kitName = ' ';
     $scope.submittedData.wifi_ssid =' ';
     $scope.submittedData.wifi_password =' ';
     $scope.submittedData.userEmail = ' ';
     $scope.submittedData.userName = ' ';
+
+    $scope.submittedData.deviceData = {
+        description: 'Making Sense Pilot #1',
+        exposure: 'outdoor',
+        kit_id: 11
+    }
 
     //$scope.location ..
 
     /** Operational Data **/
     $scope.onboarding_session = session.onboarding_session;
     $scope.device_token = session.device_token;
+
     $scope.pre_made = false;
 
     $scope.modalClass='hidden';
 
     $scope.handShakeState = false;
 
-    // console.log(onboardingSession);
+    console.log(session);
 
     /** Base Navigation  **/
     $scope.seque = function () {
+        console.log($scope.payload.template);
         if (($scope.payload.template == 'handshake') && ($scope.handShakeState == false)){
             $rootScope.$broadcast('handshake');
         } else if ($scope.payload.template == 'final'){
             $window.open('https://smartcitizen.me/kits/3770', '_blank');
         } else if ($scope.segueControl == 'ready') {
-            AnimationService.leaving(true);
-            $timeout(function () {
-                $location.path('/wizard/' + SegueService.nextPage($scope.payload.index, $scope.pre_made));
-                $window.scrollTo(0, 0);
-                console.log($scope.submittedData);
-            }, 500); // see animations max duration time
+            console.log($scope.payload.template);
+            if ($scope.payload.template == 'sensorName' || $scope.payload.template == 'location_map' || $scope.payload.template == 'location_tags') {
+                device.update($scope.submittedData.deviceData).then(sequeTransition, $scope.serverFailed);
+            } else {
+                sequeTransition();
+            }
         }
         else {
             handleError();
@@ -46,18 +54,29 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
         if ($scope.payload.backBlock != 'blocked') {
             //compare templates
             $rootScope.$broadcast('no'); //?
-
-            AnimationService.leaving(false);
-            $timeout(function () {
-                $scope.segueControl ='ready';
-                $location.path('/wizard/' + SegueService.previousPage($scope.payload.index, $scope.pre_made));
-                $window.scrollTo(0, 0);
-            }, 500); // see animations max duration time
+            backTransition();
         }
     };
 
 
     /** Aux Navigation **/
+
+    function sequeTransition() {
+        AnimationService.leaving(true);
+        $timeout(function () {
+            $location.path('/wizard/' + SegueService.nextPage($scope.payload.index, $scope.pre_made));
+            $window.scrollTo(0, 0);
+        }, 500); // see animations max duration time
+    }
+
+    function backTransition() {
+        AnimationService.leaving(false);
+        $timeout(function () {
+            $scope.segueControl ='ready';
+            $location.path('/wizard/' + SegueService.previousPage($scope.payload.index, $scope.pre_made));
+            $window.scrollTo(0, 0);
+        }, 500); // see animations max duration time
+    }
 
     function handleError(){
         if (
@@ -97,7 +116,14 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
 
     $scope.yes = function(){
         $scope.modalBox = 'red';
-        var data = {title: "Uh oh", body:"It seems like you are missing parts of the kit. If that’s so, let’s notify the team and they’ll get back to you as soon as possible", image:"app/images/alert.svg", button:"Notify the team!"};
+        var data = {title: "Uh oh", body:"It seems like you are missing parts of the kit. If that’s so, let’s notify the team and they’ll get back to you as soon as possible", image:"app/images/alert.svg", button:"Notify the team!", action: "email"};
+        $scope.modalContent = data;
+        $rootScope.$broadcast('modal');
+    };
+
+    $scope.serverFailed = function(){
+        $scope.modalBox = 'red';
+        var data = {title: "Uh oh", body:"It seems we can't talk to the platform. Please, check your internet connection!", button: "Retry", action: "retry"};
         $scope.modalContent = data;
         $rootScope.$broadcast('modal');
     };
@@ -105,17 +131,14 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
     /** -- MODAL-- **/
 
     $scope.modalClick = function(){
-        //alert('modalPress');
         $scope.modalClass='out';
         $timeout(function(){
             $scope.modalClass='hidden';
         }, 500);
     };
     $scope.modalButtonClick = function(){
-        if ( $scope.modalBox == 'red' ) //error state
-        {
-            $window.open('mailto:someone@example.com?Subject=Hello%20again', '_blank');
-        }
+        if ( $scope.modalContent.action == 'email' ) $window.open('mailto:support@smartcitizen.me?Subject=SmartCitizen Support [' + $scope.onboarding_session + ']', '_blank');
+        else if ( $scope.modalContent.action == 'retry' ) $scope.seque;
     };
     $scope.$on('modal', function(){
         $scope.modalClass='showing';

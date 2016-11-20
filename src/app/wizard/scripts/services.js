@@ -169,7 +169,7 @@ angular.module('app').service('SegueService', function() {
             "h4": "This is so we can refer to it later",
             "contextButton": "Chose a random name",
             "segueButtonError":"CHECK NAME",
-            "segueButton": "ALL DONE"
+            "segueButton": "DONE"
         },
 
 
