@@ -4,24 +4,20 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
 
     /** Submitted User Data **/
     $scope.submittedData = {};
-    // $scope.submittedData.kitName = ' ';
-    $scope.submittedData.wifi_ssid =' ';
-    $scope.submittedData.wifi_password =' ';
+
+    $scope.submittedData.wifi = {};
 
     $scope.submittedData.user = {};
-
+    
     $scope.submittedData.deviceData = {
+        device_token: session.device_token,
         description: 'Making Sense Pilot #1',
         exposure: 'outdoor',
         kit_id: 11,
         user_tags: ["MakingSense", "Barcelona"] //We currently use defualt tags
     }
 
-    //$scope.location ..
-
-    /** Operational Data **/
     $scope.onboarding_session = session.onboarding_session;
-    $scope.device_token = session.device_token;
 
     $scope.pre_made = false; // Check this
 
@@ -29,17 +25,13 @@ angular.module('app').controller('wizardCtrl', function ($scope, $location, $sce
 
     $scope.handShakeState = false;
 
-    console.log(session);
-
     /** Base Navigation  **/
     $scope.seque = function () {
-        console.log($scope.payload);
         if (($scope.payload.template == 'handshake') && ($scope.handShakeState == false)){
             $rootScope.$broadcast('handshake');
         } else if ($scope.payload.template == 'final'){
             $window.open('https://smartcitizen.me/kits/' +  $scope.submittedData.deviceData.id, '_blank');
         } else if ($scope.segueControl == 'ready') {
-            console.log($scope.payload.template);
             if ($scope.payload.template == 'sensorName' || $scope.payload.template == 'location_map' || $scope.payload.template == 'location_tags') {
                 platform.updateDevice($scope.submittedData.deviceData).then(sequeTransition);
             } else {

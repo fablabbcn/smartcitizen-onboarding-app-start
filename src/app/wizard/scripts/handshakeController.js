@@ -2,7 +2,7 @@
 /**
  * Created by Lucian on 10/14/16.
  */
-angular.module('app').controller('handshakeController', function($scope, scopePayload, AnimationService, $rootScope) {
+angular.module('app').controller('handshakeController', function($scope, scopePayload, AnimationService, $rootScope, platform, $state) {
     $scope.$parent.payload = scopePayload;
     AnimationService.animate(scopePayload.index);
 
@@ -11,7 +11,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     $scope.$parent.segueControl = 'blocked';
     //$scope.$parent.segueControl = 'ready';
 
-    if ($scope.submittedData.wifi_ssid) {
+    if ($scope.submittedData.wifi.ssid) {
         $scope.$parent.segueControl = 'ready';
     }
 
@@ -23,13 +23,13 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
             $scope.$parent.segueControl = 'ready';
             $scope.payload.segueButton = 'CONTINUE';
             $rootScope.$broadcast('removeError');
-            $scope.submittedData.wifi_ssid = wifi_ssid.ssid.value;
+            $scope.submittedData.wifi.ssid = wifi_ssid.ssid.value;
         } else {
             $scope.$parent.segueControl = 'blocked';
         }
     };
     $scope.passwordListener = function(){
-        $scope.submittedData.wifi_password = wifi_ssid.pass.value;
+        $scope.submittedData.wifi.password = wifi_ssid.pass.value;
     };
 
     $scope.showPassword = function(){
@@ -56,7 +56,6 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     var index = 0;
     var myInterval;
     var lightElement = document.getElementById('handShakeSpace');
-    var c = 0;
     function getColor(value, levelNum) {
         var previous = (value * (255.0/(levelNum - 1)));
         var final = 255.0 * Math.pow((previous / 255.0), (1.0 / gamma));
@@ -114,7 +113,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
         }
         console.log("checksum: " + toSend);
     }
-    function start(t){
+    function start(t, callback){
         if (t) {
             // document.getElementById("start").value = "Stop";
             // document.getElementById('output').innerHTML = "";
@@ -124,13 +123,14 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
                 index = index + 1;
                 if (index >= queue.length) {
                     window.clearInterval(myInterval);
-                    start(false);
+                    start(false, callback);
                 }
             }, period );
         } else {
             // document.getElementById("start").value = "Start";
             window.clearInterval(myInterval);
             paint(MIN);
+            callback();
         }
     }
     function INIT() {
@@ -158,7 +158,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
         outDigit(0);
         outDigit(4);
     }
-    function load() {
+    function load(callback) {
         $scope.handshakeLabel = ' ';
         lightElement.style.setProperty('background-color', 'rgb(0, 0, 0)');
 
@@ -169,37 +169,57 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
         INIT();
         STX();
 
-        console.log($scope.submittedData.wifi_ssid);
-        console.log($scope.submittedData.wifi_password);
+        console.log($scope.submittedData.wifi.ssid);
+        console.log($scope.submittedData.wifi.password);
+        console.log($scope.submittedData.deviceData.device_token);
 
         setWord("auth\n");
-        setWord("12345" + "\n"); //We should validate text input here
-        setWord("qwerty" + "\n");
-        setWord("e82d8e" + "\n");
+        // setWord("12345" + "\n"); //We should validate text input here
+        // setWord("qwerty" + "\n");
+        // setWord("e82d8e" + "\n");
 
-
-
+        setWord($scope.submittedData.wifi.ssid + "\n"); 
+        setWord($scope.submittedData.wifi.password + "\n");
+        setWord($scope.submittedData.deviceData.device_token + "\n");
 
         ETX();
         sendChecksum();
         EOT();
 
-        // I'm not sure...
-        console.log(queue.length);
-        console.log(c);
-        console.log(queue);
-        debugger;
-        c = 0;
-        // I'm not sure...
-
-        start(true);
-
-
-
+        start(true, callback);
     };
 
-    $scope.$on('handshake', function(){
-        console.log($scope.submittedData);
-        load();
+    // On handshake event from wizard controller trigger process (Check this, it might change...)
+    $scope.$on('handshake', function(){ 
+        blockSegue();
+        platform.listenToken($scope.submittedData.deviceData.device_token, $scope);
+        $scope.$on('token', function(e, data) { 
+            console.log("Token received...");
+            $state.go('wizard.confirm_handshake'); 
+            //prepSegue();
+        });
+        load(function(){
+            // Here watch dog timer to ask user to restart the process when no answer from platform...
+            waitSegue();
+            console.log("Light process done...");
+        });
     });
+
+    /* Check this */
+
+    function waitSegue(){
+        $scope.payload.segueButton = 'WAIT';
+        $scope.$parent.segueControl ='blocked';
+    }
+
+    function prepSegue(){
+        $scope.payload.segueButton = 'NEXT';
+        $scope.$parent.segueControl ='ready';
+    }
+
+    function blockSegue(){
+        $scope.payload.segueButton = 'SENDING...';
+        $scope.$parent.segueControl ='blocked';
+    }
+
 });

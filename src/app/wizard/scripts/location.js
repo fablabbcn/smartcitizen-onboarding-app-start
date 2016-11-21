@@ -8,6 +8,8 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
     });
 }).controller('locationController', function($scope, uiGmapIsReady, $geolocation, scopePayload, AnimationService) {
 
+    // Tags must be on this list https://api.smartcitizen.me/v0/tags
+
     $scope.locationTags = [
         'inside',
         'outside',

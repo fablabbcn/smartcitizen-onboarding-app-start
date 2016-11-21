@@ -34,9 +34,9 @@ angular.module('app').controller('accountController', function($scope, scopePayl
             platform.createUser($scope.$parent.submittedData.user).then(function(data){
                 loginAndBakeDevice();
             },function(res){
-                if (res.data.errors.password) {
+                if (res.data.errors.password) { 
                     console.error("Password " + res.data.errors.password[0])
-                }
+                } 
                 blockSegue();
             });
         } else {
@@ -56,13 +56,13 @@ angular.module('app').controller('accountController', function($scope, scopePayl
     $scope.usernameListener = function(){
         if( (typeof $scope.given_username !== 'undefined') && ($scope.given_username.length >= 3) ) {
             $scope.$parent.submittedData.user.username = $scope.given_username;
-
+            
             $scope.$parent.userName = $scope.input; // Is this need it?
 
             platform.createUser($scope.$parent.submittedData.user).then(function(data){
                 //Do nothing
             },function(res){
-                if (res.data.errors.username) {
+                if (res.data.errors.username) { 
                     // Username has already been taken
                     console.error("Username " + res.data.errors.username[0])
                     blockSegue();
@@ -101,7 +101,7 @@ angular.module('app').controller('accountController', function($scope, scopePayl
                 $scope.$parent.submittedData.deviceData.id = data.id;
                 console.log(data);
                 prepSegue();
-            });
+            });    
         }, function (data) {
             console.log(data);
             blockSegue();

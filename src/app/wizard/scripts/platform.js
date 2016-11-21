@@ -2,7 +2,7 @@
 
 angular.module('app').factory('platform', function($rootScope, SegueService, Restangular) {
 
-    var sessionHeaders = {};
+    var sessionHeaders = {}, socket;
 
     function setSession(session) {
         sessionHeaders.OnboardingSession = session.onboarding_session;
@@ -42,6 +42,33 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
         return Restangular.all('users').post(signupData);
     }
 
+    function connect(){
+        socket = io.connect('wss://smartcitizen.xyz');
+    }    
+
+    function listenDevices(then){
+        if (!socket) connect();
+        socket.on('data-received', then);
+    }
+
+    function listenDevice(id, scope){
+        listenDevices(function(data){
+          if(id == data.device_id) scope.$emit('published', data);
+        })
+    }
+
+    function listenTokens(then){
+        if (!socket) connect();
+        socket.on('token-received', then);
+    }
+
+    function listenToken(token, scope){
+        listenTokens(function(data){
+          if(token == data.device_token) scope.$emit('token', data);
+        })
+    }
+
+
     return {
         setSession: setSession,
         setAuth: setAuth,
@@ -50,7 +77,9 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
         bakeDevice: bakeDevice,
         checkEmail: checkEmail,
         login: login,
-        createUser: createUser
+        createUser: createUser,
+        listenDevice: listenDevice,
+        listenToken: listenToken
     };
 
 });
