@@ -2,6 +2,8 @@
 
 angular.module('app').config(function($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
 
+    var refreshed = false;
+
     $stateProvider
 
     /** -- INTRO -- **/
@@ -9,11 +11,16 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider, $locat
             url: '/wizard',
             templateUrl: 'app/wizard/wizard.html',
             controller: 'wizardCtrl',
-            abstract: true,
             resolve: {
                 session: function(platform, $state){ 
                     return platform.getSession().then(function(session){
                         platform.setSession(session);
+                        // This ensure user will be always redirected temporary to avoid state issues.
+                        // Disable for development.
+                        if(!refreshed) {
+                            // refreshed = true;
+                            // $state.go('wizard.landing'); 
+                        }
                         return session;
                     }, function(){
                         $state.go('unavailable');

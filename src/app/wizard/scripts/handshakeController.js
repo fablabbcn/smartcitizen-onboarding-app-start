@@ -155,6 +155,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
         payload = "";
         checksum = 0;
         index = 0;
+        
         INIT();
         STX();
 
@@ -199,7 +200,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
                 lightElement.style.setProperty('background-color', '#EF5854');
                 $scope.handshakeLabel = "The kit can't connect. Check your wifi settings..."; 
                 prepSegue(); //This is temporary for demo to jump no next step if you have trouble
-            }, 1000);
+            }, 10000);
         });
     });
 
@@ -222,7 +223,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     }
 
     function blockSegue(){
-        $scope.payload.segueButton = 'SENDING...';
+        $scope.payload.segueButton = 'SENDING';
         $scope.$parent.segueControl ='blocked';
     }
 
