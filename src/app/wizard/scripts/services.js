@@ -332,15 +332,10 @@ angular.module('app').service('SegueService', function() {
     function payloadGenerate(content){
         var payload = content;
 
-        // #TODO - fix this
-        payload.progressVal = ((content.index + 1) / pageContent.length) * 100;
-
-
         var index = pageContent.findIndex(function(item, i){
             return item.index === payload.index;
         });
-        console.log(index);
-        payload.progressVal = index / pageContent.length;
+        payload.progressVal = (index / pageContent.length) * 100;
 
         payload.companyLogo = content.companyLogo;
         payload.image = content.image;
