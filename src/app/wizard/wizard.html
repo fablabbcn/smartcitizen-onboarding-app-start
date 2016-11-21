@@ -7,7 +7,7 @@
 <div id="wizardView" layout="column" layout-align="center none" ui-view flex ></div>
 
 <div class="bottomNav animate" layout="row" layout-align="space-around center" flex="none" ng-class="animationRows[0][0]">
-    <div >
+    <div  hide-xs>
         <button class="backButton" ng-click="back()" ng-class="payload.backBlock">
             <svg width="36px" height="49px" viewBox="8 10 36 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <defs></defs>
@@ -18,8 +18,8 @@
         </button>
     </div>
     <div  class="segueWrapper" layout="row" layout-align="space-between center" layout-margin flex="none">
-        <button class="buttonClearfix">X</button>
-        <button class="buttonClearfix">X</button>
+        <button class="buttonClearfix" hide-xs>X</button>
+        <button class="buttonClearfix" hide-xs>X</button>
         <button class="segueButton" ng-click="seque()" ng-class="segueControl">
             <svg id='closeSVG' width="36px" height="40px" viewBox="8 10 36 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <defs></defs>
@@ -36,8 +36,8 @@
                 </text>
             </svg>
         </button>
-        <button class="yesButton errorButton" ng-click="yes()" ng-class="errorButton">YES</button>
-        <button class="noButton errorButton" ng-click="no()"ng-class="errorButton">NO</button>
+        <button class="yesButton errorButton" ng-click="yes()" ng-class="errorButton" hide-xs>YES</button>
+        <button class="noButton errorButton" ng-click="no()"ng-class="errorButton" hide-xs>NO</button>
     </div>
     <div hide-xs>
         <button class="forwardButton" ng-click="forward()" ng-class="payload.forwardBlock" style="visibility: hidden;">
