@@ -27,10 +27,10 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
 
     /** Base Navigation  **/
     $scope.seque = function() {
+        console.log($scope.segueControl);
         if ($scope.segueControl == 'ready') {
             switch ($scope.payload.template) {
                 case 'handshake':
-                    console.log($scope.handShakeState);
                     if ($scope.handShakeState == false) {
                         $rootScope.$broadcast('handshake');
                     } else {

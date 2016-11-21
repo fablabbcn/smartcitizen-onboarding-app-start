@@ -34,7 +34,7 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
     $scope.tagStates = Array.apply(null, Array($scope.locationTags.length)).map(String.prototype.valueOf,'');
 
     $scope.$parent.payload = scopePayload;
-    // $scope.$parent.segueControl = 'ready';
+    $scope.$parent.segueControl = 'ready';
 
     if(!$scope.$parent.submittedData.deviceData.user_tags) $scope.$parent.submittedData.deviceData.user_tags = []
 
@@ -51,14 +51,21 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
     /********** Init Functions **********/
 
     AnimationService.animate(scopePayload.index);
-    
-    uiGmapIsReady.promise(1).then(function() { // Double check issue when browser back
-        setMapData(loc.center, {}, loc.zoom) 
-    });
-
-    blockSegue();
 
     /********** Watchers **********/
+
+    uiGmapIsReady.promise(1).then(function() { // Double check issue when browser back
+        setInitialPosition();
+    });
+
+    $geolocation.getCurrentPosition({
+        timeout: 10000,
+        maximumAge: 250,
+        enableHighAccuracy: true
+    }).then(function(position) {
+        if ($scope.$parent) $scope.$parent.pos = position.coords;
+        setInitialPosition();
+    });
 
     $scope.tagToggle = function(itr) {
         var index = $scope.locationTags.indexOf(itr);
@@ -71,15 +78,6 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
         }
     }
 
-    $scope.$parent.$watch('pos.coords', function(center) {
-        if (typeof center == 'undefined') {
-            console.warn('Unable to capture users location...');
-            setMapData(loc.center, {}, loc.zoom);
-        } else {
-            setMapData(center, center, 18);
-        }
-    });
-
     $scope.autoCompleteListener = function() {
         if ((typeof $scope.autocomplete !== 'undefined') && (typeof $scope.autocomplete.geometry !== 'undefined')) {
             var marker = {
@@ -90,16 +88,16 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
         }
     };
 
-    setTimeout(function() { // This is temp....
-        $geolocation.getCurrentPosition({
-            timeout: 60000
-        }).then(function(position) {
-            $scope.$parent.pos = position;
-        });
-    }, 1000);
-
-
     /********** Functions **********/
+
+    function setInitialPosition() {
+        if ($scope.$parent && $scope.$parent.pos) {
+            setMapData($scope.$parent.pos, $scope.$parent.pos, 18);
+        } else {
+            console.warn('Unable to capture users location...');
+            setMapData(loc.center, {}, loc.zoom);
+        }
+    }
 
     function setMapData(center, marker, zoom) {
         if(!$scope.$parent) return;
@@ -131,10 +129,7 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
         if (typeof position.latitude !== 'undefined') {
             $scope.$parent.submittedData.deviceData.latitude = position.latitude;
             $scope.$parent.submittedData.deviceData.longitude = position.longitude;
-            prepSegue();
-        } else {
-            blockSegue();
-        }
+        } 
     }
 
     function prepSegue(){

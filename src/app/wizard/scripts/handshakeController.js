@@ -50,7 +50,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     var REPEAT = levelNum -1;
     var previousDigit = levelNum + 1;
     var checksum = 0;
-    var period = 120;
+    var period = 170;
     var queue = [];
     var payload = "";
     var index = 0;
@@ -64,13 +64,6 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     // Fills div with the requested color value
     function paint(colorValue) {
         lightElement.style.setProperty('background-color', getColor(colorValue, levelNum));
-        // if (index > 18){
-        //     if ((index - 18) % 3 == 0) {
-        //         var div = document.getElementById('output');
-        //         div.innerHTML = div.innerHTML.concat(payload.slice(0,1));
-        //         payload = payload.slice(1, payload.length);
-        //     }
-        // }
     };
     function outDigit(digit) {
         digit = parseInt(digit);
@@ -115,9 +108,6 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     }
     function start(t, callback){
         if (t) {
-            // document.getElementById("start").value = "Stop";
-            // document.getElementById('output').innerHTML = "";
-            // console.log(queue);
             myInterval = window.setInterval(function() {
                 paint(queue[index]);
                 index = index + 1;
@@ -127,7 +117,6 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
                 }
             }, period );
         } else {
-            // document.getElementById("start").value = "Start";
             window.clearInterval(myInterval);
             paint(MIN);
             callback();
@@ -174,10 +163,6 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
         console.log($scope.submittedData.deviceData.device_token);
 
         setWord("auth\n");
-        // setWord("12345" + "\n"); //We should validate text input here
-        // setWord("qwerty" + "\n");
-        // setWord("e82d8e" + "\n");
-
         setWord($scope.submittedData.wifi.ssid + "\n"); 
         setWord($scope.submittedData.wifi.password + "\n");
         setWord($scope.submittedData.deviceData.device_token + "\n");
@@ -192,29 +177,46 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     // On handshake event from wizard controller trigger process (Check this, it might change...)
     $scope.$on('handshake', function(){ 
         blockSegue();
+
         platform.listenToken($scope.submittedData.deviceData.device_token, $scope);
+
         $scope.$on('token', function(e, data) { 
             console.log("Token received...");
             $state.go('wizard.confirm_handshake'); 
-            //prepSegue();
+            clearInterval($scope.watchDog);
+            prepSegue();
         });
+
         load(function(){
             // Here watch dog timer to ask user to restart the process when no answer from platform...
-
             waitSegue();
             console.log("Light process done...");
+            $scope.watchDog = setTimeout(function() {
+                $scope.waitForResart = setTimeout(function() {
+                    blockRestart();
+                }, 3000);
+                // Function below do not work! It seems a angular DOM bind issue after blinking the div...
+                lightElement.style.setProperty('background-color', '#EF5854');
+                $scope.handshakeLabel = "The kit can't connect. Check your wifi settings..."; 
+                prepSegue(); //This is temporary for demo to jump no next step if you have trouble
+            }, 1000);
         });
     });
 
     /* Check this */
 
     function waitSegue(){
+        lightElement.style.setProperty('background-color', '#61CD72');
         $scope.$parent.handShakeState = true;
+
+        // Function below do not work! It seems a angular DOM bind issue after blinking the div...
+        $scope.handshakeLabel = 'Done! Please, wait'; 
         $scope.payload.segueButton = 'WAIT';
         $scope.$parent.segueControl ='ready';
     }
 
     function prepSegue(){
+        if ($scope.waitForResart) clearInterval($scope.waitForResart); //This is temporary for demo to jump no next step if you have trouble
         $scope.payload.segueButton = 'CONTINUE';
         $scope.$parent.segueControl ='ready';
     }
@@ -222,6 +224,13 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     function blockSegue(){
         $scope.payload.segueButton = 'SENDING...';
         $scope.$parent.segueControl ='blocked';
+    }
+
+    function blockRestart(){
+        $scope.$parent.handShakeState = false;
+        $scope.payload.segueButton = 'CONTINUE';
+        $scope.$parent.segueControl ='ready';
+        $state.go('wizard.wifi_enter'); 
     }
 
 });

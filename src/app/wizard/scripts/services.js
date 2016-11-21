@@ -115,7 +115,7 @@ angular.module('app').service('SegueService', function() {
             "template": "handshake",
             "url": 'handshake',
             "h2": "Now let's do some magic...",
-            "h4": "Hold up your kit and press it on the screen over the box below and press 'connect'. Make sure the blue side of the kit is facing you",
+            "h4": "Wait for your kit light to be red, hold up your kit and press it on the screen over the box below and press 'connect'. Make sure the blue side of the kit is facing you.",
             "segueButton": "CONNECT"
         },{
             "index": 22,
