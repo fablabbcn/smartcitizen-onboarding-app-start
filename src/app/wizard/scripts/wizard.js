@@ -27,21 +27,15 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
 
     /** Base Navigation  **/
     $scope.seque = function() {
-        // if (($scope.payload.template == 'handshake') && ($scope.handShakeState == false)){
-        //     $rootScope.$broadcast('handshake');
-        // } else if ($scope.payload.template == 'final'){
-        //     $window.open('https://smartcitizen.me/kits/' +  $scope.submittedData.deviceData.id, '_blank');
-        // } else if ($scope.segueControl == 'ready') {
-        //     if ($scope.payload.template == 'sensorName' || $scope.payload.template == 'location_map' || $scope.payload.template == 'location_tags') {
-        //         platform.updateDevice($scope.submittedData.deviceData).then(sequeTransition);
-        //     } else {
-        //         sequeTransition();
-        //     }
-        // }
         if ($scope.segueControl == 'ready') {
             switch ($scope.payload.template) {
                 case 'handshake':
-                    if ($scope.handShakeState == false) $rootScope.$broadcast('handshake');
+                    console.log($scope.handShakeState);
+                    if ($scope.handShakeState == false) {
+                        $rootScope.$broadcast('handshake');
+                    } else {
+                        sequeTransition();
+                    }
                     break;
                 case 'final':
                     $window.open('https://smartcitizen.me/kits/' + $scope.submittedData.deviceData.id, '_blank');

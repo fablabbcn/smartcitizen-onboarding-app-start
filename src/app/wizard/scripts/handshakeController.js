@@ -200,6 +200,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
         });
         load(function(){
             // Here watch dog timer to ask user to restart the process when no answer from platform...
+
             waitSegue();
             console.log("Light process done...");
         });
@@ -208,12 +209,13 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     /* Check this */
 
     function waitSegue(){
+        $scope.$parent.handShakeState = true;
         $scope.payload.segueButton = 'WAIT';
-        $scope.$parent.segueControl ='blocked';
+        $scope.$parent.segueControl ='ready';
     }
 
     function prepSegue(){
-        $scope.payload.segueButton = 'NEXT';
+        $scope.payload.segueButton = 'CONTINUE';
         $scope.$parent.segueControl ='ready';
     }
 

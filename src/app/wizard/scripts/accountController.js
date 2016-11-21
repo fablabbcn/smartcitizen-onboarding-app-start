@@ -5,12 +5,11 @@
 angular.module('app').controller('accountController', function($scope, scopePayload, AnimationService, platform){
     $scope.$parent.payload = scopePayload;
     AnimationService.animate(scopePayload.index);
+   
     $scope.$parent.segueControl ='ready';
-
     $scope.showPasswordToggle = 'password';
 
     $scope.given_email = ( $scope.$parent.submittedData.user.email == ' '? '' : $scope.$parent.submittedData.user.email);
-
     $scope.given_username = ( $scope.$parent.submittedData.user.username == ' '? '' : $scope.$parent.submittedData.user.username);
 
     /********** Watchers **********/

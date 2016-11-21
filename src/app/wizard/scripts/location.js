@@ -71,17 +71,9 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
         }
     }
 
-    $geolocation.watchPosition({
-        timeout: 5,
-        maximumAge: 25,
-        enableHighAccuracy: true
-    });
-
-    $scope.$parent.pos = $geolocation.position;
-
     $scope.$parent.$watch('pos.coords', function(center) {
         if (typeof center == 'undefined') {
-            console.log('Unable to capture users location');
+            console.warn('Unable to capture users location...');
             setMapData(loc.center, {}, loc.zoom);
         } else {
             setMapData(center, center, 18);
@@ -97,6 +89,15 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
             setMapData(marker, marker, 17);
         }
     };
+
+    setTimeout(function() { // This is temp....
+        $geolocation.getCurrentPosition({
+            timeout: 60000
+        }).then(function(position) {
+            $scope.$parent.pos = position;
+        });
+    }, 1000);
+
 
     /********** Functions **********/
 
@@ -122,7 +123,7 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
                 }
             }
         };
-
+        
         setSensorPosition($scope.$parent.map.marker.location);
     }
 
