@@ -101,6 +101,8 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
     /********** Functions **********/
 
     function setMapData(center, marker, zoom) {
+        if(!$scope.$parent) return;
+
         $scope.$parent.map = {
             center: {
                 latitude: center.latitude,
@@ -120,6 +122,7 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
                 }
             }
         };
+
         setSensorPosition($scope.$parent.map.marker.location);
     }
 
