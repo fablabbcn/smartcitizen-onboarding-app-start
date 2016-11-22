@@ -127,7 +127,7 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
         }, {
             "title": "Made for bespoke cases",
             "body": "When the kit needs to be charged, you can connect this cable to your computer or plug, and back to the kit.",
-            "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosure-wShine.png"
+            "image": "app/images/BOARDS-CUTOUT_0008_ANGLED.png"
         }];
         data[val].button = 'OK, got it';
         $scope.$parent.modalContent = data[val];
