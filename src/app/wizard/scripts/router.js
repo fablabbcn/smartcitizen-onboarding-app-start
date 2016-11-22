@@ -2,7 +2,7 @@
 
 angular.module('app').config(function($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
 
-    var refreshed = true;
+    var refreshed = false;
 
     $stateProvider
 
