@@ -18,7 +18,7 @@
             <div flex="grow" class="md-box">
                 <md-input-container class="md-block">
                     <label>Type email here</label>
-                    <input autofocus ng-model="given_email" ng-change="accountListener()" required type="text" name="given_email">
+                    <input autofocus ng-model="given_email" ng-change="accountListener()" ng-model-options="{ debounce: 500 }" required type="text" name="given_email">
                     <div ng-messages="email_form.given_email.$error">
                         <div ng-message="required">You must enter an email.</div>
                     </div>

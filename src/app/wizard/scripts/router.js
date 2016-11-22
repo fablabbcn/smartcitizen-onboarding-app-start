@@ -1,7 +1,8 @@
 'use strict';
 
-angular.module('app').config(function($stateProvider, $urlRouterProvider,$locationProvider) {
+angular.module('app').config(function($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
 
+    var refreshed = false;
 
     $stateProvider
 
@@ -9,7 +10,23 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider,$locati
         .state('wizard', {
             url: '/wizard',
             templateUrl: 'app/wizard/wizard.html',
-            controller: 'wizardCtrl'
+            controller: 'wizardCtrl',
+            resolve: {
+                session: function(platform, $state){ 
+                    return platform.getSession().then(function(session){
+                        platform.setSession(session);
+                        // This ensure user will be always redirected temporary to avoid state issues.
+                        // Disable for development.
+                        if(!refreshed) {
+                            refreshed = true;
+                            $state.go('wizard.landing'); 
+                        }
+                        return session;
+                    }, function(){
+                        $state.go('unavailable');
+                    });
+                }
+            }
         })
         .state('wizard.landing', {
             url: '/landing',            //<< find way to remove these
@@ -139,17 +156,19 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider,$locati
             controller: 'locationController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(51); }}
         })
+        /*        
         .state('wizard.location_tags', {
             url: '/location_tags',
             templateUrl: 'app/wizard/location_tags.html',
             controller: 'locationController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(52); }}
         })
+        */
         .state('wizard.confirm_location', {
             url: '/confirm_location',
             templateUrl: 'app/wizard/confirm.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(53); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(52); }}
         })
 
 
@@ -204,12 +223,20 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider,$locati
         .state('wizard.final', {
             url: '/final',
             templateUrl: 'app/wizard/final.html',
-            controller: 'baseController',
+            controller: 'finalController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(100); }}
+        })
+        .state('unavailable', {
+            url: '/unavailable',
+            templateUrl: 'app/wizard/unavailable.html',
+            controller: 'baseController',
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(0); }}
         });
-
+    
     /* Default state */
     $urlRouterProvider.otherwise('/wizard/landing');
+    
+    RestangularProvider.setBaseUrl('https://api.smartcitizen.me/v0');
 
     $locationProvider.html5Mode({ // <<breaks
         enabled: true,

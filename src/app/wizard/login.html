@@ -1,5 +1,5 @@
 <div class="animate" ng-class="animationRows[3][0]">
-    <h2>{{payload.h2a}} {{submittedData.userName}} {{payload.h2b}}</h2>
+    <h2>{{payload.h2a}} {{submittedData.user.username}} {{payload.h2b}}</h2>
 </div>
 <div class="animate" ng-class="animationRows[3][1]">
     <h4>{{payload.h4}}</h4>
@@ -16,7 +16,7 @@
                 </svg>
             </div>
             <div flex="grow" class="md-box">
-                <md-input-container class="md-block">
+                <md-input-container ng-model-options="{ debounce: 500 }" class="md-block">
                     <label>Password</label>
                     <input  ng-model="pass" ng-change="loginListener()" type="{{showPasswordToggle}}" name="pass" >
                     <div ng-messages="password_form.pass.$error">
