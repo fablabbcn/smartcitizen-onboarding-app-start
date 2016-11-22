@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').controller('wizardCtrl', function($scope, $location, $sce, $window, $timeout, SegueService, $rootScope, AnimationService, session, platform, Restangular) {
+angular.module('app').controller('wizardCtrl', function($scope, $location, $sce, $window, $timeout, SegueService, $rootScope, AnimationService, session, platform, Restangular, $state) {
 
     /** Submitted User Data **/
     $scope.submittedData = {};
@@ -24,6 +24,8 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
     $scope.modalClass = 'hidden';
 
     $scope.handShakeState = false;
+    $scope.handShakeRepeats = 0;
+    $scope.handShakeRetries = 4;
 
     /** Base Navigation  **/
     $scope.seque = function() {
@@ -31,6 +33,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         if ($scope.segueControl == 'ready') {
             switch ($scope.payload.template) {
                 case 'handshake':
+                    // This is getting ugly and might need to move somewhere else
                     if ($scope.handShakeState == false) {
                         $rootScope.$broadcast('handshake');
                     } else {
@@ -101,15 +104,21 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
                 $scope.payload.segueButton = $scope.payload.segueButtonError;
             }, 250);
             return;
+        } else if ($scope.payload.template == 'handshake') {
+            // This is getting ugly and might need to move somewhere else
+            if ($scope.handShakeState == false) {
+                if ($scope.handShakeRepeats > $scope.handShakeRetries) {
+                    // After 4 rettries
+                    $scope.handshakeFailed();
+                } else {
+                    $state.go('wizard.wifi_enter');
+                }
+                return;
+            } else {
+                return;
+                // We do nothing... User needs to wait...
+            }
         }
-        if ($scope.payload.template == 'handshake') {
-            //$scope.segueControl = 'error';
-            //$timeout(function() {
-                $scope.payload.segueButton = 'PLEASE WAIT';
-            //}, 250);
-            return;
-        }
-
         $scope.segueControl = 'error';
         $scope.errorButton = 'show';
         $rootScope.$broadcast('blockedSegue');
@@ -136,6 +145,18 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
             title: "Uh oh",
             body: "It seems like you are missing parts of the kit. If that’s so, let’s notify the team and they’ll get back to you as soon as possible",
             image: "app/images/alert.svg",
+            button: "Notify the team!",
+            action: "email"
+        };
+        $scope.modalContent = data;
+        $rootScope.$broadcast('modal');
+    };
+
+    $scope.handshakeFailed = function() {
+        $scope.modalBox = 'red';
+        var data = {
+            title: "Uh oh",
+            body: "It seems like your kit can't connect to the internet after several retries. Please, check your Wi-Fi router!",
             button: "Notify the team!",
             action: "email"
         };
