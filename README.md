@@ -46,9 +46,6 @@ Run:
 
 [Best Practice Recommendations for Angular App Structure](https://docs.google.com/document/d/1XXMvReO8-Awi1EZXAXS4PzDzdNvV6pGcuaF4Q9821Es/pub)
 
-### Git Commit Guidelines
-Visit https://github.com/ajoslin/conventional-changelog/blob/master/CONVENTIONS.md
-
 
 ### Naming conventions for files
 Same for all types of components:
