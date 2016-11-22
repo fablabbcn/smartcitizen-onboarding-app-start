@@ -17,10 +17,10 @@
             </div>
             <div flex="grow" class="md-box">
                 <md-input-container class="md-block">
-                    <label>Type name here</label>
+                    <label>Escribe el nombre aquí</label>
                     <input ng-model-options="{ debounce: 500 }"  autofocus ng-model="given_username" ng-change="usernameListener()" required type="text" name="given_username">
                     <div ng-messages="email_form.given_username.$error">
-                        <div ng-message="required">You must enter a name</div>
+                        <div ng-message="required">Tienes que escribir un nombre</div>
                     </div>
                 </md-input-container>
             </div>

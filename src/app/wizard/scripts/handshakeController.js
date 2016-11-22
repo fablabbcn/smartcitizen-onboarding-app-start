@@ -6,8 +6,9 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     $scope.$parent.payload = scopePayload;
     AnimationService.animate(scopePayload.index);
 
-    $scope.handshakeLabel = 'Place Kit Here';
-    $scope.handshakeSubLabel = '';
+    $scope.handshakeLabel = 'Coloca tu kit encima';
+
+    $scope.handshakeSubLabel = ''; // Not currently in use
 
     $scope.$parent.segueControl = 'blocked';
 
@@ -201,15 +202,11 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
 
         load(function() {
             waitSegue();
+            $scope.$parent.handShakeRepeats++;
             console.log("Light process done...");
             $scope.watchDog = $timeout(function() {
-                if ($scope.$parent.handShakeRepeats < $scope.$parent.handShakeRetries) {
-                    $scope.waitForResart = $timeout(function() {
-                        blockRestart();
-                    }, 3000);
-                }
                 blockError();
-            }, 15000);
+            }, 10000);
         });
     });
 
@@ -222,7 +219,8 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     //  Handshake finishes and waits for the platform
 
     function waitSegue() {
-        lightElement.style.setProperty('background-color', '#61CD72');
+        animateHandshakeLabel('Done! Please, wait');
+        lightElement.style.setProperty('background-color', '#2E3439');
         $scope.$parent.handShakeState = true;
         $scope.handshakeLabel = 'Done! Please, wait';
         $scope.payload.segueButton = 'WAIT';
@@ -232,9 +230,9 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     //  Platform replies and we move forward
 
     function prepSegue() {
+        animateHandshakeLabel(false);
         $scope.$parent.handShakeRepeats = 0;
         if ($scope.watchDog) $timeout.cancel($scope.watchDog);
-        if ($scope.waitForResart) $timeout.cancel($scope.waitForResart); //This is temporary for demo to jump no next step if you have trouble
         $scope.payload.segueButton = 'CONTINUE';
         $scope.$parent.segueControl = 'ready';
         $state.go('wizard.confirm_handshake');
@@ -243,21 +241,28 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     //  Platform doesn't reply and we show error for a few seconds
 
     function blockError() {
+        animateHandshakeLabel(false);
         $scope.$parent.handShakeState = false;
-        $scope.$parent.handShakeRepeats++;
-        lightElement.style.setProperty('background-color', '#EF5854');
-        $scope.handshakeLabel = "The kit can't connect";
         $scope.payload.segueButton = 'RESTART';
-        $scope.$parent.segueControl = 'blocked';
+        $scope.$parent.segueControl = 'ready';
+        if ($scope.$parent.handShakeRepeats > $scope.$parent.handShakeRetries) {
+            $scope.$parent.handshakeFailed();
+        } else {
+            $state.go('wizard.wifi_check');
+        }
     }
 
-    //  After the error is shown we move user to retype his password
-
-    function blockRestart() {
-        $scope.$parent.handShakeState = false;
-        $scope.payload.segueButton = 'RESTART';
-        $scope.$parent.segueControl = 'blocked';
-        $state.go('wizard.wifi_enter');
+    function animateHandshakeLabel(val){
+        if (val) {
+            $scope.dots = 0;
+            $scope.dotsTimer = $interval(function(){
+                $scope.dots ++;
+                if($scope.dots > 3) $scope.dots = 0;
+                $scope.handshakeLabel = val + new Array($scope.dots  + 1).join('.');
+            }, 350);
+        } else {
+            $interval.cancel($scope.dotsTimer);
+        }
     }
 
     function recoverPrevWiFi() {
@@ -265,6 +270,9 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
             if (typeof wifi_ssid !== "undefined") {
                 wifi_ssid.ssid.value = ($scope.submittedData.wifi.ssid) ? $scope.submittedData.wifi.ssid : '';
                 wifi_ssid.pass.value = ($scope.submittedData.wifi.password) ? $scope.submittedData.wifi.password : '';
+                $scope.$parent.segueControl = 'ready';
+                $scope.payload.segueButton = 'CONTINUE';
+                $rootScope.$broadcast('removeError');
             }
         }, 0); // This is a trick for ng render cycle
     }

@@ -67,7 +67,9 @@ When developing you might like to set `var refreshed = true;` in `router.js` to 
 
 ### Deployment
 
-* **Staging:** Change base tag on index.html to `base` url for staging: https://fablabbcn.github.io/smartcitizen-onboarding/ and do `gulp deploy`. Currently you also will need to change the `font-face` paths as following:
+* **Staging on gh-pages for onboarding.making-sense.eu:** Do `gulp deploy`. 
+
+* **Staging on gh-pages without a custom domain:** Change base tag on index.html to `base` url for staging: https://fablabbcn.github.io/smartcitizen-onboarding/ and do `gulp deploy`. Currently you also will need to change the `font-face` paths as following:
 
 ```
 @font-face {

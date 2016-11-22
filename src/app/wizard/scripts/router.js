@@ -15,6 +15,7 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider, $locat
                 session: function(platform, $state){ 
                     return platform.getSession().then(function(session){
                         platform.setSession(session);
+                        console.log(session);
                         // This ensure user will be always redirected temporary to avoid state issues.
                         // Disable for development.
                         if(!refreshed) {
@@ -192,14 +193,18 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider, $locat
             controller: 'handshakeController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(21); }}
         })
-        .state('wizard.confirm_handshake', {
+        .state('wizard.wifi_check', {
+            url: '/wifi_check',
+            templateUrl: 'app/wizard/wifi_enter.html',
+            controller: 'handshakeController',
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(22); }}
+        })
+       .state('wizard.confirm_handshake', {
             url: '/confirm_handshake',
             templateUrl: 'app/wizard/confirm.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(22); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(23); }}
         })
-
-
 
         /** --  ACCOUNT -- **/
         .state('wizard.account1', {

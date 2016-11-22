@@ -25,19 +25,18 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
 
     $scope.handShakeState = false;
     $scope.handShakeRepeats = 0;
-    $scope.handShakeRetries = 4;
+    $scope.handShakeRetries = 2;
 
     /** Base Navigation  **/
     $scope.seque = function() {
-        console.log($scope.segueControl);
+        console.log($scope.payload.template);
         if ($scope.segueControl == 'ready') {
             switch ($scope.payload.template) {
                 case 'handshake':
-                    // This is getting ugly and might need to move somewhere else
                     if ($scope.handShakeState == false) {
-                        $rootScope.$broadcast('handshake');
+                        $rootScope.$broadcast('handshake'); // This starts the light
                     } else {
-                        sequeTransition();
+                        sequeTransition(); // This moves to next
                     }
                     break;
                 case 'final':
@@ -81,9 +80,12 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
     }
 
     function backTransition() {
+        debugger;
         AnimationService.leaving(false);
         $timeout(function() {
             $scope.segueControl = 'ready';
+            debugger;
+
             $location.path('/wizard/' + SegueService.previousPage($scope.payload.index, $scope.pre_made));
             $window.scrollTo(0, 0);
         }, 500); // see animations max duration time
@@ -104,20 +106,9 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
                 $scope.payload.segueButton = $scope.payload.segueButtonError;
             }, 250);
             return;
-        } else if ($scope.payload.template == 'handshake') {
-            // This is getting ugly and might need to move somewhere else
-            if ($scope.handShakeState == false) {
-                if ($scope.handShakeRepeats > $scope.handShakeRetries) {
-                    // After 4 rettries
-                    $scope.handshakeFailed();
-                } else {
-                    $state.go('wizard.wifi_enter');
-                }
-                return;
-            } else {
-                return;
-                // We do nothing... User needs to wait...
-            }
+        } 
+        else if ($scope.payload.template == 'handshake') {
+            return; // We currently don't use errors for handshake
         }
         $scope.segueControl = 'error';
         $scope.errorButton = 'show';
