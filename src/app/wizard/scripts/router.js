@@ -18,8 +18,8 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider, $locat
                         // This ensure user will be always redirected temporary to avoid state issues.
                         // Disable for development.
                         if(!refreshed) {
-                            // refreshed = true;
-                            // $state.go('wizard.landing'); 
+                            refreshed = true;
+                            $state.go('wizard.landing'); 
                         }
                         return session;
                     }, function(){
