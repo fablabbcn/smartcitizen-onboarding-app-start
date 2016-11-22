@@ -1,3 +1,4 @@
+'use strict';
 
 function Particle(x,y, imgLoc){
   this.pos = createVector(x, y);

@@ -1,3 +1,5 @@
+'use strict';
+
 var particles = [];
 var limit = 20;
 var imgs = [];
