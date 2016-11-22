@@ -1,24 +1,25 @@
+'use strict';
 /**
  * Created by Lucian on 10/12/16.
  */
-angular.module('app').controller('accountController', function($scope, scopePayload, $http, AnimationService){
+angular.module('app').controller('accountController', function($scope, scopePayload, AnimationService, platform){
     $scope.$parent.payload = scopePayload;
     AnimationService.animate(scopePayload.index);
+   
     $scope.$parent.segueControl ='ready';
-
     $scope.showPasswordToggle = 'password';
 
-    $scope.given_email = ( $scope.$parent.submittedData.userEmail == ' '? '' : $scope.$parent.submittedData.userEmail);
+    $scope.given_email = ( $scope.$parent.submittedData.user.email == ' '? '' : $scope.$parent.submittedData.user.email);
+    $scope.given_username = ( $scope.$parent.submittedData.user.username == ' '? '' : $scope.$parent.submittedData.user.username);
 
-    $scope.given_username = ( $scope.$parent.submittedData.userName == ' '? '' : $scope.$parent.submittedData.userName);
+    /********** Watchers **********/
 
     $scope.accountListener = function(){
         $scope.payload.segueButton = 'CONTINUE';
-        if( validateEmail($scope.given_email) ) {
-            $scope.$parent.submittedData.userEmail = $scope.given_email;
+        if(validateEmail($scope.given_email) ) {
+            $scope.$parent.submittedData.user.email = $scope.given_email;
             checkEmailPresence($scope.given_email.toLowerCase());
             prepSegue();
-            $scope.$parent.submittedData.userEmail = $scope.given_email;
         } else {
             blockSegue();
         }
@@ -27,8 +28,16 @@ angular.module('app').controller('accountController', function($scope, scopePayl
     $scope.passwordListener = function(){
         $scope.payload.segueButton = 'CONTINUE';
         if ( (typeof $scope.pass1 !== "undefined") && ($scope.pass1.length > 0) && ($scope.pass1 == $scope.pass2) ) {
-            prepSegue();
-            $scope.$parent.userEmail =$scope.given_email;
+            $scope.pass1 = $scope.pass2; 
+            $scope.$parent.submittedData.user.password = $scope.pass1;
+            platform.createUser($scope.$parent.submittedData.user).then(function(data){
+                loginAndBakeDevice();
+            },function(res){
+                if (res.data.errors.password) { 
+                    console.error("Password " + res.data.errors.password[0])
+                } 
+                blockSegue();
+            });
         } else {
             blockSegue();
         }
@@ -36,30 +45,78 @@ angular.module('app').controller('accountController', function($scope, scopePayl
 
     $scope.loginListener = function(){
         if( (typeof $scope.pass !== 'undefined') && ($scope.pass.length >= 5) ) {
-            prepSegue();
-            $scope.$parent.userPassword = $scope.input;
+            $scope.$parent.submittedData.user.password = $scope.pass;
+            loginAndBakeDevice();
         } else {
             blockSegue();
         }
     };
 
     $scope.usernameListener = function(){
-        /** TODO - update this **/
         if( (typeof $scope.given_username !== 'undefined') && ($scope.given_username.length >= 3) ) {
-            $scope.$parent.submittedData.userName = $scope.given_username;
-            prepSegue();
-            $scope.$parent.userName = $scope.input;
+            $scope.$parent.submittedData.user.username = $scope.given_username;
+            
+            $scope.$parent.userName = $scope.input; // Is this need it?
+
+            platform.createUser($scope.$parent.submittedData.user).then(function(data){
+                //Do nothing
+            },function(res){
+                if (res.data.errors.username) { 
+                    // Username has already been taken
+                    console.error("Username " + res.data.errors.username[0])
+                    blockSegue();
+                } else {
+                    prepSegue();
+                }
+            });
         } else {
             blockSegue();
         }
     };
 
     $scope.generateName = function(){
-        $scope.given_username = $scope.$parent.submittedData.userEmail.split("@")[0] + '_' + Math.floor(Math.random() * (99 - 1 + 1));
-        $scope.$parent.submittedData.userName = $scope.given_username;
+        $scope.given_username = $scope.$parent.submittedData.user.email.split("@")[0] + '_' + Math.floor(Math.random() * (99 - 1 + 1));
+        $scope.$parent.submittedData.user.username = $scope.given_username;
         prepSegue();
         $scope.$parent.userName = $scope.input;
     };
+
+    $scope.showPassword = function(){
+        if ($scope.showPasswordToggle == 'password') {
+            $scope.showPasswordToggle = 'text';
+        }
+        else {
+            $scope.showPasswordToggle = 'password';
+        }
+    };
+
+    /********** Functions **********/
+
+    function loginAndBakeDevice(){
+        platform.login($scope.$parent.submittedData.user).then(function(data){
+            //$scope.$parent.submittedData.token = data.access_token; We don't use it
+            platform.setAuth(data);
+            platform.bakeDevice().then(function (data) {
+                $scope.$parent.submittedData.deviceData.id = data.id;
+                console.log(data);
+                prepSegue();
+            });    
+        }, function (data) {
+            console.log(data);
+            blockSegue();
+        })
+    }
+
+    function checkEmailPresence(emailString) {
+        platform.checkEmail(emailString).then(function(data){
+            console.log(data);
+            $scope.$parent.submittedData.user.username = data.username;
+            $scope.$parent.pre_made = true;
+        }, function (data) {
+            console.log(data);
+            $scope.$parent.submittedData.user.username = ' ';
+        })
+    }
 
     function prepSegue(){
         $scope.$parent.segueControl ='ready';
@@ -78,43 +135,12 @@ angular.module('app').controller('accountController', function($scope, scopePayl
         }
     }
 
-    checkSegue();
-
     function validateEmail(email) {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email);
     }
 
-    $scope.showPassword = function(){
-        if ($scope.showPasswordToggle == 'password') {
-            $scope.showPasswordToggle = 'text';
-        }
-        else {
-            $scope.showPasswordToggle = 'password';
-        }
-    };
+    checkSegue();
 
-    function checkEmailPresence(emailString) {
-        var data = {
-            email: emailString
-        };
-        console.log(data);
-        var config = {
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        };
-        $http.post("https://api.smartcitizen.me/v0/onboarding/user", data, config)
-            .success(function (data, status, headers, config) {
-                //$scope.PostDataResponse = data;
-                console.log({emailFuzz: 'success' });
-                $scope.$parent.submittedData.userName = data.username;
-                $scope.$parent.pre_made = true;
-            })
-            .error(function (data, status, headers, config) {
-                console.log({emailFuzz: 'fail' });
-                $scope.$parent.submittedData.userName = ' ';
-            });
-    }
+  
 });

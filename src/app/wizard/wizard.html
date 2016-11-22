@@ -59,12 +59,12 @@
                 <h2>{{modalContent.title}}</h2>
                 <h5>{{modalContent.body}}</h5>
             </div>
-            <div id="partImage" flex="none" flex-sm-auto>
+            <div ng-if="modalContent.image" id="partImage" flex="none" flex-sm-auto>
                 <img ng-src="{{modalContent.image}}">
             </div>
 
         </div>
-        <div id="modalLink">
+        <div ng-if="modalContent.button" id="modalLink">
             <button id="modalButton" ng-click="modalButtonClick()" ng-class="modalButton">{{modalContent.button}}</button>
         </div>
     </div>

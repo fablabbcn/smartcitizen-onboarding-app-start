@@ -31,13 +31,13 @@
         </div>
     </form>
 
-    <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+    <ui-gmap-google-map ng-if='map.center' center='map.center' zoom='map.zoom'>
         <ui-gmap-marker
                 idKey='1'
-                coords='markerLocation'
+                coords='map.marker.location'
                 click=''
                 options='{ draggable: true }'
-                events='map.markersEvents'
+                events='map.marker.events'
                 control=''
         >
         </ui-gmap-marker>
