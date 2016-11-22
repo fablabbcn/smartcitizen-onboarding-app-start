@@ -132,6 +132,13 @@ body {
           border-radius: $divRadius;
           border: 5px solid $msNavy2;
 
+          &.nested{
+            width: 300px;
+            @media screen and (max-width: 400px) {
+              width: 250px;
+            }
+          }
+
           .sectionContent {
             .contentIcons{
               height: 30px;
@@ -295,6 +302,23 @@ body {
           line-height: 30px;
           svg{
             top: 10px;
+          }
+        }
+        &.case{
+          background-color: $msNavy2;
+          border-radius: 40px;
+          color: $msWhite;
+          text-transform: none;
+          padding-right: 20px;
+
+          font: 100% Rubik, sans-serif !important;
+          font-size: 24px !important;
+          @media screen and (max-width: 450px) {
+            font-size: 20px !important;
+            padding: 0 5px;
+            svg{
+              top: 7px;
+            }
           }
         }
       }

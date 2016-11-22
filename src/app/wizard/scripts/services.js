@@ -66,34 +66,43 @@ angular.module('app').service('SegueService', function() {
             "segueButtonError": "Are you missing parts?"
         },{
             "index": 12,
+            "template": "selectparts2",
+            "url":"case",
+            "h2": "Finally...",
+            "h4": "You don’t have to have the case, but it does protect your kit against the elements",
+            "contextButton": "Where is my mine?",
+            "segueButton": "CONTINUE",
+            "segueButtonError": "Are you missing parts?"
+        },{
+            "index": 13,
             "template": "comfirm",
             "url":"confirm_parts",
             "h1": "WELL DONE",
             "h4": "Now let's put it all together",
             "segueButton": "CONTINUE"
         },{
-            "index": 13,
+            "index": 14,
             "template": "kitbuild1",
             "url":"kitbuild_1",
             "h2": "First, we connect the sensors",
             "text": "Connect the pins on the [] to the [].",
             "segueButton": "DONE"
         },{
-            "index": 14,
+            "index": 15,
             "template": "kitbuild2",
             "url":"kitbuild_2",
             "h2": "Let's give it some power",
             "text": "Connect [] to the [].",
             "segueButton": "DONE"
         },{
-            "index": 15,
+            "index": 16,
             "template": "kitbuild3",
             "url":"kitbuild_3",
             "h2": "Turn the sensor on",
             "text": "Push the button on the sensor, once.",
             "segueButton": "IT'S ALIVE"
         },{
-            "index": 16,
+            "index": 17,
             "template": "comfirm",
             "url":"confirm_build",
             "h1": "WELL DONE",
@@ -284,7 +293,7 @@ angular.module('app').service('SegueService', function() {
     this.nextPage = function(val, accountPresent){
         if (val == 4) {
             return('whats_in_the_box');
-        } else if (val == 16) {
+        } else if (val == 17) {
             return ('wifi_enter');
         } else if (val == 22) {
             return ('sensorName_prep');

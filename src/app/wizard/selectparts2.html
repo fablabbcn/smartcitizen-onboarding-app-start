@@ -1,0 +1,37 @@
+<div class="animate" ng-class="animationRows[3][0]">
+    <h2>{{payload.h2}}</h2>
+</div>
+
+<div class="animate" ng-class="animationRows[3][1]">
+    <h4>{{payload.h4}}</h4>
+</div>
+
+<div class="selectionRow animate" layout="column" layout-padding layout-align="center center"
+     ng-class="animationRows[3][0]" flex="noshrink">
+    <div flex style="height: 400px;">
+        <button class="selection nested" ng-click="selectPart(0)"
+                ng-class="selectionButtons[0]" ng-mouseenter="infoImageOn(0)" ng-mouseleave="infoImageOff(0)">
+            <div class="sectionContent">
+                <div class="contentIcons" layout="row" layout-align="end">
+                    <div class="checkHolder" layout="row" layout-align="end start">
+                        <img class="check" ng-src="app/images/check.png" layout="center">
+                    </div>
+                </div>
+
+                <div class="selectionImage">
+                    <img class="itemImage" ng-src="app/images/BOARDS-CUTOUT_0007_FRONT-eclosure-wShine.png">
+                </div>
+                <h5 class="selectionText">Sensor</h5>
+            </div>
+        </button>
+    </div>
+    <div>
+        <button class="contextButton case" ng-click="infoClick(4)">
+            <svg width="18px" height="25px" viewBox="291 13 18 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <text id="question" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="18" font-weight="normal">
+                    <tspan x="291" y="32" fill="#FFFFFF">question</tspan>
+                </text>
+            </svg>{{ payload.contextButton }}
+        </button>
+    </div>
+</div>
