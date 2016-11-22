@@ -2,7 +2,7 @@
 
 angular.module('app').config(function($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
 
-    var refreshed = false;
+    var refreshed = true;
 
     $stateProvider
 
@@ -75,35 +75,41 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider, $locat
             controller: 'stateCtlr',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(11); }}
         })
+        .state('wizard.selectparts2', {
+            url: '/case',
+            templateUrl: 'app/wizard/selectparts2.html',
+            controller: 'stateCtlr',
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(12); }}
+        })
         .state('wizard.confirm_parts', {
             url: '/confirm_parts',
             templateUrl: 'app/wizard/confirm.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(12); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(13); }}
         })
         .state('wizard.kitbuild1', { // TODO - fix this output
             url: '/kitbuild_1',
             templateUrl: 'app/wizard/kitbuild1.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(13); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(14); }}
         })
         .state('wizard.kitbuild2', {
             url: '/kitbuild_2',
             templateUrl: 'app/wizard/kitbuild2.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(14); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(15); }}
         })
         .state('wizard.kitbuild3', {
             url: '/kitbuild_3',
             templateUrl: 'app/wizard/kitbuild3.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(15); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(16); }}
         })
         .state('wizard.confirm_build', {
             url: '/confirm_build',
             templateUrl: 'app/wizard/confirm.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(16); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(17); }}
         })
 
 

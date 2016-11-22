@@ -7,9 +7,16 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
     function setUpSelection(){
         blockSegue();
         $scope.morphControl =['closed'];
-        $scope.selectionButtons = ['','','',''];
+
+        if ($scope.$parent.payload.template == 'selectparts2') {
+            $scope.selectionButtons = [''];
+            $scope.partButtons = [false];
+        } else {
+            $scope.selectionButtons = ['', '', '', ''];
+            $scope.partButtons = [false,false,false,false];
+        }
+
         $scope.infoImages = ['app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png' ];
-        $scope.partButtons = [false,false,false,false];
     }
     function prepSegue(){
         $scope.$parent.segueControl ='ready';
@@ -31,6 +38,7 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
 
 
     $scope.selectPart = function(val){
+        console.log($scope.selectionButtons);
         if ($scope.tempBlock == true){
             $scope.tempBlock = false;
             return;
@@ -116,6 +124,10 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
             "title": "Charging Cable",
             "body": "When the kit needs to be charged, you can connect this cable to your computer or plug, and back to the kit.",
             "image": "app/images/BOARDS-CUTOUT_0005_USB.png"
+        }, {
+            "title": "Made for bespoke cases",
+            "body": "When the kit needs to be charged, you can connect this cable to your computer or plug, and back to the kit.",
+            "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosure-wShine.png"
         }];
         data[val].button = 'OK, got it';
         $scope.$parent.modalContent = data[val];
