@@ -10,7 +10,7 @@ var gulpsync = require('gulp-sync')(gulp);
 
 module.exports = function(options) {
     gulp.task('deploy', gulpsync.sync(['clean', 'build']), function () {
-        return gulp.src([options.dist + '/**/*', 'CNAME'])
+        return gulp.src([options.dist + '/**/*', 'CNAME', '404.html'])
             .pipe($.ghPages());
     });
 };
