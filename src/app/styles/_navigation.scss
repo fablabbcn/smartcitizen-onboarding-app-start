@@ -117,7 +117,9 @@
         font: 100% Rubik, sans-serif;
         position: relative;
         top: -10px;
-
+        @media screen and (max-width: 450px) {
+          font-size: 20px;
+        }
       }
       #nextSVG {
         position: relative;

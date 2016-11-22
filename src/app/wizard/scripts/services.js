@@ -340,9 +340,7 @@ angular.module('app').service('SegueService', function() {
             return item.index === payload.index;
         });
 
-        //payload.progressVal = ((content.index + 1) / pageContent.length) * 100; // Calculate BAR option 1
-        payload.progressVal = index / pageContent.length * 100;                 // Calculate BAR option 2
-
+        payload.progressVal = (index / pageContent.length) * 100;
         payload.companyLogo = content.companyLogo;
         payload.image = content.image;
 

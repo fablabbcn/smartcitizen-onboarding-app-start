@@ -87,6 +87,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
     }
 
     function handleError() {
+        console.log($scope.payload.template);
         if (
             ($scope.payload.template == 'wifi_enter') ||
             ($scope.payload.template == 'sensorName') ||
@@ -99,6 +100,13 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
             $timeout(function() {
                 $scope.payload.segueButton = $scope.payload.segueButtonError;
             }, 250);
+            return;
+        }
+        if ($scope.payload.template == 'handshake') {
+            //$scope.segueControl = 'error';
+            //$timeout(function() {
+                $scope.payload.segueButton = 'PLEASE WAIT';
+            //}, 250);
             return;
         }
 

@@ -189,7 +189,7 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider, $locat
         .state('wizard.confirm_handshake', {
             url: '/confirm_handshake',
             templateUrl: 'app/wizard/confirm.html',
-            controller: 'handshakeController',
+            controller: 'baseController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(22); }}
         })
 
