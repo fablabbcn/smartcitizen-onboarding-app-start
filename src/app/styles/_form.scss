@@ -49,10 +49,10 @@
           height: 80px;
           border: none;
           color: $msWhite;
-          font: $font !important;
-          font-size: 42px;
+          font: 100% Rubik, sans-serif !important;
+          font-size: 42px !important;
           @media screen and (max-width: 450px) {
-            font-size: 28px;
+            font-size: 28px !important;
           }
         }
       }
