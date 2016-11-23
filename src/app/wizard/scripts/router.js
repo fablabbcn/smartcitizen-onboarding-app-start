@@ -204,25 +204,25 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider, $locat
             url: '/wifi_enter',
             templateUrl: 'app/wizard/wifi_enter.html',
             controller: 'handshakeController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(20); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(21); }}
         })
         .state('wizard.handshake', {
             url: '/handshake',
             templateUrl: 'app/wizard/handshake.html',
             controller: 'handshakeController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(21); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(22); }}
         })
         .state('wizard.wifi_check', {
             url: '/wifi_check',
             templateUrl: 'app/wizard/wifi_enter.html',
             controller: 'handshakeController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(22); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(23); }}
         })
        .state('wizard.confirm_handshake', {
             url: '/confirm_handshake',
             templateUrl: 'app/wizard/confirm.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(23); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(24); }}
         })
 
         /** --  ACCOUNT -- **/
