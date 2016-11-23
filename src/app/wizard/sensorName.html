@@ -17,10 +17,10 @@
                 </svg>            </div>
             <div flex="grow" class="md-box">
                 <md-input-container class="md-block">
-                    <label>Type name here</label>
-                    <input autofocus ng-model="name" ng-change="listener()" required type="text" name="ssid">
+                    <label>Escribe el nombre aquí</label>
+                    <input ng-model-options="{ debounce: 500 }" autofocus ng-model="name" ng-change="listener()" required type="text" name="ssid">
                     <div ng-messages="sensor_name.name.$error">
-                        <div ng-message="required">You must enter a name for your sensor.</div>
+                        <div ng-message="required">Tienes que dar un nombre a tu sensor.</div>
                     </div>
                 </md-input-container>
             </div>

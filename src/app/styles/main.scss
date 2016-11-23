@@ -62,7 +62,7 @@ body {
   h4, p{
     font-weight: 400;
     font-size: 28px;
-    color: $msGrey;
+    color: $msWhite;
     @media screen and (max-width: 450px) {
       font-size: 20px;
     }
@@ -122,7 +122,7 @@ body {
 
       .companyLogo {
         margin: 15px;
-        max-height: 250px;
+        max-height: 150px;
       }
 
       .selectionRow {

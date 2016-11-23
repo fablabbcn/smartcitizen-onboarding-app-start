@@ -19,10 +19,10 @@
             </div>
             <div flex="grow" class="md-box">
                 <md-input-container class="md-block">
-                    <label>Network Name</label>
+                    <label>Nombre del Wi-Fi</label>
                     <input  autofocus ng-model="ssid" ng-change="ssidListener()" required type="text" name="ssid" >
                     <div ng-messages="wifi_ssid.ssid.$error">
-                        <div ng-message="required">You must enter a network name.</div>
+                        <div ng-message="required">Tienes que introducir el nombre de tu red.</div>
                     </div>
                 </md-input-container>
             </div>
@@ -40,13 +40,13 @@
             </div>
             <div flex="grow" class="md-box">
                 <md-input-container class="md-block">
-                    <label>Password</label>
+                    <label>Contraseña</label>
                     <input  ng-model="pass" ng-change="passwordListener()" type="{{showPasswordToggle}}" name="pass" >
                     <div ng-messages="wifi_ssid.pass.$error">
                     </div>
                 </md-input-container>
             </div>
-            <div class="ss_input" ng-mouseenter="showPassword()" ng-mouseleave="showPassword()">
+            <div class="ss_input" ng-mouseenter="showPassword(true)" ng-mouseleave="showPassword(false)" ng-click="forceShowPassword()">
                 <svg width="36px" height="38px" viewBox="438 32 36 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <text id="eye" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="36" font-weight="normal" line-spacing="38">
                         <tspan x="438" y="70" fill="#717E83">eye</tspan>

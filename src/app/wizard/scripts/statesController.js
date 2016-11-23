@@ -16,7 +16,7 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
             $scope.partButtons = [false,false,false,false];
         }
 
-        $scope.infoImages = ['app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png' ];
+        $scope.infoImages = ['app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png', 'app/images/question.png' ];
     }
     function prepSegue(){
         $scope.$parent.segueControl ='ready';
@@ -99,10 +99,16 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
         if ( $scope.infoImages[val] == 'app/images/info1.png' ){
             $scope.infoImages[val] = 'app/images/info2.png'
         }
+        if ( $scope.infoImages[val] == 'app/images/question.png' ){
+            $scope.infoImages[val] = 'app/images/question2.png'
+        }
     };
     $scope.infoImageOff = function(val){
         if ( $scope.infoImages[val] == 'app/images/info2.png' && !($scope.selectionButtons[val] == 'active') ){
             $scope.infoImages[val] = 'app/images/info1.png'
+        }
+        if ( $scope.infoImages[val] == 'app/images/question2.png' && !($scope.selectionButtons[val] == 'active') ){
+            $scope.infoImages[val] = 'app/images/question.png'
         }
     };
 
@@ -123,7 +129,7 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
         }, {
             "title": "Charging Cable",
             "body": "When the kit needs to be charged, you can connect this cable to your computer or plug, and back to the kit.",
-            "image": "app/images/BOARDS-CUTOUT_0005_USB.png"
+            "image": "app/images/BOARDS-CUTOUT_0005_USBgreen.png"
         }, {
             "title": "Made for bespoke cases",
             "body": "When the kit needs to be charged, you can connect this cable to your computer or plug, and back to the kit.",
