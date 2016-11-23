@@ -18,7 +18,7 @@
             </div>
             <div flex="grow" class="md-box">
                 <md-input-container class="md-block">
-                    <label>Password</label>
+                    <label>Contraseña</label>
                     <input  ng-model-options="{ debounce: 1000 }"  ng-model="pass1" ng-change="passwordListener()" type="{{showPasswordToggle}}" name="pass1" minlength="5" required>
                     <div ng-messages="password_create.pass1.$error">
                         <div ng-message="required">You must enter a password</div>
@@ -47,7 +47,7 @@
             </div>
             <div flex="grow" class="md-box">
                 <md-input-container class="md-block">
-                    <label>Password</label>
+                    <label>Contraseña</label>
                     <input  ng-model-options="{ debounce: 1000 }" ng-model="pass2" ng-change="passwordListener()" type="{{showPasswordToggle}}" name="pass2" minlength="5" required>
                     <div ng-messages="password_create.pass2.$error">
                         <div ng-message="required">You must enter a password</div>

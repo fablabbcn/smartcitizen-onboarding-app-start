@@ -55,7 +55,7 @@ angular.module('app').service('SegueService', function() {
             "url":"whats_in_the_box",
             "h1": "CONFIGUREMOS EL SENSOR",
             "h4": "Hay algunas piezas que debemos configurar en el Kit, revisemos que las tenemos todas",
-            "segueButton": "ESTOY LIST@"
+            "segueButton": "ESTOY LISTO"
         },{
             "index": 11,
             "template": "selectparts",
@@ -85,41 +85,48 @@ angular.module('app').service('SegueService', function() {
             "index": 14,
             "template": "kitbuild1",
             "url":"kitbuild_1",
-            "h2": "Primero, conectamos los sensores",
-            "text": "Connect the pins on the [] to the [].",
+            "h2": "Primero, los separadores...",
+            "text": "new",
             "segueButton": "HECHO"
         },{
             "index": 15,
             "template": "kitbuild2",
             "url":"kitbuild_2",
-            "h2": "Vamos a darle algo de poder",
-            "text": "Connect [] to the [].",
+            "h2": "Segundo, conectamos los sensores",
+            "text": "Connect the pins on the [] to the [].",
             "segueButton": "HECHO"
         },{
             "index": 16,
             "template": "kitbuild3",
             "url":"kitbuild_3",
+            "h2": "Vamos a darle algo de poder",
+            "text": "Connect [] to the [].",
+            "segueButton": "HECHO"
+        },{
+            "index": 17,
+            "template": "kitbuild4",
+            "url":"kitbuild_4",
             "h2": "Enciende el sensor",
             "text": "Presiona el botón en el sensor, una vez",
             "segueButton": "ESTÁ VIVO"
         },{
-            "index": 17,
+            "index": 18,
             "template": "casing",
             "url":"case_1",
-            "h2": "Next, we place it all in the casing",
+            "h2": "Después, ponemos todo dentro de la carcasa",
             "text": "Asegurate de colocar el kit con el cable de la batería hacia la parte inferior de la carcasa",
             "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosureBattSensor.png",
             "segueButton": "ESTÁ VIVO"
         },{
-            "index": 18,
+            "index": 19,
             "template": "casing",
             "url":"case_2",
-            "h2": "... and to finish seal the cover",
+            "h2": "... y para terminar cierra la tapa",
             "text": "Coloca el plástico transparente en la parte delantera de la caja y fijalo en su lugar con las dos fijaciones blancas.",
             "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosure-wShineclasps.png",
             "segueButton": "ESTÁ VIVO"
         },{
-            "index": 19,
+            "index": 20,
             "template": "comfirm",
             "url":"confirm_build",
             "h1": "BIEN HECHO",
@@ -130,29 +137,29 @@ angular.module('app').service('SegueService', function() {
 
     /** -- LIGHT HANDSHAKE -- **/
         {
-            "index": 20,
+            "index": 21,
             "template": "wifi_enter",
             "url":"wifi_enter",
             "h2": "Con que red Wi-Fi vas a utilizar tu kit?",
             "h4": "Debemos introducirla manualmente... Recuerda que mayúsculas y minúsculas son importantes.",
             "segueButtonError":"VERIFICAR CAMPOS",
-            "segueButton": "ESTOY LIST@"
+            "segueButton": "ESTOY LISTO"
         },{
-            "index": 21,
+            "index": 22,
             "template": "handshake",
             "url": 'handshake',
             "h2": "Ahora vamos a hacer algo de magia...",
             "h4": "Espera a que la luz de tu Kit esté roja, sostén tu Kit y presiona en la pantalla debajo de la carcasa y presiona “conectar”. Asegurate de que el lado azul del Kit esta hacia ti.",
             "segueButton": "CONECTAR"
         },{
-            "index": 22,
+            "index": 23,
             "template": "wifi_check",
             "url":"wifi_check",
             "h2": "Oups! Alguna cosa no funciono...",
             "h4": "Parece que hubo algun problema. Fijate que la luz de tu kit esté en rojo y repasa que la información de tu red Wi-Fi sea correcta.",
             "segueButton": "VERIFICAR CONTRASEÑA"
         },{
-            "index": 23,
+            "index": 24,
             "template": "comfirm",
             "url":"confirm_handshake",
             "h1": "BIEN HECHO",
@@ -171,7 +178,7 @@ angular.module('app').service('SegueService', function() {
             "index": 31,
             "template": "pair2",
             "url":"pair_2",
-            "h2": "Casi list@. Cual es la contraseña para la red?",
+            "h2": "Casi listo. Cual es la contraseña para la red?",
             "h4": "Necesitamos esto para configurar la conexión de tu dispositivo a internet",
             "segueButton": "VERIFICAR CONTRASEÑA"
         },{
@@ -240,7 +247,7 @@ angular.module('app').service('SegueService', function() {
             "index": 52,
             "template": "comfirm",
             "url":"confirm_location",
-            "h1": "Casi list@s",
+            "h1": "Casi listos",
             "h4": "Finalmente, guardemos todo el trabajo que hemos hecho.",
             "segueButton": "CONTINÚA"
         },
@@ -320,13 +327,10 @@ angular.module('app').service('SegueService', function() {
     };
 
     this.nextPage = function(val, accountPresent){
+        console.log(val);
         if (val == 4) {
             return('whats_in_the_box');
-        } else if (val == 19) {
-            return ('wifi_enter');
-        } else if (val == 22) {
-            return ('handshake');
-        } else if (val == 23) {
+        } else if (val == 24) {
             return ('sensorName_prep');
         } else if (val == 41) {
             return ('location_prep');
@@ -350,8 +354,6 @@ angular.module('app').service('SegueService', function() {
     this.previousPage = function(val,accountPresent){
         if (val == 10) {
             return('smart_citizen_brief2')
-        } else if (val == 20){
-            return('confirm_build')
         } else if (val == 40) {
             return ('confirm_handshake');
         } else if (val == 50) {

@@ -60,7 +60,7 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
     };
 
     function resetter(){
-        $scope.payload.segueButton = 'CONTINUE';
+        $scope.payload.segueButton = 'CONTINÚA';
         if ($scope.errorState == true){
             $rootScope.$broadcast('removeError');
         }

@@ -24,7 +24,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     $scope.ssidListener = function() {
         if ((typeof wifi_ssid.ssid.value !== "undefined") && wifi_ssid.ssid.value.length > 0) {
             $scope.$parent.segueControl = 'ready';
-            $scope.payload.segueButton = 'CONTINUE';
+            $scope.payload.segueButton = 'CONTINÚA';
             $rootScope.$broadcast('removeError');
             $scope.submittedData.wifi.ssid = wifi_ssid.ssid.value;
         } else {
@@ -225,23 +225,23 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
             console.log("Light process done...");
             $scope.watchDog = $timeout(function() {
                 blockError();
-            }, 12000); 
+            }, 12000);
         });
     });
 
     // Starts the handshake
     function blockSegue() {
-        $scope.payload.segueButton = 'SENDING';
+        $scope.payload.segueButton = 'ENVIA';
         $scope.$parent.segueControl = 'blocked';
     }
 
     //  Handshake finishes and waits for the platform
 
     function waitSegue() {
-        animateHandshakeLabel('Done! Please, wait');
+        animateHandshakeLabel('Hecho! Por favor, espera...');
         lightElement.style.setProperty('background-color', '#2E3439');
         $scope.$parent.handShakeState = true;
-        $scope.handshakeLabel = 'Done! Please, wait';
+        $scope.handshakeLabel = 'Hecho! Por favor, espera...';
         $scope.payload.segueButton = 'WAIT';
         $scope.$parent.segueControl = 'blocked';
     }

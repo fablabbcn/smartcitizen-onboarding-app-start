@@ -95,7 +95,7 @@ angular.module('app').controller('nameCtlr', function($scope, scopePayload, Anim
 
 
     function prepSegue(){
-        $scope.payload.segueButton = 'DONE';
+        $scope.payload.segueButton = 'Listo!';
         $scope.$parent.segueControl ='ready';
     }
     function blockSegue(){
