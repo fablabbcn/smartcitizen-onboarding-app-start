@@ -141,5 +141,4 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
         $rootScope.$broadcast('modal');
     };
 
-
 });
