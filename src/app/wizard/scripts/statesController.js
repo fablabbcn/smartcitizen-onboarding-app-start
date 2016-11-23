@@ -9,14 +9,14 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
         $scope.morphControl =['closed'];
 
         if ($scope.$parent.payload.template == 'selectparts2') {
-            $scope.selectionButtons = [''];
-            $scope.partButtons = [false];
+            $scope.selectionButtons = ['','','',''];
+            $scope.partButtons = [false,false,false,false];
         } else {
             $scope.selectionButtons = ['', '', '', ''];
             $scope.partButtons = [false,false,false,false];
         }
 
-        $scope.infoImages = ['app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png', 'app/images/question.png' ];
+        $scope.infoImages = ['app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png', 'app/images/question.png','app/images/question.png','app/images/question.png','app/images/question.png' ];
     }
     function prepSegue(){
         $scope.$parent.segueControl ='ready';
@@ -115,9 +115,9 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
     $scope.infoClick = function(val){
         $scope.$parent.modalBox = 'green';
         var data = [{
-           "title": "Placa de Sensores",
-           "body": "Aquí es donde están todos los sensores. Se conecta a la placa grande, la placa de datos, así los sensores pueden transmitir lo que miden.",
-           "image": "app/images/BOARDS-CUTOUT_0003_SENSOR-BOARD-BLUE.png"
+                "title": "Placa de Sensores",
+                "body": "Aquí es donde están todos los sensores. Se conecta a la placa grande, la placa de datos, así los sensores pueden transmitir lo que miden.",
+                "image": "app/images/BOARDS-CUTOUT_0003_SENSOR-BOARD-BLUE.png"
             }, {
                "title": "Placa de Datos",
                "body": "Aquí es donde toda la computación ocurre. Siempre que quieras conectar algo al Smart Citizen, debe estar en esta placa",
@@ -132,14 +132,25 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
                "image": "app/images/BOARDS-CUTOUT_0005_USBgreen.png"
             }, {
                "title": "Carcasa hecha a medida",
-               "body": " La carcasa protege el dispositivo de la lluvia y permite fijarlo por ejemplo en tu balcón.",
+               "body": "La carcasa protege el dispositivo de la lluvia y permite fijarlo por ejemplo en tu balcón.",
                "image": "app/images/BOARDS-CUTOUT_0008_ANGLED.png"
+            }, {
+                "title": "Espaciadores",
+                "body": "Fijan la placa de sensores con la placa de datos para que todo quede más robusto.",
+                "image": "app/images/spacers.png"
+            }, {
+                "title": "Tapa",
+                "body": "Cierra la carcasa y protege el dispositivo de la llúvia. Fijate que la parte con agujeros queda sobre el sensor de sonido.",
+                "image": "app/images/screen.png"
+            }, {
+                "title": "Sujetadores",
+                "body": "Fijan la tapa con la carcasa.",
+                "image": "app/images/plugs.png"
         }];
         data[val].button = 'OK, got it';
         $scope.$parent.modalContent = data[val];
         $scope.tempBlock = true;
         $rootScope.$broadcast('modal');
     };
-
 
 });
