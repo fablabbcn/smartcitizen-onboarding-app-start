@@ -221,10 +221,11 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
         load(function() {
             waitSegue();
             $scope.$parent.handShakeRepeats++;
+            console.log($scope.$parent.handShakeRetries);
             console.log("Light process done...");
             $scope.watchDog = $timeout(function() {
                 blockError();
-            }, 10000);
+            }, 12000); 
         });
     });
 
@@ -251,7 +252,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
         animateHandshakeLabel(false);
         $scope.$parent.handShakeRepeats = 0;
         if ($scope.watchDog) $timeout.cancel($scope.watchDog);
-        $scope.payload.segueButton = 'CONTINUE';
+        $scope.payload.segueButton = 'CONTINÚA';
         $scope.$parent.segueControl = 'ready';
         $state.go('wizard.confirm_handshake');
     }
@@ -261,13 +262,23 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     function blockError() {
         animateHandshakeLabel(false);
         $scope.$parent.handShakeState = false;
-        $scope.payload.segueButton = 'RESTART';
-        $scope.$parent.segueControl = 'ready';
         if ($scope.$parent.handShakeRepeats > $scope.$parent.handShakeRetries) {
             $scope.$parent.handshakeFailed();
         } else {
-            $state.go('wizard.wifi_check');
+            backToWiFi();
         }
+        var listenModal = $scope.$on('modalClosed', function() {
+            setTimeout(function() {
+                listenModal();
+                backToWiFi();
+            }, 200);
+        });
+    }
+
+    function backToWiFi() {
+        $scope.payload.segueButton = 'CONTINÚA';
+        $scope.$parent.segueControl = 'ready';
+        $state.go('wizard.wifi_check');
     }
 
     function animateHandshakeLabel(val){
@@ -289,7 +300,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
                 wifi_ssid.ssid.value = ($scope.submittedData.wifi.ssid) ? $scope.submittedData.wifi.ssid : '';
                 wifi_ssid.pass.value = ($scope.submittedData.wifi.password) ? $scope.submittedData.wifi.password : '';
                 $scope.$parent.segueControl = 'ready';
-                $scope.payload.segueButton = 'CONTINUE';
+                $scope.payload.segueButton = 'CONTINÚA';
                 $rootScope.$broadcast('removeError');
             }
         }, 0); // This is a trick for ng render cycle
