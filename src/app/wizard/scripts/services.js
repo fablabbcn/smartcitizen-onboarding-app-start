@@ -101,23 +101,23 @@ angular.module('app').service('SegueService', function() {
             "url":"kitbuild_3",
             "h2": "Enciende el sensor",
             "text": "Presiona el botón en el sensor, una vez",
-            "segueButton": "ESTA VIVO"
+            "segueButton": "ESTÁ VIVO"
         },{
             "index": 17,
             "template": "casing",
             "url":"case_1",
             "h2": "Next, we place it all in the casing",
-            "text": "Make sure you place it with the battery cable towards the bottom of the casing",
+            "text": "Asegurate de colocar el kit con el cable de la batería hacia la parte inferior de la carcasa",
             "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosureBattSensor.png",
-            "segueButton": "ESTA VIVO"
+            "segueButton": "ESTÁ VIVO"
         },{
             "index": 18,
             "template": "casing",
             "url":"case_2",
             "h2": "... and to finish seal the cover",
-            "text": "Place the transparent plastic on the front of the case and fix it in place with the two white plugs.",
+            "text": "Coloca el plástico transparente en la parte delantera de la caja y fijalo en su lugar con las dos fijaciones blancas.",
             "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosure-wShineclasps.png",
-            "segueButton": "ESTA VIVO"
+            "segueButton": "ESTÁ VIVO"
         },{
             "index": 19,
             "template": "comfirm",
@@ -181,7 +181,7 @@ angular.module('app').service('SegueService', function() {
             "image": "app/images/sck_iso-1295.jpg",
             "h1": "Genial! Tenemos el sensor en línea",
             "h4": "Ahora solo ve a tu menú del Wifi y conéctelo de nuevo a su red para continuar la configuración.",
-            "segueButton": "ESTA VIVO"
+            "segueButton": "ESTÁ VIVO"
         },
 
 
@@ -216,7 +216,7 @@ angular.module('app').service('SegueService', function() {
             "template": "location_prep",
             "url": 'location_prep',
             "h2": "Donde instalarás tu sensor?",
-            "h4": "PBy presionando 'allow' en el pop up podemos determinar la ubicación actual del sensor. Después se puede ajustar manualmente a cualquier lugar en que quieras ubicar el sensor.",
+            "h4": "Presionando “allow” en el pop up podemos determinar la ubicación actual del sensor. Después se puede ajustar manualmente a cualquier lugar en que quieras ubicar el sensor.",
             "segueButton": "HECHO"
         },{
             "index": 51,
@@ -265,8 +265,6 @@ angular.module('app').service('SegueService', function() {
             "h2b":"Ingresa tu contraseña abajo para terminar!",
             "h4": "Esto llevará todos los datos del sensor a vuestra cuenta",
             "segueButtonError":"VERIFICAR CONTRASEÑA",
-
-
             "segueButton": "CONTINÚA"
         },{
             "index": 95,
@@ -290,7 +288,7 @@ angular.module('app').service('SegueService', function() {
             "index": 100,
             "template": "final",
             "url": 'final',
-            "h1":"ESTA VIVO!",
+            "h1":"ESTÁ VIVO!",
             "h2": "Has instalado y conectado satisfactoriamente tu Kit Smart Citizen a internet, y a continuación agrega el Kit a la comunidad global de sensores",
             "h4": "Visita SmartCitizen.me para ver tu sensor en acción, capturando datos. No olvides leer el manual para las instrucciones de ensamblaje y consejos para instalar tu sensor en exteriores",
             "segueButton": "VISITA SMARTCITIZEN.ME"

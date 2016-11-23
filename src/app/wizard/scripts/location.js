@@ -34,7 +34,7 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
     $scope.tagStates = Array.apply(null, Array($scope.locationTags.length)).map(String.prototype.valueOf,'');
 
     $scope.$parent.payload = scopePayload;
-    $scope.$parent.segueControl = 'ready';
+    $scope.$parent.segueControl = 'blocked';
 
     if(!$scope.$parent.submittedData.deviceData.user_tags) $scope.$parent.submittedData.deviceData.user_tags = []
 
@@ -58,14 +58,20 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
         setInitialPosition();
     });
 
-    $geolocation.getCurrentPosition({
-        timeout: 10000,
+    $scope.payload.segueButton = 'ESPERA';
+
+    var t = $geolocation.getCurrentPosition({
+        timeout: 3000,
         maximumAge: 250,
         enableHighAccuracy: true
     }).then(function(position) {
         if ($scope.$parent) $scope.$parent.pos = position.coords;
         setInitialPosition();
+    }, function(error){
+        prepSegue();
+        setInitialPosition();
     });
+
 
     $scope.tagToggle = function(itr) {
         var index = $scope.locationTags.indexOf(itr);
@@ -95,7 +101,7 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
             setMapData($scope.$parent.pos, $scope.$parent.pos, 18);
         } else {
             console.warn('Unable to capture users location...');
-            setMapData(loc.center, {}, loc.zoom);
+            setMapData(loc.center, loc.center, loc.zoom);
         }
     }
 
@@ -127,13 +133,14 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
 
     function setSensorPosition(position) {
         if (typeof position.latitude !== 'undefined') {
+            prepSegue();
             $scope.$parent.submittedData.deviceData.latitude = position.latitude;
             $scope.$parent.submittedData.deviceData.longitude = position.longitude;
         } 
     }
 
     function prepSegue(){
-        $scope.payload.segueButton = 'NEXT';
+        $scope.payload.segueButton = 'HECHO';
         $scope.$parent.segueControl ='ready';
     }
 

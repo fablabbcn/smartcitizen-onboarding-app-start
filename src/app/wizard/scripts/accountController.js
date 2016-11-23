@@ -29,7 +29,6 @@ angular.module('app').controller('accountController', function($scope, scopePayl
     $scope.passwordListener = function(){
         $scope.payload.segueButton = 'CONTINUE';
         if ( (typeof $scope.pass1 !== "undefined") && ($scope.pass1.length > 0) && ($scope.pass1 == $scope.pass2) ) {
-            $scope.pass1 = $scope.pass2; 
             $scope.$parent.submittedData.user.password = $scope.pass1;
             platform.createUser($scope.$parent.submittedData.user).then(function(data){
                 loginAndBakeDevice();
@@ -110,13 +109,16 @@ angular.module('app').controller('accountController', function($scope, scopePayl
     /********** Functions **********/
 
     function loginAndBakeDevice(){
+        blockSegue();
         platform.login($scope.$parent.submittedData.user).then(function(data){
-            //$scope.$parent.submittedData.token = data.access_token; We don't use it
             platform.setAuth(data);
             platform.bakeDevice().then(function (data) {
                 $scope.$parent.submittedData.deviceData.id = data.id;
                 console.log(data);
                 prepSegue();
+            }, function(){
+                console.log(data);
+                blockSegue();
             });    
         }, function (data) {
             console.log(data);
