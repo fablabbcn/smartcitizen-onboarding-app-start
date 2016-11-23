@@ -2,7 +2,7 @@
 
 angular.module('app').config(function($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
 
-    var refreshed = false;
+    var refreshed = true;
 
     $stateProvider
 
@@ -106,11 +106,24 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider, $locat
             controller: 'baseController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(16); }}
         })
+        .state('wizard.case1', {
+            url: '/case_1',
+            templateUrl: 'app/wizard/casing.html',
+            controller: 'baseController',
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(17); }}
+        })
+        .state('wizard.case2', {
+            url: '/case_2',
+            templateUrl: 'app/wizard/casing.html',
+            controller: 'baseController',
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(18); }}
+        })
+
         .state('wizard.confirm_build', {
             url: '/confirm_build',
             templateUrl: 'app/wizard/confirm.html',
             controller: 'baseController',
-            resolve: { scopePayload: function(SegueService){ return SegueService.prep(17); }}
+            resolve: { scopePayload: function(SegueService){ return SegueService.prep(19); }}
         })
 
 

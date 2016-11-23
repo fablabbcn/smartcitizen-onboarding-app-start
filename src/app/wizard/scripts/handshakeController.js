@@ -17,6 +17,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     }
 
     $scope.showPasswordToggle = 'password';
+    $scope.forcePassword = false;
 
     recoverPrevWiFi(); //On init recover prev wifi settings when going back
 
@@ -34,11 +35,28 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
         $scope.submittedData.wifi.password = wifi_ssid.pass.value;
     };
 
-    $scope.showPassword = function() {
-        if ($scope.showPasswordToggle == 'password') {
+    $scope.showPassword = function(tgl){
+        if ($scope.forcePassword == true){
+            return;
+        }
+        if (tgl == true) {
             $scope.showPasswordToggle = 'text';
-        } else {
+        }
+        else {
             $scope.showPasswordToggle = 'password';
+        }
+    };
+
+    $scope.forceShowPassword = function(){
+        if ( $scope.forcePassword == false){
+            $scope.forcePassword = true;
+            $scope.showPasswordToggle = 'text';
+            console.log('showing');
+        }
+        else {
+            $scope.forcePassword = false;
+            $scope.showPasswordToggle = 'password';
+            console.log('hide');
         }
     };
 

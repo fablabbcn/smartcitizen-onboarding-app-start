@@ -8,6 +8,7 @@ angular.module('app').controller('accountController', function($scope, scopePayl
    
     $scope.$parent.segueControl ='ready';
     $scope.showPasswordToggle = 'password';
+    $scope.forcePassword = false;
 
     $scope.given_email = ( $scope.$parent.submittedData.user.email == ' '? '' : $scope.$parent.submittedData.user.email);
     $scope.given_username = ( $scope.$parent.submittedData.user.username == ' '? '' : $scope.$parent.submittedData.user.username);
@@ -81,12 +82,28 @@ angular.module('app').controller('accountController', function($scope, scopePayl
         $scope.$parent.userName = $scope.input;
     };
 
-    $scope.showPassword = function(){
-        if ($scope.showPasswordToggle == 'password') {
+    $scope.showPassword = function(tgl){
+        if ($scope.forcePassword == true){
+            return;
+        }
+        if (tgl == true) {
             $scope.showPasswordToggle = 'text';
         }
         else {
             $scope.showPasswordToggle = 'password';
+        }
+    };
+
+    $scope.forceShowPassword = function(){
+        if ( $scope.forcePassword == false){
+            $scope.forcePassword = true;
+            $scope.showPasswordToggle = 'text';
+            console.log('showing');
+        }
+        else {
+            $scope.forcePassword = false;
+            $scope.showPasswordToggle = 'password';
+            console.log('hide');
         }
     };
 

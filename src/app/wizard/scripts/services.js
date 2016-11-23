@@ -16,7 +16,7 @@ angular.module('app').service('SegueService', function() {
             "index": 1,
             "template": "collaborators",
             "url":"making_sense",
-            "companyLogo": "app/images/20160301 MAKING SENSE LOGOS-07.png",
+            "companyLogo": "app/images/MS LOGO.png",
             "h2": "Making Sense es un proyecto que ayuda a las personas a ser conscientes de su ambiente.",
             "h4": "Queremos ayudarte a implementar sensores para entender la contaminación acústica. Tomando conciencia del problema, seremos capaces de abordarlo.",
             "segueButton": "SUENA BIEN!"
@@ -25,7 +25,7 @@ angular.module('app').service('SegueService', function() {
             "index": 2,
             "template": "collaborators",
             "url":"smart_citizen",
-            "companyLogo": "app/images/smart_citizen.png",
+            "companyLogo": "app/images/SCK LOGO.png",
             "h2": "Smart Citizen es un movimiento para la participación ciudadana en un mundo moderno",
             "h4": "Smart Citizen crea herramientas abiertas para que ciudadanos estén mejor informados del mundo a su alrededor.",
             "segueButton": "CONTINÚA"
@@ -104,6 +104,22 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "ESTA VIVO"
         },{
             "index": 17,
+            "template": "casing",
+            "url":"case_1",
+            "h2": "Next, we place it all in the casing",
+            "text": "Make sure you place it with the battery cable towards the bottom of the casing",
+            "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosureBattSensor.png",
+            "segueButton": "ESTA VIVO"
+        },{
+            "index": 18,
+            "template": "casing",
+            "url":"case_2",
+            "h2": "... and to finish seal the cover",
+            "text": "Place the transparent plastic on the front of the case and fix it in place with the two white plugs.",
+            "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosure-wShineclasps.png",
+            "segueButton": "ESTA VIVO"
+        },{
+            "index": 19,
             "template": "comfirm",
             "url":"confirm_build",
             "h1": "BIEN HECHO",
@@ -308,7 +324,7 @@ angular.module('app').service('SegueService', function() {
     this.nextPage = function(val, accountPresent){
         if (val == 4) {
             return('whats_in_the_box');
-        } else if (val == 17) {
+        } else if (val == 19) {
             return ('wifi_enter');
         } else if (val == 22) {
             return ('handshake');
@@ -361,6 +377,7 @@ angular.module('app').service('SegueService', function() {
 
     function payloadGenerate(content){
         var payload = content;
+        console.log(payload);
 
         var index = pageContent.findIndex(function(item, i){
             return item.index === payload.index;
