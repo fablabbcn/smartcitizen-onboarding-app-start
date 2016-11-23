@@ -25,7 +25,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
 
     $scope.handShakeState = false;
     $scope.handShakeRepeats = 0;
-    $scope.handShakeRetries = 2;
+    $scope.handShakeRetries = 4;
 
     /** Base Navigation  **/
     $scope.seque = function() {
@@ -110,6 +110,9 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         else if ($scope.payload.template == 'handshake') {
             return; // We currently don't use errors for handshake
         }
+        else if ($scope.payload.template == 'location_prep') {
+            return; // We currently don't use errors for location_prep
+        }
         $scope.segueControl = 'error';
         $scope.errorButton = 'show';
         $rootScope.$broadcast('blockedSegue');
@@ -173,6 +176,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         $scope.modalClass = 'out';
         $timeout(function() {
             $scope.modalClass = 'hidden';
+            $rootScope.$broadcast('modalClosed'); // This starts the light
         }, 500);
     };
     $scope.modalButtonClick = function() {

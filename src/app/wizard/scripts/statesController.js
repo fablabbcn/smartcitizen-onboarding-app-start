@@ -115,37 +115,37 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
     $scope.infoClick = function(val){
         $scope.$parent.modalBox = 'green';
         var data = [{
-            "title": "Sensor Board",
-            "body": "This is where all the sensors are. It connects to the bigger, hardware board, so that the sensors can transmit what they find.",
-            "image": "app/images/BOARDS-CUTOUT_0003_SENSOR-BOARD-BLUE.png"
-        }, {
-            "title": "Hardware Board",
-            "body": "This is where all the computation takes place. Anytime you want to connect something to the Smart Citizen, it will be on this board",
-            "image": "app/images/BOARDS-CUTOUT_0002_HARDWARE-BOARD-WHITE.png"
-        }, {
-            "title": "Polymer Battery",
-            "body": "This powers the device. Every so often it has to be recharged, especially after long periods of continuous use.",
-            "image": "app/images/BOARDS-CUTOUT_0006_BATTERY2.png"
-        }, {
-            "title": "Charging Cable",
-            "body": "When the kit needs to be charged, you can connect this cable to your computer or plug, and back to the kit.",
-            "image": "app/images/BOARDS-CUTOUT_0005_USBgreen.png"
-        }, {
-            "title": "Made for bespoke cases",
-            "body": "When the kit needs to be charged, you can connect this cable to your computer or plug, and back to the kit.",
-            "image": "app/images/BOARDS-CUTOUT_0008_ANGLED.png"
-        }, {
-            "title": "Spacers",
-            "body": "When the kit needs to be charged, you can connect this cable to your computer or plug, and back to the kit.",
-            "image": "app/images/spacers.png"
-        }, {
-            "title": "Screen",
-            "body": "When the kit needs to be charged, you can connect this cable to your computer or plug, and back to the kit.",
-            "image": "app/images/screen.png"
-        }, {
-            "title": "Plugs",
-            "body": "When the kit needs to be charged, you can connect this cable to your computer or plug, and back to the kit.",
-            "image": "app/images/plugs.png"
+                "title": "Placa de Sensores",
+                "body": "Aquí es donde están todos los sensores. Se conecta a la placa grande, la placa de datos, así los sensores pueden transmitir lo que miden.",
+                "image": "app/images/BOARDS-CUTOUT_0003_SENSOR-BOARD-BLUE.png"
+            }, {
+               "title": "Placa de Datos",
+               "body": "Aquí es donde toda la computación ocurre. Siempre que quieras conectar algo al Smart Citizen, debe estar en esta placa",
+               "image": "app/images/BOARDS-CUTOUT_0002_HARDWARE-BOARD-WHITE.png"
+            }, {
+               "title": "Batería",
+               "body": "Esto le da alimentación al dispositivo. Cada cierto tiempo debe ser recargada, especialmente después de largos periodos de uso continuo.",
+               "image": "app/images/BOARDS-CUTOUT_0006_BATTERY2.png"
+            }, {
+               "title": "Cable USB",
+               "body": "Cuando el Kit necesite ser cargado, puedes conectar este cable a tu ordenador o enchufe, y de vuelta al Kit.",
+               "image": "app/images/BOARDS-CUTOUT_0005_USBgreen.png"
+            }, {
+               "title": "Carcasa hecha a medida",
+               "body": "La carcasa protege el dispositivo de la lluvia y permite fijarlo por ejemplo en tu balcón.",
+               "image": "app/images/BOARDS-CUTOUT_0008_ANGLED.png"
+            }, {
+                "title": "Espaciadores",
+                "body": "Fijan la placa de sensores con la placa de datos para que todo quede más robusto.",
+                "image": "app/images/spacers.png"
+            }, {
+                "title": "Tapa",
+                "body": "Cierra la carcasa y protege el dispositivo de la llúvia. Fijate que la parte con agujeros queda sobre el sensor de sonido.",
+                "image": "app/images/screen.png"
+            }, {
+                "title": "Sujetadores",
+                "body": "Fijan la tapa con la carcasa.",
+                "image": "app/images/plugs.png"
         }];
         data[val].button = 'OK, got it';
         $scope.$parent.modalContent = data[val];
