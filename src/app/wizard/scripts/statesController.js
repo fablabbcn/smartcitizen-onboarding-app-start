@@ -16,7 +16,7 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
             $scope.partButtons = [false,false,false,false];
         }
 
-        $scope.infoImages = ['app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png', 'app/images/question.png','app/images/question.png','app/images/question.png','app/images/question.png' ];
+        $scope.infoImages = ['app/images/question.png', 'app/images/question.png', 'app/images/question.png', 'app/images/question.png', 'app/images/question.png','app/images/question.png','app/images/question.png','app/images/question.png' ];
     }
     function prepSegue(){
         $scope.$parent.segueControl ='ready';
