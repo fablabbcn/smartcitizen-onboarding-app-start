@@ -9,14 +9,14 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
         $scope.morphControl =['closed'];
 
         if ($scope.$parent.payload.template == 'selectparts2') {
-            $scope.selectionButtons = [''];
-            $scope.partButtons = [false];
+            $scope.selectionButtons = ['','','',''];
+            $scope.partButtons = [false,false,false,false];
         } else {
             $scope.selectionButtons = ['', '', '', ''];
             $scope.partButtons = [false,false,false,false];
         }
 
-        $scope.infoImages = ['app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png', 'app/images/question.png' ];
+        $scope.infoImages = ['app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png', 'app/images/question.png','app/images/question.png','app/images/question.png','app/images/question.png' ];
     }
     function prepSegue(){
         $scope.$parent.segueControl ='ready';
@@ -134,6 +134,18 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
             "title": "Made for bespoke cases",
             "body": "When the kit needs to be charged, you can connect this cable to your computer or plug, and back to the kit.",
             "image": "app/images/BOARDS-CUTOUT_0008_ANGLED.png"
+        }, {
+            "title": "Spacers",
+            "body": "When the kit needs to be charged, you can connect this cable to your computer or plug, and back to the kit.",
+            "image": "app/images/spacers.png"
+        }, {
+            "title": "Screen",
+            "body": "When the kit needs to be charged, you can connect this cable to your computer or plug, and back to the kit.",
+            "image": "app/images/screen.png"
+        }, {
+            "title": "Plugs",
+            "body": "When the kit needs to be charged, you can connect this cable to your computer or plug, and back to the kit.",
+            "image": "app/images/plugs.png"
         }];
         data[val].button = 'OK, got it';
         $scope.$parent.modalContent = data[val];
