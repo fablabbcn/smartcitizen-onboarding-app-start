@@ -104,6 +104,22 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "ESTA VIVO"
         },{
             "index": 17,
+            "template": "casing",
+            "url":"case_1",
+            "h2": "Next, we place it all in the casing",
+            "text": "Make sure you place it with the battery cable towards the bottom of the casing",
+            "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosureBattSensor.png",
+            "segueButton": "ESTA VIVO"
+        },{
+            "index": 18,
+            "template": "casing",
+            "url":"case_2",
+            "h2": "... and to finish seal the cover",
+            "text": "Place the transparent plastic on the front of the case and fix it in place with the two white plugs.",
+            "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosure-wShineclasps.png",
+            "segueButton": "ESTA VIVO"
+        },{
+            "index": 19,
             "template": "comfirm",
             "url":"confirm_build",
             "h1": "BIEN HECHO",
@@ -308,7 +324,7 @@ angular.module('app').service('SegueService', function() {
     this.nextPage = function(val, accountPresent){
         if (val == 4) {
             return('whats_in_the_box');
-        } else if (val == 17) {
+        } else if (val == 19) {
             return ('wifi_enter');
         } else if (val == 22) {
             return ('handshake');
@@ -361,6 +377,7 @@ angular.module('app').service('SegueService', function() {
 
     function payloadGenerate(content){
         var payload = content;
+        console.log(payload);
 
         var index = pageContent.findIndex(function(item, i){
             return item.index === payload.index;

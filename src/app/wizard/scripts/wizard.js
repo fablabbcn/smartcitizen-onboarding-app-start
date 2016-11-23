@@ -80,11 +80,11 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
     }
 
     function backTransition() {
-        debugger;
+        //debugger;
         AnimationService.leaving(false);
         $timeout(function() {
             $scope.segueControl = 'ready';
-            debugger;
+            //debugger;
 
             $location.path('/wizard/' + SegueService.previousPage($scope.payload.index, $scope.pre_made));
             $window.scrollTo(0, 0);
