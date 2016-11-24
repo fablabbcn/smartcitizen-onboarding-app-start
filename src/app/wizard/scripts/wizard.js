@@ -180,7 +180,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         }, 500);
     };
     $scope.modalButtonClick = function() {
-        if ($scope.modalContent.action == 'email') $window.open('mailto:support@smartcitizen.me?Subject=SmartCitizen Support [' + $scope.onboarding_session + ']', '_blank');
+        if ($scope.modalContent.action == 'email') $window.open('mailto:feedback-4873-IVVSumgXA4EEA4e7blwZvyE2sshIpRRK@feedback.doorbell.io?Subject=MakingSense Support [' + $scope.onboarding_session + ']', '_blank');
         else if ($scope.modalContent.action == 'retry') $scope.seque;
     };
     $scope.$on('modal', function() {
