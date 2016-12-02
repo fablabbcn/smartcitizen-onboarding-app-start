@@ -14,7 +14,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         description: 'Making Sense Pilot #1',
         exposure: 'outdoor',
         kit_id: 11,
-        user_tags: ["MakingSense", "Barcelona"] //We currently use defualt tags
+        user_tags: ["MakingSense", "Barcelona", "BarcelonaNoise", "MS#1"] //We currently use defualt tags
     }
 
     $scope.onboarding_session = session.onboarding_session;

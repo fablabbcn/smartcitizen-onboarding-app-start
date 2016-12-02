@@ -330,11 +330,13 @@ angular.module('app').service('SegueService', function() {
         console.log(val);
         if (val == 4) {
             return('whats_in_the_box');
+        } else if (val == 23) {
+            return ('handshake');
         } else if (val == 24) {
             return ('sensorName_prep');
         } else if (val == 41) {
             return ('location_prep');
-        } else if (val == 52) { // Before 53. We currently skip tags     
+        } else if (val == 52) { // Before 53. We currently skip tags
             return ('email');
         } else if (val == 90) {
             if (accountPresent) {
@@ -355,7 +357,7 @@ angular.module('app').service('SegueService', function() {
         if (val == 10) {
             return('smart_citizen_brief2')
         } else if (val == 40) {
-            return ('confirm_handshake');
+            return ('confirm_handshake'); // What is this?
         } else if (val == 50) {
             return ('sensorName');
         } else if (val == 90) {
