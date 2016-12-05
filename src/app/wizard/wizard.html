@@ -1,7 +1,11 @@
 <!--<canvas></canvas>-->
 
-<div id="progress" layout="row" layout-align="center center" flex="none">
+<div id="progress" layout="column" layout-align="center center" flex="none" ng-class="payload.progressShow">
     <md-progress-linear md-diameter="100" md-mode="determinate" bar-height="50px" value="{{payload.progressVal}}"></md-progress-linear>
+    <div id="progressLabels" layout="row" layout-align="space-between start">
+        <p id="left">{{payload.progressLeftLabel}}</p>
+        <p id="right">{{payload.progressRightLabel}}</p>
+    </div>
 </div>
 
 <div id="wizardView" layout="column" layout-align="center none" ui-view flex ></div>

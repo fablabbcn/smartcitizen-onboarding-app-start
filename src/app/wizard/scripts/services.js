@@ -7,6 +7,7 @@ angular.module('app').service('SegueService', function() {
 
         /** -- INTRO -- **/
             "index": 0,
+            "part":1,
             "template": "landing",
             "url": "landing",
             "h1": "Bienvenidos al piloto de Making Sense!",
@@ -14,6 +15,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "VAMOS"
         },{
             "index": 1,
+            "part":2,
             "template": "collaborators",
             "url":"making_sense",
             "companyLogo": "app/images/MS LOGO.png",
@@ -23,6 +25,7 @@ angular.module('app').service('SegueService', function() {
         },
         {
             "index": 2,
+            "part":3,
             "template": "collaborators",
             "url":"smart_citizen",
             "companyLogo": "app/images/SCK LOGO.png",
@@ -31,6 +34,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "CONTINÚA"
         },{
             "index": 3,
+            "part":4,
             "template": "basic2",
             "url":"smart_citizen_brief",
             "image": "app/images/sck_glow.png",
@@ -39,6 +43,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "CONTINÚA"
         },{
             "index": 4,
+            "part":5,
             "template": "basic2",
             "url":"smart_citizen_brief2",
             "image": "app/images/SCK_macbook.png",
@@ -51,6 +56,7 @@ angular.module('app').service('SegueService', function() {
     /** -- WHATS IN THE BOX -- **/
         {
             "index": 10,
+            "part":1,
             "template": "basic",
             "url":"whats_in_the_box",
             "h1": "CONFIGUREMOS EL SENSOR",
@@ -58,6 +64,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "ESTOY LISTO"
         },{
             "index": 11,
+            "part":2,
             "template": "selectparts",
             "url":"kit_parts",
             "h2": "Marca todas las cosas que recibisteis",
@@ -67,6 +74,7 @@ angular.module('app').service('SegueService', function() {
             "segueButtonError": "Te faltan piezas?"
         },{
             "index": 12,
+            "part":3,
             "template": "selectparts2",
             "url":"case",
             "h2": "Finalmente...",
@@ -76,6 +84,7 @@ angular.module('app').service('SegueService', function() {
             "segueButtonError": "Te faltan piezas?"
         },{
             "index": 13,
+            "part":4,
             "template": "comfirm",
             "url":"confirm_parts",
             "h1": "BIEN HECHO",
@@ -90,6 +99,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "HECHO"
         },{
             "index": 15,
+            "part":5,
             "template": "kitbuild2",
             "url":"kitbuild_2",
             "h2": "Segundo, conectamos los sensores",
@@ -97,6 +107,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "HECHO"
         },{
             "index": 16,
+            "part":6,
             "template": "kitbuild3",
             "url":"kitbuild_3",
             "h2": "Vamos a darle algo de poder",
@@ -104,6 +115,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "HECHO"
         },{
             "index": 17,
+            "part":7,
             "template": "kitbuild4",
             "url":"kitbuild_4",
             "h2": "Enciende el sensor",
@@ -119,6 +131,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "ESTÁ VIVO"
         },{
             "index": 19,
+            "part":8,
             "template": "casing",
             "url":"case_2",
             "h2": "... y para terminar cierra la tapa",
@@ -127,6 +140,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "ESTÁ VIVO"
         },{
             "index": 20,
+            "part":9,
             "template": "comfirm",
             "url":"confirm_build",
             "h1": "BIEN HECHO",
@@ -138,6 +152,7 @@ angular.module('app').service('SegueService', function() {
     /** -- LIGHT HANDSHAKE -- **/
         {
             "index": 21,
+            "part":1,
             "template": "wifi_enter",
             "url":"wifi_enter",
             "h2": "Con que red Wi-Fi vas a utilizar tu kit?",
@@ -146,6 +161,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "ESTOY LISTO"
         },{
             "index": 22,
+            "part":2,
             "template": "handshake",
             "url": 'handshake',
             "h2": "Ahora vamos a hacer algo de magia...",
@@ -153,6 +169,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "CONECTAR"
         },{
             "index": 23,
+            "part":3,
             "template": "wifi_check",
             "url":"wifi_check",
             "h2": "Oups! Alguna cosa no funciono...",
@@ -160,6 +177,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "VERIFICAR CONTRASEÑA"
         },{
             "index": 24,
+            "part":4,
             "template": "comfirm",
             "url":"confirm_handshake",
             "h1": "BIEN HECHO",
@@ -170,12 +188,14 @@ angular.module('app').service('SegueService', function() {
     /** -- WIFI HANDSHAKE -- **/
         {
             "index": 30,
+            "part":4,
             "template": "pair1",
             "url":"pair_1",
             "h2": "Encuentra tu red de Wifi en la lista siguiente",
             "segueButton": "HECHO"
         },{
             "index": 31,
+            "part":5,
             "template": "pair2",
             "url":"pair_2",
             "h2": "Casi listo. Cual es la contraseña para la red?",
@@ -183,6 +203,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "VERIFICAR CONTRASEÑA"
         },{
             "index": 33,
+            "part":6,
             "template": "basic2",
             "url": 'wifi_success',
             "image": "app/images/sck_iso-1295.jpg",
@@ -197,6 +218,7 @@ angular.module('app').service('SegueService', function() {
     /** -- NAMING -- **/
         {
             "index": 40,
+            "part":1,
             "template": "basic",
             "url":"sensorName_prep",
             "h1": "VAMOS A DARLE UNA IDENTIDAD A TU SENSOR",
@@ -205,6 +227,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "CONTINÚA"
         },{
             "index": 41,
+            "part":2,
             "template": "sensorName",
             "url": 'sensorName',
             "h1": "Vamos a darle un nombre a tu sensor",
@@ -220,6 +243,7 @@ angular.module('app').service('SegueService', function() {
     /** -- LOCATION -- **/
         {
             "index": 50,
+            "part":1,
             "template": "location_prep",
             "url": 'location_prep',
             "h2": "Donde instalarás tu sensor?",
@@ -227,6 +251,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "HECHO"
         },{
             "index": 51,
+            "part":2,
             "template": "location_map",
             "url": 'location_map',
             "h2": "Si deseas ajustarlo a otro lugar, puedes hacerlo aquí",
@@ -245,6 +270,7 @@ angular.module('app').service('SegueService', function() {
         */
         {
             "index": 52,
+            "part":3,
             "template": "comfirm",
             "url":"confirm_location",
             "h1": "Casi listos",
@@ -258,6 +284,7 @@ angular.module('app').service('SegueService', function() {
     /** -- ACCOUNT HERE -- **/
         {
             "index": 90,
+            "part":1,
             "template": "account1",
             "url": 'email',
             "h2": "Podemos guardar el sensor con vuestra dirección de correo electrónico",
@@ -266,6 +293,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "CONTINÚA"
         },{
             "index": 91,
+            "part":2,
             "template": "login",
             "url": 'login',
             "h2a": "Excelente, bienvenido!",
@@ -275,6 +303,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "CONTINÚA"
         },{
             "index": 95,
+            "part":2,
             "template": "make1",
             "url": 'username',
             "h2": "Guay, eres nuevo en Smart Citizen?",
@@ -284,6 +313,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "CONTINÚA"
         },{
             "index": 96,
+            "part":3,
             "template": "make2",
             "url": 'password',
             "h2": "Ahora, escribe una contraseña para asegurar todo",
@@ -293,6 +323,7 @@ angular.module('app').service('SegueService', function() {
             "segueButton": "TODO LISTO!"
         },{
             "index": 100,
+            "part":4,
             "template": "final",
             "url": 'final',
             "h1":"ESTÁ VIVO!",
@@ -383,7 +414,11 @@ angular.module('app').service('SegueService', function() {
             return item.index === payload.index;
         });
 
+        payload.progressLeftLabel = setupProgressLeft(index).toString() + " / 6";
+        payload.progressRightLabel = setupProgressRight(index).toString() + " step #" + payload.part;
         payload.progressVal = (index / pageContent.length) * 100;
+
+
         payload.companyLogo = content.companyLogo;
         payload.image = content.image;
 
@@ -424,6 +459,37 @@ angular.module('app').service('SegueService', function() {
         }
         return tuples; //change to array syntax
     };
+
+    function setupProgressLeft(index){
+        if ( index <= 4 ){
+            return 1;
+        } else if ( index <= 20 ){
+            return 2;
+        } else if ( index <= 33 ){
+            return 3;
+        } else if (index <= 41){
+            return 4;
+        } else if (index <= 52){
+            return 5;
+        } else {
+            return 6;
+        }
+    }
+    function setupProgressRight(index){
+        if ( index <= 4 ){
+            return "Introduction";
+        } else if ( index <= 20 ){
+            return "What's in the Box";
+        } else if ( index <= 33 ){
+            return "Handshake";
+        } else if (index <= 41){
+            return "Naming";
+        } else if (index <= 52){
+            return "Location";
+        } else {
+            return "Account";
+        }
+    }
 
 }).controller('baseController', function($scope, scopePayload, AnimationService){
     $scope.$parent.payload = scopePayload;

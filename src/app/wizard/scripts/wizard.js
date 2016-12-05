@@ -73,21 +73,24 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
 
     function sequeTransition() {
         AnimationService.leaving(true);
+        $scope.payload.progressShow = 'blue';
         $timeout(function() {
             $location.path('/wizard/' + SegueService.nextPage($scope.payload.index, $scope.pre_made));
             $window.scrollTo(0, 0);
+            $scope.payload.progressShow = ' ';
         }, 500); // see animations max duration time
     }
 
     function backTransition() {
         //debugger;
         AnimationService.leaving(false);
+        $scope.payload.progressShow = 'blue';
         $timeout(function() {
             $scope.segueControl = 'ready';
             //debugger;
-
             $location.path('/wizard/' + SegueService.previousPage($scope.payload.index, $scope.pre_made));
             $window.scrollTo(0, 0);
+            $scope.payload.progressShow = ' ';
         }, 500); // see animations max duration time
     }
 
