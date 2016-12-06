@@ -453,9 +453,6 @@ angular.module('app').service('SegueService', function() {
             case "make2":
                 tuples=4;
                 break;
-            case "wifi_enter":
-                tuples=5;
-                break;
             default:
                 tuples = 3;
         }

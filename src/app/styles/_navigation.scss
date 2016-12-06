@@ -147,6 +147,9 @@ $button-height: $segueWrapperHeight / 2.75;
       &.blocked {
         border: 5px solid $msWhite;
       }
+      &.hide {
+        display: none;
+      }
       &.error {
         -webkit-animation-name: segueError;
         -webkit-animation-duration: $errorTimer;

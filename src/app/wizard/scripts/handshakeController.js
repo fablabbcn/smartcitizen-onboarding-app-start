@@ -12,6 +12,9 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
 
     $scope.$parent.segueControl = 'blocked';
 
+    $scope.$parent.spinnerControl = 'hide';
+
+
     if ($scope.submittedData.wifi.ssid) {
         $scope.$parent.segueControl = 'ready';
     }
@@ -232,7 +235,8 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     // Starts the handshake
     function blockSegue() {
         $scope.payload.segueButton = 'ENVIA';
-        $scope.$parent.segueControl = 'blocked';
+        $scope.$parent.segueControl = 'hide';
+        $scope.$parent.spinnerControl = 'show';
     }
 
     //  Handshake finishes and waits for the platform
@@ -243,7 +247,9 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
         $scope.$parent.handShakeState = true;
         $scope.handshakeLabel = 'Hecho! Por favor, espera...';
         $scope.payload.segueButton = 'WAIT';
+        $scope.$parent.spinnerControl = 'hide';
         $scope.$parent.segueControl = 'blocked';
+
     }
 
     //  Platform replies and we move forward

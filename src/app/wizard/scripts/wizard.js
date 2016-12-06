@@ -2,6 +2,8 @@
 
 angular.module('app').controller('wizardCtrl', function($scope, $location, $sce, $window, $timeout, SegueService, $rootScope, AnimationService, session, platform, Restangular, $state) {
 
+    $scope.spinnerControl = 'hide';
+
     /** Submitted User Data **/
     $scope.submittedData = {};
 
