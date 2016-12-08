@@ -158,7 +158,9 @@ angular.module('app').service('SegueService', function() {
             "h2": "Con que red Wi-Fi vas a utilizar tu kit?",
             "h4": "Debemos introducirla manualmente... Recuerda que mayúsculas y minúsculas son importantes.",
             "segueButtonError":"VERIFICAR CAMPOS",
-            "segueButton": "ESTOY LISTO"
+            "segueButton": "ESTOY LISTO",
+            "contextButton": "Try another way",
+            "contextButton2": "Ask for Help"
         },{
             "index": 22,
             "part":2,
@@ -174,7 +176,9 @@ angular.module('app').service('SegueService', function() {
             "url":"wifi_check",
             "h2": "Oups! Alguna cosa no funciono...",
             "h4": "Parece que hubo algun problema. Fijate que la luz de tu kit esté en rojo y repasa que la información de tu red Wi-Fi sea correcta.",
-            "segueButton": "VERIFICAR CONTRASEÑA"
+            "segueButton": "VERIFICAR CONTRASEÑA",
+            "contextButton": "Try another way",
+            "contextButton2": "Ask for Help"
         },{
             "index": 24,
             "part":4,
@@ -189,27 +193,38 @@ angular.module('app').service('SegueService', function() {
         {
             "index": 30,
             "part":4,
-            "template": "pair1",
-            "url":"pair_1",
-            "h2": "Encuentra tu red de Wifi en la lista siguiente",
-            "segueButton": "HECHO"
+            "template": "basic",
+            "url":"accesspoint_pre",
+            "h1": "LET'S CONNECT A MOBILE DEVICE TO YOUR SENSOR",
+            "h4":"This approach is more reliable. Grab any other mobile device, smartphone or tablet.",
+            "segueButton": "GOT IT"
         },{
             "index": 31,
             "part":5,
-            "template": "pair2",
-            "url":"pair_2",
-            "h2": "Casi listo. Cual es la contraseña para la red?",
-            "h4": "Necesitamos esto para configurar la conexión de tu dispositivo a internet",
-            "segueButton": "VERIFICAR CONTRASEÑA"
+            "template": "prompted_entry",
+            "url":"accesspoint_1",
+            "h2": "Awesome, go to your wifi settings and connect to the following wifi:",
+            "h4": "If you do not see it, ensure your kit is powered on.",
+            "promptedText": "smartCitizenSSID",
+            "segueButton": "CONNECTED"
+        },{
+            "index": 32,
+            "part":6,
+            "template": "prompted_entry",
+            "url":"accesspoint_2",
+            "h2": "Next, open your browser and go to:",
+            "h4": "If it does not work, make sure you are connected to the wifi",
+            "promptedText": "YourSmartCitizenKit.me",
+            "segueButton": "CONNECTED"
         },{
             "index": 33,
             "part":6,
-            "template": "basic2",
-            "url": 'wifi_success',
-            "image": "app/images/sck_iso-1295.jpg",
-            "h1": "Genial! Tenemos el sensor en línea",
-            "h4": "Ahora solo ve a tu menú del Wifi y conéctelo de nuevo a su red para continuar la configuración.",
-            "segueButton": "ESTÁ VIVO"
+            "template": "prompted_entry",
+            "url":"accesspoint_3",
+            "h2": "Finally, submit your wifi name, its password and when asked for your onboarding code type:",
+            "h4": "If the submitted wifi and password are correct you will be redirected shortly, follow the instructions on YourSmartCitizenKit.me",
+            "promptedText": "YourSmartCitizenKit.me",
+            "segueButton": "CONNECTED"
         },
 
 
@@ -387,8 +402,10 @@ angular.module('app').service('SegueService', function() {
     this.previousPage = function(val,accountPresent){
         if (val == 10) {
             return('smart_citizen_brief2')
+        } else if (val == 30){
+            return ('wifi_check');
         } else if (val == 40) {
-            return ('confirm_handshake'); // What is this?
+            return ('confirm_handshake');
         } else if (val == 50) {
             return ('sensorName');
         } else if (val == 90) {
@@ -451,6 +468,7 @@ angular.module('app').service('SegueService', function() {
             case "final":
             case "make1":
             case "make2":
+            case "wifi_check":
                 tuples=4;
                 break;
             default:

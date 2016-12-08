@@ -82,6 +82,16 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
             $scope.payload.progressShow = ' ';
         }, 500); // see animations max duration time
     }
+    $scope.$on('forceSegue', function (event, args) {
+        console.log(args.target);
+        AnimationService.leaving(true);
+        $scope.payload.progressShow = 'blue';
+        $timeout(function() {
+            $state.go(args.target);
+            $window.scrollTo(0, 0);
+            $scope.payload.progressShow = ' ';
+        }, 500); // see animations max duration time
+    });
 
     function backTransition() {
         //debugger;

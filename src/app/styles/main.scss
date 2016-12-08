@@ -284,7 +284,7 @@ body {
         height: 60px;
         width: auto;
         margin: 15px auto;
-        padding: 5px 5px 5px 15px;
+        padding: 5px 15px 5px 15px;
 
         text-transform: uppercase;
         background: $msNavy2;
@@ -322,6 +322,16 @@ body {
               top: 7px;
             }
           }
+        }
+      }
+
+      .promptedText{
+        background-color: $msBlue;
+        border-radius: $divRadius * 2;
+        padding: 15px 45px;
+        //max-width: 400px;
+        h2{
+          color: $msNavy;
         }
       }
     }

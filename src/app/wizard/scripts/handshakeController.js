@@ -260,7 +260,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
         if ($scope.watchDog) $timeout.cancel($scope.watchDog);
         $scope.payload.segueButton = 'CONTINÚA';
         $scope.$parent.segueControl = 'ready';
-        $state.go('wizard.confirm_handshake');
+        $rootScope.$broadcast('forceSegue', { target: 'wizard.confirm_handshake'})
     }
 
     //  Platform doesn't reply and we show error for a few seconds
@@ -311,5 +311,9 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
             }
         }, 0); // This is a trick for ng render cycle
     }
+
+    $scope.alternateSegue = function () {
+        $rootScope.$broadcast('forceSegue', { target: 'wizard.accesspoint_pre'})
+    };
 
 });

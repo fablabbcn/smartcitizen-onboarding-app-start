@@ -134,24 +134,29 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider, $locat
 
 
     /** -- WIFI HANDSHAKE-- **/
-        .state('wizard.pair1', {
-            url: '/pair_1',
-            templateUrl: 'app/wizard/pair1.html',
+        .state('wizard.accesspoint_pre', {
+            url: '/accesspoint_pre',
+            templateUrl: 'app/wizard/basic.html',
             controller: 'baseController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(30); }}
         })
-        .state('wizard.pair2', {
-            url: '/pair_2',
-            templateUrl: 'app/wizard/pair2.html',
+        .state('wizard.accesspoint_1', {
+            url: '/accesspoint_1',
+            templateUrl: 'app/wizard/prompted_entry.html',
             controller: 'baseController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(31); }}
         })
-        .state('wizard.wifisuccess', {
-            url: '/wifi_success',
-            templateUrl: 'app/wizard/basic2.html',
+        .state('wizard.accesspoint_2', {
+            url: '/accesspoint_2',
+            templateUrl: 'app/wizard/prompted_entry.html',
             controller: 'baseController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(32); }}
-        })
+        }).state('wizard.accesspoint_3', {
+        url: '/accesspoint_3',
+        templateUrl: 'app/wizard/prompted_entry.html',
+        controller: 'accesspointController',
+        resolve: { scopePayload: function(SegueService){ return SegueService.prep(33); }}
+    })
 
 
     /** -- NAME -- **/
@@ -214,7 +219,7 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider, $locat
         })
         .state('wizard.wifi_check', {
             url: '/wifi_check',
-            templateUrl: 'app/wizard/wifi_enter.html',
+            templateUrl: 'app/wizard/wifi_check.html',
             controller: 'handshakeController',
             resolve: { scopePayload: function(SegueService){ return SegueService.prep(23); }}
         })
