@@ -58,7 +58,7 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
         setInitialPosition();
     });
 
-    $scope.payload.segueButton = 'ESPERA';
+    $scope.payload.segueButton = 'WAIT';
 
     var t = $geolocation.getCurrentPosition({
         timeout: 3000,
@@ -140,7 +140,7 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
     }
 
     function prepSegue(){
-        $scope.payload.segueButton = 'HECHO';
+        $scope.payload.segueButton = 'DONE';
         $scope.$parent.segueControl ='ready';
     }
 

@@ -42,7 +42,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
                     }
                     break;
                 case 'final':
-                    $window.open('https://smartcitizen.me/kits/' + $scope.submittedData.deviceData.id, '_blank');
+                    // $window.open('https://smartcitizen.me/kits/' + $scope.submittedData.deviceData.id, '_blank');
                     break;
                 case 'sensorName':
                     platform.updateDevice($scope.submittedData.deviceData).then(sequeTransition);

@@ -17,7 +17,7 @@
             </div>
             <div flex="grow" class="md-box">
                 <md-input-container ng-model-options="{ debounce: 1000 }" class="md-block">
-                    <label>Contraseña</label>
+                    <label>{{payload.input1}}</label>
                     <input  ng-model="pass" ng-change="loginListener()" type="{{showPasswordToggle}}" name="pass" >
                     <div ng-messages="password_form.pass.$error">
                     </div>

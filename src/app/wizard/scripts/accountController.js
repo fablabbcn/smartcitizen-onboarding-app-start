@@ -16,7 +16,7 @@ angular.module('app').controller('accountController', function($scope, scopePayl
     /********** Watchers **********/
 
     $scope.accountListener = function(){
-        $scope.payload.segueButton = 'CONTINÚA';
+        $scope.payload.segueButton = 'CONTINUE';
         if(validateEmail($scope.given_email) ) {
             $scope.$parent.submittedData.user.email = $scope.given_email;
             checkEmailPresence($scope.given_email.toLowerCase());
@@ -27,7 +27,7 @@ angular.module('app').controller('accountController', function($scope, scopePayl
     };
 
     $scope.passwordListener = function(){
-        $scope.payload.segueButton = 'CONTINÚA';
+        $scope.payload.segueButton = 'CONTINUE';
         if ( (typeof $scope.pass1 !== "undefined") && ($scope.pass1.length > 0) && ($scope.pass1 == $scope.pass2) ) {
             $scope.$parent.submittedData.user.password = $scope.pass1;
             platform.createUser($scope.$parent.submittedData.user).then(function(data){
