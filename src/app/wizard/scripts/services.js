@@ -356,7 +356,7 @@ angular.module('app').service('SegueService', function() {
             "template": "make1",
             "url": 'username',
             "h2": "Nice, so you're new to Smart Citizen?",
-            "h4": "Add a username to your profile, so users knows who owns the sensor.",
+            "h4": "Add a username to your profile, so users know who owns the sensor.",
             "input1":"Enter a username",
             "input1_error":"A username is required",
             "contextButton": "Chose random name",
