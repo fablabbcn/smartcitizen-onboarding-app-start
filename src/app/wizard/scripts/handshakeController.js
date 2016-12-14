@@ -228,7 +228,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
             console.log("Light process done...");
             $scope.watchDog = $timeout(function() {
                 blockError();
-            }, 12000);
+            }, 18000);
         });
     });
 
