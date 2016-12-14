@@ -151,6 +151,18 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         $rootScope.$broadcast('modal');
     };
 
+    $scope.kitRegisterFailed = function() {
+        $scope.modalBox = 'red';
+        var data = {
+            title: "Uh oh",
+            body: "It seems there was a problem while registering your kit! Sorry, you need to restart the process.",
+            button: "Restart the process!",
+            action: "restart"
+        };
+        $scope.modalContent = data;
+        $rootScope.$broadcast('modal');
+    };
+
     $scope.handshakeFailed = function() {
         $scope.modalBox = 'red';
         var data = {
@@ -185,9 +197,22 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         }, 500);
     };
     $scope.modalButtonClick = function() {
-        if ($scope.modalContent.action == 'email') $window.open('mailto:feedback-4873-IVVSumgXA4EEA4e7blwZvyE2sshIpRRK@feedback.doorbell.io?Subject=MakingSense Support [' + $scope.onboarding_session + ']', '_blank');
-        else if ($scope.modalContent.action == 'retry') $scope.seque;
+        switch ($scope.modalContent.action) {
+            case 'email':
+                $window.open('mailto:feedback-4873-IVVSumgXA4EEA4e7blwZvyE2sshIpRRK@feedback.doorbell.io?Subject=MakingSense Support [' + $scope.onboarding_session + ']', '_blank');
+                break;
+            case 'retry':
+                $scope.seque;
+                break;
+            case 'restart':
+                $state.go('wizard.landing'); 
+                break;
+            default:
+                $scope.seque;
+                break;
+        }
     };
+
     $scope.$on('modal', function() {
         $scope.modalClass = 'showing';
     });
