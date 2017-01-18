@@ -412,7 +412,6 @@ angular.module('app').service('SegueService', function() {
     };
 
     this.nextPage = function(val, accountPresent){
-        console.log(val);
         if (val == 4) {
             return('whats_in_the_box');
         } else if (val == 23) {
@@ -466,8 +465,6 @@ angular.module('app').service('SegueService', function() {
 
     function payloadGenerate(content){
         var payload = content;
-        console.log(payload);
-
         var index = pageContent.findIndex(function(item, i){
             return item.index === payload.index;
         });

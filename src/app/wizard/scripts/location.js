@@ -41,35 +41,42 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
     // Default loc in IAAC
 
     var loc = {
-        zoom: 10,
+        zoom: 12,
         center: {
             latitude: 41.396867,
             longitude: 2.194351
         }
     };
 
-    /********** Init Functions **********/
-
     AnimationService.animate(scopePayload.index);
 
-    /********** Watchers **********/
-
     uiGmapIsReady.promise(1).then(function() { // Double check issue when browser back
-        setInitialPosition();
+        //setInitialPosition();
     });
 
     $scope.payload.segueButton = 'WAIT';
 
-    var t = $geolocation.getCurrentPosition({
-        timeout: 3000,
-        maximumAge: 250,
+    $geolocation.watchPosition({
+        timeout: 50,
+        maximumAge: 25,
         enableHighAccuracy: true
-    }).then(function(position) {
-        if ($scope.$parent) $scope.$parent.pos = position.coords;
-        setInitialPosition();
-    }, function(error){
-        prepSegue();
-        setInitialPosition();
+    });
+    $scope.$parent.pos = $geolocation.position;
+
+    $scope.$parent.$watch('pos.coords', function (newValue, oldValue) {
+        console.log("newValue:",newValue,"oldValue:",oldValue);
+        if ($scope.$parent && $scope.$parent.pos && oldValue) {
+            console.log('preSAVED')
+        }
+        if (typeof newValue == 'undefined') {
+            setMapData(loc.center, loc.center, loc.zoom);
+        } else {
+            console.log('captured');
+            var val = newValue;
+            var center = val;
+            var zoom = 18;
+            setMapData(center,val, zoom);
+        }
     });
 
 
@@ -82,7 +89,7 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
             $scope.$parent.submittedData.deviceData.user_tags.push($scope.locationTags[index]);
             $scope.tagStates[index] = 'active';
         }
-    }
+    };
 
     $scope.autoCompleteListener = function() {
         if ((typeof $scope.autocomplete !== 'undefined') && (typeof $scope.autocomplete.geometry !== 'undefined')) {
@@ -94,20 +101,9 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
         }
     };
 
-    /********** Functions **********/
-
-    function setInitialPosition() {
-        if ($scope.$parent && $scope.$parent.pos) {
-            setMapData($scope.$parent.pos, $scope.$parent.pos, 18);
-        } else {
-            console.warn('Unable to capture users location...');
-            setMapData(loc.center, loc.center, loc.zoom);
-        }
-    }
-
     function setMapData(center, marker, zoom) {
         if(!$scope.$parent) return;
-
+        console.log('THIS IS IN MAP DATA:',center,zoom);
         $scope.$parent.map = {
             center: {
                 latitude: center.latitude,
