@@ -2,7 +2,7 @@
 /**
  * Created by Lucian on 10/12/16.
  */
-angular.module('app').controller('accountController', function($scope, scopePayload, AnimationService, platform){
+angular.module('app').controller('accountController', function($scope, scopePayload, AnimationService, platform, $timeout){
     $scope.$parent.payload = scopePayload;
     AnimationService.animate(scopePayload.index);
    
@@ -109,17 +109,19 @@ angular.module('app').controller('accountController', function($scope, scopePayl
     /********** Functions **********/
 
     function loginAndBakeDevice(){
-        blockSegue();
         platform.login($scope.$parent.submittedData.user).then(function(data){
             platform.setAuth(data);
-            platform.bakeDevice().then(function (data) {
-                $scope.$parent.submittedData.deviceData.id = data.id;
-                console.log(data);
-                prepSegue();
-            }, function(){
-                console.log(data);
-                blockSegue();
-            });    
+            $timeout(function() {
+                platform.bakeDevice().then(function (data) {
+                    $timeout(function() {
+                        $scope.$parent.submittedData.deviceData.id = data.id;
+                        prepSegue();
+                    }, 500); // This is temp
+                }, function(){
+                    console.log(data);
+                    blockSegue();
+                });              
+            }, 500); // This is temp
         }, function (data) {
             console.log(data);
             blockSegue();
@@ -133,6 +135,7 @@ angular.module('app').controller('accountController', function($scope, scopePayl
             $scope.$parent.pre_made = true;
         }, function (data) {
             console.log(data);
+            $scope.$parent.pre_made = false;
             $scope.$parent.submittedData.user.username = ' ';
         })
     }
