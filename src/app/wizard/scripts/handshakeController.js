@@ -2,11 +2,9 @@
 /**
  * Created by Lucian on 10/14/16.
  */
-angular.module('app').controller('handshakeController', function($scope, scopePayload, AnimationService, $rootScope, platform, $state, $interval, $timeout) {
+angular.module('app').controller('handshakeController', function($scope, scopePayload, AnimationService, $rootScope, platform, $state, $interval, $timeout, $stateParams) {
     $scope.$parent.payload = scopePayload;
     AnimationService.animate(scopePayload.index);
-
-    $scope.handshakeLabel = 'Place your kit here';
 
     $scope.handshakeSubLabel = ''; // Not currently in use
 
@@ -14,6 +12,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
 
     $scope.$parent.spinnerControl = 'hide';
 
+    $scope.payload.segueButton = $scope.payload.continueButton;
 
     if ($scope.submittedData.wifi.ssid) {
         $scope.$parent.segueControl = 'ready';
@@ -27,7 +26,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     $scope.ssidListener = function() {
         if ((typeof wifi_ssid.ssid.value !== "undefined") && wifi_ssid.ssid.value.length > 0) {
             $scope.$parent.segueControl = 'ready';
-            $scope.payload.segueButton = 'CONTINUE';
+            $scope.payload.segueButton = $scope.payload.continueButton;
             $rootScope.$broadcast('removeError');
             $scope.submittedData.wifi.ssid = wifi_ssid.ssid.value;
         } else {
@@ -246,7 +245,9 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
         lightElement.style.setProperty('background-color', '#2E3439');
         $scope.$parent.handShakeState = true;
         $scope.handshakeLabel = 'Done! Please wait...';
-        $scope.payload.segueButton = 'WAIT';
+
+        $scope.payload.segueButton = $scope.payload.waitLabel;
+
         $scope.$parent.spinnerControl = 'hide';
         $scope.$parent.segueControl = 'blocked';
 
@@ -258,7 +259,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
         animateHandshakeLabel(false);
         $scope.$parent.handShakeRepeats = 0;
         if ($scope.watchDog) $timeout.cancel($scope.watchDog);
-        $scope.payload.segueButton = 'CONTINUE';
+        $scope.payload.segueButton = $scope.payload.continueButton;
         $scope.$parent.segueControl = 'ready';
         $rootScope.$broadcast('forceSegue', { target: 'wizard.confirm_handshake'})
     }
@@ -282,11 +283,11 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     }
 
     function backToWiFi() {
-        $scope.payload.segueButton = 'CONTINUE';
+        $scope.payload.segueButton = $scope.payload.continueButton;
         $scope.$parent.segueControl = 'ready';
         //WIZARD OF OZZ
-        $rootScope.$broadcast('forceSegue', { target: 'wizard.confirm_handshake'});
-        //$state.go('wizard.wifi_check');
+        //$rootScope.$broadcast('forceSegue', { target: 'wizard.confirm_handshake'});
+        $state.go('wizard.wifi_check', {lang: $stateParams.lang});
     }
 
     function animateHandshakeLabel(val){
@@ -308,14 +309,14 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
                 wifi_ssid.ssid.value = ($scope.submittedData.wifi.ssid) ? $scope.submittedData.wifi.ssid : '';
                 wifi_ssid.pass.value = ($scope.submittedData.wifi.password) ? $scope.submittedData.wifi.password : '';
                 $scope.$parent.segueControl = 'ready';
-                $scope.payload.segueButton = 'CONTINUE';
+                $scope.payload.segueButton = $scope.payload.continueButton;
                 $rootScope.$broadcast('removeError');
             }
         }, 0); // This is a trick for ng render cycle
     }
 
     $scope.alternateSegue = function () {
-        $rootScope.$broadcast('forceSegue', { target: 'wizard.accesspoint_pre'})
+        $rootScope.$broadcast('forceSegue', { target: 'wizard.accesspoint_pre', params: {lang: $stateParams.lang}});
     };
 
 });

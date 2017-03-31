@@ -38,7 +38,7 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
 
 
     $scope.selectPart = function(val){
-        console.log($scope.selectionButtons);
+        //console.log($scope.selectionButtons);
         if ($scope.tempBlock == true){
             $scope.tempBlock = false;
             return;
@@ -60,7 +60,7 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
     };
 
     function resetter(){
-        $scope.payload.segueButton = 'CONTINUE';
+        $scope.payload.segueButton = $scope.payload.continueButton;
         if ($scope.errorState == true){
             $rootScope.$broadcast('removeError');
         }

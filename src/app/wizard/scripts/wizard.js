@@ -89,7 +89,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         AnimationService.leaving(true);
         $scope.payload.progressShow = 'blue';
         $timeout(function() {
-            $state.go(args.target);
+            $state.go(args.target, args.params);
             $window.scrollTo(0, 0);
             $scope.payload.progressShow = ' ';
         }, 500); // see animations max duration time
