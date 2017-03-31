@@ -222,10 +222,20 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
         .state('wizard.accesspoint_3', {
             url: '/accesspoint_3?lang',
             templateUrl: 'app/wizard/prompted_entry.html',
-            controller: 'accesspointController',
+            controller: 'baseController',
             resolve: {
                 scopePayload: function (SegueService, $stateParams) {
                     return SegueService.prep(33, $stateParams.lang);
+                }
+            }
+        })
+        .state('wizard.accesspoint_4', {
+            url: '/accesspoint_4?lang',
+            templateUrl: 'app/wizard/ap_final.html',
+            controller: 'accesspointController',
+            resolve: {
+                scopePayload: function (SegueService, $stateParams) {
+                    return SegueService.prep(34, $stateParams.lang);
                 }
             }
         })

@@ -245,9 +245,9 @@ angular.module('app').service('SegueService', function () {
             "part": 5,
             "template": "prompted_entry",
             "url": "accesspoint_1",
-            "h2": "Awesome, go to your wifi settings and connect to the following wifi:",
-            "h4": "If you do not see it, ensure your kit is powered on.",
-            "promptedText": "smartCitizenSSID",
+            "h2": "Awesome, press the button on the kit until the LED turns red. Next go to your Wi-Fi settings and connect to the Wi-Fi named:",
+            "h4": "It might have some numbers at the end of it, that is normal. If you do not see it, ensure your kit is powered on and LED is red.",
+            "promptedText": "SmartCitizen",
             "segueButton": "CONNECTED"
         }, {
             "index": 32,
@@ -255,16 +255,25 @@ angular.module('app').service('SegueService', function () {
             "template": "prompted_entry",
             "url": "accesspoint_2",
             "h2": "Next, open your browser and go to:",
-            "h4": "If it does not work, make sure you are connected to the wifi",
-            "promptedText": "YourSmartCitizenKit.me",
+            "h4": "If this does not work, make sure you are connected to the kit's Wi-Fi .",
+            "promptedText": "SCKit.me",
             "segueButton": "CONNECTED"
         }, {
             "index": 33,
             "part": 6,
             "template": "prompted_entry",
             "url": "accesspoint_3",
-            "h2": "Finally, submit your wifi name, its password and when asked for your onboarding code type:",
-            "h4": "If the submitted wifi and password are correct you will be redirected shortly, follow the instructions on YourSmartCitizenKit.me",
+            "h2": "Finally, submit your Wi-Fi name and its password. When asked for your onboarding code type:",
+            "h4": "On the your mobile device you see a page with feedback from the sensor",
+            "promptedText": "YourSmartCitizenKit.me",
+            "segueButton": "CONNECTED"
+        }, {
+            "index": 34,
+            "part": 6,
+            "template": "ap_final",
+            "url": "accesspoint_4",
+            "h2": "Okay, if the submitted Wi-Fi and password are correct your kit's LED will go turn green and then after a few seconds will breathe blue.",
+            "h4": "If all worked properly you will be redirected from this page to the next step, in a few minutes. If this does not happen, or the light is flashing blue, make sure you entered your information correctly",
             "promptedText": "YourSmartCitizenKit.me",
             "segueButton": "CONNECTED"
         },
@@ -638,36 +647,45 @@ angular.module('app').service('SegueService', function () {
                 "part": 4,
                 "template": "basic",
                 "url": "accesspoint_pre",
-                "h1": "VAMOS A CONECTAR UN DISPOSITIVO MÓVIL A TU SENSOR",
-                "h4": "Este método es más simple. Coge cualquier dispositivo móvil, smartphone o tablet.",
-                "segueButton": "ENTENDIDO"
+                "h1": "LET'S CONNECT A MOBILE DEVICE TO YOUR SENSOR",
+                "h4": "This approach is more reliable. Grab any other mobile device, smartphone or tablet.",
+                "segueButton": "GOT IT"
             }, {
             "index": 31,
             "part": 5,
             "template": "prompted_entry",
             "url": "accesspoint_1",
-            "h2": "Estupendo, ve a tu configuracfión de red y conectate al siguiente Wi-Fi:",
-            "h4": "Si no lo ves, asegúrate de que tu Kit esté encendido.",
-            "promptedText": "smartCitizenSSID",
-            "segueButton": "CONECTADO"
+            "h2": "Awesome, press the button on the kit until the LED turns red. Next go to your Wi-Fi settings and connect to the Wi-Fi named:",
+            "h4": "It might have some numbers at the end of it, that is normal. If you do not see it, ensure your kit is powered on and LED is red.",
+            "promptedText": "SmartCitizen",
+            "segueButton": "CONNECTED"
         }, {
             "index": 32,
             "part": 6,
             "template": "prompted_entry",
             "url": "accesspoint_2",
-            "h2": "Después, abre tu navegador y ve a:",
-            "h4": "Si no funciona, asegúrate de estar conectado a la red",
-            "promptedText": "YourSmartCitizenKit.me",
-            "segueButton": "CONECTADO"
+            "h2": "Next, open your browser and go to:",
+            "h4": "If this does not work, make sure you are connected to the kit's Wi-Fi .",
+            "promptedText": "SCKit.me",
+            "segueButton": "CONNECTED"
         }, {
             "index": 33,
             "part": 6,
             "template": "prompted_entry",
             "url": "accesspoint_3",
-            "h2": "Por último, introduce el nombre de tu Wi-Fi, su contraseña y cuando te pida tu código de onboarding, escribe:",
-            "h4": "Si la Wi-Fi y contraseña introducidas son correctas, serás inmediatamente redirigido. Sigue las instrucciones en YourSmartCitizenKit.me",
+            "h2": "Finally, submit your Wi-Fi name and its password. When asked for your onboarding code type:",
+            "h4": "On the your mobile device you see a page with feedback from the sensor",
             "promptedText": "YourSmartCitizenKit.me",
-            "segueButton": "CONECTADO"
+            "segueButton": "CONNECTED"
+        }, {
+            "index": 34,
+            "part": 6,
+            "template": "ap_final",
+            "url": "accesspoint_4",
+            "h2": "Okay, if the submitted Wi-Fi and password are correct your kit's LED will go turn green and then after a few seconds will breathe blue.",
+            "h4": "If all worked properly you will be redirected from this page to the next step, in a few minutes. If this does not happen, or the light is flashing blue, make sure you entered your information correctly",
+            "promptedText": "YourSmartCitizenKit.me",
+            "segueButton": "CONNECTED"
         },
 
 
@@ -953,7 +971,7 @@ angular.module('app').service('SegueService', function () {
             return 1;
         } else if (index <= 20) {
             return 2;
-        } else if (index <= 33) {
+        } else if (index <= 34) {
             return 3;
         } else if (index <= 41) {
             return 4;
