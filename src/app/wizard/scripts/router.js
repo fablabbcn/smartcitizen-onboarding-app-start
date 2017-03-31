@@ -2,8 +2,6 @@
 
 angular.module('app').config(function($stateProvider, $urlRouterProvider, $locationProvider, RestangularProvider) {
 
-    var refreshed = false;
-
     $stateProvider
 
     /** -- INTRO -- **/
@@ -12,16 +10,11 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider, $locat
             templateUrl: 'app/wizard/wizard.html',
             controller: 'wizardCtrl',
             resolve: {
-                session: function(platform, $state){ 
+                session: function(platform, $state){
                     return platform.getSession().then(function(session){
                         platform.setSession(session);
                         console.log(session);
-                        // This ensure user will be always redirected temporary to avoid state issues.
-                        // Disable for development.
-                        if(!refreshed) {
-                            refreshed = true;
-                            $state.go('wizard.landing'); 
-                        }
+                        // This ensure user will be always redirected temporary to avoid state issues
                         return session;
                     }, function(){
                         $state.go('unavailable');
@@ -30,11 +23,13 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider, $locat
             }
         })
         .state('wizard.landing', {
-            url: '/landing',            //<< find way to remove these
+            url: '/landing?lang',            //<< find way to remove these
             templateUrl: 'app/wizard/landing.html',
             controller: 'baseController',
             resolve: {
-                scopePayload: function(SegueService){ return SegueService.prep(0); }
+                scopePayload: function(SegueService, $stateParams){
+                    return SegueService.prep(0, $stateParams.lang);
+                }
             }
         })
         .state('wizard.making_sense', {
@@ -269,7 +264,7 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider, $locat
         });
     
     /* Default state */
-    $urlRouterProvider.otherwise('/wizard/landing');
+    $urlRouterProvider.otherwise('/wizard/landing?lang');
     
     RestangularProvider.setBaseUrl('https://api.smartcitizen.me/v0');
 

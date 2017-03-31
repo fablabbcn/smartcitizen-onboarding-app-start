@@ -19,6 +19,8 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         user_tags: ["MakingSense", "Barcelona", "BarcelonaNoise", "MS1"] //We currently use defualt tags
     }
 
+
+
     $scope.onboarding_session = session.onboarding_session;
 
     $scope.pre_made = false; // Check this
