@@ -334,6 +334,20 @@ body {
           color: $msNavy;
         }
       }
+
+      .languageSelector{
+        .contextButton{
+          margin: 15px 75px !important;
+          #nextSVG {
+            position: relative;
+            top: 0;
+            left: 5px;
+            display: inline;
+            padding-right: 10px;
+          }
+        }
+      }
+
     }
   }
 }

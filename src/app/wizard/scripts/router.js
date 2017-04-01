@@ -25,7 +25,7 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
         .state('wizard.landing', {
             url: '/landing?lang',            //<< find way to remove these
             templateUrl: 'app/wizard/landing.html',
-            controller: 'baseController',
+            controller: 'landingController',
             resolve: {
                 scopePayload: function (SegueService, $stateParams) {
                     return SegueService.prep(0, $stateParams.lang);
@@ -411,7 +411,7 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
         });
 
     /* Default state */
-    $urlRouterProvider.otherwise('/wizard/landing?lang');
+    $urlRouterProvider.otherwise('/wizard/landing?lang=cat');
 
     RestangularProvider.setBaseUrl('https://api.smartcitizen.me/v0');
 

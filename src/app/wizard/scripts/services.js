@@ -13,7 +13,9 @@ angular.module('app').service('SegueService', function () {
                 "url": "landing",
                 "h1": "Welcome to the Making Sense pilot!",
                 "h4": "Let’s get you set up with a Smart Citizen kit, and sensing in no time",
-                "segueButton": "LET'S DO THIS"
+                "segueButton": "Continue in English",
+                "contextButton1":"CASTELLANO",
+                "contextButton2":"CATALÁ",
             }, {
             "index": 1,
             "part": 2,
@@ -422,7 +424,9 @@ angular.module('app').service('SegueService', function () {
                 "url": "landing",
                 "h1": "Bienvenido al Piloto de Making Sense!",
                 "h4": "Vamos a configurar el sensor Smart Citizen, y empezar a medir en breve",
-                "segueButton": "VAMOS"
+                "contextButton1":"ENGLISH",
+                "contextButton2":"CATALÁ",
+                "segueButton": "SIGUE EN CASTELLANO"
             }, {
             "index": 1,
             "part": 2,
@@ -820,7 +824,19 @@ angular.module('app').service('SegueService', function () {
             "h4": "Visita SmartCitizen.me para ver tu sensor en acción, capturando datos. No olvides leer el manual para las instrucciones de ensamblaje y consejos para instalar tu sensor en exteriores",
             "segueButton": "VISITAR SMARTCITIZEN.ME"
         }],
-        []
+        [{
+
+            /** -- INTRO -- **/
+            "index": 0,
+            "part": 1,
+            "template": "landing",
+            "url": "landing",
+            "h1": "BENVINGUDA",
+            "h4": "Anem a configurar amb un sensor, i sentint en cap moment.",
+            "segueButton": "Continue en Catala",
+            "contextButton1":"ENGLISH",
+            "contextButton2":"CASTELLANO",
+        }]
 
     ];
 
@@ -958,6 +974,7 @@ angular.module('app').service('SegueService', function () {
             case "make1":
             case "make2":
             case "wifi_check":
+            case "landing":
                 tuples = 4;
                 break;
             default:
