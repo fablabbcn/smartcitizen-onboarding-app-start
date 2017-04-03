@@ -61,10 +61,29 @@ body {
       font-size: 32px;
     }
   }
+  h3{
+    font-weight: 400;
+    font-size: 30px;
+    color: $msWhite;
+    @media screen and (max-width: 450px) {
+      font-size: 22px;
+    }
+    em{
+      font-style: normal !important;
+      &.green{
+        color: $msGreen;
+
+      }
+      &.orange{
+        color: $msOrange;
+      }
+    }
+  }
+
   h4, p{
     font-weight: 400;
     font-size: 28px;
-    color: $msWhite;
+    color: $msGrey;
     @media screen and (max-width: 450px) {
       font-size: 20px;
     }

@@ -130,7 +130,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         else if ($scope.payload.template == 'location_prep') {
             return; // We currently don't use errors for location_prep
         }
-        else if ($scope.payload.template == 'ap_final'){
+        else if ($scope.payload.url == 'ap_final'){
             console.log("final hit");
             return;
         }
