@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').controller('wizardCtrl', function($scope, $location, $sce, $window, $timeout, SegueService, $rootScope, AnimationService, session, platform, Restangular, $state) {
+angular.module('app').controller('wizardCtrl', function($scope, $location, $sce, $window, $timeout, SegueService, $rootScope, AnimationService, session, platform, Restangular, $state, $stateParams) {
 
     $scope.spinnerControl = 'hide';
 
@@ -155,14 +155,10 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
     };
 
     $scope.yes = function() {
+        //console.log($scope.lang,"d");
+        //SegueService.modalBox();
         $scope.modalBox = 'red';
-        var data = {
-            title: "Uh oh",
-            body: "It seems like you are missing parts of the kit. If that’s so, let’s notify the team and they’ll get back to you as soon as possible",
-            image: "app/images/alert.svg",
-            button: "Notify the team!",
-            action: "email"
-        };
+        var data = SegueService.modalBox(0,$scope.lang);
         $scope.modalContent = data;
         $rootScope.$broadcast('modal');
     };

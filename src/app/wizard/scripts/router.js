@@ -165,16 +165,16 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
                 }
             }
         })
-        .state('wizard.case2', {
-            url: '/case_2?lang',
-            templateUrl: 'app/wizard/casing.html',
-            controller: 'baseController',
-            resolve: {
-                scopePayload: function (SegueService, $stateParams) {
-                    return SegueService.prep(19, $stateParams.lang);
-                }
-            }
-        })
+        // .state('wizard.case2', {
+        //     url: '/case_2?lang',
+        //     templateUrl: 'app/wizard/casing.html',
+        //     controller: 'baseController',
+        //     resolve: {
+        //         scopePayload: function (SegueService, $stateParams) {
+        //             return SegueService.prep(19, $stateParams.lang);
+        //         }
+        //     }
+        // })
 
         .state('wizard.confirm_build', {
             url: '/confirm_build?lang',
@@ -182,7 +182,7 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
             controller: 'baseController',
             resolve: {
                 scopePayload: function (SegueService, $stateParams) {
-                    return SegueService.prep(20, $stateParams.lang);
+                    return SegueService.prep(19, $stateParams.lang);
                 }
             }
         })
@@ -222,7 +222,7 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
         .state('wizard.accesspoint_3', {
             url: '/accesspoint_3?lang',
             templateUrl: 'app/wizard/prompted_entry.html',
-            controller: 'baseController',
+            controller: 'accesspointController_pass',
             resolve: {
                 scopePayload: function (SegueService, $stateParams) {
                     return SegueService.prep(33, $stateParams.lang);

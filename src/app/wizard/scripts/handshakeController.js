@@ -14,6 +14,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
 
     $scope.payload.segueButton = $scope.payload.continueButton;
 
+
     if ($scope.submittedData.wifi.ssid) {
         $scope.$parent.segueControl = 'ready';
     }
@@ -78,6 +79,13 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     var myInterval;
     var lightElement = document.getElementById('handShakeSpace');
 
+    var currentLocation = 0;
+    function increasePercentage(){
+        currentLocation += 1;
+        $scope.$parent.loadingPercentage = currentLocation / (payload.length * 4);
+        return currentLocation / (payload.length * 4);
+    };
+
     function getColor(value, levelNum) {
         var previous = (value * (255.0 / (levelNum - 1)));
         var final = 255.0 * Math.pow((previous / 255.0), (1.0 / gamma));
@@ -86,6 +94,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     // Fills div with the requested color value
     function paint(colorValue) {
         lightElement.style.setProperty('background-color', getColor(colorValue, levelNum));
+        console.log(increasePercentage());
     };
 
     function outDigit(digit) {
@@ -250,7 +259,6 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
 
         $scope.$parent.spinnerControl = 'hide';
         $scope.$parent.segueControl = 'blocked';
-
     }
 
     //  Platform replies and we move forward

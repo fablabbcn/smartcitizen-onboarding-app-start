@@ -10,7 +10,6 @@ angular.module('app').controller('accesspointController', function($scope, scope
     //here would be waiting for the packet push
 
     platform.listenToken($scope.submittedData.deviceData.device_token, $scope);
-
     $scope.$on('token', function(e, data) {
         console.log("Token received...");
         prepSegue();
@@ -19,4 +18,12 @@ angular.module('app').controller('accesspointController', function($scope, scope
     function prepSegue() {
         $rootScope.$broadcast('forceSegue', { target: 'wizard.confirm_handshake'});
     }
+}).controller('accesspointController_pass', function ($scope, $stateParams, scopePayload, AnimationService, $rootScope) {
+    $rootScope.lang = $stateParams.lang;
+    $scope.$parent.payload = scopePayload;
+    AnimationService.animate(scopePayload.index);
+    $scope.$parent.segueControl = 'ready';
+    $scope.$parent.smartCitizenToggle = '';
+
+    $scope.payload.promptedText =  $scope.submittedData.deviceData.device_token;
 });

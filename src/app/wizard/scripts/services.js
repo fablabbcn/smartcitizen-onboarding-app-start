@@ -14,8 +14,8 @@ angular.module('app').service('SegueService', function () {
                 "h1": "Welcome to the Making Sense pilot!",
                 "h4": "Let’s get you set up with a Smart Citizen kit, and sensing in no time",
                 "segueButton": "Continue in English",
-                "contextButton1":"CASTELLANO",
-                "contextButton2":"CATALÁ",
+                "contextButton1": "CASTELLANO",
+                "contextButton2": "CATALÁ",
             }, {
             "index": 1,
             "part": 2,
@@ -42,7 +42,7 @@ angular.module('app').service('SegueService', function () {
             "url": "smart_citizen_brief",
             "image": "app/images/sck_glow.png",
             "h2": "The Smart Citizen Kit",
-            "h4": "This sensor is a Smart Citizen kit for environmental sensing. It measures sound, air quality, humidity, and lots of other things",
+            "h4": "This sensor is a Smart Citizen Kit for environmental sensing. It measures sound, air quality, humidity, and lots of other things",
             "segueButton": "CONTINUE"
         }, {
             "index": 4,
@@ -51,7 +51,7 @@ angular.module('app').service('SegueService', function () {
             "url": "smart_citizen_brief2",
             "image": "app/images/SCK_macbook.png",
             "h2": "smartcitizen.me",
-            "h4": "The sensor sends all the measurements to the Smart Citizen website. It's open and free for all to see, question and play with...",
+            "h4": "The kit sends all the measurements to the Smart Citizen website. It's open and free for all to see, question and play with...",
             "segueButton": "LET'S DO THIS"
         },
 
@@ -62,8 +62,8 @@ angular.module('app').service('SegueService', function () {
                 "part": 1,
                 "template": "basic",
                 "url": "whats_in_the_box",
-                "h1": "LET'S SET UP THE SENSOR",
-                "h4": "There's a few pieces we need to set up the kit, let's check we have them all",
+                "h1": "LET'S SET UP THE KIT",
+                "h4": "There's a few pieces we need to set up the Kit, let's check we have them all",
                 "segueButton": "I'M READY"
             }, {
             "index": 11,
@@ -80,7 +80,7 @@ angular.module('app').service('SegueService', function () {
             "part3": "Battery",
             "part3_desc": "This powers the device. Every so often it has to be recharged, especially after long periods of continuous use.",
             "part4": "Charging Cable",
-            "part4_desc": "When the kit needs to be charged, you can connect this cable to your computer or plug, and back to the kit.",
+            "part4_desc": "When the Kit needs to be charged, you can connect this cable to your computer or plug, and back to the Kit.",
             "modalButton": "OK, got it",
 
             "contextButton": "where is my enclosure?",
@@ -150,8 +150,8 @@ angular.module('app').service('SegueService', function () {
             "part": 8,
             "template": "kitbuild4",
             "url": "kitbuild_4",
-            "h2": "And finally, turn on the sensor",
-            "text": "Push the button on the sensor, once.",
+            "h2": "And finally, turn on the Kit",
+            "text": "Push the button on the Kit, until the LED is red.",
             "segueButton": "IT'S ALIVE"
         }, {
             "index": 18,
@@ -162,24 +162,26 @@ angular.module('app').service('SegueService', function () {
             "text": "Make sure you place it with the battery cable towards the bottom of the casing",
             "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosureBattSensor.png",
             "segueButton": "CONTINUE"
-        }, {
-            "index": 19,
-            "part": 10,
-            "template": "casing",
-            "url": "case_2",
-            "h2": "... and to finish, seal the cover",
-            "text": "Place the transparent plastic on the front of the case and fix it in place with the two white plugs.",
-            "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosure-wShineclasps.png",
-            "segueButton": "CONTINUE"
-        }, {
-            "index": 20,
-            "part": 11,
-            "template": "comfirm",
-            "url": "confirm_build",
-            "h1": "WELL DONE",
-            "h4": "Time to connect it to the internet",
-            "segueButton": "CONTINUE"
         },
+            // {
+            //     "index": 19,
+            //     "part": 10,
+            //     "template": "casing",
+            //     "url": "case_2",
+            //     "h2": "... and to finish, seal the cover",
+            //     "text": "Place the transparent plastic on the front of the case and fix it in place with the two white plugs.",
+            //     "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosure-wShineclasps.png",
+            //     "segueButton": "CONTINUE"
+            // },
+            {
+                "index": 19,
+                "part": 11,
+                "template": "comfirm",
+                "url": "confirm_build",
+                "h1": "WELL DONE",
+                "h4": "Time to connect it to the internet",
+                "segueButton": "CONTINUE"
+            },
 
 
             /** -- LIGHT HANDSHAKE -- **/
@@ -198,7 +200,7 @@ angular.module('app').service('SegueService', function () {
                 "segueButton": "IT'S READY",
                 "contextButton": "Try another way",
                 "contextButton2": "Ask for Help",
-                "continueButton":"CONTINUE"
+                "continueButton": "CONTINUE"
             }, {
             "index": 22,
             "part": 2,
@@ -206,23 +208,23 @@ angular.module('app').service('SegueService', function () {
             "url": 'handshake',
             "h2": "Now let's do some magic..",
             "h4": "Hold up your kit and press it on the screen over the box below and press 'connect'. Make sure the blue side of the kit is facing you",
-            "handshakeLabel":"Place your kit here",
-            "waitLabel":"WAIT",
+            "handshakeLabel": "Place your kit here",
+            "waitLabel": "WAIT",
             "segueButton": "CONNECT",
-            "continueButton":"CONTINUE"
+            "continueButton": "CONTINUE"
         }, {
             "index": 23,
             "part": 3,
             "template": "wifi_check",
             "url": "wifi_check",
             "h2": "Oops, something went wrong...",
-            "h4": "It seems there is a problem. Notice that the sensor light is red, please retry the Wi-Fi name and password",
+            "h4": "It seems there is a problem. Notice that the Kit light is red, please retry the Wi-Fi name and password",
             "segueButtonError": "CHECK THE FIELDS",
             "contextButton": "Try another way",
             "contextButton2": "Ask for Help",
-            "waitLabel":"WAIT",
+            "waitLabel": "WAIT",
             "segueButton": "CONNECT",
-            "continueButton":"CONTINUE"
+            "continueButton": "CONTINUE"
         }, {
             "index": 24,
             "part": 4,
@@ -247,16 +249,16 @@ angular.module('app').service('SegueService', function () {
             "part": 5,
             "template": "prompted_entry",
             "url": "accesspoint_1",
-            "h2": "Awesome, press the button on the kit until the LED turns red. Next go to your Wi-Fi settings and connect to the Wi-Fi named:",
-            "h4": "It might have some numbers at the end of it, that is normal. If you do not see it, ensure your kit is powered on and LED is red.",
-            "promptedText": "SmartCitizen",
+            "h2": "On your mobile device, to go your wifi settings and connect to the wifi called:",
+            "h4": "It will have some numbers at the end of it, check your book fo your number. If you do not see it, ensure your kit is powered on and LED is red.",
+            "promptedText": "SmartCitizen[...]",
             "segueButton": "CONNECTED"
         }, {
             "index": 32,
             "part": 6,
             "template": "prompted_entry",
             "url": "accesspoint_2",
-            "h2": "Next, open your browser and go to:",
+            "h2": "You should see this window on your mobile device",
             "h4": "If this does not work, make sure you are connected to the kit's Wi-Fi .",
             "promptedText": "SCKit.me",
             "segueButton": "CONNECTED"
@@ -267,8 +269,8 @@ angular.module('app').service('SegueService', function () {
             "url": "accesspoint_3",
             "h2": "Finally, submit your Wi-Fi name and its password. When asked for your onboarding code type:",
             "h4": "On the your mobile device you see a page with feedback from the sensor",
-            "promptedText": "YourSmartCitizenKit.me",
-            "segueButton": "CONNECTED"
+            "promptedText": "TOKEN HERE",
+            "segueButton": "DONE"
         }, {
             "index": 34,
             "part": 6,
@@ -315,8 +317,8 @@ angular.module('app').service('SegueService', function () {
                 "h2": "Where will you install the sensor?",
                 "h4": "By pressing 'allow' on the pop up we can determine the current location of the sensor. You can manually adjust this later to anywhere you want to place the sensor.",
                 "segueButton": "DONE",
-                "continueButton":"DONE!",
-                "waitButton":"WAIT"
+                "continueButton": "DONE!",
+                "waitButton": "WAIT"
             }, {
             "index": 51,
             "part": 2,
@@ -327,7 +329,7 @@ angular.module('app').service('SegueService', function () {
             "input1": "Enter an address",
             "input1_error": "",
             "segueButton": "ALL SET",
-            "continueButton":"ALL SET"
+            "continueButton": "ALL SET"
         },
             /*  We currently skip tags
              {
@@ -356,13 +358,13 @@ angular.module('app').service('SegueService', function () {
                 "part": 1,
                 "template": "account1",
                 "url": 'email',
-                "h2": "We can save the sensor with your email address",
+                "h2": "We can save the Kit with your email address",
                 "h4": "If you already have an account, we'll add it to that. If not, we'll quickly make a new one",
                 "segueButton": "CONTINUE",
                 "input1": "Put your email below",
                 "input1_error": "You must enter an email",
-                "segueButtonError":"CHECK EMAIL",
-                "continueButton":"CONTINNUE"
+                "segueButtonError": "CHECK EMAIL",
+                "continueButton": "CONTINNUE"
             }, {
             "index": 91,
             "part": 2,
@@ -370,7 +372,7 @@ angular.module('app').service('SegueService', function () {
             "url": 'login',
             "h2a": "Awesome, welcome back",
             "h2b": "enter your password below to finish!",
-            "h4": "This will push all of your new sensor's data to your account",
+            "h4": "This will push all of your new Kit's data to your account",
             "input1": "Password",
             "input1_error": "",
             "segueButtonError": "CHECK PASSWORD",
@@ -400,15 +402,15 @@ angular.module('app').service('SegueService', function () {
             "input1_error2": "You must enter a password",
             "segueButtonError": "PASSWORDS MUST MATCH",
             "segueButton": "ALL DONE!",
-            "continueButton":"ALL DONE!"
+            "continueButton": "ALL DONE!"
         }, {
             "index": 100,
             "part": 4,
             "template": "final",
             "url": 'final',
             "h1": "ITS ALIVE!",
-            "h2": "You have successfully installed and connected the Smart Citizen kit to the internet, and then added the kit to the global community of sensors",
-            "h4": "Visit SmartCitizen.me to see your sensor in action capturing data. Don't forget to read the manual for assembly instructions and good tips on placing your sensor in the wild",
+            "h2": "You have successfully installed and connected the Smart Citizen Kit to the internet, and then added the kit to the global community of sensors",
+            "h4": "Visit SmartCitizen.me to see your Kit in action capturing data. Don't forget to read the manual for assembly instructions and good tips on placing your sensor in the wild",
             "segueButton": "VISIT SMARTCITIZEN.ME"
         }
         ],
@@ -424,29 +426,29 @@ angular.module('app').service('SegueService', function () {
                 "url": "landing",
                 "h1": "Bienvenido al Piloto de Making Sense!",
                 "h4": "Vamos a configurar el sensor Smart Citizen, y empezar a medir en breve",
-                "contextButton1":"ENGLISH",
-                "contextButton2":"CATALÁ",
+                "contextButton1": "ENGLISH",
+                "contextButton2": "CATALÁ",
                 "segueButton": "SIGUE EN CASTELLANO"
-            }, {
-            "index": 1,
-            "part": 2,
-            "template": "collaborators",
-            "url": "making_sense",
-            "companyLogo": "app/images/MS LOGO.png",
-            "h2": "Making Sense es un proyecto que ayuda a las personas a entender su entorno.",
-            "h4": "Queremos ayudarte a implementar sensores para entender la contaminación acústica. Tomando conciencia del problema, seremos capaces de abordarlo.",
-            "segueButton": "SUENA BIEN!"
-        },
+            },
             {
-                "index": 2,
-                "part": 3,
+                "index": 1,
+                "part": 2,
                 "template": "collaborators",
-                "url": "smart_citizen",
-                "companyLogo": "app/images/SCK LOGO.png",
-                "h2": "Smart Citizen es un movimiento para la participación ciudadana en un mundo moderno",
-                "h4": "Smart Citizen crea herramientas abiertas para que los ciudadanos están mejor informado acerca del mundo a su alrededor.",
-                "segueButton": "CONTINÚA"
+                "url": "making_sense",
+                "companyLogo": "app/images/MS LOGO.png",
+                "h2": "Making Sense es un proyecto que ayuda a las personas a entender su entorno.",
+                "h4": "Queremos ayudarte a instalar sensores para entender la contaminación acústica. Tomando conciencia del problema, seremos capaces de abordarlo.",
+                "segueButton": "SUENA BIEN!"
             }, {
+            "index": 2,
+            "part": 3,
+            "template": "collaborators",
+            "url": "smart_citizen",
+            "companyLogo": "app/images/SCK LOGO.png",
+            "h2": "Smart Citizen es un movimiento para la participación ciudadana utilizando las últimas tecnologías.",
+            "h4": "Smart Citizen crea herramientas abiertas para que los ciudadanos están mejor informado acerca del mundo a su alrededor.",
+            "segueButton": "CONTINÚA"
+        }, {
             "index": 3,
             "part": 4,
             "template": "basic2",
@@ -462,7 +464,7 @@ angular.module('app').service('SegueService', function () {
             "url": "smart_citizen_brief2",
             "image": "app/images/SCK_macbook.png",
             "h2": "smartcitizen.me",
-            "h4": "El sensor envía todos los datos a la web de Smart Citizen. Es abierta y gratuita para todos, para ver, preguntar y jugar con ella...",
+            "h4": "El Kit envía todos los datos a la web de Smart Citizen. Es abierta y gratuita para todos, para ver, preguntar y jugar con ella...",
             "segueButton": "VAMOS"
         },
 
@@ -474,7 +476,7 @@ angular.module('app').service('SegueService', function () {
                 "template": "basic",
                 "url": "whats_in_the_box",
                 "h1": "CONFIGUREMOS EL SENSOR",
-                "h4": "El el Kit hay algunas piezas que tenemos que configurar, revisemos que las tenemos todas",
+                "h4": "En el Kit hay algunas piezas que tenemos que esamblar, revisemos que las tenemos todas",
                 "segueButton": "ESTOY LISTO"
             }, {
             "index": 11,
@@ -482,16 +484,16 @@ angular.module('app').service('SegueService', function () {
             "template": "selectparts",
             "url": "kit_parts",
             "h2": "Selecciona todas las piezas que has recibido",
-            "h4": "Tenemos que saberlo para que la configuración funcione sin problemas",
+            "h4": "Tenemos que saberlo para que la puedas configrarlo sin problemas",
 
             "part1": "Placa de Sensores",
             "part1_desc": "Es donde están todos los sensores. Se conecta a la placa de datos, para que los sensores puedan transmitir lo que han medido.",
             "part2": "Placa de Datos",
             "part2_desc": "Es donde se procesan todos los datos. Cada vez que quieras conectar algo al Kit de Smart Citizen, tendrás que hacerlo en esta placa",
             "part3": "Batería",
-            "part3_desc": "Es lo que alimenta el aparado. Tiene que ser cargada a menudo, especialmente si se usa durante un periodo de tiempo prolongado.",
+            "part3_desc": "Es lo que alimenta el sensor. Tiene que ser cargada a menudo, especialmente si se usa durante un periodo de tiempo prolongado.",
             "part4": "Cable USB",
-            "part4_desc": "Cuando el Kit necesita ser cargado, puedes utilizar este cable para conectar el Kit a tu ordenador o al enchufe.",
+            "part4_desc": "Cuando el Kit necesita ser cargado, puedes utilizar este cable para conectar el Kit a tu ordenador o a un enchufe del mismo modo que tu móvil.",
             "modalButton": "Entendido",
 
             "contextButton": "Dónde está mi carcasa?",
@@ -506,7 +508,7 @@ angular.module('app').service('SegueService', function () {
             "template": "selectparts2",
             "url": "carcasa",
             "h2": "Para finalizar...",
-            "h4": "No es necesario tener la carcasa, pero es útil para proteger tu Kit your kit contra los elementos atmosféricos",
+            "h4": "No es necesario tener la carcasa, pero es útil para proteger tu Kit contra la llúvia",
 
             "part5": "Carcasa",
             "part5_desc": "La carcasa es resistente al agua y permite colocar el dispositivo en diferentes superficies.",
@@ -518,7 +520,7 @@ angular.module('app').service('SegueService', function () {
             "part8_desc": "Se usan para fijar la tapa a la carcasa.",
             "modalButton": "Entendido",
 
-            "contextButton": "Where is my mine?",
+            "contextButton": "Dónde está el mío?",
             "segueButton": "CONTINÚA",
             "segueButtonError": "Te faltan piezas?",
             "continueButton": "CONTINÚA",
@@ -530,7 +532,7 @@ angular.module('app').service('SegueService', function () {
             "template": "comfirm",
             "url": "confirm_parts",
             "h1": "BIEN HECHO",
-            "h4": "Ahora vamos a poner todo junto",
+            "h4": "Ahora vamos a ponerlo todo junto",
             "segueButton": "CONTINÚA"
         }, {
             "index": 14,
@@ -545,7 +547,7 @@ angular.module('app').service('SegueService', function () {
             "part": 6,
             "template": "kitbuild2",
             "url": "kitbuild_2",
-            "h2": "Secgundo, conectamos los sensores",
+            "h2": "Segundo, conectamos los sensores",
             "text": "Conecta las clavijas de la placa de sensores en la placa de datos",
             "segueButton": "HECHO"
         }, {
@@ -553,7 +555,7 @@ angular.module('app').service('SegueService', function () {
             "part": 7,
             "template": "kitbuild3",
             "url": "kitbuild_3",
-            "h2": "Vamos a darle algo de poder",
+            "h2": "Vamos a darle alimetación",
             "text": "Conecta la batería con la placa de datos",
             "segueButton": "HECHO"
         }, {
@@ -561,16 +563,16 @@ angular.module('app').service('SegueService', function () {
             "part": 8,
             "template": "kitbuild4",
             "url": "kitbuild_4",
-            "h2": "Y por último, enciende el sensor",
-            "text": "Presiona el botón en el sensor, una vez.",
+            "h2": "Y por último, enciende el Kit",
+            "text": "Presiona el botón en el Kit, una vez.",
             "segueButton": "ESTÁ VIVO"
         }, {
             "index": 18,
             "part": 9,
             "template": "casing",
             "url": "case_1",
-            "h2": "Después, ponemos todo dentro de la carcasa",
-            "text": "Asegurate de colocar el kit con el cable de la batería hacia la parte inferior de la carcasa",
+            "h2": "Después, colocalo todo dentro de la carcasa",
+            "text": "Asegurate de colocar el Kit con el cable de la batería hacia la parte inferior de la carcasa",
             "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosureBattSensor.png",
             "segueButton": "CONTINÚA"
         }, {
@@ -588,7 +590,7 @@ angular.module('app').service('SegueService', function () {
             "template": "comfirm",
             "url": "confirm_build",
             "h1": "BIEN HECHO",
-            "h4": "Es la hora de conectarse a internet",
+            "h4": "Es la hora de conectarse a Internet",
             "segueButton": "CONTINÚA"
         },
 
@@ -609,33 +611,32 @@ angular.module('app').service('SegueService', function () {
                 "segueButton": "ESTÁ LISTO",
                 "contextButton": "Pruébalo de otra manera",
                 "contextButton2": "Pide ayuda",
-                "continueButton":"CONTINÚA"
+                "continueButton": "CONTINÚA"
             }, {
             "index": 22,
             "part": 2,
             "template": "handshake",
-            "url": 'handshake',
-            "h2": "Ahora vamos a hacer algo de magia..",
+            "url": "handshake",
+            "h2": "Ahora vamos a hacer algo de magia...",
             "h4": "Sostén tu Kit, sitúalo en la pantalla encima del cuadrado azul aquí abajo y presiona “conectar”. Asegurate de que el lado azul del Kit está hacia ti.",
-            "handshakeLabel":"coloque su sensor aquí",
-            "waitLabel":"ESPERE",
+            "handshakeLabel": "Coloque su Kit aquí",
+            "waitLabel": "ESPERE",
             "segueButton": "CONECTAR",
-            "continueButton":"CONTINÚA"
-        },
-            {
-                "index": 23,
-                "part": 3,
-                "template": "wifi_check",
-                "url": "wifi_check",
-                "h2": "Oops, algo ha salido mal...",
-                "h4": "Parece que hay un problema. Si la luce del sensor está en rojo, por favor vuelve a introducir el nombre del Wi-Fi y la contraseña",
-                "segueButtonError": "COMPRUEBA LOS CAMPOS",
-                "contextButton": "Pruébalo de otra manera",
-                "contextButton2": "Pide ayuda",
-                "waitLabel":"ESPERE",
-                "segueButton": "CONECTAR",
-                "continueButton":"CONTINÚA"
-            }, {
+            "continueButton": "CONTINÚA"
+        }, {
+            "index": 23,
+            "part": 3,
+            "template": "wifi_check",
+            "url": "wifi_check",
+            "h2": "Oops, algo ha salido mal...",
+            "h4": "Parece que hay un problema. Si la luz del Kit está en rojo, por favor vuelve a introducir el nombre del Wi-Fi y la contraseña",
+            "segueButtonError": "COMPRUEBA LOS CAMPOS",
+            "contextButton": "Pruébalo de otra manera",
+            "contextButton2": "Pide ayuda",
+            "waitLabel": "ESPERE",
+            "segueButton": "CONECTAR",
+            "continueButton": "CONTINÚA"
+        }, {
             "index": 24,
             "part": 4,
             "template": "comfirm",
@@ -651,45 +652,36 @@ angular.module('app').service('SegueService', function () {
                 "part": 4,
                 "template": "basic",
                 "url": "accesspoint_pre",
-                "h1": "LET'S CONNECT A MOBILE DEVICE TO YOUR SENSOR",
-                "h4": "This approach is more reliable. Grab any other mobile device, smartphone or tablet.",
-                "segueButton": "GOT IT"
+                "h1": "VAMOS A CONECTAR UN DISPOSITIVO MÓVIL A TU SENSOR",
+                "h4": "Este método es más simple. Coge cualquier dispositivo móvil, smartphone o tablet.",
+                "segueButton": "ENTENDIDO"
             }, {
             "index": 31,
             "part": 5,
             "template": "prompted_entry",
             "url": "accesspoint_1",
-            "h2": "Awesome, press the button on the kit until the LED turns red. Next go to your Wi-Fi settings and connect to the Wi-Fi named:",
-            "h4": "It might have some numbers at the end of it, that is normal. If you do not see it, ensure your kit is powered on and LED is red.",
-            "promptedText": "SmartCitizen",
-            "segueButton": "CONNECTED"
+            "h2": "Estupendo, ve a tu configuración de red y conectate al siguiente Wi-Fi:",
+            "h4": "Si no lo ves, asegúrate de que tu Kit esté encendido.",
+            "promptedText": "SmartCitizenXXX",
+            "segueButton": "CONECTADO"
         }, {
             "index": 32,
             "part": 6,
             "template": "prompted_entry",
             "url": "accesspoint_2",
-            "h2": "Next, open your browser and go to:",
-            "h4": "If this does not work, make sure you are connected to the kit's Wi-Fi .",
-            "promptedText": "SCKit.me",
-            "segueButton": "CONNECTED"
+            "h2": "Después, abre tu navegador y ve a:",
+            "h4": "Si no funciona, asegúrate de estar conectado a la red",
+            "promptedText": "mysck.me",
+            "segueButton": "CONECTADO"
         }, {
             "index": 33,
             "part": 6,
             "template": "prompted_entry",
             "url": "accesspoint_3",
-            "h2": "Finally, submit your Wi-Fi name and its password. When asked for your onboarding code type:",
-            "h4": "On the your mobile device you see a page with feedback from the sensor",
-            "promptedText": "YourSmartCitizenKit.me",
-            "segueButton": "CONNECTED"
-        }, {
-            "index": 34,
-            "part": 6,
-            "template": "ap_final",
-            "url": "accesspoint_4",
-            "h2": "Okay, if the submitted Wi-Fi and password are correct your kit's LED will go turn green and then after a few seconds will breathe blue.",
-            "h4": "If all worked properly you will be redirected from this page to the next step, in a few minutes. If this does not happen, or the light is flashing blue, make sure you entered your information correctly",
-            "promptedText": "YourSmartCitizenKit.me",
-            "segueButton": "CONNECTED"
+            "h2": "Por último, introduce el nombre de tu Wi-Fi, su contraseña y cuando te pida tu código de onboarding, escribe:",
+            "h4": "Si la Wi-Fi y contraseña introducidas son correctas, serás inmediatamente redirigido. Sigue las instrucciones en mysck.me",
+            "promptedText": "mysck.me",
+            "segueButton": "CONECTADO"
         },
 
 
@@ -701,17 +693,17 @@ angular.module('app').service('SegueService', function () {
                 "url": "sensorName_prep",
                 "h1": "VAMOS A DARLE UNA IDENTIDAD A TU SENSOR",
                 "h4": "Esto nos ayudará a saber de dónde vienen los datos...",
-                "segueButtonError": "ERIFICAR NOMBRE",
+                "segueButtonError": "VERIFICAR NOMBRE",
                 "segueButton": "CONTINÚA"
             }, {
             "index": 41,
             "part": 2,
             "template": "sensorName",
-            "url": 'sensorName',
-            "h2": "Qué nombre le vamos a dar a tu sensor?",
+            "url": "sensorName",
+            "h2": "Qué nombre le vamos a dar a tu Kit?",
             "h4": "Le puedes dar cualquier nombre. Así aparecerá en el mapa de Smart Citizen.",
-            "input1": "Introduce el nombre del sensor",
-            "input1_error": "El sensor necesita un nombre",
+            "input1": "Introduce el nombre del Kit",
+            "input1_error": "El Kit necesita un nombre",
             "contextButton": "Elige cualquier nombre",
             "segueButtonError": "VERIFICAR NOMBRE",
             "segueButton": "HECHO"
@@ -723,32 +715,32 @@ angular.module('app').service('SegueService', function () {
                 "index": 50,
                 "part": 1,
                 "template": "location_prep",
-                "url": 'location_prep',
-                "h2": "Donde instalarás tu sensor?",
-                "h4": "Presionando 'permite' en la ventana de diálogo podemos determinar la ubicación actual del sensor. Después se puede ajustar manualmente a cualquier lugar en que quieras ubicar el sensor.",
+                "url": "location_prep",
+                "h2": "Donde instalarás tu Kit?",
+                "h4": "Presionando 'permite' en la ventana de diálogo podemos determinar la ubicación actual del Kit. Después se puede ajustar manualmente a cualquier lugar en el que quieras ubicar el sensor.",
                 "segueButton": "HECHO",
-                "continueButton":"HECHO",
-                "waitButton":"ESPERA"
+                "continueButton": "HECHO",
+                "waitButton": "ESPERA"
             }, {
             "index": 51,
             "part": 2,
             "template": "location_map",
-            "url": 'location_map',
+            "url": "location_map",
             "h2": "Si deseas ajustarlo a otro lugar, puedes hacerlo aquí",
             "h4": "Recuerda que donde vaya tu dispositivo, necesitará Wi-fi. De lo contrario, tendrás que conectarlo de vez en cuando a tu ordenador para sincronizar los datos",
             "input1": "Introduce una dirección",
             "input1_error": "",
             "segueButton": "LISTO",
-            "continueButton":"LISTO"
+            "continueButton": "LISTO"
 
         },
             /*  We currently skip tags
              {
              "index": 52,
              "template": "location_tags",
-             url: 'location_tags',
-             "h2": "Selecciona el que mejor se ajusta al hogar de tu sensor",
-             "h4": "Esto nos ayudará a entender mejor los datos que estás midiendo",
+             url: 'location_tags",
+             "h2": "Selecciona las palabras que mejor describen la ubicación de tu sensor.",
+             "h4": "Esto  ayudarà a otros usuarios entender mejor los datos que estás midiendo",
              "segueButton": "TODO CONFIGURADO"
              },
              */
@@ -768,22 +760,22 @@ angular.module('app').service('SegueService', function () {
                 "index": 90,
                 "part": 1,
                 "template": "account1",
-                "url": 'email',
-                "h2": "Podemos guardar el sensor con tu dirección de correo electrónico",
-                "h4": "Si ya tienes una cuenta, lo agregamos a esta. Si no la tienes, rapidamente creamos una nueva",
+                "url": "email",
+                "h2": "Podemos guardar el Kit con tu dirección de correo electrónico",
+                "h4": "Si ya tienes una cuenta, lo añadiremos a esta. Si no la tienes, rapidamente crearemos una nueva",
                 "segueButtonError": "CONSULTAR CORREO ELECTRÓNICO",
                 "segueButton": "CONTINÚA",
-                "input1": "Ponga su correo electrónico a continuación",
+                "input1": "Pon tu correo electrónico a continuación",
                 "input1_error": "Debes poner un correo electrónico",
-                "continueButton":"CONTINÚA"
+                "continueButton": "CONTINÚA"
             }, {
             "index": 91,
             "part": 2,
             "template": "login",
-            "url": 'login',
+            "url": "login",
             "h2a": "Excelente, bienvenido!",
             "h2b": "Ingresa tu contraseña abajo para terminar!",
-            "h4": "Esto llevará todos los datos del sensor a tu cuenta",
+            "h4": "Esto llevará todos los datos del Kit a tu cuenta",
             "input1": "Contraseña",
             "input1_error": "",
             "segueButtonError": "VERIFICAR CONTRASEÑA",
@@ -792,9 +784,9 @@ angular.module('app').service('SegueService', function () {
             "index": 95,
             "part": 2,
             "template": "make1",
-            "url": 'username',
+            "url": "username",
             "h2": "Guay, eres nuevo en Smart Citizen?",
-            "h4": "Agrega un nombre de usuario a tu perfil, así los usuarios sabrán quien es el dueño del sensor.",
+            "h4": "Agrega un nombre de usuario a tu perfil, así los usuarios sabrán quien es el dueño del Kit.",
             "input1": "Introduce un nombre de usuario",
             "input1_error": "Es necesario proporcionar un nombre de usuario",
             "contextButton": "Elige un nombre cualquiera",
@@ -804,13 +796,13 @@ angular.module('app').service('SegueService', function () {
             "index": 96,
             "part": 3,
             "template": "make2",
-            "url": 'password',
-            "h2": "Ahora, escribe una contraseña para asegurar todo",
+            "url": "password",
+            "h2": "Ahora, escribe una contraseña para asegurarlo todo",
             "h4a": "La contraseña debe tener al menos 8 caracteres de largo",
             "h4b": "Y una vez más para asegurarnos de que no hay errores",
             "input1": "Contraseña",
             "input1_error": "La contraseña debe tener al menos 5 caracteres de largo",
-            "input1_error2": "YTienes que introducir una contraseña",
+            "input1_error2": "Tienes que introducir una contraseña",
             "segueButtonError": "LAS CONTRASEÑAS DEBEN COINCIDIR",
             "segueButton": "TODO LISTO!",
             "continueButton": "TODO LISTO!"
@@ -818,27 +810,441 @@ angular.module('app').service('SegueService', function () {
             "index": 100,
             "part": 4,
             "template": "final",
-            "url": 'final',
+            "url": "final",
             "h1": "ESTÁ VIVO!",
-            "h2": "Has instalado y conectado satisfactoriamente tu Kit Smart Citizen a internet, y a continuación agrega el Kit a la comunidad global de sensores",
-            "h4": "Visita SmartCitizen.me para ver tu sensor en acción, capturando datos. No olvides leer el manual para las instrucciones de ensamblaje y consejos para instalar tu sensor en exteriores",
+            "h2": "Has instalado y conectado satisfactoriamente tu Kit Smart Citizen a internet y agregado el Kit a la comunidad global de sensores",
+            "h4": "Visita SmartCitizen.me para ver tu Kit en acción, capturando datos. No olvides leer el manual para las instrucciones de ensamblaje y consejos para instalar tu Kit en exteriores",
             "segueButton": "VISITAR SMARTCITIZEN.ME"
-        }],
-        [{
+        }
+        ],
+        [
+            {
 
-            /** -- INTRO -- **/
-            "index": 0,
-            "part": 1,
-            "template": "landing",
-            "url": "landing",
-            "h1": "BENVINGUDA",
-            "h4": "Anem a configurar amb un sensor, i sentint en cap moment.",
-            "segueButton": "Continue en Catala",
-            "contextButton1":"ENGLISH",
-            "contextButton2":"CASTELLANO",
-        }]
+                /** -- INTRO -- **/
+                "index": 0,
+                "part": 1,
+                "template": "landing",
+                "url": "landing",
+                "h1": "Benvingut al Pilot de Making Sense!",
+                "h4": "Configura el teu Smart Citizen Kit i comença a medir en un tres i no res",
+                "segueButton": "SOM-HI!",
+                "contextButton1": "ENGLISH",
+                "contextButton2": "CASTELLANO",
+            }, {
+            "index": 1,
+            "part": 2,
+            "template": "collaborators",
+            "url": "making_sense",
+            "companyLogo": "app/images/MS LOGO.png",
+            "h2": "Making Sense és un projecte per ajudar a la gent a entendre millor el seu entorn.",
+            "h4": "Volem ajudar-te a instal·lar sensors per entendre millor la contaminació acústica. Prenent conciència del problema serem capaços de resoldre'l.",
+            "segueButton": "SONA BÉ!"
+        }, {
+            "index": 2,
+            "part": 3,
+            "template": "collaborators",
+            "url": "smart_citizen",
+            "companyLogo": "app/images/SCK LOGO.png",
+            "h2": "Smart Citizen és un moviment per la participació ciutadana utilitzant les últimes tecnologies.",
+            "h4": "Smart Citizen crea eines obertes per ajudar els ciutadans a entendre millor el seu entorn.",
+            "segueButton": "CONTINUA"
+        }, {
+            "index": 3,
+            "part": 4,
+            "template": "basic2",
+            "url": "smart_citizen_brief",
+            "image": "app/images/sck_glow.png",
+            "h2": "Smart Citizen Kit",
+            "h4": "Aquest sensors és un Smart Citizen Kit. Mesura soroll, qualitat de l'aire, humitat, i moltes coses més.",
+            "segueButton": "CONTINUA"
+        }, {
+            "index": 4,
+            "part": 5,
+            "template": "basic2",
+            "url": "smart_citizen_brief2",
+            "image": "app/images/SCK_macbook.png",
+            "h2": "smartcitizen.me",
+            "h4": "El sensor envia totes les mesures a la web d'Smart Citizen. És lliure i oberta perquè tothom pugui veure i qüestionar les dades...",
+            "segueButton": "FEM-HO"
+        },
+
+
+            /** -- WHATS IN THE BOX -- **/
+            {
+                "index": 10,
+                "part": 1,
+                "template": "basic",
+                "url": "whats_in_the_box",
+                "h1": "ANEM A INSTALAR EL SENSOR",
+                "h4": "Hi han algunes peces que cal muntar per instalar el Kit, revisa que les tens totes.",
+                "segueButton": "ESTIC APUNT"
+            }, {
+            "index": 11,
+            "part": 2,
+            "template": "selectparts",
+            "url": "kit_parts",
+            "h2": "Seleccionna totes les peces que has rebut",
+            "h4": "Hem d'assegurar-nos'en per poder seguir amb la instalació",
+
+            "part1": "Sensor Board",
+            "part1_desc": "Aquesta placa conté tots els sensors. Es connecta a la més gran de manera que els sensors puguin transmetre les dades.",
+            "part2": "Hardware Board",
+            "part2_desc": "Aquí és on tot el processament es duu a terme. Cada vegada que vulguis connectar algun sensor l'Smart Citizen Kit, serà en aquesta placa",
+            "part3": "Bateria",
+            "part3_desc": "Això alimenta el sensor. Cal carregar-la sovint, sobretot després de periodes d'ús continuats.",
+            "part4": "Cable de càrrega",
+            "part4_desc": "Quan vulguis carregar el Kit, pots conectar el Kit a un ordinador o carregador USB, tal com ho fas amb el teu móbil.",
+            "modalButton": "Entès",
+
+            "contextButton": "On és la carcassa?",
+            "segueButton": "CONTINUA",
+            "segueButtonError": "Are you missing parts?",
+            "continueButton": "CONTINUA",
+            "yesButton": "YES",
+            "noButton": "NO"
+        }, {
+            "index": 12,
+            "part": 3,
+            "template": "selectparts2",
+            "url": "case",
+            "h2": "Finally...",
+            "h4": "La carcassa no és indispensable, però és útil per protegir el Kit contra la pluja",
+
+            "part5": "Carcassa",
+            "part5_desc": "La carcassa és resistent a l'aigua i permet col·locar el dispositiu en diferents superfícies.",
+            "part6": "Espaiadors",
+            "part6_desc": "Situats entre les plaques de sensors i de dades, mantenen les plaques subjectes",
+            "part7": "Tapa",
+            "part7_desc": "Tanca la carcassa i s'utilitza per protegir el dispositiu de la pluja. Assegura't de col·locar els forats sobre del sensor de so.",
+            "part8": "Fixadors",
+            "part8_desc": "S'usen per fixar la tapa a la carcassa.",
+            "modalButton": "Entès",
+
+            "contextButton": "On és el meu?",
+            "segueButton": "CONTINUA",
+            "segueButtonError": "Et falten peces?",
+            "continueButton": "CONTINUA",
+            "yesButton": "YES",
+            "noButton": "NO"
+        }, {
+            "index": 13,
+            "part": 4,
+            "template": "comfirm",
+            "url": "confirm_parts",
+            "h1": "BEN FET",
+            "h4": "Ara anem a muntar-ho tot junt",
+            "segueButton": "CONTINUA"
+        }, {
+            "index": 14,
+            "part": 5,
+            "template": "kitbuild1",
+            "url": "kitbuild_1",
+            "h2": "Primer, els separadors...",
+            "text": "Col·loca un separador en cada forat de la placa de sensors",
+            "segueButton": "FET"
+        }, {
+            "index": 15,
+            "part": 6,
+            "template": "kitbuild2",
+            "url": "kitbuild_2",
+            "h2": "Després, connectem els sensor",
+            "text": "Connecta els pins de la placa de sensors a la placa de dades",
+            "segueButton": "FET"
+        }, {
+            "index": 16,
+            "part": 7,
+            "template": "kitbuild3",
+            "url": "kitbuild_3",
+            "h2": "Donem-li alimetació",
+            "text": "Connecta la bateria amb la placa de dades",
+            "segueButton": "FET"
+        }, {
+            "index": 17,
+            "part": 8,
+            "template": "kitbuild4",
+            "url": "kitbuild_4",
+            "h2": "I finalment, encén el Kit",
+            "text": "Pressiona el botó al Kit, només un cop.",
+            "segueButton": "FUNCIONA!"
+        }, {
+            "index": 18,
+            "part": 9,
+            "template": "casing",
+            "url": "case_1",
+            "h2": "A continuació posa-ho tot dins la carcassa",
+            "text": "Assegura't de col·locar el Kit amb el cable de la bateria cap a la part inferior de la carcassa",
+            "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosureBattSensor.png",
+            "segueButton": "CONTINUA"
+        }, {
+            "index": 19,
+            "part": 10,
+            "template": "casing",
+            "url": "case_2",
+            "h2": "... i per acabar, posa la tapa.",
+            "text": "Col·loca el plàstic transparent damunt la caixa i fixa'l al seu lloc amb les dues fixacions blanques",
+            "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosure-wShineclasps.png",
+            "segueButton": "CONTINUA"
+        }, {
+            "index": 20,
+            "part": 11,
+            "template": "comfirm",
+            "url": "confirm_build",
+            "h1": "BEN FET",
+            "h4": "És l'hora de connectar-se a Internet",
+            "segueButton": "CONTINUA"
+        },
+
+
+            /** -- LIGHT HANDSHAKE -- **/
+            {
+                "index": 21,
+                "part": 1,
+                "template": "wifi_enter",
+                "url": "wifi_enter",
+                "h2": "A quina xarxa Wi-Fi vols connectar el teu Kit a internet?",
+                "h4": "Hauràs d'escriure-la manualment...",
+                "input1": "Nom de la xarxa Wi-Fi",
+                "input1_error": "Has d'escriure el nom d'una xarxa Wi-Fi",
+                "input2": "Contrasenya",
+                "input2_error": "",
+                "segueButtonError": "COMROVA ELS CAMPS",
+                "segueButton": "APUNT!",
+                "contextButton": "Prova-ho d'una altre manera...",
+                "contextButton2": "Demana ajuda",
+                "continueButton": "CONTINUA"
+            }, {
+            "index": 22,
+            "part": 2,
+            "template": "handshake",
+            "url": "handshake",
+            "h2": "Ara  farem una mica de màgia.",
+            "h4": "Sostén el teu Kit contra la pantalla sobre del quadrat blau que apareix a sota i prem “conectar”. Assegura't que el costat blau del Kit mira cap a tu.",
+            "handshakeLabel": "Coloca el teu Kit aquí",
+            "waitLabel": "ESPERA",
+            "segueButton": "CONECTA",
+            "continueButton": "CONTINUA"
+        }, {
+            "index": 23,
+            "part": 3,
+            "template": "wifi_check",
+            "url": "wifi_check",
+            "h2": "Oops, alguna cosa ha fallat...",
+            "h4": "Sembla que hi ha un problema. Fixa't si la llum del Kit segueix vermella, siusplau torna a escriure el nom i la contraseña del teu Wi-Fi",
+            "segueButtonError": "CHECK THE FIELDS",
+            "contextButton": "Try another way",
+            "contextButton2": "Ask for Help",
+            "waitLabel": "ESPERA",
+            "segueButton": "CONECTA",
+            "continueButton": "CONTINUA"
+        }, {
+            "index": 24,
+            "part": 4,
+            "template": "comfirm",
+            "url": "confirm_handshake",
+            "h1": "BEN FET!",
+            "h4": "Has conectat el teu Kit a Internet!",
+            "segueButton": "CONTINUA"
+        },
+
+            /** -- WIFI HANDSHAKE -- **/
+            {
+                "index": 30,
+                "part": 4,
+                "template": "basic",
+                "url": "accesspoint_pre",
+                "h1": "Anem a conectar un dispositiu mòbil al teu Kit!",
+                "h4": "Aquesta és una manera més robusta. Agafa el teu móbil, smartphone o tablet.",
+                "segueButton": "ENTÈS"
+            }, {
+            "index": 31,
+            "part": 5,
+            "template": "prompted_entry",
+            "url": "accesspoint_1",
+            "h2": "Genial, ves a la configuració de xarxes Wi-Fi del teu mòbil i connecta't a la xarxa:",
+            "h4": "Si no trobes la xarxa assegura't que el teu Kit està encès.",
+            "promptedText": "SmartCitizenXXX",
+            "segueButton": "CONNECTAT"
+        }, {
+            "index": 32,
+            "part": 6,
+            "template": "prompted_entry",
+            "url": "accesspoint_2",
+            "h2": "Després, obre el teu navegador i visita:",
+            "h4": "Si no funciona assegura't que estàs connectat a la xarxa SmartCitizenXXX",
+            "promptedText": "mysck.me",
+            "segueButton": "CONNECTAT"
+        }, {
+            "index": 33,
+            "part": 6,
+            "template": "prompted_entry",
+            "url": "accesspoint_3",
+            "h2": "Finalment, escriu el nom del teu Wi-Fi, el teu password i quan ho demani el codi escriu:",
+            "h4": "Si el nom i contrasenya de la xarxa són correctes, seràs immediatament redirigit. Segueix les instruccions a mysck.me",
+            "promptedText": "mysck.me",
+            "segueButton": "CONNECTED"
+        },
+
+
+            /** -- NAMING -- **/
+            {
+                "index": 40,
+                "part": 1,
+                "template": "basic",
+                "url": "sensorName_prep",
+                "h1": "ÉS L'HORA DE DONAR-LI UN NOM AL TEU SENSOR",
+                "h4": "Això ens ajudarà a saber d'on venen les dades...",
+                "segueButtonError": "ESCULL UN NOM",
+                "segueButton": "CONTINUA"
+            }, {
+            "index": 41,
+            "part": 2,
+            "template": "sensorName",
+            "url": "sensorName",
+            "h2": "Quin nom li vols donar al teu Kit?",
+            "h4": "Li pots dir com vulguis. Així és com apareixerà al mapa d'Smart Citizen.",
+            "input1": "Escriu el nom del Kit",
+            "input1_error": "El Kit necessita un nom",
+            "contextButton": "Escull un nom aleatori",
+            "segueButtonError": "REPASSA EL NOM",
+            "segueButton": "DONE"
+        },
+
+
+            /** -- LOCATION -- **/
+            {
+                "index": 50,
+                "part": 1,
+                "template": "location_prep",
+                "url": "location_prep",
+                "h2": "On instal·laràs el Kit?",
+                "h4": "Pressionant 'permet' a la finestra de diàleg podrem determinar la ubicació actual del Kit. Després pots ajustar-la manualment a qualsevol lloc on vulguis situar el Kit.",
+                "segueButton": "FET",
+                "continueButton": "FET!",
+                "waitButton": "ESPERA"
+            }, {
+            "index": 51,
+            "part": 2,
+            "template": "location_map",
+            "url": "location_map",
+            "h2": "Si vols ajustar la ubicació ho pot fer aquí.",
+            "h4": "Recorda que el teu dispositiu necessita tenir accés Wi-Fi. Si no és així les dades no es guardaràn en temps real a la plataforma.",
+            "input1": "Introdueix la teva adreça",
+            "input1_error": "",
+            "segueButton": "FET",
+            "continueButton": "FET"
+        },
+            /*  We currently skip tags
+             {
+             "index": 52,
+             "template": "location_tags",
+             url: 'location_tags",
+             "h2": "Selecciona les paraules que millor descriuen el lloc on has instal·lat el Kit",
+             "h4": "Això ens ajudarà a saber el que estàs medint",
+             "segueButton": "TOT APUNT"
+             },
+             */
+            {
+                "index": 52,
+                "part": 3,
+                "template": "comfirm",
+                "url": "confirm_location",
+                "h1": "GAIREBÉ ESTEM",
+                "h4": "Finalment, és hora de guardar tot el que has configurat",
+                "segueButton": "CONTINUA"
+            },
+
+
+            /** -- ACCOUNT HERE -- **/
+            {
+                "index": 90,
+                "part": 1,
+                "template": "account1",
+                "url": "email",
+                "h2": "Podem guardar el Kit amb la teva adreça de correu electrònic",
+                "h4": "Si ja tens un compte a Smart Citizen l'afegirem allà. Si no, we'll quickly make a new one",
+                "segueButton": "CONTINUA",
+                "input1": "Afegeix el teu correu a continuació",
+                "input1_error": "Cal que afegeixis una adreça",
+                "segueButtonError": "COMPROVA L'ADREÇA",
+                "continueButton": "CONTINUA"
+            }, {
+            "index": 91,
+            "part": 2,
+            "template": "login",
+            "url": "login",
+            "h2a": "Genial, ben tornat!",
+            "h2b": "Escriu la teva contrasenya a sota per acabar!",
+            "h4": "Això enviarà a la plataforma totes les dades que has configurat sobre el teu Kit!",
+            "input1": "Contrasenya",
+            "input1_error": "",
+            "segueButtonError": "REPASSA LA CONTRASENYA",
+            "segueButton": "CONTINUA"
+        }, {
+            "index": 95,
+            "part": 2,
+            "template": "make1",
+            "url": "username",
+            "h2": "Guai, sembla que ets nou a Smart Citizen?",
+            "h4": "Afegeix un nom d'usuari al teu perfil, d'aquesta manera els altres usuaris sabràn de qui és el Kit.",
+            "input1": "Afegeix un nom d'usuari",
+            "input1_error": "El nom d'usuari és obligatori",
+            "contextButton": "Escull un nom aleatori",
+            "segueButtonError": "VALIDA EL NOM D'USUARI",
+            "segueButton": "CONTINUA"
+        }, {
+            "index": 96,
+            "part": 3,
+            "template": "make2",
+            "url": "password",
+            "h2": "Ara, afegeix una contrasenya per protegit el teu usuari",
+            "h4a": "La contrasenya ha de tenir com a mínim 8 caràcters",
+            "h4b": "I una vegada més per assegurar-nos que no hi han errors.",
+            "input1": "Password",
+            "input1_error": "La contrasenya ha de tenir com a mínim 5 caràcters",
+            "input1_error2": "Has d'introduir una contrasenya",
+            "segueButtonError": "LES CONTRASENYES NO COINCIDEIXEN",
+            "segueButton": "LLESTOS!",
+            "continueButton": "LLESTOS!"
+        }, {
+            "index": 100,
+            "part": 4,
+            "template": "final",
+            "url": "final",
+            "h1": "ÉS VIU!",
+            "h2": "El Kit ha estat configurat amb èxit i ja està publicant a Smart Citizen, la comunitat global de sensors",
+            "h4": "Visita SmartCitizen.me  per veure el teu Kit en acció publicant dades. No t'oblidis de llegir el el manual amb les instrucciones d'instal·lació i consell sobre com col·locar-lo a l'exterior.",
+            "segueButton": "VISIT SMARTCITIZEN.ME"
+        }
+        ]
 
     ];
+
+    var modalContent = [
+        [{
+            title: "Uh oh",
+            body: "It seems like you are missing parts of the kit. If that’s so, let’s notify the team and they’ll get back to you as soon as possible",
+            image: "app/images/alert.svg",
+            button: "Notify the team!",
+            action: "email"
+        }],
+        [],
+        []
+    ];
+
+
+    this.modalBox = function (type, lang) {
+        var langValue = 0;
+        if (lang == "esp") {
+            langValue = 1;
+            console.log("loading Spanish");
+        } else if (lang == "cat") {
+            langValue = 2;
+            console.log("loading Catalan");
+        } else {
+            console.log("loading English");
+        }
+        return modalContent[langValue][type];
+    };
 
     function getPageContent(val, index) {
         if (index == undefined) {
@@ -878,6 +1284,8 @@ angular.module('app').service('SegueService', function () {
     this.nextPage = function (val, accountPresent) {
         if (val == 4) {
             return ('whats_in_the_box');
+        } else if (val == 19) {
+            return getPageContent(val + 2).url;
         } else if (val == 23) {
             return ('handshake');
         } else if (val == 24) {
@@ -904,6 +1312,8 @@ angular.module('app').service('SegueService', function () {
     this.previousPage = function (val, accountPresent) {
         if (val == 10) {
             return ('smart_citizen_brief2')
+        } else if (val == 21) {
+            return getPageContent(val - 2).url;
         } else if (val == 30) {
             return ('wifi_check');
         } else if (val == 40) {
@@ -986,7 +1396,7 @@ angular.module('app').service('SegueService', function () {
     function setupProgressLeft(index) {
         if (index <= 4) {
             return 1;
-        } else if (index <= 20) {
+        } else if (index <= 19) {
             return 2;
         } else if (index <= 34) {
             return 3;
@@ -1002,7 +1412,7 @@ angular.module('app').service('SegueService', function () {
     function setupProgressRight(index) {
         if (index <= 4) {
             return "Introduction";
-        } else if (index <= 20) {
+        } else if (index <= 19) {
             return "What's in the Box";
         } else if (index <= 33) {
             return "Handshake";
