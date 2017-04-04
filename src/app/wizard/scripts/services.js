@@ -1155,7 +1155,7 @@ angular.module('app').service('SegueService', function () {
                 "template": "basic",
                 "url": "accesspoint_pre",
                 "h1": "ANEM A PROVAR-HO AMB EL TEU MÒBIL O TABLET",
-                "h4": "Aquest mètode és més senzill. Necessites cualsevols dispositiu móvil, smartphone o tablet.",
+                "h4": "Aquest mètode és més robust. Necessites qualsevol dispositiu móvil, smartphone o tablet.",
                 "segueButton": "ENTÈS"
             },
             {
