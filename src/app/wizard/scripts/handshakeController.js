@@ -9,20 +9,23 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     $scope.handshakeSubLabel = ''; // Not currently in use
 
     $scope.$parent.segueControl = 'blocked';
-
     $scope.$parent.spinnerControl = 'hide';
 
+    $scope.$parent.backgroundLoader = 'idle';
+
     $scope.payload.segueButton = $scope.payload.continueButton;
+
+    $scope.loadingPercentage = 0;
 
 
     if ($scope.submittedData.wifi.ssid) {
         $scope.$parent.segueControl = 'ready';
+        recoverPrevWiFi(); //On init recover prev wifi settings when going back
     }
 
     $scope.showPasswordToggle = 'password';
     $scope.forcePassword = false;
 
-    recoverPrevWiFi(); //On init recover prev wifi settings when going back
 
     $scope.ssidListener = function() {
         if ((typeof wifi_ssid.ssid.value !== "undefined") && wifi_ssid.ssid.value.length > 0) {
@@ -82,8 +85,8 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     var currentLocation = 0;
     function increasePercentage(){
         currentLocation += 1;
-        $scope.$parent.loadingPercentage = currentLocation / (payload.length * 4);
-        return currentLocation / (payload.length * 4);
+        $scope.loadingPercentage = (currentLocation / (payload.length * 4) * 100 );
+        return (currentLocation / (payload.length * 4) * 100 );
     };
 
     function getColor(value, levelNum) {
@@ -194,6 +197,9 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
         $scope.handshakeLabel = ' ';
         lightElement.style.setProperty('background-color', 'rgb(0, 0, 0)');
 
+        $scope.$parent.backgroundLoader = 'start';
+
+
         queue = [];
         payload = "";
         checksum = 0;
@@ -207,7 +213,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
         console.log($scope.submittedData.deviceData.device_token);
 
         setWord("auth\n");
-        setWord($scope.submittedData.wifi.ssid + "\n"); 
+        setWord($scope.submittedData.wifi.ssid + "\n");
         setWord($scope.submittedData.wifi.password + "\n");
         setWord($scope.submittedData.deviceData.device_token + "\n");
 
@@ -259,6 +265,8 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
 
         $scope.$parent.spinnerControl = 'hide';
         $scope.$parent.segueControl = 'blocked';
+
+        $scope.$parent.segueControl = 'blocked';
     }
 
     //  Platform replies and we move forward
@@ -269,7 +277,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
         if ($scope.watchDog) $timeout.cancel($scope.watchDog);
         $scope.payload.segueButton = $scope.payload.continueButton;
         $scope.$parent.segueControl = 'ready';
-        $rootScope.$broadcast('forceSegue', { target: 'wizard.confirm_handshake'})
+        $rootScope.$broadcast('forceSegue', { target: 'wizard.confirm_handshake', params: {lang: $stateParams.lang}});
     }
 
     //  Platform doesn't reply and we show error for a few seconds

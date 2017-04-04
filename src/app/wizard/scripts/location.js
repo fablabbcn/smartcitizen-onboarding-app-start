@@ -11,35 +11,57 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
     // Tags must be on this list https://api.smartcitizen.me/v0/tags
 
     $scope.locationTags = [
+        // 'park',
+        // 'beach',
+        // 'school',
+        // 'street',
+        // 'woods',
+        // 'residential',
+        // 'commercial',
+        // 'plaza',
+        // 'rural',
+        // 'busy',
+        // 'calm',
+        // 'terrace',
+        // 'balcony',
+        // 'window',
+        // 'garden',
+        // 'bicycle',
+        //
         'inside',
         'outside',
-        'park',
-        'beach',
-        'school',
-        'street',
-        'woods',
-        'residential',
-        'commercial',
-        'plaza',
-        'rural',
-        'busy',
-        'calm',
+        'ground floor',
+        'first floor',
+        'second floor',
+        'third floor',
+        'fourth floor',
+        'fifth floor',
         'terrace',
+        'garden',
         'balcony',
         'window',
-        'garden',
-        'bicycle'
+        'residential',
+        'commercial',
+        'kitchen',
+        'bedroom',
+        'living room',
+        'bathroom'
     ];
 
     $scope.tagStates = Array.apply(null, Array($scope.locationTags.length)).map(String.prototype.valueOf,'');
 
     $scope.$parent.payload = scopePayload;
-    $scope.$parent.segueControl = 'blocked';
 
-    if(!$scope.$parent.submittedData.deviceData.user_tags) $scope.$parent.submittedData.deviceData.user_tags = []
+    if ($scope.$parent.payload.url = "location_tags"){
+        $scope.$parent.segueControl = 'ready';
+    } else {
+        $scope.$parent.segueControl = 'blocked';
+        $scope.payload.segueButton = $scope.payload.waitButton;
+    }
+
+    if(!$scope.$parent.submittedData.deviceData.user_tags) $scope.$parent.submittedData.deviceData.user_tags = [];
 
     // Default loc in IAAC
-
     var loc = {
         zoom: 12,
         center: {
@@ -54,7 +76,6 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
         //setInitialPosition();
     });
 
-    $scope.payload.segueButton = $scope.payload.waitButton;
 
     $geolocation.watchPosition({
         timeout: 50,
@@ -132,7 +153,7 @@ angular.module('app').config(function(uiGmapGoogleMapApiProvider) {
             prepSegue();
             $scope.$parent.submittedData.deviceData.latitude = position.latitude;
             $scope.$parent.submittedData.deviceData.longitude = position.longitude;
-        } 
+        }
     }
 
     function prepSegue(){

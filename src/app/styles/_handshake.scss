@@ -1,0 +1,30 @@
+$handshakeBarHeight: 200px;
+$handshakeBarBackgroundColor: rgba(79,164,220, .2);
+$handshakeBarColor: $msGreen;
+
+.backgroundProgressLoader {
+  position: absolute;
+  top: 50%;
+  z-index: -1;
+  left: 0;
+  width: 100%;
+
+  &.idle {
+    visibility: hidden;
+  }
+  &.start {
+    visibility: visible;
+  }
+
+  md-progress-linear {
+    height: $handshakeBarHeight;
+    .md-container.md-mode-determinate {
+      height: $handshakeBarHeight;
+      background-color: $handshakeBarBackgroundColor;
+      .md-bar {
+        height: $handshakeBarHeight;
+        background-color: $handshakeBarColor;
+      }
+    }
+  }
+}
