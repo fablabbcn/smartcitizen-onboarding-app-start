@@ -16,7 +16,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         description: 'Making Sense Pilot #1',
         exposure: 'outdoor',
         kit_id: 11,
-        user_tags: ["MakingSense", "Barcelona", "BarcelonaNoise", "MS1"] //We currently use defualt tags
+        user_tags: ["MakingSense", "Barcelona", "Plaça del sol", "MS1"] //We currently use defualt tags
     }
 
 
@@ -44,7 +44,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
                     }
                     break;
                 case 'final':
-                    // $window.open('https://smartcitizen.me/kits/' + $scope.submittedData.deviceData.id, '_blank');
+                    $window.open('https://smartcitizen.me/kits/' + $scope.submittedData.deviceData.id, '_blank');
                     break;
                 case 'sensorName':
                     platform.updateDevice($scope.submittedData.deviceData).then(sequeTransition);

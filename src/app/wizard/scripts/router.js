@@ -275,14 +275,16 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
                 }
             }
         })
-
          .state('wizard.location_tags', {
-         url: '/location_tags',
+         url: '/location_tags?lang',
          templateUrl: 'app/wizard/location_tags.html',
          controller: 'locationController',
-         resolve: { scopePayload: function(SegueService){ return SegueService.prep(52); }}
+             resolve: {
+                 scopePayload: function (SegueService, $stateParams) {
+                     return SegueService.prep(52, $stateParams.lang);
+                 }
+             }
          })
-
         .state('wizard.confirm_location', {
             url: '/confirm_location?lang',
             templateUrl: 'app/wizard/confirm.html',

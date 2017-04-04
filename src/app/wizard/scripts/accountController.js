@@ -47,9 +47,10 @@ angular.module('app').controller('accountController', function($scope, scopePayl
         if( (typeof $scope.pass !== 'undefined') && ($scope.pass.length >= 5) ) {
             $scope.$parent.submittedData.user.password = $scope.pass;
             loginAndBakeDevice();
-        } else {
-            blockSegue();
         }
+        // else {
+        //     blockSegue();
+        // }
     };
 
     $scope.usernameListener = function(){
@@ -107,6 +108,10 @@ angular.module('app').controller('accountController', function($scope, scopePayl
         }
     };
 
+    $scope.forgotPassword = function(){
+        window.open("", '_blank');
+    };
+
     /********** Functions **********/
 
     function loginAndBakeDevice(){
@@ -120,12 +125,12 @@ angular.module('app').controller('accountController', function($scope, scopePayl
                     }, 500); // This is temp
                 }, function(){
                     console.log(data);
-                    blockSegue();
+                    checkSegue();
                 });              
             }, 500); // This is temp
         }, function (data) {
             console.log(data);
-            blockSegue();
+            checkSegue();
         })
     }
 
@@ -164,6 +169,7 @@ angular.module('app').controller('accountController', function($scope, scopePayl
     }
 
     checkSegue();
+
 
   
 });

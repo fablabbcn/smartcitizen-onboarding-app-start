@@ -23,6 +23,11 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
         return Restangular.one('onboarding/device').patch(data);
     }
 
+    function faker(data){
+        console.log('meh');
+        return Restangular.all('onboarding/device').post({});
+    }
+
     function bakeDevice(data) {
         return Restangular.all('onboarding/register').post({});
     }
@@ -79,7 +84,9 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
         login: login,
         createUser: createUser,
         listenDevice: listenDevice,
-        listenToken: listenToken
+        listenToken: listenToken,
+
+        faker: faker
     };
 
 });

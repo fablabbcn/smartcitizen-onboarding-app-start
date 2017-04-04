@@ -194,10 +194,11 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
     }
 
     function load(callback) {
-        $scope.handshakeLabel = ' ';
+        $scope.$parent.payload.handshakeLabel = ' ';
         lightElement.style.setProperty('background-color', 'rgb(0, 0, 0)');
 
         $scope.$parent.backgroundLoader = 'start';
+
 
 
         queue = [];
@@ -240,6 +241,7 @@ angular.module('app').controller('handshakeController', function($scope, scopePa
             $scope.$parent.handShakeRepeats++;
             console.log($scope.$parent.handShakeRetries);
             console.log("Light process done...");
+            $scope.loadingPercentage = 100;
             $scope.watchDog = $timeout(function() {
                 blockError();
             }, 18000);

@@ -354,7 +354,25 @@ angular.module('app').service('SegueService', function () {
                 "h2": "Is there anything we should know about location?",
                 "h4": "Selecting from the tags below can help us make sense of the data, and compare it more accurately",
                 "segueButton": "All SET",
-                "continueButton": "All SET"
+                "continueButton": "All SET",
+                "tags":['inside',
+                    'outside',
+                    'ground floor',
+                    'first floor',
+                    'second floor',
+                    'third floor',
+                    'fourth floor',
+                    'fifth floor',
+                    'terrace',
+                    'garden',
+                    'balcony',
+                    'window',
+                    'residential',
+                    'commercial',
+                    'kitchen',
+                    'bedroom',
+                    'living room',
+                    'bathroom']
             },
             {
                 "index": 53,
@@ -379,7 +397,7 @@ angular.module('app').service('SegueService', function () {
                 "input1": "Put your email below",
                 "input1_error": "You must enter an email",
                 "segueButtonError": "CHECK EMAIL",
-                "continueButton": "CONTINNUE"
+                "continueButton": "CONTINUE"
             },
             {
                 "index": 91,
@@ -392,7 +410,8 @@ angular.module('app').service('SegueService', function () {
                 "input1": "Password",
                 "input1_error": "",
                 "segueButtonError": "CHECK PASSWORD",
-                "segueButton": "CONTINUE"
+                "segueButton": "CONTINUE",
+                "contextButton": "FORGOT PASSWORD"
             },
             {
                 "index": 95,
@@ -604,18 +623,18 @@ angular.module('app').service('SegueService', function () {
                 "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosureBattSensor.png",
                 "segueButton": "CONTINÚA"
             },
+            // {
+            //     "index": 19,
+            //     "part": 10,
+            //     "template": "casing",
+            //     "url": "case_2",
+            //     "h2": "... y para terminar, cierra la tapa",
+            //     "text": "Coloca el plástico transparente en la parte delantera de la caja y fijalo en su lugar con las dos fijaciones blancas",
+            //     "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosure-wShineclasps.png",
+            //     "segueButton": "CONTINÚA"
+            // },
             {
                 "index": 19,
-                "part": 10,
-                "template": "casing",
-                "url": "case_2",
-                "h2": "... y para terminar, cierra la tapa",
-                "text": "Coloca el plástico transparente en la parte delantera de la caja y fijalo en su lugar con las dos fijaciones blancas",
-                "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosure-wShineclasps.png",
-                "segueButton": "CONTINÚA"
-            },
-            {
-                "index": 20,
                 "part": 11,
                 "template": "comfirm",
                 "url": "confirm_build",
@@ -785,7 +804,25 @@ angular.module('app').service('SegueService', function () {
                 "h2": "Selecciona las palabras que mejor describen la ubicación de tu sensor.",
                 "h4": "Esto  ayudarà a otros usuarios entender mejor los datos que estás midiendo",
                 "segueButton": "TODO CONFIGURADO",
-                "continueButton": "TODO CONFIGURADO"
+                "continueButton": "TODO CONFIGURADO",
+                "tags":['inside',
+                    'outside',
+                    'ground floor',
+                    'first floor',
+                    'second floor',
+                    'third floor',
+                    'fourth floor',
+                    'fifth floor',
+                    'terrace',
+                    'garden',
+                    'balcony',
+                    'window',
+                    'residential',
+                    'commercial',
+                    'kitchen',
+                    'bedroom',
+                    'living room',
+                    'bathroom']
             },
             {
                 "index": 53,
@@ -823,7 +860,9 @@ angular.module('app').service('SegueService', function () {
                 "input1": "Contraseña",
                 "input1_error": "",
                 "segueButtonError": "VERIFICAR CONTRASEÑA",
-                "segueButton": "CONTINÚA"
+                "segueButton": "CONTINÚA",
+                "contextButton": "OLVIDASTE CONTRASEÑA"
+
             },
             {
                 "index": 95,
@@ -1034,18 +1073,18 @@ angular.module('app').service('SegueService', function () {
                 "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosureBattSensor.png",
                 "segueButton": "CONTINUA"
             },
+            // {
+            //     "index": 19,
+            //     "part": 10,
+            //     "template": "casing",
+            //     "url": "case_2",
+            //     "h2": "... i per acabar, posa la tapa.",
+            //     "text": "Col·loca el plàstic transparent damunt la caixa i fixa'l al seu lloc amb les dues fixacions blanques",
+            //     "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosure-wShineclasps.png",
+            //     "segueButton": "CONTINUA"
+            // },
             {
                 "index": 19,
-                "part": 10,
-                "template": "casing",
-                "url": "case_2",
-                "h2": "... i per acabar, posa la tapa.",
-                "text": "Col·loca el plàstic transparent damunt la caixa i fixa'l al seu lloc amb les dues fixacions blanques",
-                "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosure-wShineclasps.png",
-                "segueButton": "CONTINUA"
-            },
-            {
-                "index": 20,
                 "part": 11,
                 "template": "comfirm",
                 "url": "confirm_build",
@@ -1215,7 +1254,25 @@ angular.module('app').service('SegueService', function () {
                 "h2": "Selecciona les paraules que millor descriuen el lloc on has instal·lat el Kit",
                 "h4": "Això ens ajudarà a saber el que estàs medint",
                 "segueButton": "TOT APUNT",
-                "continueButton": "TOT APUNT"
+                "continueButton": "TOT APUNT",
+                "tags":['inside',
+                    'outside',
+                    'ground floor',
+                    'first floor',
+                    'second floor',
+                    'third floor',
+                    'fourth floor',
+                    'fifth floor',
+                    'terrace',
+                    'garden',
+                    'balcony',
+                    'window',
+                    'residential',
+                    'commercial',
+                    'kitchen',
+                    'bedroom',
+                    'living room',
+                    'bathroom']
             },
             {
                 "index": 53,
@@ -1253,7 +1310,9 @@ angular.module('app').service('SegueService', function () {
                 "input1": "Contrasenya",
                 "input1_error": "",
                 "segueButtonError": "REPASSA LA CONTRASENYA",
-                "segueButton": "CONTINUA"
+                "segueButton": "CONTINUA",
+                "contextButton": "Oblivar CONTRASENYA"
+
             },
             {
                 "index": 95,
@@ -1463,6 +1522,7 @@ angular.module('app').service('SegueService', function () {
             case "make2":
             case "wifi_check":
             case "landing":
+            case "login":
                 tuples = 4;
                 break;
             default:
