@@ -220,7 +220,7 @@ angular.module('app').service('SegueService', function () {
                 "h2": "Now let's do some magic..",
                 "h4": "Hold up your kit and press it on the screen over the box below and press 'connect'. Make sure the blue side of the kit is facing you",
                 "handshakeLabel": "Place your kit here",
-                "waitLabel": "WAIT",
+                "waitLabel": "YOU CAN REMOVE YOUR DEVICE",
                 "segueButton": "CONNECT",
                 "continueButton": "CONTINUE"
             },
@@ -670,7 +670,7 @@ angular.module('app').service('SegueService', function () {
                 "h2": "Ahora vamos a hacer algo de magia...",
                 "h4": "Sostén tu Kit, sitúalo en la pantalla encima del cuadrado azul aquí abajo y presiona “conectar”. Asegurate de que el lado azul del Kit está hacia ti.",
                 "handshakeLabel": "Coloque su Kit aquí",
-                "waitLabel": "ESPERE",
+                "waitLabel": "YA PUEDES QUITAR EL KIT",
                 "segueButton": "CONECTAR",
                 "continueButton": "CONTINÚA"
             },
@@ -1120,7 +1120,7 @@ angular.module('app').service('SegueService', function () {
                 "h2": "Ara  farem una mica de màgia.",
                 "h4": "Sostén el teu Kit contra la pantalla sobre del quadrat blau que apareix a sota i prem “conectar”. Assegura't que el costat blau del Kit mira cap a tu.",
                 "handshakeLabel": "Coloca el teu Kit aquí",
-                "waitLabel": "ESPERA",
+                "waitLabel": "JA POTS TREURE EL KIT",
                 "segueButton": "CONECTA",
                 "continueButton": "CONTINUA"
             },
