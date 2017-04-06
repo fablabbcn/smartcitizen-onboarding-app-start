@@ -15,11 +15,11 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         device_token: session.device_token,
         description: 'Making Sense Pilot #1',
         exposure: 'outdoor',
-        kit_id: 11,
-        user_tags: ["MakingSense", "Barcelona", "Plaça del sol", "MS1"] //We currently use defualt tags
-    }
+        kit_id: 11
+    };
 
-
+    console.log( $scope.submittedData.deviceData.user_tags_array);
+    $scope.submittedData.deviceData.user_tags_array = ["MakingSense", "Barcelona", "Placa del sol", "MS1"];
 
     $scope.onboarding_session = session.onboarding_session;
 
@@ -79,6 +79,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         AnimationService.leaving(true);
         $scope.payload.progressShow = 'blue';
         $timeout(function() {
+            console.log($scope.payload.index);
             $location.path('/wizard/' + SegueService.nextPage($scope.payload.index, $scope.pre_made));
             $window.scrollTo(0, 0);
             $scope.payload.progressShow = ' ';
@@ -102,6 +103,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         $timeout(function() {
             $scope.segueControl = 'ready';
             //debugger;
+            console.log($scope.payload.index);
             $location.path('/wizard/' + SegueService.previousPage($scope.payload.index, $scope.pre_made));
             $window.scrollTo(0, 0);
             $scope.payload.progressShow = ' ';

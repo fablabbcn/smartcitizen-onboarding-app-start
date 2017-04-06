@@ -31,11 +31,12 @@ angular.module('app').controller('accountController', function($scope, scopePayl
         if ( (typeof $scope.pass1 !== "undefined") && ($scope.pass1.length > 0) && ($scope.pass1 == $scope.pass2) ) {
             $scope.$parent.submittedData.user.password = $scope.pass1;
             platform.createUser($scope.$parent.submittedData.user).then(function(data){
+                console.log('returned', data);
                 loginAndBakeDevice();
             },function(res){
                 if (res.data.errors.password) { 
                     console.error("Password " + res.data.errors.password[0])
-                } 
+                }
                 blockSegue();
             });
         } else {
@@ -117,17 +118,19 @@ angular.module('app').controller('accountController', function($scope, scopePayl
     function loginAndBakeDevice(){
         platform.login($scope.$parent.submittedData.user).then(function(data){
             platform.setAuth(data);
+            console.log("logged in successful");
             $timeout(function() {
                 platform.bakeDevice().then(function (data) {
+                    console.log("baked successful", data);
                     $timeout(function() {
                         $scope.$parent.submittedData.deviceData.id = data.id;
                         prepSegue();
-                    }, 500); // This is temp
+                    }, 250); // This is temp
                 }, function(){
-                    console.log(data);
+                    console.log("baked failed", data);
                     checkSegue();
                 });              
-            }, 500); // This is temp
+            }, 250); // This is temp
         }, function (data) {
             console.log(data);
             checkSegue();

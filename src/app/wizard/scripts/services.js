@@ -3,7 +3,8 @@
 angular.module('app').service('SegueService', function () {
 
     var pageContent = [
-        [{
+        [
+            {
 
             /** -- INTRO -- **/
             "index": 0,
@@ -453,7 +454,8 @@ angular.module('app').service('SegueService', function () {
                 "segueButton": "VISIT SMARTCITIZEN.ME"
             }
         ],
-        [{
+        [
+            {
 
             /** -- INTRO -- **/
             "index": 0,
@@ -903,7 +905,8 @@ angular.module('app').service('SegueService', function () {
                 "segueButton": "VISITAR SMARTCITIZEN.ME"
             }
         ],
-        [{
+        [
+            {
 
             /** -- INTRO -- **/
             "index": 0,
@@ -1443,7 +1446,7 @@ angular.module('app').service('SegueService', function () {
             return ('final');
         }
         else {
-            return getPageContent(val + 1).url;
+            return (getPageContent(val + 1).url);
         }
     };
     this.previousPage = function (val, accountPresent) {
@@ -1469,7 +1472,7 @@ angular.module('app').service('SegueService', function () {
             }
         }
         else {
-            return getPageContent(val - 1).url;
+            return (getPageContent(val - 1).url);
         }
     };
 

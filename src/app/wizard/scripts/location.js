@@ -10,6 +10,8 @@ angular.module('app').config(function (uiGmapGoogleMapApiProvider) {
 
     // Tags must be on this list https://api.smartcitizen.me/v0/tags
 
+    console.log($scope.$parent.submittedData.deviceData.user_tags_array);
+
     $scope.$parent.payload = scopePayload;
 
     $scope.locationTags = [
@@ -31,9 +33,6 @@ angular.module('app').config(function (uiGmapGoogleMapApiProvider) {
         'bicycle'
     ];
 
-    //console.log($scope.locationTags);
-    //console.log("tags", scopePayload.tags, $scope.$parent.payload.url);
-
     $scope.tagStates = Array.apply(null, Array($scope.locationTags.length)).map(String.prototype.valueOf, '');
 
     if ($scope.$parent.payload.url = "location_tags") {
@@ -43,8 +42,6 @@ angular.module('app').config(function (uiGmapGoogleMapApiProvider) {
         $scope.$parent.segueControl = 'blocked';
         $scope.payload.segueButton = $scope.payload.waitButton;
     }
-
-    // if (!$scope.$parent.submittedData.deviceData.user_tags) $scope.$parent.submittedData.deviceData.user_tags = [];
 
     // Default loc in IAAC
     var loc = {
@@ -85,15 +82,14 @@ angular.module('app').config(function (uiGmapGoogleMapApiProvider) {
         }
     });
 
-    $scope.$parent.submittedData.deviceData.user_tags = ["MakingSense", "Barcelona", "Plaça del sol", "MS1"]; //this is needed here for some reason copied from wizard : 19
-
     $scope.tagToggle = function (itr) {
         var index = $scope.locationTags.indexOf(itr);
+        console.log("WOE");
         if ($scope.tagStates[index] == 'active') {
             $scope.tagStates[index] = '';
-            $scope.$parent.submittedData.deviceData.user_tags.splice($scope.$parent.submittedData.deviceData.user_tags.indexOf(itr), 1);
+            $scope.$parent.submittedData.deviceData.user_tags_array.splice($scope.$parent.submittedData.deviceData.user_tags_array.indexOf(itr), 1);
         } else {
-            $scope.$parent.submittedData.deviceData.user_tags.push($scope.locationTags[index]);
+            $scope.$parent.submittedData.deviceData.user_tags_array.push($scope.locationTags[index]);
             $scope.tagStates[index] = 'active';
         }
     };

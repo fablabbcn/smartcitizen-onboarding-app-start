@@ -19,16 +19,14 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
     }
 
     function updateDevice(data) {
-        if (data.user_tags) data.user_tags = data.user_tags.toString(); // Convert Array to String. Restangular fails?
+        console.log('CULPRIT');
+
+        if (data.user_tags_array) data.user_tags = data.user_tags_array.toString(); // Convert Array to String. Restangular fails?
         return Restangular.one('onboarding/device').patch(data);
     }
 
-    function faker(data){
-        console.log('meh');
-        return Restangular.all('onboarding/device').post({});
-    }
-
     function bakeDevice(data) {
+        console.log('calling bake');
         return Restangular.all('onboarding/register').post({});
     }
 
@@ -84,9 +82,7 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
         login: login,
         createUser: createUser,
         listenDevice: listenDevice,
-        listenToken: listenToken,
-
-        faker: faker
+        listenToken: listenToken
     };
 
 });
