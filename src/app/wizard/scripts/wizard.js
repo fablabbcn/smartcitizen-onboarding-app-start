@@ -19,7 +19,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
     };
 
     console.log( $scope.submittedData.deviceData.user_tags_array);
-    $scope.submittedData.deviceData.user_tags_array = ["MakingSense", "Barcelona", "Placa del sol", "MS1"];
+    $scope.submittedData.deviceData.user_tags_array = ["MakingSense", "Barcelona", "Plaça del sol", "MS1"];
 
     $scope.onboarding_session = session.onboarding_session;
 
