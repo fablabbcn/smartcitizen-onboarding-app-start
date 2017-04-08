@@ -84,7 +84,6 @@ angular.module('app').config(function (uiGmapGoogleMapApiProvider) {
 
     $scope.tagToggle = function (itr) {
         var index = $scope.locationTags.indexOf(itr);
-        console.log("WOE");
         if ($scope.tagStates[index] == 'active') {
             $scope.tagStates[index] = '';
             $scope.$parent.submittedData.deviceData.user_tags_array.splice($scope.$parent.submittedData.deviceData.user_tags_array.indexOf(itr), 1);

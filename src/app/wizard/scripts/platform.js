@@ -19,8 +19,6 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
     }
 
     function updateDevice(data) {
-        console.log('CULPRIT');
-
         if (data.user_tags_array) data.user_tags = data.user_tags_array.toString(); // Convert Array to String. Restangular fails?
         return Restangular.one('onboarding/device').patch(data);
     }
@@ -28,6 +26,7 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
     function bakeDevice(data) {
         console.log('calling bake');
         return Restangular.all('onboarding/register').post({});
+
     }
 
     function checkEmail(emailString) {
