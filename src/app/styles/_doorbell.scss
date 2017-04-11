@@ -1,0 +1,22 @@
+#doorbell-button {
+    position: fixed;
+    visibility: visible !important;
+    cursor: pointer;
+    bottom: 0;
+    right: 5%;
+    width: auto;
+    border: 0;
+    //background:  #61CD72;
+    background: #4AA3DF;
+    text-transform: uppercase;
+    color: #FFF;
+    padding: 10px 20px;
+    margin: 0;
+    z-index: 100;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    font-family: Rubik, sans-serif !important;
+    font-weight: 500;
+    font-size: 19px;
+}

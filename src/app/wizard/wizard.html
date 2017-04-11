@@ -1,7 +1,11 @@
 <!--<canvas></canvas>-->
 
-<div id="progress" layout="row" layout-align="center center" flex="none">
+<div id="progress" layout="column" layout-align="center center" flex="none" ng-class="payload.progressShow">
     <md-progress-linear md-diameter="100" md-mode="determinate" bar-height="50px" value="{{payload.progressVal}}"></md-progress-linear>
+    <div id="progressLabels" layout="row" layout-align="space-between start">
+        <p id="left">{{payload.progressLeftLabel}}</p>
+        <p id="right">{{payload.progressRightLabel}}</p>
+    </div>
 </div>
 
 <div id="wizardView" layout="column" layout-align="center none" ui-view flex ></div>
@@ -9,11 +13,13 @@
 <div class="bottomNav animate" layout="row" layout-align="space-around center" flex="none" ng-class="animationRows[0][0]">
     <div  hide-xs>
         <button class="backButton" ng-click="back()" ng-class="payload.backBlock">
-            <svg width="36px" height="49px" viewBox="8 10 36 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+
+            <svg width="10px" height="16px" viewBox="327 653 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <!-- Generator: Sketch 41.1 (35376) - http://www.bohemiancoding.com/sketch -->
+                <desc>Created with Sketch.</desc>
                 <defs></defs>
-                <text id="directleft" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="25" font-weight="normal">
-                    <tspan x="8" y="48">directleft</tspan>
-                </text>
+                <path d="M336.867188,660.739483 C336.95573,660.807192 337,660.893129 337,660.997296 C337,661.117088 336.95573,661.203025 336.867188,661.255108 L327.539062,668.926983 C327.434895,669.005109 327.317709,669.015525 327.1875,668.958233 C327.062499,668.900941 327,668.801984 327,668.661358 L327,653.333233 C327,653.192608 327.062499,653.09365 327.1875,653.036358 C327.317709,652.979066 327.434895,652.989483 327.539062,653.067608 L336.867188,660.739483 Z" id="directright" stroke="none" fill="#2A3F49" fill-rule="evenodd" transform="translate(332.000000, 660.997296) scale(-1, 1) translate(-332.000000, -660.997296) "></path>
             </svg>
         </button>
     </div>
@@ -37,8 +43,13 @@
                 <path d="M187.539062,22.0676084 L196.867188,29.7394834 C196.95573,29.8071921 197,29.8931287 197,29.9972959 C197,30.1170882 196.95573,30.2030248 196.867188,30.2551084 L187.539062,37.9269834 C187.434895,38.0051088 187.317709,38.0155254 187.1875,37.9582334 C187.062499,37.9009415 187,37.8019841 187,37.6613584 L187,22.3332334 C187,22.1926077 187.062499,22.0936504 187.1875,22.0363584 C187.317709,21.9790665 187.434895,21.989483 187.539062,22.0676084 L187.539062,22.0676084 Z" id="directright" stroke="none" fill="#FFFFFF" fill-rule="evenodd"></path>
             </svg>
         </button>
-        <button class="yesButton errorButton" ng-click="yes()" ng-class="errorButton" hide-xs>YES</button>
-        <button class="noButton errorButton" ng-click="no()"ng-class="errorButton" hide-xs>NO</button>
+        <div class="spinnerWrapper" ng-class="spinnerControl">
+            <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+            </svg>
+        </div>
+        <button class="yesButton errorButton" ng-click="yes()" ng-class="errorButton" hide-xs>{{ payload.yesButton }}</button>
+        <button class="noButton errorButton" ng-click="no()"ng-class="errorButton" hide-xs>{{ payload.noButton }}</button>
     </div>
     <div hide-xs>
         <button class="forwardButton" ng-click="forward()" ng-class="payload.forwardBlock" style="visibility: hidden;">

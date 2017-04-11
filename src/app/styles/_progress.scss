@@ -1,6 +1,7 @@
 $barHeight: 15px;
 $barBackgroundColor: rgba(79,164,220, .2);
 $barColor: rgb(79,164,220);
+$labelMargin: 50px;
 
 #progress{
   md-progress-linear  {
@@ -11,6 +12,36 @@ $barColor: rgb(79,164,220);
       .md-bar {
         height: $barHeight;
         background-color: $barColor;
+      }
+    }
+  }
+
+  #progressLabels {
+    width: 100%;
+    p {
+      margin: 5px 0;
+      font-size: 20px;
+      -webkit-transition: color 0.75s cubic-bezier(0.86, 0, 0.07, 1);
+      -moz-transition: color 0.75s cubic-bezier(0.86, 0, 0.07, 1);
+      -ms-transition: color 0.75s cubic-bezier(0.86, 0, 0.07, 1);
+      -o-transition: color 0.75s cubic-bezier(0.86, 0, 0.07, 1);
+      transition: color 0.75s cubic-bezier(0.86, 0, 0.07, 1);
+      color: $msNavy2;
+    }
+    #left{
+      margin-left: $labelMargin;
+      text-align: left;
+    }
+    #right{
+      margin-right: $labelMargin;
+      text-align: right;
+    }
+  }
+
+  &:hover, &.blue{
+    #progressLabels{
+      p {
+        color: $msBlue;
       }
     }
   }

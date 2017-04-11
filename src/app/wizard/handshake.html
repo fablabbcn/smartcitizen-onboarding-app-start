@@ -8,20 +8,11 @@
 
 <div class="animate" ng-class="animationRows[3][2]" layout="column" layout-align="center center" flex="grow">
     <div layout-align="center center" layout="row" id="handShakeSpace" flex style="height: 35vw; width: 35vw; min-width: 480px; min-height: 480px; background-color:#4AA3DF; border-radius: 10vw;">
-        <div style="display: block; width: 350px;"><h2 style="font-size: 35px; text-align: left;">{{handshakeLabel}}</h2></div>
-        <!--<svg width="373px" height="373px" viewBox="534 336 373 373" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">-->
-        <!--&lt;!&ndash; Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch &ndash;&gt;-->
-        <!--<desc>Created with Sketch.</desc>-->
-        <!--<defs></defs>-->
-        <!--<g id="SVG_case" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(535.000000, 337.000000)">-->
-        <!--<path d="M3.35382648,81.7368988 C7.19298895,42.7242108 41.8668351,7.3280505 80.9043493,3.61531715 L115.333267,1.14829673 C154.513861,-0.108910326 218.051464,-0.634604211 257.233634,1.149191 L291.66087,3.61641116 C330.644386,7.74847713 365.21557,42.7374188 368.135614,81.8425787 L370.063129,116.09643 C371.051711,155.293466 371.465385,218.844397 370.063129,258.041452 L368.135614,292.295303 C364.883296,331.366357 330.60753,366.008504 291.50237,368.928548 L257.248518,370.856062 C218.051483,371.844644 154.500552,372.258319 115.303497,370.856062 L81.0496453,368.928548 C41.9785919,365.676229 6.80053811,331.439298 3.35281077,292.387776 L1.06689957,258.026567 C-0.100965597,218.837752 -0.589481695,155.293485 1.06689957,116.111315 L3.35382648,81.7368988 Z" id="Rectangle-7" fill="#4AA3DF"></path>-->
-        <!--<text id="Place-kit-here" font-family="Rubik-Regular, Rubik" font-size="30" font-weight="normal" line-spacing="40" fill="#FFFFFF">-->
-        <!--<tspan x="89.495" y="199">Place kit here</tspan>-->
-        <!--</text>-->
-        <!--</g>-->
-        <!--</svg>-->
-        <!--remove the following dependency from the JS-->
-
+        <div style="display: block; width: 350px;"><h2 style="font-size: 35px; text-align: center;">{{payload.handshakeLabel}}</h2></div>
     </div>
+</div>
+
+<div class="backgroundProgressLoader" ng-class="backgroundLoader">
+    <md-progress-linear md-mode="determinate" value="{{ loadingPercentage }}"></md-progress-linear>
 </div>
 

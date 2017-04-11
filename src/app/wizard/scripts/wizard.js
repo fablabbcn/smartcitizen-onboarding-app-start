@@ -1,6 +1,8 @@
 'use strict';
 
-angular.module('app').controller('wizardCtrl', function($scope, $location, $sce, $window, $timeout, SegueService, $rootScope, AnimationService, session, platform, Restangular, $state) {
+angular.module('app').controller('wizardCtrl', function($scope, $location, $sce, $window, $timeout, SegueService, $rootScope, AnimationService, session, platform, Restangular, $state, $stateParams) {
+
+    $scope.spinnerControl = 'hide';
 
     /** Submitted User Data **/
     $scope.submittedData = {};
@@ -13,9 +15,11 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         device_token: session.device_token,
         description: 'Making Sense Pilot #1',
         exposure: 'outdoor',
-        kit_id: 11,
-        user_tags: ["MakingSense", "Barcelona"] //We currently use defualt tags
-    }
+        kit_id: 11
+    };
+
+    console.log( $scope.submittedData.deviceData.user_tags_array);
+    $scope.submittedData.deviceData.user_tags_array = ["MakingSense", "Barcelona", "Plaça del sol", "MS1"];
 
     $scope.onboarding_session = session.onboarding_session;
 
@@ -25,7 +29,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
 
     $scope.handShakeState = false;
     $scope.handShakeRepeats = 0;
-    $scope.handShakeRetries = 2;
+    $scope.handShakeRetries = 4;
 
     /** Base Navigation  **/
     $scope.seque = function() {
@@ -73,21 +77,36 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
 
     function sequeTransition() {
         AnimationService.leaving(true);
+        $scope.payload.progressShow = 'blue';
         $timeout(function() {
+            console.log($scope.payload.index);
             $location.path('/wizard/' + SegueService.nextPage($scope.payload.index, $scope.pre_made));
             $window.scrollTo(0, 0);
+            $scope.payload.progressShow = ' ';
         }, 500); // see animations max duration time
     }
+    $scope.$on('forceSegue', function (event, args) {
+        console.log(args.target);
+        AnimationService.leaving(true);
+        $scope.payload.progressShow = 'blue';
+        $timeout(function() {
+            $state.go(args.target, args.params);
+            $window.scrollTo(0, 0);
+            $scope.payload.progressShow = ' ';
+        }, 500); // see animations max duration time
+    });
 
     function backTransition() {
         //debugger;
         AnimationService.leaving(false);
+        $scope.payload.progressShow = 'blue';
         $timeout(function() {
             $scope.segueControl = 'ready';
             //debugger;
-
+            console.log($scope.payload.index);
             $location.path('/wizard/' + SegueService.previousPage($scope.payload.index, $scope.pre_made));
             $window.scrollTo(0, 0);
+            $scope.payload.progressShow = ' ';
         }, 500); // see animations max duration time
     }
 
@@ -110,6 +129,13 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         else if ($scope.payload.template == 'handshake') {
             return; // We currently don't use errors for handshake
         }
+        else if ($scope.payload.template == 'location_prep') {
+            return; // We currently don't use errors for location_prep
+        }
+        else if ($scope.payload.url == 'ap_final'){
+            console.log("final hit");
+            return;
+        }
         $scope.segueControl = 'error';
         $scope.errorButton = 'show';
         $rootScope.$broadcast('blockedSegue');
@@ -131,13 +157,21 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
     };
 
     $scope.yes = function() {
+        //console.log($scope.lang,"d");
+        //SegueService.modalBox();
+        $scope.modalBox = 'red';
+        var data = SegueService.modalBox(0,$scope.lang);
+        $scope.modalContent = data;
+        $rootScope.$broadcast('modal');
+    };
+
+    $scope.kitRegisterFailed = function() {
         $scope.modalBox = 'red';
         var data = {
             title: "Uh oh",
-            body: "It seems like you are missing parts of the kit. If that’s so, let’s notify the team and they’ll get back to you as soon as possible",
-            image: "app/images/alert.svg",
-            button: "Notify the team!",
-            action: "email"
+            body: "It seems there was a problem while registering your kit! Sorry, you need to restart the process.",
+            button: "Restart the process!",
+            action: "restart"
         };
         $scope.modalContent = data;
         $rootScope.$broadcast('modal');
@@ -173,12 +207,26 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         $scope.modalClass = 'out';
         $timeout(function() {
             $scope.modalClass = 'hidden';
+            $rootScope.$broadcast('modalClosed'); // This starts the light
         }, 500);
     };
     $scope.modalButtonClick = function() {
-        if ($scope.modalContent.action == 'email') $window.open('mailto:support@smartcitizen.me?Subject=SmartCitizen Support [' + $scope.onboarding_session + ']', '_blank');
-        else if ($scope.modalContent.action == 'retry') $scope.seque;
+        switch ($scope.modalContent.action) {
+            case 'email':
+                $window.open('mailto:feedback-4873-IVVSumgXA4EEA4e7blwZvyE2sshIpRRK@feedback.doorbell.io?Subject=MakingSense Support [' + $scope.onboarding_session + ']', '_blank');
+                break;
+            case 'retry':
+                $scope.seque;
+                break;
+            case 'restart':
+                $state.go('wizard.landing'); 
+                break;
+            default:
+                $scope.seque;
+                break;
+        }
     };
+
     $scope.$on('modal', function() {
         $scope.modalClass = 'showing';
     });

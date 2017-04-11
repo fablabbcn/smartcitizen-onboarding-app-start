@@ -122,7 +122,7 @@ $button-height: $segueWrapperHeight / 2.75;
         position: relative;
         top: -14px;
         padding-left: 5px;
-
+        text-transform: uppercase;
       }
       #nextSVG {
         position: relative;
@@ -146,6 +146,9 @@ $button-height: $segueWrapperHeight / 2.75;
       }
       &.blocked {
         border: 5px solid $msWhite;
+      }
+      &.hide {
+        display: none;
       }
       &.error {
         -webkit-animation-name: segueError;
@@ -218,7 +221,6 @@ $button-height: $segueWrapperHeight / 2.75;
     border: 5px solid $msNavy2;
     svg {
       position: relative;
-      left: 3px;
     }
     tspan {
       fill: $msWhite;

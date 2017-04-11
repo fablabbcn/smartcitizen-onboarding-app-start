@@ -26,6 +26,8 @@ $break-sm: 960px;
 @import "tags";
 @import "handshake";
 @import "media_queries";
+@import "doorbell";
+@import "_loader.scss";
 
 html, body { margin: 0; padding: 0; }
 canvas {vertical-align: top; z-index: 0}
@@ -59,10 +61,29 @@ body {
       font-size: 32px;
     }
   }
+  h3{
+    font-weight: 400;
+    font-size: 30px;
+    color: $msWhite;
+    @media screen and (max-width: 450px) {
+      font-size: 22px;
+    }
+    em{
+      font-style: normal !important;
+      &.green{
+        color: $msGreen;
+
+      }
+      &.orange{
+        color: $msOrange;
+      }
+    }
+  }
+
   h4, p{
     font-weight: 400;
     font-size: 28px;
-    color: $msWhite;
+    color: $msGrey;
     @media screen and (max-width: 450px) {
       font-size: 20px;
     }
@@ -282,7 +303,7 @@ body {
         height: 60px;
         width: auto;
         margin: 15px auto;
-        padding: 5px 5px 5px 15px;
+        padding: 5px 15px 5px 15px;
 
         text-transform: uppercase;
         background: $msNavy2;
@@ -322,6 +343,30 @@ body {
           }
         }
       }
+
+      .promptedText{
+        background-color: $msBlue;
+        border-radius: $divRadius * 2;
+        padding: 15px 45px;
+        //max-width: 400px;
+        h2{
+          color: $msNavy;
+        }
+      }
+
+      .languageSelector{
+        .contextButton{
+          margin: 15px 75px !important;
+          #nextSVG {
+            position: relative;
+            top: 0;
+            left: 5px;
+            display: inline;
+            padding-right: 10px;
+          }
+        }
+      }
+
     }
   }
 }

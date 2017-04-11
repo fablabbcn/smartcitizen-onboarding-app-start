@@ -1,22 +1,24 @@
-'use strict';
+ 'use strict';
 
-angular.module('app').controller('stateCtlr', function($scope, $rootScope, scopePayload, AnimationService){
+angular.module('app').controller('stateCtlr', function($scope, $rootScope, scopePayload, AnimationService, $stateParams){
     $scope.$parent.payload = scopePayload;
     AnimationService.animate(scopePayload.index);
+
+    $rootScope.lang = $stateParams.lang;
 
     function setUpSelection(){
         blockSegue();
         $scope.morphControl =['closed'];
 
         if ($scope.$parent.payload.template == 'selectparts2') {
-            $scope.selectionButtons = [''];
-            $scope.partButtons = [false];
+            $scope.selectionButtons = ['','','',''];
+            $scope.partButtons = [false,false,false,false];
         } else {
             $scope.selectionButtons = ['', '', '', ''];
             $scope.partButtons = [false,false,false,false];
         }
 
-        $scope.infoImages = ['app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png', 'app/images/question.png' ];
+        $scope.infoImages = ['app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png', 'app/images/info1.png','app/images/info1.png','app/images/info1.png','app/images/info1.png' ];
     }
     function prepSegue(){
         $scope.$parent.segueControl ='ready';
@@ -38,7 +40,7 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
 
 
     $scope.selectPart = function(val){
-        console.log($scope.selectionButtons);
+        //console.log($scope.selectionButtons);
         if ($scope.tempBlock == true){
             $scope.tempBlock = false;
             return;
@@ -60,7 +62,7 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
     };
 
     function resetter(){
-        $scope.payload.segueButton = 'CONTINUE';
+        $scope.payload.segueButton = $scope.payload.continueButton;
         if ($scope.errorState == true){
             $rootScope.$broadcast('removeError');
         }
@@ -115,27 +117,39 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
     $scope.infoClick = function(val){
         $scope.$parent.modalBox = 'green';
         var data = [{
-            "title": "Sensor Board",
-            "body": "This is where all the sensors are. It connects to the bigger, hardware board, so that the sensors can transmit what they find.",
+            "title": $scope.payload.part1,
+            "body": $scope.payload.part1_desc,
             "image": "app/images/BOARDS-CUTOUT_0003_SENSOR-BOARD-BLUE.png"
         }, {
-            "title": "Hardware Board",
-            "body": "This is where all the computation takes place. Anytime you want to connect something to the Smart Citizen, it will be on this board",
+            "title": $scope.payload.part2,
+            "body": $scope.payload.part2_desc,
             "image": "app/images/BOARDS-CUTOUT_0002_HARDWARE-BOARD-WHITE.png"
         }, {
-            "title": "Polymer Battery",
-            "body": "This powers the device. Every so often it has to be recharged, especially after long periods of continuous use.",
+            "title": $scope.payload.part3,
+            "body": $scope.payload.part3_desc,
             "image": "app/images/BOARDS-CUTOUT_0006_BATTERY2.png"
         }, {
-            "title": "Charging Cable",
-            "body": "When the kit needs to be charged, you can connect this cable to your computer or plug, and back to the kit.",
+            "title": $scope.payload.part4,
+            "body": $scope.payload.part4_desc,
             "image": "app/images/BOARDS-CUTOUT_0005_USBgreen.png"
         }, {
-            "title": "Made for bespoke cases",
-            "body": "When the kit needs to be charged, you can connect this cable to your computer or plug, and back to the kit.",
+            "title": $scope.payload.part5,
+            "body": $scope.payload.part5_desc,
             "image": "app/images/BOARDS-CUTOUT_0008_ANGLED.png"
+        }, {
+            "title": $scope.payload.part6,
+            "body": $scope.payload.part6_desc,
+            "image": "app/images/spacers.png"
+        }, {
+            "title": $scope.payload.part7,
+            "body": $scope.payload.part7_desc,
+            "image": "app/images/screen.png"
+        }, {
+            "title": $scope.payload.part8,
+            "body": $scope.payload.part8_desc,
+            "image": "app/images/plugs.png"
         }];
-        data[val].button = 'OK, got it';
+        data[val].button = $scope.payload.modalButton;
         $scope.$parent.modalContent = data[val];
         $scope.tempBlock = true;
         $rootScope.$broadcast('modal');

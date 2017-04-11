@@ -1,44 +1,9 @@
 <div class="kitBuildHolder animate" layout="column" layout-align="center center" flex="grow" ng-class="animationRows[3][0]">
-    <img ng-src="app/images/connect1.png" class="buildImage">
+    <img ng-src="app/images/connect0.png" class="buildImage">
 </div>
 <div class="animate" ng-class="animationRows[3][1]">
     <h2>{{payload.h2}}</h2>
 </div>
 <div class="buildInstructions animate" ng-class="animationRows[3][2]">
-
-    <!--TAKEN FROM OUTPUT #TODO - make this automatically generated -->
-
-    <p>Connect the pins on the
-        <span class='tooltip tooltip-effect-4'>
-            <span class='tooltip-item'>
-                <svg width="18px" height="25px" viewBox="291 13 18 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <text id="question" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="18" font-weight="normal">
-                        <tspan x="291" y="32" fill="#FFFFFF">question</tspan>
-                    </text>
-                </svg>
-                sensor board
-            </span>
-            <span class='tooltip-content'>
-                <img src='app/images/BOARDS-CUTOUT_0003_SENSOR-BOARD-BLUE.png'>
-                <span class='tooltip-text'>Sensor Board</span>
-            </span>
-        </span>
-        to the
-        <span class='tooltip tooltip-effect-4'>
-            <span class='tooltip-item'>
-                <svg width="18px" height="25px" viewBox="291 13 18 25" version="1.1" xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <text id="question" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="18"
-          font-weight="normal">
-                        <tspan x="291" y="32" fill="#FFFFFF">question</tspan>
-                    </text>
-                </svg>hardware board</span>
-            <span class='tooltip-content'>
-                <img src="app/images/BOARDS-CUTOUT_0002_HARDWARE-BOARD-WHITE.png">
-                <span class='tooltip-text'>Hardware board</span>
-            </span>
-        </span>
-    <p>
-
-
+    <p>{{payload.text}}</p>
 </div>
