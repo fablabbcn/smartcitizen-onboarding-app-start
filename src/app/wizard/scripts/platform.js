@@ -26,7 +26,6 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
     function bakeDevice(data) {
         console.log('calling bake');
         return Restangular.all('onboarding/register').post({});
-
     }
 
     function checkEmail(emailString) {
