@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').controller('wizardCtrl', function($scope, $location, $sce, $window, $timeout, SegueService, $rootScope, AnimationService, session, platform, Restangular, $state) {
+angular.module('app').controller('wizardCtrl', function($scope, $location, $sce, $window, $timeout, SegueService, $rootScope, AnimationService, session, platform, Restangular, $state, $stateParams) {
 
     $scope.spinnerControl = 'hide';
 
@@ -15,9 +15,11 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         device_token: session.device_token,
         description: 'Making Sense Pilot #1',
         exposure: 'outdoor',
-        kit_id: 11,
-        user_tags: ["MakingSense", "Barcelona", "BarcelonaNoise", "MS1"] //We currently use defualt tags
-    }
+        kit_id: 11
+    };
+
+    console.log( $scope.submittedData.deviceData.user_tags_array);
+    $scope.submittedData.deviceData.user_tags_array = ["MakingSense", "Barcelona", "Plaça del sol", "MS1"];
 
     $scope.onboarding_session = session.onboarding_session;
 
@@ -77,11 +79,22 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         AnimationService.leaving(true);
         $scope.payload.progressShow = 'blue';
         $timeout(function() {
+            console.log($scope.payload.index);
             $location.path('/wizard/' + SegueService.nextPage($scope.payload.index, $scope.pre_made));
             $window.scrollTo(0, 0);
             $scope.payload.progressShow = ' ';
         }, 500); // see animations max duration time
     }
+    $scope.$on('forceSegue', function (event, args) {
+        console.log(args.target);
+        AnimationService.leaving(true);
+        $scope.payload.progressShow = 'blue';
+        $timeout(function() {
+            $state.go(args.target, args.params);
+            $window.scrollTo(0, 0);
+            $scope.payload.progressShow = ' ';
+        }, 500); // see animations max duration time
+    });
 
     function backTransition() {
         //debugger;
@@ -90,6 +103,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         $timeout(function() {
             $scope.segueControl = 'ready';
             //debugger;
+            console.log($scope.payload.index);
             $location.path('/wizard/' + SegueService.previousPage($scope.payload.index, $scope.pre_made));
             $window.scrollTo(0, 0);
             $scope.payload.progressShow = ' ';
@@ -118,6 +132,10 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         else if ($scope.payload.template == 'location_prep') {
             return; // We currently don't use errors for location_prep
         }
+        else if ($scope.payload.url == 'ap_final'){
+            console.log("final hit");
+            return;
+        }
         $scope.segueControl = 'error';
         $scope.errorButton = 'show';
         $rootScope.$broadcast('blockedSegue');
@@ -139,14 +157,10 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
     };
 
     $scope.yes = function() {
+        //console.log($scope.lang,"d");
+        //SegueService.modalBox();
         $scope.modalBox = 'red';
-        var data = {
-            title: "Uh oh",
-            body: "It seems like you are missing parts of the kit. If that’s so, let’s notify the team and they’ll get back to you as soon as possible",
-            image: "app/images/alert.svg",
-            button: "Notify the team!",
-            action: "email"
-        };
+        var data = SegueService.modalBox(0,$scope.lang);
         $scope.modalContent = data;
         $rootScope.$broadcast('modal');
     };

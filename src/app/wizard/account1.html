@@ -17,10 +17,10 @@
             </div>
             <div flex="grow" class="md-box">
                 <md-input-container class="md-block">
-                    <label>Type email here</label>
+                    <label>{{payload.input1}}</label>
                     <input autofocus ng-model="given_email" ng-change="accountListener()" ng-model-options="{ debounce: 500 }" required type="text" name="given_email">
                     <div ng-messages="email_form.given_email.$error">
-                        <div ng-message="required">You must enter an email.</div>
+                        <div ng-message="required">{{payload.input1_error}}</div>
                     </div>
                 </md-input-container>
             </div>

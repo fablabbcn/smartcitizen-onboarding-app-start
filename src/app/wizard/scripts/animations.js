@@ -21,16 +21,6 @@ angular.module('app').factory('AnimationService', function($rootScope, SegueServ
     var pageIndex;
     var rows;
 
-    //function initBase(index){
-    //    pageIndex = index;
-    //    //var state = 1;
-    //    //if (index == 0){ state = 0; }
-    //    $rootScope.animationsBase = true;
-    //}
-    //function stopBase(){
-    //    console.log('all animations are done');
-    //}
-
     function animate(index){
         if (($rootScope.animationRows) && ($rootScope.animationRows[0])){ //if already allocated reset data
             reInit();

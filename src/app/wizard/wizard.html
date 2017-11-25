@@ -48,8 +48,8 @@
                 <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
             </svg>
         </div>
-        <button class="yesButton errorButton" ng-click="yes()" ng-class="errorButton" hide-xs>YES</button>
-        <button class="noButton errorButton" ng-click="no()"ng-class="errorButton" hide-xs>NO</button>
+        <button class="yesButton errorButton" ng-click="yes()" ng-class="errorButton" hide-xs>{{ payload.yesButton }}</button>
+        <button class="noButton errorButton" ng-click="no()"ng-class="errorButton" hide-xs>{{ payload.noButton }}</button>
     </div>
     <div hide-xs>
         <button class="forwardButton" ng-click="forward()" ng-class="payload.forwardBlock" style="visibility: hidden;">

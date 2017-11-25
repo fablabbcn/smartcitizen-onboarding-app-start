@@ -1,8 +1,10 @@
-'use strict';
+ 'use strict';
 
-angular.module('app').controller('stateCtlr', function($scope, $rootScope, scopePayload, AnimationService){
+angular.module('app').controller('stateCtlr', function($scope, $rootScope, scopePayload, AnimationService, $stateParams){
     $scope.$parent.payload = scopePayload;
     AnimationService.animate(scopePayload.index);
+
+    $rootScope.lang = $stateParams.lang;
 
     function setUpSelection(){
         blockSegue();
@@ -38,7 +40,7 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
 
 
     $scope.selectPart = function(val){
-        console.log($scope.selectionButtons);
+        //console.log($scope.selectionButtons);
         if ($scope.tempBlock == true){
             $scope.tempBlock = false;
             return;
@@ -60,7 +62,7 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
     };
 
     function resetter(){
-        $scope.payload.segueButton = 'CONTINÚA';
+        $scope.payload.segueButton = $scope.payload.continueButton;
         if ($scope.errorState == true){
             $rootScope.$broadcast('removeError');
         }
@@ -115,39 +117,39 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
     $scope.infoClick = function(val){
         $scope.$parent.modalBox = 'green';
         var data = [{
-                "title": "Placa de Sensores",
-                "body": "Aquí es donde están todos los sensores. Se conecta a la placa grande, la placa de datos, así los sensores pueden transmitir lo que miden.",
-                "image": "app/images/BOARDS-CUTOUT_0003_SENSOR-BOARD-BLUE.png"
-            }, {
-               "title": "Placa de Datos",
-               "body": "Aquí es donde toda la computación ocurre. Siempre que quieras conectar algo al Smart Citizen, debe estar en esta placa",
-               "image": "app/images/BOARDS-CUTOUT_0002_HARDWARE-BOARD-WHITE.png"
-            }, {
-               "title": "Batería",
-               "body": "Esto le da alimentación al dispositivo. Cada cierto tiempo debe ser recargada, especialmente después de largos periodos de uso continuo.",
-               "image": "app/images/BOARDS-CUTOUT_0006_BATTERY2.png"
-            }, {
-               "title": "Cable USB",
-               "body": "Cuando el Kit necesite ser cargado, puedes conectar este cable a tu ordenador o enchufe, y de vuelta al Kit.",
-               "image": "app/images/BOARDS-CUTOUT_0005_USBgreen.png"
-            }, {
-               "title": "Carcasa hecha a medida",
-               "body": "La carcasa protege el dispositivo de la lluvia y permite fijarlo por ejemplo en tu balcón.",
-               "image": "app/images/BOARDS-CUTOUT_0008_ANGLED.png"
-            }, {
-                "title": "Espaciadores",
-                "body": "Fijan la placa de sensores con la placa de datos para que todo quede más robusto.",
-                "image": "app/images/spacers.png"
-            }, {
-                "title": "Tapa",
-                "body": "Cierra la carcasa y protege el dispositivo de la llúvia. Fijate que la parte con agujeros queda sobre el sensor de sonido.",
-                "image": "app/images/screen.png"
-            }, {
-                "title": "Sujetadores",
-                "body": "Fijan la tapa con la carcasa.",
-                "image": "app/images/plugs.png"
+            "title": $scope.payload.part1,
+            "body": $scope.payload.part1_desc,
+            "image": "app/images/BOARDS-CUTOUT_0003_SENSOR-BOARD-BLUE.png"
+        }, {
+            "title": $scope.payload.part2,
+            "body": $scope.payload.part2_desc,
+            "image": "app/images/BOARDS-CUTOUT_0002_HARDWARE-BOARD-WHITE.png"
+        }, {
+            "title": $scope.payload.part3,
+            "body": $scope.payload.part3_desc,
+            "image": "app/images/BOARDS-CUTOUT_0006_BATTERY2.png"
+        }, {
+            "title": $scope.payload.part4,
+            "body": $scope.payload.part4_desc,
+            "image": "app/images/BOARDS-CUTOUT_0005_USBgreen.png"
+        }, {
+            "title": $scope.payload.part5,
+            "body": $scope.payload.part5_desc,
+            "image": "app/images/BOARDS-CUTOUT_0008_ANGLED.png"
+        }, {
+            "title": $scope.payload.part6,
+            "body": $scope.payload.part6_desc,
+            "image": "app/images/spacers.png"
+        }, {
+            "title": $scope.payload.part7,
+            "body": $scope.payload.part7_desc,
+            "image": "app/images/screen.png"
+        }, {
+            "title": $scope.payload.part8,
+            "body": $scope.payload.part8_desc,
+            "image": "app/images/plugs.png"
         }];
-        data[val].button = 'OK, got it';
+        data[val].button = $scope.payload.modalButton;
         $scope.$parent.modalContent = data[val];
         $scope.tempBlock = true;
         $rootScope.$broadcast('modal');
