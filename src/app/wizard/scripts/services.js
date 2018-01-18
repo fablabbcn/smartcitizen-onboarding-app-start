@@ -350,6 +350,7 @@ angular.module('app').service('SegueService', function () {
             },
             {
                 "index": 52,
+                "part": 3,
                 "template": "location_tags",
                 "url": "location_tags",
                 "h2": "Is there anything we should know about location?",
@@ -378,7 +379,7 @@ angular.module('app').service('SegueService', function () {
             },
             {
                 "index": 53,
-                "part": 3,
+                "part": 4,
                 "template": "comfirm",
                 "url": "confirm_location",
                 "h1": "ALMOST THERE",
@@ -802,6 +803,7 @@ angular.module('app').service('SegueService', function () {
             },
             {
                 "index": 52,
+                "part": 3,
                 "template": "location_tags",
                 "url": "location_tags",
                 "h2": "Selecciona las palabras que mejor describen la ubicación de tu sensor.",
@@ -830,7 +832,7 @@ angular.module('app').service('SegueService', function () {
             },
             {
                 "index": 53,
-                "part": 3,
+                "part": 4,
                 "template": "comfirm",
                 "url": "confirm_location",
                 "h1": "CASI ESTAMOS",
@@ -1254,6 +1256,7 @@ angular.module('app').service('SegueService', function () {
             },
             {
                 "index": 52,
+                "part": 3,
                 "template": "location_tags",
                 "url": "location_tags",
                 "h2": "Selecciona les paraules que millor descriuen el lloc on has instal·lat el Kit",
@@ -1282,7 +1285,7 @@ angular.module('app').service('SegueService', function () {
             },
             {
                 "index": 53,
-                "part": 3,
+                "part": 4,
                 "template": "comfirm",
                 "url": "confirm_location",
                 "h1": "GAIREBÉ ESTEM",
