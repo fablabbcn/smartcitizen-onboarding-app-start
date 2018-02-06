@@ -60,3 +60,5 @@ Run:
 ### Credits
 
 This work has received funding from the European Union's Horizon 2020 research and innovation program under the grant agreement No. 688620
+
+[![DOI](https://zenodo.org/badge/74163605.svg)](https://zenodo.org/badge/latestdoi/74163605)
