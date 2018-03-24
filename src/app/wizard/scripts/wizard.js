@@ -232,7 +232,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
     });
 
     Restangular.setErrorInterceptor(function(response, deferred, responseHandler) {
-        if ([422, 403, 404].indexOf(response.status) > -1) {
+        if ([204, 422, 403, 404].indexOf(response.status) > -1) {
             console.warn(response);
             return true; // We don't catch errors 422 and 403 since we use them on user login
         } else {
