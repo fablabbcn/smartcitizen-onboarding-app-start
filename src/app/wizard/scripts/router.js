@@ -18,6 +18,7 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
                         return session;
                     }, function () {
                         $state.go('unavailable');
+                        //return true;
                     });
                 }
             }

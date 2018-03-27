@@ -155,17 +155,17 @@ angular.module('app').controller('accountController', function ($scope, scopePay
     }
 
     function prepSegue() {
-        debugger;
+        // debugger;
         $scope.$parent.segueControl = 'ready';
     }
 
     function blockSegue() {
-        debugger;
+        // debugger;
         $scope.$parent.segueControl = 'blocked';
     }
 
     function checkSegue() {
-        debugger;
+        // debugger;
         if (
             ($scope.$parent.payload.url == 'email') && (validateEmail($scope.given_email)) ||
             ($scope.$parent.payload.url == 'username') && ($scope.given_username)
