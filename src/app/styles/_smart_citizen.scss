@@ -1,31 +1,27 @@
-$SCKblue: #2C7DB4;
-$SCKblack: #222B32;
-$SCKgrey: #A5ACB2;
-
-#container.smartCitizen{
-  background-color: white;
-
-  h2{
-    color: $SCKblack;
-  }
-  h4{
-    color: $SCKgrey;
-  }
-  .segueButton {
-    border-color: $SCKblue;
-    background-color: white;
-    color: $SCKblue;
-    #nextSVG {
-      path {
-        fill: $SCKblue;
-      }
-    }
-  }
-  .backButton, .forwardButton {
-    opacity: .12;
-    tspan {
-      fill: $SCKblue;
-    }
-  }
-
-}
+//#container.smartCitizen{
+//  background-color: white;
+//
+//  h2{
+//    color: $SCKblack;
+//  }
+//  h4{
+//    color: $SCKgrey;
+//  }
+//  .segueButton {
+//    border-color: $SCKblue;
+//    background-color: white;
+//    color: $SCKblue;
+//    #nextSVG {
+//      path {
+//        fill: $SCKblue;
+//      }
+//    }
+//  }
+//  .backButton, .forwardButton {
+//    opacity: .12;
+//    tspan {
+//      fill: $SCKblue;
+//    }
+//  }
+//
+//}

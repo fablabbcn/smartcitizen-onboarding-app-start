@@ -11,7 +11,7 @@ var $ = require('gulp-load-plugins')();
 var wiredep = require('wiredep').stream;
 
 module.exports = function(options) {
-    gulp.task('styles', function () {
+    gulp.task('styles1', function () {
         var sassOptions = {
             style: 'expanded'
         };

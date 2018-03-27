@@ -1,7 +1,7 @@
-@import url(https://fonts.googleapis.com/css?family=Rubik:400,300,500,900);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&amp;subset=latin-ext);
 
 /** -- CONSTANTS -- **/
-$font:    Rubik, sans-serif;
+$font: 'Roboto Condensed', sans-serif;
 $divRadius: 15px;
 
 $errorTimer: .5s;
@@ -34,7 +34,7 @@ canvas {vertical-align: top; z-index: 0}
 body {
   height:auto; overflow:auto;
   font: 100% $font !important;
-  background-color: $msNavy !important;
+  background-color: $SCKwhite !important;
   display: flex;
   min-height: 100vh;
 
@@ -45,7 +45,7 @@ body {
   h1{
     font-weight: 900;
     font-size: 72px;
-    color: $msBlue;
+    color: $SCKblue;
     line-height: 70px;
     text-transform: uppercase;
     @media screen and (max-width: 450px) {
@@ -56,7 +56,7 @@ body {
   h2{
     font-weight: 400;
     font-size: 45px; //fallback
-    color: $msWhite;
+    color: $SCKblack;
     @media screen and (max-width: 450px) {
       font-size: 32px;
     }
@@ -64,7 +64,7 @@ body {
   h3{
     font-weight: 400;
     font-size: 30px;
-    color: $msWhite;
+    color: $SCKgrey;
     @media screen and (max-width: 450px) {
       font-size: 22px;
     }
@@ -83,7 +83,7 @@ body {
   h4, p{
     font-weight: 400;
     font-size: 28px;
-    color: $msGrey;
+    color: $SCKgrey;
     @media screen and (max-width: 450px) {
       font-size: 20px;
     }
@@ -122,12 +122,9 @@ body {
 
 
   #container {
-    //background-color: $msNavy;
     z-index: 1;
     flex:1;
     flex-shrink: 0;
-    //height: 100vh;
-    //overflow: hidden;
 
     #wizardView {
       margin: 0 auto;
@@ -149,9 +146,9 @@ body {
       .selectionRow {
         .selection {
           height: 400px;
-          background: $msNavy;
+          background: $SCKnavy2;
           border-radius: $divRadius;
-          border: 5px solid $msNavy2;
+          border: 5px solid $SCKblue;
 
           &.nested{
             width: 300px;
@@ -200,7 +197,7 @@ body {
               transition: top 0.2s;
               top: 0;
               tspan {
-                fill: $msNavy2;
+                fill: $SCKnavy2;
               }
               .shadow{
                 height: 0;
@@ -223,11 +220,11 @@ body {
               }
             }
             .selectionText {
-              color: $msNavy2;
+              color: $SCKgrey2;
             }
           }
           &:hover, &:active, &.active {
-            background-color: $msNavy2;
+            background-color: $SCKblue;
             .selectionIcon, .selectionImage {
               position:relative;
               top: -10px;
@@ -303,13 +300,13 @@ body {
         height: 60px;
         width: auto;
         margin: 15px auto;
-        padding: 5px 15px 5px 15px;
+        padding: 0 15px;
 
         text-transform: uppercase;
-        background: $msNavy2;
+        background: $SCKblue;
         border-radius: 40px;
-        border: 5px solid $msNavy2;
-        color: $msGrey;
+        border: 5px solid $SCKblue;
+        color: $SCKwhite;
         font-size: 20px;
         svg{
           margin: 0 10px;
@@ -332,7 +329,7 @@ body {
           text-transform: none;
           padding-right: 20px;
 
-          font: 100% Rubik, sans-serif !important;
+          font: 100% 'Roboto Condensed', sans-serif !important;
           font-size: 24px !important;
           @media screen and (max-width: 450px) {
             font-size: 20px !important;
@@ -345,16 +342,17 @@ body {
       }
 
       .promptedText{
-        background-color: $msBlue;
+        background-color: $SCKblue;
         border-radius: $divRadius * 2;
         padding: 15px 45px;
         //max-width: 400px;
         h2{
-          color: $msNavy;
+          color: $SCKnavy;
         }
       }
 
       .languageSelector{
+
         .contextButton{
           margin: 15px 75px !important;
           #nextSVG {
