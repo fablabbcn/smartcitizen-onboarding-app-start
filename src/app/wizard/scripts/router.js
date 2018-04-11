@@ -404,7 +404,7 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
         });
 
     /* Default state */
-    $urlRouterProvider.otherwise('/wizard/landing?lang=cat');
+    $urlRouterProvider.otherwise('/wizard/landing?lang=eng');
 
     RestangularProvider.setBaseUrl('https://api.smartcitizen.me/v0');
 
