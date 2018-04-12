@@ -186,7 +186,7 @@ angular.module('app').service('SegueService', function () {
             // },
             {
                 "index": 19,
-                "part": 11,
+                "part": 10,
                 "template": "comfirm",
                 "url": "confirm_build",
                 "h1": "WELL DONE",
@@ -639,7 +639,7 @@ angular.module('app').service('SegueService', function () {
             // },
             {
                 "index": 19,
-                "part": 11,
+                "part": 10,
                 "template": "comfirm",
                 "url": "confirm_build",
                 "h1": "BIEN HECHO",
@@ -1092,7 +1092,7 @@ angular.module('app').service('SegueService', function () {
             // },
             {
                 "index": 19,
-                "part": 11,
+                "part": 10,
                 "template": "comfirm",
                 "url": "confirm_build",
                 "h1": "BEN FET",
