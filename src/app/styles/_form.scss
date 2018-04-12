@@ -3,7 +3,7 @@
   margin: 50px 0 ;
 
   .inputTitle, .inputError {
-    color: $msGrey;
+    color: $SCKnavy;
   }
 
   .inputContainer {
@@ -12,28 +12,31 @@
     border: none;
 
     border-radius: 4px;
-    background-color: #344049;
+    background-color: $SCKgrey;
     @media screen and (max-width: 450px) {
       padding: 0;
     }
 
     label {
-      font: 100% Rubik, sans-serif !important;
+      font: 100% 'Roboto Condensed', sans-serif !important;
       @media screen and (max-width: 450px) {
         font-size: 12px !important;
       }
     }
 
     &.focus {
-      background-color: #576671;
+      background-color: $SCKgrey;
     }
 
     .ss_input{
       margin: 0 25px;
-      .lock{
-        //margin: 15px;
+      svg {
+        path {
+          fill: $SCKwhite !important;
+        }
       }
     }
+
 
     .md-box{
       height: 80px;
@@ -49,7 +52,7 @@
           height: 80px;
           border: none;
           color: $msWhite;
-          font: 100% Rubik, sans-serif !important;
+          font: 100% 'Roboto Condensed', sans-serif !important;
           font-size: 42px !important;
           @media screen and (max-width: 450px) {
             font-size: 28px !important;
@@ -64,16 +67,16 @@
 
   // LOL HIDEOUS VVVVV
   md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused label, md-input-container:not(.md-input-invalid).md-input-focused label, md-input-container.md-default-theme:not(.md-input-invalid).md-input-focused md-icon, md-input-container:not(.md-input-invalid).md-input-focused md-icon {
-    color: $msGrey;
+    color: $SCKnavy;
 }
   md-input-container.md-default-theme.md-input-invalid label, md-input-container.md-input-invalid label, md-input-container.md-default-theme.md-input-invalid .md-input-message-animation, md-input-container.md-input-invalid .md-input-message-animation, md-input-container.md-default-theme.md-input-invalid .md-char-counter, md-input-container.md-input-invalid .md-char-counter {
     color: $msRed;
   }
   md-input-container.md-default-theme label, md-input-container label, md-input-container.md-default-theme .md-placeholder, md-input-container .md-placeholder{
-    color: $msGrey;
+    color: $SCKnavy;
   }
   md-input-container.md-default-theme:not(.md-input-invalid).md-input-has-value label, md-input-container:not(.md-input-invalid).md-input-has-value label {
-    color: $msGrey;
+    color: $SCKnavy;
   }
 
   //.md-block{

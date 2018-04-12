@@ -25,12 +25,12 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
 
     function bakeDevice(data) {
         console.log('calling bake');
-        return Restangular.all('onboarding/register').post({});
+        return Restangular.all('onboarding/register').post(data);
     }
 
-    function checkEmail(emailString) {
+    function checkEmail(identity) {
         var data = {
-            email: emailString
+            username_or_email: identity
         };
         return Restangular.all('onboarding/user').post(data);
     }
@@ -69,6 +69,12 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
         })
     }
 
+    function resetPassword(emailString){
+        var data = {
+            email: emailString
+        };
+        return Restangular.all('password_resets').post(data);
+    }
 
     return {
         setSession: setSession,
@@ -80,7 +86,8 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
         login: login,
         createUser: createUser,
         listenDevice: listenDevice,
-        listenToken: listenToken
+        listenToken: listenToken,
+        resetPassword: resetPassword
     };
 
 });

@@ -65,6 +65,7 @@
 
         h2 {
           text-align: left;
+          color: $SCKnavy;
           @media screen and (max-width: 960px) {
             text-align: center;
           }
@@ -127,10 +128,10 @@
           padding: 15px 20px;
           font-size: 26px !important;
 
-          background: $msWhite;
+          background: $SCKblue;
           border-radius: 40px;
-          border: 5px solid $msWhite;
-          color: $msNavy2;
+          border: 5px solid $SCKblue;
+          color: $SCKwhite;
         }
       }
     }

@@ -5,7 +5,7 @@
   height: 60px;
   line-height: 60px;
 
-  background-color: $msNavy2;
+  background-color: $SCKnavy;
   text-transform: lowercase;
   border: none;
   border-radius: 30px;
@@ -26,6 +26,6 @@
   }
 
   &.active, &:hover {
-    background-color: $msBlue;
+    background-color: $SCKblue;
   }
 }

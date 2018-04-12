@@ -11,11 +11,13 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
 
     $scope.submittedData.user = {};
 
+    console.log(session);
+
     $scope.submittedData.deviceData = {
-        device_token: session.device_token,
-        description: 'Making Sense Pilot #1',
-        exposure: 'outdoor',
-        kit_id: 11
+        device_token: session.device_token
+        // description: 'Making Sense Pilot #1',
+        // exposure: 'outdoor',
+        // kit_id: 11
     };
 
     console.log( $scope.submittedData.deviceData.user_tags_array);
@@ -195,6 +197,18 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
             title: "Uh oh",
             body: "It seems we can't talk to the Smart Citizen platform. Please, check your internet connection!",
             button: "Retry",
+            action: "retry"
+        };
+        $scope.modalContent = data;
+        $rootScope.$broadcast('modal');
+    };
+
+    $scope.resetEmailSent = function() {
+        $scope.modalBox = 'green';
+        var data = {
+            title: "Email sent!",
+            body: "We have sent the email out! Check out your email in a new tab then return to put in your new password!",
+            button: "Ok",
             action: "retry"
         };
         $scope.modalContent = data;

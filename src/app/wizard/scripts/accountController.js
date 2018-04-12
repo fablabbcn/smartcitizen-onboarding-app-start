@@ -2,7 +2,7 @@
 /**
  * Created by Lucian on 10/12/16.
  */
-angular.module('app').controller('accountController', function ($scope, scopePayload, AnimationService, platform, $timeout, $rootScope, $stateParams) {
+angular.module('app').controller('accountController', function ($scope, scopePayload, AnimationService, platform, $timeout, $rootScope, $stateParams, session) {
     $scope.$parent.payload = scopePayload;
     AnimationService.animate(scopePayload.index);
 
@@ -12,6 +12,12 @@ angular.module('app').controller('accountController', function ($scope, scopePay
 
     $scope.given_email = ( $scope.$parent.submittedData.user.email == ' ' ? '' : $scope.$parent.submittedData.user.email);
     $scope.given_username = ( $scope.$parent.submittedData.user.username == ' ' ? '' : $scope.$parent.submittedData.user.username);
+
+    $scope.$parent.submittedData.deviceData = {
+        device_token: session.device_token
+    };
+
+    console.log($scope.$parent.submittedData.deviceData);
 
     /********** Watchers **********/
 
@@ -111,12 +117,23 @@ angular.module('app').controller('accountController', function ($scope, scopePay
     };
 
     $scope.forgotPassword = function () {
-        window.open("", '_blank');
+        // window.open("", '_blank');
+        // platform.checkEmail($scope.$parent.submittedData.user.username).then(function(data) {
+        //    console.log('email sent to reset password');
+        //    console.log(data);
+        // }, function(data){
+        //     console.log('email not sent');
+        //     console.log(data);
+        // });
+
+        /* when it works */
+        $scope.$parent.resetEmailSent();
     };
 
     /********** Functions **********/
 
     function loginAndBakeDevice() {
+        print($scope.$parent.submittedData.user);
         platform.login($scope.$parent.submittedData.user).then(function (data) {
             platform.setAuth(data);
             console.log("logged in successful");
@@ -125,7 +142,7 @@ angular.module('app').controller('accountController', function ($scope, scopePay
                     console.log("baked successful", data);
                     $timeout(function () {
                         $scope.$parent.submittedData.deviceData.id = data.id;
-                        //prepSegue();
+                        prepSegue();
                         $rootScope.$broadcast('forceSegue', {
                             target: 'wizard.final',
                             params: {lang: $stateParams.lang}

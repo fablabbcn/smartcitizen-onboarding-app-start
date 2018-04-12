@@ -9,7 +9,8 @@ angular.module('app', [
         'uiGmapgoogle-maps',
         'google.places',
         'restangular',
-        'btford.socket-io'
+        'btford.socket-io',
+        'angularLazyImg'
     ])
     .controller('formController', function($scope) {
 

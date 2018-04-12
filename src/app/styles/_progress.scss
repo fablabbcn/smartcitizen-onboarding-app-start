@@ -1,6 +1,6 @@
 $barHeight: 15px;
-$barBackgroundColor: rgba(79,164,220, .2);
-$barColor: rgb(79,164,220);
+$barBackgroundColor: rgba(56,206,243, .2);
+$barColor: rgb(56,206,243);
 $labelMargin: 50px;
 
 #progress{
@@ -26,7 +26,7 @@ $labelMargin: 50px;
       -ms-transition: color 0.75s cubic-bezier(0.86, 0, 0.07, 1);
       -o-transition: color 0.75s cubic-bezier(0.86, 0, 0.07, 1);
       transition: color 0.75s cubic-bezier(0.86, 0, 0.07, 1);
-      color: $msNavy2;
+      color: $SCKnavy;
     }
     #left{
       margin-left: $labelMargin;
@@ -41,7 +41,7 @@ $labelMargin: 50px;
   &:hover, &.blue{
     #progressLabels{
       p {
-        color: $msBlue;
+        color: $SCKnavy2;
       }
     }
   }

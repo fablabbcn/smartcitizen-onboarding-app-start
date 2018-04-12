@@ -1,7 +1,7 @@
 @keyframes segueError {
   0%{
-    border: 5px solid $msWhite;
-    color: $msWhite;
+    border: 5px solid $SCKwhite;
+    color: $SCKwhite;
     background-color: $msNavy;
   }
   1% {
@@ -111,12 +111,13 @@ $button-height: $segueWrapperHeight / 2.75;
       width: auto;
       padding: 5px 15px;
       border-radius: 40px;
-      color: white;
-      background: $msNavy;
+      color: $SCKblue;
+      background: $SCKwhite;
+      border-color: $SCKblue;
 
       #segueContent {
         overflow: hidden;
-        font: 100% Rubik, sans-serif;
+        font: 100% 'Roboto Condensed', sans-serif;
         font-weight: 500 !important;
         font-size: 20px;
         position: relative;
@@ -130,6 +131,9 @@ $button-height: $segueWrapperHeight / 2.75;
         left: 3px;
         display: inline;
         padding-right: 10px;
+        path {
+          fill: $SCKblue;
+        }
       }
       #closeSVG{
         position: relative;
@@ -142,6 +146,12 @@ $button-height: $segueWrapperHeight / 2.75;
         border: 5px solid $msGreen;
         &:hover{
           background-color: $msGreen;
+          color: $SCKwhite;
+          #nextSVG {
+            path {
+              fill: $SCKwhite;
+            }
+          }
         }
       }
       &.blocked {
@@ -185,10 +195,10 @@ $button-height: $segueWrapperHeight / 2.75;
       height: $button-height;
       width: 0;
       text-transform: uppercase;
-      background: $msNavy;
+      background: $SCKgrey2;
       border-radius: 40px;
-      color: $msWhite;
-      border: 5px solid $msNavy2;
+      color: $SCKnavy2;
+      border: 5px solid $SCKgrey2;
       opacity: 0;
       font-size: 20px;
       &.show{
@@ -219,11 +229,12 @@ $button-height: $segueWrapperHeight / 2.75;
     border-radius: 40px;
     color: $msNavy2;
     border: 5px solid $msNavy2;
+    opacity: .12;
     svg {
       position: relative;
     }
     tspan {
-      fill: $msWhite;
+      fill: $SCKblue;
     }
     &.blocked {
       tspan {
@@ -245,13 +256,14 @@ $button-height: $segueWrapperHeight / 2.75;
     border-radius: 40px;
     color: $msNavy2;
     border: 5px solid $msNavy2;
+    opacity: .12;
     svg {
       position: relative;
       top: 2px;
       left: 8px;
     }
     tspan {
-      fill: $msWhite;
+      fill: $SCKblue;
     }
     &.blocked {
       tspan {
