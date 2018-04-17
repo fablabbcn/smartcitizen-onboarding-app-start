@@ -14,10 +14,10 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
     console.log(session);
 
     $scope.submittedData.deviceData = {
-        device_token: session.device_token
-        // description: 'Making Sense Pilot #1',
-        // exposure: 'outdoor',
-        // kit_id: 11
+        device_token: session.device_token,
+        description: 'Making Sense Pilot #1',
+        exposure: 'outdoor',
+        kit_id: 11
     };
 
     console.log( $scope.submittedData.deviceData.user_tags_array);

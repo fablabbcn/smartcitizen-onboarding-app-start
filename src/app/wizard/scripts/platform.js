@@ -30,7 +30,7 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
 
     function checkEmail(identity) {
         var data = {
-            username_or_email: identity
+            email: identity
         };
         return Restangular.all('onboarding/user').post(data);
     }
