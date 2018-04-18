@@ -1,8 +1,14 @@
 'use strict';
 
-angular.module('app').factory('platform', function($rootScope, SegueService, Restangular) {
+angular.module('app').factory('platformNotify', function (socketFactory) {
+    return socketFactory({
+        ioSocket: io.connect('wss://smartcitizen.xyz')
+    });
+});
 
-    var sessionHeaders = {}, socket;
+angular.module('app').factory('platform', function($rootScope, SegueService, Restangular, platformNotify) {
+
+    var sessionHeaders = {};
 
     function setSession(session) {
         sessionHeaders.OnboardingSession = session.onboarding_session;
@@ -24,7 +30,6 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
     }
 
     function bakeDevice(data) {
-        console.log('calling bake');
         return Restangular.all('onboarding/register').post(data);
     }
 
@@ -43,13 +48,9 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
         return Restangular.all('users').post(signupData);
     }
 
-    function connect(){
-        socket = io.connect('wss://smartcitizen.xyz');
-    }    
 
     function listenDevices(then){
-        if (!socket) connect();
-        socket.on('data-received', then);
+        platformNotify.on('data-received', then);
     }
 
     function listenDevice(id, scope){
@@ -59,8 +60,7 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
     }
 
     function listenTokens(then){
-        if (!socket) connect();
-        socket.on('token-received', then);
+        platformNotify.on('token-received', then);
     }
 
     function listenToken(token, scope){

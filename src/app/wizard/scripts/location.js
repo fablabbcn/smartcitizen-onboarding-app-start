@@ -54,9 +54,9 @@ angular.module('app').config(function (uiGmapGoogleMapApiProvider) {
 
     AnimationService.animate(scopePayload.index);
 
-    uiGmapIsReady.promise(1).then(function () { // Double check issue when browser back
+    // uiGmapIsReady.promise(1).then(function () { // Double check issue when browser back
         //setInitialPosition();
-    });
+    // });
 
 
     $geolocation.watchPosition({

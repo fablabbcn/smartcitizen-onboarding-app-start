@@ -6,29 +6,32 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "angular": "~1.5.0",
-    "angular-route": "~1.5.0",
-    "angular-loader": "~1.5.0",
-    "angular-mocks": "~1.5.0",
-    "html5-boilerplate": "^5.3.0",
-    "angular-ui-router": "^0.3.1",
-    "bootstrap-sass": "bootstrap-sass-official#^3.3.7",
-    "font-awesome": "fontawesome#^4.6.3",
-    "angular-material": "^1.0.9",
-    "angular-messages": "^1.5.8",
+    "angular": "^1.6.10",
+    "angular-route": "^1.6.10",
+    "angular-loader": "^1.6.10",
+    "angular-mocks": "^1.6.10",
+    "html5-boilerplate": "^6.0.1",
+    "angular-ui-router": "^1.0.15",
+    "bootstrap-sass": "^3.3.7",
+    "font-awesome": "^5.0.10",
+    "angular-material": "^1.1.8",
+    "angular-messages": "^1.6.10",
     "ngGeolocation": "^0.0.8",
-    "angular-google-maps": "^2.3.3",
-    "ngmap": "^1.17.3",
+    "angular-google-maps": "^2.4.1",
+    "ngmap": "^1.18.4",
     "angularjs-geolocation": "^0.1.1",
     "angular-google-places-autocomplete": "^0.2.7",
-    "restangular": "^1.5.2",
+    "restangular": "^1.6.1",
+    "socket.io-client": "^2.1.0",
     "angular-socket-io": "^0.7.0",
-    "socket.io-client": "^1.6.0",
     "angular-lazy-img": "^1.5.1"
+  },
+  "resolutions": {
+    "angular": "^1.6.10"
   },
   "overrides": {
     "socket.io-client": {
-      "main": "socket.io.js"
+      "main": ["./dist/socket.io.js"]
     }
   }
 }
