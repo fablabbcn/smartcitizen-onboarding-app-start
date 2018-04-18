@@ -2,8 +2,8 @@
   "name": "angular-seed",
   "private": true,
   "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "description": "Smart Citizen Onboarding App",
+  "repository": "https://github.com/fablabbcn/smartcitizen-onboarding-app",
   "license": "MIT",
   "devDependencies": {
     "angular": "^1.5.8",

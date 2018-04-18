@@ -11,16 +11,4 @@ angular.module('app', [
         'restangular',
         'btford.socket-io',
         'angularLazyImg'
-    ])
-    .controller('formController', function($scope) {
-
-        // we will store all of our form data in this object
-        $scope.formData = {};
-
-        console.log($scope.formData);
-
-        // function to process the form
-        $scope.processForm = function() {
-            alert('awesome!');
-        };
-    });
+    ]);
