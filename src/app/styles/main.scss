@@ -25,18 +25,21 @@ $break-sm: 960px;
 @import "smart_citizen";
 @import "tags";
 @import "handshake";
-@import "media_queries";
 @import "doorbell";
 @import "_loader.scss";
+
+/* MEDIA QUERY IS AT END OF THIS FILE */
 
 html, body { margin: 0; padding: 0; }
 canvas {vertical-align: top; z-index: 0}
 body {
   height:auto; overflow:auto;
-  font: 100% $font !important;
+  font: 100% $font;
   background-color: $SCKwhite !important;
   display: flex;
   min-height: 100vh;
+
+
 
   h1, h2, h3, h4, h6, p {
     text-align: center;
@@ -44,29 +47,29 @@ body {
 
   h1{
     font-weight: 900;
-    font-size: 72px;
+    font-size: 4.5em;
     color: $SCKblue;
     line-height: 70px;
     text-transform: uppercase;
     @media screen and (max-width: 450px) {
-      font-size: 52px;
+      font-size: 3.25em;
       line-height: 46px;
     }
   }
   h2{
     font-weight: 400;
-    font-size: 45px; //fallback
+    font-size: 2.875em;
     color: $SCKblack;
     @media screen and (max-width: 450px) {
-      font-size: 32px;
+      font-size: 2em;
     }
   }
   h3{
     font-weight: 400;
-    font-size: 30px;
+    font-size: 1.875em;
     color: $SCKgrey;
     @media screen and (max-width: 450px) {
-      font-size: 22px;
+      font-size: 1.375em;
     }
     em{
       font-style: normal !important;
@@ -82,29 +85,29 @@ body {
 
   h4, p{
     font-weight: 400;
-    font-size: 28px;
+    font-size: 1.75em;
     color: $SCKgrey;
     @media screen and (max-width: 450px) {
-      font-size: 20px;
+      font-size: 1.75em;
     }
   }
   h5{
     font: 100% $font;
     font-weight: 400;
-    font-size: 28px;
+    font-size: 1.75em;
     color: $msWhite;
     @media screen and (max-width: 450px) {
-      font-size: 20px;
+      font-size: 1.25em;
     }
   }
   h6{
     font-weight: 400;
-    font-size: 28px;
+    font-size: 1.75em;
     color: $msGrey;
   }
   button{
     font-weight: 500;
-    font-size: 24px;
+    font-size: 1.5em;
     color: white;
     text-transform: capitalize;
     &:focus {
@@ -307,7 +310,7 @@ body {
         border-radius: 40px;
         border: 5px solid $SCKblue;
         color: $SCKwhite;
-        font-size: 20px;
+        font-size: 1.25em;
         svg{
           margin: 0 10px;
           position: relative;
@@ -315,7 +318,7 @@ body {
         }
 
         @media screen and (max-width: 450px) {
-          font-size: 14px;
+          font-size: .875em;
           padding-top: 0;
           line-height: 30px;
           svg{
@@ -330,9 +333,9 @@ body {
           padding-right: 20px;
 
           font: 100% 'Roboto Condensed', sans-serif !important;
-          font-size: 24px !important;
+          font-size: 1.5em !important;
           @media screen and (max-width: 450px) {
-            font-size: 20px !important;
+            font-size: 1.25em !important;
             padding: 0 5px;
             svg{
               top: 7px;
@@ -368,3 +371,5 @@ body {
     }
   }
 }
+
+@import "media_queries";

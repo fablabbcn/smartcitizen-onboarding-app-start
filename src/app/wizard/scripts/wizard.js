@@ -15,9 +15,9 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
 
     $scope.submittedData.deviceData = {
         device_token: session.device_token
-        // description: 'Making Sense Pilot #1',
-        // exposure: 'outdoor',
-        // kit_id: 11
+        description: 'Making Sense Pilot #1',
+        exposure: 'outdoor',
+        kit_id: 11
     };
 
     console.log( $scope.submittedData.deviceData.user_tags_array);

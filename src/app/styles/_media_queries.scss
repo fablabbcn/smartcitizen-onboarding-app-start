@@ -1,0 +1,9 @@
+@media
+(-webkit-max-device-pixel-ratio: 1.25),
+(max-resolution: 120dpi){
+  /* Retina-specific stuff here */
+  body {
+    font: 80% $font;
+  }
+}
+// https://css-tricks.com/snippets/css/retina-display-media-query/
