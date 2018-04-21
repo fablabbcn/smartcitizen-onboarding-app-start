@@ -76,6 +76,15 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
         return Restangular.all('password_resets').post(data);
     }
 
+    function getTags() {
+        return Restangular.all('tags')
+          .getList({'per_page': 100})
+          // We add .plain() because we don't need full CRUD on Tags.
+          .then(function(fetchedTags){
+            return fetchedTags.plain();
+          });
+    }
+
     return {
         setSession: setSession,
         setAuth: setAuth,
@@ -87,7 +96,8 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
         createUser: createUser,
         listenDevice: listenDevice,
         listenToken: listenToken,
-        resetPassword: resetPassword
+        resetPassword: resetPassword,
+        getTags: getTags
     };
 
 });
