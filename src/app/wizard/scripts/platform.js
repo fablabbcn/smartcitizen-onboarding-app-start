@@ -2,7 +2,7 @@
 
 angular.module('app').factory('platformNotify', function (socketFactory) {
     return socketFactory({
-        ioSocket: io.connect('wss://smartcitizen.xyz')
+        ioSocket: io.connect('wss://ws.smartcitizen.me')
     });
 });
 
