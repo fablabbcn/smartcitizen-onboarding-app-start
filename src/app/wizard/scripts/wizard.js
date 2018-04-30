@@ -14,7 +14,11 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
     console.log(session);
 
     $scope.submittedData.deviceData = {
+<<<<<<< HEAD
         device_token: session.device_token,
+=======
+        device_token: session.device_token
+>>>>>>> SCKrebrand
         description: 'Making Sense Pilot #1',
         exposure: 'outdoor',
         kit_id: 11
