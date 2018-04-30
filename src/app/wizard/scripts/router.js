@@ -263,6 +263,14 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
             resolve: {
                 scopePayload: function (SegueService, $stateParams) {
                     return SegueService.prep(50, $stateParams.lang);
+                },
+                tags: function (platform, $state) {
+                    return platform.getTags().then(function (tags) {
+                        return tags;
+                    }, function () {
+                        $state.go('unavailable');
+                        //return true;
+                    });
                 }
             }
         })
@@ -273,6 +281,14 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
             resolve: {
                 scopePayload: function (SegueService, $stateParams) {
                     return SegueService.prep(51, $stateParams.lang);
+                },
+                tags: function (platform, $state) {
+                    return platform.getTags().then(function (tags) {
+                        return tags;
+                    }, function () {
+                        $state.go('unavailable');
+                        //return true;
+                    });
                 }
             }
         })
@@ -283,6 +299,14 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
              resolve: {
                  scopePayload: function (SegueService, $stateParams) {
                      return SegueService.prep(52, $stateParams.lang);
+                 },
+                 tags: function (platform, $state) {
+                     return platform.getTags().then(function (tags) {
+                         return tags;
+                     }, function () {
+                         $state.go('unavailable');
+                         //return true;
+                     });
                  }
              }
          })

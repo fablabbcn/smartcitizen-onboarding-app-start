@@ -6,7 +6,7 @@ angular.module('app').config(function (uiGmapGoogleMapApiProvider) {
         v: '3.20',
         libraries: 'weather,geometry,visualization'
     });
-}).controller('locationController', function ($scope, uiGmapIsReady, $geolocation, scopePayload, AnimationService) {
+}).controller('locationController', function ($scope, uiGmapIsReady, $geolocation, scopePayload, AnimationService, tags) {
 
     // Tags must be on this list https://api.smartcitizen.me/v0/tags
 
@@ -14,29 +14,21 @@ angular.module('app').config(function (uiGmapGoogleMapApiProvider) {
 
     $scope.$parent.payload = scopePayload;
 
-    $scope.locationTags = [
-        'park',
-        'beach',
-        'school',
-        'street',
-        'woods',
-        'residential',
-        'commercial',
-        'plaza',
-        'rural',
-        'busy',
-        'calm',
-        'terrace',
-        'balcony',
-        'window',
-        'garden',
-        'bicycle'
-    ];
+
+    var tagList = [];
+    for(var i = 0; i < tags.length; i++) {
+        var obj = tags[i];
+
+        var name = obj.name;
+        tagList.push(name);
+    }
+
+    $scope.locationTags=tagList.slice(0);
+    console.log($scope.locationTags);
 
     $scope.tagStates = Array.apply(null, Array($scope.locationTags.length)).map(String.prototype.valueOf, '');
 
     if ($scope.$parent.payload.url = "location_tags") {
-        $scope.locationTags = scopePayload.tags;
         $scope.$parent.segueControl = 'ready';
     } else {
         $scope.$parent.segueControl = 'blocked';
