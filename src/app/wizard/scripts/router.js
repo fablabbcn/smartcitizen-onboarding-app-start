@@ -33,23 +33,23 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
                 }
             }
         })
-        .state('wizard.making_sense', {
-            url: '/making_sense?lang',
-            templateUrl: 'app/wizard/collaborators.html',
-            controller: 'baseController',
-            resolve: {
-                scopePayload: function (SegueService, $stateParams) {
-                    return SegueService.prep(1, $stateParams.lang);
-                }
-            }
-        })
+        // .state('wizard.making_sense', {
+        //     url: '/making_sense?lang',
+        //     templateUrl: 'app/wizard/collaborators.html',
+        //     controller: 'baseController',
+        //     resolve: {
+        //         scopePayload: function (SegueService, $stateParams) {
+        //             return SegueService.prep(1, $stateParams.lang);
+        //         }
+        //     }
+        // })
         .state('wizard.smart_citizen', {
             url: '/smart_citizen?lang',
             templateUrl: 'app/wizard/collaborators.html',
             controller: 'smartCitizenController',
             resolve: {
                 scopePayload: function (SegueService, $stateParams) {
-                    return SegueService.prep(2, $stateParams.lang);
+                    return SegueService.prep(1, $stateParams.lang);
                 }
             }
         })
@@ -59,7 +59,7 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
             controller: 'smartCitizenController',
             resolve: {
                 scopePayload: function (SegueService, $stateParams) {
-                    return SegueService.prep(3, $stateParams.lang);
+                    return SegueService.prep(2, $stateParams.lang);
                 }
             }
         })
@@ -69,7 +69,7 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
             controller: 'smartCitizenController',
             resolve: {
                 scopePayload: function (SegueService, $stateParams) {
-                    return SegueService.prep(4, $stateParams.lang);
+                    return SegueService.prep(3, $stateParams.lang);
                 }
             }
         })
@@ -166,16 +166,16 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
                 }
             }
         })
-        // .state('wizard.case2', {
-        //     url: '/case_2?lang',
-        //     templateUrl: 'app/wizard/casing.html',
-        //     controller: 'baseController',
-        //     resolve: {
-        //         scopePayload: function (SegueService, $stateParams) {
-        //             return SegueService.prep(19, $stateParams.lang);
-        //         }
-        //     }
-        // })
+        .state('wizard.case2', {
+            url: '/case_2?lang',
+            templateUrl: 'app/wizard/casing.html',
+            controller: 'baseController',
+            resolve: {
+                scopePayload: function (SegueService, $stateParams) {
+                    return SegueService.prep(19, $stateParams.lang);
+                }
+            }
+        })
 
         .state('wizard.confirm_build', {
             url: '/confirm_build?lang',
@@ -183,7 +183,7 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
             controller: 'baseController',
             resolve: {
                 scopePayload: function (SegueService, $stateParams) {
-                    return SegueService.prep(19, $stateParams.lang);
+                    return SegueService.prep(20, $stateParams.lang);
                 }
             }
         })

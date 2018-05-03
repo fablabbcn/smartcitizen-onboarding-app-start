@@ -1,7 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&amp;subset=latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&amp;subset=latin-ext);
+
 
 /** -- CONSTANTS -- **/
 $font: 'Roboto Condensed', sans-serif;
+$font2: 'Kanit', sans-serif;
+
 $divRadius: 15px;
 
 $errorTimer: .5s;
@@ -38,6 +42,7 @@ body {
   background-color: $SCKwhite !important;
   display: flex;
   min-height: 100vh;
+  border: 10px $SCK2-darkGrey solid;
 
 
 
@@ -48,7 +53,7 @@ body {
   h1{
     font-weight: 900;
     font-size: 4.5em;
-    color: $SCKblue;
+    color: $SCK2-darkGrey;
     line-height: 70px;
     text-transform: uppercase;
     @media screen and (max-width: 450px) {
@@ -57,9 +62,11 @@ body {
     }
   }
   h2{
-    font-weight: 400;
+    font: 100% $font2;
+    font-weight: 800;
     font-size: 2.875em;
-    color: $SCKblack;
+    color: $SCK2-darkGrey;
+    text-transform: uppercase;
     @media screen and (max-width: 450px) {
       font-size: 2em;
     }
@@ -67,7 +74,7 @@ body {
   h3{
     font-weight: 400;
     font-size: 1.875em;
-    color: $SCKgrey;
+    color: $SCK2-lightGrey;
     @media screen and (max-width: 450px) {
       font-size: 1.375em;
     }
@@ -86,7 +93,7 @@ body {
   h4, p{
     font-weight: 400;
     font-size: 1.75em;
-    color: $SCKgrey;
+    color: $SCK2-darkGrey;
     @media screen and (max-width: 450px) {
       font-size: 1.75em;
     }
@@ -94,10 +101,10 @@ body {
   h5{
     font: 100% $font;
     font-weight: 400;
-    font-size: 1.75em;
+    font-size: 1.65em;
     color: $msWhite;
     @media screen and (max-width: 450px) {
-      font-size: 1.25em;
+      font-size: 1.15em;
     }
   }
   h6{
@@ -149,9 +156,9 @@ body {
       .selectionRow {
         .selection {
           height: 400px;
-          background: $SCKnavy2;
-          border-radius: $divRadius;
-          border: 5px solid $SCKblue;
+          background: $SCK2-lightGrey;
+          border: 5px $SCK2-darkGrey solid;
+
 
           &.nested{
             width: 300px;
@@ -200,7 +207,7 @@ body {
               transition: top 0.2s;
               top: 0;
               tspan {
-                fill: $SCKnavy2;
+                fill: $SCK2-darkGrey;
               }
               .shadow{
                 height: 0;
@@ -223,11 +230,11 @@ body {
               }
             }
             .selectionText {
-              color: $SCKgrey2;
+              color: $SCK2-darkGrey;
             }
           }
           &:hover, &:active, &.active {
-            background-color: $SCKblue;
+            background-color: $SCK2-darkGrey;
             .selectionIcon, .selectionImage {
               position:relative;
               top: -10px;
@@ -239,7 +246,7 @@ body {
               }
             }
             .selectionText {
-              color: $msWhite;
+              color: $SCK2-lightGrey;
             }
           }
           &.active{
@@ -306,9 +313,9 @@ body {
         padding: 0 15px;
 
         text-transform: uppercase;
-        background: $SCKblue;
+        background: $msBlack;
         border-radius: 40px;
-        border: 5px solid $SCKblue;
+        border: 5px solid $msBlack;
         color: $SCKwhite;
         font-size: 1.25em;
         svg{

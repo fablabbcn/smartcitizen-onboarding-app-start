@@ -52,7 +52,7 @@
     #modalContent {
       z-index: 3;
       #modalBox{
-        border-radius: $divRadius;
+
         width: 1000px;
         min-height: 200px;
         @media screen and (min-width: $break-sm) {
@@ -65,7 +65,7 @@
 
         h2 {
           text-align: left;
-          color: $SCKnavy;
+          color: $SCK2-lightGrey;
           @media screen and (max-width: 960px) {
             text-align: center;
           }
@@ -78,7 +78,7 @@
           }
         }
         &.red{
-          background-color: $msRed;
+          background-color: $SCK2-red;
           #partImage{
             width: 200px;
             height: 200px;
@@ -92,7 +92,7 @@
           }
         }
         &.green{
-          background-color: $msGreen;
+          background-color: $SCK2-blue;
 
           #partImage {
             @media screen and (min-width: $break-sm) {
@@ -128,10 +128,10 @@
           padding: 15px 20px;
           font-size: 26px !important;
 
-          background: $SCKblue;
+          background: $SCK2-lightGrey;
           border-radius: 40px;
-          border: 5px solid $SCKblue;
-          color: $SCKwhite;
+          border: 5px solid $SCK2-lightGrey;
+          color: $SCK2-darkGrey;
         }
       }
     }

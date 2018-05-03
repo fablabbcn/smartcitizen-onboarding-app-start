@@ -111,9 +111,9 @@ $button-height: $segueWrapperHeight / 2.75;
       width: auto;
       padding: 5px 15px;
       border-radius: 40px;
-      color: $SCKblue;
+      color: $SCK2-blue;
       background: $SCKwhite;
-      border-color: $SCKblue;
+      border-color: $SCK2-blue;
 
       #segueContent {
         overflow: hidden;
@@ -132,7 +132,7 @@ $button-height: $segueWrapperHeight / 2.75;
         display: inline;
         padding-right: 10px;
         path {
-          fill: $SCKblue;
+          fill: $SCK2-blue;
         }
       }
       #closeSVG{
@@ -143,19 +143,25 @@ $button-height: $segueWrapperHeight / 2.75;
         width: 0;
       }
       &.ready {
-        border: 5px solid $msGreen;
+        border: 5px solid $SCK2-blue;
         &:hover{
-          background-color: $msGreen;
-          color: $SCKwhite;
+          background-color: $SCK2-lightGrey;
+          color: $SCK2-blue;
           #nextSVG {
             path {
-              fill: $SCKwhite;
+              fill: $SCK2-blue;
             }
           }
         }
       }
       &.blocked {
-        border: 5px solid $msWhite;
+        border: 5px solid $SCK2-darkGrey;
+        color: $SCK2-darkGrey;
+        #nextSVG {
+          path {
+            fill: $SCK2-darkGrey;
+          }
+        }
       }
       &.hide {
         display: none;
@@ -166,7 +172,7 @@ $button-height: $segueWrapperHeight / 2.75;
         animation-name: segueError;
         animation-duration: $errorTimer;
         animation-fill-mode: forwards;
-        border: 5px solid $msRed;
+        border: 5px solid $SCK2-red;
 
         #segueContent{
           -webkit-animation-name: updateContent;
@@ -195,10 +201,10 @@ $button-height: $segueWrapperHeight / 2.75;
       height: $button-height;
       width: 0;
       text-transform: uppercase;
-      background: $SCKgrey2;
+      background: $SCK2-lightGrey;
       border-radius: 40px;
-      color: $SCKnavy2;
-      border: 5px solid $SCKgrey2;
+      color: $SCK2-darkGrey;
+      border: 5px solid $SCK2-lightGrey;
       opacity: 0;
       font-size: 20px;
       &.show{
@@ -234,7 +240,7 @@ $button-height: $segueWrapperHeight / 2.75;
       position: relative;
     }
     tspan {
-      fill: $SCKblue;
+      fill: $SCK2-blue;
     }
     &.blocked {
       tspan {
@@ -263,7 +269,7 @@ $button-height: $segueWrapperHeight / 2.75;
       left: 8px;
     }
     tspan {
-      fill: $SCKblue;
+      fill: $SCK2-blue;
     }
     &.blocked {
       tspan {

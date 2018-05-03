@@ -1,11 +1,11 @@
 .tag {
   font: 100% $font !important;
   padding: 10px 15px;
-  color: $msWhite;
+  color: $SCK2-darkGrey;
   height: 60px;
   line-height: 60px;
 
-  background-color: $SCKnavy;
+  background-color: $SCK2-lightGrey;
   text-transform: lowercase;
   border: none;
   border-radius: 30px;
@@ -25,7 +25,15 @@
     margin-right: 10px;
   }
 
+  tspan {
+    fill: $SCK2-darkGrey;
+  }
+
   &.active, &:hover {
-    background-color: $SCKblue;
+    background-color: $SCK2-blue;
+    color: $SCK2-lightGrey;
+    tspan {
+      fill: $SCK2-lightGrey;
+    }
   }
 }

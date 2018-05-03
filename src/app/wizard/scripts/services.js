@@ -11,7 +11,7 @@ angular.module('app').service('SegueService', function () {
             "part": 1,
             "template": "landing",
             "url": "landing",
-            "h1": "Welcome to the Making Sense pilot!",
+            "h1": "Welcome to the Smart Citizen Kit Onboarding!",
             "h4": "Let’s get you set up with a Smart Citizen kit, and sensing in no time",
             "segueButton": "Continue in English",
             "contextButton1": "CASTELLANO",
@@ -21,38 +21,28 @@ angular.module('app').service('SegueService', function () {
                 "index": 1,
                 "part": 2,
                 "template": "collaborators",
-                "url": "making_sense",
-                "companyLogo": "app/images/MS LOGO.png",
-                "h2": "Making Sense is a project to help people make sense of their environment.",
-                "h4": "We want to help you deploy sensors to help understand sound pollution. By making sense of the issue, we might be able to address it.",
-                "segueButton": "SOUNDS GOOD!"
+                "url": "smart_citizen",
+                "companyLogo": "app/images/scklogo.png",
+                "h2": "Smart Citizen is a movement for civic participation in a modern world",
+                "h4": "Smart Citizen creates open tools for citizens to be better informed about the world around them.",
+                "segueButton": "CONTINUE"
             },
             {
                 "index": 2,
                 "part": 3,
-                "template": "collaborators",
-                "url": "smart_citizen",
-                "companyLogo": "app/images/SCK LOGO.png",
-                "h2": "Smart Citizen is a movement for civic participation in a modern world",
-                "h4": "Smart Citizen creates open tools for citizens to be better informed about the world around them.",
+                "template": "basic2",
+                "url": "smart_citizen_brief",
+                "image": "app/images/sck.png",
+                "h2": "The Smart Citizen Kit",
+                "h4": "This sensor is a Smart Citizen Kit for environmental sensing. It measures sound, air quality, humidity, and lots of other things",
                 "segueButton": "CONTINUE"
             },
             {
                 "index": 3,
                 "part": 4,
                 "template": "basic2",
-                "url": "smart_citizen_brief",
-                "image": "app/images/sck_glow.png",
-                "h2": "The Smart Citizen Kit",
-                "h4": "This sensor is a Smart Citizen Kit for environmental sensing. It measures sound, air quality, humidity, and lots of other things",
-                "segueButton": "CONTINUE"
-            },
-            {
-                "index": 4,
-                "part": 5,
-                "template": "basic2",
                 "url": "smart_citizen_brief2",
-                "image": "app/images/SCK_macbook.png",
+                "image": "app/images/web.png",
                 "h2": "smartcitizen.me",
                 "h4": "The kit sends all the measurements to the Smart Citizen website. It's open and free for all to see, question and play with...",
                 "segueButton": "LET'S DO THIS"
@@ -171,22 +161,22 @@ angular.module('app').service('SegueService', function () {
                 "url": "case_1",
                 "h2": "Next, we'll place it all in the casing",
                 "text": "Make sure you place it with the battery cable towards the bottom of the casing",
-                "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosureBattSensor.png",
+                "image": "app/images/sck_placeall.png",
                 "segueButton": "CONTINUE"
             },
-            // {
-            //     "index": 19,
-            //     "part": 10,
-            //     "template": "casing",
-            //     "url": "case_2",
-            //     "h2": "... and to finish, seal the cover",
-            //     "text": "Place the transparent plastic on the front of the case and fix it in place with the two white plugs.",
-            //     "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosure-wShineclasps.png",
-            //     "segueButton": "CONTINUE"
-            // },
             {
                 "index": 19,
                 "part": 10,
+                "template": "casing",
+                "url": "case_2",
+                "h2": "... and to finish, seal the cover",
+                "text": "Place the transparent plastic on the front of the case and fix it in place with the two white plugs.",
+                "image": "app/images/sck_sealthecover.png",
+                "segueButton": "CONTINUE"
+            },
+            {
+                "index": 20,
+                "part": 11,
                 "template": "comfirm",
                 "url": "confirm_build",
                 "h1": "WELL DONE",
@@ -455,25 +445,15 @@ angular.module('app').service('SegueService', function () {
                 "index": 1,
                 "part": 2,
                 "template": "collaborators",
-                "url": "making_sense",
-                "companyLogo": "app/images/MS LOGO.png",
-                "h2": "Making Sense es un proyecto que ayuda a las personas a entender su entorno.",
-                "h4": "Queremos ayudarte a instalar sensores para entender la contaminación acústica. Tomando conciencia del problema, seremos capaces de abordarlo.",
-                "segueButton": "SUENA BIEN!"
-            },
-            {
-                "index": 2,
-                "part": 3,
-                "template": "collaborators",
                 "url": "smart_citizen",
-                "companyLogo": "app/images/SCK LOGO.png",
+                "companyLogo": "app/images/scklogo.png",
                 "h2": "Smart Citizen es un movimiento para la participación ciudadana utilizando las últimas tecnologías.",
                 "h4": "Smart Citizen crea herramientas abiertas para que los ciudadanos están mejor informado acerca del mundo a su alrededor.",
                 "segueButton": "CONTINÚA"
             },
             {
-                "index": 3,
-                "part": 4,
+                "index": 2,
+                "part": 3,
                 "template": "basic2",
                 "url": "smart_citizen_brief",
                 "image": "app/images/sck_glow.png",
@@ -482,11 +462,11 @@ angular.module('app').service('SegueService', function () {
                 "segueButton": "CONTINÚA"
             },
             {
-                "index": 4,
-                "part": 5,
+                "index": 3,
+                "part": 4,
                 "template": "basic2",
                 "url": "smart_citizen_brief2",
-                "image": "app/images/SCK_macbook.png",
+                "image": "app/images/web.png",
                 "h2": "smartcitizen.me",
                 "h4": "El Kit envía todos los datos a la web de Smart Citizen. Es abierta y gratuita para todos, para ver, preguntar y jugar con ella...",
                 "segueButton": "VAMOS"
@@ -605,22 +585,22 @@ angular.module('app').service('SegueService', function () {
                 "url": "case_1",
                 "h2": "Después, colocalo todo dentro de la carcasa",
                 "text": "Asegurate de colocar el Kit con el cable de la batería hacia la parte inferior de la carcasa",
-                "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosureBattSensor.png",
+                "image": "app/images/sck_placeall.png",
                 "segueButton": "CONTINÚA"
             },
-            // {
-            //     "index": 19,
-            //     "part": 10,
-            //     "template": "casing",
-            //     "url": "case_2",
-            //     "h2": "... y para terminar, cierra la tapa",
-            //     "text": "Coloca el plástico transparente en la parte delantera de la caja y fijalo en su lugar con las dos fijaciones blancas",
-            //     "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosure-wShineclasps.png",
-            //     "segueButton": "CONTINÚA"
-            // },
             {
                 "index": 19,
                 "part": 10,
+                "template": "casing",
+                "url": "case_2",
+                "h2": "... y para terminar, cierra la tapa",
+                "text": "Coloca el plástico transparente en la parte delantera de la caja y fijalo en su lugar con las dos fijaciones blancas",
+                "image": "app/images/sck_sealthecover.png",
+                "segueButton": "CONTINÚA"
+            },
+            {
+                "index": 20,
+                "part": 11,
                 "template": "comfirm",
                 "url": "confirm_build",
                 "h1": "BIEN HECHO",
@@ -889,38 +869,28 @@ angular.module('app').service('SegueService', function () {
                 "index": 1,
                 "part": 2,
                 "template": "collaborators",
-                "url": "making_sense",
-                "companyLogo": "app/images/MS LOGO.png",
-                "h2": "Making Sense és un projecte per ajudar a la gent a entendre millor el seu entorn.",
-                "h4": "Volem ajudar-te a instal·lar sensors per entendre millor la contaminació acústica. Prenent conciència del problema serem capaços de resoldre'l.",
-                "segueButton": "SONA BÉ!"
+                "url": "smart_citizen",
+                "companyLogo": "app/images/scklogo.png",
+                "h2": "Smart Citizen és un moviment per la participació ciutadana utilitzant les últimes tecnologies.",
+                "h4": "Smart Citizen crea eines obertes per ajudar els ciutadans a entendre millor el seu entorn.",
+                "segueButton": "CONTINUA"
             },
             {
                 "index": 2,
                 "part": 3,
-                "template": "collaborators",
-                "url": "smart_citizen",
-                "companyLogo": "app/images/SCK LOGO.png",
-                "h2": "Smart Citizen és un moviment per la participació ciutadana utilitzant les últimes tecnologies.",
-                "h4": "Smart Citizen crea eines obertes per ajudar els ciutadans a entendre millor el seu entorn.",
+                "template": "basic2",
+                "url": "smart_citizen_brief",
+                "image": "app/images/sck.png",
+                "h2": "Smart Citizen Kit",
+                "h4": "Aquest sensors és un Smart Citizen Kit. Mesura soroll, qualitat de l'aire, humitat, i moltes coses més.",
                 "segueButton": "CONTINUA"
             },
             {
                 "index": 3,
                 "part": 4,
                 "template": "basic2",
-                "url": "smart_citizen_brief",
-                "image": "app/images/sck_glow.png",
-                "h2": "Smart Citizen Kit",
-                "h4": "Aquest sensors és un Smart Citizen Kit. Mesura soroll, qualitat de l'aire, humitat, i moltes coses més.",
-                "segueButton": "CONTINUA"
-            },
-            {
-                "index": 4,
-                "part": 5,
-                "template": "basic2",
                 "url": "smart_citizen_brief2",
-                "image": "app/images/SCK_macbook.png",
+                "image": "app/images/web.png",
                 "h2": "smartcitizen.me",
                 "h4": "El sensor envia totes les mesures a la web d'Smart Citizen. És lliure i oberta perquè tothom pugui veure i qüestionar les dades...",
                 "segueButton": "FEM-HO"
@@ -1039,22 +1009,22 @@ angular.module('app').service('SegueService', function () {
                 "url": "case_1",
                 "h2": "A continuació posa-ho tot dins la carcassa",
                 "text": "Assegura't de col·locar el Kit amb el cable de la bateria cap a la part inferior de la carcassa",
-                "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosureBattSensor.png",
+                "image": "app/images/sck_placeall.png",
                 "segueButton": "CONTINUA"
             },
-            // {
-            //     "index": 19,
-            //     "part": 10,
-            //     "template": "casing",
-            //     "url": "case_2",
-            //     "h2": "... i per acabar, posa la tapa.",
-            //     "text": "Col·loca el plàstic transparent damunt la caixa i fixa'l al seu lloc amb les dues fixacions blanques",
-            //     "image": "app/images/BOARDS-CUTOUT_0007_FRONT-eclosure-wShineclasps.png",
-            //     "segueButton": "CONTINUA"
-            // },
             {
                 "index": 19,
                 "part": 10,
+                "template": "casing",
+                "url": "case_2",
+                "h2": "... i per acabar, posa la tapa.",
+                "text": "Col·loca el plàstic transparent damunt la caixa i fixa'l al seu lloc amb les dues fixacions blanques",
+                "image": "app/images/sck_sealthecover.png",
+                "segueButton": "CONTINUA"
+            },
+            {
+                "index": 20,
+                "part": 11,
                 "template": "comfirm",
                 "url": "confirm_build",
                 "h1": "BEN FET",
@@ -1371,7 +1341,7 @@ angular.module('app').service('SegueService', function () {
     };
 
     this.nextPage = function (val, accountPresent) {
-        if (val == 4) {
+        if (val == 3) {
             return ('whats_in_the_box');
         } else if (val == 19) {
             return getPageContent(val + 2).url;
@@ -1484,9 +1454,9 @@ angular.module('app').service('SegueService', function () {
     };
 
     function setupProgressLeft(index) {
-        if (index <= 4) {
+        if (index <= 3) {
             return 1;
-        } else if (index <= 19) {
+        } else if (index <= 20) {
             return 2;
         } else if (index <= 34) {
             return 3;
@@ -1500,9 +1470,9 @@ angular.module('app').service('SegueService', function () {
     }
 
     function setupProgressRight(index) {
-        if (index <= 4) {
+        if (index <= 3) {
             return "Introduction";
-        } else if (index <= 19) {
+        } else if (index <= 20) {
             return "What's in the Box";
         } else if (index <= 33) {
             return "Handshake";

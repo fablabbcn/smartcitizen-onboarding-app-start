@@ -233,7 +233,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
                 $scope.seque;
                 break;
             case 'restart':
-                $state.go('wizard.landing'); 
+                $state.go('wizard.landing');
                 break;
             default:
                 $scope.seque;
