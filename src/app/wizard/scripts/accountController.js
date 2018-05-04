@@ -40,8 +40,8 @@ angular.module('app').controller('accountController', function ($scope, scopePay
                 console.log('returned', data);
                 loginAndBakeDevice();
             }, function (res) {
-                if (res.data.errors.password) {
-                    console.error("Password " + res.data.errors.password[0])
+                if (res.status == -1) { //TODO: The '-1' is temporary due to Restangular / CORS weird issue
+                    //console.error("Password " + res.data.errors.password[0])
                 }
                 //blockSegue();
             });
@@ -70,9 +70,9 @@ angular.module('app').controller('accountController', function ($scope, scopePay
             platform.createUser($scope.$parent.submittedData.user).then(function (data) {
                 //Do nothing
             }, function (res) {
-                if (res.data.errors.username) {
+                if (res.status == -1) { //TODO: The '-1' is temporary due to Restangular / CORS weird issue
                     // Username has already been taken
-                    console.error("Username " + res.data.errors.username[0]);
+                    // console.error("Username " + res.data.errors.username[0]);
                     blockSegue();
                 } else {
                     prepSegue();
@@ -117,17 +117,11 @@ angular.module('app').controller('accountController', function ($scope, scopePay
     };
 
     $scope.forgotPassword = function () {
-        // window.open("", '_blank');
-        // platform.checkEmail($scope.$parent.submittedData.user.username).then(function(data) {
-        //    console.log('email sent to reset password');
-        //    console.log(data);
-        // }, function(data){
-        //     console.log('email not sent');
-        //     console.log(data);
-        // });
-
-        /* when it works */
-        $scope.$parent.resetEmailSent();
+        platform.resetPassword($scope.$parent.submittedData.user.email).then(function(data) {
+            $scope.$parent.resetEmailSent();
+        }, function(data){
+            console.error('There was a problem sending the reset password email');
+        });
     };
 
     /********** Functions **********/
@@ -172,17 +166,14 @@ angular.module('app').controller('accountController', function ($scope, scopePay
     }
 
     function prepSegue() {
-        // debugger;
         $scope.$parent.segueControl = 'ready';
     }
 
     function blockSegue() {
-        // debugger;
         $scope.$parent.segueControl = 'blocked';
     }
 
     function checkSegue() {
-        // debugger;
         if (
             ($scope.$parent.payload.url == 'email') && (validateEmail($scope.given_email)) ||
             ($scope.$parent.payload.url == 'username') && ($scope.given_username)
