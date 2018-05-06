@@ -11,17 +11,16 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
 
     $scope.submittedData.user = {};
 
-    console.log(session);
+    console.log('Your session:' , session);
 
     $scope.submittedData.deviceData = {
         device_token: session.device_token,
-        description: 'Making Sense Pilot #1',
+        description: 'iSCAPE Citizen Kit',
         exposure: 'outdoor',
-        kit_id: 11
+        kit_id: 18
     };
 
-    console.log( $scope.submittedData.deviceData.user_tags_array);
-    $scope.submittedData.deviceData.user_tags_array = ["MakingSense", "Barcelona", "Plaça del sol", "MS1"];
+    $scope.submittedData.deviceData.user_tags_array = ["iSCAPE"];
 
     $scope.onboarding_session = session.onboarding_session;
 
@@ -31,11 +30,10 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
 
     $scope.handShakeState = false;
     $scope.handShakeRepeats = 0;
-    $scope.handShakeRetries = 4;
+    $scope.handShakeRetries = 2;
 
     /** Base Navigation  **/
     $scope.seque = function() {
-        console.log($scope.payload.template);
         if ($scope.segueControl == 'ready') {
             switch ($scope.payload.template) {
                 case 'handshake':
@@ -81,7 +79,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         AnimationService.leaving(true);
         $scope.payload.progressShow = 'blue';
         $timeout(function() {
-            console.log($scope.payload.index);
+            console.log('Next slide:', $scope.payload.index);
             $location.path('/wizard/' + SegueService.nextPage($scope.payload.index, $scope.pre_made));
             $window.scrollTo(0, 0);
             $scope.payload.progressShow = ' ';
@@ -105,7 +103,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         $timeout(function() {
             $scope.segueControl = 'ready';
             //debugger;
-            console.log($scope.payload.index);
+            console.log('Prev slide:', $scope.payload.index);
             $location.path('/wizard/' + SegueService.previousPage($scope.payload.index, $scope.pre_made));
             $window.scrollTo(0, 0);
             $scope.payload.progressShow = ' ';
@@ -113,7 +111,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
     }
 
     function handleError() {
-        console.log($scope.payload.template);
+        console.log('User error:', $scope.payload.template);
         if (
             ($scope.payload.template == 'wifi_enter') ||
             ($scope.payload.template == 'sensorName') ||

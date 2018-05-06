@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&amp;subset=latin-ext);
 @import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&amp;subset=latin-ext);
-
+@import url(https://fonts.googleapis.com/css?family=Kanit:300,400,700,800,900&amp;subset=latin-ext);
 
 /** -- CONSTANTS -- **/
 $font: 'Roboto Condensed', sans-serif;
@@ -44,18 +44,16 @@ body {
   min-height: 100vh;
   border: 10px $SCK2-darkGrey solid;
 
-
-
   h1, h2, h3, h4, h6, p {
     text-align: center;
   }
 
   h1{
+    font: 100% $font2;
     font-weight: 900;
     font-size: 4.5em;
     color: $SCK2-darkGrey;
     line-height: 70px;
-    text-transform: uppercase;
     @media screen and (max-width: 450px) {
       font-size: 3.25em;
       line-height: 46px;
@@ -74,7 +72,7 @@ body {
   h3{
     font-weight: 400;
     font-size: 1.875em;
-    color: $SCK2-lightGrey;
+    color: $SCK2-darkGrey;
     @media screen and (max-width: 450px) {
       font-size: 1.375em;
     }
@@ -82,10 +80,12 @@ body {
       font-style: normal !important;
       &.green{
         color: $msGreen;
-
       }
       &.orange{
         color: $msOrange;
+      }
+      &.blue{
+        color: $SCK2-blue;
       }
     }
   }
@@ -352,12 +352,12 @@ body {
       }
 
       .promptedText{
-        background-color: $SCKblue;
+        background-color: $SCK2-lightGrey;
         border-radius: $divRadius * 2;
         padding: 15px 45px;
         //max-width: 400px;
         h2{
-          color: $SCKnavy;
+          color: $SCK2-darkGrey;
         }
       }
 

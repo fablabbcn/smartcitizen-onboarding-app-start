@@ -222,6 +222,10 @@ angular.module('app').service('SegueService', function () {
                 "url": "wifi_check",
                 "h2": "Oops, something went wrong...",
                 "h4": "It seems there is a problem. Notice that the Kit light is red, please retry the Wi-Fi name and password",
+                "input1": "Name of Wi-Fi",
+                "input1_error": "A name is required to connect to a network",
+                "input2": "Password",
+                "input2_error": "",
                 "segueButtonError": "CHECK THE FIELDS",
                 "contextButton": "Try another way",
                 "contextButton2": "Ask for Help",
@@ -1330,12 +1334,9 @@ angular.module('app').service('SegueService', function () {
         var langValue = 0; //default eng
         if (lang == "esp") {
             langValue = 1;
-            console.log("loading Spanish");
         } else if (lang == "cat") {
             langValue = 2;
-            console.log("loading Catalan");
         } else {
-            console.log("loading English");
         }
         return payloadGenerate(getPageContent(val, langValue), langValue)
     };
@@ -1396,6 +1397,14 @@ angular.module('app').service('SegueService', function () {
     };
 
     function payloadGenerate(content, value) {
+
+        // Ensure all the buttons copy is in lowercase to later postprocess in css at your taste
+        for (var key in content) {
+            if (key.indexOf('Button') !== -1) {
+                content[key] = content[key].toLowerCase();
+            }
+        }
+
         if (value == undefined) {
             value = 0;
         }
@@ -1406,7 +1415,6 @@ angular.module('app').service('SegueService', function () {
         var index = pC.findIndex(function (item, i) {
             return item.index === payload.index;
         });
-        // console.log(index);
 
         payload.progressLeftLabel = setupProgressLeft(payload.index).toString() + " / 6";
         payload.progressRightLabel = setupProgressRight(payload.index).toString() + " step #" + payload.part;

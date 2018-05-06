@@ -21,10 +21,10 @@
             </div>
             <div flex="grow" class="md-box">
                 <md-input-container class="md-block">
-                    <label>Nombre del Wi-Fi</label>
+                    <label>{{payload.input1}}</label>
                     <input autofocus ng-model="ssid" ng-change="ssidListener()" required type="text" name="ssid">
                     <div ng-messages="wifi_ssid.ssid.$error">
-                        <div ng-message="required">Tienes que introducir el nombre de tu red.</div>
+                        <div ng-message="required">{{payload.input1_error}}</div>
                     </div>
                 </md-input-container>
             </div>
@@ -44,7 +44,7 @@
             </div>
             <div flex="grow" class="md-box">
                 <md-input-container class="md-block">
-                    <label>Contraseña</label>
+                    <label>{{payload.input2}}</label>
                     <input ng-model="pass" ng-change="passwordListener()" type="{{showPasswordToggle}}" name="pass">
                     <div ng-messages="wifi_ssid.pass.$error">
                     </div>

@@ -28,9 +28,9 @@ angular.module('app').controller('accesspointController', function ($scope, scop
     $scope.$parent.segueControl = 'ready';
     $scope.$parent.smartCitizenToggle = '';
     if ($scope.$parent.payload.url == "accesspoint_1") {
-        $scope.bindable = $sce.trustAsHtml($scope.$parent.payload.h3_1 + "<em class=green>" + $scope.$parent.payload.em_1 + "</em>" + $scope.$parent.payload.h3_2 + "<em class=green>" + $scope.$parent.payload.em_2 + "</em>" + $scope.$parent.payload.h3_3);
+        $scope.bindable = $sce.trustAsHtml($scope.$parent.payload.h3_1 + "<em class=blue>" + $scope.$parent.payload.em_1 + "</em>" + $scope.$parent.payload.h3_2 + "<em class=blue>" + $scope.$parent.payload.em_2 + "</em>" + $scope.$parent.payload.h3_3);
     } else if ($scope.$parent.payload.url == "accesspoint_2") {
-        $scope.bindable = $sce.trustAsHtml($scope.$parent.payload.h3_1 + "<em class=orange>" + $scope.$parent.payload.em_1 + "</em>");
-        console.log($scope.$parent.payload.h3_1 + "<em class=orange>" + $scope.$parent.payload.em_1 + "</em>");
+        $scope.bindable = $sce.trustAsHtml($scope.$parent.payload.h3_1 + "<em class=blue>" + $scope.$parent.payload.em_1 + "</em>");
+        console.log($scope.$parent.payload.h3_1 + "<em class=blue>" + $scope.$parent.payload.em_1 + "</em>");
     }
 });

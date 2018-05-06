@@ -10,7 +10,6 @@ angular.module('app').controller('landingController', function($scope, scopePayl
     var buttonTargets = [];
 
     targets(scopePayload);
-    console.log(buttonTargets);
 
     function targets(payload){
         if (payload.contextButton1 == "ENGLISH") {

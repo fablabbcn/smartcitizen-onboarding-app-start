@@ -119,11 +119,11 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
         var data = [{
             "title": $scope.payload.part1,
             "body": $scope.payload.part1_desc,
-            "image": "app/images/BOARDS-CUTOUT_0003_SENSOR-BOARD-BLUE.png"
+            "image": "app/images/sensor_board.png"
         }, {
             "title": $scope.payload.part2,
             "body": $scope.payload.part2_desc,
-            "image": "app/images/BOARDS-CUTOUT_0002_HARDWARE-BOARD-WHITE.png"
+            "image": "app/images/main_board.png"
         }, {
             "title": $scope.payload.part3,
             "body": $scope.payload.part3_desc,
@@ -131,11 +131,11 @@ angular.module('app').controller('stateCtlr', function($scope, $rootScope, scope
         }, {
             "title": $scope.payload.part4,
             "body": $scope.payload.part4_desc,
-            "image": "app/images/BOARDS-CUTOUT_0005_USBgreen.png"
+            "image": "app/images/BOARDS-CUTOUT_0005_USB.png"
         }, {
             "title": $scope.payload.part5,
             "body": $scope.payload.part5_desc,
-            "image": "app/images/BOARDS-CUTOUT_0008_ANGLED.png"
+            "image": "app/images/sck_case2.png"
         }, {
             "title": $scope.payload.part6,
             "body": $scope.payload.part6_desc,
