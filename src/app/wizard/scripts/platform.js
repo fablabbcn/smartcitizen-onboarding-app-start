@@ -71,7 +71,7 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
 
     function resetPassword(emailString){
         var data = {
-            email: emailString
+            email_or_username: emailString
         };
         return Restangular.all('password_resets').post(data);
     }
