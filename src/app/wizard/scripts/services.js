@@ -5,18 +5,17 @@ angular.module('app').service('SegueService', function () {
     var pageContent = [
         [
             {
-
-            /** -- INTRO -- **/
-            "index": 0,
-            "part": 1,
-            "template": "landing",
-            "url": "landing",
-            "h1": "Welcome to the Smart Citizen Kit Onboarding!",
-            "h4": "Let’s get you set up with a Smart Citizen kit, and sensing in no time",
-            "segueButton": "Continue in English",
-            "contextButton1": "CASTELLANO",
-            "contextButton2": "CATALÀ",
-        },
+                /** -- INTRO -- **/
+                "index": 0,
+                "part": 1,
+                "template": "landing",
+                "url": "landing",
+                "h1": "Welcome to the iSCAPE Citizen Kit!",
+                "h4": "Let’s get you set up with a Smart Citizen Kit, and sensing in no time!",
+                "segueButton": "Continue in English",
+                "contextButton1": "",
+                "contextButton2": "",
+            },
             {
                 "index": 1,
                 "part": 2,

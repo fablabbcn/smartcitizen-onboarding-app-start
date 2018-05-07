@@ -15,23 +15,23 @@ angular.module('app').controller('landingController', function($scope, scopePayl
         if (payload.contextButton1 == "ENGLISH") {
             buttonTargets.push('eng')
         }
-        if (payload.contextButton1 == "CASTELLANO") {
-            buttonTargets.push('esp')
-        }
-        if (payload.contextButton1 == "CATALÁ") {
-            buttonTargets.push('cat')
-        }
+        // if (payload.contextButton1 == "CASTELLANO") {
+        //     buttonTargets.push('esp')
+        // }
+        // if (payload.contextButton1 == "CATALÁ") {
+        //     buttonTargets.push('cat')
+        // }
 
 
         if (payload.contextButton2 == "ENGLISH") {
             buttonTargets.push('eng')
         }
-        if (payload.contextButton2 == "CASTELLANO") {
-            buttonTargets.push('esp')
-        }
-        if (payload.contextButton2 == "CATALÁ") {
-            buttonTargets.push('cat')
-        }
+        // if (payload.contextButton2 == "CASTELLANO") {
+        //     buttonTargets.push('esp')
+        // }
+        // if (payload.contextButton2 == "CATALÁ") {
+        //     buttonTargets.push('cat')
+        // }
     }
 
     $scope.languageChangeSegue = function(val){
