@@ -17,7 +17,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         device_token: session.device_token,
         description: 'iSCAPE Citizen Kit',
         exposure: 'outdoor',
-        kit_id: 18
+        kit_id: 20
     };
 
     $scope.submittedData.deviceData.user_tags_array = ["iSCAPE"];
