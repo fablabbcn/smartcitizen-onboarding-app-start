@@ -11,14 +11,15 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
 
     $scope.submittedData.user = {};
 
-    console.log('Your session:' , session);
-
     $scope.submittedData.deviceData = {
         device_token: session.device_token,
         description: 'iSCAPE Citizen Kit',
         exposure: 'outdoor',
         kit_id: 20
     };
+
+    console.log('Your session:' , session);
+    console.log('Your device:', $scope.submittedData.deviceData);
 
     $scope.submittedData.deviceData.user_tags_array = ["iSCAPE"];
 
