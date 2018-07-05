@@ -17,8 +17,6 @@ angular.module('app').controller('accountController', function ($scope, scopePay
         device_token: session.device_token
     };
 
-    console.log($scope.$parent.submittedData.deviceData);
-
     /********** Watchers **********/
 
     $scope.accountListener = function () {
@@ -62,25 +60,15 @@ angular.module('app').controller('accountController', function ($scope, scopePay
     };
 
     $scope.usernameListener = function () {
-        if ((typeof $scope.given_username !== 'undefined') && ($scope.given_username.length >= 3)) {
-            $scope.$parent.submittedData.user.username = $scope.given_username;
+        $scope.$parent.submittedData.user.username = $scope.given_username;
 
-            $scope.$parent.userName = $scope.input; // Is this need it?
+        $scope.$parent.userName = $scope.input; // Is this need it?
 
-            platform.createUser($scope.$parent.submittedData.user).then(function (data) {
-                //Do nothing
-            }, function (res) {
-                if (res.status == -1) { //TODO: The '-1' is temporary due to Restangular / CORS weird issue
-                    // Username has already been taken
-                    // console.error("Username " + res.data.errors.username[0]);
-                    blockSegue();
-                } else {
-                    prepSegue();
-                }
-            });
-        } else {
+        platform.getUser($scope.$parent.submittedData.user).then(function (data) {
             blockSegue();
-        }
+        }, function (res) {
+            prepSegue();
+        });
     };
 
     $scope.generateName = function () {

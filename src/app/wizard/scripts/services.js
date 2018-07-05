@@ -399,6 +399,7 @@ angular.module('app').service('SegueService', function () {
                 "h4": "Add a username to your profile, so users know who owns the sensor.",
                 "input1": "Enter a username",
                 "input1_error": "A username is required",
+                "input1_error2": "Username is too short",
                 "contextButton": "Chose random name",
                 "segueButtonError": "CHECK USERNAME",
                 "segueButton": "CONTINUE"

@@ -33,11 +33,15 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
         return Restangular.all('onboarding/register').post(data);
     }
 
-    function checkEmail(identity) {
+    function checkEmail(email) {
         var data = {
-            email: identity
+            email: email
         };
         return Restangular.all('onboarding/user').post(data);
+    }
+
+    function getUser(user) {
+        return Restangular.one('users', user.username).get();
     }
 
     function login(loginData) {
@@ -47,7 +51,6 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
     function createUser(signupData) {
         return Restangular.all('users').post(signupData);
     }
-
 
     function listenDevices(then){
         platformNotify.on('data-received', then);
@@ -92,6 +95,7 @@ angular.module('app').factory('platform', function($rootScope, SegueService, Res
         updateDevice: updateDevice,
         bakeDevice: bakeDevice,
         checkEmail: checkEmail,
+        getUser: getUser,
         login: login,
         createUser: createUser,
         listenDevice: listenDevice,

@@ -18,9 +18,11 @@
             <div flex="grow" class="md-box">
                 <md-input-container class="md-block">
                     <label>{{payload.input1}}</label>
-                    <input ng-model-options="{ debounce: 500 }"  autofocus ng-model="given_username" ng-change="usernameListener()" required type="text" name="given_username">
-                    <div ng-messages="email_form.given_username.$error">
+                    <input ng-model-options="{ debounce: 500 }"  autofocus ng-model="given_username" ng-change="usernameListener()" required type="text" name="given_username" minlength="3" maxlength="30">
+                    <div ng-messages="username_form.given_username.$error">
                         <div ng-message="required">{{payload.input1_error}}</div>
+                        <div ng-message="minlength">{{payload.input1_error2}}</div>
+                        <div ng-message="maxlength">{{payload.input1_error2}}</div>
                     </div>
                 </md-input-container>
             </div>

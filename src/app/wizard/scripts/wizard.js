@@ -254,10 +254,10 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
 
     Restangular.setErrorInterceptor(function(response, deferred, responseHandler) {
         if ([-1, 204, 422, 403, 404].indexOf(response.status) > -1) { // TODO: '-1' is temporary fix for restangular / CORS issue
-            console.warn(response);
+            // console.warn(response);
             return true; // We don't catch errors 422 and 403 since we use them on user login
         } else {
-            console.error(response);
+            // console.error(response);
             $scope.serverFailed(); // We trigger a modal
             return false;
         }
