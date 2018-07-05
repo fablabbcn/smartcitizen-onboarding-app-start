@@ -37,7 +37,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         combo: 'ctrl+w',
         description: 'Goes to slide 19',
         callback: function() {
-          sequeTransition(19);
+          goTransition('wizard.wifi_enter')
         }
     });
 
@@ -84,13 +84,22 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
 
     /** Aux Navigation **/
 
-    function sequeTransition(nextPageID) {
-        var nextPageID = nextPageID || $scope.payload.index;
+    function sequeTransition() {
         AnimationService.leaving(true);
         $scope.payload.progressShow = 'blue';
         $timeout(function() {
-            console.log('Next slide:', nextPageID);
-            $location.path('/wizard/' + SegueService.nextPage(nextPageID, $scope.pre_made));
+            console.log('Next slide:', $scope.payload.index);
+            $location.path('/wizard/' + SegueService.nextPage($scope.payload.index, $scope.pre_made));
+            $window.scrollTo(0, 0);
+            $scope.payload.progressShow = ' ';
+        }, 500); // see animations max duration time
+    }
+
+    function goTransition(stateName) {
+        AnimationService.leaving(true);
+        $scope.payload.progressShow = 'blue';
+        $timeout(function() {
+            $state.go(stateName);
             $window.scrollTo(0, 0);
             $scope.payload.progressShow = ' ';
         }, 500); // see animations max duration time
