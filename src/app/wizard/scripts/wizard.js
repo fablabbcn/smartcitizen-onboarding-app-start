@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('app').controller('wizardCtrl', function($scope, $location, $sce, $window, $timeout, SegueService, $rootScope, AnimationService, session, platform, Restangular, $state, $stateParams) {
+angular.module('app').controller('wizardCtrl', function($scope, $location, $sce, $window, $timeout, SegueService, $rootScope, AnimationService, session, platform, Restangular, $state, $stateParams, hotkeys) {
 
     $scope.spinnerControl = 'hide';
 
@@ -18,9 +18,6 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         kit_id: 20
     };
 
-    console.log('Your session:' , session);
-    console.log('Your device:', $scope.submittedData.deviceData);
-
     $scope.submittedData.deviceData.user_tags_array = ["iSCAPE"];
 
     $scope.onboarding_session = session.onboarding_session;
@@ -32,6 +29,17 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
     $scope.handShakeState = false;
     $scope.handShakeRepeats = 0;
     $scope.handShakeRetries = 2;
+
+    console.log('Your session:' , session);
+    console.log('Your device:', $scope.submittedData.deviceData);
+
+    hotkeys.add({
+        combo: 'ctrl+w',
+        description: 'Goes to slide 19',
+        callback: function() {
+          sequeTransition(19);
+        }
+    });
 
     /** Base Navigation  **/
     $scope.seque = function() {
@@ -76,16 +84,18 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
 
     /** Aux Navigation **/
 
-    function sequeTransition() {
+    function sequeTransition(nextPageID) {
+        var nextPageID = nextPageID || $scope.payload.index;
         AnimationService.leaving(true);
         $scope.payload.progressShow = 'blue';
         $timeout(function() {
-            console.log('Next slide:', $scope.payload.index);
-            $location.path('/wizard/' + SegueService.nextPage($scope.payload.index, $scope.pre_made));
+            console.log('Next slide:', nextPageID);
+            $location.path('/wizard/' + SegueService.nextPage(nextPageID, $scope.pre_made));
             $window.scrollTo(0, 0);
             $scope.payload.progressShow = ' ';
         }, 500); // see animations max duration time
     }
+
     $scope.$on('forceSegue', function (event, args) {
         console.log(args.target);
         AnimationService.leaving(true);
@@ -98,12 +108,10 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
     });
 
     function backTransition() {
-        //debugger;
         AnimationService.leaving(false);
         $scope.payload.progressShow = 'blue';
         $timeout(function() {
             $scope.segueControl = 'ready';
-            //debugger;
             console.log('Prev slide:', $scope.payload.index);
             $location.path('/wizard/' + SegueService.previousPage($scope.payload.index, $scope.pre_made));
             $window.scrollTo(0, 0);

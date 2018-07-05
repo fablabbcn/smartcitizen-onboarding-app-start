@@ -24,14 +24,17 @@
     "restangular": "^1.6.1",
     "socket.io-client": "^2.1.0",
     "angular-socket-io": "^0.7.0",
-    "angular-lazy-img": "^1.5.1"
+    "angular-lazy-img": "^1.5.1",
+    "angular-hotkeys": "chieffancypants/angular-hotkeys#^1.7.0"
   },
   "resolutions": {
     "angular": "^1.6.10"
   },
   "overrides": {
     "socket.io-client": {
-      "main": ["./dist/socket.io.js"]
+      "main": [
+        "./dist/socket.io.js"
+      ]
     }
   }
 }

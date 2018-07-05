@@ -10,5 +10,6 @@ angular.module('app', [
         'google.places',
         'restangular',
         'btford.socket-io',
-        'angularLazyImg'
+        'angularLazyImg',
+        'cfp.hotkeys'
     ]);
