@@ -10,23 +10,27 @@ angular.module('app').config(function (uiGmapGoogleMapApiProvider) {
 
     // Tags must be on this list https://api.smartcitizen.me/v0/tags
 
-    console.log($scope.$parent.submittedData.deviceData.user_tags_array);
-
     $scope.$parent.payload = scopePayload;
+    $scope.$parent.submittedData.deviceData.user_tags_array = [];
 
+    var proposedTags = $scope.$parent.submittedData.deviceData.proposed_user_tags_array;
 
-    var tagList = [];
+    var tagsList = [];
+    var tagsState = [];
+
     for(var i = 0; i < tags.length; i++) {
         var obj = tags[i];
-
         var name = obj.name;
-        tagList.push(name);
+        tagsList.push(name);
+        if (proposedTags && proposedTags.includes(name)) {
+            tagsState.push('active');
+        } else {
+            tagsState.push('');
+        }
     }
 
-    $scope.locationTags=tagList.slice(0);
-    console.log($scope.locationTags);
-
-    $scope.tagStates = Array.apply(null, Array($scope.locationTags.length)).map(String.prototype.valueOf, '');
+    $scope.locationTags = tagsList.slice(0);
+    $scope.tagStates = tagsState.slice(0);
 
     if ($scope.$parent.payload.url = "location_tags") {
         $scope.$parent.segueControl = 'ready';
@@ -37,7 +41,7 @@ angular.module('app').config(function (uiGmapGoogleMapApiProvider) {
 
     // Default loc in IAAC
     var loc = {
-        zoom: 12,
+        zoom: 2,
         center: {
             latitude: 41.396867,
             longitude: 2.194351

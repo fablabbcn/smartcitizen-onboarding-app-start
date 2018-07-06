@@ -18,7 +18,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
         kit_id: 20
     };
 
-    $scope.submittedData.deviceData.user_tags_array = ["iSCAPE"];
+    $scope.submittedData.deviceData.proposed_user_tags_array = ["iSCAPE"];
 
     $scope.onboarding_session = session.onboarding_session;
 
@@ -43,6 +43,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
 
     /** Base Navigation  **/
     $scope.seque = function() {
+
         if ($scope.segueControl == 'ready') {
             switch ($scope.payload.template) {
                 case 'handshake':
@@ -151,8 +152,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
             return; // We currently don't use errors for location_prep
         }
         else if ($scope.payload.url == 'ap_final'){
-            console.log("final hit");
-            return;
+            return; // We currently don't use errors for ap_final
         }
         $scope.segueControl = 'error';
         $scope.errorButton = 'show';
