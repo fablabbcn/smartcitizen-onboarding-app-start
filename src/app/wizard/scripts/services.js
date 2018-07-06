@@ -414,7 +414,7 @@ angular.module('app').service('SegueService', function () {
                 "h4a": "the password has to be at least 8 characters long",
                 "h4b": "And one more time to make sure there are no mistakes",
                 "input1": "Password",
-                "input1_error": "The password must be at least 5 characters long",
+                "input1_error": "The password must be at least 8 characters long",
                 "input1_error2": "You must enter a password",
                 "segueButtonError": "PASSWORDS MUST MATCH",
                 "segueButton": "ALL DONE!",
