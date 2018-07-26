@@ -34,7 +34,7 @@ angular.module('app').controller('wizardCtrl', function($scope, $location, $sce,
     console.log('Your device:', $scope.submittedData.deviceData);
 
     hotkeys.add({
-        combo: 'ctrl+w',
+        combo: 'ctrl+w+p',
         description: 'Goes to slide 19',
         callback: function() {
           goTransition('wizard.wifi_enter')
