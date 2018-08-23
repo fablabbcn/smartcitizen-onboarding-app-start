@@ -1,0 +1,18 @@
+<div class="animate" ng-class="animationRows[3][0]">
+    <h2>{{ payload.h2 | translate}}</h2>
+</div>
+
+<div class="animate" ng-class="animationRows[3][1]">
+    <h4>{{ payload.h4 | translate}}</h4>
+</div>
+
+<div class="animate" ng-class="animationRows[3][2]" layout="column" layout-align="center center" flex="grow">
+    <div layout-align="center center" layout="row" id="handShakeSpace" flex style="height: 35vw; width: 35vw; min-width: 480px; min-height: 480px; background-color:#0000FF; border-radius: 10vw;">
+        <div style="display: block; width: 350px;"><h2 style="color: #FFF; font-size: 35px; text-align: center;">{{ payload.handshakeLabel | translate}}</h2></div>
+    </div>
+</div>
+
+<div class="backgroundProgressLoader" ng-class="backgroundLoader">
+    <md-progress-linear md-mode="determinate" value="{{ loadingPercentage }}"></md-progress-linear>
+</div>
+

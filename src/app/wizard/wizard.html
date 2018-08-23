@@ -1,10 +1,10 @@
 <!--<canvas></canvas>-->
 
 <div id="progress" layout="column" layout-align="center center" flex="none" ng-class="payload.progressShow">
-    <md-progress-linear md-diameter="100" md-mode="determinate" bar-height="50px" value="{{payload.progressVal}}"></md-progress-linear>
+    <md-progress-linear md-diameter="100" md-mode="determinate" bar-height="50px" value="{{ payload.progressVal | translate}}"></md-progress-linear>
     <div id="progressLabels" layout="row" layout-align="space-between start">
-        <p id="left">{{payload.progressLeftLabel}}</p>
-        <p id="right">{{payload.progressRightLabel}}</p>
+        <p id="left">{{ payload.progressLeftLabel | translate}}</p>
+        <p id="right">{{ payload.progressRightLabel | translate}}</p>
     </div>
 </div>
 
@@ -34,7 +34,7 @@
                 </text>
             </svg>
 
-            <span id="segueContent">{{ payload.segueButton }}</span>
+            <span id="segueContent">{{ payload.segueButton | translate }}</span>
 
 
         </button>
@@ -43,8 +43,8 @@
                 <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
             </svg>
         </div>
-        <button class="yesButton errorButton" ng-click="yes()" ng-class="errorButton" hide-xs>{{ payload.yesButton }}</button>
-        <button class="noButton errorButton" ng-click="no()"ng-class="errorButton" hide-xs>{{ payload.noButton }}</button>
+        <button class="yesButton errorButton" ng-click="yes()" ng-class="errorButton" hide-xs>{{ payload.yesButton | translate }}</button>
+        <button class="noButton errorButton" ng-click="no()"ng-class="errorButton" hide-xs>{{ payload.noButton | translate }}</button>
     </div>
     <div hide-xs>
         <button class="forwardButton" ng-click="forward()" ng-class="payload.forwardBlock" style="visibility: hidden;">

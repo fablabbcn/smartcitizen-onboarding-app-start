@@ -17,6 +17,7 @@ $segueWrapperHeight: 160px;
 $break-sm: 960px;
 
 /** -- IMPORTS -- **/
+@import "~angular-material/angular-material.scss";
 @import "colors";
 @import "progress";
 @import "tooltip";

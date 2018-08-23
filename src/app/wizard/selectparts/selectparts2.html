@@ -1,0 +1,83 @@
+<div class="animate" ng-class="animationRows[3][0]">
+    <h2>{{ payload.h2 | translate}}</h2>
+</div>
+
+<div class="animate" ng-class="animationRows[3][1]">
+    <h4>{{ payload.h4 | translate}}</h4>
+</div>
+
+<div class="selectionRow animate" layout="row" layout-padding layout-margin layout-wrap
+     ng-class="animationRows[3][2]" flex="noshrink">
+    <button class="selection" flex flex-md="45" flex-sm="45" flex-xs="100" ng-click="selectPart(0)"
+            ng-class="selectionButtons[0]" ng-mouseenter="infoImageOn(4)" ng-mouseleave="infoImageOff(4)">
+            <div class="sectionContent">
+                <div class="contentIcons" layout="row" layout-align="space-between">
+                    <div class="infoHolder" ng-click="infoClick(4)">
+                        <img preload-image class="info" ng-src="{{infoImages[4]}}" layout="center">
+                    </div>
+                    <div class="checkHolder" layout="row" layout-align="end start">
+                        <img preload-image class="check" ng-src="assets/images/check.png" layout="center">
+                    </div>
+                </div>
+
+                <div class="selectionImage">
+                    <img preload-image class="itemImage" ng-src="assets/images/sck_case.png">
+                </div>
+                <h5 class="selectionText">{{ payload.part5 | translate}}</h5>
+            </div>
+        </button>
+    <button class="selection" flex flex-md="45" flex-sm="45" flex-xs="100" ng-click="selectPart(1)"
+            ng-class="selectionButtons[1]" ng-mouseenter="infoImageOn(5)" ng-mouseleave="infoImageOff(5)">
+        <div class="sectionContent">
+            <div class="contentIcons" layout="row" layout-align="space-between">
+                <div class="infoHolder" ng-click="infoClick(5)">
+                    <img preload-image class="info" ng-src="{{infoImages[5]}}" layout="center">
+                </div>
+                <div class="checkHolder" layout="row" layout-align="end start">
+                    <img preload-image class="check" ng-src="assets/images/check.png" layout="center">
+                </div>
+            </div>
+
+            <div class="selectionImage">
+                <img preload-image class="itemImage" ng-src="assets/images/spacers.png">
+            </div>
+            <h5 class="selectionText">{{ payload.part6 | translate}}</h5>
+        </div>
+    </button>
+    <button class="selection" flex flex-md="45" flex-sm="45" flex-xs="100" ng-click="selectPart(2)"
+            ng-class="selectionButtons[2]" ng-mouseenter="infoImageOn(6)" ng-mouseleave="infoImageOff(6)">
+        <div class="sectionContent">
+            <div class="contentIcons" layout="row" layout-align="space-between">
+                <div class="infoHolder" ng-click="infoClick(6)">
+                    <img preload-image class="info" ng-src="{{infoImages[6]}}" layout="center">
+                </div>
+                <div class="checkHolder" layout="row" layout-align="end start">
+                    <img preload-image class="check" ng-src="assets/images/check.png" layout="center">
+                </div>
+            </div>
+
+            <div class="selectionImage">
+                <img preload-image class="itemImage" ng-src="assets/images/screen.png">
+            </div>
+            <h5 class="selectionText">{{ payload.part7 | translate}}</h5>
+        </div>
+    </button>
+    <button class="selection" flex flex-md="45" flex-sm="45" flex-xs="100" ng-click="selectPart(3)"
+            ng-class="selectionButtons[3]" ng-mouseenter="infoImageOn(7)" ng-mouseleave="infoImageOff(7)">
+        <div class="sectionContent">
+            <div class="contentIcons" layout="row" layout-align="space-between">
+                <div class="infoHolder" ng-click="infoClick(7)">
+                    <img preload-image class="info" ng-src="{{infoImages[7]}}" layout="center">
+                </div>
+                <div class="checkHolder" layout="row" layout-align="end start">
+                    <img preload-image class="check" ng-src="assets/images/check.png" layout="center">
+                </div>
+            </div>
+
+            <div class="selectionImage">
+                <img preload-image class="itemImage" ng-src="assets/images/plugs.png">
+            </div>
+            <h5 class="selectionText">{{ payload.part8 | translate}}</h5>
+        </div>
+    </button>
+</div>

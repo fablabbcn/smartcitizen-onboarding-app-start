@@ -1,0 +1,555 @@
+[{
+    "index": 0,
+    "part": 1,
+    "template": "landing",
+    "stateName": "landing",
+    "url": "landing",
+    "controller": "landingController",
+    "contentKeys": [
+      "h1",
+      "h4",
+      "segueButton"
+    ]
+},{
+    "stateName": "",
+    "controller": "smartcitizenController",
+    "subStates": [{
+        "index": 1,
+        "part": 2,
+        "stateName": "smart_citizen",
+        "template": "collaborators",
+        "url": "smart_citizen",
+        "assets": {
+          "companyLogo": "assets/images/scklogo.png"
+        },
+        "contentKeys": [
+          "companyLogo",
+          "h2",
+          "h4",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 2,
+        "part": 3,
+        "template": "basic2",
+        "stateName": "smart_citizen_brief",
+        "url": "smart_citizen_brief",
+        "assets": {
+          "image": "assets/images/sck.png"
+        },
+        "contentKeys": [
+          "h2",
+          "h4",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 3,
+        "part": 4,
+        "template": "basic2",
+        "stateName": "smart_citizen_brief2",
+        "url": "smart_citizen_brief2",
+        "assets": {
+          "image": "assets/images/web.png"
+        },
+        "contentKeys": [
+          "h2",
+          "h4",
+          "segueButton"
+        ]
+      }
+    ]
+  },
+  {
+    "stateName": "",
+    "controller": "smartcitizenController",
+    "subStates": [{
+        "index": 10,
+        "part": 1,
+        "template": "basic1",
+        "stateName": "whats_in_the_box",
+        "url": "whats_in_the_box",
+        "contentKeys": [
+          "h1",
+          "h4",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 11,
+        "part": 2,
+        "template": "selectparts1",
+        "stateName": "selectparts",
+        "controller": "statesController",
+        "url": "kit_parts",
+        "contentKeys": [
+          "h2",
+          "h4",
+          "part1",
+          "part1_desc",
+          "part2",
+          "part2_desc",
+          "part3",
+          "part3_desc",
+          "part4",
+          "part4_desc",
+          "modalButton",
+          "contextButton",
+          "segueButton",
+          "segueButtonError",
+          "continueButton",
+          "yesButton",
+          "noButton"
+        ]
+      },
+      {
+        "index": 12,
+        "part": 3,
+        "template": "selectparts2",
+        "stateName": "selectparts2",
+        "controller": "statesController",
+        "url": "case",
+        "contentKeys": [
+          "h2",
+          "h4",
+          "part5",
+          "part5_desc",
+          "part6",
+          "part6_desc",
+          "part7",
+          "part7_desc",
+          "part8",
+          "part8_desc",
+          "modalButton",
+          "contextButton",
+          "segueButton",
+          "segueButtonError",
+          "continueButton",
+          "yesButton",
+          "noButton"
+        ]
+      },
+      {
+        "index": 13,
+        "part": 4,
+        "template": "confirm",
+        "stateName": "confirm_parts",
+        "url": "confirm_parts",
+        "contentKeys": [
+          "h1",
+          "h4",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 14,
+        "part": 5,
+        "template": "kitbuild1",
+        "stateName": "kitbuild1",
+        "url": "kitbuild_1",
+        "contentKeys": [
+          "h2",
+          "text",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 15,
+        "part": 6,
+        "template": "kitbuild2",
+        "stateName": "kitbuild2",
+        "url": "kitbuild_2",
+        "contentKeys": [
+          "h2",
+          "text",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 16,
+        "part": 7,
+        "template": "kitbuild3",
+        "stateName": "kitbuild3",
+        "url": "kitbuild_3",
+        "contentKeys": [
+          "h2",
+          "text",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 17,
+        "part": 8,
+        "template": "kitbuild4",
+        "stateName": "kitbuild4",
+        "url": "kitbuild_4",
+        "contentKeys": [
+          "h2",
+          "text",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 18,
+        "part": 9,
+        "template": "casing",
+        "stateName": "case1",
+        "url": "case_1",
+        "assets": {
+          "image": "assets/images/sck_placeall.png"
+        },
+        "contentKeys": [
+          "h2",
+          "text",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 19,
+        "part": 10,
+        "template": "casing",
+        "stateName": "case2",
+        "url": "case_2",
+        "assets": {
+          "image": "assets/images/sck_sealthecover.png"
+        },
+        "contentKeys": [
+          "h2",
+          "text",
+          "segueButton"
+        ]
+      }
+    ]
+  }, {
+    "stateName": "",
+    "controller": "handshakeController",
+    "subStates": [{
+        "index": 21,
+        "part": 1,
+        "template": "wifi_enter",
+        "stateName": "wifi_enter",
+        "url": "wifi_enter",
+        "contentKeys": [
+          "h2",
+          "h4",
+          "input1",
+          "input1_error",
+          "input2",
+          "input2_error",
+          "segueButtonError",
+          "segueButton",
+          "contextButton",
+          "contextButton2",
+          "continueButton"
+        ]
+      },
+      {
+        "index": 22,
+        "part": 2,
+        "template": "handshake",
+        "stateName": "handshake",
+        "url": "handshake",
+        "contentKeys": [
+          "h2",
+          "h4",
+          "handshakeLabel",
+          "waitLabel",
+          "segueButton",
+          "continueButton"
+        ]
+      },
+      {
+        "index": 23,
+        "part": 3,
+        "template": "wifi_check",
+        "stateName": "wifi_check",
+        "url": "wifi_check",
+        "contentKeys": [
+          "h2",
+          "h4",
+          "input1",
+          "input1_error",
+          "input2",
+          "input2_error",
+          "segueButtonError",
+          "contextButton",
+          "contextButton2",
+          "waitLabel",
+          "segueButton",
+          "continueButton"
+        ]
+      },
+      {
+        "index": 24,
+        "part": 4,
+        "template": "confirm",
+        "stateName": "confirm_handshake",
+        "controller": "smartcitizenController",
+        "url": "confirm_handshake",
+        "contentKeys": [
+          "h1",
+          "h4",
+          "segueButton"
+        ]
+      }
+    ]
+  }, {
+    "stateName": "",
+    "controller": "accesspointController_base",
+    "subStates": [{
+        "index": 30,
+        "part": 4,
+        "template": "basic1",
+        "controller": "smartcitizenController",
+        "stateName": "accesspoint_pre",
+        "url": "accesspoint_pre",
+        "contentKeys": [
+          "h1",
+          "h4",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 31,
+        "part": 5,
+        "template": "prompted_entry1",
+        "stateName": "accesspoint_1",
+        "url": "accesspoint_1",
+        "contentKeys": [
+          "h2",
+          "h3_1",
+          "em_1",
+          "h3_2",
+          "em_2",
+          "h3_3",
+          "h4",
+          "promptedText",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 32,
+        "part": 6,
+        "template": "prompted_entry2",
+        "stateName": "accesspoint_2",
+        "url": "accesspoint_2",
+        "contentKeys": [
+          "h2",
+          "h3_1",
+          "em_1",
+          "h4",
+          "promptedText",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 33,
+        "part": 6,
+        "template": "prompted_entry1",
+        "controller": "accesspointController",
+        "stateName": "ap_final",
+        "url": "ap_final",
+        "contentKeys": [
+          "h2",
+          "h4",
+          "promptedText",
+          "segueButton"
+        ]
+      }
+    ]
+  }, {
+    "stateName": "",
+    "controller": "nameController",
+    "subStates": [{
+        "index": 40,
+        "part": 1,
+        "template": "basic1",
+        "stateName": "sensorName_prep",
+        "controller": "smartcitizenController",
+        "url": "sensorName_prep",
+        "contentKeys": [
+          "h1",
+          "h4",
+          "segueButtonError",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 41,
+        "part": 2,
+        "template": "sensorName",
+        "stateName": "sensorName",
+        "url": "sensorName",
+        "contentKeys": [
+          "h2",
+          "h4",
+          "input1",
+          "input1_error",
+          "contextButton",
+          "segueButtonError",
+          "segueButton"
+        ]
+      }
+    ]
+  }, {
+    "stateName": "",
+    "controller": "locationController",
+    "subStates": [{
+        "index": 50,
+        "part": 1,
+        "template": "location_prep",
+        "stateName": "location_prep",
+        "url": "location_prep",
+        "resolve": {
+          "tags": {
+            "function": ["return [];"]
+          }
+        },
+        "contentKeys": [
+          "h2",
+          "h4",
+          "segueButton",
+          "continueButton",
+          "waitButton"
+        ]
+      },
+      {
+        "index": 51,
+        "part": 2,
+        "template": "location_map",
+        "stateName": "location_map",
+        "url": "location_map",
+        "resolve": {
+          "tags": {
+            "function": ["return [];"]
+          }
+        },
+        "contentKeys": [
+          "h2",
+          "h4",
+          "input1",
+          "input1_error",
+          "segueButton",
+          "continueButton"
+        ]
+      },
+      {
+        "index": 52,
+        "part": 3,
+        "template": "location_tags",
+        "stateName": "location_tags",
+        "url": "location_tags",
+        "resolve": {
+          "tags": {
+            "function": ["platform", "return platform.getTags();"],
+            "dependencies": ["platform"]
+          }
+        },
+        "contentKeys": [
+          "h2",
+          "h4",
+          "segueButton",
+          "continueButton"
+        ]
+      },
+      {
+        "index": 53,
+        "part": 4,
+        "template": "confirm",
+        "controller": "smartcitizenController",
+        "stateName": "confirm_location",
+        "url": "confirm_location",
+        "contentKeys": [
+          "h1",
+          "h4",
+          "segueButton"
+        ]
+      }
+    ]
+  }, {
+    "controller": "accountController",
+    "subStates": [{
+        "index": 90,
+        "part": 1,
+        "template": "account1",
+        "stateName": "account1",
+        "url": "email",
+        "contentKeys": [
+          "h2",
+          "h4",
+          "segueButton",
+          "input1",
+          "input1_error",
+          "segueButtonError",
+          "continueButton"
+        ]
+      },
+      {
+        "index": 91,
+        "part": 2,
+        "template": "login",
+        "stateName": "login",
+        "url": "login",
+        "contentKeys": [
+          "h2a",
+          "h2b",
+          "h4",
+          "input1",
+          "input1_error",
+          "segueButtonError",
+          "segueButton",
+          "contextButton"
+        ]
+      },
+      {
+        "index": 95,
+        "part": 2,
+        "template": "account2",
+        "stateName": "account2",
+        "url": "username",
+        "contentKeys": [
+          "h2",
+          "h4",
+          "input1",
+          "input1_error",
+          "input1_error2",
+          "contextButton",
+          "segueButtonError",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 96,
+        "part": 3,
+        "template": "account3",
+        "stateName": "account3",
+        "url": "password",
+        "contentKeys": [
+          "h2",
+          "h4a",
+          "h4b",
+          "input1",
+          "input1_error",
+          "input1_error2",
+          "segueButtonError",
+          "segueButton",
+          "continueButton"
+        ]
+      }
+    ]
+  }, {
+    "index": 100,
+    "part": 4,
+    "controller": "finalController",
+    "stateName": "final",
+    "template": "final",
+    "url": "final",
+    "contentKeys": [
+      "h1",
+      "h2",
+      "h4",
+      "segueButton"
+    ]
+  }
+]
