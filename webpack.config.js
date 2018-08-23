@@ -37,7 +37,8 @@ module.exports = {
       chunkFilename: "[id].css"
     }),
     new CopyWebpackPlugin([
-      { from: 'src/assets/', to: 'assets/' }
+      { from: 'src/assets/', to: 'assets/' },
+      'src/404.html'
     ])
   ],
   devtool: 'source-map',
