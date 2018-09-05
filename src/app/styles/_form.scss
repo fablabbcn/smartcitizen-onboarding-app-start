@@ -1,6 +1,6 @@
 .inputDiv {
 
-  margin: 50px 0 ;
+  margin: 20px 0;
 
   .inputTitle, .inputError {
     color: $SCK2-darkGrey;
@@ -12,9 +12,9 @@
     border: none;
 
     border-radius: 4px;
-    background-color: $SCK2-lightGrey;
+    background-color: $blue;
     @media screen and (max-width: 450px) {
-      padding: 0;
+      padding: 0 10px;
     }
 
     label {
@@ -29,11 +29,8 @@
     }
 
     .ss_input{
-      margin: 0 25px;
-      svg {
-        path {
-          fill: $SCK2-darkGrey !important;
-        }
+      svg, tspan {
+        fill: $blueLight;
       }
     }
 
@@ -45,18 +42,15 @@
         margin: 0;
         border: none;
         .md-placeholder{
-          color: $SCK2-darkGrey;
+          color: $blueLight;
         }
         input {
-          padding: 0;
+          padding: 0px 20px;
           height: 80px;
           border: none;
-          color: $SCK2-darkGrey;
+          color: white;
           font: 100% 'Roboto Condensed', sans-serif !important;
-          font-size: 42px !important;
-          @media screen and (max-width: 450px) {
-            font-size: 28px !important;
-          }
+          font-size: 2rem !important;
         }
       }
     }
@@ -70,9 +64,10 @@
     color: $SCK2-darkGrey;
 }
   md-input-container.md-default-theme.md-input-invalid label, md-input-container.md-input-invalid label, md-input-container.md-default-theme.md-input-invalid .md-input-message-animation, md-input-container.md-input-invalid .md-input-message-animation, md-input-container.md-default-theme.md-input-invalid .md-char-counter, md-input-container.md-input-invalid .md-char-counter {
+    font-size: 1.5rem;
     color: $msRed;
   }
-  md-input-container.md-default-theme label, md-input-container label, md-input-container.md-default-theme .md-placeholder, md-input-container .md-placeholder{
+  md-input-container.md-default-theme label, md-input-container  label, md-input-container.md-default-theme .md-placeholder, md-input-container .md-placeholder{
     color: $SCK2-darkGrey;
   }
   md-input-container.md-default-theme:not(.md-input-invalid).md-input-has-value label, md-input-container:not(.md-input-invalid).md-input-has-value label {

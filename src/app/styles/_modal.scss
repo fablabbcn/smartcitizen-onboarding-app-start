@@ -55,6 +55,7 @@
 
         width: 1000px;
         min-height: 200px;
+        border-radius: 15px;
         @media screen and (min-width: $break-sm) {
           padding: 40px 40px 40px 100px;
         }
@@ -65,13 +66,11 @@
 
         h2 {
           text-align: left;
-          color: $SCK2-lightGrey;
-          @media screen and (max-width: 960px) {
-            text-align: center;
-          }
+          color: var(--black);
         }
 
-        h5 {
+        p {
+          text-align: left;
           font-size: 25px;
           @media screen and (min-width: $break-sm) {
             padding-right: 85px;
@@ -92,17 +91,17 @@
           }
         }
         &.green{
-          background-color: $SCK2-blue;
+          background-color: white;
 
           #partImage {
             @media screen and (min-width: $break-sm) {
               width: 200px;
               height: 200px;
               img {
-                width: 200%;
+                width: 120%;
                 position: relative;
                 top: -100px;
-                right: 125px;
+                right: 80px;
               }
             }
             @media screen and (max-width: $break-sm) {
@@ -122,16 +121,15 @@
       }
       #modalLink {
         #modalButton {
-          font: 100% $font !important;
           width: auto;
           margin: 15px auto;
-          padding: 15px 20px;
+          padding: 15px 25px;
           font-size: 26px !important;
-
-          background: $SCK2-lightGrey;
+          font-family: 'Kanit';
+          background: $msGreen;
           border-radius: 40px;
-          border: 5px solid $SCK2-lightGrey;
-          color: $SCK2-darkGrey;
+          border: 5px solid $msGreen;
+          color: var(--black);
         }
       }
     }

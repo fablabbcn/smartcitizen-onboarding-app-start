@@ -1,6 +1,6 @@
 $barHeight: 15px;
-$barBackgroundColor: white;
-$barColor: $SCK2-yellow;
+$barBackgroundColor: $blue;
+$barColor: $regalBlue;
 $labelMargin: 50px;
 
 #progress{
@@ -17,8 +17,11 @@ $labelMargin: 50px;
   }
 
   #progressLabels {
+    margin-top: 10px;
     width: 100%;
     p {
+      font-family: 'Kanit';
+      font-weight: 700;
       margin: 5px 0;
       font-size: 20px;
       -webkit-transition: color 0.75s cubic-bezier(0.86, 0, 0.07, 1);
@@ -26,7 +29,7 @@ $labelMargin: 50px;
       -ms-transition: color 0.75s cubic-bezier(0.86, 0, 0.07, 1);
       -o-transition: color 0.75s cubic-bezier(0.86, 0, 0.07, 1);
       transition: color 0.75s cubic-bezier(0.86, 0, 0.07, 1);
-      color: $SCK2-darkGrey;
+      color: $blue;
     }
     #left{
       margin-left: $labelMargin;
@@ -43,7 +46,7 @@ $labelMargin: 50px;
   &:hover, &.blue{
     #progressLabels{
       p {
-        color: $SCK2-darkGrey;
+        color: $regalBlue;
       }
     }
   }

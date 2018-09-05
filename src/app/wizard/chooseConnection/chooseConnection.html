@@ -3,64 +3,52 @@
 </div>
 
 <div class="animate" ng-class="animationRows[3][1]">
-    <p class="description">{{ payload.h4 | translate}}</p>
+    <p>{{ payload.h4 | translate}}</p>
 </div>
 
 <div class="selectionRow animate" layout="row" layout-padding layout-margin layout-wrap
      ng-class="animationRows[3][2]" flex="noshrink">
     <div class="selection" flex flex-md="45" flex-sm="45" flex-xs="100" ng-click="selectPart(0)"
             ng-class="selectionButtons[0]" ng-mouseenter="infoImageOn(0)" ng-mouseleave="infoImageOff(0)">
-        <span class="infoHolder">
+        <span class="recommanded"> {{ payload.recommanded | translate }} </span>
+        <!-- <span class="infoHolder">
             <md-icon ng-click="infoClick(0); $event.stopPropagation()" md-svg-src="assets/images/info.svg"></md-icon>
-        </span>
+        </span> -->
         <span class="checkHolder">
           <md-icon md-svg-src="assets/images/check.svg"></md-icon>
         </span>
         <div class="sectionContent">
-            <img preload-image class="selectionImage itemImage" ng-src="assets/images/sensor_board.png">
-            <h5 preload-image class="selectionText">{{ payload.part1 | translate}}</h5>
+            <img preload-image class="selectionImage itemImage" ng-src="{{ payload.smartphoneImage }}">
+            <h5 preload-image class="selectionText">{{ payload.smartphone | translate}}</h5>
         </div>
     </div>
 
     <div class="selection" flex flex-md="45" flex-sm="45" flex-xs="100" ng-click="selectPart(1)"
             ng-class="selectionButtons[1]" ng-mouseenter="infoImageOn(1)" ng-mouseleave="infoImageOff(1)">
-        <span class="infoHolder">
+        <!-- <span class="infoHolder">
             <md-icon ng-click="infoClick(1); $event.stopPropagation()" md-svg-src="assets/images/info.svg"></md-icon>
-        </span>
+        </span> -->
         <span class="checkHolder">
           <md-icon md-svg-src="assets/images/check.svg"></md-icon>
         </span>
         <div class="sectionContent">
-            <img preload-image class="selectionImage itemImage" ng-src="assets/images/hardware_board.png">
-            <h5 class="selectionText">{{ payload.part2 | translate}}</h5>
+            <img preload-image class="selectionImage itemImage" ng-src="{{ payload.lightMethodImage }}">
+            <h5 class="selectionText">{{ payload.lightMethod | translate}}</h5>
         </div>
     </div>
 
     <div class="selection" flex flex-md="45" flex-sm="45" flex-xs="100" ng-click="selectPart(2)"
             ng-class="selectionButtons[2]" ng-mouseenter="infoImageOn(2)" ng-mouseleave="infoImageOff(2)">
-        <span class="infoHolder">
+        <!-- <span class="infoHolder">
             <md-icon ng-click="infoClick(2); $event.stopPropagation()" md-svg-src="assets/images/info.svg"></md-icon>
-        </span>
+        </span> -->
         <span class="checkHolder">
           <md-icon md-svg-src="assets/images/check.svg"></md-icon>
         </span>
         <div class="sectionContent">
-            <img preload-image class="selectionImage itemImage" ng-src="assets/images/BOARDS-CUTOUT_0006_BATTERY2.png">
-            <h5 class="selectionText">{{ payload.part3 | translate}}</h5>
+            <img preload-image class="selectionImage itemImage" ng-src="{{ payload.offlineImage }}">
+            <h5 class="selectionText">{{ payload.offline | translate}}</h5>
         </div>
     </div>
 
-    <div class="selection" flex flex-md="45" flex-sm="45" flex-xs="100" ng-click="selectPart(3)"
-            ng-class="selectionButtons[3]" ng-mouseenter="infoImageOn(3)" ng-mouseleave="infoImageOff(3)">
-        <span class="infoHolder">
-            <md-icon ng-click="infoClick(3); $event.stopPropagation()" md-svg-src="assets/images/info.svg"></md-icon>
-        </span>
-        <span class="checkHolder">
-          <md-icon md-svg-src="assets/images/check.svg"></md-icon>
-        </span>
-        <div class="sectionContent">
-            <img preload-image class="selectionImage itemImage" ng-src="assets/images/particle-sensor.png">
-            <h5 class="selectionText">{{ payload.part4 | translate}}</h5>
-        </div>
-    </div>
 </div>

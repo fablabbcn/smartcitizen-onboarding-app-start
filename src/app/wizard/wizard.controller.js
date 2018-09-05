@@ -43,6 +43,7 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
     $scope.seque = function() {
 
         if ($scope.segueControl == 'ready') {
+          console.log($scope.payload.template);
             switch ($scope.payload.template) {
                 case 'handshake':
                     if ($scope.handShakeState == false) {
@@ -62,6 +63,9 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
                     break;
                 case 'location_tags':
                     platform.updateDevice($scope.submittedData.deviceData).then(sequeTransition);
+                    break;
+                case 'chooseConnection':
+                    sequeTransition($scope.nextState);
                     break;
                 default:
                     sequeTransition();
@@ -83,12 +87,12 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
 
     /** Aux Navigation **/
 
-    function sequeTransition() {
+    function sequeTransition(nextState) {
         AnimationService.leaving(true);
         $scope.payload.progressShow = 'blue';
         $timeout(function() {
             console.log('Next slide:', $scope.payload.index);
-            SegueService.nextPage($scope.pre_made);
+            SegueService.nextPage($scope.pre_made, nextState);
             $window.scrollTo(0, 0);
             $scope.payload.progressShow = ' ';
         }, 500); // see animations max duration time
@@ -253,7 +257,8 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
         }
     };
 
-    $scope.$on('modal', function() {
+    $rootScope.$on('modal', function() {
+        console.log('modal');
         $scope.modalClass = 'showing';
     });
 

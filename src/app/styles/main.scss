@@ -18,7 +18,11 @@ $break-sm: 960px;
 
 /** -- IMPORTS -- **/
 @import "~angular-material/angular-material.scss";
+@import "~sc-assets/styles/variables.scss";
+@import "~sc-assets/styles/typography.scss";
+@import "~sc-assets/styles/helpers.scss";
 @import "colors";
+@import "helpers";
 @import "progress";
 @import "tooltip";
 @import "form";
@@ -39,80 +43,79 @@ html, body { margin: 0; padding: 0; }
 canvas {vertical-align: top; z-index: 0}
 body {
   height:auto; overflow:auto;
-  font: 100% $font;
-  background-color: $SCKwhite !important;
+  // font: 100% $font;
+  background-color: $bg-blue !important;
   display: flex;
   min-height: 100vh;
-  border: 10px $SCK2-darkGrey solid;
-
+  //
   h1, h2, h3, h4, h6, p {
     text-align: center;
   }
-
-  h1{
-    font: 100% $font2;
-    font-weight: 900;
-    font-size: 4.5em;
-    color: $SCK2-darkGrey;
-    line-height: 70px;
-    @media screen and (max-width: 450px) {
-      font-size: 3.25em;
-      line-height: 46px;
-    }
-  }
-  h2{
-    font: 100% $font2;
-    font-weight: 800;
-    font-size: 2.875em;
-    color: $SCK2-darkGrey;
-    text-transform: uppercase;
-    @media screen and (max-width: 450px) {
-      font-size: 2em;
-    }
-  }
-  h3{
-    font-weight: 400;
-    font-size: 1.875em;
-    color: $SCK2-darkGrey;
-    @media screen and (max-width: 450px) {
-      font-size: 1.375em;
-    }
-    em{
-      font-style: normal !important;
-      &.green{
-        color: $msGreen;
-      }
-      &.orange{
-        color: $msOrange;
-      }
-      &.blue{
-        color: $SCK2-blue;
-      }
-    }
-  }
-
-  h4, p{
-    font-weight: 400;
-    font-size: 1.75em;
-    color: $SCK2-darkGrey;
-    @media screen and (max-width: 450px) {
-      font-size: 1.75em;
-    }
-  }
-  h5{
-    font: 100% $font;
-    font-weight: 400;
-    font-size: 1.65em;
-    color: $msWhite;
-    @media screen and (max-width: 450px) {
-      font-size: 1.15em;
-    }
-  }
-  h6{
-    font-weight: 400;
-    font-size: 1.75em;
-    color: $msGrey;
-  }
+  //
+  // h1{
+  //   font: 100% $font2;
+  //   font-weight: 900;
+  //   font-size: 4.5em;
+  //   color: $SCK2-darkGrey;
+  //   line-height: 70px;
+  //   @media screen and (max-width: 450px) {
+  //     font-size: 3.25em;
+  //     line-height: 46px;
+  //   }
+  // }
+  // h2{
+  //   font: 100% $font2;
+  //   font-weight: 800;
+  //   font-size: 2.875em;
+  //   color: $SCK2-darkGrey;
+  //   text-transform: uppercase;
+  //   @media screen and (max-width: 450px) {
+  //     font-size: 2em;
+  //   }
+  // }
+  // h3{
+  //   font-weight: 400;
+  //   font-size: 1.875em;
+  //   color: $SCK2-darkGrey;
+  //   @media screen and (max-width: 450px) {
+  //     font-size: 1.375em;
+  //   }
+  //   em{
+  //     font-style: normal !important;
+  //     &.green{
+  //       color: $msGreen;
+  //     }
+  //     &.orange{
+  //       color: $msOrange;
+  //     }
+  //     &.blue{
+  //       color: $SCK2-blue;
+  //     }
+  //   }
+  // }
+  //
+  // h4, p{
+  //   font-weight: 400;
+  //   font-size: 1.75em;
+  //   color: $SCK2-darkGrey;
+  //   @media screen and (max-width: 450px) {
+  //     font-size: 1.75em;
+  //   }
+  // }
+  // h5{
+  //   font: 100% $font;
+  //   font-weight: 400;
+  //   font-size: 1.65em;
+  //   color: $msWhite;
+  //   @media screen and (max-width: 450px) {
+  //     font-size: 1.15em;
+  //   }
+  // }
+  // h6{
+  //   font-weight: 400;
+  //   font-size: 1.75em;
+  //   color: $msGrey;
+  // }
   button{
     font-weight: 500;
     font-size: 1.5em;
@@ -142,7 +145,7 @@ body {
       padding: 0 25px;
       max-width: 1150px;
       overflow: visible;
-
+      color: white;
       &.ng-enter {
         -webkit-animation:slideInRight 0.5s both ease;
         -moz-animation:slideInRight 0.5s both ease;
@@ -156,11 +159,13 @@ body {
 
       .selectionRow {
         .selection {
-          height: 400px;
-          background: $SCK2-lightGrey;
-          border: 5px $SCK2-darkGrey solid;
-
-
+          height: 250px;
+          border-radius: 10px;
+          background-color: $bg-blue;
+          border: 3px $blue solid;
+          position: relative;
+          outline: none;
+          cursor: pointer;
           &.nested{
             width: 300px;
             @media screen and (max-width: 400px) {
@@ -168,7 +173,52 @@ body {
             }
           }
 
+          .recommanded {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translate(-50%);
+            font-size: 1.5rem;
+          }
+
+          .infoHolder{
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            z-index: 10000;
+            md-icon {
+              outline: none;
+            }
+            svg {
+              fill: white;
+            }
+          }
+
+          .checkHolder {
+            visibility: hidden;
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            .st36{ fill: $msGreen; }
+            -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+            -webkit-transform: scale3d(0.7, 0.3, 1);
+            transform: scale3d(0.7, 0.3, 1);
+            -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+            transition: opacity 0.2s, transform 0.2s;
+          }
+
           .sectionContent {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100%;
+            img{
+              max-height: 250px;
+              max-width: 80%;
+              overflow: hidden;
+            }
             .contentIcons{
               height: 30px;
               .info{
@@ -176,30 +226,8 @@ body {
               }
             }
 
-            .infoHolder{
-              outline: none;
-              padding: 14px;
-              position: relative;
-              top: -14px;
-              right: 14px;
-            }
 
-            .checkHolder {
-              .check {
-                height: 30px;
-                padding-right: 0;
-
-                -webkit-transform-origin: 50% 100%;
-                transform-origin: 50% 100%;
-                -webkit-transform: scale3d(0.7, 0.3, 1);
-                transform: scale3d(0.7, 0.3, 1);
-                -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
-                transition: opacity 0.2s, transform 0.2s;
-                visibility: hidden;
-              }
-            }
             .selectionIcon, .selectionImage {
-              padding: 30px 0;
               position: relative;
               -webkit-transition: top 0.2s;
               -moz-transition: top 0.2s;
@@ -222,20 +250,13 @@ body {
                 top: -100px;
               }
             }
-            .selectionImage{
-              padding: 0;
-              img{
-                max-height: 250px;
-                max-width: 80%;
-                overflow: hidden;
-              }
-            }
             .selectionText {
-              color: $SCK2-darkGrey;
+              font-family: 'Kanit';
+              margin-bottom: 1rem;
             }
           }
           &:hover, &:active, &.active {
-            background-color: $SCK2-darkGrey;
+            background-color: $blue;
             .selectionIcon, .selectionImage {
               position:relative;
               top: -10px;
@@ -252,11 +273,9 @@ body {
           }
           &.active{
             .checkHolder{
-              .check{
-                visibility: visible;
-                -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
-                transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
-              }
+              visibility: visible;
+              -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
+              transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
             }
             .selectionIcon, .selectionImage{
               position:relative;
@@ -310,9 +329,10 @@ body {
       .contextButton {
         height: 60px;
         width: auto;
-        margin: 15px auto;
         padding: 0 15px;
-
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-transform: uppercase;
         background: $msBlack;
         border-radius: 40px;
@@ -322,7 +342,7 @@ body {
         svg{
           margin: 0 10px;
           position: relative;
-          top: 7px;
+          top: 2px;
         }
 
         @media screen and (max-width: 450px) {
@@ -359,6 +379,7 @@ body {
         //max-width: 400px;
         h2{
           color: $SCK2-darkGrey;
+          margin: 10px;
         }
       }
 

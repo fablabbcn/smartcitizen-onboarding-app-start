@@ -111,14 +111,14 @@ $button-height: $segueWrapperHeight / 2.75;
       width: auto;
       padding: 5px 40px;
       border-radius: 40px;
-      color: $SCK2-blue;
-      background: $SCKwhite;
-      border-color: $SCK2-blue;
+      color: var(--black);
+      background: $msGreen;
+      border-color: $msGreen;
 
       #segueContent {
         overflow: hidden;
-        font: 100% 'Roboto Condensed', sans-serif;
-        font-weight: 500 !important;
+        font: 100% 'Kanit', sans-serif;
+        font-weight: 700 !important;
         font-size: 20px;
         position: relative;
         top: -12px;
@@ -131,7 +131,7 @@ $button-height: $segueWrapperHeight / 2.75;
         display: inline;
         padding-right: 10px;
         path {
-          fill: $SCK2-blue;
+          fill: var(--black);
         }
       }
       #closeSVG{
@@ -142,20 +142,21 @@ $button-height: $segueWrapperHeight / 2.75;
         width: 0;
       }
       &.ready {
-        border: 2px solid $SCK2-blue;
+        border: 3px solid $msGreen;
         &:hover{
           background-color: $SCK2-lightGrey;
-          color: $SCK2-blue;
+          color: $msGreen;
           #nextSVG {
             path {
-              fill: $SCK2-blue;
+              fill: var(--black);
             }
           }
         }
       }
       &.blocked {
-        border: 2px solid $SCK2-darkGrey;
-        color: $SCK2-darkGrey;
+        border: 3px solid  $msGreen;
+        background: none;
+        color:  $msGreen;
         #nextSVG {
           path {
             fill: $SCK2-darkGrey;
@@ -228,27 +229,24 @@ $button-height: $segueWrapperHeight / 2.75;
   .backButton {
     height: $button-height;
     width: $button-height;
-    background: none;
+    background-color: $blue;
     border-radius: 40px;
-    color: $msNavy2;
-    border: 2px solid $msNavy2;
-    opacity: .12;
+    color: white;
+    border: 2px solid $blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     svg {
       position: relative;
-    }
-    tspan {
-      fill: $SCK2-blue;
-    }
-    &.blocked {
-      tspan {
-        fill: $msNavy2;
-      }
+      fill: white;
+      margin-right: 4px;
     }
     &.hide {
       visibility: hidden;
     }
     &:hover{
-      background-color: $msNavy2;
+      background-color: $regalBlue;
+      border: 2px solid $regalBlue;
     }
   }
   .forwardButton {

@@ -2,12 +2,12 @@
     <h2>{{ payload.h2 | translate}}</h2>
 </div>
 <div class="animate" ng-class="animationRows[3][1]">
-    <h4>{{ payload.h4 | translate}}</h4>
+    <p>{{ payload.h4 | translate}}</p>
 </div>
 
 <div class="animate" ng-class="animationRows[3][2]">
 
-    <form name="location">
+    <form name="location" style="margin-bottom: 20px;">
         <div class="inputDiv locationInput" layout="column" layout-align="center">
             <div class='inputContainer' layout="row" layout-align="start center">
                 <div class="ss_input">
@@ -15,14 +15,13 @@
                          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <text id="location" stroke="none" fill="none" font-family="SSStandard, SS Standard"
                               font-size="28" font-weight="normal" line-spacing="38">
-                            <tspan x="33" y="57" fill="#717E83">location</tspan>
+                            <tspan x="33" y="57">location</tspan>
                         </text>
                     </svg>
                 </div>
                 <div flex="grow" class="md-box">
-                    <md-input-container class="md-block">
-                        <label>{{ payload.input1 | translate}}</label>
-                        <input type="text" class="autoCompleteInput" g-places-autocomplete
+                    <md-input-container md-no-float class="md-block">
+                        <input placeholder="{{ payload.input1 | translate}}" type="text" class="autoCompleteInput" g-places-autocomplete
                                ng-change="autoCompleteListener()"
                                ng-model="autocomplete">
                     </md-input-container>

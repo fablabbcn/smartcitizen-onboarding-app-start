@@ -2,7 +2,7 @@
     <h2>{{ payload.h2a | translate}} {{submittedData.user.username}} {{ payload.h2b | translate}}</h2>
 </div>
 <div class="animate" ng-class="animationRows[4][1]">
-    <h4>{{ payload.h4 | translate}}</h4>
+    <p>{{ payload.h4 | translate}}</p>
 </div>
 
 <form name="password_form" class="animate" ng-class="animationRows[4][2]">
@@ -11,14 +11,13 @@
             <div class="ss_input">
                 <svg width="38px" height="36" viewBox="33 27 24 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <text id="lock" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="30" font-weight="normal" line-spacing="38">
-                        <tspan x="20" y="60" fill="#717E83">lock</tspan>
+                        <tspan x="20" y="60">lock</tspan>
                     </text>
                 </svg>
             </div>
             <div flex="grow" class="md-box">
-                <md-input-container ng-model-options="{ debounce: 1000 }" class="md-block">
-                    <label>{{ payload.input1 | translate}}</label>
-                    <input  ng-model="pass" ng-change="loginListener()" type="{{showPasswordToggle}}" name="pass" >
+                <md-input-container md-no-float ng-model-options="{ debounce: 1000 }" class="md-block">
+                    <input placeholder="{{ payload.input1 | translate}}" ng-model="pass" ng-change="loginListener()" type="{{showPasswordToggle}}" name="pass" >
                     <div ng-messages="password_form.pass.$error">
                     </div>
                 </md-input-container>
@@ -26,7 +25,7 @@
             <div class="ss_input" ng-mouseenter="showPassword(true)" ng-mouseleave="showPassword(false)" ng-click="forceShowPassword()">
                 <svg width="36px" height="38px" viewBox="438 32 36 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <text id="eye" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="36" font-weight="normal" line-spacing="38">
-                        <tspan x="438" y="70" fill="#717E83">eye</tspan>
+                        <tspan x="438" y="70">eye</tspan>
                     </text>
                 </svg>
             </div>
@@ -34,7 +33,7 @@
     </div>
 </form>
 
-<div class="animate" layout="center center" ng-class="animationRows[4][3]">
+<div class="animate" layout="row" layout-align="center center" ng-class="animationRows[4][3]">
     <button class="contextButton" ng-click="forgotPassword()">
         <svg width="23px" height="25px" viewBox="15 13 23 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->

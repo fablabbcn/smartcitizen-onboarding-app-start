@@ -1,7 +1,7 @@
 <!--<canvas></canvas>-->
 
 <div id="progress" layout="column" layout-align="center center" flex="none" ng-class="payload.progressShow">
-    <md-progress-linear md-diameter="100" md-mode="determinate" bar-height="50px" value="{{ payload.progressVal | translate}}"></md-progress-linear>
+    <md-progress-linear md-diameter="100" md-mode="determinate" bar-height="50px" value="{{ payload.progressVal}}"></md-progress-linear>
     <div id="progressLabels" layout="row" layout-align="space-between start">
         <p id="left">{{ payload.progressLeftLabel | translate}}</p>
         <p id="right">{{ payload.progressRightLabel | translate}}</p>
@@ -14,13 +14,10 @@
     <div  hide-xs>
         <button class="backButton" ng-click="back()" ng-class="payload.backBlock">
 
-
-            <svg width="10px" height="16px" viewBox="327 653 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <!-- Generator: Sketch 41.1 (35376) - http://www.bohemiancoding.com/sketch -->
-                <desc>Created with Sketch.</desc>
-                <defs></defs>
-                <path d="M336.867188,660.739483 C336.95573,660.807192 337,660.893129 337,660.997296 C337,661.117088 336.95573,661.203025 336.867188,661.255108 L327.539062,668.926983 C327.434895,669.005109 327.317709,669.015525 327.1875,668.958233 C327.062499,668.900941 327,668.801984 327,668.661358 L327,653.333233 C327,653.192608 327.062499,653.09365 327.1875,653.036358 C327.317709,652.979066 327.434895,652.989483 327.539062,653.067608 L336.867188,660.739483 Z" id="directright" stroke="none" fill="#2A3F49" fill-rule="evenodd" transform="translate(332.000000, 660.997296) scale(-1, 1) translate(-332.000000, -660.997296) "></path>
-            </svg>
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 38.1 36.8" xml:space="preserve">
+          <polygon points="24.7,34.7 29.7,29.8 18.3,18.4 29.7,7.1 24.7,2.1 8.5,18.4 "/>
+          </svg>
         </button>
     </div>
     <div  class="segueWrapper" layout="row" layout-align="space-between center" layout-margin flex="none">
@@ -44,7 +41,7 @@
             </svg>
         </div>
         <button class="yesButton errorButton" ng-click="yes()" ng-class="errorButton" hide-xs>{{ payload.yesButton | translate }}</button>
-        <button class="noButton errorButton" ng-click="no()"ng-class="errorButton" hide-xs>{{ payload.noButton | translate }}</button>
+        <button class="noButton errorButton" ng-click="no()" ng-class="errorButton" hide-xs>{{ payload.noButton | translate }}</button>
     </div>
     <div hide-xs>
         <button class="forwardButton" ng-click="forward()" ng-class="payload.forwardBlock" style="visibility: hidden;">
@@ -63,8 +60,8 @@
     <div id="modalContent" layout="column" layout-align="center center" layout-padding layout-margin>
         <div id="modalBox" ng-class="modalBox" layout-gt-sm="row" layout-align-sm="center center">
             <div>
-                <h2>{{modalContent.title}}</h2>
-                <h5>{{modalContent.body}}</h5>
+                <h2>{{ modalContent.title | translate }}</h2>
+                <p>{{ modalContent.body | translate }}</p>
             </div>
             <div ng-if="modalContent.image" id="partImage" flex="none" flex-sm-auto>
                 <img preload-image ng-src="{{modalContent.image}}">
@@ -72,7 +69,7 @@
 
         </div>
         <div ng-if="modalContent.button" id="modalLink">
-            <button id="modalButton" ng-click="modalButtonClick()" ng-class="modalButton">{{modalContent.button}}</button>
+            <button id="modalButton" ng-click="modalButtonClick()" ng-class="modalButton">{{ modalContent.button | translate }}</button>
         </div>
     </div>
 </div>

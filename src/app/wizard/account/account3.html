@@ -3,7 +3,7 @@
 </div>
 
 <div class="animate" ng-class="animationRows[4][1]">
-    <h4>{{ payload.h4a | translate}}</h4>
+    <p>{{ payload.h4a | translate}}</p>
 </div>
 
 <form name="password_create" class="animate" ng-class="animationRows[4][2]">
@@ -12,14 +12,13 @@
             <div class="ss_input">
                 <svg width="38px" height="36" viewBox="33 27 24 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <text id="lock" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="30" font-weight="normal" line-spacing="38">
-                        <tspan x="26" y="60" fill="#717E83">lock</tspan>
+                        <tspan x="26" y="60">lock</tspan>
                     </text>
                 </svg>
             </div>
             <div flex="grow" class="md-box">
-                <md-input-container class="md-block">
-                    <label>{{ payload.input1 | translate}}</label>
-                    <input  ng-model-options="{ debounce: 1000 }"  ng-model="pass1" ng-change="passwordListener()" type="{{showPasswordToggle}}" name="pass1" minlength="8" required>
+                <md-input-container md-no-float class="md-block">
+                    <input placeholder="{{ payload.input1 | translate}}" ng-model-options="{ debounce: 1000 }"  ng-model="pass1" ng-change="passwordListener()" type="{{showPasswordToggle}}" name="pass1" minlength="8" required>
                     <div ng-messages="password_create.pass1.$error">
                         <div ng-message="required">{{ payload.input1_error2 | translate}}</div>
                         <div ng-message="minlength">{{ payload.input1_error | translate}}</div>
@@ -29,7 +28,7 @@
             <div class="ss_input" ng-mouseenter="showPassword(true)" ng-mouseleave="showPassword(false)" ng-click="forceShowPassword()">
                 <svg width="36px" height="38px" viewBox="438 32 36 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <text id="eye" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="36" font-weight="normal" line-spacing="38">
-                        <tspan x="438" y="70" fill="#717E83">eye</tspan>
+                        <tspan x="438" y="70">eye</tspan>
                     </text>
                 </svg>
             </div>
@@ -41,14 +40,13 @@
             <div class="ss_input">
                 <svg width="38px" height="36" viewBox="33 27 24 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <text id="lock" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="30" font-weight="normal" line-spacing="38">
-                        <tspan x="26" y="60" fill="#717E83">lock</tspan>
+                        <tspan x="26" y="60">lock</tspan>
                     </text>
                 </svg>
             </div>
             <div flex="grow" class="md-box">
-                <md-input-container class="md-block">
-                    <label>{{ payload.input1 | translate}}</label>
-                    <input  ng-model-options="{ debounce: 1000 }" ng-model="pass2" ng-change="passwordListener()" type="{{showPasswordToggle}}" name="pass2" minlength="8" required>
+                <md-input-container md-no-float class="md-block">
+                    <input placeholder="{{ payload.input1 | translate}}" ng-model-options="{ debounce: 1000 }" ng-model="pass2" ng-change="passwordListener()" type="{{showPasswordToggle}}" name="pass2" minlength="8" required>
                     <div ng-messages="password_create.pass2.$error">
                         <div ng-message="required">{{ payload.input1_error2 | translate}}</div>
                         <div ng-message="minlength">{{ payload.input1_error | translate}}</div>
@@ -58,7 +56,7 @@
             <div class="ss_input" ng-mouseenter="showPassword(true)" ng-mouseleave="showPassword(false)" ng-click="forceShowPassword()">
                 <svg width="36px" height="38px" viewBox="438 32 36 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <text id="eye" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="36" font-weight="normal" line-spacing="38">
-                        <tspan x="438" y="70" fill="#717E83">eye</tspan>
+                        <tspan x="438" y="70">eye</tspan>
                     </text>
                 </svg>
             </div>

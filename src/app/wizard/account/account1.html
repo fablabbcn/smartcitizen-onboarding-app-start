@@ -2,7 +2,7 @@
     <h2>{{ payload.h2 | translate}}</h2>
 </div>
 <div class="animate" ng-class="animationRows[3][1]">
-    <h4>{{ payload.h4 | translate}}</h4>
+    <p>{{ payload.h4 | translate}}</p>
 </div>
 
 <form name="email_form" class="animate" ng-class="animationRows[3][2]">
@@ -11,14 +11,13 @@
             <div class="ss_input">
                 <svg width="32px" height="38px" viewBox="33 27 24 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <text id="email" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="28" font-weight="normal" line-spacing="38">
-                        <tspan x="30" y="60" fill="#717E83">email</tspan>
+                        <tspan x="30" y="60">email</tspan>
                     </text>
                 </svg>
             </div>
             <div flex="grow" class="md-box">
-                <md-input-container class="md-block">
-                    <label>{{ payload.input1 | translate}}</label>
-                    <input autofocus ng-model="given_email" ng-change="accountListener()" ng-model-options="{ debounce: 500 }" required type="text" name="given_email">
+                <md-input-container md-no-float class="md-block">
+                    <input placeholder="{{ payload.input1 | translate}}" autofocus ng-model="given_email" ng-change="accountListener()" ng-model-options="{ debounce: 500 }" required type="text" name="given_email">
                     <div ng-messages="email_form.given_email.$error">
                         <div ng-message="required">{{ payload.input1_error | translate}}</div>
                     </div>

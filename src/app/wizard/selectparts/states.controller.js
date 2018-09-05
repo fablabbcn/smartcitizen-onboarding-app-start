@@ -39,7 +39,7 @@ export function statesController($scope, $rootScope, scopePayload, AnimationServ
 
 
     $scope.selectPart = function(val){
-        console.log($scope.selectionButtons);
+        console.log(val, $scope.selectionButtons);
         if ($scope.tempBlock == true){
             $scope.tempBlock = false;
             return;
@@ -97,6 +97,7 @@ export function statesController($scope, $rootScope, scopePayload, AnimationServ
 
     /** -- INFO METHODS -- **/
     $scope.infoImageOn = function(val){
+      console.log(val);
         if ( $scope.infoImages[val] == 'assets/images/info1.png' ){
             $scope.infoImages[val] = 'assets/images/info2.png'
         }
@@ -114,6 +115,7 @@ export function statesController($scope, $rootScope, scopePayload, AnimationServ
     };
 
     $scope.infoClick = function(val){
+        console.log(val);
         $scope.$parent.modalBox = 'green';
         var data = [{
             "title": $scope.payload.part1,
@@ -130,7 +132,7 @@ export function statesController($scope, $rootScope, scopePayload, AnimationServ
         }, {
             "title": $scope.payload.part4,
             "body": $scope.payload.part4_desc,
-            "image": "assets/images/BOARDS-CUTOUT_0005_USB.png"
+            "image": "assets/images/particle-sensor.png"
         }, {
             "title": $scope.payload.part5,
             "body": $scope.payload.part5_desc,

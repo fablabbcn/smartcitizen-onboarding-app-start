@@ -5,8 +5,11 @@
     "stateName": "landing",
     "url": "landing",
     "controller": "landingController",
+    "assets": {
+      "companyLogo": "assets/images/Logo_iScape_white.png"
+    },
     "contentKeys": [
-      "h1",
+      "h2",
       "h4",
       "segueButton"
     ]
@@ -17,13 +20,12 @@
         "index": 1,
         "part": 2,
         "stateName": "smart_citizen",
-        "template": "collaborators",
+        "template": "landing",
         "url": "smart_citizen",
         "assets": {
-          "companyLogo": "assets/images/scklogo.png"
+          "companyLogo": "assets/images/scklogo_white.png"
         },
         "contentKeys": [
-          "companyLogo",
           "h2",
           "h4",
           "segueButton"
@@ -222,6 +224,30 @@
       }
     ]
   }, {
+    "index": 20,
+    "stateName": "choose_connection",
+    "controller": "chooseConnectionController",
+    "url": "choose_connection",
+    "template": "chooseConnection",
+    "part": 1,
+    "assets": {
+      "smartphoneImage": "assets/images/AP-handshake.png",
+      "lightMethodImage": "assets/images/light_handshake.png",
+      "offlineImage": "assets/images/sd-mode.png"
+    },
+    "contentKeys": [
+      "h2",
+      "recommanded",
+      "smartphone",
+      "lightMethod",
+      "offline",
+      "segueButtonError",
+      "continueButton",
+      "segueButton",
+      "yesButton",
+      "noButton"
+    ]
+  }, {
     "stateName": "",
     "controller": "handshakeController",
     "subStates": [{
@@ -279,19 +305,6 @@
           "segueButton",
           "continueButton"
         ]
-      },
-      {
-        "index": 24,
-        "part": 4,
-        "template": "confirm",
-        "stateName": "confirm_handshake",
-        "controller": "smartcitizenController",
-        "url": "confirm_handshake",
-        "contentKeys": [
-          "h1",
-          "h4",
-          "segueButton"
-        ]
       }
     ]
   }, {
@@ -299,7 +312,7 @@
     "controller": "accesspointController_base",
     "subStates": [{
         "index": 30,
-        "part": 4,
+        "part": 1,
         "template": "basic1",
         "controller": "smartcitizenController",
         "stateName": "accesspoint_pre",
@@ -312,7 +325,7 @@
       },
       {
         "index": 31,
-        "part": 5,
+        "part": 1,
         "template": "prompted_entry1",
         "stateName": "accesspoint_1",
         "url": "accesspoint_1",
@@ -330,10 +343,13 @@
       },
       {
         "index": 32,
-        "part": 6,
+        "part": 2,
         "template": "prompted_entry2",
         "stateName": "accesspoint_2",
         "url": "accesspoint_2",
+        "assets": {
+          "image": "assets/images/ap-1.png"
+        },
         "contentKeys": [
           "h2",
           "h3_1",
@@ -345,7 +361,7 @@
       },
       {
         "index": 33,
-        "part": 6,
+        "part": 3,
         "template": "prompted_entry1",
         "controller": "accesspointController",
         "stateName": "ap_final",
@@ -358,7 +374,91 @@
         ]
       }
     ]
-  }, {
+  },  {
+    "stateName": "",
+    "controller": "accesspointController_base",
+    "subStates": [{
+        "index": 34,
+        "part": 1,
+        "template": "basic1",
+        "controller": "smartcitizenController",
+        "stateName": "offline_pre",
+        "url": "offline_pre",
+        "contentKeys": [
+          "h1",
+          "h4",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 36,
+        "part": 2,
+        "template": "prompted_entry1",
+        "stateName": "offline_1",
+        "url": "offline_1",
+        "contentKeys": [
+          "h2",
+          "h3_1",
+          "em_1",
+          "h3_2",
+          "em_2",
+          "h3_3",
+          "h4",
+          "promptedText",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 37,
+        "part": 3,
+        "template": "prompted_entry2",
+        "stateName": "offline_2",
+        "url": "offline_2",
+        "assets": {
+          "image": "assets/images/ap-1.png"
+        },
+        "contentKeys": [
+          "h2",
+          "h3_1",
+          "em_1",
+          "h4",
+          "promptedText",
+          "segueButton"
+        ]
+      },{
+        "index": 38,
+        "part": 4,
+        "template": "prompted_entry2",
+        "stateName": "offline_3",
+        "url": "offline_2",
+        "assets": {
+          "image": "assets/images/ap-5.png"
+        },
+        "contentKeys": [
+          "h2",
+          "h3_1",
+          "em_1",
+          "h4",
+          "promptedText",
+          "segueButton"
+        ]
+      }]
+    },
+    {
+      "index": 39,
+      "part": 5,
+      "template": "confirm",
+      "controller": "smartcitizenController",
+      "stateName": "confirm_handshake",
+      "url": "confirm_handshake",
+      "contentKeys": [
+        "h1",
+        "h4",
+        "segueButton"
+      ]
+    },
+
+  {
     "stateName": "",
     "controller": "nameController",
     "subStates": [{

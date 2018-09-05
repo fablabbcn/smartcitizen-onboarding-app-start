@@ -2,7 +2,7 @@
     <h2>{{ payload.h2 | translate}}</h2>
 </div>
 <div class="animate" ng-class="animationRows[4][1]">
-    <h4>{{ payload.h4 | translate}}</h4>
+    <p>{{ payload.h4 | translate}}</p>
 </div>
 
 <form name="sensor_name" class="animate" ng-class="animationRows[4][2]">
@@ -12,13 +12,12 @@
 
                 <svg class="ss_input" width="28px" height="42px" viewBox="33 18 30 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <text id="user" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="30" font-weight="normal" line-spacing="38">
-                        <tspan x="33" y="53" fill="#717E83">user</tspan>
+                        <tspan x="33" y="53">user</tspan>
                     </text>
                 </svg>            </div>
             <div flex="grow" class="md-box">
-                <md-input-container class="md-block">
-                    <label>{{ payload.input1 | translate}}</label>
-                    <input ng-model-options="{ debounce: 500 }" autofocus ng-model="name" ng-change="listener()" required type="text" name="ssid">
+                <md-input-container md-no-float class="md-block">
+                    <input placeholder="{{ payload.input1 | translate}}" ng-model-options="{ debounce: 500 }" autofocus ng-model="name" ng-change="listener()" required type="text" name="ssid">
                     <div ng-messages="sensor_name.name.$error">
                         <div ng-message="required">{{ payload.input1_error | translate}}</div>
                     </div>
@@ -28,7 +27,7 @@
     </div>
 </form>
 
-<div class="contextWrapper animate" layout="center" ng-class="animationRows[4][3]">
+<div class="contextWrapper animate" layout="row" layout-align="center center" ng-class="animationRows[4][3]">
 
     <button class="contextButton" ng-click="generateName()">
         <svg width="23px" height="25px" viewBox="15 13 23 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

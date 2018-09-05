@@ -1,6 +1,7 @@
 export * from './landing';
 export * from './base';
 export * from './selectparts';
+export * from './chooseConnection';
 export * from './handshake';
 export * from './accesspoint';
 export * from './name';

@@ -1,0 +1,15 @@
+.bg-white {
+   background: white;
+}
+.shadow-regalBlue{
+  box-shadow: 10px 10px 0px (-$border_thickness) $regalBlue,
+    10px 10px 0px 0px var(--black);
+}
+.card {
+  color: var(--black);
+  max-width: 600px;
+  padding: 10px 50px;
+}
+.description {
+  margin-top: 0px;
+}
