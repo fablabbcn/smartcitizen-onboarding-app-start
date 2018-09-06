@@ -101,7 +101,7 @@
     },
     "choose_connection": {
         "h2": "How do you want to connect your kit to the internet?",
-        "recommanded": "Recommanded",
+        "recommended": "Recommended",
         "smartphone": "Use your smartphone",
         "lightMethod": "use the light method",
         "offline": "SD Card mode (offline)",

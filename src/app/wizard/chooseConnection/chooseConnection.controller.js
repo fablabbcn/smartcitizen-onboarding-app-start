@@ -13,9 +13,11 @@ export function chooseConnectionController($scope, $rootScope, $state, scopePayl
     }
     function prepSegue(){
         $scope.$parent.segueControl ='ready';
+        $scope.$parent.disabled = false;
         $scope.$parent.errorButton ='';
     }
     function blockSegue(){
+        $scope.$parent.disabled = true;
         $scope.$parent.segueControl ='blocked';
     }
 

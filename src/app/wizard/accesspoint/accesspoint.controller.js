@@ -2,6 +2,7 @@ export function accesspointController($scope, scopePayload, AnimationService, $r
     $scope.$parent.payload = scopePayload;
     AnimationService.animate(scopePayload.template);
     $scope.$parent.segueControl = 'blocked';
+    $scope.$parent.disabled = true;
 
     $scope.payload.promptedText = $scope.submittedData.deviceData.device_token;
 
