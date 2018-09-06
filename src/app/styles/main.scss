@@ -173,7 +173,7 @@ body {
             }
           }
 
-          .recommanded {
+          .recommended {
             position: absolute;
             top: -30px;
             left: 50%;
@@ -183,8 +183,8 @@ body {
 
           .infoHolder{
             position: absolute;
-            top: 14px;
-            left: 14px;
+            top: 5px;
+            left: 5px;
             z-index: 10000;
             md-icon {
               outline: none;
@@ -197,8 +197,8 @@ body {
           .checkHolder {
             visibility: hidden;
             position: absolute;
-            top: 14px;
-            right: 14px;
+            top: 5px;
+            right: 5px;
             .st36{ fill: $msGreen; }
             -webkit-transform-origin: 50% 100%;
             transform-origin: 50% 100%;
@@ -373,12 +373,11 @@ body {
       }
 
       .promptedText{
-        background-color: $SCK2-lightGrey;
-        border-radius: $divRadius * 2;
+        background-color: $blue;
+        border-radius: 3px;
         padding: 15px 45px;
-        //max-width: 400px;
         h2{
-          color: $SCK2-darkGrey;
+          color: white;
           margin: 10px;
         }
       }
