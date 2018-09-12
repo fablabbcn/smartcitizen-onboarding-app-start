@@ -118,6 +118,7 @@ export function accountController($scope, scopePayload, AnimationService, platfo
         platform.login($scope.$parent.submittedData.user).then(function (data) {
             platform.setAuth(data);
             console.log("logged in successful");
+            prepSegue();
             $timeout(function () {
                 platform.bakeDevice().then(function (data) {
                     console.log("baked successful", data);

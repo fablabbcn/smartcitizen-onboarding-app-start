@@ -1,4 +1,5 @@
 export function wizardController($scope, $location, $sce, $window, $timeout, SegueService, $rootScope, AnimationService, session, platform, Restangular, $state, $stateParams, hotkeys) {
+    $scope.disabled = false;
 
     $scope.spinnerControl = 'hide';
 
@@ -79,6 +80,7 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
     $scope.back = function() {
         if ($scope.payload.backBlock != 'blocked') {
             //compare templates
+            $scope.disabled = false;
             $rootScope.$broadcast('no'); //?
             backTransition();
         }

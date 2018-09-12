@@ -1,5 +1,7 @@
-.buildImage {
-  max-height: 250px;
+@media screen and (max-width: 1280px) {
+  .buildImage {
+    max-height: 300px;
+  }
 }
 
 .kitBuildHolder {

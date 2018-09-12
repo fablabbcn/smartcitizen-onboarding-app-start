@@ -159,7 +159,6 @@ body {
 
       .selectionRow {
         .selection {
-          height: 250px;
           border-radius: 10px;
           background-color: $bg-blue;
           border: 3px $blue solid;
@@ -183,8 +182,8 @@ body {
 
           .infoHolder{
             position: absolute;
-            top: 5px;
-            left: 5px;
+            top: 11px;
+            left: 11px;
             z-index: 10000;
             md-icon {
               outline: none;
@@ -197,8 +196,8 @@ body {
           .checkHolder {
             visibility: hidden;
             position: absolute;
-            top: 5px;
-            right: 5px;
+            top: 11px;
+            right: 11px;
             .st36{ fill: $msGreen; }
             -webkit-transform-origin: 50% 100%;
             transform-origin: 50% 100%;

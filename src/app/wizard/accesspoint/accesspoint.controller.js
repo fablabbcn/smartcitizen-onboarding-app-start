@@ -13,6 +13,7 @@ export function accesspointController($scope, scopePayload, AnimationService, $r
     });
 
     function prepSegue() {
+        $scope.$parent.disabled = false;
         $rootScope.$broadcast('forceSegue', { target: 'wizard.confirm_handshake', params: {lang: $stateParams.lang}});
     }
 }
