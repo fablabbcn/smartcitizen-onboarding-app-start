@@ -159,6 +159,7 @@ body {
 
       .selectionRow {
         .selection {
+          min-height: 280px;
           border-radius: 10px;
           background-color: $bg-blue;
           border: 3px $blue solid;

@@ -126,6 +126,7 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
         $scope.payload.progressShow = 'blue';
         $timeout(function() {
             $scope.segueControl = 'ready';
+            $scope.disabled = false;
             console.log('Prev slide:', $scope.payload.index);
             SegueService.previousPage($scope.pre_made);
             $window.scrollTo(0, 0);
