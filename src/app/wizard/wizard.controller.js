@@ -33,10 +33,10 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
     console.log('Your device:', $scope.submittedData.deviceData);
 
     hotkeys.add({
-        combo: 'ctrl+w+p',
+        combo: 'ctrl+j+p',
         description: 'Goes to slide 19',
         callback: function() {
-          goTransition('wizard.wifi_enter')
+          goTransition('wizard.choose_connection')
         }
     });
 
