@@ -2,6 +2,15 @@ $handshakeBarHeight: 200px;
 $handshakeBarBackgroundColor: $SCK2-lightGrey;
 $handshakeBarColor: $blue;
 
+md-progress-linear {
+  .md-container {
+    background-color: $blue !important;
+    .md-bar {
+      background-color: $regalBlue !important;
+    }
+  }
+}
+
 .backgroundProgressLoader {
   position: absolute;
   z-index: -1;
@@ -19,10 +28,8 @@ $handshakeBarColor: $blue;
     height: $handshakeBarHeight;
     .md-container.md-mode-determinate {
       height: $handshakeBarHeight;
-      background-color: $blue;
       .md-bar {
         height: $handshakeBarHeight;
-        background-color: $regalBlue;
       }
     }
   }

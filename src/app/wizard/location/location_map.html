@@ -9,7 +9,7 @@
 
     <form name="location" style="margin-bottom: 20px;">
         <div class="inputDiv locationInput" layout="column" layout-align="center">
-            <div class='inputContainer' layout="row" layout-align="start center">
+            <div class='inputContainer position-rel' layout="row" layout-align="start center">
                 <div class="ss_input">
                     <svg width="26px" height="40px" viewBox="33 27 24 38" version="1.1"
                          xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -20,11 +20,8 @@
                     </svg>
                 </div>
                 <div flex="grow" class="md-box">
-                    <md-input-container md-no-float class="md-block">
-                        <input placeholder="{{ payload.input1 | translate}}" type="text" class="autoCompleteInput" g-places-autocomplete
-                               ng-change="autoCompleteListener()"
-                               ng-model="autocomplete">
-                    </md-input-container>
+
+                    <place-autocomplete on-place-change="autoCompleteListener(autocomplete)" placeholder="{{ payload.input1 | translate}}"></place-autocomplete>
                 </div>
             </div>
         </div>

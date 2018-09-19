@@ -57,7 +57,6 @@ export function locationController($scope, uiGmapIsReady, $geolocation, scopePay
         if ($scope.$parent && $scope.$parent.pos && oldValue) {
         }
         if (typeof newValue == 'undefined') {
-            setMapData(loc.center, loc.center, loc.zoom);
         } else {
             var val = newValue;
             var center = val;
@@ -77,11 +76,12 @@ export function locationController($scope, uiGmapIsReady, $geolocation, scopePay
         }
     };
 
-    $scope.autoCompleteListener = function () {
-        if ((typeof $scope.autocomplete !== 'undefined') && (typeof $scope.autocomplete.geometry !== 'undefined')) {
+    $scope.autoCompleteListener = function (autocomplete) {
+      console.log('auto',autocomplete);
+        if ((typeof autocomplete !== 'undefined') && (typeof autocomplete.geometry !== 'undefined')) {
             var marker = {
-                latitude: $scope.autocomplete.geometry.location.lat(),
-                longitude: $scope.autocomplete.geometry.location.lng()
+                latitude: autocomplete.geometry.location.lat(),
+                longitude: autocomplete.geometry.location.lng()
             };
             setMapData(marker, marker, 17);
         }

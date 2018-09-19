@@ -1,0 +1,46 @@
+.autocomplete-input {
+
+}
+/*
+Optional adjustments for md-autocomplete in mobile screens
+*/
+
+#place-autocomplete > md-autocomplete {
+  background-color: transparent;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  .md-whiteframe-z1 {
+    box-shadow: none;
+  }
+  input, md-autocomplete-wrap {
+    height: 80px;
+  }
+  input {
+    padding: 0px 60px;
+    font-size: 2rem !important;
+    color: white !important;
+  }
+  button {
+    margin-right: 20px;
+  }
+  svg {
+    path {
+      fill: $blueLight;
+    }
+  }
+}
+
+
+.md-virtual-repeat-offsetter {
+  background-color: $blueLight;
+  font-family: $font;
+}
+
+/*Media query for tablets and above */
+
+@media screen and (min-width: 480px) {
+  #place-autocomplete > md-autocomplete md-input-container {
+    padding-bottom: 0;
+  }
+}

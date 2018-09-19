@@ -35,6 +35,7 @@ $break-sm: 960px;
 @import "tags";
 @import "handshake";
 @import "doorbell";
+@import "../wizard/location/place-autocomplete";
 @import "_loader.scss";
 
 /* MEDIA QUERY IS AT END OF THIS FILE */
@@ -51,71 +52,7 @@ body {
   h1, h2, h3, h4, h6, p {
     text-align: center;
   }
-  //
-  // h1{
-  //   font: 100% $font2;
-  //   font-weight: 900;
-  //   font-size: 4.5em;
-  //   color: $SCK2-darkGrey;
-  //   line-height: 70px;
-  //   @media screen and (max-width: 450px) {
-  //     font-size: 3.25em;
-  //     line-height: 46px;
-  //   }
-  // }
-  // h2{
-  //   font: 100% $font2;
-  //   font-weight: 800;
-  //   font-size: 2.875em;
-  //   color: $SCK2-darkGrey;
-  //   text-transform: uppercase;
-  //   @media screen and (max-width: 450px) {
-  //     font-size: 2em;
-  //   }
-  // }
-  // h3{
-  //   font-weight: 400;
-  //   font-size: 1.875em;
-  //   color: $SCK2-darkGrey;
-  //   @media screen and (max-width: 450px) {
-  //     font-size: 1.375em;
-  //   }
-  //   em{
-  //     font-style: normal !important;
-  //     &.green{
-  //       color: $msGreen;
-  //     }
-  //     &.orange{
-  //       color: $msOrange;
-  //     }
-  //     &.blue{
-  //       color: $SCK2-blue;
-  //     }
-  //   }
-  // }
-  //
-  // h4, p{
-  //   font-weight: 400;
-  //   font-size: 1.75em;
-  //   color: $SCK2-darkGrey;
-  //   @media screen and (max-width: 450px) {
-  //     font-size: 1.75em;
-  //   }
-  // }
-  // h5{
-  //   font: 100% $font;
-  //   font-weight: 400;
-  //   font-size: 1.65em;
-  //   color: $msWhite;
-  //   @media screen and (max-width: 450px) {
-  //     font-size: 1.15em;
-  //   }
-  // }
-  // h6{
-  //   font-weight: 400;
-  //   font-size: 1.75em;
-  //   color: $msGrey;
-  // }
+
   button{
     font-weight: 500;
     font-size: 1.5em;

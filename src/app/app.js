@@ -5,7 +5,6 @@ import 'lodash';
 import 'angular-simple-logger';
 import uiRouter from 'angular-ui-router';
 import 'angular-google-maps';
-import googlePlaces from 'angular-google-places-autocomplete';
 import ngMaterial from 'angular-material';
 import ngAnimate from 'angular-animate';
 import ngMessages from 'angular-messages';
@@ -25,6 +24,9 @@ import geolocation from './wizard/services/geolocation.factory';
 import AnimationService from './wizard/services/animation.factory';
 import { platformNotify, platform } from './wizard/services/platform';
 
+// component
+import { placeAutocomplete } from './wizard/location/place-autocomplete';
+
 export const App = angular.module('app', [
   ngMaterial,
   ngMessages,
@@ -32,7 +34,6 @@ export const App = angular.module('app', [
   uiRouter,
   restangular,
   'uiGmapgoogle-maps',
-  googlePlaces,
   'btford.socket-io',
   angularTranslate,
   // 'angularLazyImg', TODO check this one: https://github.com/afklm/ng-lazy-image
@@ -44,4 +45,5 @@ export const App = angular.module('app', [
 .factory('AnimationService', AnimationService)
 .factory('platformNotify', platformNotify)
 .factory('platform', platform)
-.factory('$geolocation', geolocation);
+.factory('$geolocation', geolocation)
+.directive('placeAutocomplete', placeAutocomplete);
