@@ -18,7 +18,7 @@ export function placeAutocomplete() {
         'onPlaceChange': '&',
         'placeholder': '@'
       },
-      controller: function($scope, $q) {
+      controller: ['$scope', '$q', function($scope, $q) {
         if (!google || !google.maps) {
           throw new Error('Google Maps JS library is not loaded!');
         } else if (!google.maps.places) {
@@ -101,6 +101,6 @@ export function placeAutocomplete() {
             $scope.onPlaceChange({autocomplete: details});
           });
         }
-      }
+      }]
     };
 }
