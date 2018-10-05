@@ -34,7 +34,6 @@ export function accountController($scope, scopePayload, AnimationService, platfo
                 loginAndBakeDevice();
             }, function (res) {
                 console.log(res);
-
                 blockSegue();
             });
         } else {
@@ -72,7 +71,6 @@ export function accountController($scope, scopePayload, AnimationService, platfo
     };
 
     $scope.generateName = function () {
-
         $scope.given_username = $scope.$parent.submittedData.user.email.split("@")[0] + '_' + Math.floor(Math.random() * (99 - 1 + 1));
         $scope.$parent.submittedData.user.username = $scope.given_username;
         prepSegue();
@@ -95,12 +93,10 @@ export function accountController($scope, scopePayload, AnimationService, platfo
         if ($scope.forcePassword == false) {
             $scope.forcePassword = true;
             $scope.showPasswordToggle = 'text';
-            console.log('showing');
         }
         else {
             $scope.forcePassword = false;
             $scope.showPasswordToggle = 'password';
-            console.log('hide');
         }
     };
 
@@ -117,26 +113,20 @@ export function accountController($scope, scopePayload, AnimationService, platfo
     function loginAndBakeDevice() {
         platform.login($scope.$parent.submittedData.user).then(function (data) {
             platform.setAuth(data);
-            console.log("logged in successful");
-            prepSegue();
-            $timeout(function () {
+            console.log("Login successful!", data);
                 platform.bakeDevice().then(function (data) {
-                    console.log("baked successful", data);
-                    $timeout(function () {
-                        $scope.$parent.submittedData.deviceData.id = data.id;
-                        prepSegue();
-                        $rootScope.$broadcast('forceSegue', {
-                            target: 'wizard.final',
-                            params: {lang: $stateParams.lang}
-                        });
-                    }, 250); // This is temp
+                    console.log("Device succesfully created!", data);
+                    // Prevent user to go back if the device is already created.
+                    // TODO: That might be remove if the device creation is moved to the final step
+                    $scope.payload.preventBack = true;
+                    $scope.$parent.submittedData.deviceData.id = data.id;
+                    prepSegue();
                 }, function () {
-                    console.log("baked failed", data);
+                    console.log("Device creation failed!", data);
                     blockSegue();
                 });
-            }, 250); // This is temp
         }, function (data) {
-            console.log(data);
+            console.log("Login failed!", data);
             blockSegue();
         })
     }

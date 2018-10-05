@@ -30,38 +30,20 @@ export function locationController($scope, uiGmapIsReady, $geolocation, scopePay
         $scope.payload.segueButton = $scope.payload.waitButton;
     }
 
-    // Default loc in IAAC
-    var loc = {
-        zoom: 2,
-        center: {
-            latitude: 41.396867,
-            longitude: 2.194351
-        }
-    };
-
     AnimationService.animate(scopePayload.template);
-
-    // uiGmapIsReady.promise(1).then(function () { // Double check issue when browser back
-        //setInitialPosition();
-    // });
-
 
     $geolocation.watchPosition({
         timeout: 50,
         maximumAge: 25,
         enableHighAccuracy: true
     });
+
     $scope.$parent.pos = $geolocation.position;
 
     $scope.$parent.$watch('pos.coords', function (newValue, oldValue) {
-        if ($scope.$parent && $scope.$parent.pos && oldValue) {
-        }
-        if (typeof newValue == 'undefined') {
-        } else {
-            var val = newValue;
-            var center = val;
-            var zoom = 18;
-            setMapData(center, val, zoom);
+        if (typeof oldValue == 'undefined' && typeof newValue !== 'undefined') {
+            var center = newValue;
+            setMapData(center, center, 17);
         }
     });
 
@@ -88,6 +70,7 @@ export function locationController($scope, uiGmapIsReady, $geolocation, scopePay
     };
 
     function setMapData(center, marker, zoom) {
+        // TODO: Check the function below
         if (!$scope.$parent) return;
         $scope.$parent.map = {
             center: {
@@ -113,9 +96,10 @@ export function locationController($scope, uiGmapIsReady, $geolocation, scopePay
 
     function setSensorPosition(position) {
         if (typeof position.latitude !== 'undefined') {
-            prepSegue();
             $scope.$parent.submittedData.deviceData.latitude = position.latitude;
             $scope.$parent.submittedData.deviceData.longitude = position.longitude;
+            console.log('Set map position', position);
+            prepSegue();
         }
     }
 

@@ -33,7 +33,7 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
     console.log('Your device:', $scope.submittedData.deviceData);
 
     hotkeys.add({
-        combo: 'ctrl+j+p',
+        combo: 'alt+ctrl+j+p',
         description: 'Goes to slide 19',
         callback: function() {
           goTransition('wizard.choose_connection')
@@ -44,7 +44,7 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
     $scope.seque = function() {
 
         if ($scope.segueControl == 'ready') {
-          console.log($scope.payload.template);
+          console.log('Next state:', $scope.payload.template);
             switch ($scope.payload.template) {
                 case 'handshake':
                     if ($scope.handShakeState == false) {
@@ -93,7 +93,6 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
         AnimationService.leaving(true);
         $scope.payload.progressShow = 'blue';
         $timeout(function() {
-            console.log('Next slide:', $scope.payload.index);
             SegueService.nextPage($scope.pre_made, nextState);
             $window.scrollTo(0, 0);
             $scope.payload.progressShow = ' ';

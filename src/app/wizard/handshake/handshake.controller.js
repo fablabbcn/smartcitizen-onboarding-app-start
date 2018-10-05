@@ -331,7 +331,7 @@ export function handshakeController($scope, scopePayload, AnimationService, $roo
     }
 
     $scope.alternateSegue = function () {
-        $rootScope.$broadcast('forceSegue', { target: 'wizard.accesspoint_pre', params: {lang: $stateParams.lang}});
+        $rootScope.$broadcast('forceSegue', { target: 'wizard.choose_connection', params: {lang: $stateParams.lang}});
     };
 
 }

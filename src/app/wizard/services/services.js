@@ -88,6 +88,9 @@ export default function SegueService ($state) {
             case 'wizard.wifi_enter':
               $state.go('wizard.choose_connection');
               break;
+            case 'wizard.wifi_check':
+              $state.go('wizard.choose_connection');
+              break;
             case 'wizard.confirm_handshake':
               $state.go('wizard.choose_connection');
               break;
