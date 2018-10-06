@@ -1,14 +1,8 @@
 export function wizardController($scope, $location, $sce, $window, $timeout, SegueService, $rootScope, AnimationService, session, platform, Restangular, $state, $stateParams, hotkeys) {
-    $scope.disabled = false;
 
-    $scope.spinnerControl = 'hide';
+    /** Cutomizable options **/
 
-    /** Submitted User Data **/
     $scope.submittedData = {};
-
-    $scope.submittedData.wifi = {};
-
-    $scope.submittedData.user = {};
 
     $scope.submittedData.deviceData = {
         device_token: session.device_token,
@@ -17,17 +11,29 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
         kit_id: 20
     };
 
-    $scope.submittedData.deviceData.proposed_user_tags_array = ["iSCAPE"];
+    $scope.proposed_user_tags_array = ["iSCAPE"];
+
+    $scope.handShakeState = false;
+    $scope.handShakeRepeats = 0;
+    $scope.handShakeWatchDog = 20 * 1000;
+    $scope.apModeWatchDog = 60 * 1000;
+    $scope.platformUrl = 'https://staging.smartcitizen.me/kits/';
+
+    /** End of cutomizable options options **/
+
+    $scope.submittedData.wifi = {};
+
+    $scope.submittedData.user = {};
 
     $scope.onboarding_session = session.onboarding_session;
+
+    $scope.disabled = false;
+
+    $scope.spinnerControl = 'hide';
 
     $scope.pre_made = false; // Check this
 
     $scope.modalClass = 'hidden';
-
-    $scope.handShakeState = false;
-    $scope.handShakeRepeats = 0;
-    $scope.handShakeRetries = 2;
 
     console.log('Your session:' , session);
     console.log('Your device:', $scope.submittedData.deviceData);
@@ -37,6 +43,22 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
         description: 'Goes to slide 19',
         callback: function() {
           goTransition('wizard.choose_connection')
+        }
+    });
+
+    hotkeys.add({
+        combo: 'right',
+        description: 'Go next',
+        callback: function() {
+           $scope.seque();
+        }
+    });
+
+    hotkeys.add({
+        combo: 'left',
+        description: 'Go back',
+        callback: function() {
+           $scope.back();
         }
     });
 
@@ -54,7 +76,7 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
                     }
                     break;
                 case 'final':
-                    $window.open('https://staging.smartcitizen.me/kits/' + $scope.submittedData.deviceData.id, '_blank');
+                    $window.open($scope.platformUrl + $scope.submittedData.deviceData.id, '_blank');
                     break;
                 case 'sensorName':
                     platform.updateDevice($scope.submittedData.deviceData).then(sequeTransition);

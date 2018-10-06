@@ -372,13 +372,25 @@
           "promptedText",
           "segueButton"
         ]
+      },
+      {
+        "index": 34,
+        "part": 4,
+        "template": "basic1",
+        "stateName": "ap_issues",
+        "url": "ap_issues",
+        "contentKeys": [
+          "h1",
+          "h4",
+          "segueButton"
+        ]
       }
     ]
   },  {
     "stateName": "",
     "controller": "accesspointController_base",
     "subStates": [{
-        "index": 34,
+        "index": 35,
         "part": 1,
         "template": "basic1",
         "controller": "smartcitizenController",

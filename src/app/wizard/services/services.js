@@ -63,6 +63,9 @@ export default function SegueService ($state) {
             case 'wizard.wifi_check':
               $state.go('wizard.handshake');
               break;
+            case 'wizard.ap_issues':
+              $state.go('wizard.choose_connection');
+              break;
             case 'wizard.confirm_handshake':
               $state.go('wizard.sensorName_prep');
               break;

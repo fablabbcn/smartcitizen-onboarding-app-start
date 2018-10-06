@@ -240,7 +240,7 @@ export function handshakeController($scope, scopePayload, AnimationService, $roo
             $scope.loadingPercentage = 100;
             $scope.watchDog = $timeout(function() {
                 blockError();
-            }, 20000);
+            }, $scope.$parent.handShakeWatchDog);
         });
     });
 
@@ -284,11 +284,7 @@ export function handshakeController($scope, scopePayload, AnimationService, $roo
     function blockError() {
         animateHandshakeLabel(false);
         $scope.$parent.handShakeState = false;
-        if ($scope.$parent.handShakeRepeats > $scope.$parent.handShakeRetries) {
-            $scope.$parent.handshakeFailed();
-        } else {
-            backToWiFi();
-        }
+        backToWiFi();
         var listenModal = $scope.$on('modalClosed', function() {
             setTimeout(function() {
                 listenModal();

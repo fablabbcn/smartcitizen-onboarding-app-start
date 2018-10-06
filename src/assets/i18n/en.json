@@ -147,8 +147,8 @@
         "continueButton": "continue"
     },
     "accesspoint_pre": {
-        "h1": "LET'S TRY WITH A PHONE OR TABLET INSTEAD",
-        "h4": "This approach is more reliable. You will need a phone or tablet.",
+        "h1": "LET'S CONNECT WITH A PHONE OR TABLET",
+        "h4": "You will need a phone or tablet",
         "segueButton": "got it"
     },
     "accesspoint_1": {
@@ -166,7 +166,7 @@
         "h2": "You should see this window on your mobile device",
         "h3_1": "If that did not happen, open the browser on your device and go to",
         "em_1": " www.MySCK.me",
-        "h4": "If it does not work, make sure you are connected to the wifi",
+        "h4": "If it does not work, make sure you are connected to the Wi-Fi",
         "promptedText": "SCKit.me",
         "segueButton": "connected"
     },
@@ -176,9 +176,14 @@
         "promptedText": "TOKEN HERE",
         "segueButton": "done"
     },
+    "ap_issues": {
+        "h1": "Sorry, something isn't working well!",
+        "h4": "Ensure the light on you Kit is red before trying to connect, check you spelled properly your WiFi password and ensure you aren't too far away from the router",
+        "segueButton": "Try again"
+    },
     "offline_pre": {
-      "h1": "LET'S TRY WITH A mobile and a SD Card",
-      "h4": "This approach is pretty reliable. You will need a smartphone and a sd-card",
+      "h1": "No Wi-Fi? No problem, use a SD Card",
+      "h4": "You will need a phone and a micro SD card. You can later upload the data on the platform using the CSV upload option.",
       "segueButton": "got it"
     },
     "offline_1": {

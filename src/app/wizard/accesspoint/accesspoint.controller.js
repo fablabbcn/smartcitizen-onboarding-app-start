@@ -12,7 +12,13 @@ export function accesspointController($scope, scopePayload, AnimationService, $r
         prepSegue();
     });
 
+    $scope.watchDog = $timeout(function() {
+        prepSegue();
+        $rootScope.$broadcast('forceSegue', { target: 'wizard.ap_issues', params: {lang: $stateParams.lang}});
+    }, $scope.$parent.apModeWatchDog);
+
     function prepSegue() {
+        $timeout.cancel($scope.watchDog);
         $scope.$parent.disabled = false;
         $rootScope.$broadcast('forceSegue', { target: 'wizard.confirm_handshake', params: {lang: $stateParams.lang}});
     }

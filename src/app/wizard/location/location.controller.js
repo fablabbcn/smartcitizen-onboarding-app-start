@@ -5,15 +5,16 @@ export function locationController($scope, uiGmapIsReady, $geolocation, scopePay
     $scope.$parent.payload = scopePayload;
     $scope.$parent.submittedData.deviceData.user_tags_array = [];
 
-    var proposedTags = $scope.$parent.submittedData.deviceData.proposed_user_tags_array;
+    var proposedTags = $scope.$parent.proposed_user_tags_array;
 
     var tagsList = [];
     var tagsState = [];
-    for(var i = 0; i < tags.length; i++) {
-        var obj = tags[i];
-        var name = obj.name;
+
+    for(var index = 0; index < tags.length; index++) {
+        var name = tags[index].name;
         tagsList.push(name);
         if (proposedTags && proposedTags.includes(name)) {
+            $scope.$parent.submittedData.deviceData.user_tags_array.push(name);
             tagsState.push('active');
         } else {
             tagsState.push('');
