@@ -1,7 +1,5 @@
 # iScape Onboarding
 
-
-
 The iScape onboarding. This project is a means to alleviate the issue of abandonment in [IOT devices](https://en.wikipedia.org/wiki/Internet_of_things) related to [citizen science and civil sensing](https://en.wikipedia.org/wiki/Citizen_science). This onboaridng is being used by [Making Sense](http://making-sense.eu/) as a means to test the effectiveness of building communities around these grassroots initiatives. Currently supporting the [SmartCitizen API](https://github.com/fablabbcn/smartcitizen) and the new [SmartCitizen Kit 1.5](https://github.com/fablabbcn/Smart-Citizen-Kit-1.5).
 
 This is a web app that aims to solve key issues in the setup of open data sensors within grassroots smart-city communities through developing cognitive goals, such as fostering ownership, creating context, showing playful animations and simplifying language. This multi-lingual experience helps reduce the bottleneck of non-technical citizens installing IOT devices. This tool is currently being used in an EU Research Project.

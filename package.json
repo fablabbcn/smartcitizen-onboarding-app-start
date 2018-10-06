@@ -1,5 +1,5 @@
 {
-  "name": "smartcitizen-onboarding-app-iscape",
+  "name": "smartcitizen-onboarding-app-atencio",
   "version": "2.0.0",
   "description": "Onboarding",
   "main": "src/index.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fablabbcn/smartcitizen-onboarding-app-iscape.git"
+    "url": "git+https://github.com/fablabbcn/smartcitizen-onboarding-app-atencio.git"
   },
   "keywords": [
     "smartcitizen"
@@ -20,9 +20,9 @@
   "author": "Smartcitizen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fablabbcn/smartcitizen-onboarding-app-iscape/issues"
+    "url": "https://github.com/fablabbcn/smartcitizen-onboarding-app-atencio/issues"
   },
-  "homepage": "https://github.com/fablabbcn/smartcitizen-onboarding-app-iscape#readme",
+  "homepage": "https://github.com/fablabbcn/smartcitizen-onboarding-app-atencio#readme",
   "devDependencies": {
     "angular-translate-extract": "^1.0.0",
     "babel-core": "^6.26.3",
@@ -64,7 +64,7 @@
   },
   "gh-pages-deploy": {
     "staticpath": "dist",
-    "cname": "onboarding.iscape.smartcitizen.me",
+    "cname": "atencio.smartcitizen.me",
     "prep": [
       "build"
     ]
