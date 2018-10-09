@@ -2,8 +2,8 @@
     "landing": {
         "h2": "Welcome to the iSCAPE Citizen Kit!",
         "h4": "Let’s get you set up with a Smart Citizen Kit, and sensing in no time!",
-        "segueButton": "continue in english",
-        "contextButton1": "",
+        "segueButton": "Let's go",
+        "contextButton1": "Skip instructions",
         "contextButton2": ""
     },
     "smart_citizen": {
@@ -26,65 +26,37 @@
         "h4": "There's a few pieces we need to set up the Kit, let's check we have them all",
         "segueButton": "i'm ready"
     },
-    "selectparts": {
-        "h2": "Click on all the things you have received",
-        "h4": "We need to know this to make the set up work smoothly",
-        "part1": "Sensor Board",
-        "part1_desc": "This is where all the sensors are. It connects to the bigger, hardware board, so that the sensors can transmit what they find.",
-        "part2": "Hardware Board",
-        "part2_desc": "This is where all the computation takes place. Anytime you want to connect something to the Smart Citizen, it will be on this board",
-        "part3": "Battery",
-        "part3_desc": "This powers the device. Every so often it has to be recharged, especially after long periods of continuous use.",
-        "part4": "Particles Sensor",
-        "part4_desc": "The Particles Sensor helps to get better data regarding particules in the air.",
-        "modalButton": "ok, got it",
-        "contextButton": "where is my enclosure?",
-        "segueButton": "continue",
-        "segueButtonError": "are you missing parts?",
-        "continueButton": "continue",
-        "yesButton": "yes",
-        "noButton": "no"
-    },
-    "selectparts2": {
-        "h2": "Finally...",
-        "h4": "You don’t have to have the case, but it does protect your kit against the elements",
-        "part5": "Case",
-        "part5_desc": "The case is water resistant and allows the device to be affixed to a variety of surfaces.",
-        "part6": "Spacers",
-        "part6_desc": "Placed between the hardware board and sensor board, this keeps the boards study.",
-        "part7": "Cover",
-        "part7_desc": "Closing the case, this is used dto protect the device from rain. Make sure to place the holes over the sound sensor.",
-        "part8": "Fastener",
-        "part8_desc": "This is used to fasten the case to the cover.",
-        "modalButton": "ok, got it",
-        "contextButton": "where is my mine?",
-        "segueButton": "continue",
-        "segueButtonError": "are you missing parts?",
-        "continueButton": "continue",
-        "yesButton": "yes",
-        "noButton": "no"
-    },
     "confirm_parts": {
         "h1": "WELL DONE!",
         "h4": "Now let's put it all together",
         "segueButton": "continue"
     },
     "kitbuild1": {
-        "h2": "First the separators...",
-        "text": "Place a spacer in the holes on the sensor board",
+        "h2": "First, what's on the box?",
+        "text": "You should have the Kit, a micro SD adapter, a USB cable and charger and en elastic band",
         "segueButton": "done"
     },
     "kitbuild2": {
-        "h2": "Secondly, let's connect the sensors",
-        "text": "Connect the pins on the sensor board to the hardware board",
-        "segueButton": "done"
-    },
-    "kitbuild3": {
-        "h2": "Let's give it some power",
+        "h2": "Secondly, let's power the sensors",
         "text": "Connect the battery to the hardware board",
         "segueButton": "done"
     },
+    "kitbuild3": {
+        "h2": "Remember, you'll need to charge it periodically",
+        "text": "Plug the USB and charge your device like your phone",
+        "segueButton": "great"
+    },
     "kitbuild4": {
+        "h2": "First, a micro SD card",
+        "text": "Ensure your Kit has a micro SD card inserted to record the data",
+        "segueButton": "it's in place"
+    },
+    "kitbuild5": {
+        "h2": "And finally, ensure the LED is red",
+        "text": "Push the button on the Kit multiple times, until the LED is red.",
+        "segueButton": "it's alive"
+    },
+    "kitbuild6": {
         "h2": "And finally, turn on the Kit",
         "text": "Push the button on the Kit multiple times, until the LED is red.",
         "segueButton": "it's alive"
@@ -158,7 +130,7 @@
         "h3_2": " of the Kit, located in the",
         "em_2": " bottom right corner",
         "h3_3": " of your Kit.",
-        "h4": "If you do not see it, make sure your kit is powered on with a red LED.",
+        "h4": "If you do not see it, make sure your kit is powered on with a red LED. If you see many, select the one ending with the characters printed in your Kit.",
         "promptedText": "SmartCitizen[...]",
         "segueButton": "connected"
     },
@@ -183,7 +155,7 @@
     },
     "offline_pre": {
       "h1": "No Wi-Fi? No problem, use a SD Card",
-      "h4": "You will need a phone and a micro SD card. You can later upload the data on the platform using the CSV upload option.",
+      "h4": "You will need a phone and a micro SD card. You can later upload the data to the platform using the CSV upload option in the platform Kits profile",
       "segueButton": "got it"
     },
     "offline_1": {
@@ -193,7 +165,7 @@
       "h3_2": " of the Kit, located in the",
       "em_2": " bottom right corner",
       "h3_3": " of your Kit.",
-      "h4": "If you do not see it, make sure your kit is powered on with a red LED.",
+      "h4": "If you do not see it, make sure your kit is powered on with a red LED.  If you see many, select the one ending with the characters printed in your Kit.",
       "promptedText": "SmartCitizen[...]",
       "segueButton": "connected"
     },

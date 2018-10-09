@@ -8,9 +8,9 @@ export function landingController($scope, scopePayload, AnimationService, $rootS
     targets(scopePayload);
 
     function targets(payload){
-        if (payload.contextButton1 == "ENGLISH") {
-            buttonTargets.push('eng')
-        }
+        // if (payload.contextButton1 == "ENGLISH") {
+        //     buttonTargets.push('eng')
+        // }
         // if (payload.contextButton1 == "CASTELLANO") {
         //     buttonTargets.push('esp')
         // }
@@ -19,15 +19,19 @@ export function landingController($scope, scopePayload, AnimationService, $rootS
         // }
 
 
-        if (payload.contextButton2 == "ENGLISH") {
-            buttonTargets.push('eng')
-        }
+        // if (payload.contextButton2 == "ENGLISH") {
+        //     buttonTargets.push('eng')
+        // }
         // if (payload.contextButton2 == "CASTELLANO") {
         //     buttonTargets.push('esp')
         // }
         // if (payload.contextButton2 == "CATALÁ") {
         //     buttonTargets.push('cat')
         // }
+    }
+
+    $scope.skipInstructions = function(){
+        $state.go('wizard.choose_connection', {lang: $stateParams.lang});
     }
 
     $scope.languageChangeSegue = function(val){

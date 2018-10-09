@@ -11,7 +11,7 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
         kit_id: 20
     };
 
-    $scope.proposed_user_tags_array = ["iSCAPE"];
+    $scope.proposed_user_tags_array = ["Atencio"];
 
     $scope.handShakeState = false;
     $scope.handShakeRepeats = 0;

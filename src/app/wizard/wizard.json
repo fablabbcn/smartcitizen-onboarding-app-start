@@ -6,12 +6,13 @@
     "url": "landing",
     "controller": "landingController",
     "assets": {
-      "companyLogo": "assets/images/Logo_iScape_white.png"
+      "companyLogo": ""
     },
     "contentKeys": [
       "h2",
       "h4",
-      "segueButton"
+      "segueButton",
+      "contextButton1"
     ]
 },{
     "stateName": "",
@@ -81,75 +82,42 @@
       {
         "index": 11,
         "part": 2,
-        "template": "selectparts1",
-        "stateName": "selectparts",
-        "controller": "statesController",
-        "url": "kit_parts",
+        "template": "kitbuild1",
+        "stateName": "kitbuild1",
+        "url": "kitbuild_1",
+        "assets": {
+          "image": "assets/images/atn_parts.jpg"
+        },
         "contentKeys": [
           "h2",
-          "h4",
-          "part1",
-          "part1_desc",
-          "part2",
-          "part2_desc",
-          "part3",
-          "part3_desc",
-          "part4",
-          "part4_desc",
-          "modalButton",
-          "contextButton",
-          "segueButton",
-          "segueButtonError",
-          "continueButton",
-          "yesButton",
-          "noButton"
+          "text",
+          "segueButton"
         ]
       },
       {
         "index": 12,
         "part": 3,
-        "template": "selectparts2",
-        "stateName": "selectparts2",
-        "controller": "statesController",
-        "url": "case",
+        "template": "kitbuild1",
+        "stateName": "kitbuild2",
+        "url": "kitbuild_2",
+        "assets": {
+          "image": "assets/images/atn_battery.jpg"
+        },
         "contentKeys": [
           "h2",
-          "h4",
-          "part5",
-          "part5_desc",
-          "part6",
-          "part6_desc",
-          "part7",
-          "part7_desc",
-          "part8",
-          "part8_desc",
-          "modalButton",
-          "contextButton",
-          "segueButton",
-          "segueButtonError",
-          "continueButton",
-          "yesButton",
-          "noButton"
+          "text",
+          "segueButton"
         ]
       },
       {
         "index": 13,
         "part": 4,
-        "template": "confirm",
-        "stateName": "confirm_parts",
-        "url": "confirm_parts",
-        "contentKeys": [
-          "h1",
-          "h4",
-          "segueButton"
-        ]
-      },
-      {
-        "index": 14,
-        "part": 5,
         "template": "kitbuild1",
-        "stateName": "kitbuild1",
-        "url": "kitbuild_1",
+        "stateName": "kitbuild3",
+        "url": "kitbuild_3",
+        "assets": {
+          "image": "assets/images/atn_usb.jpg"
+        },
         "contentKeys": [
           "h2",
           "text",
@@ -159,62 +127,11 @@
       {
         "index": 15,
         "part": 6,
-        "template": "kitbuild2",
-        "stateName": "kitbuild2",
-        "url": "kitbuild_2",
-        "contentKeys": [
-          "h2",
-          "text",
-          "segueButton"
-        ]
-      },
-      {
-        "index": 16,
-        "part": 7,
-        "template": "kitbuild3",
-        "stateName": "kitbuild3",
-        "url": "kitbuild_3",
-        "contentKeys": [
-          "h2",
-          "text",
-          "segueButton"
-        ]
-      },
-      {
-        "index": 17,
-        "part": 8,
-        "template": "kitbuild4",
-        "stateName": "kitbuild4",
-        "url": "kitbuild_4",
-        "contentKeys": [
-          "h2",
-          "text",
-          "segueButton"
-        ]
-      },
-      {
-        "index": 18,
-        "part": 9,
-        "template": "casing",
-        "stateName": "case1",
-        "url": "case_1",
+        "template": "kitbuild1",
+        "stateName": "kitbuild5",
+        "url": "kitbuild_5",
         "assets": {
-          "image": "assets/images/sck_placeall.png"
-        },
-        "contentKeys": [
-          "h2",
-          "text",
-          "segueButton"
-        ]
-      },
-      {
-        "index": 19,
-        "part": 10,
-        "template": "casing",
-        "stateName": "case2",
-        "url": "case_2",
-        "assets": {
-          "image": "assets/images/sck_sealthecover.png"
+          "image": "assets/images/atn_button.jpg"
         },
         "contentKeys": [
           "h2",
@@ -405,6 +322,21 @@
       {
         "index": 36,
         "part": 2,
+        "template": "kitbuild1",
+        "stateName": "kitbuild4",
+        "url": "kitbuild_4",
+        "assets": {
+          "image": "assets/images/atn_sd.jpg"
+        },
+        "contentKeys": [
+          "h2",
+          "text",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 37,
+        "part": 3,
         "template": "prompted_entry1",
         "stateName": "offline_1",
         "url": "offline_1",
@@ -421,8 +353,8 @@
         ]
       },
       {
-        "index": 37,
-        "part": 3,
+        "index": 38,
+        "part": 4,
         "template": "prompted_entry2",
         "stateName": "offline_2",
         "url": "offline_2",
@@ -438,11 +370,11 @@
           "segueButton"
         ]
       },{
-        "index": 38,
-        "part": 4,
+        "index": 39,
+        "part": 5,
         "template": "prompted_entry2",
         "stateName": "offline_3",
-        "url": "offline_2",
+        "url": "offline_3",
         "assets": {
           "image": "assets/images/ap-5.png"
         },
@@ -457,8 +389,8 @@
       }]
     },
     {
-      "index": 39,
-      "part": 5,
+      "index": 40,
+      "part": 6,
       "template": "confirm",
       "controller": "smartcitizenController",
       "stateName": "confirm_handshake",
@@ -474,7 +406,7 @@
     "stateName": "",
     "controller": "nameController",
     "subStates": [{
-        "index": 40,
+        "index": 50,
         "part": 1,
         "template": "basic1",
         "stateName": "sensorName_prep",
@@ -488,7 +420,7 @@
         ]
       },
       {
-        "index": 41,
+        "index": 51,
         "part": 2,
         "template": "sensorName",
         "stateName": "sensorName",
@@ -508,7 +440,7 @@
     "stateName": "",
     "controller": "locationController",
     "subStates": [{
-        "index": 50,
+        "index": 60,
         "part": 1,
         "template": "location_prep",
         "stateName": "location_prep",
@@ -527,7 +459,7 @@
         ]
       },
       {
-        "index": 51,
+        "index": 61,
         "part": 2,
         "template": "location_map",
         "stateName": "location_map",
@@ -547,7 +479,7 @@
         ]
       },
       {
-        "index": 52,
+        "index": 62,
         "part": 3,
         "template": "location_tags",
         "stateName": "location_tags",
@@ -566,7 +498,7 @@
         ]
       },
       {
-        "index": 53,
+        "index": 63,
         "part": 4,
         "template": "confirm",
         "controller": "smartcitizenController",
@@ -661,6 +593,7 @@
       "h1",
       "h2",
       "h4",
+      "h4b",
       "segueButton"
     ]
   }

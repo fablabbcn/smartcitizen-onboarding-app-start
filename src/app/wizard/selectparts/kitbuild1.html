@@ -1,5 +1,5 @@
 <div class="kitBuildHolder animate" layout="column" layout-align="center center" ng-class="animationRows[3][0]">
-    <img preload-image ng-src="assets/images/1.png" class="buildImage">
+	<img preload-image ng-src="{{ payload.image }}" class="buildImage">
 </div>
 <div class="animate" ng-class="animationRows[3][1]">
     <h2>{{ payload.h2 | translate}}</h2>

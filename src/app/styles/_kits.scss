@@ -7,6 +7,9 @@
 .kitBuildHolder {
   height: 300px;
   .buildImage {
+    box-shadow: 10px 10px 0px (-$border_thickness) $regalBlue,
+    10px 10px 0px 0px var(--black);
+    border: 3px var(--black) solid;
     height: 300px;
     max-width: 700px;
     @media screen and (max-width: 750px) {
