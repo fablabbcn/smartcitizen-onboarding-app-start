@@ -23,20 +23,6 @@
         </div>
     </div>
 
-    <div class="selection" flex flex-md="45" flex-sm="45" flex-xs="100" ng-click="selectPart(1)"
-            ng-class="selectionButtons[1]" ng-mouseenter="infoImageOn(1)" ng-mouseleave="infoImageOff(1)">
-        <!-- <span class="infoHolder">
-            <md-icon ng-click="infoClick(1); $event.stopPropagation()" md-svg-src="assets/images/info.svg"></md-icon>
-        </span> -->
-        <span class="checkHolder">
-          <md-icon md-svg-src="assets/images/check.svg"></md-icon>
-        </span>
-        <div class="sectionContent">
-            <img preload-image class="selectionImage itemImage" ng-src="{{ payload.lightMethodImage }}">
-            <h5 class="selectionText">{{ payload.lightMethod | translate}}</h5>
-        </div>
-    </div>
-
     <div class="selection" flex flex-md="45" flex-sm="45" flex-xs="100" ng-click="selectPart(2)"
             ng-class="selectionButtons[2]" ng-mouseenter="infoImageOn(2)" ng-mouseleave="infoImageOff(2)">
         <!-- <span class="infoHolder">

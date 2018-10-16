@@ -149,14 +149,12 @@
     "part": 1,
     "assets": {
       "smartphoneImage": "assets/images/AP-handshake.png",
-      "lightMethodImage": "assets/images/light_handshake.png",
       "offlineImage": "assets/images/sd-mode.png"
     },
     "contentKeys": [
       "h2",
       "recommended",
       "smartphone",
-      "lightMethod",
       "offline",
       "segueButtonError",
       "continueButton",
