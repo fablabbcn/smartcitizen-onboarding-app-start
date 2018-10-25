@@ -1,10 +1,23 @@
-export function accesspointController($scope, scopePayload, AnimationService, $rootScope, platform, $state, $interval, $timeout, $stateParams) {
+export function accesspointController($scope, scopePayload, AnimationService) {
     $scope.$parent.payload = scopePayload;
     AnimationService.animate(scopePayload.template);
-    $scope.$parent.segueControl = 'blocked';
-    $scope.$parent.disabled = true;
+    $scope.$parent.segueControl = 'ready';
 
-    $scope.payload.promptedText = $scope.submittedData.deviceData.device_token;
+}
+
+accesspointController.$inject = ['$scope', 'scopePayload', 'AnimationService'];
+
+export function accesspointController_handshake($scope, scopePayload, AnimationService, $rootScope, platform, $state, $interval, $timeout, $stateParams) {
+    $scope.$parent.payload = scopePayload;
+    AnimationService.animate(scopePayload.template);
+
+    if($state.current.name == 'wizard.ap_wifi') {
+        $scope.$parent.segueControl = 'ready';
+        $scope.$parent.disabled = false;
+    } else {
+        $scope.$parent.segueControl = 'blocked';
+        $scope.$parent.disabled = true;
+    }
 
     platform.listenToken($scope.submittedData.deviceData.device_token, $scope);
 
@@ -24,7 +37,18 @@ export function accesspointController($scope, scopePayload, AnimationService, $r
     }
 }
 
-accesspointController.$inject = ['$scope', 'scopePayload', 'AnimationService', '$rootScope', 'platform', '$state', '$interval', '$timeout', '$stateParams'];
+accesspointController_handshake.$inject = ['$scope', 'scopePayload', 'AnimationService', '$rootScope', 'platform', '$state', '$interval', '$timeout', '$stateParams'];
+
+export function accesspointController_token($scope, scopePayload, AnimationService) {
+    $scope.$parent.payload = scopePayload;
+    AnimationService.animate(scopePayload.template);
+    $scope.$parent.segueControl = 'ready';
+
+    $scope.payload.promptedText = $scope.submittedData.deviceData.device_token;
+}
+
+accesspointController_token.$inject = ['$scope', 'scopePayload', 'AnimationService'];
+
 
 export function accesspointController_base($scope, $stateParams, scopePayload, AnimationService, $rootScope, $sce) {
     $rootScope.lang = $stateParams.lang;

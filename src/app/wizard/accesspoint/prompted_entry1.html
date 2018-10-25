@@ -2,6 +2,7 @@
     <h2>{{ payload.h2 | translate}}</h2>
 </div>
 <div class="animate" ng-class="animationRows[3][1]" layout="column" layout-align="center center">
+    <img style="max-width: 232px;" preload-image ng-src="{{ payload.image }}" class="buildImage">
     <div class="promptedText">
         <h2 style="text-transform: none !important;">{{ payload.promptedText | translate}}</h2>
     </div>

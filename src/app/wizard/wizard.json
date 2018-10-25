@@ -6,7 +6,7 @@
     "url": "landing",
     "controller": "landingController",
     "assets": {
-      "companyLogo": ""
+      "companyLogo": "assets/images/Logo_iScape_white.png"
     },
     "contentKeys": [
       "h2",
@@ -84,7 +84,7 @@
         "part": 2,
         "template": "kitbuild1",
         "stateName": "kitbuild1",
-        "url": "kitbuild_1",
+        "url": "kit_parts",
         "assets": {
           "image": "assets/images/atn_parts.jpg"
         },
@@ -99,7 +99,7 @@
         "part": 3,
         "template": "kitbuild1",
         "stateName": "kitbuild2",
-        "url": "kitbuild_2",
+        "url": "power_on",
         "assets": {
           "image": "assets/images/atn_battery.jpg"
         },
@@ -114,7 +114,7 @@
         "part": 4,
         "template": "kitbuild1",
         "stateName": "kitbuild3",
-        "url": "kitbuild_3",
+        "url": "charge_battery",
         "assets": {
           "image": "assets/images/atn_usb.jpg"
         },
@@ -125,13 +125,91 @@
         ]
       },
       {
-        "index": 15,
-        "part": 6,
+        "index": 14,
+        "part": 5,
         "template": "kitbuild1",
-        "stateName": "kitbuild5",
-        "url": "kitbuild_5",
+        "stateName": "kitbuild4",
+        "url": "button_modes",
         "assets": {
           "image": "assets/images/atn_button.jpg"
+        },
+        "contentKeys": [
+          "h2",
+          "text",
+          "segueButton"
+          ]
+        }
+      ]
+    },
+    {
+    "stateName": "",
+    "controller": "smartcitizenController",
+    "subStates": [{
+        "index": 15,
+        "part": 6,
+        "template": "basic1",
+        "stateName": "kitenclosure_start",
+        "url": "kit_enclosure",
+        "contentKeys": [
+          "h1",
+          "h4",
+          "segueButton",
+          "skipButton"
+        ]
+      },
+      {
+        "index": 16,
+        "part": 7,
+        "template": "kitbuild1",
+        "stateName": "kitenclosure1",
+        "url": "kit_enclosure_1",
+        "assets": {
+          "image": "assets/images/atn-enc-1.jpg"
+        },
+        "contentKeys": [
+          "h2",
+          "text",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 17,
+        "part": 8,
+        "template": "kitbuild1",
+        "stateName": "kitenclosure2",
+        "url": "kit_enclosure_2",
+        "assets": {
+          "image": "assets/images/atn-enc-2.jpg"
+        },
+        "contentKeys": [
+          "h2",
+          "text",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 18,
+        "part": 9,
+        "template": "kitbuild1",
+        "stateName": "kitenclosure3",
+        "url": "kit_enclosure_3",
+        "assets": {
+          "image": "assets/images/atn-enc-3.jpg"
+        },
+        "contentKeys": [
+          "h2",
+          "text",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 19,
+        "part": 10,
+        "template": "kitbuild1",
+        "stateName": "kitenclosure4",
+        "url": "kit_enclosure_4",
+        "assets": {
+          "image": "assets/images/atn-enc-4.jpg"
         },
         "contentKeys": [
           "h2",
@@ -148,8 +226,10 @@
     "template": "chooseConnection",
     "part": 1,
     "assets": {
-      "smartphoneImage": "assets/images/AP-handshake.png",
-      "offlineImage": "assets/images/sd-mode.png"
+      "smartphoneImage": "assets/images/wifi-router.png",
+      "offlineImage": "assets/images/sd-mode.png",
+      "part1image": "assets/images/wifi-router.png",
+      "part2image": "assets/images/test-sd.png"
     },
     "contentKeys": [
       "h2",
@@ -160,7 +240,11 @@
       "continueButton",
       "segueButton",
       "yesButton",
-      "noButton"
+      "noButton",
+      "part1",
+      "part1_desc",
+      "part2",
+      "part2_desc"
     ]
   }, {
     "stateName": "",
@@ -224,12 +308,11 @@
     ]
   }, {
     "stateName": "",
-    "controller": "accesspointController_base",
+    "controller": "accesspointController",
     "subStates": [{
         "index": 30,
         "part": 1,
         "template": "basic1",
-        "controller": "smartcitizenController",
         "stateName": "accesspoint_pre",
         "url": "accesspoint_pre",
         "contentKeys": [
@@ -278,9 +361,12 @@
         "index": 33,
         "part": 3,
         "template": "prompted_entry1",
-        "controller": "accesspointController",
-        "stateName": "ap_final",
-        "url": "ap_final",
+        "controller": "accesspointController_token",
+        "stateName": "ap_token",
+        "url": "ap_token",
+        "assets": {
+          "image": "assets/images/ap-2.png"
+        },
         "contentKeys": [
           "h2",
           "h4",
@@ -291,6 +377,35 @@
       {
         "index": 34,
         "part": 4,
+        "template": "prompted_entry2",
+        "controller": "accesspointController_handshake",
+        "stateName": "ap_wifi",
+        "url": "ap_wifi",
+        "assets": {
+          "image": "assets/images/ap-3.png"
+        },
+        "contentKeys": [
+          "h2",
+          "h4",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 35,
+        "part": 5,
+        "template": "basic1",
+        "controller": "accesspointController_handshake",
+        "stateName": "ap_final",
+        "url": "ap_final",
+        "contentKeys": [
+          "h1",
+          "h4",
+          "segueButton"
+        ]
+      },
+      {
+        "index": 36,
+        "part": 6,
         "template": "basic1",
         "stateName": "ap_issues",
         "url": "ap_issues",
@@ -305,7 +420,7 @@
     "stateName": "",
     "controller": "accesspointController_base",
     "subStates": [{
-        "index": 35,
+        "index": 36,
         "part": 1,
         "template": "basic1",
         "controller": "smartcitizenController",
@@ -318,11 +433,11 @@
         ]
       },
       {
-        "index": 36,
+        "index": 37,
         "part": 2,
         "template": "kitbuild1",
-        "stateName": "kitbuild4",
-        "url": "kitbuild_4",
+        "stateName": "sdcard_inplace",
+        "url": "sdcard_inplace",
         "assets": {
           "image": "assets/images/atn_sd.jpg"
         },
@@ -333,7 +448,7 @@
         ]
       },
       {
-        "index": 37,
+        "index": 38,
         "part": 3,
         "template": "prompted_entry1",
         "stateName": "offline_1",
@@ -351,7 +466,7 @@
         ]
       },
       {
-        "index": 38,
+        "index": 39,
         "part": 4,
         "template": "prompted_entry2",
         "stateName": "offline_2",
@@ -368,7 +483,7 @@
           "segueButton"
         ]
       },{
-        "index": 39,
+        "index": 40,
         "part": 5,
         "template": "prompted_entry2",
         "stateName": "offline_3",
@@ -387,7 +502,7 @@
       }]
     },
     {
-      "index": 40,
+      "index": 41,
       "part": 6,
       "template": "confirm",
       "controller": "smartcitizenController",
@@ -404,7 +519,7 @@
     "stateName": "",
     "controller": "nameController",
     "subStates": [{
-        "index": 50,
+        "index": 55,
         "part": 1,
         "template": "basic1",
         "stateName": "sensorName_prep",
@@ -418,7 +533,7 @@
         ]
       },
       {
-        "index": 51,
+        "index": 56,
         "part": 2,
         "template": "sensorName",
         "stateName": "sensorName",

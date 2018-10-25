@@ -71,7 +71,7 @@
 
         p {
           text-align: left;
-          font-size: 25px;
+          font-size: 20px;
           @media screen and (min-width: $break-sm) {
             padding-right: 85px;
           }
@@ -98,9 +98,9 @@
               width: 200px;
               height: 200px;
               img {
-                width: 200%;
+                width: 150%;
                 position: relative;
-                top: -100px;
+                top: -50px;
                 right: 80px;
               }
             }

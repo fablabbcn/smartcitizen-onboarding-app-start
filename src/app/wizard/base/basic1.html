@@ -6,3 +6,16 @@
       <p class="description">{{ payload.h4 | translate}}</p>
   </div>
 </div>
+<div ng-if="payload.skipButton" class="animate" ng-class="animationRows[4][3]">
+    <div style="margin-top: 60px;" layout="row" layout-align="center center" layout-wrap>
+        <button ng-if="payload.skipButton" style="font-size: 14px; font-family: 'Kanit';  opacity: 0.5;" class="contextButton" ng-click="skipInstructions()">
+            {{ payload.skipButton | translate }}
+            <svg id="nextSVG" width="10px" height="16px" viewBox="187 22 10 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <!-- Generator: Sketch 41.1 (35376) - http://www.bohemiancoding.com/sketch -->
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <path d="M187.539062,22.0676084 L196.867188,29.7394834 C196.95573,29.8071921 197,29.8931287 197,29.9972959 C197,30.1170882 196.95573,30.2030248 196.867188,30.2551084 L187.539062,37.9269834 C187.434895,38.0051088 187.317709,38.0155254 187.1875,37.9582334 C187.062499,37.9009415 187,37.8019841 187,37.6613584 L187,22.3332334 C187,22.1926077 187.062499,22.0936504 187.1875,22.0363584 C187.317709,21.9790665 187.434895,21.989483 187.539062,22.0676084 L187.539062,22.0676084 Z" id="directright" stroke="none" fill="#FFFFFF" fill-rule="evenodd"></path>
+            </svg>
+        </button>
+</div>
+

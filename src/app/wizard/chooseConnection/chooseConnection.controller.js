@@ -111,15 +111,15 @@ export function chooseConnectionController($scope, $rootScope, $state, scopePayl
         var data = [{
             "title": $scope.payload.part1,
             "body": $scope.payload.part1_desc,
-            "image": "assets/images/sensor_board.png"
+            "image": $scope.payload.part1image
         }, {
             "title": $scope.payload.part2,
             "body": $scope.payload.part2_desc,
-            "image": "assets/images/main_board.png"
+            "image": $scope.payload.part1image
         }, {
-            "title": $scope.payload.part3,
-            "body": $scope.payload.part3_desc,
-            "image": "assets/images/BOARDS-CUTOUT_0006_BATTERY2.png"
+            "title": $scope.payload.part2,
+            "body": $scope.payload.part2_desc,
+            "image": $scope.payload.part2image
         }];
         data[val].button = $scope.payload.modalButton;
         $scope.$parent.modalContent = data[val];

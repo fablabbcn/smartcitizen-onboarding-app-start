@@ -11,7 +11,7 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
         kit_id: 20
     };
 
-    $scope.proposed_user_tags_array = ["Atencio"];
+    $scope.proposed_user_tags_array = ["iSCAPE"];
 
     $scope.handShakeState = false;
     $scope.handShakeRepeats = 0;
@@ -64,7 +64,6 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
 
     /** Base Navigation  **/
     $scope.seque = function() {
-
         if ($scope.segueControl == 'ready') {
           console.log('Next state:', $scope.payload.template);
             switch ($scope.payload.template) {

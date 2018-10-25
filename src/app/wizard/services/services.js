@@ -187,11 +187,13 @@ export default function SegueService ($state) {
     function setupProgressRight(index) {
         if (index <= 3) {
             return "Introduction";
+        } else if (index <= 14) {
+            return "How to use it?";
         } else if (index <= 19) {
-            return "What's in the Box";
+            return "Make an enclosure";
         } else if (index <= 39) {
             return "Handshake";
-        } else if (index <= 41) {
+        } else if (index <= 55) {
             return "Naming";
         } else if (index <= 53) {
             return "Location";
