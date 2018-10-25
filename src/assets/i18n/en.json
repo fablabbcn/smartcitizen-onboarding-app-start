@@ -8,7 +8,7 @@
     },
     "smart_citizen": {
         "h2": "Smart Citizen is a movement for civic participation in a modern world",
-        "h4": "Smart Citizen creates open tools for citizens to be better informed about the world around them.",
+        "h4": "Smart Citizen creates open tools for citizens to be better informed about the world around them",
         "segueButton": "continue"
     },
     "smart_citizen_brief": {
@@ -53,12 +53,12 @@
     },
     "kitbuild5": {
         "h2": "And finally, ensure the LED is red",
-        "text": "Push the button on the Kit multiple times, until the LED is red.",
+        "text": "Push the button on the Kit multiple times, until the LED is red",
         "segueButton": "it's alive"
     },
     "kitbuild6": {
         "h2": "And finally, turn on the Kit",
-        "text": "Push the button on the Kit multiple times, until the LED is red.",
+        "text": "Push the button on the Kit multiple times, until the LED is red",
         "segueButton": "it's alive"
     },
     "case1": {
@@ -67,8 +67,8 @@
         "segueButton": "continue"
     },
     "case2": {
-        "h2": "... and to finish, seal the cover",
-        "text": "Place the transparent plastic on the front of the case and fix it in place with the two white plugs.",
+        "h2": ".... and to finish, seal the cover",
+        "text": "Place the transparent plastic on the front of the case and fix it in place with the two white plugs",
         "segueButton": "continue"
     },
     "choose_connection": {
@@ -97,7 +97,7 @@
         "continueButton": "continue"
     },
     "handshake": {
-        "h2": "Now let's do some magic..",
+        "h2": "Now let's do some magic.",
         "h4": "Hold up your kit and press it on the screen over the box below and press 'connect'. Make sure the blue side of the kit is facing you",
         "handshakeLabel": "Place your kit here",
         "waitLabel": "YOU CAN REMOVE YOUR DEVICE",
@@ -129,9 +129,9 @@
         "em_1": " number",
         "h3_2": " of the Kit, located in the",
         "em_2": " bottom right corner",
-        "h3_3": " of your Kit.",
-        "h4": "If you do not see it, make sure your kit is powered on with a red LED. If you see many, select the one ending with the characters printed in your Kit.",
-        "promptedText": "SmartCitizen[...]",
+        "h3_3": " of your Kit",
+        "h4": "If you do not see it, make sure your kit is powered on with a red LED. If you see many, select the one ending with the characters printed in your Kit",
+        "promptedText": "SmartCitizen[....]",
         "segueButton": "connected"
     },
     "accesspoint_2": {
@@ -164,9 +164,9 @@
       "em_1": " number",
       "h3_2": " of the Kit, located in the",
       "em_2": " bottom right corner",
-      "h3_3": " of your Kit.",
-      "h4": "If you do not see it, make sure your kit is powered on with a red LED.  If you see many, select the one ending with the characters printed in your Kit.",
-      "promptedText": "SmartCitizen[...]",
+      "h3_3": " of your Kit",
+      "h4": "If you do not see it, make sure your kit is powered on with a red LED.  If you see many, select the one ending with the characters printed in your Kit",
+      "promptedText": "SmartCitizen[....]",
       "segueButton": "connected"
     },
     "offline_2": {
@@ -181,7 +181,7 @@
         "h2": "FOLLOW THE INSTRUCTIONS AND CLICK THE START LOGGING BUTTON",
         "h3_1": "",
         "em_1": "",
-        "h4": "Right after you do this, you should be able to see your kits LED slowly fading in pink. If the LED is blinking fast, there have been an error.",
+        "h4": "Right after you do this, you should be able to see your kits LED slowly fading in pink. If the LED is blinking fast, there have been an error",
         "promptedText": "",
         "segueButton": "Continue"
     },
@@ -198,7 +198,7 @@
     },
     "sensorName": {
         "h2": "What shall we name the sensor?",
-        "h4": "You can name it pretty much anything. This is how it will appear on the Smart Citizen map.",
+        "h4": "You can name it pretty much anything. This is how it will appear on the Smart Citizen map",
         "input1": "Enter the sensor name",
         "input1_error": "The sensor needs a name",
         "contextButton": "choose a random name",
@@ -207,7 +207,7 @@
     },
     "location_prep": {
         "h2": "Where will you install the sensor?",
-        "h4": "By pressing 'allow' on the pop up we can determine the current location of the sensor. You can manually adjust this later to anywhere you want to place the sensor.",
+        "h4": "By pressing 'allow' on the pop up we can determine the current location of the sensor. You can manually adjust this later to anywhere you want to place the sensor",
         "segueButton": "done",
         "continueButton": "done!",
         "waitButton": "wait"
@@ -228,7 +228,7 @@
     },
     "confirm_location": {
         "h1": "ALMOST THERE",
-        "h4": "Finally, let's save all this work we've done.",
+        "h4": "Finally, let's save all this work we've done",
         "segueButton": "continue"
     },
     "account1": {
@@ -252,7 +252,7 @@
     },
     "account2": {
         "h2": "Nice, so you're new to Smart Citizen?",
-        "h4": "Add a username to your profile, so users know who owns the sensor.",
+        "h4": "Add a username to your profile, so users know who owns the sensor",
         "input1": "Enter a username",
         "input1_error": "A username is required",
         "input1_error2": "Username is too short",
