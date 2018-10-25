@@ -16,7 +16,7 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
     $scope.handShakeState = false;
     $scope.handShakeRepeats = 0;
     $scope.handShakeWatchDog = 20 * 1000;
-    $scope.apModeWatchDog = 60 * 1000;
+    $scope.apModeWatchDog = 3 * 60 * 1000;
     $scope.platformUrl = 'https://smartcitizen.me/kits/';
 
     /** End of cutomizable options options **/
