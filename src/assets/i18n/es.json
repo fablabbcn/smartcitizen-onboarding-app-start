@@ -93,11 +93,6 @@
         "segueButton": "conectar",
         "continueButton": "continúa"
     },
-    "accesspoint_pre": {
-        "h1": "VAMOS A PROBARLO CON TU MÓVIL O TABLET",
-        "h4": "Este método es más robusto. Coge cualquier dispositivo móvil, smartphone o tablet.",
-        "segueButton": "entendido"
-    },
     "accesspoint_1": {
         "h2": "En tu dispositivo móvil, accede a la configuración Wi-Fi y conecta a la red Wi-Fi llamada:",
         "h3_1": "El",

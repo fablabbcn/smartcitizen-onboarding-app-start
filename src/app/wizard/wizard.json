@@ -308,19 +308,8 @@
     ]
   }, {
     "stateName": "",
-    "controller": "accesspointController",
-    "subStates": [{
-        "index": 30,
-        "part": 1,
-        "template": "basic1",
-        "stateName": "accesspoint_pre",
-        "url": "accesspoint_pre",
-        "contentKeys": [
-          "h1",
-          "h4",
-          "segueButton"
-        ]
-      },
+    "controller": "accesspointController_base",
+    "subStates": [
       {
         "index": 31,
         "part": 1,

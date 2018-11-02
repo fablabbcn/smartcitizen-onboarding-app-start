@@ -139,11 +139,6 @@
         "segueButton": "connect",
         "continueButton": "continue"
     },
-    "accesspoint_pre": {
-        "h1": "Let's connect to your Kit",
-        "h4": "You will need a phone or tablet",
-        "segueButton": "got it"
-    },
     "accesspoint_1": {
         "h2": "On your mobile device, go to your Wi-Fi settings and connect to the Wi-Fi called:",
         "h3_1": "The",
@@ -158,7 +153,7 @@
     "accesspoint_2": {
         "h2": "You should see this window on your mobile device",
         "h3_1": "If that did not happen, open the browser on your device and go to",
-        "em_1": " www.MySCK.me",
+        "em_1": " www.mysck.me",
         "h4": "If it does not work, make sure you are connected to the Wi-Fi",
         "promptedText": "SCKit.me",
         "segueButton": "connected"

@@ -85,7 +85,7 @@ export default function SegueService ($state) {
         const indexState = states.indexOf(currentState);
         if (0 < indexState < states.length) {
           switch (currentState.name) {
-            case 'wizard.accesspoint_pre':
+            case 'wizard.accesspoint_1':
               $state.go('wizard.choose_connection');
               break;
             case 'wizard.wifi_enter':

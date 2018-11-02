@@ -270,17 +270,6 @@ const pageContent = [
             "segueButton": "CONTINUE"
         },
 
-        /** -- WIFI HANDSHAKE -- **/
-        {
-            "index": 30,
-            "part": 4,
-            "template": "basic",
-            "url": "accesspoint_pre",
-            "stateName": "accesspoint_pre",
-            "h1": "LET'S TRY WITH A PHONE OR TABLET INSTEAD",
-            "h4": "This approach is more reliable. You will need a phone or tablet.",
-            "segueButton": "GOT IT"
-        },
         {
             "index": 31,
             "part": 5,
@@ -305,7 +294,7 @@ const pageContent = [
             "stateName": "accesspoint_2",
             "h2": "You should see this window on your mobile device",
             "h3_1": "If that did not happen, open the browser on your device and go to",
-            "em_1": " www.MySCK.me",
+            "em_1": " www.mysck.me",
             "h4": "If it does not work, make sure you are connected to the wifi",
             "promptedText": "SCKit.me",
             "segueButton": "CONNECTED"
@@ -317,7 +306,7 @@ const pageContent = [
             "url": "ap_final",
             "stateName": "ap_final",
             "h2": "Select your Wi-Fi from the list, and enter the password. When asked for your onboarding code submit:",
-            "h4": "If the submitted wifi and password are correct you will be redirected shortly, follow the instructions on www.MySCK.me",
+            "h4": "If the submitted wifi and password are correct you will be redirected shortly, follow the instructions on www.mysck.me",
             "promptedText": "TOKEN HERE",
             "segueButton": "DONE"
         },
@@ -730,16 +719,7 @@ const pageContent = [
         },
 
         /** -- WIFI HANDSHAKE -- **/
-        {
-            "index": 30,
-            "part": 4,
-            "template": "basic",
-            "url": "accesspoint_pre",
-            "stateName": "accesspoint_pre",
-            "h1": "VAMOS A PROBARLO CON TU MÓVIL O TABLET",
-            "h4": "Este método es más robusto. Coge cualquier dispositivo móvil, smartphone o tablet.",
-            "segueButton": "ENTENDIDO"
-        },
+
         {
             "index": 31,
             "part": 5,
@@ -1188,16 +1168,6 @@ const pageContent = [
         },
 
         /** -- WIFI HANDSHAKE -- **/
-        {
-            "index": 30,
-            "part": 4,
-            "template": "basic",
-            "url": "accesspoint_pre",
-            "stateName": "accesspoint_pre",
-            "h1": "ANEM A PROVAR-HO AMB EL TEU MÒBIL O TABLET",
-            "h4": "Aquest mètode és més robust. Necessites qualsevol dispositiu móvil, smartphone o tablet.",
-            "segueButton": "ENTÈS"
-        },
         {
             "index": 31,
             "part": 5,

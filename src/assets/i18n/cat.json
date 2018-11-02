@@ -93,11 +93,6 @@
         "segueButton": "conecta",
         "continueButton": "continua"
     },
-    "accesspoint_pre": {
-        "h1": "ANEM A PROVAR-HO AMB EL TEU MÒBIL O TABLET",
-        "h4": "Aquest mètode és més robust. Necessites qualsevol dispositiu móvil, smartphone o tablet.",
-        "segueButton": "entès"
-    },
     "accesspoint_1": {
         "h2": "Des del teu dispositiu mòbil acedeix a la configuració Wi-Fi y conecta't a la xarxa Wi-Fi:",
         "h3_1": "El",

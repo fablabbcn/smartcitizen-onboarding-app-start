@@ -57,7 +57,7 @@ export function chooseConnectionController($scope, $rootScope, $state, scopePayl
     function setNextState(val) {
       switch (val) {
         case 0:
-          $scope.$parent.nextState = 'accesspoint_pre';
+          $scope.$parent.nextState = 'accesspoint_1';
           prepSegue();
           break;
         case 1:
