@@ -26,49 +26,6 @@
         "h4": "En el Kit hay algunas piezas que tenemos que esamblar, revisemos que las tenemos todas",
         "segueButton": "estoy listo"
     },
-    "selectparts": {
-        "h2": "Selecciona todas las piezas que has recibido",
-        "h4": "Tenemos que saberlo para que la puedas configrarlo sin problemas",
-        "part1": "Placa de Sensores",
-        "part1_desc": "Es donde están todos los sensores. Se conecta a la placa de datos, para que los sensores puedan transmitir lo que han medido.",
-        "part2": "Placa de Datos",
-        "part2_desc": "Es donde se procesan todos los datos. Cada vez que quieras conectar algo al Kit de Smart Citizen, tendrás que hacerlo en esta placa",
-        "part3": "Batería",
-        "part3_desc": "Es lo que alimenta el sensor. Tiene que ser cargada a menudo, especialmente si se usa durante un periodo de tiempo prolongado.",
-        "part4": "Cable USB",
-        "part4_desc": "Cuando el Kit necesita ser cargado, puedes utilizar este cable para conectar el Kit a tu ordenador o a un enchufe del mismo modo que tu móvil.",
-        "modalButton": "entendido",
-        "contextButton": "dónde está mi carcasa?",
-        "segueButton": "continúa",
-        "segueButtonError": "te faltan piezas?",
-        "continueButton": "continúa",
-        "yesButton": "si",
-        "noButton": "no"
-    },
-    "selectparts2": {
-        "h2": "Para finalizar...",
-        "h4": "No es necesario tener la carcasa, pero es útil para proteger tu Kit contra la llúvia",
-        "part5": "Carcasa",
-        "part5_desc": "La carcasa es resistente al agua y permite colocar el dispositivo en diferentes superficies.",
-        "part6": "Espaciadores",
-        "part6_desc": "Situados entre las placas de sensores y de datos, mantienen las placas sujetas.",
-        "part7": "Tapa",
-        "part7_desc": "Cierra la carcasa y se utiliza para proteger el dispositivo de la lluvia. Asegurate de colocar los agujeros encima del sensor de sonido.",
-        "part8": "Sujetadores",
-        "part8_desc": "Se usan para fijar la tapa a la carcasa.",
-        "modalButton": "entendido",
-        "contextButton": "dónde está el mío?",
-        "segueButton": "continúa",
-        "segueButtonError": "te faltan piezas?",
-        "continueButton": "continúa",
-        "yesButton": "si",
-        "noButton": "no"
-    },
-    "confirm_parts": {
-        "h1": "BIEN HECHO!",
-        "h4": "Ahora vamos a ponerlo todo junto",
-        "segueButton": "continúa"
-    },
     "kitbuild1": {
         "h2": "Primero, los separadores...",
         "text": "Coloca un separador en cada agujero de la placa de sensores",
@@ -84,32 +41,22 @@
         "text": "Conecta la batería con la placa de datos",
         "segueButton": "hecho"
     },
-    "kitbuild4": {
-        "h2": "Y por último, enciende el Kit",
-        "text": "Presiona el botón en el Kit, hasta que la luz del esté en rojo.",
-        "segueButton": "está vivo"
-    },
-    "case1": {
-        "h2": "Después, colocalo todo dentro de la carcasa",
-        "text": "Asegurate de colocar el Kit con el cable de la batería hacia la parte inferior de la carcasa",
-        "segueButton": "continúa"
-    },
-    "case2": {
-        "h2": "... y para terminar, cierra la tapa",
-        "text": "Coloca el plástico transparente en la parte delantera de la caja y fijalo en su lugar con las dos fijaciones blancas",
-        "segueButton": "continúa"
+    "kitbuild5": {
+        "h2": "",
+        "text": "",
+        "segueButton": ""
     },
     "choose_connection": {
         "h2": "",
         "recommended": "",
         "smartphone": "",
-        "lightMethod": "",
         "offline": "",
         "segueButtonError": "",
         "continueButton": "",
         "segueButton": "",
         "yesButton": "",
-        "noButton": ""
+        "noButton": "",
+        "lightMethod": ""
     },
     "wifi_enter": {
         "h2": "Con qué red wi-fi vas a conectarte a internet?",
@@ -176,10 +123,20 @@
         "promptedText": "EL CÓDIGO AQUÍ",
         "segueButton": "listo"
     },
+    "ap_issues": {
+        "h1": "",
+        "h4": "",
+        "segueButton": ""
+    },
     "offline_pre": {
         "h1": "",
         "h4": "",
         "segueButton": ""
+    },
+    "kitbuild4": {
+        "h2": "Y por último, enciende el Kit",
+        "text": "Presiona el botón en el Kit, hasta que la luz del esté en rojo.",
+        "segueButton": "está vivo"
     },
     "offline_1": {
         "h2": "",
@@ -298,9 +255,63 @@
         "h1": "ESTÁ VIVO!",
         "h2": "Has instalado y conectado satisfactoriamente tu Kit Smart Citizen a internet y agregado el Kit a la comunidad global de sensores",
         "h4": "Visita SmartCitizen.me para ver tu Kit en acción, capturando datos. No olvides leer el manual para las instrucciones de ensamblaje y consejos para instalar tu Kit en exteriores",
+        "h4b": "",
         "segueButton": "visitar smartcitizen.me"
     },
     "unavailable": {
         "h1": ""
+    },
+    "selectparts": {
+        "h2": "Selecciona todas las piezas que has recibido",
+        "h4": "Tenemos que saberlo para que la puedas configrarlo sin problemas",
+        "part1": "Placa de Sensores",
+        "part1_desc": "Es donde están todos los sensores. Se conecta a la placa de datos, para que los sensores puedan transmitir lo que han medido.",
+        "part2": "Placa de Datos",
+        "part2_desc": "Es donde se procesan todos los datos. Cada vez que quieras conectar algo al Kit de Smart Citizen, tendrás que hacerlo en esta placa",
+        "part3": "Batería",
+        "part3_desc": "Es lo que alimenta el sensor. Tiene que ser cargada a menudo, especialmente si se usa durante un periodo de tiempo prolongado.",
+        "part4": "Cable USB",
+        "part4_desc": "Cuando el Kit necesita ser cargado, puedes utilizar este cable para conectar el Kit a tu ordenador o a un enchufe del mismo modo que tu móvil.",
+        "modalButton": "entendido",
+        "contextButton": "dónde está mi carcasa?",
+        "segueButton": "continúa",
+        "segueButtonError": "te faltan piezas?",
+        "continueButton": "continúa",
+        "yesButton": "si",
+        "noButton": "no"
+    },
+    "selectparts2": {
+        "h2": "Para finalizar...",
+        "h4": "No es necesario tener la carcasa, pero es útil para proteger tu Kit contra la llúvia",
+        "part5": "Carcasa",
+        "part5_desc": "La carcasa es resistente al agua y permite colocar el dispositivo en diferentes superficies.",
+        "part6": "Espaciadores",
+        "part6_desc": "Situados entre las placas de sensores y de datos, mantienen las placas sujetas.",
+        "part7": "Tapa",
+        "part7_desc": "Cierra la carcasa y se utiliza para proteger el dispositivo de la lluvia. Asegurate de colocar los agujeros encima del sensor de sonido.",
+        "part8": "Sujetadores",
+        "part8_desc": "Se usan para fijar la tapa a la carcasa.",
+        "modalButton": "entendido",
+        "contextButton": "dónde está el mío?",
+        "segueButton": "continúa",
+        "segueButtonError": "te faltan piezas?",
+        "continueButton": "continúa",
+        "yesButton": "si",
+        "noButton": "no"
+    },
+    "confirm_parts": {
+        "h1": "BIEN HECHO!",
+        "h4": "Ahora vamos a ponerlo todo junto",
+        "segueButton": "continúa"
+    },
+    "case1": {
+        "h2": "Después, colocalo todo dentro de la carcasa",
+        "text": "Asegurate de colocar el Kit con el cable de la batería hacia la parte inferior de la carcasa",
+        "segueButton": "continúa"
+    },
+    "case2": {
+        "h2": "... y para terminar, cierra la tapa",
+        "text": "Coloca el plástico transparente en la parte delantera de la caja y fijalo en su lugar con las dos fijaciones blancas",
+        "segueButton": "continúa"
     }
 }

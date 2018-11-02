@@ -21,6 +21,41 @@
 
 <body ng-app="app" layout="column">
 
+
+
+  <!-- HACK remove hove for touch devices -->
+  <!-- https://stackoverflow.com/questions/23885255/how-to-remove-ignore-hover-css-style-on-touch-devices -->
+  <!-- TODO: either use a framework/library or implement the CSS properly with a .hasTouch class on <html> -->
+  <script type="text/javascript">
+
+    function hasTouch() {
+      return true;
+      return 'ontouchstart' in document.documentElement
+             || navigator.maxTouchPoints > 0
+             || navigator.msMaxTouchPoints > 0;
+    }
+    setTimeout(() => {
+      console.log("sty", document.styleSheets.length)
+      if (hasTouch()) { // remove all :hover stylesheets
+        try { // prevent exception on browsers not supporting DOM styleSheets properly
+          for (var si in document.styleSheets) {
+            var styleSheet = document.styleSheets[si];
+            try { if (!styleSheet.rules) continue; }  catch (ex) { continue; }
+
+            for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+              if (!styleSheet.rules[ri].selectorText) continue;
+
+              if (styleSheet.rules[ri].selectorText.match(':hover')) {
+                styleSheet.deleteRule(ri);
+              }
+            }
+          }
+        } catch (ex) {}
+      }
+    }, 1000);
+  </script>
+
+
   <!-- Github Pages hack to allow SPA refresh without receiving 404. -->
     <script>
       (function () {

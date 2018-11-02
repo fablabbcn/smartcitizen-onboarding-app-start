@@ -29,11 +29,14 @@
     fill: $SCK2-darkGrey;
   }
 
-  &.active, &:hover {
-    background-color: $SCK2-blue;
+  &.active {
+    background-color: $blue;
     color: $SCK2-lightGrey;
     tspan {
       fill: $SCK2-lightGrey;
     }
+  }
+  &:hover {
+    background-color: $blueLight;
   }
 }

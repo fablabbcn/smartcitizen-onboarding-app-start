@@ -26,49 +26,6 @@
         "h4": "Hi han algunes peces que cal muntar per instalar el Kit, revisa que les tens totes.",
         "segueButton": "estic apunt"
     },
-    "selectparts": {
-        "h2": "Seleccionna totes les peces que has rebut",
-        "h4": "Hem d'assegurar-nos'en per poder seguir amb la instalació",
-        "part1": "Sensor Board",
-        "part1_desc": "Aquesta placa conté tots els sensors. Es connecta a la més gran de manera que els sensors puguin transmetre les dades.",
-        "part2": "Hardware Board",
-        "part2_desc": "Aquí és on tot el processament es duu a terme. Cada vegada que vulguis connectar algun sensor l'Smart Citizen Kit, serà en aquesta placa",
-        "part3": "Bateria",
-        "part3_desc": "Això alimenta el sensor. Cal carregar-la sovint, sobretot després de periodes d'ús continuats.",
-        "part4": "Cable de càrrega",
-        "part4_desc": "Quan vulguis carregar el Kit, pots conectar el Kit a un ordinador o carregador USB, tal com ho fas amb el teu móbil.",
-        "modalButton": "entès",
-        "contextButton": "on és la carcassa?",
-        "segueButton": "continua",
-        "segueButtonError": "are you missing parts?",
-        "continueButton": "continua",
-        "yesButton": "sí",
-        "noButton": "no"
-    },
-    "selectparts2": {
-        "h2": "Finally...",
-        "h4": "La carcassa no és indispensable, però és útil per protegir el Kit contra la pluja",
-        "part5": "Carcassa",
-        "part5_desc": "La carcassa és resistent a l'aigua i permet col·locar el dispositiu en diferents superfícies.",
-        "part6": "Espaiadors",
-        "part6_desc": "Situats entre les plaques de sensors i de dades, mantenen les plaques subjectes",
-        "part7": "Tapa",
-        "part7_desc": "Tanca la carcassa i s'utilitza per protegir el dispositiu de la pluja. Assegura't de col·locar els forats sobre del sensor de so.",
-        "part8": "Fixadors",
-        "part8_desc": "S'usen per fixar la tapa a la carcassa.",
-        "modalButton": "entès",
-        "contextButton": "on és el meu?",
-        "segueButton": "continua",
-        "segueButtonError": "et falten peces?",
-        "continueButton": "continua",
-        "yesButton": "sí",
-        "noButton": "no"
-    },
-    "confirm_parts": {
-        "h1": "BEN FET!",
-        "h4": "Ara anem a muntar-ho tot junt",
-        "segueButton": "continua"
-    },
     "kitbuild1": {
         "h2": "Primer, els separadors...",
         "text": "Col·loca un separador en cada forat de la placa de sensors",
@@ -84,32 +41,22 @@
         "text": "Connecta la bateria amb la placa de dades",
         "segueButton": "fet"
     },
-    "kitbuild4": {
-        "h2": "I finalment, encén el Kit",
-        "text": "Pressiona el botó del Kit, fins que el color del llum sigui vermell.",
-        "segueButton": "funciona!"
-    },
-    "case1": {
-        "h2": "A continuació posa-ho tot dins la carcassa",
-        "text": "Assegura't de col·locar el Kit amb el cable de la bateria cap a la part inferior de la carcassa",
-        "segueButton": "continua"
-    },
-    "case2": {
-        "h2": "... i per acabar, posa la tapa.",
-        "text": "Col·loca el plàstic transparent damunt la caixa i fixa'l al seu lloc amb les dues fixacions blanques",
-        "segueButton": "continua"
+    "kitbuild5": {
+        "h2": "",
+        "text": "",
+        "segueButton": ""
     },
     "choose_connection": {
         "h2": "",
         "recommended": "",
         "smartphone": "",
-        "lightMethod": "",
         "offline": "",
         "segueButtonError": "",
         "continueButton": "",
         "segueButton": "",
         "yesButton": "",
-        "noButton": ""
+        "noButton": "",
+        "lightMethod": ""
     },
     "wifi_enter": {
         "h2": "A quina xarxa Wi-Fi vols connectar el teu Kit a internet?",
@@ -176,10 +123,20 @@
         "promptedText": "EL CÓDI ÉS AQUÍ",
         "segueButton": "llest"
     },
+    "ap_issues": {
+        "h1": "",
+        "h4": "",
+        "segueButton": ""
+    },
     "offline_pre": {
         "h1": "",
         "h4": "",
         "segueButton": ""
+    },
+    "kitbuild4": {
+        "h2": "I finalment, encén el Kit",
+        "text": "Pressiona el botó del Kit, fins que el color del llum sigui vermell.",
+        "segueButton": "funciona!"
     },
     "offline_1": {
         "h2": "",
@@ -298,9 +255,63 @@
         "h1": "ÉS VIU!",
         "h2": "El Kit ha estat configurat amb èxit i ja està publicant a Smart Citizen, la comunitat global de sensors",
         "h4": "Visita SmartCitizen.me  per veure el teu Kit en acció publicant dades. No t'oblidis de llegir el el manual amb les instrucciones d'instal·lació i consell sobre com col·locar-lo a l'exterior.",
+        "h4b": "",
         "segueButton": "visit smartcitizen.me"
     },
     "unavailable": {
         "h1": ""
+    },
+    "selectparts": {
+        "h2": "Seleccionna totes les peces que has rebut",
+        "h4": "Hem d'assegurar-nos'en per poder seguir amb la instalació",
+        "part1": "Sensor Board",
+        "part1_desc": "Aquesta placa conté tots els sensors. Es connecta a la més gran de manera que els sensors puguin transmetre les dades.",
+        "part2": "Hardware Board",
+        "part2_desc": "Aquí és on tot el processament es duu a terme. Cada vegada que vulguis connectar algun sensor l'Smart Citizen Kit, serà en aquesta placa",
+        "part3": "Bateria",
+        "part3_desc": "Això alimenta el sensor. Cal carregar-la sovint, sobretot després de periodes d'ús continuats.",
+        "part4": "Cable de càrrega",
+        "part4_desc": "Quan vulguis carregar el Kit, pots conectar el Kit a un ordinador o carregador USB, tal com ho fas amb el teu móbil.",
+        "modalButton": "entès",
+        "contextButton": "on és la carcassa?",
+        "segueButton": "continua",
+        "segueButtonError": "are you missing parts?",
+        "continueButton": "continua",
+        "yesButton": "sí",
+        "noButton": "no"
+    },
+    "selectparts2": {
+        "h2": "Finally...",
+        "h4": "La carcassa no és indispensable, però és útil per protegir el Kit contra la pluja",
+        "part5": "Carcassa",
+        "part5_desc": "La carcassa és resistent a l'aigua i permet col·locar el dispositiu en diferents superfícies.",
+        "part6": "Espaiadors",
+        "part6_desc": "Situats entre les plaques de sensors i de dades, mantenen les plaques subjectes",
+        "part7": "Tapa",
+        "part7_desc": "Tanca la carcassa i s'utilitza per protegir el dispositiu de la pluja. Assegura't de col·locar els forats sobre del sensor de so.",
+        "part8": "Fixadors",
+        "part8_desc": "S'usen per fixar la tapa a la carcassa.",
+        "modalButton": "entès",
+        "contextButton": "on és el meu?",
+        "segueButton": "continua",
+        "segueButtonError": "et falten peces?",
+        "continueButton": "continua",
+        "yesButton": "sí",
+        "noButton": "no"
+    },
+    "confirm_parts": {
+        "h1": "BEN FET!",
+        "h4": "Ara anem a muntar-ho tot junt",
+        "segueButton": "continua"
+    },
+    "case1": {
+        "h2": "A continuació posa-ho tot dins la carcassa",
+        "text": "Assegura't de col·locar el Kit amb el cable de la bateria cap a la part inferior de la carcassa",
+        "segueButton": "continua"
+    },
+    "case2": {
+        "h2": "... i per acabar, posa la tapa.",
+        "text": "Col·loca el plàstic transparent damunt la caixa i fixa'l al seu lloc amb les dues fixacions blanques",
+        "segueButton": "continua"
     }
 }
