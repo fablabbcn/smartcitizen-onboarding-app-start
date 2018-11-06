@@ -24,11 +24,11 @@
     "whats_in_the_box": {
         "h1": "LET'S SET UP THE KIT",
         "h4": "There's a few pieces we need to set up the Kit, let's check we have them all",
-        "segueButton": "i'm ready"
+        "segueButton": "I'm ready"
     },
     "kitbuild1": {
-        "h2": "First, what's on the box?",
-        "text": "You should have the Kit, a micro SD adapter, a USB cable and charger and en rubber band",
+        "h2": "First, what's in the box?",
+        "text": "You should have the Kit, a micro SD adapter, a USB cable and charger, and a rubber band",
         "segueButton": "done"
     },
     "kitbuild2": {
@@ -54,7 +54,7 @@
     },
     "kitenclosure1": {
         "h2": "First, a plastic bottle",
-        "text": "Use scissors to cut an empty plastic bottle at about 12 cm from the top",
+        "text": "Use scissors to cut an empty plastic bottle into two parts, about 12 cm from the top",
         "segueButton": "I'm done!"
     },
     "kitenclosure2": {
@@ -64,22 +64,22 @@
     },
     "kitenclosure3": {
         "h2": "Third, place it inside",
-        "text": "Third, place the Kit inside and use the rubber band to hold it",
+        "text": "Third, place the Kit inside and use the rubber band to hold it in place",
         "segueButton": "I'm done!"
     },
     "kitenclosure4": {
         "h2": "You are done!",
-        "text": "You have now a simple enclosure to use your Kit outdoors for short measurement periods!",
+        "text": "You now have a simple enclosure to use your Kit outdoors for short measurement periods!",
         "segueButton": "Let's move ahead"
     },
     "sdcard_inplace": {
-        "h2": "First, a micro SD card",
+        "h2": "Now, the micro SD card",
         "text": "Ensure your Kit has a micro SD card inserted to record the data",
         "segueButton": "it's in place"
     },
     "case1": {
-        "h2": "Next, we'll place it all in the casing",
-        "text": "Make sure you place it with the battery cable towards the bottom of the casing",
+        "h2": "Next, we'll place everything inside the casing",
+        "text": "Make sure you position it with the battery cable towards the bottom of the casing",
         "segueButton": "continue"
     },
     "case2": {
@@ -98,9 +98,9 @@
         "yesButton": "",
         "noButton": "Ok",
         "part1": "Using your home WiFi",
-        "part1_desc": "In network mode, the sensor publish data to smartcitizen.me over your Wi-Fi every minute. The kit supports Wi-Fi WEP, WPA/WPA2 and open networks, those are common networks in domestic environments and small businesses. However, it does not support WPA/WPA2 Enterprise networks such as EDUROAM or networks with captive portals such as the ones in Airports and Hotels",
+        "part1_desc": "In network mode, the sensor can publish data to smartcitizen.me over your Wi-Fi every minute. The kit supports Wi-Fi WEP, WPA/WPA2 and open networks, which are common networks in domestic environments and small businesses. However, it does not support WPA/WPA2 enterprise networks such as EDUROAM or networks with captive portals such as the ones in airports and hotels",
         "part2": "Offline, using an SD Card",
-        "part2_desc": "If we do not have an internet connection we can use the SD mode. In this case the device will record the data on the micro SD card. Later we can read the card using a card reader. The data can be visually spaced in a spreadsheet but also published on the smartcitizen.me platform using the UPLOAD CSV option.",
+        "part2_desc": "If you do not have an internet connection you can use the SD mode. In this case the device will record the data on the micro SD card. Later, we can read the card using a card reader. The data can be visualized in a spreadsheet but also published on the smartcitizen.me platform using the UPLOAD CSV option.",
         "part3": "",
         "part3_desc": ""
     },
@@ -118,8 +118,8 @@
         "continueButton": "continue"
     },
     "handshake": {
-        "h2": "Now let's do some magic.",
-        "h4": "Hold up your kit and press it on the screen over the box below and press 'connect'. Make sure the blue side of the kit is facing you",
+        "h2": "Now let's do some magic!",
+        "h4": "Hold your kit up and press it on the screen over the box below and press 'connect'. Make sure the blue side of the kit is facing you",
         "handshakeLabel": "Place your kit here",
         "waitLabel": "YOU CAN REMOVE YOUR DEVICE",
         "segueButton": "connect",
@@ -127,7 +127,7 @@
     },
     "wifi_check": {
         "h2": "Oops, something went wrong...",
-        "h4": "It seems there is a problem. Notice that the Kit light is red, please retry the Wi-Fi name and password",
+        "h4": "It seems there is a problem. Check your Kit light is red and your Wi-Fi name and password are correct",
         "input1": "Name of Wi-Fi",
         "input1_error": "A name is required to connect to a network",
         "input2": "Password",
@@ -152,7 +152,7 @@
     },
     "accesspoint_2": {
         "h2": "You should see this window on your mobile device",
-        "h3_1": "If that did not happen, open the browser on your device and go to",
+        "h3_1": "If that did not happen, open the browser on your device and go to www.sck.me",
         "em_1": " www.mysck.me",
         "h4": "If it does not work, make sure you are connected to the Wi-Fi",
         "promptedText": "SCKit.me",
@@ -171,20 +171,20 @@
     },
     "ap_final": {
         "h1": "Waiting for your Kit",
-        "h4": "If the submitted wifi and password are correct you Kit LED will become blue and you'll be redirected shortly",
+        "h4": "If the submitted wifi and password are correct your Kit LED will turn blue and you'll be redirected shortly",
         "segueButton": "connecting..."
     },
     "ap_issues": {
         "h1": "Sorry, something isn't working well!",
-        "h4": "Ensure the light on you Kit is red before trying to connect, check you spelled properly your WiFi password and ensure you aren't too far away from the router",
+        "h4": "Ensure the light on you Kit is red before trying to connect, check you entered your WiFi password correctly and ensure you are close enough to your router",
         "segueButton": "Try again"
     },
     "offline_pre": {
-        "h1": "No Wi-Fi? No problem, use a SD Card",
-        "h4": "You will need a phone and a micro SD card. You can later upload the data to the platform using the CSV upload option in the platform Kits profile",
+        "h1": "No Wi-Fi? No problem, use an SD Card",
+        "h4": "You will need a phone and a micro SD card. You can upload the data to the platform later using the CSV upload option in the platform Kits profile",
         "segueButton": "got it"
     },
-    "kitbuild4": {
+    "kitbuild_sd": {
         "h2": "First, a micro SD card",
         "text": "Ensure your Kit has a micro SD card inserted to record the data",
         "segueButton": "it's in place"
@@ -196,23 +196,23 @@
         "h3_2": " of the Kit, located in the",
         "em_2": " bottom right corner",
         "h3_3": " of your Kit",
-        "h4": "If you do not see it, make sure your kit is powered on with a red LED.  If you see many, select the one ending with the characters printed in your Kit",
+        "h4": "If you do not see it, make sure your Kit is turned on with a red LED.  If you see many Wi-Fi networks, select the one ending with the characters printed in your Kit",
         "promptedText": "SmartCitizen[....]",
         "segueButton": "connected"
     },
     "offline_2": {
-      "h2": "You should see this window on your mobile device",
-      "h3_1": "Click on the 'SD Card mode' link",
-      "em_1": " www.mysck.me",
-      "h4": "If it does not work, make sure you are connected to the right wifi",
-      "promptedText": "sckit.me",
-      "segueButton": "connected"
+        "h2": "You should see this window on your mobile device",
+        "h3_1": "Click on the 'SD Card mode' link",
+        "em_1": " www.mysck.me",
+        "h4": "If it does not work, make sure you are connected to the right Wi-Fi",
+        "promptedText": "sckit.me",
+        "segueButton": "connected"
     },
     "offline_3": {
-        "h2": "PRESS THE START LOGGING BUTTON",
+        "h2": "PRESS THE 'START LOGGING' BUTTON",
         "h3_1": "The Kit LED should be fading in pink",
         "em_1": "",
-        "h4": "If the LED is blinking fast, there have been an error. Check the SD card!",
+        "h4": "If the LED is blinking fast, there has been an error. Check the SD card!",
         "promptedText": "",
         "segueButton": "Continue"
     },
@@ -244,15 +244,15 @@
         "waitButton": "wait"
     },
     "location_map": {
-        "h2": "If you want to adjust it or pin it elsewhere, you can do that here",
-        "h4": "Remember wherever your device goes, it will need wi-fi. Otherwise you'll have to go get it every now and again and connect it to your computer to sync the data",
+        "h2": "If you want to adjust it or place it elsewhere, you can do that here",
+        "h4": "Remember wherever your device goes, it will need Wi-Fi. Otherwise you'll have to use the SD card option",
         "input1": "Enter an address",
         "input1_error": "",
         "segueButton": "all set",
         "continueButton": "all set"
     },
     "location_tags": {
-        "h2": "Is there anything we should know about location?",
+        "h2": "Is there anything we should know about the location?",
         "h4": "Selecting from the tags below can help us make sense of the data, and compare it more accurately",
         "segueButton": "all set",
         "continueButton": "all set"
@@ -266,14 +266,14 @@
         "h2": "We can save the Kit with your email address",
         "h4": "If you already have an account, we'll add it to that. If not, we'll quickly make a new one",
         "segueButton": "continue",
-        "input1": "Put your email below",
+        "input1": "Enter your email below",
         "input1_error": "You must enter an email",
         "segueButtonError": "check email",
         "continueButton": "continue"
     },
     "login": {
         "h2a": "Awesome, welcome back",
-        "h2b": "enter your password below to finish!",
+        "h2b": "enter your password below to finish.",
         "h4": "This will push all of your new Kit's data to your account",
         "input1": "Password",
         "input1_error": "",
@@ -287,12 +287,12 @@
         "input1": "Enter a username",
         "input1_error": "A username is required",
         "input1_error2": "Username is too short",
-        "contextButton": "chose random name",
+        "contextButton": "chose choose random name",
         "segueButtonError": "check username",
         "segueButton": "continue"
     },
     "account3": {
-        "h2": "Now, filly a password to secure everything",
+        "h2": "Now, choose a password to secure everything",
         "h4a": "the password has to be at least 8 characters long",
         "h4b": "And one more time to make sure there are no mistakes",
         "input1": "Password",
@@ -303,11 +303,11 @@
         "continueButton": "all done!"
     },
     "final": {
-        "h1": "ITS ALIVE!",
-        "h2": "You have successfully installed and connected the Smart Citizen Kit to the internet, and then added the kit to the global community of sensors",
-        "h4": "Visit SmartCitizen.me to see your Kit in action capturing data. Don't forget to read the manual for assembly instructions and good tips on placing your sensor in the wild",
+        "h1": "IT’S ALIVE!",
+        "h2": "You have successfully installed and connected the Smart Citizen Kit to the internet, and then added the kit to the global community of sensors!",
+        "h4": "Visit SmartCitizen.me to see your Kit in action capturing data. Don't forget to read the manual for assembly instructions and tips on placing your sensor in the wild",
         "h4b": "",
-        "segueButton": "visit smartcitizen.me"
+        "segueButton": "Visit smartcitizen.me"
     },
     "unavailable": {
         "h1": "Sorry, service unavailable"
@@ -320,16 +320,6 @@
     "kitbuild6": {
         "h2": "And finally, turn on the Kit",
         "text": "Push the button on the Kit multiple times, until the LED is red",
-        "segueButton": "it's alive"
-    },
-    "case1": {
-        "h2": "Next, we'll place it all in the casing",
-        "text": "Make sure you place it with the battery cable towards the bottom of the casing",
-        "segueButton": "continue"
-    },
-    "case2": {
-        "h2": ".... and to finish, seal the cover",
-        "text": "Place the transparent plastic on the front of the case and fix it in place with the two white plugs",
-        "segueButton": "continue"
+        "segueButton": "It's alive"
     }
 }
