@@ -6,7 +6,7 @@
     "url": "landing",
     "controller": "landingController",
     "assets": {
-      "companyLogo": "assets/images/Logo_iScape_white.png"
+      "companyLogo": "assets/images/scklogo_white.png"
     },
     "contentKeys": [
       "h2",
