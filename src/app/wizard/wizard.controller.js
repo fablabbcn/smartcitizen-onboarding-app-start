@@ -131,7 +131,6 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
     }
 
     $scope.$on('forceSegue', function (event, args) {
-        console.log(args.target);
         AnimationService.leaving(true);
         $scope.payload.progressShow = 'blue';
         $timeout(function() {

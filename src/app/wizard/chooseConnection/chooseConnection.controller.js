@@ -1,5 +1,4 @@
 export function chooseConnectionController($scope, $rootScope, $state, scopePayload, AnimationService, $stateParams){
-  console.log(scopePayload)
     $scope.$parent.payload = scopePayload;
     AnimationService.animate(scopePayload.template);
 
@@ -51,7 +50,6 @@ export function chooseConnectionController($scope, $rootScope, $state, scopePayl
           $scope.partButtons[val] = true;
           setNextState(val);
         }
-        console.log(val);
     };
 
     function setNextState(val) {

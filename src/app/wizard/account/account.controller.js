@@ -33,7 +33,6 @@ export function accountController($scope, scopePayload, AnimationService, platfo
             platform.createUser($scope.$parent.submittedData.user).then(function (data) {
                 loginAndBakeDevice();
             }, function (res) {
-                console.log(res);
                 blockSegue();
             });
         } else {
@@ -133,11 +132,9 @@ export function accountController($scope, scopePayload, AnimationService, platfo
 
     function checkEmailPresence(emailString) {
         platform.checkEmail(emailString).then(function (data) {
-            console.log(data);
             $scope.$parent.submittedData.user.username = data.username;
             $scope.$parent.pre_made = true;
         }, function (data) {
-            console.log(data);
             $scope.$parent.pre_made = false;
             $scope.$parent.submittedData.user.username = ' ';
         })
