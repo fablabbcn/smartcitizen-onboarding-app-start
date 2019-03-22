@@ -6,9 +6,9 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
 
     $scope.submittedData.deviceData = {
         device_token: session.device_token,
-        description: 'iSCAPE Citizen Kit',
+        description: 'Smart Citizen Kit 2.1 with Urban Sensor Board',
         exposure: 'outdoor',
-        kit_id: 20
+        kit_id: 26
     };
 
     $scope.proposed_user_tags_array = ["iSCAPE"];
