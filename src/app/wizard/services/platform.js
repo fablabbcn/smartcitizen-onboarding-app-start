@@ -34,6 +34,10 @@ export function platform($rootScope, SegueService, Restangular, platformNotify) 
         return Restangular.one('onboarding/device').patch(data);
     }
 
+    function getDevice() {
+        return Restangular.one('onboarding/device').get();
+    }
+
     function bakeDevice(data) {
         return Restangular.all('onboarding/register').post(data);
     }
@@ -98,6 +102,7 @@ export function platform($rootScope, SegueService, Restangular, platformNotify) 
         setSession: setSession,
         setAuth: setAuth,
         getSession: getSession,
+        getDevice: getDevice,
         updateDevice: updateDevice,
         bakeDevice: bakeDevice,
         checkEmail: checkEmail,
