@@ -16,7 +16,7 @@
   }
   100% {
     animation-timing-function: ease-in;
-    color: white;
+    color: $text-white;
     background-color: $msRed;
     border: 2px solid $msRed;
   }
@@ -39,7 +39,7 @@
 //  }
 //  100% {
 //    border: 2px solid $msNavy2;
-//    color: white;
+//    color: $text-white;
 //  }
 //}
 
@@ -111,7 +111,7 @@ $button-height: $segueWrapperHeight / 2.75;
       width: auto;
       padding: 5px 40px;
       border-radius: 40px;
-      color: var(--black);
+      color: $text-black;
       background: $msGreen;
       border-color: $msGreen;
 
@@ -131,7 +131,7 @@ $button-height: $segueWrapperHeight / 2.75;
         display: inline;
         padding-right: 10px;
         path {
-          fill: var(--black);
+          fill: $text-black;
         }
       }
       #closeSVG{
@@ -148,7 +148,7 @@ $button-height: $segueWrapperHeight / 2.75;
           color: $msGreen;
           #nextSVG {
             path {
-              fill: var(--black);
+              fill: $text-black;
             }
           }
         }
@@ -232,10 +232,10 @@ $button-height: $segueWrapperHeight / 2.75;
   .backButton {
     height: $button-height;
     width: $button-height;
-    background-color: $blue;
+    background-color: #ddd;
     border-radius: 40px;
-    color: white;
-    border: 2px solid $blue;
+    color: $text-white;
+    border: 2px solid #ddd;
     svg {
       top: 2px;
       position: relative;

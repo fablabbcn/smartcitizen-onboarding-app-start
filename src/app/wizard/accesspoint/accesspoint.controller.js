@@ -10,6 +10,7 @@ accesspointController.$inject = ['$scope', 'scopePayload', 'AnimationService'];
 export function accesspointController_handshake($scope, scopePayload, AnimationService, $rootScope, platform, $state, $interval, $timeout, $stateParams) {
     $scope.$parent.payload = scopePayload;
     AnimationService.animate(scopePayload.template);
+    checkHandshake();
 
     if($state.current.name == 'wizard.ap_wifi') {
         $scope.$parent.segueControl = 'ready';
@@ -19,19 +20,30 @@ export function accesspointController_handshake($scope, scopePayload, AnimationS
         $scope.$parent.disabled = true;
     }
 
-    platform.listenToken($scope.submittedData.deviceData.device_token, $scope);
-
-    $scope.$on('token', function (e, data) {
-        prepSegue();
-    });
-
     $scope.watchDog = $timeout(function() {
         prepSegue();
         $rootScope.$broadcast('forceSegue', { target: 'wizard.ap_issues', params: {lang: $stateParams.lang}});
     }, $scope.$parent.apModeWatchDog);
 
+    function recurrentHandshake(){
+        $scope.watchHandshake =$timeout(function() {
+            checkHandshake();
+        }, 5000);
+    }
+
+    function checkHandshake(){
+        platform.getDevice().then(function(device){
+            if(device.device_handshake == true){
+                prepSegue();
+            } else {
+                recurrentHandshake();
+            }
+        })
+    }
+
     function prepSegue() {
         $timeout.cancel($scope.watchDog);
+        $timeout.cancel($scope.watchHandshake);
         $scope.$parent.disabled = false;
         $rootScope.$broadcast('forceSegue', { target: 'wizard.confirm_handshake', params: {lang: $stateParams.lang}});
     }

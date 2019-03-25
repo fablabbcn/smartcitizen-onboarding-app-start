@@ -29,9 +29,12 @@ export function platform($rootScope, SegueService, Restangular, platformNotify) 
     function updateDevice(data) {
         if (data.user_tags_array) {
             data.user_tags = data.user_tags_array.toString(); // Convert Array to String. Restangular fails?
-            console.log(data)
         }
         return Restangular.one('onboarding/device').patch(data);
+    }
+
+    function getDevice() {
+        return Restangular.one('onboarding/device').get();
     }
 
     function bakeDevice(data) {
@@ -98,6 +101,7 @@ export function platform($rootScope, SegueService, Restangular, platformNotify) 
         setSession: setSession,
         setAuth: setAuth,
         getSession: getSession,
+        getDevice: getDevice,
         updateDevice: updateDevice,
         bakeDevice: bakeDevice,
         checkEmail: checkEmail,

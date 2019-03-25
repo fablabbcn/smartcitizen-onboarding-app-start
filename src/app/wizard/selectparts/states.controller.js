@@ -1,5 +1,4 @@
 export function statesController($scope, $rootScope, scopePayload, AnimationService, $stateParams){
-  console.log(scopePayload)
     $scope.$parent.payload = scopePayload;
     AnimationService.animate(scopePayload.template);
 
@@ -39,7 +38,6 @@ export function statesController($scope, $rootScope, scopePayload, AnimationServ
 
 
     $scope.selectPart = function(val){
-        console.log(val, $scope.selectionButtons);
         if ($scope.tempBlock == true){
             $scope.tempBlock = false;
             return;
@@ -97,7 +95,6 @@ export function statesController($scope, $rootScope, scopePayload, AnimationServ
 
     /** -- INFO METHODS -- **/
     $scope.infoImageOn = function(val){
-      console.log(val);
         if ( $scope.infoImages[val] == 'assets/images/info1.png' ){
             $scope.infoImages[val] = 'assets/images/info2.png'
         }
@@ -115,7 +112,6 @@ export function statesController($scope, $rootScope, scopePayload, AnimationServ
     };
 
     $scope.infoClick = function(val){
-        console.log(val);
         $scope.$parent.modalBox = 'green';
         var data = [{
             "title": $scope.payload.part1,

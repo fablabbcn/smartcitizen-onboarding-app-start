@@ -91,7 +91,7 @@
           }
         }
         &.green{
-          background-color: white;
+          background-color: $text-white;
 
           #partImage {
             @media screen and (min-width: $break-sm) {

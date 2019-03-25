@@ -3,13 +3,13 @@ $SCK2-yellow: #FFCE00;
 $SCK2-darkGrey: #333333;
 $SCK2-lightGrey: #f9f9fb;
 $SCK2-blue: #001fff;
-$SCK2-red: #EF5050;
+$SCK2-red: #ff3d4c;
 
 $msNavy: #212B32;
 $msNavy2: #27353D;
 $msOrange: #FBA200;
-$msRed: $SCK2-red;
-$msGreen: #9ad068;
+$msRed: #ff3d4c;
+$msGreen: $SCK2-blue;
 $msBlue: #4AA3DF;
 $msGrey: #A5ACB2;
 $msBlack: #414042;
@@ -17,16 +17,18 @@ $msWhite: #ffffff;
 
 $msOpaqueGrey: rgba(189,195,199, .3);
 
-
-$SCKblue: #38CEF3;
-$SCKblack: #065063;
-$SCKnavy: #065063;
-$SCKnavy2: #046C95;
-$SCKgrey: #8DB2BA;
-$SCKgrey2: #C8E6ED;
+$SCKblue: $SCK2-blue;
+$SCKblack: #333333;
+$SCKnavy: #333333;
+$SCKnavy2: #333333;
+$SCKgrey: #333333;
+$SCKgrey2: #f9f9fb;
 $SCKwhite: #ffffff;
 
-$blue: #008ecf;
-$blueLight: #74D3FF;
-$bg-blue: #0079b1;
-$regalBlue: #004F74;
+$blue: $SCK2-yellow;
+$blueLight: $SCK2-darkGrey;
+$bg-blue: $SCK2-lightGrey;
+$regalBlue: $SCK2-yellow;
+$text-black: $SCKwhite;
+$text-white: $SCK2-darkGrey;
+$icon-white: $SCK2-yellow;

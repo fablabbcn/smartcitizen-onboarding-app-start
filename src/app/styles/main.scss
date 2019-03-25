@@ -53,10 +53,14 @@ body {
     text-align: center;
   }
 
+  h1, h2 {
+    font-family: 'Kanit';
+  }
+
   button{
     font-weight: 500;
     font-size: 1.5em;
-    color: white;
+    color: $text-white;
     text-transform: capitalize;
     &:focus {
       outline: none;
@@ -82,7 +86,7 @@ body {
       padding: 0 25px;
       max-width: 1150px;
       overflow: visible;
-      color: white;
+      color: $text-white;
       &.ng-enter {
         -webkit-animation:slideInRight 0.5s both ease;
         -moz-animation:slideInRight 0.5s both ease;
@@ -125,10 +129,11 @@ body {
             z-index: 10000;
             md-icon {
               outline: none;
+              svg {
+                fill: #333;
+              }
             }
-            svg {
-              fill: white;
-            }
+
           }
 
           .checkHolder {
@@ -209,6 +214,7 @@ body {
             }
           }
           &.active{
+
             .checkHolder{
               visibility: visible;
               -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 0, 0);
@@ -314,7 +320,7 @@ body {
         border-radius: 3px;
         padding: 15px 45px;
         h2{
-          color: white;
+          color: $text-white;
           margin: 10px;
         }
       }
