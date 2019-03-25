@@ -12,7 +12,7 @@
     border: none;
 
     border-radius: 4px;
-    background-color: $blue;
+    background-color: #ddd;
     @media screen and (max-width: 450px) {
       padding: 0 10px;
     }
@@ -48,7 +48,7 @@
           padding: 0px 20px;
           height: 80px;
           border: none;
-          color: white;
+          color: $text-white;
           font: 100% 'Roboto Condensed', sans-serif !important;
           font-size: 2rem !important;
         }

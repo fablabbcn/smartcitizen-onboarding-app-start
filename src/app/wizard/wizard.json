@@ -6,7 +6,7 @@
     "url": "landing",
     "controller": "landingController",
     "assets": {
-      "companyLogo": "assets/images/scklogo_white.png"
+      "companyLogo": "assets/images/scklogo.png"
     },
     "contentKeys": [
       "h2",
@@ -24,7 +24,7 @@
         "template": "landing",
         "url": "smart_citizen",
         "assets": {
-          "companyLogo": "assets/images/scklogo_white.png"
+          "companyLogo": "assets/images/scklogo.png"
         },
         "contentKeys": [
           "h2",

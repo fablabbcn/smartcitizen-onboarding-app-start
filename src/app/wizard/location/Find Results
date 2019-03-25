@@ -1,0 +1,74 @@
+Searching 111 files for "color: $text-white"
+
+/Users/g11m/dev/smartcitizen-onboarding-app/src/app/styles/_form.scss:
+   49            height: 80px;
+   50            border: none;
+   51:           color: $text-white;
+   52            font: 100% 'Roboto Condensed', sans-serif !important;
+   53            font-size: 2rem !important;
+
+/Users/g11m/dev/smartcitizen-onboarding-app/src/app/styles/_modal.scss:
+   92          }
+   93          &.green{
+   94:           background-color: $text-white;
+   95  
+   96            #partImage {
+
+/Users/g11m/dev/smartcitizen-onboarding-app/src/app/styles/_navigation.scss:
+   17    100% {
+   18      animation-timing-function: ease-in;
+   19:     color: $text-white;
+   20      background-color: $msRed;
+   21      border: 2px solid $msRed;
+   ..
+   40  //  100% {
+   41  //    border: 2px solid $msNavy2;
+   42: //    color: $text-white;
+   43  //  }
+   44  //}
+   ..
+  235      background-color: $blue;
+  236      border-radius: 40px;
+  237:     color: $text-white;
+  238      border: 2px solid $blue;
+  239      svg {
+
+/Users/g11m/dev/smartcitizen-onboarding-app/src/app/styles/_smart_citizen.scss:
+    1  //#container.smartCitizen{
+    2: //  background-color: $text-white;
+    3  //
+    4  //  h2{
+    .
+   10  //  .segueButton {
+   11  //    border-color: $SCKblue;
+   12: //    background-color: $text-white;
+   13  //    color: $SCKblue;
+   14  //    #nextSVG {
+
+/Users/g11m/dev/smartcitizen-onboarding-app/src/app/styles/main.scss:
+   57      font-weight: 500;
+   58      font-size: 1.5em;
+   59:     color: $text-white;
+   60      text-transform: capitalize;
+   61      &:focus {
+   ..
+   83        max-width: 1150px;
+   84        overflow: visible;
+   85:       color: $text-white;
+   86        &.ng-enter {
+   87          -webkit-animation:slideInRight 0.5s both ease;
+   ..
+  315          padding: 15px 45px;
+  316          h2{
+  317:           color: $text-white;
+  318            margin: 10px;
+  319          }
+
+/Users/g11m/dev/smartcitizen-onboarding-app/src/app/wizard/location/place-autocomplete.scss:
+   20      padding: 0px 60px;
+   21      font-size: 2rem !important;
+   22:     color: $text-white !important;
+   23    }
+   24    button {
+
+11 matches across 6 files
