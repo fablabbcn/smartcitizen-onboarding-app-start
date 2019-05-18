@@ -29,8 +29,10 @@ export function accountController($scope, scopePayload, AnimationService, platfo
     $scope.passwordListener = function () {
         $scope.payload.segueButton = $scope.payload.continueButton;
         if ((typeof $scope.pass1 !== 'undefined') && ($scope.pass1.length > 0) && ($scope.pass1 == $scope.pass2)) {
+            blockSegue();
             $scope.$parent.submittedData.user.password = $scope.pass1;
             platform.createUser($scope.$parent.submittedData.user).then(function (data) {
+                blockSegue();
                 loginAndBakeDevice();
             }, function (res) {
                 blockSegue();
@@ -52,16 +54,22 @@ export function accountController($scope, scopePayload, AnimationService, platfo
     };
 
     $scope.usernameListener = function () {
-        $scope.$parent.submittedData.user.username = $scope.given_username;
 
-        $scope.$parent.userName = $scope.input; // Is this need it?
+        $scope.given_username = $scope.given_username.split(' ').join('_');
 
-        platform.getUser($scope.$parent.submittedData.user).then(function (data) {
-            blockSegue();
-        }, function (res) {
-            prepSegue();
-        });
+        if($scope.given_username.length > 3 && $scope.given_username.length  < 30){
 
+            $scope.$parent.submittedData.user.username = $scope.given_username;
+
+            $scope.$parent.userName = $scope.input; // Is this need it?
+
+            platform.getUser($scope.$parent.submittedData.user).then(function (data) {
+                blockSegue();
+            }, function (res) {
+                prepSegue();
+            });
+
+        }
 
     };
 
