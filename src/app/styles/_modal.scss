@@ -66,12 +66,13 @@
 
         h2 {
           text-align: left;
-          color: var(--black);
+          color: $SCKwhite;
         }
 
         p {
           text-align: left;
           font-size: 20px;
+          color: $SCKwhite;
           @media screen and (min-width: $break-sm) {
             padding-right: 85px;
           }
@@ -91,7 +92,7 @@
           }
         }
         &.green{
-          background-color: $text-white;
+          background-color: $SCK2-blue;
 
           #partImage {
             @media screen and (min-width: $break-sm) {
