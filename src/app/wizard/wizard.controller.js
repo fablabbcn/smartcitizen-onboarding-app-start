@@ -39,14 +39,6 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
     console.log('Your device:', $scope.submittedData.deviceData);
 
     hotkeys.add({
-        combo: 'alt+ctrl+j+p',
-        description: 'Goes to slide 19',
-        callback: function() {
-          goTransition('wizard.choose_connection')
-        }
-    });
-
-    hotkeys.add({
         combo: 'right',
         description: 'Go next',
         callback: function() {
@@ -85,6 +77,65 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
                     break;
                 case 'location_tags':
                     platform.updateDevice($scope.submittedData.deviceData).then(sequeTransition);
+                    break;
+                case 'account1':
+                    platform.checkEmail($scope.submittedData.user.email).then(function (data) {
+                        $scope.submittedData.user.username = data.username;
+                        $scope.pre_made = true;
+                        sequeTransition();
+                    }, function (data) {
+                        $scope.pre_made = false;
+                        $scope.submittedData.user.username = ' ';
+                        sequeTransition();
+                    })
+                    break;
+                case 'login':
+                    platform.login($scope.submittedData.user).then(
+                        function (data) {
+                            platform.setAuth(data);
+                            console.log("Login successful!", data);
+                            platform.bakeDevice().then(function (data) {
+                                    console.log("Device succesfully created!", data);
+                                    $scope.payload.preventBack = true;
+                                    $scope.submittedData.deviceData.id = data.id;
+                                    sequeTransition();
+                                }, function () {
+                                    console.warn("Device creation failed!", data);
+                                    handleError();
+                                });
+                        }, function (data) {
+                            handleError();
+                            console.warn("Login failed!", data);
+                    })
+                    break;
+                case 'account3':
+                    platform.createUser($scope.submittedData.user).then(function (data) {
+                        platform.login($scope.submittedData.user).then(
+                            function (data) {
+                                platform.setAuth(data);
+                                console.warn("Login successful!", data);
+                                platform.bakeDevice().then(function (data) {
+                                        console.warn("Device succesfully created!", data);
+                                        $scope.payload.preventBack = true;
+                                        $scope.submittedData.deviceData.id = data.id;
+                                        sequeTransition();
+                                    }, function () {
+                                        console.warn("Device creation failed!", data);
+                                        handleError();
+                                    });
+                            }, function (data) {
+                                console.warn("Login failed!", data);
+                                handleError();
+                        });
+                    });
+                    break;
+                case 'account2':
+                    platform.getUser($scope.submittedData.user).then(function (data) {
+                        console.warn("User alredy exists!", data);
+                        handleError();
+                    }, function (res) {
+                        sequeTransition();
+                    });
                     break;
                 case 'chooseConnection':
                     sequeTransition($scope.nextState);

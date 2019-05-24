@@ -494,7 +494,7 @@
         "part": 2,
         "template": "sensorName",
         "stateName": "sensorName",
-        "url": "sensorName",
+        "url": "sensor_name",
         "contentKeys": [
           "h2",
           "h4",
