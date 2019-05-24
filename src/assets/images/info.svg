@@ -25,13 +25,6 @@
 						<feColorMatrix  type="matrix" values="-1 0 0 0 1  0 -1 0 0 1  0 0 -1 0 1  0 0 0 1 0" color-interpolation-filters="sRGB" result="source"/>
 				</filter>
 			</defs>
-			<mask maskUnits="userSpaceOnUse" x="70.9" y="165.1" width="225.4" height="464.5" id="SVGID_3_">
-				<g class="st2">
-					
-						<image style="overflow:visible;" width="230" height="469" xlink:href="4D1E801743C34B14.jpg"  transform="matrix(1 0 0 1 68.5338 162.8333)">
-					</image>
-				</g>
-			</mask>
 			<g class="st3">
 				<g>
 					<path class="st4" d="M262.1,165.1H105c-18.8,0-34.1,15.3-34.1,34.1v396.3c0,18.8,15.3,34.1,34.1,34.1h157.2
@@ -164,11 +157,6 @@
 			<clipPath id="SVGID_14_">
 				<use xlink:href="#SVGID_13_"  style="overflow:visible;"/>
 			</clipPath>
-			<g style="clip-path:url(#SVGID_14_);">
-				
-					<image style="overflow:visible;" width="399" height="540" xlink:href="4D1E801743C34B14.png"  transform="matrix(0.4962 0 0 0.4962 83.7777 217.8036)">
-				</image>
-			</g>
 			<rect x="80.8" y="481.4" class="st18" width="201" height="94.5"/>
 		</g>
 		
@@ -1358,8 +1346,6 @@
 			C185.3,179.9,186.4,181,186.4,182.4z"/>
 	</g>
 </g>
-<image style="overflow:visible;" width="1200" height="1201" xlink:href="Projects/03_iScape/PHOTO/Alphasense Sensors/_EDIT/SCK_Sensor.png"  transform="matrix(0.2932 0 0 0.2932 432.588 138.7409)">
-</image>
 <g>
 	<g>
 		<path class="st36" d="M19,14.2h-3.6v2.2h0.7v7.8h-0.7v2.2h4.4v-2.2H19V14.2z M34.2,17.5c0-9.2-7.5-16.7-16.7-16.7
