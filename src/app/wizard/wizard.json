@@ -39,7 +39,7 @@
         "stateName": "smart_citizen_brief",
         "url": "smart_citizen_brief",
         "assets": {
-          "image": "assets/images/sck.png"
+          "image": "assets/images/SCK21/SCK21.png"
         },
         "contentKeys": [
           "h2",
@@ -54,7 +54,7 @@
         "stateName": "smart_citizen_brief2",
         "url": "smart_citizen_brief2",
         "assets": {
-          "image": "assets/images/web.png"
+          "image": "assets/images/SCK21/SCK21_Platform.png"
         },
         "contentKeys": [
           "h2",
@@ -86,7 +86,7 @@
         "stateName": "kitbuild1",
         "url": "kit_parts",
         "assets": {
-          "image": "assets/images/atn_parts.jpg"
+          "image": "assets/images/SCK21/onboarding/01.jpg"
         },
         "contentKeys": [
           "h2",
@@ -99,9 +99,9 @@
         "part": 3,
         "template": "kitbuild1",
         "stateName": "kitbuild2",
-        "url": "power_on",
+        "url": "pm_cable",
         "assets": {
-          "image": "assets/images/atn_battery.jpg"
+          "image": "assets/images/SCK21/onboarding/02.jpg"
         },
         "contentKeys": [
           "h2",
@@ -114,9 +114,9 @@
         "part": 4,
         "template": "kitbuild1",
         "stateName": "kitbuild3",
-        "url": "charge_battery",
+        "url": "connect_the_pm",
         "assets": {
-          "image": "assets/images/atn_usb.jpg"
+          "image": "assets/images/SCK21/onboarding/03.jpg"
         },
         "contentKeys": [
           "h2",
@@ -129,42 +129,39 @@
         "part": 5,
         "template": "kitbuild1",
         "stateName": "kitbuild4",
-        "url": "button_modes",
+        "url": "connect_the_boards",
         "assets": {
-          "image": "assets/images/atn_button.jpg"
+          "image": "assets/images/SCK21/onboarding/04.jpg"
         },
         "contentKeys": [
           "h2",
           "text",
           "segueButton"
-          ]
-        }
-      ]
-    },
-    {
-    "stateName": "",
-    "controller": "smartcitizenController",
-    "subStates": [{
+        ]
+      },
+      {
         "index": 15,
         "part": 6,
-        "template": "basic1",
-        "stateName": "kitenclosure_start",
-        "url": "kit_enclosure",
+        "template": "kitbuild1",
+        "stateName": "kitbuild5",
+        "url": "usb_power",
+        "assets": {
+          "image": "assets/images/SCK21/onboarding/05.jpg"
+        },
         "contentKeys": [
-          "h1",
-          "h4",
-          "segueButton",
-          "skipButton"
+          "h2",
+          "text",
+          "segueButton"
         ]
       },
       {
         "index": 16,
         "part": 7,
         "template": "kitbuild1",
-        "stateName": "kitenclosure1",
-        "url": "kit_enclosure_1",
+        "stateName": "kitbuild6",
+        "url": "battery",
         "assets": {
-          "image": "assets/images/atn-enc-1.jpg"
+          "image": "assets/images/SCK21/onboarding/07.jpg"
         },
         "contentKeys": [
           "h2",
@@ -176,40 +173,10 @@
         "index": 17,
         "part": 8,
         "template": "kitbuild1",
-        "stateName": "kitenclosure2",
-        "url": "kit_enclosure_2",
+        "stateName": "kitbuild7",
+        "url": "power_on",
         "assets": {
-          "image": "assets/images/atn-enc-2.jpg"
-        },
-        "contentKeys": [
-          "h2",
-          "text",
-          "segueButton"
-        ]
-      },
-      {
-        "index": 18,
-        "part": 9,
-        "template": "kitbuild1",
-        "stateName": "kitenclosure3",
-        "url": "kit_enclosure_3",
-        "assets": {
-          "image": "assets/images/atn-enc-3.jpg"
-        },
-        "contentKeys": [
-          "h2",
-          "text",
-          "segueButton"
-        ]
-      },
-      {
-        "index": 19,
-        "part": 10,
-        "template": "kitbuild1",
-        "stateName": "kitenclosure4",
-        "url": "kit_enclosure_4",
-        "assets": {
-          "image": "assets/images/atn-enc-4.jpg"
+          "image": "assets/images/SCK21/onboarding/06.jpg"
         },
         "contentKeys": [
           "h2",
@@ -217,8 +184,9 @@
           "segueButton"
         ]
       }
-    ]
-  }, {
+      ]
+    },
+    {
     "index": 20,
     "stateName": "choose_connection",
     "controller": "chooseConnectionController",
@@ -428,7 +396,7 @@
         "stateName": "sdcard_inplace",
         "url": "sdcard_inplace",
         "assets": {
-          "image": "assets/images/atn_sd.jpg"
+          "image": "assets/images/SCK21/onboarding/08.jpg"
         },
         "contentKeys": [
           "h2",

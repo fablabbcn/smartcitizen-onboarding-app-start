@@ -28,20 +28,35 @@
     },
     "kitbuild1": {
         "h2": "First, what's in the box?",
-        "text": "You should have the Kit, a micro SD adapter, a USB cable and charger, and a rubber band",
+        "text": "You should have at least the Smart Citizen Data Board, the Smart Citizen Urban Sensor board and the Particulate Matter sensor",
         "segueButton": "done"
     },
     "kitbuild2": {
-        "h2": "Secondly, let's power the sensors",
-        "text": "Connect the battery to the hardware board",
+        "h2": "Let's start the assembly!",
+        "text": "Plug any side of the cable on the back of the Particle Sensor. Take care, there's only one possible position.",
         "segueButton": "done"
     },
     "kitbuild3": {
-        "h2": "Remember, you'll need to charge it periodically",
-        "text": "Plug the USB and charge your device like your phone",
-        "segueButton": "great"
+        "h2": "Now, plug the Particle Sensor!",
+        "text": "Plug the other side of the cable to the Urban Sensor board",
+        "segueButton": "done"
     },
     "kitbuild4": {
+        "h2": "Finally, connect the two boards",
+        "text": "Connect the Urban Sensor board with the Data Board carefully",
+        "segueButton": "done"
+    },
+    "kitbuild5": {
+        "h2": "Secondly, let's power the sensors",
+        "text": "Plug any micro USB cable with a charger like your tablet or phone",
+        "segueButton": "done"
+    },
+    "kitbuild6": {
+        "h2": "Does your Kit come with a battery?",
+        "text": "Remember, if you have a battery you'll need to charge it periodically. Plug the USB and charge your device like your phone",
+        "segueButton": "great"
+    },
+    "kitbuild7": {
         "h2": "And finally, ensure the LED is red",
         "text": "Push the button on the Kit multiple times, until the LED is red",
         "segueButton": "it's red"
@@ -100,7 +115,7 @@
         "part1": "Using your home WiFi",
         "part1_desc": "In network mode, the sensor can publish data to smartcitizen.me over your Wi-Fi every minute. The kit supports Wi-Fi WEP, WPA/WPA2 and open networks, which are common networks in domestic environments and small businesses. However, it does not support WPA/WPA2 enterprise networks such as EDUROAM or networks with captive portals such as the ones in airports and hotels",
         "part2": "Offline, using an SD Card",
-        "part2_desc": "If you do not have an internet connection you can use the SD mode. In this case the device will record the data on the micro SD card. Later, we can read the card using a card reader. The data can be visualized in a spreadsheet but also published on the smartcitizen.me platform using the UPLOAD CSV option.",
+        "part2_desc": "If you do not have an internet connection you can use the SD mode. In this case the device will record the data on the micro SD card. Later, we can read the card using a card reader. The data can be visualized in a spreadsheet but also published on the smartcitizen.me platform using the SD CARD UPLOAD option.",
         "part3": "",
         "part3_desc": ""
     },
@@ -152,10 +167,10 @@
     },
     "accesspoint_2": {
         "h2": "You should see this window on your mobile device",
-        "h3_1": "If that did not happen, open the browser on your device and go to www.sck.me",
-        "em_1": " www.mysck.me",
+        "h3_1": "If that did not happen, open the browser on your device and go to http://sck.me",
+        "em_1": " http://sck.me",
         "h4": "If it does not work, make sure you are connected to the Wi-Fi",
-        "promptedText": "SCKit.me",
+        "promptedText": "sck.me",
         "segueButton": "connected"
     },
     "ap_token": {
@@ -181,7 +196,7 @@
     },
     "offline_pre": {
         "h1": "No Wi-Fi? No problem, use an SD Card",
-        "h4": "You will need a phone and a micro SD card. You can upload the data to the platform later using the CSV upload option in the platform Kits profile",
+        "h4": "You will need a phone and a micro SD card. You can upload the data to the platform later using the SD CARD UPLOAD option in the platform Kits profile",
         "segueButton": "got it"
     },
     "kitbuild_sd": {
@@ -252,8 +267,8 @@
         "continueButton": "all set"
     },
     "location_tags": {
-        "h2": "Is there anything we should know about the location?",
-        "h4": "Selecting from the tags below can help us make sense of the data, and compare it more accurately",
+        "h2": "Is there anything more you'll like to share about your kit?",
+        "h4": "Selecting from the tags below can help others make sense of the data, and compare it more accurately",
         "segueButton": "all set",
         "continueButton": "all set"
     },
@@ -287,7 +302,7 @@
         "input1": "Enter a username",
         "input1_error": "A username is required",
         "input1_error2": "Username is too short",
-        "contextButton": "chose choose random name",
+        "contextButton": "choose random name",
         "segueButtonError": "check username",
         "segueButton": "continue"
     },
@@ -316,10 +331,5 @@
         "h1": "WELL DONE!",
         "h4": "Now let's put it all together",
         "segueButton": "continue"
-    },
-    "kitbuild6": {
-        "h2": "And finally, turn on the Kit",
-        "text": "Push the button on the Kit multiple times, until the LED is red",
-        "segueButton": "It's alive"
     }
 }
