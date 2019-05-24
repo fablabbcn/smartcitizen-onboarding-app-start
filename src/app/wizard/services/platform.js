@@ -8,7 +8,7 @@ export function platformNotify(socketFactory) {
 
 platformNotify.$inject = ['socketFactory'];
 
-export function platform($rootScope, SegueService, Restangular, platformNotify) {
+export function platform($rootScope, $cookies, SegueService, Restangular, platformNotify) {
 
     var sessionHeaders = {};
 
@@ -18,6 +18,7 @@ export function platform($rootScope, SegueService, Restangular, platformNotify) 
     }
 
     function setAuth(auth) {
+        $cookies.put('smartcitizen.token', auth.access_token);
         sessionHeaders.Authorization = 'Bearer '  + auth.access_token;
         Restangular.setDefaultHeaders(sessionHeaders);
     }
@@ -116,4 +117,4 @@ export function platform($rootScope, SegueService, Restangular, platformNotify) 
 
 }
 
-platform.$inject = ['$rootScope', 'SegueService', 'Restangular', 'platformNotify'];
+platform.$inject = ['$rootScope', '$cookies', 'SegueService', 'Restangular', 'platformNotify'];

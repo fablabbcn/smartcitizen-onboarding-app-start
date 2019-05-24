@@ -11,6 +11,7 @@ import ngMessages from 'angular-messages';
 import restangular from 'restangular';
 import hotkeys from 'angular-hotkeys';
 import angularTranslate from 'angular-translate';
+import ngCookies from 'angular-cookies';
 import 'angular-translate-loader-static-files';
 import 'angular-socket-io';
 
@@ -37,7 +38,8 @@ export const App = angular.module('app', [
   'btford.socket-io',
   angularTranslate,
   // 'angularLazyImg', TODO check this one: https://github.com/afklm/ng-lazy-image
-  'cfp.hotkeys'
+  'cfp.hotkeys',
+  ngCookies
 ])
 .config(config)
 .config(routes)
