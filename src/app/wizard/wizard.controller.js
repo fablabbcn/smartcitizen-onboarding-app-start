@@ -39,6 +39,14 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
     console.log('Your device:', $scope.submittedData.deviceData);
 
     hotkeys.add({
+        combo: 'enter',
+        description: 'Go next',
+        callback: function() {
+           $scope.seque();
+        }
+    });
+
+    hotkeys.add({
         combo: 'right',
         description: 'Go next',
         callback: function() {
