@@ -17,7 +17,7 @@
             </div>
             <div flex="grow" class="md-box">
                 <md-input-container md-no-float class="md-block">
-                    <input placeholder="{{ payload.input1 | translate}}" autofocus ng-model="given_email" ng-change="accountListener()" ng-model-options="{ debounce: 500 }" required type="text" name="given_email">
+                    <input placeholder="{{ payload.input1 | translate}}" autofocus ng-model="given_email" ng-change="accountListener()" ng-model-options="{ debounce: 250 }" required type="text" name="given_email">
                     <div ng-messages="email_form.given_email.$error">
                         <div ng-message="required">{{ payload.input1_error | translate}}</div>
                     </div>

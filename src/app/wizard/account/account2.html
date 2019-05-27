@@ -17,7 +17,7 @@
             </div>
             <div flex="grow" class="md-box">
                 <md-input-container md-no-float class="md-block">
-                    <input placeholder="{{ payload.input1 | translate}}" ng-model-options="{ debounce: 500 }"  autofocus ng-model="given_username" ng-change="usernameListener()" required type="text" name="given_username" minlength="3" maxlength="30">
+                    <input placeholder="{{ payload.input1 | translate}}" ng-model-options="{ debounce: 250 }"  autofocus ng-model="given_username" ng-change="usernameListener()" required type="text" name="given_username" minlength="3" maxlength="30">
                     <div ng-messages="username_form.given_username.$error">
                         <div ng-message="required">{{ payload.input1_error | translate}}</div>
                         <div ng-message="minlength">{{ payload.input1_error2 | translate}}</div>

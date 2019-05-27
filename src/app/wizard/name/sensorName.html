@@ -17,7 +17,7 @@
                 </svg>            </div>
             <div flex="grow" class="md-box">
                 <md-input-container md-no-float class="md-block">
-                    <input placeholder="{{ payload.input1 | translate}}" ng-model-options="{ debounce: 500 }" autofocus ng-model="name" ng-change="listener()" required type="text" name="ssid">
+                    <input placeholder="{{ payload.input1 | translate}}" ng-model-options="{ debounce: 250 }" autofocus ng-model="name" ng-change="listener()" required type="text" name="ssid">
                     <div ng-messages="sensor_name.name.$error">
                         <div ng-message="required">{{ payload.input1_error | translate}}</div>
                     </div>

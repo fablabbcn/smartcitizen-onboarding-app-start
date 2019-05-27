@@ -16,7 +16,7 @@
                 </svg>
             </div>
             <div flex="grow" class="md-box">
-                <md-input-container md-no-float ng-model-options="{ debounce: 1000 }" class="md-block">
+                <md-input-container md-no-float ng-model-options="{ debounce: 250 }" class="md-block">
                     <input placeholder="{{ payload.input1 | translate}}" ng-model="pass" ng-change="loginListener()" type="{{showPasswordToggle}}" name="pass" >
                     <div ng-messages="password_form.pass.$error">
                     </div>
