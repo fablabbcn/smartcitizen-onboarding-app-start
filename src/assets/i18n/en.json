@@ -175,8 +175,8 @@
     },
     "ap_token": {
         "h2": "Press start and then type your device key",
-        "h4": "When asked for your token enter the code above",
-        "promptedText": "TOKEN HERE",
+        "h4": "When asked for your device key enter the code above",
+        "promptedText": "KEY HERE",
         "segueButton": "next"
     },
     "ap_wifi": {
