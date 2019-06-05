@@ -321,7 +321,7 @@
     "final": {
         "h1": "IT’S ALIVE!",
         "h2": "You have successfully installed and connected the Smart Citizen Kit to the internet, and then added the kit to the global community of sensors!",
-        "h4": "Visit SmartCitizen.me to see your Kit in action capturing data. Don't forget to read the manual for assembly instructions and tips on placing your sensor in the wild",
+        "h4": "Visit SmartCitizen.me to see your Kit in action capturing data. Don't forget to read the manual for assembly instructions <a>hello</a> and tips on placing your sensor in the wild",
         "h4b": "",
         "segueButton": "Visit smartcitizen.me"
     },
