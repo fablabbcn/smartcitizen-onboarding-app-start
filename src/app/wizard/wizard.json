@@ -335,7 +335,6 @@
         "index": 34,
         "part": 4,
         "template": "prompted_entry2",
-        "controller": "accesspointController_handshake",
         "stateName": "ap_wifi",
         "url": "ap_wifi",
         "assets": {
@@ -351,7 +350,6 @@
         "index": 35,
         "part": 5,
         "template": "basic1",
-        "controller": "accesspointController_handshake",
         "stateName": "ap_final",
         "url": "ap_final",
         "contentKeys": [
@@ -462,7 +460,7 @@
       "index": 41,
       "part": 6,
       "template": "confirm",
-      "controller": "smartcitizenController",
+      "controller": "accesspointController_final",
       "stateName": "confirm_handshake",
       "url": "confirm_handshake",
       "contentKeys": [
@@ -545,8 +543,7 @@
           "input1",
           "input1_error",
           "segueButton",
-          "continueButton",
-          "segueButtonError"
+          "continueButton"
         ]
       },
       {

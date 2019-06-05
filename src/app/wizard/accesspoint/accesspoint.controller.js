@@ -7,31 +7,45 @@ export function accesspointController($scope, scopePayload, AnimationService) {
 
 accesspointController.$inject = ['$scope', 'scopePayload', 'AnimationService'];
 
-export function accesspointController_handshake($scope, scopePayload, AnimationService, $rootScope, platform, $state, $interval, $timeout, $stateParams) {
+export function accesspointController_token($scope, scopePayload, AnimationService) {
     $scope.$parent.payload = scopePayload;
     AnimationService.animate(scopePayload.template);
-    checkHandshake();
+    $scope.$parent.segueControl = 'ready';
 
-    if($state.current.name == 'wizard.ap_wifi') {
-        $scope.$parent.segueControl = 'ready';
-        $scope.$parent.disabled = false;
-    } else {
-        $scope.$parent.segueControl = 'blocked';
-        $scope.$parent.disabled = true;
+    $scope.payload.promptedText = $scope.submittedData.deviceData.device_token;
+}
+
+accesspointController_token.$inject = ['$scope', 'scopePayload', 'AnimationService'];
+
+
+export function accesspointController_base($scope, $stateParams, scopePayload, AnimationService, $rootScope, $sce, platform, $timeout) {
+    $rootScope.lang = $stateParams.lang;
+    $scope.$parent.payload = scopePayload;
+    AnimationService.animate(scopePayload.template);
+    $scope.$parent.segueControl = 'ready';
+
+    if ($scope.$parent.payload.url == "accesspoint_1") {
+        $scope.bindable = $sce.trustAsHtml($scope.$parent.payload.h3_1 + "<em class=blue>" + $scope.$parent.payload.em_1 + "</em>" + $scope.$parent.payload.h3_2 + "<em class=blue>" + $scope.$parent.payload.em_2 + "</em>" + $scope.$parent.payload.h3_3);
+    } else if ($scope.$parent.payload.url == "accesspoint_2") {
+        $scope.bindable = $sce.trustAsHtml($scope.$parent.payload.h3_1 + "<em class=blue>" + $scope.$parent.payload.em_1 + "</em>");
     }
 
-    $scope.watchDog = $timeout(function() {
+    checkHandshake();
+
+    $scope.$parent.watchDog = $timeout(function() {
         prepSegue();
         $rootScope.$broadcast('forceSegue', { target: 'wizard.ap_issues', params: {lang: $stateParams.lang}});
     }, $scope.$parent.apModeWatchDog);
 
     function recurrentHandshake(){
-        $scope.watchHandshake =$timeout(function() {
+        $scope.$parent.watchHandshake = $timeout(function() {
             checkHandshake();
         }, 5000);
     }
 
     function checkHandshake(){
+        $timeout.cancel($scope.$parent.watchDog);
+        $timeout.cancel($scope.$parent.watchHandshake);
         platform.getDevice().then(function(device){
             if(device.device_handshake == true){
                 prepSegue();
@@ -44,35 +58,18 @@ export function accesspointController_handshake($scope, scopePayload, AnimationS
     function prepSegue() {
         $timeout.cancel($scope.watchDog);
         $timeout.cancel($scope.watchHandshake);
-        $scope.$parent.disabled = false;
-        $rootScope.$broadcast('forceSegue', { target: 'wizard.confirm_handshake', params: {lang: $stateParams.lang}});
+        $rootScope.$broadcast('forceSegue', { target: 'wizard.confirm_handshake'});
     }
 }
 
-accesspointController_handshake.$inject = ['$scope', 'scopePayload', 'AnimationService', '$rootScope', 'platform', '$state', '$interval', '$timeout', '$stateParams'];
+accesspointController_base.$inject = ['$scope', '$stateParams', 'scopePayload', 'AnimationService', '$rootScope', '$sce', 'platform', '$timeout'];
 
-export function accesspointController_token($scope, scopePayload, AnimationService) {
+export function accesspointController_final($scope, scopePayload, AnimationService){
     $scope.$parent.payload = scopePayload;
     AnimationService.animate(scopePayload.template);
-    $scope.$parent.segueControl = 'ready';
+    $scope.$parent.segueControl ='ready';
+    $scope.$parent.payload.preventBack = true;
 
-    $scope.payload.promptedText = $scope.submittedData.deviceData.device_token;
 }
 
-accesspointController_token.$inject = ['$scope', 'scopePayload', 'AnimationService'];
-
-
-export function accesspointController_base($scope, $stateParams, scopePayload, AnimationService, $rootScope, $sce) {
-    $rootScope.lang = $stateParams.lang;
-    $scope.$parent.payload = scopePayload;
-    AnimationService.animate(scopePayload.template);
-    $scope.$parent.segueControl = 'ready';
-
-    if ($scope.$parent.payload.url == "accesspoint_1") {
-        $scope.bindable = $sce.trustAsHtml($scope.$parent.payload.h3_1 + "<em class=blue>" + $scope.$parent.payload.em_1 + "</em>" + $scope.$parent.payload.h3_2 + "<em class=blue>" + $scope.$parent.payload.em_2 + "</em>" + $scope.$parent.payload.h3_3);
-    } else if ($scope.$parent.payload.url == "accesspoint_2") {
-        $scope.bindable = $sce.trustAsHtml($scope.$parent.payload.h3_1 + "<em class=blue>" + $scope.$parent.payload.em_1 + "</em>");
-    }
-}
-
-accesspointController_base.$inject = ['$scope', '$stateParams', 'scopePayload', 'AnimationService', '$rootScope', '$sce'];
+accesspointController_final.$inject = ['$scope', 'scopePayload', 'AnimationService'];

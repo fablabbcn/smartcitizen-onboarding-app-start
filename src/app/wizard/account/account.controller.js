@@ -9,6 +9,8 @@ export function accountController($scope, scopePayload, AnimationService, platfo
     $scope.given_email = ( $scope.$parent.submittedData.user.email == ' ' ? '' : $scope.$parent.submittedData.user.email);
     $scope.given_username = ( $scope.$parent.submittedData.user.username == ' ' ? '' : $scope.$parent.submittedData.user.username);
 
+    blockSegue();
+
     /********** Watchers **********/
 
     $scope.accountListener = function () {
