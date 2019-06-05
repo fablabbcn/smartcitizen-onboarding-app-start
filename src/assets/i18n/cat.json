@@ -193,7 +193,8 @@
         "input1": "Introdueix la teva adreça",
         "input1_error": "",
         "segueButton": "fet",
-        "continueButton": "fet"
+        "continueButton": "fet",
+        "segueButtonError": "Has d'escriure una adreça o ubicació"
     },
     "location_tags": {
         "h2": "Selecciona les paraules que millor descriuen el lloc on has instal·lat el Kit",

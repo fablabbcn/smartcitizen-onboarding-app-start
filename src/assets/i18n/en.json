@@ -264,7 +264,8 @@
         "input1": "Enter an address",
         "input1_error": "",
         "segueButton": "all set",
-        "continueButton": "all set"
+        "continueButton": "all set",
+        "segueButtonError": "You should write an address or a location"
     },
     "location_tags": {
         "h2": "Is there anything more you'll like to share about your kit?",

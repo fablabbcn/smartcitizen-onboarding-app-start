@@ -1,4 +1,4 @@
-export function locationController($scope, uiGmapIsReady, $geolocation, scopePayload, AnimationService, tags) {
+export function locationController($scope, uiGmapIsReady, $geolocation, scopePayload, AnimationService, tags, $state) {
 
     // Tags must be on this list https://api.smartcitizen.me/v0/tags
 
@@ -42,6 +42,10 @@ export function locationController($scope, uiGmapIsReady, $geolocation, scopePay
     $scope.$parent.pos = $geolocation.position;
 
     $scope.$parent.$watch('pos.coords', function (newValue, oldValue) {
+        if($state.$current.name == 'wizard.location_map' && typeof newValue == 'undefined') {
+            blockSegue();
+        }
+
         if (typeof oldValue == 'undefined' && typeof newValue !== 'undefined') {
             var center = newValue;
             setMapData(center, center, 17);
@@ -115,5 +119,5 @@ export function locationController($scope, uiGmapIsReady, $geolocation, scopePay
 
 };
 
-locationController.$inject = ['$scope', 'uiGmapIsReady', '$geolocation', 'scopePayload', 'AnimationService', 'tags'];
+locationController.$inject = ['$scope', 'uiGmapIsReady', '$geolocation', 'scopePayload', 'AnimationService', 'tags', '$state'];
 //# TODO - when no location given use region from IP to center map

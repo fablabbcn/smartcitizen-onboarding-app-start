@@ -192,8 +192,9 @@
         "h4": "Recuerda que donde vaya tu dispositivo, necesitará Wi-fi.",
         "input1": "Introduce una dirección",
         "input1_error": "",
-        "segueButton": "listo",
-        "continueButton": "listo"
+        "segueButton": "hecho",
+        "continueButton": "hecho",
+        "segueButtonError": "Tienes que introducir una dirección o ubicación"
     },
     "location_tags": {
         "h2": "Selecciona las palabras que mejor describen la ubicación de tu sensor.",
