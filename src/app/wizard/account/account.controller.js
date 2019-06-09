@@ -45,7 +45,6 @@ export function accountController($scope, scopePayload, AnimationService, platfo
 
     $scope.usernameListener = function () {
         if(typeof $scope.given_username !== 'undefined'){
-            console.log($scope.given_username.length);
             $scope.given_username = $scope.given_username.split(' ').join('_');
             if($scope.given_username.length > 3 && $scope.given_username.length  < 30){
                 $scope.$parent.submittedData.user.username = $scope.given_username;
