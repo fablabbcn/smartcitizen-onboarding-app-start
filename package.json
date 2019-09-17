@@ -1,5 +1,5 @@
 {
-  "name": "smartcitizen-onboarding-app-start",
+  "name": "smartcitizen-onboarding-app-grow",
   "version": "2.0.0",
   "description": "Onboarding",
   "main": "src/index.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fablabbcn/smartcitizen-onboarding-app-start.git"
+    "url": "git+https://github.com/fablabbcn/smartcitizen-onboarding-app-grow.git"
   },
   "keywords": [
     "smartcitizen"
@@ -20,9 +20,9 @@
   "author": "Smartcitizen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fablabbcn/smartcitizen-onboarding-app-start/issues"
+    "url": "https://github.com/fablabbcn/smartcitizen-onboarding-app-grow/issues"
   },
-  "homepage": "https://github.com/fablabbcn/smartcitizen-onboarding-app-start#readme",
+  "homepage": "https://github.com/fablabbcn/smartcitizen-onboarding-app-grow#readme",
   "devDependencies": {
     "angular-translate-extract": "^1.0.0",
     "babel-core": "^6.26.3",
@@ -65,7 +65,7 @@
   },
   "gh-pages-deploy": {
     "staticpath": "dist",
-    "cname": "start.smartcitizen.me",
+    "cname": "growobservatory.smartcitizen.me",
     "prep": [
       "build"
     ]

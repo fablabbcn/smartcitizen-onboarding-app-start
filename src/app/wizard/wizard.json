@@ -6,7 +6,7 @@
     "url": "landing",
     "controller": "landingController",
     "assets": {
-      "companyLogo": "assets/images/scklogo.png"
+      "companyLogo": "assets/images/GROW/grow-logo-1.png"
     },
     "contentKeys": [
       "h2",
@@ -22,9 +22,9 @@
         "part": 2,
         "stateName": "smart_citizen",
         "template": "landing",
-        "url": "smart_citizen",
+        "url": "grow_project",
         "assets": {
-          "companyLogo": "assets/images/scklogo.png"
+          "companyLogo": "assets/images/GROW/grow-logo-1.png"
         },
         "contentKeys": [
           "h2",
@@ -86,52 +86,7 @@
         "stateName": "kitbuild1",
         "url": "kit_parts",
         "assets": {
-          "image": "assets/images/SCK21/onboarding/01.jpg"
-        },
-        "contentKeys": [
-          "h2",
-          "text",
-          "segueButton"
-        ]
-      },
-      {
-        "index": 12,
-        "part": 3,
-        "template": "kitbuild1",
-        "stateName": "kitbuild2",
-        "url": "pm_cable",
-        "assets": {
-          "image": "assets/images/SCK21/onboarding/02.jpg"
-        },
-        "contentKeys": [
-          "h2",
-          "text",
-          "segueButton"
-        ]
-      },
-      {
-        "index": 13,
-        "part": 4,
-        "template": "kitbuild1",
-        "stateName": "kitbuild3",
-        "url": "connect_the_pm",
-        "assets": {
-          "image": "assets/images/SCK21/onboarding/03.jpg"
-        },
-        "contentKeys": [
-          "h2",
-          "text",
-          "segueButton"
-        ]
-      },
-      {
-        "index": 14,
-        "part": 5,
-        "template": "kitbuild1",
-        "stateName": "kitbuild4",
-        "url": "connect_the_boards",
-        "assets": {
-          "image": "assets/images/SCK21/onboarding/04.jpg"
+          "image": "assets/images/GROW/grow_parts.jpg"
         },
         "contentKeys": [
           "h2",

@@ -12,7 +12,7 @@
     border: none;
 
     border-radius: 4px;
-    background-color: #ddd;
+    background-color: $SCK2-darkGrey;
     @media screen and (max-width: 450px) {
       padding: 0 10px;
     }
@@ -41,6 +41,9 @@
         height: 80px;
         margin: 0;
         border: none;
+        ::placeholder {
+          color: $blueLight;
+        }
         .md-placeholder{
           color: $blueLight;
         }
