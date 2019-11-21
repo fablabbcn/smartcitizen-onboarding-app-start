@@ -24,11 +24,12 @@ export function accesspointController_base($scope, $stateParams, scopePayload, A
     AnimationService.animate(scopePayload.template);
     $scope.$parent.segueControl = 'ready';
 
+    /* TODO: Not in use. Check!
     if ($scope.$parent.payload.url == "accesspoint_1") {
         $scope.bindable = $sce.trustAsHtml($scope.$parent.payload.h3_1 + "<em class=blue>" + $scope.$parent.payload.em_1 + "</em>" + $scope.$parent.payload.h3_2 + "<em class=blue>" + $scope.$parent.payload.em_2 + "</em>" + $scope.$parent.payload.h3_3);
     } else if ($scope.$parent.payload.url == "accesspoint_2") {
         $scope.bindable = $sce.trustAsHtml($scope.$parent.payload.h3_1 + "<em class=blue>" + $scope.$parent.payload.em_1 + "</em>");
-    }
+    }*/
 
     checkHandshake();
 
@@ -56,8 +57,8 @@ export function accesspointController_base($scope, $stateParams, scopePayload, A
     }
 
     function prepSegue() {
-        $timeout.cancel($scope.watchDog);
-        $timeout.cancel($scope.watchHandshake);
+        $timeout.cancel($scope.$parent.watchDog);
+        $timeout.cancel($scope.$parent.watchHandshake);
         $rootScope.$broadcast('forceSegue', { target: 'wizard.confirm_handshake'});
     }
 }
