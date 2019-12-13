@@ -1,0 +1,25 @@
+<!doctype html> <!--[if lt IE 7]>      <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]--> <!--[if IE 7]>         <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]--> <!--[if IE 8]>         <html lang="en" ng-app="app" class="no-js lt-ie9"> <![endif]--> <!--[if gt IE 8]><!--> <html lang=en ng-app=app class=no-js> <!--<![endif]--> <head> <base href=/ > <meta charset=utf-8> <meta http-equiv=X-UA-Compatible content="IE=edge"> <title>Smart Citizen Onboarding</title> <link rel="shortcut icon" href=assets/images/favicon.ico type=image/x-icon> <link rel=icon href=assets/images/favicon.ico type=image/x-icon> <meta name=description content=""> <meta name=viewport content="width=device-width,initial-scale=1"> <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel=stylesheet> <link href="main.css" rel="stylesheet"></head> <body ng-app=app layout=column> <script> function hasTouch() {
+      return true;
+      return 'ontouchstart' in document.documentElement
+             || navigator.maxTouchPoints > 0
+             || navigator.msMaxTouchPoints > 0;
+    }
+    setTimeout(() => {
+      console.log("sty", document.styleSheets.length)
+      if (hasTouch()) { // remove all :hover stylesheets
+        try { // prevent exception on browsers not supporting DOM styleSheets properly
+          for (var si in document.styleSheets) {
+            var styleSheet = document.styleSheets[si];
+            try { if (!styleSheet.rules) continue; }  catch (ex) { continue; }
+
+            for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+              if (!styleSheet.rules[ri].selectorText) continue;
+
+              if (styleSheet.rules[ri].selectorText.match(':hover')) {
+                styleSheet.deleteRule(ri);
+              }
+            }
+          }
+        } catch (ex) {}
+      }
+    }, 1000); </script> <script>!function(){sessionStorage.redirect;delete sessionStorage.redirect}()</script> <div ui-view id=container layout=column layout-align="center none" flex></div> <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgSvUrtmsNLkoaK1mYlyU3eVbByMlE4w4&libraries=places"></script> <script>"localhost"!==location.hostname&&"127.0.0.1"!==location.hostname&&(window.doorbellOptions={id:"1904",appKey:"epGCzRsQjOyOPslP2rONu5XUVwoAAKY4yQZy21baD3Sb0RolnuBi6G9H4Kd9tgzG"},function(e,t,o){var n=!1;function a(){if(!n){n=!0,window.doorbellOptions.windowLoaded=!0;var e=t.createElement("script");e.id="doorbellScript",e.type="text/javascript",e.async=!0,e.src="https://embed.doorbell.io/button/"+window.doorbellOptions.id+"?t="+(new Date).getTime(),(t.getElementsByTagName("head")[0]||t.getElementsByTagName("body")[0]).appendChild(e)}}e.attachEvent?e.attachEvent("onload",a):e.addEventListener?e.addEventListener("load",a,!1):a(),"complete"==t.readyState&&a()}(window,document))</script> <script type="text/javascript" src="main.js"></script></body> </html> 
