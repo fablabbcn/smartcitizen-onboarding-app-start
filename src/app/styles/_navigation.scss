@@ -276,3 +276,11 @@ $button-height: $segueWrapperHeight / 2.75;
     }
   }
 }
+
+.advancedButton {
+  font-size: 16px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: $text-white;
+}
