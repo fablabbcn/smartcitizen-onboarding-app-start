@@ -91,12 +91,22 @@ export function platform($rootScope, $cookies, SegueService, Restangular, platfo
 
     function getTags() {
         return Restangular.all('tags')
-          .getList({'per_page': 100})
+          .getList({'per_page': 1000})
           // We add .plain() because we don't need full CRUD on Tags.
           .then(function(fetchedTags){
             return fetchedTags.plain();
           });
     }
+
+    function getKits(scope) {
+        return Restangular.all('kits')
+          .getList({'per_page': 1000})
+          // We add .plain() because we don't need full CRUD on Tags.
+          .then(function(fetchedKits){
+            return fetchedKits.plain();
+          });
+    }
+
 
     return {
         setSession: setSession,
@@ -112,7 +122,8 @@ export function platform($rootScope, $cookies, SegueService, Restangular, platfo
         listenDevice: listenDevice,
         listenToken: listenToken,
         resetPassword: resetPassword,
-        getTags: getTags
+        getTags: getTags,
+        getKits: getKits
     };
 
 }

@@ -35,6 +35,8 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
 
     $scope.modalClass = 'hidden';
 
+    $scope.advancedModalClass = 'hidden';
+
     console.log('Your session:' , session);
     console.log('Your device:', $scope.submittedData.deviceData);
 
@@ -342,6 +344,47 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
         console.log('modal');
         $scope.modalClass = 'showing';
     });
+
+    /** -- ADVANCED MODAL-- **/
+
+    $scope.kit = null;
+    $scope.kits = null;
+
+    $scope.loadKits = function() {
+        return platform.getKits().then(function(kits){
+            $scope.kits = kits;
+        })
+    }
+
+    $scope.$watch('kit', function () {
+        if($scope.kit && $scope.kit.id) {
+            $scope.submittedData.deviceData.kit_id = $scope.kit.id;
+        }
+    });
+
+    $scope.saveAdvancedSettings = function() {
+        platform.updateDevice($scope.submittedData.deviceData).then(function(){
+            $scope.hideAdvancedModal();
+        });
+    };
+
+    $scope.showAdvancedModal = function(){
+        $scope.tempBlock = true;
+        $scope.modalBox = 'green';
+        $scope.advancedModalClass = 'showing';
+    };
+
+    /** Prevents click inside modal to close it **/
+    $scope.preventHideAdvancedModal = function(event) {
+        event.stopPropagation();
+    };
+
+    $scope.hideAdvancedModal = function() {
+        $scope.advancedModalClass = 'out';
+        $timeout(function() {
+            $scope.advancedModalClass = 'hidden';
+        }, 500);
+    };
 
     Restangular.setErrorInterceptor(function(response, deferred, responseHandler) {
         if ([204, 422, 403, 404].indexOf(response.status) > -1) {
