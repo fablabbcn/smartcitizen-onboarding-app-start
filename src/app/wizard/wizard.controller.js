@@ -352,6 +352,7 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
 
     $scope.loadKits = function() {
         return platform.getKits().then(function(kits){
+            kits.sort((a, b) => (a.id > b.id) ? 1 : -1)
             $scope.kits = kits;
         })
     }

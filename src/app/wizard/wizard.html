@@ -97,10 +97,10 @@
                     <md-option ng-value="kit" ng-repeat="kit in kits">#{{kit.id}} {{kit.name}}</md-option>
                 </md-select>
                 <p ng-if="kit.description" class="md-caption">
-                    {{kit.description}} can measure <span style="color: white; font-size: 19px;" ng-repeat="sensor in kit.sensors">{{$first ? '' : $last ? ' and ' : ', '}}{{sensor.measurement.name.toLowerCase() }}</span>
+                    <span style="text-decoration: underline"> {{kit.description}}</span> can measure:<br> <span style="color: white; font-size: 19px;" ng-repeat="sensor in kit.sensors">{{$first ? '' : $last ? ' and ' : ', '}}{{sensor.measurement.name }}</span>
                 </p>
                 <p style="color: white; font-size: 18px; font-style: italic;" ng-if="kit.description" class="md-caption">
-                    sensor list: <span ng-repeat="sensor in kit.sensors">{{$first ? '' : $last ? ' and ' : ', '}} {{sensor.name.toLowerCase()}} ({{sensor.id}})</span>
+                    This is the complete sensor list: <br> <span ng-repeat="sensor in kit.sensors">{{$first ? '' : $last ? ' and ' : ', '}} {{sensor.name}} ({{sensor.unit}})</span>
                 </p>
                 <button id="advancedModalButton" ng-click="saveAdvancedSettings()">Save</button>
             </div>
