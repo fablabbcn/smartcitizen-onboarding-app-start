@@ -38,6 +38,13 @@ cd smartcitizen-web
 * `npm run deploy` to deploy the application to Github Pages.
 * `npm run extract` to extract the translations from the JSON and the app.
 
+**Warning:**
+
+If you can't get some packages to install due to a `https` error in github:
+
+```
+git config --global url."https://".insteadOf git://
+```
 
 ### Support and issues
 
