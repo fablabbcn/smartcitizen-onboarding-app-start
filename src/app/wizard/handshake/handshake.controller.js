@@ -6,13 +6,13 @@ export function handshakeController($scope, scopePayload, AnimationService, $roo
 
     $scope.$parent.segueControl = 'blocked';
     $scope.$parent.spinnerControl = 'hide';
+    $scope.payload.preventForward = true;
 
     $scope.$parent.backgroundLoader = 'idle';
 
     $scope.payload.segueButton = $scope.payload.continueButton;
 
     $scope.loadingPercentage = 0;
-
 
     if ($scope.submittedData.wifi.ssid) {
         $scope.$parent.segueControl = 'ready';
@@ -21,7 +21,6 @@ export function handshakeController($scope, scopePayload, AnimationService, $roo
 
     $scope.showPasswordToggle = 'password';
     $scope.forcePassword = false;
-
 
     $scope.ssidListener = function() {
         if ((typeof wifi_ssid.ssid.value !== "undefined") && wifi_ssid.ssid.value.length > 0) {
@@ -61,7 +60,6 @@ export function handshakeController($scope, scopePayload, AnimationService, $roo
             console.log('hide');
         }
     };
-
 
     /** -- Handshake Action-- **/
     var gamma = 2.0;
