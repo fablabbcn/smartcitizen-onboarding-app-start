@@ -320,9 +320,8 @@
     },
     "final": {
         "h1": "IT’S ALIVE!",
-        "h2": "You have successfully installed and connected the Smart Citizen Kit to the internet, and then added the kit to the global community of sensors!",
-        "h4": "Visit SmartCitizen.me to see your kit in action capturing data. Don't forget to read the manual for assembly instructions <a>hello</a> and tips on placing your sensor in the wild",
-        "h4b": "",
+        "h2": "You have successfully connected the Smart Citizen Kit and it's now part of the global community of sensors!",
+        "h4": "Don't forget to read <a href='https://docs.smartcitizen.me' target='_blank'>docs.smartcitizen.me</a> for tips on placing your sensor in the wild!",
         "segueButton": "Visit smartcitizen.me"
     },
     "unavailable": {
