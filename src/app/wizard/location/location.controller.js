@@ -9,6 +9,7 @@ export function locationController($scope, uiGmapIsReady, $geolocation, scopePay
 
     var tagsList = [];
     var tagsState = [];
+    let geopositionId;
 
     for(var index = 0; index < tags.length; index++) {
         var name = tags[index].name;
@@ -33,7 +34,7 @@ export function locationController($scope, uiGmapIsReady, $geolocation, scopePay
 
     AnimationService.animate(scopePayload.template);
 
-    $geolocation.watchPosition({
+    geopositionId = $geolocation.watchPosition({
         timeout: 50,
         maximumAge: 25,
         enableHighAccuracy: true
@@ -97,6 +98,7 @@ export function locationController($scope, uiGmapIsReady, $geolocation, scopePay
         };
 
         setSensorPosition($scope.$parent.map.marker.location);
+        $geolocation.clearWatch(geopositionId);
     }
 
     function setSensorPosition(position) {
