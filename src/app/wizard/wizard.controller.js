@@ -6,7 +6,7 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
 
     $scope.submittedData.deviceData = {
         device_token: session.device_token,
-        description: 'Smart Citizen Kit 2.1 with Urban Sensor Board',
+        description: 'Smart Citizen Kit',
         exposure: 'outdoor',
         kit_id: 26
     };

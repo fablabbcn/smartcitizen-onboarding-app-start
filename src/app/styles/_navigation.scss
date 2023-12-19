@@ -218,14 +218,21 @@ $button-height: $segueWrapperHeight / 2.75;
       }
     }
     .yesButton{
-
+      &.hide-xs {
+        display: none;
+      }
     }
     .noButton{
-
+      &.hide-xs {
+        display: none;
+      }
     }
     .buttonClearfix{
       opacity: 0;
       width: 0;
+      &.hide-xs {
+        display: none;
+      }
     }
   }
 

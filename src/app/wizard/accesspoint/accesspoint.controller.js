@@ -70,6 +70,7 @@ export function accesspointController_final($scope, scopePayload, AnimationServi
     AnimationService.animate(scopePayload.template);
     $scope.$parent.segueControl ='ready';
     $scope.$parent.payload.preventBack = true;
+    $scope.$parent.payload.preventForward = true;
 
 }
 

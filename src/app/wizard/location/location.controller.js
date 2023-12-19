@@ -105,7 +105,6 @@ export function locationController($scope, uiGmapIsReady, $geolocation, scopePay
         if (typeof position.latitude !== 'undefined') {
             $scope.$parent.submittedData.deviceData.latitude = position.latitude;
             $scope.$parent.submittedData.deviceData.longitude = position.longitude;
-            console.log('Set map position', position);
             prepSegue();
         }
     }

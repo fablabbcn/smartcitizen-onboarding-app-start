@@ -11,9 +11,8 @@
 <div id="wizardView" layout="column" layout-align="center none" ui-view flex ></div>
 
 <div class="bottomNav animate" layout="row" layout-align="space-around center" flex="none" ng-class="animationRows[0][0]">
-    <div  hide-xs>
+    <div hide-xs>
         <button class="backButton" ng-hide="payload.preventBack" ng-click="back()" ng-class="payload.backBlock">
-
           <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
              viewBox="0 0 38.1 36.8" xml:space="preserve">
           <polygon points="24.7,34.7 29.7,29.8 18.3,18.4 29.7,7.1 24.7,2.1 8.5,18.4 "/>
@@ -30,10 +29,7 @@
                     <tspan x="8" y="48" fill="#ffffff">close</tspan>
                 </text>
             </svg>
-
             <span id="segueContent">{{ payload.segueButton | translate }}</span>
-
-
         </button>
         <div class="spinnerWrapper" ng-class="spinnerControl">
             <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
@@ -44,7 +40,7 @@
         <button class="noButton errorButton" ng-click="no()" ng-class="errorButton" hide-xs>{{ payload.noButton | translate }}</button>
     </div>
     <div hide-xs>
-        <button class="forwardButton" ng-click="forward()" ng-class="payload.forwardBlock" style="visibility: hidden;">
+        <button class="forwardButton" ng-hide="payload.preventForward" ng-click="forward()" ng-class="payload.forwardBlock" style="visibility: hidden;">
             <svg width="36px" height="49px" viewBox="8 10 36 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <defs></defs>
                 <text id="directright" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="22" font-weight="normal">
