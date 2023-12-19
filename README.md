@@ -1,34 +1,26 @@
 # Smart Citizen Onboarding
 
-The Smart Citizen onboarding. This project is a means to alleviate the issue of abandonment in [IOT devices](https://en.wikipedia.org/wiki/Internet_of_things) related to [citizen science and civil sensing](https://en.wikipedia.org/wiki/Citizen_science). This onboarding was originally developed for the [Making Sense](http://making-sense.eu/) project as a means to test the effectiveness of building communities around these grassroots initiatives. Currently supporting the [SmartCitizen API](https://github.com/fablabbcn/smartcitizen) and the new [SmartCitizen Kit 2.0/2.1](https://github.com/fablabbcn/Smart-Citizen-Kit-2.0).
+The Smart Citizen onboarding. This project is a means to alleviate the issue of abandonment in [IoT devices](https://en.wikipedia.org/wiki/Internet_of_things) related to [citizen science and civil sensing](https://en.wikipedia.org/wiki/Citizen_science). This onboarding was originally developed for the [Making Sense](http://making-sense.eu/) project as a means to test the effectiveness of building communities around these grassroots initiatives. Currently supporting the [Smart Citizen API](https://github.com/fablabbcn/smartcitizen-api) and the [Smart Citizen Kit 2.X](https://github.com/fablabbcn/smart-citizen-kit-21).
 
-This is a web app that aims to solve key issues in the setup of open data sensors within grassroots smart-city communities through developing cognitive goals, such as fostering ownership, creating context, showing playful animations and simplifying language. This multi-lingual experience helps reduce the bottleneck of non-technical citizens installing IOT devices. This tool is currently being used in an EU Research Project.
+This is a web app that aims to solve key issues in the setup of environmental sensors within grassroots communities by fostering ownership, creating context, showing playful animations and simplifying language. This experience helps reduce the bottleneck of non-technical citizens installing IoT devices. Here is the current [link to live-deployment](https://start.smartcitizen.me/)
 
-Here is the current [link to live-deployment](https://onboarding.iscape.smartcitizen.me/wizard/landing?lang=cat)
+## Development
 
-Updates are handled [through this fork](https://github.com/fablabbcn/onboarding-app) and then moved down to the master
-
-
-### Prerequisites
-
-You need git to clone the repository. You can get git from
-[http://git-scm.com/](http://git-scm.com/).
-
-We also use a number of node.js tools to initialize and test the Web App. You must have node.js and
-its package manager (npm) installed. You can get them from [http://nodejs.org/](http://nodejs.org/).
-You need a version `>= 9.8.0` (You can use `nvm` to get the right version).
+We use an (old_ish_) number of `node.js` tools to initialize and test the web app. You must have `node.js` and its package manager (`npm`) installed. 
+You can get them from [http://nodejs.org/](http://nodejs.org/). You need a version `>= 9.8.0` (You can use `nvm` to get the right version).
 
 ### Clone the project
 
 Clone the repository using:
 
 ```
-git clone https://github.com/fablabbcn/smartcitizen-onboarding.git
-cd smartcitizen-web
+git clone git@github.com:fablabbcn/smartcitizen-onboarding-app-start.git
+cd smartcitizen-onboarding-app-start
 ```
 
 ### Install dependencies
-* Install by running: `npm install`
+
+Install by running: `npm install`
 
 ### Use NPM tasks
 
