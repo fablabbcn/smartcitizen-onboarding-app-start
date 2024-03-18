@@ -8,7 +8,6 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
         device_token: session.device_token,
         description: 'Smart Citizen Kit',
         exposure: 'outdoor',
-        kit_id: 26
     };
 
     $scope.proposed_user_tags_array = [];
@@ -312,79 +311,6 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
         };
         $scope.modalContent = data;
         $rootScope.$broadcast('modal');
-    };
-
-    /** -- MODAL-- **/
-
-    $scope.modalClick = function() {
-        $scope.modalClass = 'out';
-        $timeout(function() {
-            $scope.modalClass = 'hidden';
-            $rootScope.$broadcast('modalClosed'); // This starts the light
-        }, 500);
-    };
-    $scope.modalButtonClick = function() {
-        switch ($scope.modalContent.action) {
-            case 'email':
-                $window.open('mailto:feedback-4873-IVVSumgXA4EEA4e7blwZvyE2sshIpRRK@feedback.doorbell.io?Subject=MakingSense Support [' + $scope.onboarding_session + ']', '_blank');
-                break;
-            case 'retry':
-                $scope.seque;
-                break;
-            case 'restart':
-                $state.go('wizard.landing');
-                break;
-            default:
-                $scope.seque;
-                break;
-        }
-    };
-
-    $rootScope.$on('modal', function() {
-        console.log('modal');
-        $scope.modalClass = 'showing';
-    });
-
-    /** -- ADVANCED MODAL-- **/
-
-    $scope.kit = null;
-    $scope.kits = null;
-
-    $scope.loadKits = function() {
-        return platform.getKits().then(function(kits){
-            kits.sort((a, b) => (a.id > b.id) ? 1 : -1)
-            $scope.kits = kits;
-        })
-    }
-
-    $scope.$watch('kit', function () {
-        if($scope.kit && $scope.kit.id) {
-            $scope.submittedData.deviceData.kit_id = $scope.kit.id;
-        }
-    });
-
-    $scope.saveAdvancedSettings = function() {
-        platform.updateDevice($scope.submittedData.deviceData).then(function(){
-            $scope.hideAdvancedModal();
-        });
-    };
-
-    $scope.showAdvancedModal = function(){
-        $scope.tempBlock = true;
-        $scope.modalBox = 'green';
-        $scope.advancedModalClass = 'showing';
-    };
-
-    /** Prevents click inside modal to close it **/
-    $scope.preventHideAdvancedModal = function(event) {
-        event.stopPropagation();
-    };
-
-    $scope.hideAdvancedModal = function() {
-        $scope.advancedModalClass = 'out';
-        $timeout(function() {
-            $scope.advancedModalClass = 'hidden';
-        }, 500);
     };
 
     Restangular.setErrorInterceptor(function(response, deferred, responseHandler) {

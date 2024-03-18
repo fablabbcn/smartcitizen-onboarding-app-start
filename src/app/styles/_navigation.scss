@@ -257,6 +257,7 @@ $button-height: $segueWrapperHeight / 2.75;
       border: 2px solid $regalBlue;
     }
   }
+
   .forwardButton {
     height: $button-height;
     width: $button-height;
@@ -282,12 +283,4 @@ $button-height: $segueWrapperHeight / 2.75;
       visibility: hidden;
     }
   }
-}
-
-.advancedButton {
-  font-size: 16px;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  color: $text-white;
 }

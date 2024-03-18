@@ -51,10 +51,6 @@
     </div>
 </div>
 
-<div class="advancedButton" ng-if="!submittedData.deviceData.id">
-    <a ng-click="showAdvancedModal()">🛠️</a>
-</div>
-
 <div id="modal" ng-class="modalClass" layout="column" layout-align="center center" flex="grow" ng-click="modalClick()">
     <div id="modalContent" layout="column" layout-align="center center" layout-padding layout-margin>
         <div id="modalBox" ng-class="modalBox" layout-gt-sm="row" layout-align-sm="center center">
@@ -69,37 +65,6 @@
         </div>
         <div ng-if="modalContent.button" id="modalLink">
             <button id="modalButton" ng-click="modalButtonClick()" ng-class="modalButton">{{ modalContent.button | translate }}</button>
-        </div>
-    </div>
-</div>
-
-<div id="advanced-modal" ng-class="advancedModalClass" layout="column" layout-align="center center" flex="grow" ng-click="hideAdvancedModal()">
-    <div ng-click="preventHideAdvancedModal($event);" id="modalContent" layout="column" layout-align="center center" layout-padding layout-margin>
-        <div id="modalBox" ng-class="modalBox">
-
-            <button ng-click="hideAdvancedModal()" class="close">
-                <svg id='closeSVG' width="36px" height="40px" viewBox="8 10 36 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <defs></defs>
-                    <text id="close" stroke="none" fill="none" font-family="SSStandard, SS Standard" font-size="30" font-weight="normal">
-                        <tspan x="8" y="48" fill="#ffffff">close</tspan>
-                    </text>
-                </svg>
-            </button>
-
-            <div>
-                <h2>Advanced Kit Selection 🛠️</h2>
-                <p>Hey! If you don't know why you are here don't mess with it</p>
-                <md-select placeholder="Select your kit" ng-model="kit" md-on-open="loadKits()">
-                    <md-option ng-value="kit" ng-repeat="kit in kits">#{{kit.id}} {{kit.name}}</md-option>
-                </md-select>
-                <p ng-if="kit.description" class="md-caption">
-                    <span style="text-decoration: underline"> {{kit.description}}</span> can measure:<br> <span style="color: white; font-size: 19px;" ng-repeat="sensor in kit.sensors">{{$first ? '' : $last ? ' and ' : ', '}}{{sensor.measurement.name }}</span>
-                </p>
-                <p style="color: white; font-size: 18px; font-style: italic;" ng-if="kit.description" class="md-caption">
-                    This is the complete sensor list: <br> <span ng-repeat="sensor in kit.sensors">{{$first ? '' : $last ? ' and ' : ', '}} {{sensor.name}} ({{sensor.unit}})</span>
-                </p>
-                <button id="advancedModalButton" ng-click="saveAdvancedSettings()">Save</button>
-            </div>
         </div>
     </div>
 </div>

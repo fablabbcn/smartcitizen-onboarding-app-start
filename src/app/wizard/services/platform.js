@@ -98,16 +98,6 @@ export function platform($rootScope, $cookies, SegueService, Restangular, platfo
           });
     }
 
-    function getKits(scope) {
-        return Restangular.all('kits')
-          .getList({'per_page': 1000})
-          // We add .plain() because we don't need full CRUD on Tags.
-          .then(function(fetchedKits){
-            return fetchedKits.plain();
-          });
-    }
-
-
     return {
         setSession: setSession,
         setAuth: setAuth,
@@ -123,7 +113,6 @@ export function platform($rootScope, $cookies, SegueService, Restangular, platfo
         listenToken: listenToken,
         resetPassword: resetPassword,
         getTags: getTags,
-        getKits: getKits
     };
 
 }
