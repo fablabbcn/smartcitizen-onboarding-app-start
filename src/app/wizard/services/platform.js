@@ -1,14 +1,4 @@
-import io from 'socket.io-client';
-
-export function platformNotify(socketFactory) {
-    return socketFactory({
-        ioSocket: io.connect('wss://ws.smartcitizen.me')
-    });
-}
-
-platformNotify.$inject = ['socketFactory'];
-
-export function platform($rootScope, $cookies, SegueService, Restangular, platformNotify) {
+export function platform($rootScope, $cookies, SegueService, Restangular) {
 
     var sessionHeaders = {};
 
@@ -61,18 +51,10 @@ export function platform($rootScope, $cookies, SegueService, Restangular, platfo
         return Restangular.all('users').post(signupData);
     }
 
-    function listenDevices(then){
-        platformNotify.on('data-received', then);
-    }
-
     function listenDevice(id, scope){
         listenDevices(function(data){
           if(id == data.device_id) scope.$emit('published', data);
         })
-    }
-
-    function listenTokens(then){
-        platformNotify.on('token-received', then);
     }
 
     function listenToken(token, scope){
@@ -117,4 +99,4 @@ export function platform($rootScope, $cookies, SegueService, Restangular, platfo
 
 }
 
-platform.$inject = ['$rootScope', '$cookies', 'SegueService', 'Restangular', 'platformNotify'];
+platform.$inject = ['$rootScope', '$cookies', 'SegueService', 'Restangular'];
