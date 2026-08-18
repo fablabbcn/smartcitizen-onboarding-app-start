@@ -1,0 +1,21 @@
+name: Build
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use https instead of ssh for github.com (sc-assets dependency)
+        run: git config --global url."https://github.com/".insteadOf "ssh://git@github.com/"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+
+      - run: npm ci
+      - run: npm run build
