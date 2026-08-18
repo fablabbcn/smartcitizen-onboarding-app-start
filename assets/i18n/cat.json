@@ -1,0 +1,313 @@
+{
+    "landing": {
+        "h2": "Benvingut al Pilot de Making Sense!",
+        "h4": "Configura el teu Smart Citizen Kit i comença a medir en un tres i no res",
+        "segueButton": "continua en català!",
+        "contextButton1": "english",
+        "contextButton2": "castellano"
+    },
+    "smart_citizen": {
+        "h2": "Smart Citizen és un moviment per la participació ciutadana utilitzant les últimes tecnologies.",
+        "h4": "Smart Citizen crea eines obertes per ajudar els ciutadans a entendre millor el seu entorn.",
+        "segueButton": "continua"
+    },
+    "smart_citizen_brief": {
+        "h2": "Smart Citizen Kit",
+        "h4": "Aquest sensors és un Smart Citizen Kit. Mesura soroll, qualitat de l'aire, humitat, i moltes coses més.",
+        "segueButton": "continua"
+    },
+    "smart_citizen_brief2": {
+        "h2": "smartcitizen.me",
+        "h4": "El sensor envia totes les mesures a la web d'Smart Citizen. És lliure i oberta perquè tothom pugui veure i qüestionar les dades...",
+        "segueButton": "fem-ho"
+    },
+    "whats_in_the_box": {
+        "h1": "ANEM A INSTALAR EL SENSOR",
+        "h4": "Hi han algunes peces que cal muntar per instalar el Kit, revisa que les tens totes.",
+        "segueButton": "estic apunt"
+    },
+    "kitbuild1": {
+        "h2": "Primer, els separadors...",
+        "text": "Col·loca un separador en cada forat de la placa de sensors",
+        "segueButton": "fet"
+    },
+    "kitbuild2": {
+        "h2": "Després, connectem els sensor",
+        "text": "Connecta els pins de la placa de sensors a la placa de dades",
+        "segueButton": "fet"
+    },
+    "kitbuild3": {
+        "h2": "Donem-li alimetació",
+        "text": "Connecta la bateria amb la placa de dades",
+        "segueButton": "fet"
+    },
+    "kitbuild5": {
+        "h2": "",
+        "text": "",
+        "segueButton": ""
+    },
+    "choose_connection": {
+        "h2": "",
+        "recommended": "",
+        "smartphone": "",
+        "offline": "",
+        "segueButtonError": "",
+        "continueButton": "",
+        "segueButton": "",
+        "yesButton": "",
+        "noButton": "",
+        "lightMethod": ""
+    },
+    "wifi_enter": {
+        "h2": "A quina xarxa Wi-Fi vols connectar el teu Kit a internet?",
+        "h4": "Hauràs d'escriure-la manualment...",
+        "input1": "Nom de la xarxa Wi-Fi",
+        "input1_error": "Has d'escriure el nom d'una xarxa Wi-Fi",
+        "input2": "Contrasenya",
+        "input2_error": "",
+        "segueButtonError": "comrova els camps",
+        "segueButton": "apunt!",
+        "contextButton": "prova-ho d'una altre manera...",
+        "contextButton2": "demana ajuda",
+        "continueButton": "continua"
+    },
+    "handshake": {
+        "h2": "Ara  farem una mica de màgia.",
+        "h4": "Sostén el teu Kit contra la pantalla sobre del quadrat blau que apareix a sota i prem “conectar”. Assegura't que el costat blau del Kit mira cap a tu.",
+        "handshakeLabel": "Coloca el teu Kit aquí",
+        "waitLabel": "JA POTS TREURE EL KIT",
+        "segueButton": "conecta",
+        "continueButton": "continua"
+    },
+    "wifi_check": {
+        "h2": "Oops, alguna cosa ha fallat...",
+        "h4": "Sembla que hi ha un problema. Fixa't si la llum del Kit segueix vermella, siusplau torna a escriure el nom i la contraseña del teu Wi-Fi",
+        "input1": "",
+        "input1_error": "",
+        "input2": "",
+        "input2_error": "",
+        "segueButtonError": "comprova els camps",
+        "contextButton": "prova-ho d'una altra manera",
+        "contextButton2": "demana ajuda",
+        "waitLabel": "ESPERA",
+        "segueButton": "conecta",
+        "continueButton": "continua"
+    },
+    "accesspoint_1": {
+        "h2": "Des del teu dispositiu mòbil acedeix a la configuració Wi-Fi y conecta't a la xarxa Wi-Fi:",
+        "h3_1": "El",
+        "em_1": " número",
+        "h3_2": " del teu Kit, es troba",
+        "em_2": " a la cantonada inferior",
+        "h3_3": " del teu kit.",
+        "h4": "Si no trobes la xarxa, assegura't que el teu Kit està encès i el llum és vermell.",
+        "promptedText": "SmartCitizen[...]",
+        "segueButton": "connectat"
+    },
+    "accesspoint_2": {
+        "h2": "Hauries de veure aquesta pantalla al teu mòbil o tablet",
+        "h3_1": "Si no apareix obre el nagegador del teu móvil i visita",
+        "em_1": " www.mysck.me",
+        "h4": "Si encara no funciona comproba que estàs connectat al Wi-Fi",
+        "promptedText": "mysck.me",
+        "segueButton": "connectat"
+    },
+    "ap_final": {
+        "h2": "Selecciona el teu Wi-Fi a la lista i introdueix la contraseña. Quan et pregunti pel codi de l'onboarding escriu:",
+        "h4": "Si el Wi-Fi y la contrasenya son correctos, seràs redirigit en breu. Segueix les instrucions a www.mysck.me",
+        "promptedText": "EL CÓDI ÉS AQUÍ",
+        "segueButton": "llest"
+    },
+    "ap_issues": {
+        "h1": "",
+        "h4": "",
+        "segueButton": ""
+    },
+    "offline_pre": {
+        "h1": "",
+        "h4": "",
+        "segueButton": ""
+    },
+    "kitbuild4": {
+        "h2": "I finalment, encén el Kit",
+        "text": "Pressiona el botó del Kit, fins que el color del llum sigui vermell.",
+        "segueButton": "funciona!"
+    },
+    "offline_1": {
+        "h2": "",
+        "h3_1": "",
+        "em_1": "",
+        "h3_2": "",
+        "em_2": "",
+        "h3_3": "",
+        "h4": "",
+        "promptedText": "",
+        "segueButton": ""
+    },
+    "offline_2": {
+        "h2": "",
+        "h3_1": "",
+        "em_1": "",
+        "h4": "",
+        "promptedText": "",
+        "segueButton": ""
+    },
+    "offline_3": {
+        "h2": "",
+        "h3_1": "",
+        "em_1": "",
+        "h4": "",
+        "promptedText": "",
+        "segueButton": ""
+    },
+    "confirm_handshake": {
+        "h1": "BEN FET!",
+        "h4": "Has conectat el teu Kit a Internet!",
+        "segueButton": "continua"
+    },
+    "sensorName_prep": {
+        "h1": "ÉS L'HORA DE DONAR-LI UN NOM AL TEU SENSOR",
+        "h4": "Això ens ajudarà a saber d'on venen les dades...",
+        "segueButtonError": "escull un nom",
+        "segueButton": "continua"
+    },
+    "sensorName": {
+        "h2": "Quin nom li vols donar al teu Kit?",
+        "h4": "Li pots dir com vulguis. Així és com apareixerà al mapa d'Smart Citizen.",
+        "input1": "Escriu el nom del Kit",
+        "input1_error": "El Kit necessita un nom",
+        "contextButton": "escull un nom aleatori",
+        "segueButtonError": "repassa el nom",
+        "segueButton": "done"
+    },
+    "location_prep": {
+        "h2": "On instal·laràs el Kit?",
+        "h4": "Pressionant 'permet' a la finestra de diàleg podrem determinar la ubicació actual del Kit. Després pots ajustar-la manualment a qualsevol lloc on vulguis situar el Kit.",
+        "segueButton": "fet",
+        "continueButton": "fet!",
+        "waitButton": "espera"
+    },
+    "location_map": {
+        "h2": "Si vols ajustar la ubicació ho pot fer aquí.",
+        "h4": "Recorda que el teu dispositiu necessita tenir accés Wi-Fi. Si no és així les dades no es guardaràn en temps real a la plataforma.",
+        "input1": "Introdueix la teva adreça",
+        "input1_error": "",
+        "segueButton": "fet",
+        "continueButton": "fet",
+        "segueButtonError": "Has d'escriure una adreça o ubicació"
+    },
+    "location_tags": {
+        "h2": "Selecciona les paraules que millor descriuen el lloc on has instal·lat el Kit",
+        "h4": "Això ens ajudarà a saber el que estàs medint",
+        "segueButton": "tot apunt",
+        "continueButton": "tot apunt"
+    },
+    "confirm_location": {
+        "h1": "GAIREBÉ ESTEM",
+        "h4": "Finalment, és hora de guardar tot el que has configurat",
+        "segueButton": "continua"
+    },
+    "account1": {
+        "h2": "Podem guardar el Kit amb la teva adreça de correu electrònic",
+        "h4": "Si ja tens un compte a Smart Citizen l'afegirem allà. Si no, we'll quickly make a new one",
+        "segueButton": "continua",
+        "input1": "Afegeix el teu correu a continuació",
+        "input1_error": "Cal que afegeixis una adreça",
+        "segueButtonError": "comprova l'adreça",
+        "continueButton": "continua"
+    },
+    "login": {
+        "h2a": "Genial, ben tornat!",
+        "h2b": "Escriu la teva contrasenya a sota per acabar!",
+        "h4": "Això enviarà a la plataforma totes les dades que has configurat sobre el teu Kit!",
+        "input1": "Contrasenya",
+        "input1_error": "",
+        "segueButtonError": "repassa la contrasenya",
+        "segueButton": "continua",
+        "contextButton": "oblivar contrasenya"
+    },
+    "account2": {
+        "h2": "Guai, sembla que ets nou a Smart Citizen?",
+        "h4": "Afegeix un nom d'usuari al teu perfil, d'aquesta manera els altres usuaris sabràn de qui és el Kit.",
+        "input1": "Afegeix un nom d'usuari",
+        "input1_error": "El nom d'usuari és obligatori",
+        "input1_error2": "",
+        "contextButton": "escull un nom aleatori",
+        "segueButtonError": "valida el nom d'usuari",
+        "segueButton": "continua"
+    },
+    "account3": {
+        "h2": "Ara, afegeix una contrasenya per protegir el teu usuari",
+        "h4a": "La contrasenya ha de tenir com a mínim 8 caràcters",
+        "h4b": "I una vegada més per assegurar-nos que no hi han errors.",
+        "input1": "Password",
+        "input1_error": "La contrasenya ha de tenir com a mínim 5 caràcters",
+        "input1_error2": "Has d'introduir una contrasenya",
+        "segueButtonError": "les contrasenyes no coincideixen",
+        "segueButton": "llestos!",
+        "continueButton": "llestos!"
+    },
+    "final": {
+        "h1": "ÉS VIU!",
+        "h2": "El Kit ha estat configurat amb èxit i ja està publicant a Smart Citizen, la comunitat global de sensors",
+        "h4": "Visita SmartCitizen.me  per veure el teu Kit en acció publicant dades. No t'oblidis de llegir el el manual amb les instrucciones d'instal·lació i consell sobre com col·locar-lo a l'exterior.",
+        "h4b": "",
+        "segueButton": "visit smartcitizen.me"
+    },
+    "unavailable": {
+        "h1": ""
+    },
+    "selectparts": {
+        "h2": "Seleccionna totes les peces que has rebut",
+        "h4": "Hem d'assegurar-nos'en per poder seguir amb la instalació",
+        "part1": "Sensor Board",
+        "part1_desc": "Aquesta placa conté tots els sensors. Es connecta a la més gran de manera que els sensors puguin transmetre les dades.",
+        "part2": "Hardware Board",
+        "part2_desc": "Aquí és on tot el processament es duu a terme. Cada vegada que vulguis connectar algun sensor l'Smart Citizen Kit, serà en aquesta placa",
+        "part3": "Bateria",
+        "part3_desc": "Això alimenta el sensor. Cal carregar-la sovint, sobretot després de periodes d'ús continuats.",
+        "part4": "Cable de càrrega",
+        "part4_desc": "Quan vulguis carregar el Kit, pots conectar el Kit a un ordinador o carregador USB, tal com ho fas amb el teu móbil.",
+        "modalButton": "entès",
+        "contextButton": "on és la carcassa?",
+        "segueButton": "continua",
+        "segueButtonError": "are you missing parts?",
+        "continueButton": "continua",
+        "yesButton": "sí",
+        "noButton": "no"
+    },
+    "selectparts2": {
+        "h2": "Finally...",
+        "h4": "La carcassa no és indispensable, però és útil per protegir el Kit contra la pluja",
+        "part5": "Carcassa",
+        "part5_desc": "La carcassa és resistent a l'aigua i permet col·locar el dispositiu en diferents superfícies.",
+        "part6": "Espaiadors",
+        "part6_desc": "Situats entre les plaques de sensors i de dades, mantenen les plaques subjectes",
+        "part7": "Tapa",
+        "part7_desc": "Tanca la carcassa i s'utilitza per protegir el dispositiu de la pluja. Assegura't de col·locar els forats sobre del sensor de so.",
+        "part8": "Fixadors",
+        "part8_desc": "S'usen per fixar la tapa a la carcassa.",
+        "modalButton": "entès",
+        "contextButton": "on és el meu?",
+        "segueButton": "continua",
+        "segueButtonError": "et falten peces?",
+        "continueButton": "continua",
+        "yesButton": "sí",
+        "noButton": "no"
+    },
+    "confirm_parts": {
+        "h1": "BEN FET!",
+        "h4": "Ara anem a muntar-ho tot junt",
+        "segueButton": "continua"
+    },
+    "case1": {
+        "h2": "A continuació posa-ho tot dins la carcassa",
+        "text": "Assegura't de col·locar el Kit amb el cable de la bateria cap a la part inferior de la carcassa",
+        "segueButton": "continua"
+    },
+    "case2": {
+        "h2": "... i per acabar, posa la tapa.",
+        "text": "Col·loca el plàstic transparent damunt la caixa i fixa'l al seu lloc amb les dues fixacions blanques",
+        "segueButton": "continua"
+    }
+}
