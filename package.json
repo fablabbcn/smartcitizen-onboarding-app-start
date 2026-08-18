@@ -59,7 +59,7 @@
     "angularjs-geolocation": "^0.1.3",
     "lodash": "^4.17.13",
     "restangular": "^1.6.1",
-    "sc-assets": "git+shh://git@github.com:fablabbcn/assets.git#master"
+    "sc-assets": "git+https://git@github.com/fablabbcn/assets.git#master"
   },
   "gh-pages-deploy": {
     "staticpath": "dist",
