@@ -104,7 +104,7 @@ export function chooseConnectionController($scope, $rootScope, $state, scopePayl
     });
 
     $scope.infoClick = function(val){
-        // TODO modal of descipriont of method
+        // TODO modal of description of method
         $scope.$parent.modalBox = 'green';
         var data = [{
             "title": $scope.payload.part1,
