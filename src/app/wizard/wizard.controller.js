@@ -34,8 +34,6 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
 
     $scope.modalClass = 'hidden';
 
-    $scope.advancedModalClass = 'hidden';
-
     console.log('Your session:' , session);
     console.log('Your device:', $scope.submittedData.deviceData);
 
@@ -312,6 +310,36 @@ export function wizardController($scope, $location, $sce, $window, $timeout, Seg
         $scope.modalContent = data;
         $rootScope.$broadcast('modal');
     };
+
+    /** -- MODAL-- **/
+
+    $scope.modalClick = function() {
+        $scope.modalClass = 'out';
+        $timeout(function() {
+            $scope.modalClass = 'hidden';
+            $rootScope.$broadcast('modalClosed'); // This starts the light
+        }, 500);
+    };
+    $scope.modalButtonClick = function() {
+        switch ($scope.modalContent.action) {
+            case 'email':
+                $window.open('mailto:feedback-4873-IVVSumgXA4EEA4e7blwZvyE2sshIpRRK@feedback.doorbell.io?Subject=MakingSense Support [' + $scope.onboarding_session + ']', '_blank');
+                break;
+            case 'retry':
+                $scope.seque;
+                break;
+            case 'restart':
+                $state.go('wizard.landing');
+                break;
+            default:
+                $scope.seque;
+                break;
+        }
+    };
+
+    $rootScope.$on('modal', function() {
+        $scope.modalClass = 'showing';
+    });
 
     Restangular.setErrorInterceptor(function(response, deferred, responseHandler) {
         if ([204, 422, 403, 404].indexOf(response.status) > -1) {
